@@ -1,0 +1,12 @@
+name: solar-neutrino-masterclass
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.10
+  - numpy
+  - scipy
+  - pandas
+  - matplotlib
+  - jupyter
+  - ipykernel
+  - quarto

@@ -1,0 +1,109 @@
+/*-- scss:defaults --*/
+
+/*-- scss:rules --*/
+
+.reveal .math.display {
+  font-size: 0.82em;
+}
+
+.reveal #title-slide .title {
+  max-width: 1120px;
+  white-space: normal;
+  line-height: 1.12;
+  font-size: 1.72em;
+}
+
+.reveal .footer {
+  left: 1.1rem !important;
+  bottom: 0.92rem !important;
+  width: auto !important;
+  color: #d0d0d0 !important;
+  font-size: 0.42em !important;
+  letter-spacing: 0 !important;
+}
+
+.reveal .compact li {
+  margin: 0.16em 0;
+}
+
+.reveal .small {
+  font-size: 0.76em;
+}
+
+.reveal .tiny {
+  font-size: 0.62em;
+}
+
+.reveal .muted {
+  color: #d0d0d0;
+}
+
+.reveal .question {
+  color: #8ec5ff;
+  font-weight: 700;
+}
+
+.reveal .takeaway {
+  color: #ffcc8a;
+  font-weight: 700;
+}
+
+.reveal .toy {
+  border-left: 4px solid #ffcc8a;
+  padding-left: 0.7em;
+  color: #f2f2f2;
+}
+
+.reveal .timing {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 0.35rem 1rem;
+  align-items: baseline;
+  font-size: 0.78em;
+}
+
+.reveal .timing .time {
+  color: #8ec5ff;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.reveal .flow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.4rem;
+  align-items: stretch;
+  font-size: 0.66em;
+}
+
+.reveal .flow div {
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 6px;
+  padding: 0.55rem 0.6rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.reveal .media-caption {
+  margin-top: 0.45em;
+  color: #d0d0d0;
+  font-size: 0.68em;
+}
+
+.reveal pre code {
+  max-height: 500px;
+}
+
+.reveal table {
+  font-size: 0.62em;
+}
+
+.reveal .columns {
+  gap: 1.3rem;
+}
+
+@media (max-width: 720px) {
+  .reveal .footer {
+    display: none;
+  }
+}

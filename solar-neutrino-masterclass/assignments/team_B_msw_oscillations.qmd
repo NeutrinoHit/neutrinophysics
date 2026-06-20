@@ -1,0 +1,43 @@
+---
+title: "Team B: MSW Oscillations"
+format:
+  html:
+    toc: true
+---
+
+# Цель
+
+Построить survival probability \(P_{ee}(E)\) для солнечных нейтрино в двухфлейворной MSW-модели.
+
+# Входные данные
+
+- `data/electron_density_profile_toy.csv`
+- `src/solar_neutrino/oscillations.py`
+- `notebooks/02_msw_survival_probability.ipynb`
+
+# Что нужно построить
+
+- toy electron density profile;
+- \(P_{ee}(E)\) on \(0.1-15\) MeV;
+- comparison for at least two values of \(\theta_{12}\).
+
+# Что нужно объяснить
+
+- low-energy vacuum averaged limit;
+- high-energy MSW-dominated limit;
+- resonance condition \(2EV_e=\Delta m^2\cos2\theta\);
+- why this is still a toy two-flavor treatment.
+
+# Что нужно сдать
+
+- notebook with \(P_{ee}(E)\);
+- one defense slide with formula and plot;
+- statement of the approximations.
+
+# Минимальный результат
+
+График \(P_{ee}(E)\) and the numerical low/high-energy limits.
+
+# Дополнительное задание
+
+Сделать scan по \(\sin^2\theta_{12}\) and \(\Delta m^2_{21}\), затем показать, как меняется \(P_{ee}(E)\).

@@ -1,0 +1,64 @@
+---
+title: "Solar Neutrino Mini-Project"
+author: "Team name"
+date: today
+bibliography: references.bib
+format:
+  html:
+    toc: true
+    number-sections: true
+  pdf:
+    toc: true
+    number-sections: true
+---
+
+# Physics question
+
+State the concrete question your team answered.
+
+# Model
+
+Write the minimum equations used in the project. Explain which parts are physical inputs and which parts are toy approximations.
+
+# Input data
+
+List the data files and reference values used:
+
+- solar flux table;
+- \(^{8}\mathrm{B}\)-spectrum;
+- electron density profile;
+- detector response parameters.
+
+# Code and numerical method
+
+Describe the notebook and the key functions from `src/solar_neutrino`.
+
+Include one short code fragment only if it clarifies the method.
+
+# Results
+
+Insert the main figure and the numerical result:
+
+```text
+best-fit normalization =
+best-fit effective Pee =
+confidence interval =
+```
+
+# Discussion of approximations
+
+State explicitly:
+
+- fluxes are inputs, not a solved solar model;
+- \(^{8}\mathrm{B}\)-spectrum may be a toy beta-like shape;
+- detector response is schematic;
+- backgrounds and systematics are simplified or absent.
+
+# Conclusion
+
+Write a short scientific conclusion that follows from the plotted result.
+
+# References
+
+::: {#refs}
+:::

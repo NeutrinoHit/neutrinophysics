@@ -1,0 +1,177 @@
+---
+title: "Защита мини-проектов"
+subtitle: "Занятие 3 · Solar Neutrino Masterclass"
+author: "Dmitry V. Naumov"
+institute: "Baikal School"
+date: "June 2026"
+---
+
+# Формат
+
+## Цель защиты
+
+Команда должна показать короткий научный результат:
+
+::: {.compact}
+- ясная physics question;
+- минимальная модель;
+- воспроизводимый код;
+- график;
+- численный вывод;
+- честное описание toy approximations.
+:::
+
+## Регламент
+
+Для каждой команды:
+
+```text
+7 минут доклад + 3 минуты вопросы
+```
+
+Если команд три:
+
+```text
+3 команды × 10 минут = 30 минут
+```
+
+После докладов:
+
+```text
+15-20 минут общая сверка
+```
+
+## Что должно быть показано
+
+Каждая команда показывает:
+
+::: {.compact}
+1. Физическую постановку.
+2. Использованные формулы.
+3. Один ключевой фрагмент кода.
+4. Главный график.
+5. Численный результат.
+6. Что в модели является toy approximation.
+7. Какой следующий шаг сделал бы анализ более реалистичным.
+:::
+
+# Содержание доклада
+
+## Required plots
+
+Минимальный набор на весь мастер-класс:
+
+::: {.compact}
+- solar fluxes;
+- \(^{8}\mathrm{B}\)-spectrum;
+- electron density profile;
+- \(P_{ee}(E)\);
+- expected vs pseudo-observed spectrum;
+- \(\chi^2\)-scan или contour.
+:::
+
+Команда не обязана показывать все, но должна показать свой главный график.
+
+## Required code fragment
+
+Покажите один короткий фрагмент, который действительно определяет результат:
+
+::: {.compact}
+- normalization of spectrum;
+- survival probability grid;
+- expected events;
+- pseudo-data generation;
+- Poisson chi-square.
+:::
+
+Код должен быть короче экрана и связан с главным графиком.
+
+## Required physics statement
+
+Физический вывод должен быть конкретным:
+
+::: {.compact}
+- не «осцилляции важны»;
+- а «high-energy \(^{8}\mathrm{B}\) events are suppressed toward \(P_{ee}\sim\sin^2\theta_{12}\) in the MSW regime»;
+- или «threshold changes mostly the low-energy side of the expected spectrum».
+:::
+
+## Toy approximations
+
+Обязательно назвать:
+
+::: {.compact}
+- fluxes are inputs, not a solved solar model;
+- \(^{8}\mathrm{B}\)-spectrum may be toy beta-like shape;
+- detector response is schematic;
+- \(\nu e\)-cross-section is simplified;
+- backgrounds and systematics are not realistic unless explicitly added.
+:::
+
+# Оценка
+
+## Критерии
+
+Оценивается:
+
+::: {.compact}
+- физическая корректность постановки;
+- воспроизводимость кода;
+- качество графика;
+- наличие численного результата;
+- понимание ограничений модели;
+- связь между формулой, кодом и результатом.
+:::
+
+## Типичные ошибки
+
+::: {.compact}
+- toy model presented as precision result;
+- график без единиц и подписи осей;
+- fit без указания likelihood;
+- \(n_i=0\) incorrectly handled in Poisson chi-square;
+- отсутствие seed для псевдоэксперимента;
+- вывод не связан с показанным графиком.
+:::
+
+## Финальный чеклист
+
+Перед докладом проверить:
+
+::: {.compact}
+- notebook runs top to bottom;
+- figure files are saved;
+- axes have units;
+- best-fit value is written on the slide;
+- toy assumptions are explicit;
+- report template is filled enough to be readable.
+:::
+
+## Общая сверка
+
+После докладов сравниваем:
+
+::: {.compact}
+- какие входы влияли сильнее всего;
+- где появляются основные approximations;
+- что изменится при real detector response;
+- какие данные нужно заменить на verified references.
+:::
+
+## Closing
+
+Финальная линия проекта:
+
+$$
+\text{solar model inputs}
+\to
+\text{MSW}
+\to
+\text{detector}
+\to
+\text{statistics}
+\to
+\text{scientific conclusion}.
+$$
+
+Главный результат должен быть воспроизводимым и честно ограниченным.

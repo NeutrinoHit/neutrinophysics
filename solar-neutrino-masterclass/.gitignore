@@ -1,0 +1,11 @@
+/.quarto/
+**/*.quarto_ipynb
+/outputs/
+/notebooks/outputs/
+/slides/*.html
+/report_template/*.html
+/report_template/*_files/
+/report_template/*.tex
+/report_template/*.aux
+/report_template/*.log
+/report_template/*.toc

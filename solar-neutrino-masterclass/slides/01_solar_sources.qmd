@@ -1,0 +1,532 @@
+---
+title: "Солнечные нейтрино: источник, реакции, потоки"
+subtitle: "Занятие 1 · входные данные для численного мини-проекта"
+author: "Dmitry V. Naumov"
+institute: "Baikal School"
+date: "June 2026"
+---
+
+# Ориентация
+
+## Цель занятия
+
+К концу занятия студент должен понимать:
+
+::: {.compact}
+- какие реакции в Солнце рождают нейтрино;
+- какие потоки и спектры используются как входные данные;
+- почему мы не строим полную солнечную модель на мастер-классе;
+- какой первый численный результат должна получить команда.
+:::
+
+::: {.takeaway}
+Сегодня мы строим не модель Солнца, а аккуратный вход для oscillation and detector code.
+:::
+
+## Структура мастер-класса
+
+::: {.timing}
+::: {.time}
+Занятие 1
+:::
+::: {}
+Солнце как источник нейтрино: потоки, спектры, density profile.
+:::
+::: {.time}
+Занятие 2
+:::
+::: {}
+MSW-осцилляции, toy Super-Kamiokande-like detector, pseudoexperiment, fit.
+:::
+::: {.time}
+Занятие 3
+:::
+::: {}
+Защита командных мини-проектов: графики, численный результат, отчет.
+:::
+:::
+
+## Что строят студенты
+
+::: {.flow}
+::: {}
+solar inputs
+:::
+::: {}
+spectra and fluxes
+:::
+::: {}
+MSW \(P_{ee}(E)\)
+:::
+::: {}
+event spectrum
+:::
+::: {}
+fit result
+:::
+:::
+
+На каждом шаге важно отделять физику от toy-аппроксимаций.
+
+## Командная работа
+
+Вариант для трех команд:
+
+::: {.compact}
+- **Team A:** solar sources and flux hierarchy.
+- **Team B:** \(^{8}\mathrm{B}\)-spectrum and normalization.
+- **Team C:** toy electron density profile for MSW.
+:::
+
+Вариант для двух команд:
+
+::: {.compact}
+- **Team A:** Sun + MSW inputs.
+- **Team B:** spectra + detector inputs.
+:::
+
+## Главная цепочка
+
+$$
+\text{solar reactions}
+\to
+\Phi_\alpha(E)
+\to
+P_{ee}(E)
+\to
+N_i^{\rm expected}
+\to
+n_i^{\rm observed}
+\to
+\chi^2
+$$
+
+::: {.question}
+Какой минимум входных данных нужен, чтобы перейти от Солнца к числу событий?
+:::
+
+## Почему не полная солнечная модель
+
+::: {.toy}
+В мастер-классе мы не решаем Standard Solar Model. Потоки, спектры и toy-профили берутся как входные данные.
+:::
+
+Полная задача требует:
+
+::: {.compact}
+- equation of state;
+- opacity tables;
+- nuclear reaction rates;
+- composition evolution;
+- calibration to solar luminosity and radius.
+:::
+
+# Солнечная модель
+
+## Солнце как стационарный источник
+
+Солнце можно рассматривать как почти стационарный термоядерный источник.
+
+Нейтрино рождаются не «где-то в Солнце», а в конкретных реакциях:
+
+::: {.compact}
+- pp-chain;
+- CNO-cycle;
+- редкие high-energy branches.
+:::
+
+Для detector analysis важны не только полные потоки, но и энергетические спектры.
+
+## Уравнения структуры
+
+$$
+\frac{dP}{dr}=-\frac{Gm(r)\rho(r)}{r^2},
+$$
+
+$$
+\frac{dm}{dr}=4\pi r^2\rho(r),
+$$
+
+$$
+\frac{dL}{dr}=4\pi r^2\rho(r)\epsilon(r),
+$$
+
+$$
+\frac{dT}{dr}=\nabla(r)\frac{T}{P}\frac{dP}{dr}.
+$$
+
+## Что скрыто в полной задаче
+
+Даже эта компактная система не замкнута без:
+
+::: {.compact}
+- \(P(\rho,T,X_i)\): equation of state;
+- opacity \(\kappa(\rho,T,X_i)\);
+- nuclear rates для pp-chain и CNO;
+- transport model: radiative and convective regions;
+- начального состава и возрастной эволюции.
+:::
+
+::: {.takeaway}
+Поэтому для мастер-класса солнечная модель входит как таблица входов, а не как задача интегрирования stellar evolution.
+:::
+
+# Источники нейтрино
+
+## pp-chain
+
+Главный источник энергии Солнца:
+
+$$
+4p \to {}^4\mathrm{He}+2e^+ + 2\nu_e + Q.
+$$
+
+Нейтрино появляются в отдельных ветвях:
+
+::: {.compact}
+- pp continuum;
+- pep line;
+- \(^{7}\mathrm{Be}\) electron capture lines;
+- \(^{8}\mathrm{B}\) high-energy continuum;
+- hep rare high-energy tail.
+:::
+
+## CNO-cycle
+
+CNO-цикл важен как тест состава солнечного ядра.
+
+Нейтрино рождаются в beta decays:
+
+$$
+{}^{13}\mathrm{N},\quad
+{}^{15}\mathrm{O},\quad
+{}^{17}\mathrm{F}.
+$$
+
+Энергии находятся на MeV scale, а потоки значительно меньше pp-потока.
+
+## Таблица источников
+
+| Источник | Реакция | Тип спектра | Характерная энергия |
+|---|---|---|---|
+| pp | \(p+p\to d+e^++\nu_e\) | continuum | low energy |
+| pep | \(p+e^-+p\to d+\nu_e\) | line | 1.44 MeV |
+| \(^{7}\mathrm{Be}\) | electron capture | lines | 0.862 MeV, 0.384 MeV |
+| \(^{8}\mathrm{B}\) | beta decay | continuum | high-energy tail |
+| hep | rare reaction | continuum | very high tail |
+| CNO | \(^{13}\mathrm{N}, ^{15}\mathrm{O}, ^{17}\mathrm{F}\) | continuum | MeV scale |
+
+## Line vs continuum
+
+Line sources:
+
+::: {.compact}
+- pep;
+- \(^{7}\mathrm{Be}\).
+:::
+
+Continuum sources:
+
+::: {.compact}
+- pp;
+- \(^{8}\mathrm{B}\);
+- hep;
+- CNO beta decays.
+:::
+
+Detector response превращает даже line input в распределение reconstructed energy.
+
+# Входные потоки
+
+## Reference flux table
+
+Файл:
+
+```text
+data/solar_fluxes_reference.csv
+```
+
+Колонки:
+
+```text
+source,flux_cm2_s,kind,comment
+```
+
+::: {.toy}
+Это classroom reference values. Для публикационной точности таблицу нужно сверить с выбранной современной SSM-таблицей.
+:::
+
+## Код: загрузка потоков
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+fluxes = pd.read_csv("../data/solar_fluxes_reference.csv")
+fluxes
+```
+
+Полная версия:
+
+```text
+notebooks/01_solar_fluxes_and_spectra.ipynb
+src/solar_neutrino/fluxes.py
+```
+
+## График потоков
+
+![](../assets/figures/solar_fluxes.png){width="78%" .slide-image-center fig-alt="Solar neutrino fluxes on logarithmic scale"}
+
+::: {.media-caption}
+Логарифмическая шкала нужна, потому что pp и hep отличаются почти на семь порядков.
+:::
+
+## Код: построение графика
+
+```python
+ax = fluxes.plot.bar(x="source", y="flux_cm2_s",
+                     logy=True, legend=False)
+ax.set_ylabel(r"Flux, cm$^{-2}$ s$^{-1}$")
+ax.set_xlabel("source")
+plt.tight_layout()
+```
+
+## Интерпретация иерархии
+
+Почему pp-поток огромный:
+
+::: {.compact}
+- pp-chain является главным каналом производства энергии;
+- каждая completed chain дает два нейтрино;
+- низкоэнергетические реакции наиболее частые.
+:::
+
+Почему \(^{8}\mathrm{B}\)-поток малый:
+
+::: {.compact}
+- это редкая ветвь pp-chain;
+- требуется более высокая энергия в солнечном ядре;
+- но именно high-energy tail хорошо виден в водном Cherenkov detector.
+:::
+
+## \(^{7}\mathrm{Be}\) lines
+
+Файл:
+
+```text
+data/be7_lines.csv
+```
+
+| \(E_\nu\), MeV | branching fraction |
+|---:|---:|
+| 0.384 | 0.103 |
+| 0.862 | 0.897 |
+
+Эти значения используются как учебные reference values.
+
+## \(^{8}\mathrm{B}\)-spectrum
+
+Для занятия используется beta-like toy shape:
+
+$$
+f(E)\propto E^2(E_{\max}-E)^2,
+\qquad
+E_{\max}\approx 16~\mathrm{MeV}.
+$$
+
+Нормировка:
+
+$$
+\int f(E)\,dE=1.
+$$
+
+::: {.toy}
+Это не official tabulated \(^{8}\mathrm{B}\) spectrum.
+:::
+
+## Код: spectrum helper
+
+```python
+from solar_neutrino.spectra import (
+    load_b8_spectrum,
+    normalize_spectrum,
+    interpolate_spectrum,
+)
+
+E, shape = load_b8_spectrum("../data/b8_spectrum.csv")
+shape = normalize_spectrum(E, shape)
+b8_spectrum = interpolate_spectrum(E, shape)
+```
+
+## График \(^{8}\mathrm{B}\)-spectrum
+
+![](../assets/figures/b8_spectrum.png){width="74%" .slide-image-center fig-alt="Toy B8 neutrino spectrum"}
+
+::: {.media-caption}
+Форма полезна для exercises, но точный анализ требует внешней табличной формы.
+:::
+
+## Солнечная плотность как вход к MSW
+
+MSW effect зависит от электронной плотности:
+
+$$
+V_e(x)=\sqrt{2}G_F n_e(x).
+$$
+
+На занятии 1 достаточно toy-профиля:
+
+$$
+n_e(r)=n_0\exp(-r/r_0).
+$$
+
+Файл:
+
+```text
+data/electron_density_profile_toy.csv
+```
+
+## Код: density profile
+
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+
+density = pd.read_csv("../data/electron_density_profile_toy.csv")
+ax = density.plot(x="r_over_Rsun", y="ne_normalized",
+                  legend=False)
+ax.set_xlabel(r"$r/R_\odot$")
+ax.set_ylabel(r"$n_e/n_e(0)$")
+```
+
+## График density profile
+
+![](../assets/figures/electron_density_profile.png){width="72%" .slide-image-center fig-alt="Toy electron density profile"}
+
+::: {.media-caption}
+Профиль нужен, чтобы на следующем занятии обсудить MSW resonance condition.
+:::
+
+# Работа команд
+
+## Team split
+
+Команды работают с одним базовым кодом:
+
+```text
+src/solar_neutrino/
+notebooks/
+data/
+```
+
+Каждая команда готовит:
+
+::: {.compact}
+- один проверенный график;
+- одно физическое объяснение;
+- один файл или функцию для занятия 2.
+:::
+
+## Команда A: solar sources
+
+Задания:
+
+::: {.compact}
+1. Проверить таблицу потоков.
+2. Построить график потоков.
+3. Объяснить, почему pp-поток огромный, а \(^{8}\mathrm{B}\)-поток малый.
+4. Подготовить входной файл с выбранным источником для дальнейшего моделирования.
+5. Сформулировать, какой energy range важен для water Cherenkov detector.
+:::
+
+## Команда B: spectra
+
+Задания:
+
+::: {.compact}
+1. Загрузить или сгенерировать toy \(^{8}\mathrm{B}\)-spectrum.
+2. Нормировать спектр на единицу.
+3. Построить \(\Phi(E)\).
+4. Подготовить функцию `b8_spectrum(E)`.
+5. Отметить, что именно является toy approximation.
+:::
+
+## Команда C: solar profile
+
+Задания:
+
+::: {.compact}
+1. Использовать toy-профиль электронной плотности.
+2. Построить \(n_e(r)\).
+3. Найти область, где возможен MSW-резонанс для MeV-нейтрино.
+4. Подготовить файл плотности для занятия 2.
+:::
+
+## Если команд две
+
+Команда A:
+
+::: {.compact}
+- flux table;
+- flux hierarchy;
+- density profile;
+- MSW input.
+:::
+
+Команда B:
+
+::: {.compact}
+- \(^{8}\mathrm{B}\)-spectrum;
+- normalization;
+- detector energy range;
+- spectrum function.
+:::
+
+# Сверка
+
+## Что входит в oscillation code
+
+Минимальный набор:
+
+::: {.compact}
+- \(E_\nu\)-grid;
+- source spectrum \(\Phi(E)\);
+- oscillation parameters \(\theta_{12}\), \(\Delta m^2_{21}\);
+- electron density \(n_e(r)\) или effective production density.
+:::
+
+## Что нужно detector code
+
+Минимальный набор:
+
+::: {.compact}
+- flux normalization;
+- survival probability \(P_{ee}(E)\);
+- cross-section model;
+- efficiency and threshold;
+- exposure;
+- background model для advanced task.
+:::
+
+## Выход занятия 1
+
+После занятия у команды должны быть:
+
+::: {.compact}
+- рабочий notebook с flux/spectrum/profile plot;
+- проверенный входной файл или функция;
+- один короткий физический вывод;
+- список toy assumptions.
+:::
+
+## Переход к MSW
+
+Мы знаем, что рождается в Солнце.
+
+Следующий вопрос:
+
+::: {.question}
+С какой вероятностью солнечное \(\nu_e\) дойдет до детектора как \(\nu_e\)?
+:::
+
+Ответ требует эволюции flavor state in matter.

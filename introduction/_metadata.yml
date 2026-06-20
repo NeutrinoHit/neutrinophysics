@@ -1,0 +1,14 @@
+format:
+  revealjs:
+    theme: black
+    width: 1600
+    height: 900
+    margin: 0.03
+    slide-number: true
+    toc: true
+    toc-depth: 1
+    toc-title: "План лекции"
+    include-after-body:
+      - text: |
+          <script data-context-home="../index.html" data-context-home-label="Введение в физику нейтрино" src="../shared/reveal/neutrinohit-reveal-footer.js"></script>
+      - ../analytics/cloudflare-web-analytics.html

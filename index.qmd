@@ -1,0 +1,81 @@
+---
+title: "Физика нейтрино"
+toc: false
+---
+
+```{=html}
+<style>
+  .quarto-title-block {
+    display: none;
+  }
+</style>
+
+<div class="course-index">
+  <header class="course-profile">
+    <img class="course-profile-photo" src="assets/naumov-portrait.jpg" alt="Дмитрий Вадимович Наумов">
+    <div class="course-profile-copy">
+      <p class="course-kicker">Физика нейтрино</p>
+      <h1>Курсы и мастер-классы</h1>
+      <p>
+        Учебные материалы NeutrinoHit по физике нейтрино: вводные лекции,
+        мини-курсы, практические задания и воспроизводимые численные примеры.
+      </p>
+      <nav class="course-profile-links" aria-label="Ссылки раздела">
+        <a href="https://neutrinohit.github.io/">NeutrinoHit</a>
+        <a href="https://neutrinohit.github.io/lectures.html">Все курсы лекций</a>
+        <a href="https://t.me/NeutrinoHit">Telegram</a>
+        <a href="https://www.youtube.com/@dmitrynaumov6099/">YouTube</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="course-intro">
+    <h2>Материалы раздела</h2>
+    <p>
+      Раздел устроен как отдельный Quarto/GitHub Pages проект. Большие курсы и
+      короткие мастер-классы живут рядом, но имеют собственные страницы,
+      слайды и дополнительные материалы.
+    </p>
+  </section>
+
+  <section class="course-accordion" aria-label="Курсы по физике нейтрино">
+    <details class="course-row" open>
+      <summary>
+        <span class="course-row-kind">Курс</span>
+        <span>Введение в физику нейтрино</span>
+      </summary>
+      <div class="course-row-body">
+        <p>
+          Вводный курс с опубликованными HTML-лекциями из Keynote:
+          введение, пространственная четность и спиральность нейтрино.
+        </p>
+        <div class="course-links">
+          <a href="introduction/">Открыть курс</a>
+          <a href="introduction/Introduction/">Лекция 1</a>
+          <a href="introduction/Parity/">Лекция 2</a>
+          <a href="introduction/Helicity/">Лекция 3</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="course-row">
+      <summary>
+        <span class="course-row-kind">Мини-курс</span>
+        <span>Солнечные нейтрино</span>
+      </summary>
+      <div class="course-row-body">
+        <p>
+          Мастер-класс для школьников: solar model inputs, MSW survival
+          probability, detector spectrum, pseudoexperiment and likelihood fit.
+        </p>
+        <div class="course-links">
+          <a href="solar-neutrino-masterclass/">Открыть мини-курс</a>
+          <a href="solar-neutrino-masterclass/slides/01_solar_sources.html">Занятие 1</a>
+          <a href="solar-neutrino-masterclass/slides/02_msw_detector_statistics.html">Занятие 2</a>
+          <a href="solar-neutrino-masterclass/slides/03_student_defense.html">Занятие 3</a>
+        </div>
+      </div>
+    </details>
+  </section>
+</div>
+```

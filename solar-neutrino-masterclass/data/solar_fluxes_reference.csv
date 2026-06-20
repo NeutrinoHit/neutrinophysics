@@ -1,0 +1,9 @@
+source,flux_cm2_s,kind,comment
+pp,5.98e10,continuum,pp-chain dominant flux
+pep,1.44e8,line,monoenergetic
+hep,7.98e3,continuum,rare high-energy tail
+Be7,4.93e9,line,electron capture lines
+B8,5.46e6,continuum,important for water Cherenkov detectors
+N13,2.78e8,continuum,CNO
+O15,2.05e8,continuum,CNO
+F17,5.29e6,continuum,CNO

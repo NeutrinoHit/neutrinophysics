@@ -1,0 +1,56 @@
+---
+title: "Defense Requirements"
+format:
+  html:
+    toc: true
+---
+
+# Формат
+
+Каждая команда:
+
+```text
+7 минут доклад + 3 минуты вопросы
+```
+
+Для трех команд:
+
+```text
+3 команды × 10 минут = 30 минут
+```
+
+После этого 15-20 минут общая сверка.
+
+# Что должно быть показано
+
+1. Физическая постановка.
+2. Использованные формулы.
+3. Один ключевой фрагмент кода.
+4. Главный график.
+5. Численный результат.
+6. Что в модели является toy approximation.
+7. Какой следующий шаг сделал бы анализ более реалистичным.
+
+# Критерии оценки
+
+- связь physics question -> model -> code -> result;
+- воспроизводимость notebook;
+- понятные axes, units and labels;
+- корректное использование Poisson statistics;
+- честное описание approximations.
+
+# Типичные ошибки
+
+- toy model presented as precision result;
+- no units on plot axes;
+- no random seed in pseudoexperiment;
+- no statement of likelihood;
+- conclusion does not follow from the plotted result.
+
+# Финальный чеклист
+
+- notebook runs top to bottom;
+- report template is filled;
+- best-fit value is written;
+- figure files are saved;
+- limitations are explicit.

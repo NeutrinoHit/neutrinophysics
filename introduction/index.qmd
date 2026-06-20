@@ -1,0 +1,64 @@
+---
+title: "Введение в физику нейтрино"
+toc: false
+---
+
+```{=html}
+<style>
+  .quarto-title-block {
+    display: none;
+  }
+</style>
+
+<div class="course-index course-subpage">
+  <a class="course-back-link" href="../index.html">← Все материалы по физике нейтрино</a>
+
+  <section class="course-intro">
+    <p class="course-kicker">Курс</p>
+    <h1>Введение в физику нейтрино</h1>
+    <p>
+      Вводный курс по физике нейтрино. Сейчас доступны три опубликованные
+      HTML-лекции, перенесенные из общего проекта карты сайта в отдельный
+      проект раздела.
+    </p>
+  </section>
+
+  <section class="course-accordion" aria-label="Лекции вводного курса">
+    <details class="course-row" open>
+      <summary>
+        <span class="course-row-kind">01</span>
+        <span>Введение в физику нейтрино</span>
+      </summary>
+      <div class="course-row-body">
+        <div class="course-links">
+          <a href="Introduction/">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="course-row">
+      <summary>
+        <span class="course-row-kind">02</span>
+        <span>Пространственная четность</span>
+      </summary>
+      <div class="course-row-body">
+        <div class="course-links">
+          <a href="Parity/">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="course-row">
+      <summary>
+        <span class="course-row-kind">03</span>
+        <span>Спиральность нейтрино</span>
+      </summary>
+      <div class="course-row-body">
+        <div class="course-links">
+          <a href="Helicity/">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+  </section>
+</div>
+```
