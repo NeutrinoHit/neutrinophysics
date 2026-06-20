@@ -3,7 +3,7 @@ project:
   render:
     - slides/*.qmd
 
-lang: ru
+lang: en
 
 format:
   revealjs:
@@ -14,14 +14,14 @@ format:
     html-math-method: mathjax
     include-after-body:
       text: |
-        <script data-external="1" data-context-home="../index.html" data-context-home-label="Мини-курс" src="../../shared/reveal/neutrinohit-reveal-footer.js"></script>
+        <script data-external="1" data-context-home="../index.html" data-context-home-label="Mini-course" src="../../shared/reveal/neutrinohit-reveal-footer.js"></script>
     footer: "Solar Neutrino Masterclass · Baikal School · D. Naumov"
     embed-resources: true
     slide-number: true
     slide-level: 2
     toc: true
     toc-depth: 1
-    toc-title: "Карта занятия"
+    toc-title: "Lesson Map"
     transition: fade
     width: 1280
     height: 720

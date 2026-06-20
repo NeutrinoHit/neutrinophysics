@@ -35,7 +35,7 @@ website:
       - href: introduction/index.qmd
         text: Введение
       - href: solar-neutrino-masterclass/index.qmd
-        text: Солнечные нейтрино
+        text: Solar Neutrinos
       - href: https://neutrinohit.github.io/lectures.html
         text: Все лекции
   page-footer:

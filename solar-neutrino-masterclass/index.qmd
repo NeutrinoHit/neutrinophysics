@@ -1,5 +1,6 @@
 ---
-title: "Солнечные нейтрино"
+title: "Solar Neutrinos"
+lang: en
 toc: false
 ---
 
@@ -11,26 +12,26 @@ toc: false
 </style>
 
 <div class="course-index course-subpage">
-  <a class="course-back-link" href="../index.html">← Все материалы по физике нейтрино</a>
+  <a class="course-back-link" href="../index.html">← All neutrino physics materials</a>
 
   <section class="course-intro">
-    <p class="course-kicker">Мини-курс</p>
-    <h1>Солнечные нейтрино</h1>
+    <p class="course-kicker">Mini-course</p>
+    <h1>Solar Neutrinos</h1>
     <p>
-      Трехзанятийный мастер-класс: от солнечных потоков и спектров к MSW,
-      toy Super-Kamiokande-like detector, псевдоэксперименту и fit.
+      A three-session masterclass: from solar fluxes and spectra to MSW,
+      a toy Super-Kamiokande-like detector, a pseudoexperiment, and a fit.
     </p>
   </section>
 
-  <section class="course-accordion" aria-label="Занятия мастер-класса">
+  <section class="course-accordion" aria-label="Masterclass lessons">
     <details class="course-row" open>
       <summary>
         <span class="course-row-kind">01</span>
-        <span>Солнечные нейтрино: источник, реакции, потоки</span>
+        <span>Solar Neutrinos: Sources, Reactions, Fluxes</span>
       </summary>
       <div class="course-row-body">
         <div class="course-links">
-          <a href="slides/01_solar_sources.html">Открыть слайды</a>
+          <a href="slides/01_solar_sources.html">Open slides</a>
         </div>
       </div>
     </details>
@@ -38,11 +39,11 @@ toc: false
     <details class="course-row">
       <summary>
         <span class="course-row-kind">02</span>
-        <span>MSW-осцилляции, детектор и псевдоэксперимент</span>
+        <span>MSW Oscillations, Detector, and Pseudoexperiment</span>
       </summary>
       <div class="course-row-body">
         <div class="course-links">
-          <a href="slides/02_msw_detector_statistics.html">Открыть слайды</a>
+          <a href="slides/02_msw_detector_statistics.html">Open slides</a>
         </div>
       </div>
     </details>
@@ -50,25 +51,25 @@ toc: false
     <details class="course-row">
       <summary>
         <span class="course-row-kind">03</span>
-        <span>Защита мини-проектов</span>
+        <span>Mini-Project Defense</span>
       </summary>
       <div class="course-row-body">
         <div class="course-links">
-          <a href="slides/03_student_defense.html">Открыть слайды</a>
+          <a href="slides/03_student_defense.html">Open slides</a>
         </div>
       </div>
     </details>
   </section>
 
   <section class="course-intro">
-    <h2>Материалы для работы</h2>
+    <h2>Working Materials</h2>
     <div class="course-links">
       <a href="data/solar_fluxes_reference.csv">Solar flux table</a>
       <a href="notebooks/01_solar_fluxes_and_spectra.ipynb">Notebook 1</a>
       <a href="notebooks/02_msw_survival_probability.ipynb">Notebook 2</a>
       <a href="notebooks/03_sk_like_detector.ipynb">Notebook 3</a>
       <a href="notebooks/04_pseudoexperiment_and_fit.ipynb">Notebook 4</a>
-      <a href="assignments/defense_requirements.html">Требования к защите</a>
+      <a href="assignments/defense_requirements.html">Defense requirements</a>
     </div>
   </section>
 </div>

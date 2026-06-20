@@ -1,53 +1,54 @@
 ---
 title: "Defense Requirements"
+lang: en
 format:
   html:
     toc: true
 ---
 
-# Формат
+# Format
 
-Каждая команда:
-
-```text
-7 минут доклад + 3 минуты вопросы
-```
-
-Для трех команд:
+Each team:
 
 ```text
-3 команды × 10 минут = 30 минут
+7 minutes for the talk + 3 minutes for questions
 ```
 
-После этого 15-20 минут общая сверка.
+For three teams:
 
-# Что должно быть показано
+```text
+3 teams x 10 minutes = 30 minutes
+```
 
-1. Физическая постановка.
-2. Использованные формулы.
-3. Один ключевой фрагмент кода.
-4. Главный график.
-5. Численный результат.
-6. Что в модели является toy approximation.
-7. Какой следующий шаг сделал бы анализ более реалистичным.
+After that, there is a 15-20 minute common checkpoint discussion.
 
-# Критерии оценки
+# What Must Be Shown
 
-- связь physics question -> model -> code -> result;
-- воспроизводимость notebook;
-- понятные axes, units and labels;
-- корректное использование Poisson statistics;
-- честное описание approximations.
+1. Physics question.
+2. Formulas used.
+3. One key code fragment.
+4. Main plot.
+5. Numerical result.
+6. What is a toy approximation in the model.
+7. Which next step would make the analysis more realistic.
 
-# Типичные ошибки
+# Evaluation Criteria
 
-- toy model presented as precision result;
+- connection between physics question -> model -> code -> result;
+- reproducible notebook;
+- clear axes, units, and labels;
+- correct use of Poisson statistics;
+- honest description of approximations.
+
+# Typical Mistakes
+
+- toy model presented as a precision result;
 - no units on plot axes;
-- no random seed in pseudoexperiment;
-- no statement of likelihood;
+- no random seed in the pseudoexperiment;
+- no statement of the likelihood;
 - conclusion does not follow from the plotted result.
 
-# Финальный чеклист
+# Final Checklist
 
 - notebook runs top to bottom;
 - report template is filled;

@@ -1,142 +1,142 @@
 ---
-title: "Защита мини-проектов"
-subtitle: "Занятие 3 · Solar Neutrino Masterclass"
+title: "Mini-Project Defense"
+subtitle: "Lesson 3 · Solar Neutrino Masterclass"
 author: "Dmitry V. Naumov"
 institute: "Baikal School"
 date: "June 2026"
 ---
 
-# Формат
+# Format
 
-## Цель защиты
+## Defense Goal
 
-Команда должна показать короткий научный результат:
-
-::: {.compact}
-- ясная physics question;
-- минимальная модель;
-- воспроизводимый код;
-- график;
-- численный вывод;
-- честное описание toy approximations.
-:::
-
-## Регламент
-
-Для каждой команды:
-
-```text
-7 минут доклад + 3 минуты вопросы
-```
-
-Если команд три:
-
-```text
-3 команды × 10 минут = 30 минут
-```
-
-После докладов:
-
-```text
-15-20 минут общая сверка
-```
-
-## Что должно быть показано
-
-Каждая команда показывает:
+Each team should present a short scientific result:
 
 ::: {.compact}
-1. Физическую постановку.
-2. Использованные формулы.
-3. Один ключевой фрагмент кода.
-4. Главный график.
-5. Численный результат.
-6. Что в модели является toy approximation.
-7. Какой следующий шаг сделал бы анализ более реалистичным.
+- clear physics question;
+- minimal model;
+- reproducible code;
+- plot;
+- numerical conclusion;
+- honest description of toy approximations.
 :::
 
-# Содержание доклада
+## Timing
 
-## Required plots
+For each team:
 
-Минимальный набор на весь мастер-класс:
+```text
+7 minutes for the talk + 3 minutes for questions
+```
+
+If there are three teams:
+
+```text
+3 teams x 10 minutes = 30 minutes
+```
+
+After the talks:
+
+```text
+15-20 minutes for a common checkpoint discussion
+```
+
+## What Must Be Shown
+
+Each team shows:
+
+::: {.compact}
+1. Physics question.
+2. Formulas used.
+3. One key code fragment.
+4. Main plot.
+5. Numerical result.
+6. What is a toy approximation in the model.
+7. Which next step would make the analysis more realistic.
+:::
+
+# Talk Content
+
+## Required Plots
+
+Minimum set for the full masterclass:
 
 ::: {.compact}
 - solar fluxes;
-- \(^{8}\mathrm{B}\)-spectrum;
+- $^{8}\mathrm{B}$ spectrum;
 - electron density profile;
-- \(P_{ee}(E)\);
+- $P_{ee}(E)$;
 - expected vs pseudo-observed spectrum;
-- \(\chi^2\)-scan или contour.
+- $\chi^2$ scan or contour.
 :::
 
-Команда не обязана показывать все, но должна показать свой главный график.
+A team does not need to show all of them, but it must show its main plot.
 
-## Required code fragment
+## Required Code Fragment
 
-Покажите один короткий фрагмент, который действительно определяет результат:
+Show one short fragment that actually determines the result:
 
 ::: {.compact}
-- normalization of spectrum;
+- spectrum normalization;
 - survival probability grid;
 - expected events;
 - pseudo-data generation;
 - Poisson chi-square.
 :::
 
-Код должен быть короче экрана и связан с главным графиком.
+The code should fit on one slide and be connected to the main plot.
 
-## Required physics statement
+## Required Physics Statement
 
-Физический вывод должен быть конкретным:
+The physics conclusion must be specific:
 
 ::: {.compact}
-- не «осцилляции важны»;
-- а «high-energy \(^{8}\mathrm{B}\) events are suppressed toward \(P_{ee}\sim\sin^2\theta_{12}\) in the MSW regime»;
-- или «threshold changes mostly the low-energy side of the expected spectrum».
+- not "oscillations are important";
+- but "high-energy $^{8}\mathrm{B}$ events are suppressed toward $P_{ee}\sim\sin^2\theta_{12}$ in the MSW regime";
+- or "the threshold mostly changes the low-energy side of the expected spectrum".
 :::
 
-## Toy approximations
+## Toy Approximations
 
-Обязательно назвать:
+You must state:
 
 ::: {.compact}
 - fluxes are inputs, not a solved solar model;
-- \(^{8}\mathrm{B}\)-spectrum may be toy beta-like shape;
+- the $^{8}\mathrm{B}$ spectrum may be a toy beta-like shape;
 - detector response is schematic;
-- \(\nu e\)-cross-section is simplified;
+- the $\nu e$ cross section is simplified;
 - backgrounds and systematics are not realistic unless explicitly added.
 :::
 
-# Оценка
+# Evaluation
 
-## Критерии
+## Criteria
 
-Оценивается:
-
-::: {.compact}
-- физическая корректность постановки;
-- воспроизводимость кода;
-- качество графика;
-- наличие численного результата;
-- понимание ограничений модели;
-- связь между формулой, кодом и результатом.
-:::
-
-## Типичные ошибки
+We evaluate:
 
 ::: {.compact}
-- toy model presented as precision result;
-- график без единиц и подписи осей;
-- fit без указания likelihood;
-- \(n_i=0\) incorrectly handled in Poisson chi-square;
-- отсутствие seed для псевдоэксперимента;
-- вывод не связан с показанным графиком.
+- physical correctness of the setup;
+- reproducibility of the code;
+- quality of the plot;
+- presence of a numerical result;
+- understanding of model limitations;
+- connection between formula, code, and result.
 :::
 
-## Финальный чеклист
+## Typical Mistakes
 
-Перед докладом проверить:
+::: {.compact}
+- toy model presented as a precision result;
+- plot without units and axis labels;
+- fit without stating the likelihood;
+- $n_i=0$ incorrectly handled in Poisson chi-square;
+- no random seed for the pseudoexperiment;
+- conclusion not connected to the plotted result.
+:::
+
+## Final Checklist
+
+Before the talk, check:
 
 ::: {.compact}
 - notebook runs top to bottom;
@@ -147,20 +147,20 @@ date: "June 2026"
 - report template is filled enough to be readable.
 :::
 
-## Общая сверка
+## Common Checkpoint
 
-После докладов сравниваем:
+After the talks, we compare:
 
 ::: {.compact}
-- какие входы влияли сильнее всего;
-- где появляются основные approximations;
-- что изменится при real detector response;
-- какие данные нужно заменить на verified references.
+- which inputs had the strongest effect;
+- where the main approximations enter;
+- what changes with a real detector response;
+- which data must be replaced by verified references.
 :::
 
 ## Closing
 
-Финальная линия проекта:
+The final line of the project:
 
 $$
 \text{solar model inputs}
@@ -174,4 +174,4 @@ $$
 \text{scientific conclusion}.
 $$
 
-Главный результат должен быть воспроизводимым и честно ограниченным.
+The main result must be reproducible and honestly limited.

@@ -23,4 +23,4 @@ https://neutrinohit.github.io/neutrinophysics/
 ## Contents
 
 - `introduction/` — курс "Введение в физику нейтрино";
-- `solar-neutrino-masterclass/` — мини-курс "Солнечные нейтрино".
+- `solar-neutrino-masterclass/` — mini-course "Solar Neutrinos".

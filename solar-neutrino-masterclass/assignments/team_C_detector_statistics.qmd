@@ -1,15 +1,16 @@
 ---
 title: "Team C: Detector and Statistics"
+lang: en
 format:
   html:
     toc: true
 ---
 
-# Цель
+# Goal
 
-Перейти от \(^{8}\mathrm{B}\)-spectrum and \(P_{ee}(E)\) к expected event spectrum, pseudo-data and fit.
+Move from the $^{8}\mathrm{B}$ spectrum and $P_{ee}(E)$ to an expected event spectrum, pseudo-data, and a fit.
 
-# Входные данные
+# Input Data
 
 - `data/b8_spectrum.csv`
 - `src/solar_neutrino/detector.py`
@@ -18,29 +19,29 @@ format:
 - `notebooks/03_sk_like_detector.ipynb`
 - `notebooks/04_pseudoexperiment_and_fit.ipynb`
 
-# Что нужно построить
+# What to Plot
 
 - expected event spectrum;
 - expected vs pseudo-observed plot;
-- \(\Delta\chi^2\) scan или 2D contour.
+- $\Delta\chi^2$ scan or 2D contour.
 
-# Что нужно объяснить
+# What to Explain
 
-- что такое toy SK-like response;
-- why Poisson likelihood is used;
-- how \(n_i=0\) is handled;
-- what changes when threshold, exposure or background changes.
+- what a toy SK-like response means;
+- why a Poisson likelihood is used;
+- how $n_i=0$ is handled;
+- what changes when the threshold, exposure, or background changes.
 
-# Что нужно сдать
+# What to Submit
 
 - executed notebook;
 - one defense slide with fit result;
-- short report paragraph about statistical model.
+- short report paragraph about the statistical model.
 
-# Минимальный результат
+# Minimum Result
 
 Best-fit normalization and an approximate 1D confidence interval.
 
-# Дополнительное задание
+# Advanced Task
 
-Добавить simple background model and show how the best fit shifts.
+Add a simple background model and show how the best fit shifts.

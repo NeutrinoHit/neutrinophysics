@@ -1,5 +1,6 @@
 ---
 title: "Solar Neutrino Mini-Project"
+lang: en
 author: "Team name"
 date: today
 bibliography: references.bib
@@ -25,7 +26,7 @@ Write the minimum equations used in the project. Explain which parts are physica
 List the data files and reference values used:
 
 - solar flux table;
-- \(^{8}\mathrm{B}\)-spectrum;
+- $^{8}\mathrm{B}$-spectrum;
 - electron density profile;
 - detector response parameters.
 
@@ -50,7 +51,7 @@ confidence interval =
 State explicitly:
 
 - fluxes are inputs, not a solved solar model;
-- \(^{8}\mathrm{B}\)-spectrum may be a toy beta-like shape;
+- $^{8}\mathrm{B}$-spectrum may be a toy beta-like shape;
 - detector response is schematic;
 - backgrounds and systematics are simplified or absent.
 

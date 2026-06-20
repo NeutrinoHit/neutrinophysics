@@ -1,42 +1,43 @@
 ---
 title: "Team A: Solar Sources"
+lang: en
 format:
   html:
     toc: true
 ---
 
-# Цель
+# Goal
 
-Проверить входные solar fluxes, построить иерархию потоков и объяснить, какие источники важны для detector stage.
+Check the input solar fluxes, plot the flux hierarchy, and explain which sources matter for the detector stage.
 
-# Входные данные
+# Input Data
 
 - `data/solar_fluxes_reference.csv`
 - `data/be7_lines.csv`
 - `data/b8_spectrum.csv`
 - `notebooks/01_solar_fluxes_and_spectra.ipynb`
 
-# Что нужно построить
+# What to Plot
 
-- bar plot потоков на logarithmic scale;
-- один дополнительный plot или table для выбранного источника.
+- bar plot of fluxes on a logarithmic scale;
+- one additional plot or table for the selected source.
 
-# Что нужно объяснить
+# What to Explain
 
-- почему pp-поток самый большой;
-- почему \(^{8}\mathrm{B}\)-поток мал, но важен для water Cherenkov detector;
-- где используется toy input and where a verified SSM table would be needed.
+- why the pp flux is the largest;
+- why the $^{8}\mathrm{B}$ flux is small but important for a water Cherenkov detector;
+- where a toy input is used and where a verified SSM table would be needed.
 
-# Что нужно сдать
+# What to Submit
 
 - notebook with plots;
-- one slide for defense;
-- short paragraph for report.
+- one slide for the defense;
+- short paragraph for the report.
 
-# Минимальный результат
+# Minimum Result
 
-График потоков и физический вывод о flux hierarchy.
+A flux plot and a physics conclusion about the flux hierarchy.
 
-# Дополнительное задание
+# Advanced Task
 
-Сравнить high-Z and low-Z SSM flux tables, если преподаватель даст внешнюю reference table.
+Compare high-Z and low-Z SSM flux tables if the teacher provides an external reference table.

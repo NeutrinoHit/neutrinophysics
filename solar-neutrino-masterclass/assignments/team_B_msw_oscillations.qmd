@@ -1,43 +1,44 @@
 ---
 title: "Team B: MSW Oscillations"
+lang: en
 format:
   html:
     toc: true
 ---
 
-# Цель
+# Goal
 
-Построить survival probability \(P_{ee}(E)\) для солнечных нейтрино в двухфлейворной MSW-модели.
+Build the survival probability $P_{ee}(E)$ for solar neutrinos in a two-flavor MSW model.
 
-# Входные данные
+# Input Data
 
 - `data/electron_density_profile_toy.csv`
 - `src/solar_neutrino/oscillations.py`
 - `notebooks/02_msw_survival_probability.ipynb`
 
-# Что нужно построить
+# What to Plot
 
-- toy electron density profile;
-- \(P_{ee}(E)\) on \(0.1-15\) MeV;
-- comparison for at least two values of \(\theta_{12}\).
+- toy electron-density profile;
+- $P_{ee}(E)$ on $0.1-15$ MeV;
+- comparison for at least two values of $\theta_{12}$.
 
-# Что нужно объяснить
+# What to Explain
 
-- low-energy vacuum averaged limit;
+- low-energy vacuum-averaged limit;
 - high-energy MSW-dominated limit;
-- resonance condition \(2EV_e=\Delta m^2\cos2\theta\);
+- resonance condition $2EV_e=\Delta m^2\cos2\theta$;
 - why this is still a toy two-flavor treatment.
 
-# Что нужно сдать
+# What to Submit
 
-- notebook with \(P_{ee}(E)\);
+- notebook with $P_{ee}(E)$;
 - one defense slide with formula and plot;
 - statement of the approximations.
 
-# Минимальный результат
+# Minimum Result
 
-График \(P_{ee}(E)\) and the numerical low/high-energy limits.
+A $P_{ee}(E)$ plot and the numerical low/high-energy limits.
 
-# Дополнительное задание
+# Advanced Task
 
-Сделать scan по \(\sin^2\theta_{12}\) and \(\Delta m^2_{21}\), затем показать, как меняется \(P_{ee}(E)\).
+Scan $\sin^2\theta_{12}$ and $\Delta m^2_{21}$, then show how $P_{ee}(E)$ changes.

@@ -1,29 +1,29 @@
 ---
-title: "MSW-осцилляции, детектор и псевдоэксперимент"
-subtitle: "Занятие 2 · от солнечного потока к fit"
+title: "MSW Oscillations, Detector, and Pseudoexperiment"
+subtitle: "Lesson 2 · from solar flux to fit"
 author: "Dmitry V. Naumov"
 institute: "Baikal School"
 date: "June 2026"
 ---
 
-# Ориентация
+# Orientation
 
-## Что уже есть
+## What We Already Have
 
-После занятия 1 у нас есть:
+After lesson 1, we have:
 
 ::: {.compact}
-- таблица потоков;
-- toy \(^{8}\mathrm{B}\)-spectrum;
-- toy electron density profile;
-- energy grid for numerical work.
+- a flux table;
+- a toy $^{8}\mathrm{B}$ spectrum;
+- a toy electron-density profile;
+- an energy grid for numerical work.
 :::
 
-Теперь нужно получить ожидаемый спектр событий.
+Now we need to obtain the expected event spectrum.
 
-## Цель занятия 2
+## Goal of Lesson 2
 
-Построить цепочку:
+Build the chain:
 
 $$
 \Phi_{^{8}\mathrm{B}}(E)
@@ -37,19 +37,19 @@ n_i
 \chi^2(\theta).
 $$
 
-Итоговый обязательный результат:
+Required final result:
 
 ::: {.compact}
 - best-fit normalization;
-- best-fit effective \(P_{ee}\);
-- 1D confidence interval или 2D contour.
+- best-fit effective $P_{ee}$;
+- a 1D confidence interval or a 2D contour.
 :::
 
 # MSW
 
-## Flavor evolution equation
+## Flavor Evolution Equation
 
-Двухфлейворная эволюция:
+Two-flavor evolution:
 
 $$
 i\frac{d}{dx}\nu_f = H_f(x)\nu_f.
@@ -78,7 +78,7 @@ H_{\rm vac} =
 \end{pmatrix}.
 $$
 
-Для solar sector:
+For the solar sector:
 
 $$
 \theta\approx\theta_{12},
@@ -86,17 +86,17 @@ $$
 \Delta m^2\approx\Delta m^2_{21}.
 $$
 
-## Matter potential
+## Matter Potential
 
-Электронные нейтрино имеют дополнительный coherent forward scattering term:
+Electron neutrinos have an additional coherent forward-scattering term:
 
 $$
 V_e(x)=\sqrt{2}G_F n_e(x).
 $$
 
-Для \(\nu_x\) общий neutral-current вклад сокращается в двухфлейворном описании.
+For $\nu_x$, the common neutral-current contribution cancels in the two-flavor description.
 
-## Full two-flavor Hamiltonian
+## Full Two-Flavor Hamiltonian
 
 $$
 H_f =
@@ -112,15 +112,15 @@ V_e(x) & 0 \\
 \end{pmatrix}.
 $$
 
-Единицы в `src/solar_neutrino/oscillations.py`:
+Units in `src/solar_neutrino/oscillations.py`:
 
 ::: {.compact}
-- \(E\) in MeV;
-- \(n_e\) in cm\(^{-3}\);
-- \(V_e\) in eV.
+- $E$ in MeV;
+- $n_e$ in cm$^{-3}$;
+- $V_e$ in eV.
 :::
 
-## Matter mixing angle
+## Matter Mixing Angle
 
 $$
 \tan 2\theta_m =
@@ -130,35 +130,35 @@ $$
 
 Matter modifies the effective mixing angle, not the vacuum parameters themselves.
 
-## Resonance condition
+## Resonance Condition
 
 $$
 2EV_e=\Delta m^2\cos2\theta.
 $$
 
-При этом:
+At resonance:
 
 $$
 \theta_m = \frac{\pi}{4}.
 $$
 
-Для разных \(E_\nu\) resonance occurs at different electron densities.
+For different $E_\nu$, the resonance occurs at different electron densities.
 
-## Physical interpretation
+## Physical Interpretation
 
 ::: {.compact}
-- Low-energy solar neutrinos: closer to vacuum averaged regime.
-- High-energy \(^{8}\mathrm{B}\) neutrinos: MSW-dominated regime.
-- При хорошей адиабатичности high-energy limit:
+- Low-energy solar neutrinos: closer to the vacuum-averaged regime.
+- High-energy $^{8}\mathrm{B}$ neutrinos: MSW-dominated regime.
+- With good adiabaticity, the high-energy limit is:
 :::
 
 $$
 P_{ee}\sim \sin^2\theta_{12}.
 $$
 
-## Low-energy limit
+## Low-Energy Limit
 
-Для vacuum averaged two-flavor oscillations:
+For vacuum-averaged two-flavor oscillations:
 
 $$
 P_{ee}^{\rm low}
@@ -166,15 +166,15 @@ P_{ee}^{\rm low}
 1-\frac{1}{2}\sin^2 2\theta_{12}.
 $$
 
-Для \(\sin^2\theta_{12}\approx 0.31\):
+For $\sin^2\theta_{12}\approx 0.31$:
 
 $$
 P_{ee}^{\rm low}\approx 0.57.
 $$
 
-## High-energy MSW limit
+## High-Energy MSW Limit
 
-В адиабатическом high-density limit:
+In the adiabatic high-density limit:
 
 $$
 P_{ee}^{\rm high}
@@ -182,13 +182,13 @@ P_{ee}^{\rm high}
 \sin^2\theta_{12}.
 $$
 
-Численно:
+Numerically:
 
 $$
 P_{ee}^{\rm high}\approx 0.31.
 $$
 
-## Код: Hamiltonian
+## Code: Hamiltonian
 
 ```python
 import numpy as np
@@ -205,7 +205,7 @@ def hamiltonian_2flavor(E, ne, dm2, theta):
     return vacuum + matter
 ```
 
-## Код: survival probability grid
+## Code: Survival Probability Grid
 
 ```python
 import numpy as np
@@ -219,17 +219,17 @@ E_grid = np.linspace(0.1, 15.0, 200)
 Pee = compute_survival_probability_grid(E_grid, params)
 ```
 
-## График \(P_{ee}(E)\)
+## $P_{ee}(E)$ Plot
 
 ![](../assets/figures/pee_grid.png){width="74%" .slide-image-center fig-alt="Two-flavor adiabatic survival probability"}
 
 ::: {.media-caption}
-Используется adiabatic two-flavor toy approximation. Это учебный baseline, не полный глобальный solar fit.
+This uses an adiabatic two-flavor toy approximation. It is a pedagogical baseline, not a full global solar fit.
 :::
 
-## Что достигает Земли
+## What Reaches Earth
 
-Детектор видит не исходный поток \(\nu_e\), а смесь flavor states:
+The detector sees not the original $\nu_e$ flux, but a mixture of flavor states:
 
 $$
 \Phi_e(E) = \Phi_{\rm source}(E)P_{ee}(E),
@@ -239,13 +239,13 @@ $$
 \Phi_x(E) = \Phi_{\rm source}(E)\left[1-P_{ee}(E)\right].
 $$
 
-В water Cherenkov detector \(\nu_x e\)-scattering тоже дает вклад, но меньший.
+In a water Cherenkov detector, $\nu_x e$-scattering also contributes, but with a smaller cross section.
 
 # Detector
 
-## Detector sees events, not flux
+## Detector Sees Events, Not Flux
 
-Измеряемая величина:
+Measured quantities include:
 
 ::: {.compact}
 - reconstructed energy;
@@ -255,27 +255,27 @@ $$
 - systematic uncertainties.
 :::
 
-На мастер-классе оставляем только essentials.
+In the masterclass, we keep only the essentials.
 
-## \(\nu e\)-scattering
+## $\nu e$-Scattering
 
-Основной канал для SK-like solar analysis:
+The main channel for an SK-like solar analysis:
 
 $$
 \nu + e^- \to \nu + e^-.
 $$
 
-\(\nu_e\) имеет charged-current + neutral-current contribution.
+$\nu_e$ has charged-current + neutral-current contributions.
 
-\(\nu_{\mu,\tau}\) имеет только neutral-current contribution.
+$\nu_{\mu,\tau}$ has only the neutral-current contribution.
 
-## Почему toy SK-like detector
+## Why a Toy SK-Like Detector
 
 ::: {.toy}
-Мы не делаем full Super-Kamiokande Monte Carlo. Detector response здесь нужен, чтобы увидеть переход от flux к event spectrum.
+We do not build a full Super-Kamiokande Monte Carlo. The detector response is included to show how a flux becomes an event spectrum.
 :::
 
-Реальный анализ потребовал бы:
+A real analysis would require:
 
 ::: {.compact}
 - detector calibration;
@@ -285,7 +285,7 @@ $$
 - covariance matrices.
 :::
 
-## Учебная rate formula
+## Pedagogical Rate Formula
 
 $$
 N_i =
@@ -299,9 +299,9 @@ R(E_{\rm rec},T_e)
 \epsilon(E_{\rm rec}).
 $$
 
-## Упрощенная формула
+## Simplified Formula
 
-Для базового кода:
+For the base code:
 
 $$
 N_i =
@@ -313,16 +313,16 @@ P_{ee}(E)
 \epsilon(E).
 $$
 
-Здесь \(A\) включает exposure, число электронов и перевод единиц.
+Here $A$ includes exposure, the number of electrons, and unit conversion.
 
-## Toy cross-section
+## Toy Cross Section
 
 ```python
 def toy_cross_section(E):
     return E
 ```
 
-В package:
+In the package:
 
 ```python
 from solar_neutrino.cross_sections import (
@@ -332,7 +332,7 @@ from solar_neutrino.cross_sections import (
 ```
 
 ::: {.toy}
-Сечения пропорциональны энергии и заданы в arbitrary units.
+The cross sections are proportional to energy and use arbitrary units.
 :::
 
 ## Efficiency
@@ -342,24 +342,24 @@ def detector_efficiency(E):
     return 1 / (1 + np.exp(-(E - 4.5) / 0.4))
 ```
 
-Порог около 4.5 MeV задает, какая часть \(^{8}\mathrm{B}\)-spectrum реально участвует в анализе.
+A threshold near 4.5 MeV determines which part of the $^{8}\mathrm{B}$ spectrum enters the analysis.
 
-## Energy resolution
+## Energy Resolution
 
 ```python
 def energy_resolution_sigma(E):
     return 0.15 * np.sqrt(E)
 ```
 
-Смысл:
+Meaning:
 
 ::: {.compact}
-- true electron energy не равна reconstructed energy;
-- узкие features размываются;
-- bins становятся correlated in real detector response.
+- true electron energy is not equal to reconstructed energy;
+- narrow features are smeared;
+- bins become correlated in a real detector response.
 :::
 
-## Expected event spectrum
+## Expected Event Spectrum
 
 ```python
 from solar_neutrino.detector import efficiency, expected_events
@@ -374,35 +374,35 @@ expected = expected_events(
 )
 ```
 
-## График expected spectrum
+## Expected Spectrum Plot
 
 ![](../assets/figures/expected_spectrum.png){width="74%" .slide-image-center fig-alt="Expected event spectrum"}
 
 ::: {.media-caption}
-Форма определяется product: spectrum \(\times\) survival probability \(\times\) cross-section \(\times\) efficiency.
+The shape is determined by the product: spectrum $\times$ survival probability $\times$ cross section $\times$ efficiency.
 :::
 
-## Background model
+## Background Model
 
-Минимально:
+Minimal model:
 
 $$
 \mu_i = s_i + b_i.
 $$
 
-В базовой задаче можно взять:
+For the base task, one may use:
 
 ::: {.compact}
-- \(b_i=0\);
+- $b_i=0$;
 - constant background;
-- exponential background для threshold region.
+- exponential background in the threshold region.
 :::
 
-Advanced task: проверить, как best fit меняется при добавлении фона.
+Advanced task: check how the best fit changes when a background is added.
 
 # Pseudoexperiment
 
-## Псевдоданные
+## Pseudo-Data
 
 ```python
 import numpy as np
@@ -411,21 +411,21 @@ rng = np.random.default_rng(12345)
 observed = rng.poisson(expected)
 ```
 
-В package:
+In the package:
 
 ```python
 from solar_neutrino.pseudoexperiment import generate_poisson_data
 ```
 
-## Expected vs observed
+## Expected vs Observed
 
 ![](../assets/figures/expected_vs_observed.png){width="76%" .slide-image-center fig-alt="Expected and pseudo-observed events"}
 
 ::: {.media-caption}
-Разброс между точками и template является Poisson fluctuation.
+The difference between points and the template is a Poisson fluctuation.
 :::
 
-## Poisson chi-square
+## Poisson Chi-Square
 
 $$
 \chi^2(\theta)=
@@ -435,13 +435,13 @@ $$
 \right].
 $$
 
-Для \(n_i=0\) логарифмический член берется равным нулю:
+For $n_i=0$, the logarithmic term is set to zero:
 
 $$
 n_i\ln(n_i/\mu_i)\to 0.
 $$
 
-## Fit normalization
+## Fit Normalization
 
 ```python
 from solar_neutrino.fit import scan_normalization, find_best_fit
@@ -451,34 +451,34 @@ scan = scan_normalization(observed, template, norm_grid)
 best = find_best_fit(scan)
 ```
 
-Результат:
+Result:
 
 ```text
 best-fit normalization
 ```
 
-## \(\chi^2\)-scan
+## $\chi^2$ Scan
 
 ![](../assets/figures/chi2_scan.png){width="74%" .slide-image-center fig-alt="One-dimensional chi-square scan"}
 
 ::: {.media-caption}
-Для одного параметра \(\Delta\chi^2=1\) дает approximate 68% interval.
+For one parameter, $\Delta\chi^2=1$ gives an approximate 68% interval.
 :::
 
-## Fit effective \(P_{ee}\)
+## Fit Effective $P_{ee}$
 
-Можно заменить energy-dependent \(P_{ee}(E)\) на один параметр:
+One can replace energy-dependent $P_{ee}(E)$ by a single parameter:
 
 $$
 \mu_i(P_{ee}^{\rm eff}) =
 A \int_i dE\,\Phi(E)\,P_{ee}^{\rm eff}\sigma(E)\epsilon(E).
 $$
 
-Это грубая, но полезная проверка detector/statistics pipeline.
+This is a crude but useful test of the detector/statistics pipeline.
 
-## Optional 2D scan
+## Optional 2D Scan
 
-Для сильных студентов:
+For stronger students:
 
 $$
 \sin^2\theta_{12}
@@ -486,7 +486,7 @@ $$
 \Delta m^2_{21}.
 $$
 
-Или более простой 2D scan:
+Or a simpler 2D scan:
 
 $$
 A
@@ -499,49 +499,49 @@ $$
 ![](../assets/figures/contour_scan.png){width="62%" .slide-image-center fig-alt="Two-parameter contour"}
 
 ::: {.media-caption}
-Контур показывает degeneracy between normalization and effective survival probability in a toy model.
+The contour shows the degeneracy between normalization and effective survival probability in a toy model.
 :::
 
-# Работа команд
+# Team Work
 
-## Команда A: MSW
+## Team A: MSW
 
-Задания:
+Tasks:
 
 ::: {.compact}
-1. Построить \(P_{ee}(E)\).
-2. Показать low-energy и high-energy limits.
-3. Изменить \(\theta_{12}\) и показать влияние на график.
-4. Подготовить один слайд с физическим выводом.
+1. Plot $P_{ee}(E)$.
+2. Show the low-energy and high-energy limits.
+3. Change $\theta_{12}$ and show the effect on the plot.
+4. Prepare one slide with a physics conclusion.
 :::
 
-## Команда B: detector response
+## Team B: Detector Response
 
-Задания:
+Tasks:
 
 ::: {.compact}
-1. Взять \(^{8}\mathrm{B}\)-spectrum.
-2. Применить \(P_{ee}(E)\).
-3. Применить toy cross-section and efficiency.
-4. Получить expected spectrum.
-5. Исследовать влияние energy threshold.
+1. Take the $^{8}\mathrm{B}$ spectrum.
+2. Apply $P_{ee}(E)$.
+3. Apply the toy cross section and efficiency.
+4. Obtain the expected spectrum.
+5. Study the effect of the energy threshold.
 :::
 
-## Команда C: pseudoexperiment/statistics
+## Team C: Pseudoexperiment and Statistics
 
-Задания:
+Tasks:
 
 ::: {.compact}
-1. Сгенерировать псевдоданные.
-2. Реализовать Poisson chi-square.
-3. Найти best fit.
-4. Построить contour.
-5. Проверить влияние exposure или background.
+1. Generate pseudo-data.
+2. Implement the Poisson chi-square.
+3. Find the best fit.
+4. Plot a contour.
+5. Check the effect of exposure or background.
 :::
 
-## Если команд две
+## If There Are Two Teams
 
-Команда A:
+Team A:
 
 ::: {.compact}
 - Sun inputs;
@@ -549,7 +549,7 @@ $$
 - physical interpretation.
 :::
 
-Команда B:
+Team B:
 
 ::: {.compact}
 - detector response;
@@ -557,35 +557,35 @@ $$
 - fit and confidence interval.
 :::
 
-# Сверка
+# Checkpoint
 
 ## Checkpoint
 
-К концу занятия 2 должны быть готовы:
+By the end of lesson 2, the following should be ready:
 
 ::: {.compact}
-- \(P_{ee}(E)\) plot;
+- $P_{ee}(E)$ plot;
 - expected event spectrum;
 - pseudo-data plot;
-- \(\chi^2\)-scan или contour;
-- численный best fit.
+- $\chi^2$ scan or contour;
+- numerical best fit.
 :::
 
-## Что подготовить к защите
+## What to Prepare for the Defense
 
-Каждая команда выбирает один главный результат:
+Each team chooses one main result:
 
 ::: {.compact}
-- главный график;
-- формула, которая объясняет график;
-- короткий фрагмент кода;
+- main plot;
+- formula that explains the plot;
+- short code fragment;
 - toy assumptions;
-- следующий шаг к realistic analysis.
+- next step toward a realistic analysis.
 :::
 
-## Переход к занятию 3
+## Transition to Lesson 3
 
-На защите важно не количество графиков, а связность:
+For the defense, the important point is not the number of plots, but the logical chain:
 
 $$
 \text{physics question}

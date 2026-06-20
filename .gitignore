@@ -11,6 +11,7 @@ __pycache__/
 solar-neutrino-masterclass/outputs/
 solar-neutrino-masterclass/notebooks/outputs/
 solar-neutrino-masterclass/slides/*.html
+solar-neutrino-masterclass/slides/*_files/
 solar-neutrino-masterclass/report_template/*.html
 solar-neutrino-masterclass/report_template/*_files/
 solar-neutrino-masterclass/report_template/*.tex

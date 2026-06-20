@@ -60,19 +60,19 @@ toc: false
 
     <details class="course-row">
       <summary>
-        <span class="course-row-kind">Мини-курс</span>
-        <span>Солнечные нейтрино</span>
+        <span class="course-row-kind">Mini-course</span>
+        <span>Solar Neutrinos</span>
       </summary>
       <div class="course-row-body">
         <p>
-          Мастер-класс для школьников: solar model inputs, MSW survival
-          probability, detector spectrum, pseudoexperiment and likelihood fit.
+          A school masterclass: solar model inputs, MSW survival
+          probability, detector spectrum, pseudoexperiment, and likelihood fit.
         </p>
         <div class="course-links">
-          <a href="solar-neutrino-masterclass/">Открыть мини-курс</a>
-          <a href="solar-neutrino-masterclass/slides/01_solar_sources.html">Занятие 1</a>
-          <a href="solar-neutrino-masterclass/slides/02_msw_detector_statistics.html">Занятие 2</a>
-          <a href="solar-neutrino-masterclass/slides/03_student_defense.html">Занятие 3</a>
+          <a href="solar-neutrino-masterclass/">Open mini-course</a>
+          <a href="solar-neutrino-masterclass/slides/01_solar_sources.html">Lesson 1</a>
+          <a href="solar-neutrino-masterclass/slides/02_msw_detector_statistics.html">Lesson 2</a>
+          <a href="solar-neutrino-masterclass/slides/03_student_defense.html">Lesson 3</a>
         </div>
       </div>
     </details>

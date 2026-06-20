@@ -1,8 +1,8 @@
 # Solar Neutrino Masterclass
 
-Quarto-проект для школьного мастер-класса по солнечным нейтрино.
+This is a Quarto project for a school-level masterclass on solar neutrinos.
 
-Педагогическая линия:
+Pedagogical path:
 
 ```text
 solar model inputs
@@ -15,7 +15,7 @@ solar model inputs
 -> short scientific report
 ```
 
-## Установка
+## Installation
 
 ```bash
 cd /Users/dmitrijnaumov/Documents/NeutrinoHit/neutrinophysics/solar-neutrino-masterclass
@@ -25,20 +25,20 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Альтернатива через conda:
+Alternative with conda:
 
 ```bash
 conda env create -f environment.yml
 conda activate solar-neutrino-masterclass
 ```
 
-## Сборка слайдов
+## Rendering Slides
 
 ```bash
 quarto render
 ```
 
-Отдельные занятия:
+Individual lessons:
 
 ```bash
 quarto render slides/01_solar_sources.qmd
@@ -46,78 +46,78 @@ quarto render slides/02_msw_detector_statistics.qmd
 quarto render slides/03_student_defense.qmd
 ```
 
-Можно также использовать:
+You can also use:
 
 ```bash
 make render
 make slides
 ```
 
-## Ноутбуки
+## Notebooks
 
 ```bash
 jupyter lab
 ```
 
-Для выполнения всех основных ноутбуков:
+To execute the main notebooks:
 
 ```bash
 make notebooks
 ```
 
-Ноутбуки импортируют общий код из `src/solar_neutrino`. Если студент запускает ноутбук из другой рабочей директории, нужно убедиться, что путь `../src` доступен.
+The notebooks import shared code from `src/solar_neutrino`. If a student runs a notebook from another working directory, they should check that `../src` is available on the Python path.
 
-## Структура занятий
+## Lesson Structure
 
-1. **Солнце как источник нейтрино.** Команды получают таблицы потоков, спектры и toy-профиль электронной плотности.
-2. **MSW, detector response, statistics.** Команды переходят от потока к ожидаемому спектру событий, псевдоданным и fit.
-3. **Защита мини-проектов.** Каждая команда показывает постановку, формулы, один фрагмент кода, главный график и численный результат.
+1. **The Sun as a neutrino source.** Teams receive flux tables, spectra, and a toy electron-density profile.
+2. **MSW, detector response, statistics.** Teams move from flux to the expected event spectrum, pseudo-data, and a fit.
+3. **Mini-project defense.** Each team presents the physics question, formulas, one code fragment, the main plot, and a numerical result.
 
-## Работа команд
+## Team Work
 
-Для двух команд:
+For two teams:
 
 - Team A: Sun + MSW.
-- Team B: Detector + statistics.
+- Team B: detector + statistics.
 
-Для трех команд:
+For three teams:
 
 - Team A: solar sources.
 - Team B: MSW oscillations.
 - Team C: detector response and statistics.
 
-Задания лежат в `assignments/`. Шаблон отчета лежит в `report_template/`.
+Assignments are in `assignments/`. The report template is in `report_template/`.
 
-HTML-версия шаблона:
+HTML version of the template:
 
 ```bash
 quarto render report_template/report_template.qmd --to html
 ```
 
-PDF-версия возможна при установленном LaTeX:
+PDF output is possible if LaTeX is installed:
 
 ```bash
 quarto render report_template/report_template.qmd --to pdf
 ```
 
-## Итоговый результат
+## Final Result
 
-Каждая команда готовит:
+Each team prepares:
 
-- короткую защиту: 7 минут доклад + 3 минуты вопросы;
-- минимум один главный график;
-- численный результат: best-fit normalization, effective \(P_{ee}\), confidence interval или contour;
-- мини-отчет в Quarto/LaTeX-стиле.
+- a short defense: 7 minutes for the talk + 3 minutes for questions;
+- at least one main plot;
+- a numerical result: best-fit normalization, effective $P_{ee}$, confidence interval, or contour;
+- a short report in Quarto/LaTeX style.
 
-## Физические ограничения
+## Physical Limitations
 
-Этот проект является учебным. В нем явно используются toy-модели:
+This project is pedagogical. It explicitly uses toy models:
 
-- мы не строим полноценную Standard Solar Model;
-- солнечные потоки берутся как входные данные;
-- \(^{8}\mathrm{B}\)-спектр является учебной beta-like аппроксимацией, если не заменен табличным источником;
-- Super-Kamiokande-like detector response задан схематически;
-- \(\nu e\)-сечения пропорциональны энергии и не являются точным расчетом;
-- реальные анализы SK/SNO/Borexino/JUNO требуют фонов, систематик, covariance matrices, calibration и реальных detector response functions.
+- we do not solve a full Standard Solar Model;
+- solar fluxes are taken as input data;
+- the $^{8}\mathrm{B}$ spectrum is a pedagogical beta-like approximation unless it is replaced by a tabulated source;
+- the Super-Kamiokande-like detector response is schematic;
+- $\nu e$ cross sections are proportional to energy and are not precision calculations;
+- real SK/SNO/Borexino/JUNO analyses require backgrounds, systematics, covariance matrices, calibration, and real detector response functions.
 
-Для публикационной точности Дмитрию нужно заменить reference-таблицы и BibTeX на проверенные современные источники.
+For publication-level accuracy, Dmitry should replace the reference tables and BibTeX entries with verified modern sources.
