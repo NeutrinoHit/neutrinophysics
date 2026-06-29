@@ -36,6 +36,12 @@ Students do not install PEANUTS. They receive ready-made tables:
 data/student/
 ```
 
+The complete student dataset archive is:
+
+```text
+data/student/solar_neutrino_student_data.zip
+```
+
 Regenerate the teaching tables:
 
 ```bash

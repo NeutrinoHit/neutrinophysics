@@ -21,3 +21,7 @@ Core tables:
 - `borexino_like_event_predictions.csv`: low-energy expected contributions.
 - `pseudo_data_sk_daynight.csv`: reproducible day/night pseudo-data.
 - `pseudo_data_borexino.csv`: reproducible Borexino-like pseudo-data.
+
+Archive:
+
+- `solar_neutrino_student_data.zip`: all CSV files and this README in one download.
