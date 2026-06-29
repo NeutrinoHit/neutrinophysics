@@ -1,44 +1,97 @@
 ---
-title: "Team B: MSW Oscillations"
+title: "Project 2: Borexino-like Detector and Low Energies"
 lang: en
 format:
   html:
     toc: true
 ---
 
-# Goal
+# Question
 
-Build the survival probability $P_{ee}(E)$ for solar neutrinos in a two-flavor MSW model.
+Which solar sources determine the low-energy event spectrum in a Borexino-like detector, and can $^7\mathrm{Be}$, pep, and CNO contributions be separated?
 
-# Input Data
+# What to Compute
 
-- `data/electron_density_profile_toy.csv`
-- `src/solar_neutrino/oscillations.py`
-- `notebooks/02_msw_survival_probability.ipynb`
+1. Plot spectra in the $0-2$ MeV region.
+2. Compute pp, $^7\mathrm{Be}$, pep, and CNO event contributions.
+3. Repeat the calculation with $P_{ee}^{day}(E)$.
+4. Generate or load ready-made pseudo-data.
+5. Fit the $^7\mathrm{Be}$ or CNO scale.
 
-# What to Plot
+# Data
 
-- toy electron-density profile;
-- $P_{ee}(E)$ on $0.1-15$ MeV;
-- comparison for at least two values of $\theta_{12}$.
+- `data/student/solar_fluxes.csv`
+- `data/student/energy_spectra.csv`
+- `data/student/nu_electron_recoil_cross_sections.csv`
+- `data/student/detector_response.csv`
+- `data/student/oscillation_probabilities.csv`
+- `data/student/borexino_like_event_predictions.csv`
+- `data/student/pseudo_data_borexino.csv`
 
-# What to Explain
+# Main Formula
 
-- low-energy vacuum-averaged limit;
-- high-energy MSW-dominated limit;
-- resonance condition $2EV_e=\Delta m^2\cos2\theta$;
-- why this is still a toy two-flavor treatment.
+For one source:
 
-# What to Submit
+$$
+\mu_j(\alpha_i)
+=
+\alpha_i
+N_eT
+\int_{T_j}^{T_{j+1}}dT_e
+\int dE_\nu\,
+\Phi_i f_i(E_\nu)
+\left[
+P_{ee}\frac{d\sigma_e}{dT_e}
++
+(1-P_{ee})\frac{d\sigma_x}{dT_e}
+\right]
+\epsilon(T_e)
++b_j.
+$$
 
-- notebook with $P_{ee}(E)$;
-- one defense slide with formula and plot;
-- statement of the approximations.
+$\alpha_i$ is the scale of the selected source.
 
-# Minimum Result
+# Main Plot
 
-A $P_{ee}(E)$ plot and the numerical low/high-energy limits.
+Recommended plot:
 
-# Advanced Task
+```text
+source contributions to the low-energy event spectrum
+```
 
-Scan $\sin^2\theta_{12}$ and $\Delta m^2_{21}$, then show how $P_{ee}(E)$ changes.
+Second useful plot:
+
+```text
+Delta chi2(alpha_CNO) or Delta chi2(alpha_Be7)
+```
+
+# Minimal Result
+
+Table:
+
+```text
+source, expected_events, fraction
+```
+
+and fit result:
+
+```text
+alpha_Be7 = ... ± ...
+```
+
+or
+
+```text
+alpha_CNO = ... ± ...
+```
+
+# What to Say in the Defense
+
+- Low energies are sensitive to different sources than an SK-like detector.
+- In a real detector, $^7\mathrm{Be}$ and pep lines become electron-recoil distributions.
+- The CNO contribution is small and must be separated from nearby sources and backgrounds.
+- Backgrounds and systematics are simplified here.
+
+# Stronger Version
+
+Build a two-dimensional contour for two scales, for example $(\alpha_{Be7}, \alpha_{CNO})$, and explain the degeneracy.

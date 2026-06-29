@@ -15,21 +15,35 @@ toc: false
   <a class="course-back-link" href="../index.html">← All neutrino physics materials</a>
 
   <section class="course-intro">
-    <p class="course-kicker">Mini-course</p>
+    <p class="course-kicker">Masterclass</p>
     <h1>Solar Neutrinos</h1>
     <p>
-      A three-session masterclass: from solar fluxes and spectra to MSW,
-      a toy Super-Kamiokande-like detector, a pseudoexperiment, and a fit.
+      Two working sessions and a defense: from production radius and energy spectra
+      to MSW, detector events, pseudo-data, and a fit.
     </p>
   </section>
 
-  <section class="course-accordion" aria-label="Masterclass lessons">
+  <section class="course-accordion" aria-label="Lessons">
     <details class="course-row" open>
       <summary>
-        <span class="course-row-kind">01</span>
-        <span>Solar Neutrinos: Sources, Reactions, Fluxes</span>
+        <span class="course-row-kind">00</span>
+        <span>Lecture: Solar Neutrino Physics</span>
       </summary>
       <div class="course-row-body">
+        <p>Solar burning, pp/CNO sources, MSW, Earth matter, detector response, and statistics.</p>
+        <div class="course-links">
+          <a href="slides/00_solar_neutrino_physics.html">Open slides</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="course-row">
+      <summary>
+        <span class="course-row-kind">01</span>
+        <span>Masterclass 1: Sources and Events</span>
+      </summary>
+      <div class="course-row-body">
+        <p>Fluxes, radial production, spectra, cross sections, and the first no-oscillation event calculation.</p>
         <div class="course-links">
           <a href="slides/01_solar_sources.html">Open slides</a>
         </div>
@@ -39,9 +53,10 @@ toc: false
     <details class="course-row">
       <summary>
         <span class="course-row-kind">02</span>
-        <span>MSW Oscillations, Detector, and Pseudoexperiment</span>
+        <span>Masterclass 2: Oscillations and Fit</span>
       </summary>
       <div class="course-row-body">
+        <p>Survival probabilities, Earth effect, updated events, pseudoexperiments, intervals, and contours.</p>
         <div class="course-links">
           <a href="slides/02_msw_detector_statistics.html">Open slides</a>
         </div>
@@ -51,25 +66,66 @@ toc: false
     <details class="course-row">
       <summary>
         <span class="course-row-kind">03</span>
-        <span>Mini-Project Defense</span>
+        <span>Project Defense</span>
       </summary>
       <div class="course-row-body">
+        <p>Format of a short scientific presentation: question, model, plot, fit, numerical result, and limitations.</p>
         <div class="course-links">
           <a href="slides/03_student_defense.html">Open slides</a>
+          <a href="assignments/defense_requirements.html">Defense format</a>
         </div>
       </div>
     </details>
   </section>
 
   <section class="course-intro">
-    <h2>Working Materials</h2>
+    <h2>Three Projects</h2>
     <div class="course-links">
-      <a href="data/solar_fluxes_reference.csv">Solar flux table</a>
-      <a href="notebooks/01_solar_fluxes_and_spectra.ipynb">Notebook 1</a>
-      <a href="notebooks/02_msw_survival_probability.ipynb">Notebook 2</a>
-      <a href="notebooks/03_sk_like_detector.ipynb">Notebook 3</a>
-      <a href="notebooks/04_pseudoexperiment_and_fit.ipynb">Notebook 4</a>
-      <a href="assignments/defense_requirements.html">Defense requirements</a>
+      <a href="assignments/team_A_solar_sources.html">Project 1: SK-like and B8</a>
+      <a href="assignments/team_B_msw_oscillations.html">Project 2: Borexino-like</a>
+      <a href="assignments/team_C_detector_statistics.html">Project 3: Day-Night</a>
+      <a href="assignments/fit_recipes.html">Fit recipes</a>
+    </div>
+  </section>
+
+  <section class="course-intro">
+    <h2>Student Data</h2>
+    <p>
+      Students work with ready-made CSV files. PEANUTS is needed only by the teacher
+      to prepare or replace these tables.
+    </p>
+    <div class="course-links">
+      <a href="data/student/README.md">Dataset notes</a>
+      <a href="data/student/solar_fluxes.csv">Fluxes</a>
+      <a href="data/student/radial_production_profiles.csv">Radial profiles</a>
+      <a href="data/student/energy_spectra.csv">Spectra</a>
+      <a href="data/student/oscillation_probabilities.csv">Oscillations</a>
+      <a href="data/student/nu_electron_recoil_cross_sections.csv">Cross sections</a>
+      <a href="data/student/sk_like_event_predictions.csv">SK-like events</a>
+      <a href="data/student/borexino_like_event_predictions.csv">Borexino-like events</a>
+      <a href="data/student/pseudo_data_sk_daynight.csv">Day-night pseudo-data</a>
+      <a href="data/student/pseudo_data_borexino.csv">Borexino pseudo-data</a>
+    </div>
+  </section>
+
+  <section class="course-intro">
+    <h2>Notebooks</h2>
+    <div class="course-links">
+      <a href="notebooks/team_project_template.html">Project template</a>
+      <a href="notebooks/01_solar_fluxes_and_spectra.html">Notebook 1: fluxes and spectra</a>
+      <a href="notebooks/02_msw_survival_probability.html">Notebook 2: MSW probability</a>
+      <a href="notebooks/03_sk_like_detector.html">Notebook 3: SK-like detector</a>
+      <a href="notebooks/04_pseudoexperiment_and_fit.html">Notebook 4: pseudoexperiment and fit</a>
+    </div>
+    <p>
+      Raw `.ipynb` files are still included in the repository and can be opened locally with Jupyter.
+    </p>
+    <div class="course-links">
+      <a href="notebooks/team_project_template.ipynb">Template .ipynb</a>
+      <a href="notebooks/01_solar_fluxes_and_spectra.ipynb">Notebook 1 .ipynb</a>
+      <a href="notebooks/02_msw_survival_probability.ipynb">Notebook 2 .ipynb</a>
+      <a href="notebooks/03_sk_like_detector.ipynb">Notebook 3 .ipynb</a>
+      <a href="notebooks/04_pseudoexperiment_and_fit.ipynb">Notebook 4 .ipynb</a>
     </div>
   </section>
 </div>

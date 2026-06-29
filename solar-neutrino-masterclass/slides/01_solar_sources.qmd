@@ -1,532 +1,415 @@
 ---
-title: "Solar Neutrinos: Sources, Reactions, Fluxes"
-subtitle: "Lesson 1 · input data for the numerical mini-project"
+title: "Masterclass 1: Sources and Events"
+subtitle: "Solar fluxes, spectra, production radius, and the first detector calculation"
 author: "Dmitry V. Naumov"
-institute: "Baikal School"
+institute: "NeutrinoHit"
 date: "June 2026"
 ---
 
-# Orientation
+# Aim
 
-## Lesson Goal
+## What Should Be Done Today
 
-By the end of the lesson, students should understand:
+:::: {.panel-tabset .story-tabs}
 
-::: {.compact}
-- which reactions in the Sun produce neutrinos;
-- which fluxes and spectra are used as input data;
-- why we do not build a full solar model in this masterclass;
-- what first numerical result each team should produce.
-:::
+### Today's Task
 
-::: {.takeaway}
-Today we build a careful input for oscillation and detector code, not a model of the Sun.
-:::
+Today we do not discuss why the flux is huge.
 
-## Masterclass Structure
-
-::: {.timing}
-::: {.time}
-Lesson 1
-:::
-::: {}
-The Sun as a neutrino source: fluxes, spectra, density profile.
-:::
-::: {.time}
-Lesson 2
-:::
-::: {}
-MSW oscillations, a toy Super-Kamiokande-like detector, pseudoexperiment, fit.
-:::
-::: {.time}
-Lesson 3
-:::
-::: {}
-Team mini-project defense: plots, numerical result, report.
-:::
-:::
-
-## What Students Build
-
-::: {.flow}
-::: {}
-solar inputs
-:::
-::: {}
-spectra and fluxes
-:::
-::: {}
-MSW $P_{ee}(E)$
-:::
-::: {}
-event spectrum
-:::
-::: {}
-fit result
-:::
-:::
-
-At each step, it is important to separate physics from toy approximations.
-
-## Team Work
-
-Three-team option:
-
-::: {.compact}
-- **Team A:** solar sources and flux hierarchy.
-- **Team B:** $^{8}\mathrm{B}$-spectrum and normalization.
-- **Team C:** toy electron density profile for MSW.
-:::
-
-Two-team option:
-
-::: {.compact}
-- **Team A:** Sun + MSW inputs.
-- **Team B:** spectra + detector inputs.
-:::
-
-## Main Chain
+Today we build the working chain:
 
 $$
-\text{solar reactions}
+\text{source in the Sun}
 \to
-\Phi_\alpha(E)
+\Phi_i,\ f_i(E_\nu),\ q_i(r)
 \to
-P_{ee}(E)
+\nu e\text{ scattering}
 \to
-N_i^{\rm expected}
-\to
-n_i^{\rm observed}
-\to
-\chi^2
+\frac{dN}{dT_e}.
 $$
+
+By the end of the lesson, each group has the first numerical result for its future project.
+
+### Minimal Input
+
+Student files:
+
+```text
+data/student/solar_fluxes.csv
+data/student/radial_production_profiles.csv
+data/student/energy_spectra.csv
+data/student/nu_electron_recoil_cross_sections.csv
+data/student/detector_response.csv
+```
+
+PEANUTS and the solar model stay on the teacher side. Students need ready-to-use tables.
+
+### Three Groups
+
+::: {.compact}
+- **Project 1:** why an SK-like detector mostly sees $^8\mathrm{B}$ neutrinos.
+- **Project 2:** what a Borexino-like detector measures at low energies.
+- **Project 3:** which inputs are needed for the later day-night problem.
+:::
+
+Each group computes events, not only input plots.
+
+### Lesson Rule
+
+The teacher gives a short recipe.
+
+The group immediately computes:
+
+::: {.compact}
+- one check plot;
+- one table of numbers;
+- one conclusion that can later be defended.
+:::
+
+::::
+
+# Radius
+
+## Where Neutrinos Are Produced
+
+:::: {.panel-tabset .story-tabs}
+
+### Production Density
+
+For each source, the table gives a function $q_i(r)$.
+
+It shows where neutrinos of this type are produced in the Sun.
+
+Do not confuse:
+
+::: {.compact}
+- $q_i(r)$: production density;
+- $4\pi r^2 q_i(r)\,dr$: contribution of a spherical shell;
+- $\Phi_i$: total flux of this source at Earth.
+:::
+
+### Shell Contribution
+
+The normalized radial contribution is
+
+$$
+p_i(r)=
+\frac{4\pi r^2 q_i(r)}
+{\int_0^{R_\odot}4\pi r^2 q_i(r)\,dr}.
+$$
+
+Then the shell contribution to the flux at Earth is
+
+$$
+d\Phi_i(r)=\Phi_i\,p_i(r)\,dr.
+$$
+
+The factor $r^2dr$ often changes the shape of the plot.
+
+### What to Plot
+
+Plot for all sources:
+
+::: {.compact}
+- $q_i(r)$;
+- $p_i(r)$;
+- the cumulative fraction $\int_0^r p_i(r')dr'$.
+:::
+
+Check question:
 
 ::: {.question}
-What is the minimum input needed to go from the Sun to an event count?
+Which source is produced closest to the solar center?
 :::
 
-## Why Not a Full Solar Model
+### What to Write
 
-::: {.toy}
-In this masterclass, we do not solve the Standard Solar Model. Fluxes, spectra, and toy profiles are taken as input data.
-:::
+One short conclusion:
 
-A full calculation requires:
+```text
+Source X is more central than source Y.
+For MSW this matters because Pee depends on the matter density at production.
+```
 
-::: {.compact}
-- equation of state;
-- opacity tables;
-- nuclear reaction rates;
-- composition evolution;
-- calibration to solar luminosity and radius.
-:::
+::::
 
-# Solar Model
+# Spectra
 
-## The Sun as a Stationary Source
+## Solar-Neutrino Energies
 
-The Sun can be treated as an almost stationary thermonuclear source.
+:::: {.panel-tabset .story-tabs}
 
-Neutrinos are not produced "somewhere in the Sun"; they are produced in specific reactions:
-
-::: {.compact}
-- pp-chain;
-- CNO-cycle;
-- rare high-energy branches.
-:::
-
-For detector analysis, both total fluxes and energy spectra matter.
-
-## Structure Equations
-
-$$
-\frac{dP}{dr}=-\frac{Gm(r)\rho(r)}{r^2},
-$$
-
-$$
-\frac{dm}{dr}=4\pi r^2\rho(r),
-$$
-
-$$
-\frac{dL}{dr}=4\pi r^2\rho(r)\epsilon(r),
-$$
-
-$$
-\frac{dT}{dr}=\nabla(r)\frac{T}{P}\frac{dP}{dr}.
-$$
-
-## What Is Hidden in the Full Problem
-
-Even this compact system is not closed without:
-
-::: {.compact}
-- $P(\rho,T,X_i)$: equation of state;
-- opacity $\kappa(\rho,T,X_i)$;
-- nuclear rates for the pp-chain and CNO;
-- transport model: radiative and convective regions;
-- initial composition and time evolution.
-:::
-
-::: {.takeaway}
-For this masterclass, the solar model enters as a table of inputs, not as a stellar-evolution integration problem.
-:::
-
-# Neutrino Sources
-
-## pp-Chain
-
-The main energy source of the Sun:
-
-$$
-4p \to {}^4\mathrm{He}+2e^+ + 2\nu_e + Q.
-$$
-
-Neutrinos appear in separate branches:
-
-::: {.compact}
-- pp continuum;
-- pep line;
-- $^{7}\mathrm{Be}$ electron-capture lines;
-- $^{8}\mathrm{B}$ high-energy continuum;
-- hep rare high-energy tail.
-:::
-
-## CNO-Cycle
-
-The CNO-cycle is important as a probe of the solar-core composition.
-
-Neutrinos are produced in beta decays:
-
-$$
-{}^{13}\mathrm{N},\quad
-{}^{15}\mathrm{O},\quad
-{}^{17}\mathrm{F}.
-$$
-
-The energies are on the MeV scale, and the fluxes are much smaller than the pp flux.
-
-## Source Table
-
-| Source | Reaction | Spectrum type | Characteristic energy |
-|---|---|---|---|
-| pp | $p+p\to d+e^++\nu_e$ | continuum | low energy |
-| pep | $p+e^-+p\to d+\nu_e$ | line | 1.44 MeV |
-| $^{7}\mathrm{Be}$ | electron capture | lines | 0.862 MeV, 0.384 MeV |
-| $^{8}\mathrm{B}$ | beta decay | continuum | high-energy tail |
-| hep | rare reaction | continuum | very high tail |
-| CNO | $^{13}\mathrm{N}, ^{15}\mathrm{O}, ^{17}\mathrm{F}$ | continuum | MeV scale |
-
-## Line vs Continuum
-
-Line sources:
-
-::: {.compact}
-- pep;
-- $^{7}\mathrm{Be}$.
-:::
-
-Continuum sources:
-
-::: {.compact}
-- pp;
-- $^{8}\mathrm{B}$;
-- hep;
-- CNO beta decays.
-:::
-
-Detector response turns even a line input into a reconstructed-energy distribution.
-
-# Input Fluxes
-
-## Reference Flux Table
+### Spectrum Table
 
 File:
 
 ```text
-data/solar_fluxes_reference.csv
+data/student/energy_spectra.csv
 ```
 
 Columns:
 
 ```text
-source,flux_cm2_s,kind,comment
+source, E_MeV, spectrum_per_MeV, kind
 ```
 
-::: {.toy}
-These are classroom reference values. For publication-level accuracy, the table must be checked against a chosen modern SSM table.
-:::
-
-## Code: Load Fluxes
-
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-
-fluxes = pd.read_csv("../data/solar_fluxes_reference.csv")
-fluxes
-```
-
-Full version:
-
-```text
-notebooks/01_solar_fluxes_and_spectra.ipynb
-src/solar_neutrino/fluxes.py
-```
-
-## Flux Plot
-
-![](../assets/figures/solar_fluxes.png){width="78%" .slide-image-center fig-alt="Solar neutrino fluxes on logarithmic scale"}
-
-::: {.media-caption}
-A logarithmic scale is needed because pp and hep differ by almost seven orders of magnitude.
-:::
-
-## Code: Make the Plot
-
-```python
-ax = fluxes.plot.bar(x="source", y="flux_cm2_s",
-                     logy=True, legend=False)
-ax.set_ylabel(r"Flux, cm$^{-2}$ s$^{-1}$")
-ax.set_xlabel("source")
-plt.tight_layout()
-```
-
-## Interpreting the Hierarchy
-
-Why the pp flux is huge:
-
-::: {.compact}
-- the pp-chain is the dominant solar energy-production channel;
-- each completed chain gives two neutrinos;
-- low-energy reactions are the most frequent.
-:::
-
-Why the $^{8}\mathrm{B}$ flux is small:
-
-::: {.compact}
-- it is a rare branch of the pp-chain;
-- it requires higher energies in the solar core;
-- nevertheless, this high-energy tail is clearly visible in water Cherenkov detectors.
-:::
-
-## $^{7}\mathrm{Be}$ Lines
-
-File:
-
-```text
-data/be7_lines.csv
-```
-
-| $E_\nu$, MeV | branching fraction |
-|---:|---:|
-| 0.384 | 0.103 |
-| 0.862 | 0.897 |
-
-These values are used as pedagogical reference values.
-
-## $^{8}\mathrm{B}$ Spectrum
-
-The lesson uses a beta-like toy shape:
+For each source:
 
 $$
-f(E)\propto E^2(E_{\max}-E)^2,
+\int f_i(E_\nu)\,dE_\nu = 1.
+$$
+
+### Flux in Energy
+
+For source $i$:
+
+$$
+\frac{d\Phi_i}{dE_\nu}
+=
+\Phi_i f_i(E_\nu).
+$$
+
+The total flux is
+
+$$
+\frac{d\Phi}{dE_\nu}
+=
+\sum_i \Phi_i f_i(E_\nu).
+$$
+
+Lines in the table are slightly broadened only to make plotting simple.
+
+### What to Plot
+
+Plot:
+
+::: {.compact}
+- normalized shapes $f_i(E_\nu)$;
+- physical fluxes $\Phi_i f_i(E_\nu)$;
+- the $0-2$ MeV region and the $2-18$ MeV region separately.
+:::
+
+At least one plot must use a logarithmic scale.
+
+### Check
+
+The plot should show:
+
+::: {.compact}
+- pp flux is enormous but low-energy;
+- $^7\mathrm{Be}$ and pep are lines;
+- $^8\mathrm{B}$ has a small normalization but extends to high energy;
+- hep barely affects the event count but sets the far tail.
+:::
+
+::::
+
+# Detector
+
+## From Neutrino to Electron
+
+:::: {.panel-tabset .story-tabs}
+
+### Channel
+
+For both teaching detectors, use
+
+$$
+\nu + e^- \to \nu + e^-.
+$$
+
+An electron neutrino has charged-current and neutral-current contributions.
+
+$\nu_\mu,\nu_\tau$ have only the neutral-current contribution.
+
+Today we first compute without oscillations:
+
+$$
+P_{ee}=1.
+$$
+
+### Kinematics
+
+For a neutrino with energy $E_\nu$, the electron kinetic energy satisfies
+
+$$
+0<T_e<T_e^{\max},
 \qquad
-E_{\max}\approx 16~\mathrm{MeV}.
+T_e^{\max}
+=
+\frac{2E_\nu^2}{m_e+2E_\nu}.
 $$
 
-Normalization:
-
-$$
-\int f(E)\,dE=1.
-$$
-
-::: {.toy}
-This is not an official tabulated $^{8}\mathrm{B}$ spectrum.
-:::
-
-## Code: Spectrum Helper
-
-```python
-from solar_neutrino.spectra import (
-    load_b8_spectrum,
-    normalize_spectrum,
-    interpolate_spectrum,
-)
-
-E, shape = load_b8_spectrum("../data/b8_spectrum.csv")
-shape = normalize_spectrum(E, shape)
-b8_spectrum = interpolate_spectrum(E, shape)
-```
-
-## $^{8}\mathrm{B}$ Spectrum Plot
-
-![](../assets/figures/b8_spectrum.png){width="74%" .slide-image-center fig-alt="Toy B8 neutrino spectrum"}
-
-::: {.media-caption}
-The shape is useful for exercises, but a precision analysis needs an external tabulated spectrum.
-:::
-
-## Solar Density as an MSW Input
-
-The MSW effect depends on the electron density:
-
-$$
-V_e(x)=\sqrt{2}G_F n_e(x).
-$$
-
-For lesson 1, a toy profile is sufficient:
-
-$$
-n_e(r)=n_0\exp(-r/r_0).
-$$
-
-File:
+Cross-section table:
 
 ```text
-data/electron_density_profile_toy.csv
+data/student/nu_electron_recoil_cross_sections.csv
 ```
 
-## Code: Density Profile
+### Event Rate
 
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
+For source $i$:
 
-density = pd.read_csv("../data/electron_density_profile_toy.csv")
-ax = density.plot(x="r_over_Rsun", y="ne_normalized",
-                  legend=False)
-ax.set_xlabel(r"$r/R_\odot$")
-ax.set_ylabel(r"$n_e/n_e(0)$")
-```
+$$
+\frac{dN_i}{dT_e}
+=
+N_eT
+\int dE_\nu\,
+\Phi_i f_i(E_\nu)
+\frac{d\sigma_e}{dT_e}
+\epsilon(T_e).
+$$
 
-## Density Profile Plot
-
-![](../assets/figures/electron_density_profile.png){width="72%" .slide-image-center fig-alt="Toy electron density profile"}
-
-::: {.media-caption}
-The profile is needed to discuss the MSW resonance condition in the next lesson.
-:::
-
-# Team Work
-
-## Team Split
-
-Teams work with the same base code:
-
-```text
-src/solar_neutrino/
-notebooks/
-data/
-```
-
-Each team prepares:
+In the first lesson:
 
 ::: {.compact}
-- one checked plot;
-- one physics explanation;
-- one file or function for lesson 2.
+- no oscillations;
+- backgrounds may be set to zero;
+- energy resolution may be ignored.
 :::
 
-## Team A: Solar Sources
+### Two Teaching Detectors
 
-Tasks:
+SK-like:
 
 ::: {.compact}
-1. Check the flux table.
-2. Plot the fluxes.
-3. Explain why the pp flux is huge and the $^{8}\mathrm{B}$ flux is small.
-4. Prepare an input file with the selected source for further modeling.
-5. State which energy range is important for a water Cherenkov detector.
+- water;
+- high threshold;
+- main source: $^8\mathrm{B}$;
+- result: number of events above threshold.
 :::
 
-## Team B: Spectra
-
-Tasks:
+Borexino-like:
 
 ::: {.compact}
-1. Load or generate a toy $^{8}\mathrm{B}$ spectrum.
-2. Normalize the spectrum to unity.
-3. Plot $\Phi(E)$.
-4. Prepare the function `b8_spectrum(E)`.
-5. Mark exactly what is a toy approximation.
+- low threshold;
+- $^7\mathrm{Be}$, pep, and CNO are visible;
+- result: source contributions in the low-energy region.
 :::
 
-## Team C: Solar Profile
+::::
 
-Tasks:
+# Group Work
 
-::: {.compact}
-1. Use the toy electron-density profile.
-2. Plot $n_e(r)$.
-3. Find the region where an MSW resonance is possible for MeV neutrinos.
-4. Prepare the density file for lesson 2.
-:::
+## What Each Group Does
 
-## If There Are Two Teams
+:::: {.panel-tabset .story-tabs}
 
-Team A:
+### Project 1: SK-like
 
-::: {.compact}
-- flux table;
-- flux hierarchy;
-- density profile;
-- MSW input.
-:::
-
-Team B:
-
-::: {.compact}
-- $^{8}\mathrm{B}$ spectrum;
-- normalization;
-- detector energy range;
-- spectrum function.
-:::
-
-# Checkpoint
-
-## Input to the Oscillation Code
-
-Minimum set:
-
-::: {.compact}
-- $E_\nu$-grid;
-- source spectrum $\Phi(E)$;
-- oscillation parameters $\theta_{12}$, $\Delta m^2_{21}$;
-- electron density $n_e(r)$ or effective production density.
-:::
-
-## Input to the Detector Code
-
-Minimum set:
-
-::: {.compact}
-- flux normalization;
-- survival probability $P_{ee}(E)$;
-- cross-section model;
-- efficiency and threshold;
-- exposure;
-- background model for the advanced task.
-:::
-
-## Output of Lesson 1
-
-After the lesson, each team should have:
-
-::: {.compact}
-- a working notebook with a flux, spectrum, or profile plot;
-- a checked input file or function;
-- one short physics conclusion;
-- a list of toy assumptions.
-:::
-
-## Transition to MSW
-
-We know what is produced in the Sun.
-
-Next question:
+Question:
 
 ::: {.question}
-With what probability does a solar $\nu_e$ reach the detector as a $\nu_e$?
+Why does a detector with a MeV-scale threshold mostly see $^8\mathrm{B}$ neutrinos, although the pp flux is much larger?
 :::
 
-Answering this requires flavor-state evolution in matter.
+Today:
+
+::: {.compact}
+- plot all spectra;
+- compute no-oscillation events;
+- plot $dN/dT_e$;
+- find the $^8\mathrm{B}$ fraction above thresholds 3, 4.5, and 6 MeV.
+:::
+
+### Project 2: Borexino-like
+
+Question:
+
+::: {.question}
+Which solar sources determine the low-energy event spectrum?
+:::
+
+Today:
+
+::: {.compact}
+- plot the $0-2$ MeV region;
+- compute events from pp, $^7\mathrm{Be}$, pep, and CNO;
+- estimate the $^7\mathrm{Be}$ line contribution;
+- write which backgrounds would matter in a real analysis.
+:::
+
+### Project 3: Day-Night
+
+Question:
+
+::: {.question}
+Which part of the source spectrum is most useful for the Earth-matter effect?
+:::
+
+Today:
+
+::: {.compact}
+- plot radial production distributions;
+- select the $^8\mathrm{B}$ region for the night analysis;
+- compute the no-oscillation daytime template;
+- prepare the list of quantities that tomorrow will become $P_{ee}^{day}$ and $P_{ee}^{night}$.
+:::
+
+### Common Check
+
+By the end of the lesson, each group has:
+
+::: {.compact}
+- a plot of $q_i(r)$ or $f_i(E_\nu)$;
+- a plot of $dN/dT_e$;
+- a table of source contributions;
+- one sentence with a physics conclusion.
+:::
+
+::::
+
+# Homework
+
+## After the First Lesson
+
+:::: {.panel-tabset .story-tabs}
+
+### Required Part
+
+Submit in the notebook:
+
+::: {.compact}
+1. Plot of radial shell contributions $p_i(r)$ for all sources.
+2. Plot of energy spectra $\Phi_i f_i(E_\nu)$.
+3. Event table without oscillations for your detector.
+4. Plot of $dN/dT_e$.
+5. One paragraph: what is already a project result.
+:::
+
+### Number Checks
+
+Check:
+
+::: {.compact}
+- each spectrum normalization is close to one;
+- $\sum_i N_i$ matches the sum over sources;
+- increasing the threshold decreases the number of events;
+- pp almost disappears for an SK-like threshold.
+:::
+
+### Project Draft
+
+Fill in four lines:
+
+```text
+Physics question:
+Which data we use:
+What we compute:
+Main plot:
+```
+
+This formulation will be sharpened tomorrow after oscillations and the fit.
+
+### What Not to Do
+
+Do not:
+
+::: {.compact}
+- install PEANUTS;
+- build a full solar model;
+- build a full detector Monte Carlo;
+- hide toy approximations.
+:::
+
+::::

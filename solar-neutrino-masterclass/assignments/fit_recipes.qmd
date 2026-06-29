@@ -1,0 +1,101 @@
+---
+title: "Short Fit Recipes"
+lang: en
+format:
+  html:
+    toc: true
+---
+
+# Poisson Chi-Square
+
+For binned counts:
+
+$$
+\chi^2
+=
+2\sum_i
+\left[
+\mu_i-n_i+n_i\ln\frac{n_i}{\mu_i}
+\right].
+$$
+
+If $n_i=0$, the logarithmic term is zero.
+
+# 1D Interval
+
+1. Choose a parameter $\theta$.
+2. Compute $\mu_i(\theta)$ on a grid.
+3. Compute $\chi^2(\theta)$ for each point.
+4. Find the minimum.
+5. Plot $\Delta\chi^2=\chi^2-\chi^2_{min}$.
+6. Approximate $1\sigma$ boundary: $\Delta\chi^2=1$.
+7. Approximate $2\sigma$ boundary: $\Delta\chi^2=4$.
+
+# 2D Contour
+
+For two parameters:
+
+$$
+\Delta\chi^2(\theta_1,\theta_2)
+=
+\chi^2(\theta_1,\theta_2)-\chi^2_{min}.
+$$
+
+Levels:
+
+| region | $\Delta\chi^2$ |
+|---:|---:|
+| about $1\sigma$ | 2.30 |
+| about $2\sigma$ | 6.18 |
+| about $3\sigma$ | 11.83 |
+
+# Sensitivity
+
+Expected sensitivity can be computed with an Asimov dataset:
+
+$$
+n_i^A=\mu_i(\theta_0).
+$$
+
+Then
+
+$$
+q(\theta)
+=
+\chi^2(\theta;n^A)-\chi^2(\theta_0;n^A).
+$$
+
+For one parameter, a common estimate is
+
+$$
+Z\simeq\sqrt{q}.
+$$
+
+# Day-Night
+
+Scale parameter:
+
+$$
+P_{ee}^{night}
+=
+P_{ee}^{day}
++
+\alpha_\oplus
+\left(P_{ee}^{night,ref}-P_{ee}^{day}\right).
+$$
+
+Check:
+
+```text
+alpha_Earth = 0  no Earth effect
+alpha_Earth = 1  reference table
+```
+
+# What to Write in the Report
+
+```text
+We fitted the parameter ...
+We used the Poisson chi-square ...
+The best value is ...
+The interval was obtained with Delta chi2 = ...
+```

@@ -1,5 +1,5 @@
 ---
-title: "Defense Requirements"
+title: "Defense Format"
 lang: en
 format:
   html:
@@ -8,50 +8,54 @@ format:
 
 # Format
 
-Each team:
+For each group:
 
 ```text
-7 minutes for the talk + 3 minutes for questions
+7 minutes for the talk
+3 minutes for questions
 ```
 
-For three teams:
+Recommended 5-slide structure:
 
-```text
-3 teams x 10 minutes = 30 minutes
-```
-
-After that, there is a 15-20 minute common checkpoint discussion.
+1. Physics question.
+2. Model and input tables.
+3. Main plot.
+4. Fit and numerical result.
+5. Model limitations.
 
 # What Must Be Shown
 
-1. Physics question.
-2. Formulas used.
-3. One key code fragment.
-4. Main plot.
-5. Numerical result.
-6. What is a toy approximation in the model.
-7. Which next step would make the analysis more realistic.
+1. Formula for expected events $\mu_i$.
+2. Which parameter is fitted.
+3. How $\chi^2$ is defined.
+4. One main plot.
+5. Numerical result with an interval.
+6. What came from PEANUTS or a solar-model table.
+7. What belongs to the teaching detector approximation.
 
-# Evaluation Criteria
+# Criteria
 
-- connection between physics question -> model -> code -> result;
-- reproducible notebook;
-- clear axes, units, and labels;
-- correct use of Poisson statistics;
-- honest description of approximations.
+- the question is clear;
+- the plot answers the question;
+- the notebook is reproducible;
+- the result is numerical;
+- the uncertainty is stated;
+- limitations are stated honestly.
 
-# Typical Mistakes
+# Common Mistakes
 
-- toy model presented as a precision result;
-- no units on plot axes;
-- no random seed in the pseudoexperiment;
-- no statement of the likelihood;
-- conclusion does not follow from the plotted result.
+- no units on axes;
+- no $\Delta\chi^2$ level for the interval;
+- pseudo-data without a fixed seed;
+- toy model presented as a real analysis;
+- conclusion not supported by the number.
 
-# Final Checklist
+# Last Sentence
 
-- notebook runs top to bottom;
-- report template is filled;
-- best-fit value is written;
-- figure files are saved;
-- limitations are explicit.
+End like this:
+
+```text
+In our teaching model we obtained ...
+This means ...
+The main limitation of the result is ...
+```

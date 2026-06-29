@@ -1,602 +1,482 @@
 ---
-title: "MSW Oscillations, Detector, and Pseudoexperiment"
-subtitle: "Lesson 2 · from solar flux to fit"
+title: "Masterclass 2: Oscillations and Fit"
+subtitle: "Probabilities, events, pseudoexperiments, and project formulation"
 author: "Dmitry V. Naumov"
-institute: "Baikal School"
+institute: "NeutrinoHit"
 date: "June 2026"
 ---
 
-# Orientation
+# Aim
 
-## What We Already Have
+## What Should Be Done Today
 
-After lesson 1, we have:
+:::: {.panel-tabset .story-tabs}
 
-::: {.compact}
-- a flux table;
-- a toy $^{8}\mathrm{B}$ spectrum;
-- a toy electron-density profile;
-- an energy grid for numerical work.
-:::
+### Today's Task
 
-Now we need to obtain the expected event spectrum.
-
-## Goal of Lesson 2
-
-Build the chain:
+Yesterday we had the no-oscillation chain:
 
 $$
-\Phi_{^{8}\mathrm{B}}(E)
+\Phi_i f_i(E_\nu)
 \to
-P_{ee}(E)
+\frac{dN}{dT_e}.
+$$
+
+Today we add:
+
+$$
+P_{ee}^{day}(E_\nu),\quad
+P_{ee}^{night}(E_\nu),\quad
+\chi^2,\quad
+\text{pseudo-data}.
+$$
+
+By the end of the lesson, each group must have the final project formulation.
+
+### Input Tables
+
+```text
+data/student/oscillation_probabilities.csv
+data/student/earth_regeneration.csv
+data/student/mass_state_cross_sections.csv
+data/student/sk_like_event_predictions.csv
+data/student/borexino_like_event_predictions.csv
+data/student/pseudo_data_sk_daynight.csv
+data/student/pseudo_data_borexino.csv
+```
+
+All tables can later be replaced by PEANUTS outputs without changing student code.
+
+### Minimal Result
+
+Today each group should obtain:
+
+::: {.compact}
+- an updated oscillated event spectrum;
+- one pseudoexperiment;
+- one fit;
+- one number with an interval or contour;
+- the final project question.
+:::
+
+### Main Rule
+
+Do not attempt a global solar-neutrino analysis.
+
+Follow a short chain honestly:
+
+$$
+\text{input tables}
 \to
-\mu_i
+\mu_i(\theta)
 \to
 n_i
 \to
-\chi^2(\theta).
+\Delta\chi^2
+\to
+\text{conclusion}.
 $$
 
-Required final result:
+::::
 
-::: {.compact}
-- best-fit normalization;
-- best-fit effective $P_{ee}$;
-- a 1D confidence interval or a 2D contour.
-:::
+# Oscillations
 
-# MSW
+## Survival Probability
 
-## Flavor Evolution Equation
+:::: {.panel-tabset .story-tabs}
 
-Two-flavor evolution:
+### Vacuum
+
+For averaged two-flavour oscillations:
 
 $$
-i\frac{d}{dx}\nu_f = H_f(x)\nu_f.
-$$
-
-Flavor basis:
-
-$$
-\nu_f =
-\begin{pmatrix}
-\nu_e\\
-\nu_x
-\end{pmatrix},
-\qquad
-\nu_x \approx \nu_\mu,\nu_\tau.
-$$
-
-## Vacuum Hamiltonian
-
-$$
-H_{\rm vac} =
-\frac{\Delta m^2}{4E}
-\begin{pmatrix}
--\cos2\theta & \sin2\theta \\
-\sin2\theta & \cos2\theta
-\end{pmatrix}.
-$$
-
-For the solar sector:
-
-$$
-\theta\approx\theta_{12},
-\qquad
-\Delta m^2\approx\Delta m^2_{21}.
-$$
-
-## Matter Potential
-
-Electron neutrinos have an additional coherent forward-scattering term:
-
-$$
-V_e(x)=\sqrt{2}G_F n_e(x).
-$$
-
-For $\nu_x$, the common neutral-current contribution cancels in the two-flavor description.
-
-## Full Two-Flavor Hamiltonian
-
-$$
-H_f =
-\frac{\Delta m^2}{4E}
-\begin{pmatrix}
--\cos2\theta & \sin2\theta \\
-\sin2\theta & \cos2\theta
-\end{pmatrix}
-+
-\begin{pmatrix}
-V_e(x) & 0 \\
-0 & 0
-\end{pmatrix}.
-$$
-
-Units in `src/solar_neutrino/oscillations.py`:
-
-::: {.compact}
-- $E$ in MeV;
-- $n_e$ in cm$^{-3}$;
-- $V_e$ in eV.
-:::
-
-## Matter Mixing Angle
-
-$$
-\tan 2\theta_m =
-\frac{\Delta m^2\sin2\theta}
-{\Delta m^2\cos2\theta - 2EV_e}.
-$$
-
-Matter modifies the effective mixing angle, not the vacuum parameters themselves.
-
-## Resonance Condition
-
-$$
-2EV_e=\Delta m^2\cos2\theta.
-$$
-
-At resonance:
-
-$$
-\theta_m = \frac{\pi}{4}.
-$$
-
-For different $E_\nu$, the resonance occurs at different electron densities.
-
-## Physical Interpretation
-
-::: {.compact}
-- Low-energy solar neutrinos: closer to the vacuum-averaged regime.
-- High-energy $^{8}\mathrm{B}$ neutrinos: MSW-dominated regime.
-- With good adiabaticity, the high-energy limit is:
-:::
-
-$$
-P_{ee}\sim \sin^2\theta_{12}.
-$$
-
-## Low-Energy Limit
-
-For vacuum-averaged two-flavor oscillations:
-
-$$
-P_{ee}^{\rm low}
+P_{ee}^{vac}
 \simeq
 1-\frac{1}{2}\sin^2 2\theta_{12}.
 $$
 
-For $\sin^2\theta_{12}\approx 0.31$:
+This is a useful low-energy reference.
+
+In a three-flavour embedding:
 
 $$
-P_{ee}^{\rm low}\approx 0.57.
-$$
-
-## High-Energy MSW Limit
-
-In the adiabatic high-density limit:
-
-$$
-P_{ee}^{\rm high}
+P_{ee}^{3\nu}
 \simeq
-\sin^2\theta_{12}.
+\cos^4\theta_{13}P_{ee}^{2\nu}
++\sin^4\theta_{13}.
 $$
 
-Numerically:
+### Solar Matter
 
-$$
-P_{ee}^{\rm high}\approx 0.31.
-$$
+Working input:
 
-## Code: Hamiltonian
-
-```python
-import numpy as np
-
-def hamiltonian_2flavor(E, ne, dm2, theta):
-    # E in MeV, ne in cm^-3, result in eV
-    c2 = np.cos(2 * theta)
-    s2 = np.sin(2 * theta)
-    E_eV = E * 1.0e6
-    vacuum = dm2 / (4 * E_eV) * np.array(
-        [[-c2, s2], [s2, c2]], dtype=complex
-    )
-    matter = np.array([[matter_potential(ne), 0], [0, 0]], dtype=complex)
-    return vacuum + matter
+```text
+data/student/oscillation_probabilities.csv
 ```
 
-## Code: Survival Probability Grid
+Columns:
 
-```python
-import numpy as np
-from solar_neutrino.oscillations import (
-    OscillationParameters,
-    compute_survival_probability_grid,
-)
-
-params = OscillationParameters()
-E_grid = np.linspace(0.1, 15.0, 200)
-Pee = compute_survival_probability_grid(E_grid, params)
+```text
+E_MeV, Pee_vacuum, Pee_day, Pee_night_reference
 ```
 
-## $P_{ee}(E)$ Plot
-
-![](../assets/figures/pee_grid.png){width="74%" .slide-image-center fig-alt="Two-flavor adiabatic survival probability"}
-
-::: {.media-caption}
-This uses an adiabatic two-flavor toy approximation. It is a pedagogical baseline, not a full global solar fit.
-:::
-
-## What Reaches Earth
-
-The detector sees not the original $\nu_e$ flux, but a mixture of flavor states:
-
-$$
-\Phi_e(E) = \Phi_{\rm source}(E)P_{ee}(E),
-$$
-
-$$
-\Phi_x(E) = \Phi_{\rm source}(E)\left[1-P_{ee}(E)\right].
-$$
-
-In a water Cherenkov detector, $\nu_x e$-scattering also contributes, but with a smaller cross section.
-
-# Detector
-
-## Detector Sees Events, Not Flux
-
-Measured quantities include:
+Checks:
 
 ::: {.compact}
-- reconstructed energy;
-- event count in bins;
-- angular and timing cuts;
-- backgrounds;
-- systematic uncertainties.
+- at low energy, $P_{ee}$ is near the vacuum value;
+- at high energy, $P_{ee}$ approaches $\sin^2\theta_{12}$;
+- the transition region matters for the spectrum shape.
 :::
 
-In the masterclass, we keep only the essentials.
+### Earth Matter
 
-## $\nu e$-Scattering
+At night, neutrinos pass through the Earth.
 
-The main channel for an SK-like solar analysis:
+Define the correction:
 
 $$
-\nu + e^- \to \nu + e^-.
+\Delta P_{ee}^{\oplus}(E,\eta)
+=
+P_{ee}^{night}(E,\eta)-P_{ee}^{day}(E).
 $$
 
-$\nu_e$ has charged-current + neutral-current contributions.
+For the project, a table in several nadir-angle bins is enough:
 
-$\nu_{\mu,\tau}$ has only the neutral-current contribution.
+```text
+data/student/earth_regeneration.csv
+```
 
-## Why a Toy SK-Like Detector
+### What to Plot
 
-::: {.toy}
-We do not build a full Super-Kamiokande Monte Carlo. The detector response is included to show how a flux becomes an event spectrum.
-:::
-
-A real analysis would require:
+Plot:
 
 ::: {.compact}
-- detector calibration;
-- backgrounds;
-- fiducial volume;
-- angular response;
-- covariance matrices.
+- $P_{ee}^{vac}(E)$;
+- $P_{ee}^{day}(E)$;
+- $P_{ee}^{night}(E)-P_{ee}^{day}(E)$;
+- the ratio of oscillated to no-oscillation event spectra.
 :::
 
-## Pedagogical Rate Formula
+For the day-night project, the main plot is $\Delta P_{ee}^{\oplus}(E)$ or $A_{DN}$.
+
+::::
+
+# Events
+
+## Updating Yesterday's Calculation
+
+:::: {.panel-tabset .story-tabs}
+
+### Flavour Form
+
+For $\nu e$ scattering:
 
 $$
-N_i =
-N_e T
-\int_{E_i}^{E_{i+1}} dE_{\rm rec}
+\frac{dN_i}{dT_e}
+=
+N_eT
 \int dE_\nu\,
-\Phi(E_\nu)
-P_{ee}(E_\nu)
-\frac{d\sigma}{dT_e}
-R(E_{\rm rec},T_e)
-\epsilon(E_{\rm rec}).
+\Phi_i f_i(E_\nu)
+\left[
+P_{ee}\frac{d\sigma_e}{dT_e}
++
+(1-P_{ee})\frac{d\sigma_x}{dT_e}
+\right]
+\epsilon(T_e).
 $$
 
-## Simplified Formula
+Here $\sigma_x$ means $\nu_\mu e$ or $\nu_\tau e$.
 
-For the base code:
+### Mass-State Form
+
+If it is more convenient to compute with mass states after solar propagation:
 
 $$
-N_i =
-A
-\int_{E_i}^{E_{i+1}} dE\,
-\Phi_{^{8}\mathrm{B}}(E)
-P_{ee}(E)
-\sigma(E)
-\epsilon(E).
+\sigma_k(E,T)
+=
+|U_{ek}|^2\sigma_e(E,T)
++
+\left(1-|U_{ek}|^2\right)\sigma_x(E,T).
 $$
 
-Here $A$ includes exposure, the number of electrons, and unit conversion.
+Table:
 
-## Toy Cross Section
-
-```python
-def toy_cross_section(E):
-    return E
+```text
+data/student/mass_state_cross_sections.csv
 ```
 
-In the package:
+This is the same physics written in the mass-state basis.
 
-```python
-from solar_neutrino.cross_sections import (
-    nu_e_elastic_toy,
-    nu_mu_elastic_toy,
-)
-```
+### Day and Night Templates
 
-::: {.toy}
-The cross sections are proportional to energy and use arbitrary units.
-:::
+For each bin:
 
-## Efficiency
+$$
+\mu_i^{day}=\mu_i(P_{ee}^{day}),
+\qquad
+\mu_i^{night}=\mu_i(P_{ee}^{night}).
+$$
 
-```python
-def detector_efficiency(E):
-    return 1 / (1 + np.exp(-(E - 4.5) / 0.4))
-```
+Asymmetry:
 
-A threshold near 4.5 MeV determines which part of the $^{8}\mathrm{B}$ spectrum enters the analysis.
+$$
+A_{DN}
+=
+2\frac{N_{night}-N_{day}}
+{N_{night}+N_{day}}.
+$$
 
-## Energy Resolution
+### What to Check
 
-```python
-def energy_resolution_sigma(E):
-    return 0.15 * np.sqrt(E)
-```
-
-Meaning:
+Checks:
 
 ::: {.compact}
-- true electron energy is not equal to reconstructed energy;
-- narrow features are smeared;
-- bins become correlated in a real detector response.
+- oscillations reduce the electron-neutrino contribution;
+- the $\nu_x e$ contribution is not zero;
+- the spectrum normalization changes more than the shape;
+- the Earth effect is small and needs statistics.
 :::
 
-## Expected Event Spectrum
+::::
 
-```python
-from solar_neutrino.detector import efficiency, expected_events
-from solar_neutrino.cross_sections import nu_e_elastic_toy
+# Statistics
 
-expected = expected_events(
-    E_bins,
-    flux=flux_centers,
-    pee=pee_centers,
-    cross_section=nu_e_elastic_toy(E_centers) * efficiency(E_centers),
-    exposure=exposure,
-)
-```
+## Pseudoexperiment and Sensitivity
 
-## Expected Spectrum Plot
+:::: {.panel-tabset .story-tabs}
 
-![](../assets/figures/expected_spectrum.png){width="74%" .slide-image-center fig-alt="Expected event spectrum"}
+### Pseudo-Data
 
-::: {.media-caption}
-The shape is determined by the product: spectrum $\times$ survival probability $\times$ cross section $\times$ efficiency.
-:::
-
-## Background Model
-
-Minimal model:
+For expected counts $\mu_i$:
 
 $$
-\mu_i = s_i + b_i.
+n_i\sim \mathrm{Poisson}(\mu_i).
 $$
 
-For the base task, one may use:
+A fixed random seed makes the result reproducible.
 
-::: {.compact}
-- $b_i=0$;
-- constant background;
-- exponential background in the threshold region.
-:::
+Ready-made files:
 
-Advanced task: check how the best fit changes when a background is added.
-
-# Pseudoexperiment
-
-## Pseudo-Data
-
-```python
-import numpy as np
-
-rng = np.random.default_rng(12345)
-observed = rng.poisson(expected)
+```text
+data/student/pseudo_data_sk_daynight.csv
+data/student/pseudo_data_borexino.csv
 ```
 
-In the package:
+### Poisson Chi-Square
 
-```python
-from solar_neutrino.pseudoexperiment import generate_poisson_data
-```
-
-## Expected vs Observed
-
-![](../assets/figures/expected_vs_observed.png){width="76%" .slide-image-center fig-alt="Expected and pseudo-observed events"}
-
-::: {.media-caption}
-The difference between points and the template is a Poisson fluctuation.
-:::
-
-## Poisson Chi-Square
+For counting data:
 
 $$
-\chi^2(\theta)=
+\chi^2
+=
 2\sum_i
 \left[
-\mu_i(\theta)-n_i+n_i\ln\frac{n_i}{\mu_i(\theta)}
+\mu_i-n_i+n_i\ln\frac{n_i}{\mu_i}
 \right].
 $$
 
-For $n_i=0$, the logarithmic term is set to zero:
+If $n_i=0$:
 
 $$
-n_i\ln(n_i/\mu_i)\to 0.
+n_i\ln(n_i/\mu_i)=0.
 $$
 
-## Fit Normalization
+This is not the usual sum $(n-\mu)^2/\sigma^2$.
 
-```python
-from solar_neutrino.fit import scan_normalization, find_best_fit
+### Sensitivity
 
-norm_grid = np.linspace(0.5, 1.5, 301)
-scan = scan_normalization(observed, template, norm_grid)
-best = find_best_fit(scan)
-```
+Following Cowan et al., the expected sensitivity can be estimated with an Asimov dataset:
 
-Result:
+$$
+n_i^A=\mu_i(\theta_0).
+$$
+
+Then
+
+$$
+q(\theta)=
+\chi^2(\theta;n^A)-\chi^2(\theta_0;n^A).
+$$
+
+For one parameter, a common estimate is
+
+$$
+Z\simeq\sqrt{q}.
+$$
+
+### 1D Interval
+
+Recipe:
+
+::: {.compact}
+1. Choose a parameter $\theta$.
+2. Compute $\mu_i(\theta)$ on a grid.
+3. Find the minimum $\chi^2_{min}$.
+4. Plot $\Delta\chi^2=\chi^2-\chi^2_{min}$.
+5. Use $\Delta\chi^2=1$ for an approximate $1\sigma$ interval.
+:::
+
+For an approximate $2\sigma$ interval in 1D, use $\Delta\chi^2=4$.
+
+### 2D Contour
+
+For two parameters:
+
+$$
+\Delta\chi^2(\theta_1,\theta_2)
+=
+\chi^2(\theta_1,\theta_2)-\chi^2_{min}.
+$$
+
+Standard levels:
+
+| region | $\Delta\chi^2$ |
+|---:|---:|
+| about $1\sigma$ | 2.30 |
+| about $2\sigma$ | 6.18 |
+| about $3\sigma$ | 11.83 |
+
+### What Can Be Fitted
+
+Good fit parameters:
+
+::: {.compact}
+- total normalization;
+- effective $P_{ee}$;
+- CNO scale;
+- Earth-effect scale;
+- $\sin^2\theta_{12}$;
+- $\Delta m_{21}^2$.
+:::
+
+It is also valid to fit a parameter to which the experiment has little sensitivity. That is a result.
+
+::::
+
+# Group Work
+
+## Turning Work into Projects
+
+:::: {.panel-tabset .story-tabs}
+
+### Project 1: SK-like
+
+Final question:
+
+::: {.question}
+How do threshold and oscillations make $^8\mathrm{B}$ the dominant visible source in an SK-like detector?
+:::
+
+Today:
+
+::: {.compact}
+- replace $P_{ee}=1$ by $P_{ee}^{day}$;
+- plot the visible spectrum;
+- scan the threshold;
+- fit the $^8\mathrm{B}$ normalization or effective $P_{ee}$.
+:::
+
+### Project 2: Borexino-like
+
+Final question:
+
+::: {.question}
+Can the low-energy spectrum separate $^7\mathrm{Be}$, pep, and CNO contributions?
+:::
+
+Today:
+
+::: {.compact}
+- update rates with oscillations;
+- plot source contributions;
+- build a pseudoexperiment;
+- fit the $^7\mathrm{Be}$ or CNO scale.
+:::
+
+### Project 3: Day-Night
+
+Final question:
+
+::: {.question}
+What sensitivity does a day-night comparison give to Earth matter or to $\Delta m^2_{21}$?
+:::
+
+Today:
+
+::: {.compact}
+- plot day and night templates;
+- compute $A_{DN}$;
+- build day/night pseudo-data;
+- fit the regeneration scale $\alpha_\oplus$.
+:::
+
+### Final Formulation
+
+By the end of the lesson, each group fills in:
 
 ```text
-best-fit normalization
+Title:
+Physics question:
+Main observable:
+Fit parameter:
+Main plot:
+Main number:
+Validity limit:
 ```
 
-## $\chi^2$ Scan
+This is the basis of the defense.
 
-![](../assets/figures/chi2_scan.png){width="74%" .slide-image-center fig-alt="One-dimensional chi-square scan"}
+::::
 
-::: {.media-caption}
-For one parameter, $\Delta\chi^2=1$ gives an approximate 68% interval.
-:::
+# Homework
 
-## Fit Effective $P_{ee}$
+## After the Second Lesson
 
-One can replace energy-dependent $P_{ee}(E)$ by a single parameter:
+:::: {.panel-tabset .story-tabs}
 
-$$
-\mu_i(P_{ee}^{\rm eff}) =
-A \int_i dE\,\Phi(E)\,P_{ee}^{\rm eff}\sigma(E)\epsilon(E).
-$$
+### Required Part
 
-This is a crude but useful test of the detector/statistics pipeline.
-
-## Optional 2D Scan
-
-For stronger students:
-
-$$
-\sin^2\theta_{12}
-\quad\text{and}\quad
-\Delta m^2_{21}.
-$$
-
-Or a simpler 2D scan:
-
-$$
-A
-\quad\text{and}\quad
-P_{ee}^{\rm eff}.
-$$
-
-## Contour
-
-![](../assets/figures/contour_scan.png){width="62%" .slide-image-center fig-alt="Two-parameter contour"}
-
-::: {.media-caption}
-The contour shows the degeneracy between normalization and effective survival probability in a toy model.
-:::
-
-# Team Work
-
-## Team A: MSW
-
-Tasks:
+Submit:
 
 ::: {.compact}
-1. Plot $P_{ee}(E)$.
-2. Show the low-energy and high-energy limits.
-3. Change $\theta_{12}$ and show the effect on the plot.
-4. Prepare one slide with a physics conclusion.
+1. A notebook that runs from top to bottom.
+2. One main plot.
+3. One $\Delta\chi^2$ plot or 2D contour.
+4. A numerical result with an interval.
+5. The final project formulation.
 :::
 
-## Team B: Detector Response
+### Minimal Fit
 
-Tasks:
+If time is short, do 1D:
 
 ::: {.compact}
-1. Take the $^{8}\mathrm{B}$ spectrum.
-2. Apply $P_{ee}(E)$.
-3. Apply the toy cross section and efficiency.
-4. Obtain the expected spectrum.
-5. Study the effect of the energy threshold.
+- SK-like: $^8\mathrm{B}$ normalization or $P_{ee}^{eff}$;
+- Borexino-like: $^7\mathrm{Be}$ or CNO scale;
+- day-night: $\alpha_\oplus$ in $P_{ee}^{night}=P_{ee}^{day}+\alpha_\oplus\Delta P^\oplus$.
 :::
 
-## Team C: Pseudoexperiment and Statistics
+### Stronger Version
 
-Tasks:
+If the base part is ready:
 
 ::: {.compact}
-1. Generate pseudo-data.
-2. Implement the Poisson chi-square.
-3. Find the best fit.
-4. Plot a contour.
-5. Check the effect of exposure or background.
+- build a 2D contour;
+- compare pseudo-data and Asimov sensitivity;
+- check how the result changes with threshold;
+- add a simple background and repeat the fit.
 :::
 
-## If There Are Two Teams
+### Before the Defense
 
-Team A:
+Check:
 
 ::: {.compact}
-- Sun inputs;
-- MSW survival probability;
-- physical interpretation.
+- axes have units;
+- tables from PEANUTS or the solar model are identified;
+- the toy detector model is named;
+- $\chi^2$ is defined explicitly;
+- the conclusion follows from the number, not from general knowledge.
 :::
 
-Team B:
-
-::: {.compact}
-- detector response;
-- pseudoexperiment;
-- fit and confidence interval.
-:::
-
-# Checkpoint
-
-## Checkpoint
-
-By the end of lesson 2, the following should be ready:
-
-::: {.compact}
-- $P_{ee}(E)$ plot;
-- expected event spectrum;
-- pseudo-data plot;
-- $\chi^2$ scan or contour;
-- numerical best fit.
-:::
-
-## What to Prepare for the Defense
-
-Each team chooses one main result:
-
-::: {.compact}
-- main plot;
-- formula that explains the plot;
-- short code fragment;
-- toy assumptions;
-- next step toward a realistic analysis.
-:::
-
-## Transition to Lesson 3
-
-For the defense, the important point is not the number of plots, but the logical chain:
-
-$$
-\text{physics question}
-\to
-\text{model}
-\to
-\text{code}
-\to
-\text{plot}
-\to
-\text{numerical result}
-\to
-\text{limitations}.
-$$
+::::
