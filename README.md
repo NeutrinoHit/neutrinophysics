@@ -14,6 +14,15 @@ quarto render
 quarto preview
 ```
 
+For live editing of the solar-neutrino lecture, prefer the subproject preview:
+
+```bash
+make preview-solar-lecture
+```
+
+This target creates the compatibility paths needed by Quarto's watcher for the
+nested solar-neutrino slides.
+
 ## Published URL
 
 ```text

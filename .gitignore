@@ -1,8 +1,13 @@
 /_site/
 /.quarto/
+/slides
+/assets/css/
 .DS_Store
 .chrome-profile/
+.external/
+.venv-peanuts*/
 .ipynb_checkpoints/
+notebooks/outputs/
 __pycache__/
 *.pyc
 *.key
@@ -10,6 +15,12 @@ __pycache__/
 **/*.quarto_ipynb
 solar-neutrino-masterclass/outputs/
 solar-neutrino-masterclass/notebooks/outputs/
+solar-neutrino-masterclass/notebooks/*.html
+solar-neutrino-masterclass/notebooks/*_files/
+solar-neutrino-masterclass/index.html
+solar-neutrino-masterclass/index_files/
+solar-neutrino-masterclass/assignments/*.html
+solar-neutrino-masterclass/assignments/*_files/
 solar-neutrino-masterclass/slides/*.html
 solar-neutrino-masterclass/slides/*_files/
 solar-neutrino-masterclass/report_template/*.html

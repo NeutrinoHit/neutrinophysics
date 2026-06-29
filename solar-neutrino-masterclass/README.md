@@ -1,18 +1,14 @@
 # Solar Neutrino Masterclass
 
-This is a Quarto project for a school-level masterclass on solar neutrinos.
+Materials for a masterclass on solar neutrinos.
 
-Pedagogical path:
+Course logic:
 
 ```text
-solar model inputs
--> neutrino spectra and fluxes
--> MSW survival probability
--> detector event spectrum
--> pseudo-data
--> likelihood scan
--> best fit and contour
--> short scientific report
+lecture
+-> session 1: sources, production radius, spectra, no-oscillation events
+-> session 2: MSW, Earth effect, pseudo-data, fit
+-> defense of three projects
 ```
 
 ## Installation
@@ -25,99 +21,101 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Alternative with conda:
+With conda:
 
 ```bash
 conda env create -f environment.yml
 conda activate solar-neutrino-masterclass
 ```
 
-## Rendering Slides
+## Datasets
 
-```bash
-quarto render
+Students do not install PEANUTS. They receive ready-made tables:
+
+```text
+data/student/
 ```
 
-Individual lessons:
+Regenerate the teaching tables:
 
 ```bash
-quarto render slides/01_solar_sources.qmd
-quarto render slides/02_msw_detector_statistics.qmd
-quarto render slides/03_student_defense.qmd
+python scripts/generate_student_datasets.py
 ```
 
-You can also use:
+Real PEANUTS/SSM tables can replace the same files if the column names are kept.
+
+## Build
 
 ```bash
+make datasets
 make render
+```
+
+Slides only:
+
+```bash
 make slides
 ```
 
-## Notebooks
+## Live Preview
+
+For editing the lecture, run preview from this subproject:
 
 ```bash
+make preview-lecture
+```
+
+From the parent `neutrinophysics` directory, the equivalent command is:
+
+```bash
+make preview-solar-lecture
+```
+
+Both commands run the parent-site preview through a small wrapper. The wrapper
+keeps the normal `/solar-neutrino-masterclass/...` URL and shared assets, and it
+avoids the Quarto watcher path issue where Quarto may look for `slides/...` or
+`_site/slides/...` without the `solar-neutrino-masterclass` prefix.
+
+## Opening Notebooks
+
+On the website, use the `.html` notebook links. A raw `.ipynb` file is JSON, so
+Chrome will show it as a file unless a notebook server renders it.
+
+For interactive local work in Chrome:
+
+```bash
+cd /Users/dmitrijnaumov/Documents/NeutrinoHit/neutrinophysics/solar-neutrino-masterclass
 jupyter lab
 ```
 
-To execute the main notebooks:
+Then open the notebook from the Jupyter page in the browser.
 
-```bash
-make notebooks
-```
+## Structure
 
-The notebooks import shared code from `src/solar_neutrino`. If a student runs a notebook from another working directory, they should check that `../src` is available on the Python path.
+- `slides/00_solar_neutrino_physics.qmd`: physics lecture.
+- `slides/01_solar_sources.qmd`: masterclass 1.
+- `slides/02_msw_detector_statistics.qmd`: masterclass 2.
+- `slides/03_student_defense.qmd`: defense format.
+- `assignments/team_A_solar_sources.qmd`: project 1, SK-like and B8.
+- `assignments/team_B_msw_oscillations.qmd`: project 2, Borexino-like.
+- `assignments/team_C_detector_statistics.qmd`: project 3, day-night.
+- `assignments/fit_recipes.qmd`: short fit recipes.
+- `data/student/`: student tables.
 
-## Lesson Structure
+## Group Projects
 
-1. **The Sun as a neutrino source.** Teams receive flux tables, spectra, and a toy electron-density profile.
-2. **MSW, detector response, statistics.** Teams move from flux to the expected event spectrum, pseudo-data, and a fit.
-3. **Mini-project defense.** Each team presents the physics question, formulas, one code fragment, the main plot, and a numerical result.
+1. **SK-like and B8.** Why a high threshold selects $^8\mathrm{B}$.
+2. **Borexino-like.** Which sources are visible at low energy.
+3. **Day-night.** What can be extracted from the Earth effect.
 
-## Team Work
+Each group presents a physics question, model, main plot, fit, numerical result, and limitations.
 
-For two teams:
+## Limitations
 
-- Team A: Sun + MSW.
-- Team B: detector + statistics.
+The materials are pedagogical:
 
-For three teams:
-
-- Team A: solar sources.
-- Team B: MSW oscillations.
-- Team C: detector response and statistics.
-
-Assignments are in `assignments/`. The report template is in `report_template/`.
-
-HTML version of the template:
-
-```bash
-quarto render report_template/report_template.qmd --to html
-```
-
-PDF output is possible if LaTeX is installed:
-
-```bash
-quarto render report_template/report_template.qmd --to pdf
-```
-
-## Final Result
-
-Each team prepares:
-
-- a short defense: 7 minutes for the talk + 3 minutes for questions;
-- at least one main plot;
-- a numerical result: best-fit normalization, effective $P_{ee}$, confidence interval, or contour;
-- a short report in Quarto/LaTeX style.
-
-## Physical Limitations
-
-This project is pedagogical. It explicitly uses toy models:
-
-- we do not solve a full Standard Solar Model;
-- solar fluxes are taken as input data;
-- the $^{8}\mathrm{B}$ spectrum is a pedagogical beta-like approximation unless it is replaced by a tabulated source;
-- the Super-Kamiokande-like detector response is schematic;
-- $\nu e$ cross sections are proportional to energy and are not precision calculations;
-- real SK/SNO/Borexino/JUNO analyses require backgrounds, systematics, covariance matrices, calibration, and real detector response functions.
-
-For publication-level accuracy, Dmitry should replace the reference tables and BibTeX entries with verified modern sources.
+- the solar model is not solved during the sessions;
+- fluxes, spectra, and probabilities are taken from tables;
+- SK-like and Borexino-like detectors are simplified models;
+- backgrounds and systematics are schematic;
+- the result is not a replacement for a Super-Kamiokande, Borexino, SNO, or JUNO analysis.

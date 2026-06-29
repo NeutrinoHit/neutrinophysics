@@ -36,6 +36,30 @@
   color: #d0d0d0;
 }
 
+.reveal .story-tabs {
+  font-size: 0.88em;
+  line-height: 1.28;
+}
+
+.reveal .story-tabs ul[role=tablist],
+.reveal .story-tabs .nav-tabs,
+.reveal .story-tabs .panel-tabset-tabby {
+  flex-wrap: wrap;
+  gap: 0.16rem;
+}
+
+.reveal .story-tabs [role=tab],
+.reveal .story-tabs .nav-link,
+.reveal .story-tabs .panel-tabset-tabby a {
+  padding: 0.22rem 0.46rem;
+  font-size: 0.72em;
+}
+
+.reveal .story-tabs .media-caption {
+  font-size: 0.94em;
+  line-height: 1.25;
+}
+
 .reveal .question {
   color: #8ec5ff;
   font-weight: 700;
@@ -88,6 +112,294 @@
   font-size: 0.68em;
 }
 
+.reveal .cycle-art {
+  width: min(1000px, 100%);
+  margin: 0.12rem auto 0;
+}
+
+.reveal .cycle-art svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 448px;
+}
+
+.reveal .cycle-art text {
+  fill: #f4f7fb;
+  font-family: inherit;
+}
+
+.reveal .cycle-frame {
+  fill: #070b10;
+  stroke: rgba(255, 255, 255, 0.18);
+  stroke-width: 1.5;
+}
+
+.reveal .cycle-glow-blue {
+  fill: rgba(142, 197, 255, 0.13);
+}
+
+.reveal .cycle-glow-gold {
+  fill: rgba(255, 204, 138, 0.12);
+}
+
+.reveal .cycle-kicker {
+  fill: #8ec5ff;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.reveal .cycle-subtitle {
+  fill: #cfd7e3;
+  font-size: 19px;
+}
+
+.reveal .cycle-node {
+  stroke: rgba(255, 255, 255, 0.72);
+  stroke-width: 2;
+}
+
+.reveal .cycle-node.stable {
+  fill: #102337;
+}
+
+.reveal .cycle-node.beta {
+  fill: #3a2230;
+}
+
+.reveal .cycle-node.product {
+  fill: #173124;
+}
+
+.reveal .cycle-node.seed {
+  fill: #332a13;
+}
+
+.reveal .cycle-branch-panel,
+.reveal .cycle-side-panel {
+  fill: rgba(255, 255, 255, 0.055);
+  stroke: rgba(255, 255, 255, 0.22);
+  stroke-width: 1.5;
+}
+
+.reveal .cycle-branch-title,
+.reveal .cycle-panel-title {
+  fill: #8ec5ff;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.reveal .cycle-reaction {
+  fill: #f5f7fb;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.reveal .cycle-detail {
+  fill: #cfd7e3;
+  font-size: 16px;
+}
+
+.reveal .cycle-badge {
+  fill: rgba(255, 204, 138, 0.13);
+  stroke: rgba(255, 204, 138, 0.56);
+  stroke-width: 1;
+}
+
+.reveal .cycle-badge-text {
+  fill: #ffcc8a;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.reveal .cycle-arrow {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 4.5;
+}
+
+.reveal .cycle-arrow.capture {
+  stroke: #8ec5ff;
+}
+
+.reveal .cycle-arrow.beta {
+  stroke: #ff9f7a;
+}
+
+.reveal .cycle-arrow.product {
+  stroke: #8fd19e;
+}
+
+.reveal .cycle-arrow.rare {
+  stroke: #d3a5ff;
+}
+
+.reveal .cycle-arrow.faint {
+  stroke: rgba(255, 255, 255, 0.28);
+  stroke-dasharray: 8 9;
+}
+
+.reveal .cycle-label {
+  fill: #d9e7f8;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.reveal .cycle-label.beta-label,
+.reveal .cycle-neutrino {
+  fill: #ffcc8a;
+}
+
+.reveal .cycle-label.product-label {
+  fill: #8fd19e;
+}
+
+.reveal .cycle-nucleus {
+  fill: #ffffff;
+  font-size: 23px;
+  font-weight: 800;
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+
+.reveal .cycle-sup {
+  font-size: 65%;
+}
+
+.reveal .cycle-note {
+  fill: #d2d9e4;
+  font-size: 17px;
+}
+
+.reveal .gamow-applet {
+  width: min(1080px, 100%);
+  margin: 0 auto;
+}
+
+.reveal .gamow-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.55rem;
+}
+
+.reveal .gamow-controls button {
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  border-radius: 6px;
+  padding: 0.34rem 0.72rem;
+  background: rgba(255, 255, 255, 0.06);
+  color: #f0f0f0;
+  font: inherit;
+  font-size: 0.5em;
+  cursor: pointer;
+}
+
+.reveal .gamow-controls button.active,
+.reveal .gamow-controls button:hover {
+  background: rgba(142, 197, 255, 0.22);
+  border-color: #8ec5ff;
+}
+
+.reveal .gamow-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(13rem, 1fr);
+  gap: 0.8rem;
+  align-items: stretch;
+}
+
+.reveal .gamow-plot {
+  width: 100%;
+  height: auto;
+  min-height: 330px;
+}
+
+.reveal .gamow-plot .plot-bg {
+  fill: #111111;
+  stroke: #666666;
+  stroke-width: 1;
+}
+
+.reveal .gamow-plot .grid line {
+  stroke: rgba(255, 255, 255, 0.18);
+  stroke-width: 1;
+}
+
+.reveal .gamow-plot path {
+  fill: none;
+  stroke-width: 3.2;
+}
+
+.reveal .gamow-plot .thermal {
+  stroke: #8ec5ff;
+}
+
+.reveal .gamow-plot .tunnel {
+  stroke: #ffcc8a;
+}
+
+.reveal .gamow-plot .window {
+  stroke: #8fd19e;
+  stroke-width: 4;
+}
+
+.reveal .gamow-plot .peak-line {
+  stroke: #8fd19e;
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+}
+
+.reveal .gamow-plot text {
+  fill: #d8d8d8;
+  font-size: 18px;
+}
+
+.reveal .gamow-plot .legend {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.reveal .gamow-plot .thermal-label {
+  fill: #8ec5ff;
+}
+
+.reveal .gamow-plot .tunnel-label {
+  fill: #ffcc8a;
+}
+
+.reveal .gamow-plot .window-label {
+  fill: #8fd19e;
+}
+
+.reveal .gamow-readout {
+  border-left: 3px solid #8ec5ff;
+  padding: 0.45rem 0 0.45rem 0.75rem;
+  font-size: 0.58em;
+  line-height: 1.34;
+  color: #f0f0f0;
+}
+
+.reveal .reaction-name {
+  color: #8ec5ff;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.reveal .reaction-formula {
+  color: #ffcc8a;
+  font-weight: 700;
+  margin-bottom: 0.55rem;
+}
+
+.reveal .reaction-values {
+  margin-bottom: 0.55rem;
+}
+
+.reveal .reaction-note {
+  color: #d0d0d0;
+}
+
 .reveal pre code {
   max-height: 500px;
 }
@@ -103,5 +415,9 @@
 @media (max-width: 720px) {
   .reveal .footer {
     display: none;
+  }
+
+  .reveal .gamow-layout {
+    grid-template-columns: 1fr;
   }
 }

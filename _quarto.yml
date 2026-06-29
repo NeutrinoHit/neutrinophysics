@@ -19,6 +19,7 @@ project:
     - "solar-neutrino-masterclass/index.qmd"
     - "solar-neutrino-masterclass/slides/*.qmd"
     - "solar-neutrino-masterclass/assignments/*.qmd"
+    - "solar-neutrino-masterclass/notebooks/*.ipynb"
     - "!introduction/neutrino-interactions.qmd"
     - "!solar-neutrino-masterclass/report_template/*.qmd"
 

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 650" role="img" aria-labelledby="title desc">
+  <title id="title">Proton-proton chain branch diagram</title>
+  <desc id="desc">Flow chart of pp, pep, pp I, pp II, pp III, and hep branches with approximate branching ratios.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L14,7 L0,14 Z" fill="#111"/>
+    </marker>
+    <style>
+      .bg { fill: #bebdff; }
+      .line { fill: none; stroke: #111; stroke-width: 3.2; stroke-linecap: square; stroke-linejoin: miter; marker-end: url(#arrow); }
+      .box { fill: #fbfbfb; stroke: #111; stroke-width: 1.4; }
+      .tag { fill: #0712f4; }
+      .tag2 { fill: #4542a7; }
+      .reaction { fill: #050505; font: 32px Georgia, "Times New Roman", serif; }
+      .reaction.small { font-size: 30px; }
+      .reaction.tiny { font-size: 27px; }
+      .nu { fill: #f00; }
+      .tagtext { fill: #fff; font: 31px Georgia, "Times New Roman", serif; }
+      .ratio { fill: #050505; font: 26px Georgia, "Times New Roman", serif; }
+      .sup { font-size: 62%; baseline-shift: super; }
+      .sub { font-size: 62%; baseline-shift: sub; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1320" height="650" rx="22"/>
+
+  <!-- Entrance reactions -->
+  <rect class="box" x="44" y="54" width="430" height="80" rx="9"/>
+  <rect class="tag" x="35" y="18" width="96" height="50" rx="10"/>
+  <text class="tagtext" x="68" y="54">pp</text>
+  <text class="reaction" x="68" y="105">p<tspan class="sup">+</tspan> + p<tspan class="sup">+</tspan> → <tspan class="sup">2</tspan>H + e<tspan class="sup">+</tspan> + <tspan class="nu">ν</tspan><tspan class="nu sub">e</tspan></text>
+
+  <rect class="box" x="850" y="54" width="430" height="80" rx="9"/>
+  <rect class="tag" x="1180" y="18" width="96" height="50" rx="10"/>
+  <text class="tagtext" x="1214" y="54">pep</text>
+  <text class="reaction" x="875" y="105">p<tspan class="sup">+</tspan> + e<tspan class="sup">−</tspan> + p<tspan class="sup">+</tspan> → <tspan class="sup">2</tspan>H + <tspan class="nu">ν</tspan><tspan class="nu sub">e</tspan></text>
+
+  <path class="line" d="M474 94 H560 V154"/>
+  <text class="ratio" x="490" y="82">99.77 %</text>
+  <path class="line" d="M850 94 H758 V154"/>
+  <text class="ratio" x="784" y="82">0.23 %</text>
+
+  <!-- Common deuterium step -->
+  <rect class="box" x="470" y="154" width="380" height="80" rx="9"/>
+  <text class="reaction" x="520" y="205"><tspan class="sup">2</tspan>H + p<tspan class="sup">+</tspan> → <tspan class="sup">3</tspan>He + γ</text>
+
+  <!-- pp I branch -->
+  <path class="line" d="M520 194 H315 V511"/>
+  <text class="ratio" x="348" y="184">84.92 %</text>
+  <rect class="box" x="44" y="511" width="430" height="80" rx="9"/>
+  <text class="reaction small" x="76" y="562"><tspan class="sup">3</tspan>He + <tspan class="sup">3</tspan>He → <tspan class="sup">4</tspan>He + 2p<tspan class="sup">+</tspan></text>
+  <rect class="tag2" x="386" y="573" width="88" height="50" rx="9"/>
+  <text class="tagtext" x="411" y="608">ppI</text>
+
+  <!-- hep branch -->
+  <path class="line" d="M850 194 H890"/>
+  <text class="ratio" x="862" y="151">10<tspan class="sup">−5</tspan> %</text>
+  <rect class="box" x="900" y="154" width="380" height="80" rx="9"/>
+  <text class="reaction small" x="928" y="204"><tspan class="sup">3</tspan>He + p<tspan class="sup">+</tspan> → <tspan class="sup">4</tspan>He + e<tspan class="sup">+</tspan> + <tspan class="nu">ν</tspan><tspan class="nu sub">e</tspan></text>
+  <rect class="tag" x="1184" y="218" width="92" height="50" rx="10"/>
+  <text class="tagtext" x="1215" y="254">hep</text>
+
+  <!-- pp II / pp III split -->
+  <path class="line" d="M660 234 V296"/>
+  <text class="ratio" x="678" y="279">15.08 %</text>
+  <rect class="box" x="470" y="296" width="380" height="80" rx="9"/>
+  <text class="reaction" x="504" y="347"><tspan class="sup">3</tspan>He + <tspan class="sup">4</tspan>He → <tspan class="sup">7</tspan>Be + γ</text>
+
+  <path class="line" d="M660 376 V424"/>
+  <text class="ratio" x="678" y="413">99.9 %</text>
+  <rect class="box" x="470" y="424" width="380" height="80" rx="9"/>
+  <rect class="tag" x="460" y="386" width="96" height="50" rx="10"/>
+  <text class="tagtext" x="486" y="421"><tspan class="sup">7</tspan>Be</text>
+  <text class="reaction small" x="510" y="475"><tspan class="sup">7</tspan>Be + e<tspan class="sup">−</tspan> → <tspan class="sup">7</tspan>Li + <tspan class="nu">ν</tspan><tspan class="nu sub">e</tspan></text>
+
+  <path class="line" d="M660 504 V511"/>
+  <rect class="box" x="470" y="511" width="380" height="80" rx="9"/>
+  <text class="reaction small" x="515" y="562"><tspan class="sup">7</tspan>Li + p<tspan class="sup">+</tspan> → <tspan class="sup">4</tspan>He + <tspan class="sup">4</tspan>He</text>
+  <rect class="tag2" x="760" y="573" width="96" height="50" rx="9"/>
+  <text class="tagtext" x="784" y="608">ppII</text>
+
+  <path class="line" d="M850 336 H990 V424"/>
+  <text class="ratio" x="870" y="333">0.1 %</text>
+  <rect class="box" x="900" y="424" width="380" height="80" rx="9"/>
+  <text class="reaction small" x="948" y="475"><tspan class="sup">7</tspan>Be + p<tspan class="sup">+</tspan> → <tspan class="sup">8</tspan>B + γ</text>
+
+  <path class="line" d="M990 504 V511"/>
+  <rect class="box" x="900" y="511" width="380" height="80" rx="9"/>
+  <rect class="tag" x="1180" y="473" width="96" height="50" rx="10"/>
+  <text class="tagtext" x="1210" y="508"><tspan class="sup">8</tspan>B</text>
+  <text class="reaction small" x="940" y="562"><tspan class="sup">8</tspan>B → <tspan class="sup">8</tspan>Be* + e<tspan class="sup">+</tspan> + <tspan class="nu">ν</tspan><tspan class="nu sub">e</tspan></text>
+
+  <path class="line" d="M990 591 V613"/>
+  <rect class="box" x="900" y="613" width="380" height="34" rx="9"/>
+  <text class="reaction tiny" x="973" y="640"><tspan class="sup">8</tspan>Be* → <tspan class="sup">4</tspan>He + <tspan class="sup">4</tspan>He</text>
+  <rect class="tag2" x="1180" y="616" width="96" height="34" rx="9"/>
+  <text class="tagtext" x="1203" y="642">ppIII</text>
+</svg>

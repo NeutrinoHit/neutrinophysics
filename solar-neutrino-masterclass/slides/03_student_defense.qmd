@@ -1,177 +1,185 @@
 ---
-title: "Mini-Project Defense"
-subtitle: "Lesson 3 · Solar Neutrino Masterclass"
+title: "Project Defense"
+subtitle: "Format of a short scientific presentation"
 author: "Dmitry V. Naumov"
-institute: "Baikal School"
+institute: "NeutrinoHit"
 date: "June 2026"
 ---
 
 # Format
 
-## Defense Goal
+## How We Defend the Project
 
-Each team should present a short scientific result:
+:::: {.panel-tabset .story-tabs}
 
-::: {.compact}
-- clear physics question;
-- minimal model;
-- reproducible code;
-- plot;
-- numerical conclusion;
-- honest description of toy approximations.
-:::
+### Timing
 
-## Timing
-
-For each team:
+For each group:
 
 ```text
-7 minutes for the talk + 3 minutes for questions
+7 minutes for the talk
+3 minutes for questions
 ```
 
-If there are three teams:
+Three groups:
 
 ```text
-3 teams x 10 minutes = 30 minutes
+30 minutes for defenses
+15-20 minutes for common discussion
 ```
 
-After the talks:
+### Goal
 
-```text
-15-20 minutes for a common checkpoint discussion
-```
+Defend a short physics result, not a collection of plots:
 
-## What Must Be Shown
+$$
+\text{question}
+\to
+\text{model}
+\to
+\text{data}
+\to
+\text{fit}
+\to
+\text{conclusion}.
+$$
 
-Each team shows:
+One main plot is better than five disconnected ones.
+
+### Five Slides
+
+Recommended structure:
 
 ::: {.compact}
 1. Physics question.
-2. Formulas used.
-3. One key code fragment.
-4. Main plot.
-5. Numerical result.
-6. What is a toy approximation in the model.
-7. Which next step would make the analysis more realistic.
+2. Model and input tables.
+3. Main plot.
+4. Fit and numerical result.
+5. Model limitations and next step.
 :::
 
-# Talk Content
-
-## Required Plots
-
-Minimum set for the full masterclass:
+### Required Statements
 
 ::: {.compact}
-- solar fluxes;
-- $^{8}\mathrm{B}$ spectrum;
-- electron density profile;
-- $P_{ee}(E)$;
-- expected vs pseudo-observed spectrum;
-- $\chi^2$ scan or contour.
+- which parameter was measured or tested;
+- which tables were used as input;
+- which formula gives expected events $\mu_i$;
+- which $\chi^2$ function was used;
+- what is simplified.
 :::
 
-A team does not need to show all of them, but it must show its main plot.
+::::
 
-## Required Code Fragment
+# Content
 
-Show one short fragment that actually determines the result:
+## What Must Be in the Defense
+
+:::: {.panel-tabset .story-tabs}
+
+### Main Plot
+
+Choose one:
 
 ::: {.compact}
-- spectrum normalization;
-- survival probability grid;
-- expected events;
+- source fractions after threshold;
+- event spectrum with oscillations;
+- $^7\mathrm{Be}$, pep, and CNO contributions;
+- $P_{ee}^{night}-P_{ee}^{day}$;
+- $\Delta\chi^2$ or a 2D contour.
+:::
+
+The plot must have axes, units, and a caption.
+
+### Main Number
+
+Examples:
+
+::: {.compact}
+- fraction of $^8\mathrm{B}$ events above 4.5 MeV;
+- best-fit $^7\mathrm{Be}$ normalization;
+- interval for $P_{ee}^{eff}$;
+- $A_{DN}$;
+- sensitivity to the Earth-effect scale.
+:::
+
+A number without an uncertainty is only half of the result.
+
+### Short Code
+
+Show one fragment that actually determines the result:
+
+::: {.compact}
+- calculation of $\mu_i$;
 - pseudo-data generation;
-- Poisson chi-square.
+- $\chi^2$ function;
+- parameter scan;
+- contour construction.
 :::
 
-The code should fit on one slide and be connected to the main plot.
+The code must fit on one slide.
 
-## Required Physics Statement
+### Limitations
 
-The physics conclusion must be specific:
+Say explicitly:
 
 ::: {.compact}
-- not "oscillations are important";
-- but "high-energy $^{8}\mathrm{B}$ events are suppressed toward $P_{ee}\sim\sin^2\theta_{12}$ in the MSW regime";
-- or "the threshold mostly changes the low-energy side of the expected spectrum".
+- solar fluxes and probabilities are taken from tables;
+- the detector model is pedagogical;
+- backgrounds are simplified or switched off;
+- systematics are not real SK or Borexino systematics;
+- the result is not a full experimental analysis.
 :::
 
-## Toy Approximations
-
-You must state:
-
-::: {.compact}
-- fluxes are inputs, not a solved solar model;
-- the $^{8}\mathrm{B}$ spectrum may be a toy beta-like shape;
-- detector response is schematic;
-- the $\nu e$ cross section is simplified;
-- backgrounds and systematics are not realistic unless explicitly added.
-:::
+::::
 
 # Evaluation
 
-## Criteria
+## How It Will Be Evaluated
 
-We evaluate:
+:::: {.panel-tabset .story-tabs}
 
-::: {.compact}
-- physical correctness of the setup;
-- reproducibility of the code;
-- quality of the plot;
-- presence of a numerical result;
-- understanding of model limitations;
-- connection between formula, code, and result.
-:::
-
-## Typical Mistakes
+### Criteria
 
 ::: {.compact}
-- toy model presented as a precision result;
-- plot without units and axis labels;
-- fit without stating the likelihood;
-- $n_i=0$ incorrectly handled in Poisson chi-square;
-- no random seed for the pseudoexperiment;
-- conclusion not connected to the plotted result.
+- the question is clear;
+- the event formula matches the plot;
+- the notebook is reproducible;
+- the fit is defined through $\chi^2$ or likelihood;
+- there is a numerical result;
+- limitations are stated honestly.
 :::
 
-## Final Checklist
-
-Before the talk, check:
+### Common Mistakes
 
 ::: {.compact}
-- notebook runs top to bottom;
-- figure files are saved;
-- axes have units;
-- best-fit value is written on the slide;
-- toy assumptions are explicit;
-- report template is filled enough to be readable.
+- plot without units;
+- fit without defining $\chi^2$;
+- conclusion not supported by the result;
+- toy model presented as a real analysis;
+- pseudo-data generated without a fixed seed;
+- interval drawn without stating the $\Delta\chi^2$ level.
 :::
 
-## Common Checkpoint
+### Questions After the Talk
 
-After the talks, we compare:
+Expect questions of this type:
 
 ::: {.compact}
-- which inputs had the strongest effect;
-- where the main approximations enter;
-- what changes with a real detector response;
-- which data must be replaced by verified references.
+- what changes with another threshold;
+- which source gives the main contribution;
+- where oscillations enter;
+- why this fit parameter was chosen;
+- which systematic uncertainty would matter first in a real experiment.
 :::
 
-## Closing
+### Final Sentence
 
-The final line of the project:
+End with one concrete sentence:
 
-$$
-\text{solar model inputs}
-\to
-\text{MSW}
-\to
-\text{detector}
-\to
-\text{statistics}
-\to
-\text{scientific conclusion}.
-$$
+```text
+In our teaching model we obtained ...
+This means ...
+The main limitation of the result is ...
+```
 
-The main result must be reproducible and honestly limited.
+::::

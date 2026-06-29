@@ -1,0 +1,7 @@
+detector,parameter,value,unit
+SK-like,threshold_MeV,4.5,MeV
+SK-like,threshold_width_MeV,0.35,MeV
+SK-like,exposure,100.0,kton year water
+Borexino-like,threshold_MeV,0.2,MeV
+Borexino-like,threshold_width_MeV,0.04,MeV
+Borexino-like,exposure,100.0,ton year scintillator-like

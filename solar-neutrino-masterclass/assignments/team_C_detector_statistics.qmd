@@ -1,47 +1,96 @@
 ---
-title: "Team C: Detector and Statistics"
+title: "Project 3: Day-Night Effect and Earth Matter"
 lang: en
 format:
   html:
     toc: true
 ---
 
-# Goal
+# Question
 
-Move from the $^{8}\mathrm{B}$ spectrum and $P_{ee}(E)$ to an expected event spectrum, pseudo-data, and a fit.
+What sensitivity does a day-night spectrum comparison provide to Earth matter or to oscillation parameters?
 
-# Input Data
+# What to Compute
 
-- `data/b8_spectrum.csv`
-- `src/solar_neutrino/detector.py`
-- `src/solar_neutrino/pseudoexperiment.py`
-- `src/solar_neutrino/fit.py`
-- `notebooks/03_sk_like_detector.ipynb`
-- `notebooks/04_pseudoexperiment_and_fit.ipynb`
+1. Plot $P_{ee}^{day}(E)$ and $P_{ee}^{night}(E)-P_{ee}^{day}(E)$.
+2. Compute daytime and nighttime event spectra.
+3. Compute $A_{DN}$.
+4. Generate or load ready-made day/night pseudo-data.
+5. Fit the Earth-effect scale $\alpha_\oplus$.
 
-# What to Plot
+# Data
 
-- expected event spectrum;
-- expected vs pseudo-observed plot;
-- $\Delta\chi^2$ scan or 2D contour.
+- `data/student/oscillation_probabilities.csv`
+- `data/student/earth_regeneration.csv`
+- `data/student/mass_state_cross_sections.csv`
+- `data/student/sk_like_event_predictions.csv`
+- `data/student/pseudo_data_sk_daynight.csv`
 
-# What to Explain
+# Main Formula
 
-- what a toy SK-like response means;
-- why a Poisson likelihood is used;
-- how $n_i=0$ is handled;
-- what changes when the threshold, exposure, or background changes.
+Parameterize the nighttime probability as
 
-# What to Submit
+$$
+P_{ee}^{night}(E;\alpha_\oplus)
+=
+P_{ee}^{day}(E)
++
+\alpha_\oplus
+\left[
+P_{ee}^{night,ref}(E)-P_{ee}^{day}(E)
+\right].
+$$
 
-- executed notebook;
-- one defense slide with fit result;
-- short report paragraph about the statistical model.
+If $\alpha_\oplus=0$, there is no Earth effect.
 
-# Minimum Result
+If $\alpha_\oplus=1$, the reference table is used.
 
-Best-fit normalization and an approximate 1D confidence interval.
+# Observable
 
-# Advanced Task
+$$
+A_{DN}
+=
+2\frac{N_{night}-N_{day}}
+{N_{night}+N_{day}}.
+$$
 
-Add a simple background model and show how the best fit shifts.
+This is not only a probability. It includes the spectrum, cross section, threshold, exposure, and background.
+
+# Main Plot
+
+Recommended plot:
+
+```text
+Pee_night - Pee_day and expected A_DN
+```
+
+Second useful plot:
+
+```text
+Delta chi2(alpha_Earth)
+```
+
+# Minimal Result
+
+Number:
+
+```text
+A_DN = ...
+```
+
+and fit:
+
+```text
+alpha_Earth = ... ± ...
+```
+
+# What to Say in the Defense
+
+- The Earth effect is small, so statistics matter.
+- The high-energy part of the spectrum is more useful for an SK-like day-night analysis.
+- Pseudo-data may look inconclusive even when the expected sensitivity is nonzero.
+- Lack of sensitivity to a parameter is also a physics result.
+
+# Stronger Version
+
+Build a 2D contour in $(\sin^2\theta_{12}, \Delta m^2_{21})$ or $(\alpha_\oplus, N_{B8})$.
