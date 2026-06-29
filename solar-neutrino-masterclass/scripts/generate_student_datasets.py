@@ -9,6 +9,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
+from zipfile import ZIP_DEFLATED, ZipFile
 
 import numpy as np
 import pandas as pd
@@ -16,6 +17,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "student"
+ARCHIVE_NAME = "solar_neutrino_student_data.zip"
 
 ME_MEV = 0.51099895
 GF_GEV = 1.1663787e-5
@@ -432,9 +434,23 @@ Core tables:
 - `borexino_like_event_predictions.csv`: low-energy expected contributions.
 - `pseudo_data_sk_daynight.csv`: reproducible day/night pseudo-data.
 - `pseudo_data_borexino.csv`: reproducible Borexino-like pseudo-data.
+
+Archive:
+
+- `solar_neutrino_student_data.zip`: all CSV files and this README in one download.
 """,
         encoding="utf-8",
     )
+
+
+def write_archive() -> None:
+    archive_path = OUT / ARCHIVE_NAME
+    if archive_path.exists():
+        archive_path.unlink()
+    files = sorted([*OUT.glob("*.csv"), OUT / "README.md"])
+    with ZipFile(archive_path, "w", compression=ZIP_DEFLATED) as archive:
+        for path in files:
+            archive.write(path, arcname=path.name)
 
 
 def main() -> None:
@@ -457,6 +473,7 @@ def main() -> None:
     write_detector_response()
     write_predictions(E, spectra, day_prob, night_prob)
     write_readme()
+    write_archive()
     print(f"Wrote student datasets to {OUT}")
 
 

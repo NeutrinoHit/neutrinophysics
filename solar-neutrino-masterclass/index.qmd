@@ -96,15 +96,16 @@ toc: false
     </p>
     <div class="course-links">
       <a href="data/student/README.md">Dataset notes</a>
-      <a href="data/student/solar_fluxes.csv">Fluxes</a>
-      <a href="data/student/radial_production_profiles.csv">Radial profiles</a>
-      <a href="data/student/energy_spectra.csv">Spectra</a>
-      <a href="data/student/oscillation_probabilities.csv">Oscillations</a>
-      <a href="data/student/nu_electron_recoil_cross_sections.csv">Cross sections</a>
-      <a href="data/student/sk_like_event_predictions.csv">SK-like events</a>
-      <a href="data/student/borexino_like_event_predictions.csv">Borexino-like events</a>
-      <a href="data/student/pseudo_data_sk_daynight.csv">Day-night pseudo-data</a>
-      <a href="data/student/pseudo_data_borexino.csv">Borexino pseudo-data</a>
+      <a href="data/student/solar_neutrino_student_data.zip" download>Download all data (.zip)</a>
+      <a href="data/student/solar_fluxes.csv" download>Fluxes</a>
+      <a href="data/student/radial_production_profiles.csv" download>Radial profiles</a>
+      <a href="data/student/energy_spectra.csv" download>Spectra</a>
+      <a href="data/student/oscillation_probabilities.csv" download>Oscillations</a>
+      <a href="data/student/nu_electron_recoil_cross_sections.csv" download>Cross sections</a>
+      <a href="data/student/sk_like_event_predictions.csv" download>SK-like events</a>
+      <a href="data/student/borexino_like_event_predictions.csv" download>Borexino-like events</a>
+      <a href="data/student/pseudo_data_sk_daynight.csv" download>Day-night pseudo-data</a>
+      <a href="data/student/pseudo_data_borexino.csv" download>Borexino pseudo-data</a>
     </div>
   </section>
 
@@ -121,12 +122,18 @@ toc: false
       Raw `.ipynb` files are still included in the repository and can be opened locally with Jupyter.
     </p>
     <div class="course-links">
-      <a href="notebooks/team_project_template.ipynb">Template .ipynb</a>
-      <a href="notebooks/01_solar_fluxes_and_spectra.ipynb">Notebook 1 .ipynb</a>
-      <a href="notebooks/02_msw_survival_probability.ipynb">Notebook 2 .ipynb</a>
-      <a href="notebooks/03_sk_like_detector.ipynb">Notebook 3 .ipynb</a>
-      <a href="notebooks/04_pseudoexperiment_and_fit.ipynb">Notebook 4 .ipynb</a>
+      <a href="#notebook-downloads" data-download-file="notebooks/team_project_template.ipynb" download="team_project_template.ipynb">Template .ipynb</a>
+      <a href="#notebook-downloads" data-download-file="notebooks/01_solar_fluxes_and_spectra.ipynb" download="01_solar_fluxes_and_spectra.ipynb">Notebook 1 .ipynb</a>
+      <a href="#notebook-downloads" data-download-file="notebooks/02_msw_survival_probability.ipynb" download="02_msw_survival_probability.ipynb">Notebook 2 .ipynb</a>
+      <a href="#notebook-downloads" data-download-file="notebooks/03_sk_like_detector.ipynb" download="03_sk_like_detector.ipynb">Notebook 3 .ipynb</a>
+      <a href="#notebook-downloads" data-download-file="notebooks/04_pseudoexperiment_and_fit.ipynb" download="04_pseudoexperiment_and_fit.ipynb">Notebook 4 .ipynb</a>
     </div>
   </section>
 </div>
+
+<script>
+document.querySelectorAll("[data-download-file]").forEach((link) => {
+  link.href = link.dataset.downloadFile;
+});
+</script>
 ```
