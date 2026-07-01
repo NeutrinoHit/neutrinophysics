@@ -23,7 +23,7 @@ format:
     margin: 0.06
     center: false
     incremental: false
-    chalkboard: false
+    chalkboard: true
     preview-links: false
 
 execute:

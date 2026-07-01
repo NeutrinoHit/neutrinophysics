@@ -36,30 +36,6 @@
   color: #d0d0d0;
 }
 
-.reveal .story-tabs {
-  font-size: 0.88em;
-  line-height: 1.28;
-}
-
-.reveal .story-tabs ul[role=tablist],
-.reveal .story-tabs .nav-tabs,
-.reveal .story-tabs .panel-tabset-tabby {
-  flex-wrap: wrap;
-  gap: 0.16rem;
-}
-
-.reveal .story-tabs [role=tab],
-.reveal .story-tabs .nav-link,
-.reveal .story-tabs .panel-tabset-tabby a {
-  padding: 0.22rem 0.46rem;
-  font-size: 0.72em;
-}
-
-.reveal .story-tabs .media-caption {
-  font-size: 0.94em;
-  line-height: 1.25;
-}
-
 .reveal .question {
   color: #8ec5ff;
   font-weight: 700;
@@ -110,6 +86,41 @@
   margin-top: 0.45em;
   color: #d0d0d0;
   font-size: 0.68em;
+}
+
+.reveal .formula-compact {
+  font-size: 0.62em;
+  line-height: 1.18;
+}
+
+.reveal .formula-compact p,
+.reveal .formula-compact ul {
+  margin-top: 0.2em;
+  margin-bottom: 0.38em;
+}
+
+.reveal .formula-compact li {
+  margin-top: 0.08em;
+  margin-bottom: 0.14em;
+}
+
+.reveal .formula-compact .MathJax_Display {
+  margin: 0.28em 0;
+}
+
+.reveal .cycle-map-row {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(9rem, 1fr);
+  gap: 0.9rem;
+  align-items: center;
+}
+
+.reveal .cycle-map-note {
+  border-left: 3px solid #8ec5ff;
+  padding-left: 0.65rem;
+  color: #d0d0d0;
+  font-size: 0.58em;
+  line-height: 1.28;
 }
 
 .reveal .cycle-art {
@@ -398,6 +409,15 @@
 
 .reveal .reaction-note {
   color: #d0d0d0;
+}
+
+.reveal .gamow-assumption {
+  margin-top: 0.75rem;
+  padding-top: 0.62rem;
+  border-top: 1px solid rgba(142, 197, 255, 0.28);
+  color: #bac6d4;
+  font-size: 0.78em;
+  line-height: 1.28;
 }
 
 .reveal pre code {
