@@ -1,415 +1,618 @@
 ---
-title: "Masterclass 1: Sources and Events"
-subtitle: "Solar fluxes, spectra, production radius, and the first detector calculation"
+title: "Masterclass 1: Fluxes, Event Rates, and a Normalization Fit"
+subtitle: "SK-like event spectrum from solar $^8\\mathrm{B}$ neutrinos"
 author: "Dmitry V. Naumov"
-institute: "NeutrinoHit"
+institute: "JINR"
 date: "June 2026"
 ---
 
-# Aim
+# Tasks
 
-## What Should Be Done Today
+## Goal for This Session
 
-:::: {.panel-tabset .story-tabs}
-
-### Today's Task
-
-Today we do not discuss why the flux is huge.
-
-Today we build the working chain:
+Build the first quantitative model for an SK-like solar-neutrino measurement:
 
 $$
-\text{source in the Sun}
+{}^8\mathrm{B}\ \nu_e
 \to
-\Phi_i,\ f_i(E_\nu),\ q_i(r)
+\nu e\ \mathrm{scattering}
 \to
-\nu e\text{ scattering}
+e^-_{\rm recoil}.
+$$
+
+Today we compute:
+
+::: {.compact}
+- expected event counts in recoil-electron energy bins;
+- pseudo-data from those expected counts;
+- a one-parameter fit of the $^8\mathrm{B}$ flux normalization.
+:::
+
+## Fit Parameter
+
+Use one free parameter:
+
+$$
+\Phi_{^8\mathrm{B}}
 \to
-\frac{dN}{dT_e}.
+\alpha_B\,\Phi_{^8\mathrm{B}}.
 $$
 
-By the end of the lesson, each group has the first numerical result for its future project.
-
-### Minimal Input
-
-Student files:
-
-```text
-data/student/solar_fluxes.csv
-data/student/radial_production_profiles.csv
-data/student/energy_spectra.csv
-data/student/nu_electron_recoil_cross_sections.csv
-data/student/detector_response.csv
-```
-
-PEANUTS and the solar model stay on the teacher side. Students need ready-to-use tables.
-
-### Three Groups
-
-::: {.compact}
-- **Project 1:** why an SK-like detector mostly sees $^8\mathrm{B}$ neutrinos.
-- **Project 2:** what a Borexino-like detector measures at low energies.
-- **Project 3:** which inputs are needed for the later day-night problem.
-:::
-
-Each group computes events, not only input plots.
-
-### Lesson Rule
-
-The teacher gives a short recipe.
-
-The group immediately computes:
-
-::: {.compact}
-- one check plot;
-- one table of numbers;
-- one conclusion that can later be defended.
-:::
-
-::::
-
-# Radius
-
-## Where Neutrinos Are Produced
-
-:::: {.panel-tabset .story-tabs}
-
-### Production Density
-
-For each source, the table gives a function $q_i(r)$.
-
-It shows where neutrinos of this type are produced in the Sun.
-
-Do not confuse:
-
-::: {.compact}
-- $q_i(r)$: production density;
-- $4\pi r^2 q_i(r)\,dr$: contribution of a spherical shell;
-- $\Phi_i$: total flux of this source at Earth.
-:::
-
-### Shell Contribution
-
-The normalized radial contribution is
+The first-session fit is
 
 $$
-p_i(r)=
-\frac{4\pi r^2 q_i(r)}
-{\int_0^{R_\odot}4\pi r^2 q_i(r)\,dr}.
+\alpha_B = 1
+\quad\hbox{for the reference input flux.}
 $$
 
-Then the shell contribution to the flux at Earth is
-
-$$
-d\Phi_i(r)=\Phi_i\,p_i(r)\,dr.
-$$
-
-The factor $r^2dr$ often changes the shape of the plot.
-
-### What to Plot
-
-Plot for all sources:
-
-::: {.compact}
-- $q_i(r)$;
-- $p_i(r)$;
-- the cumulative fraction $\int_0^r p_i(r')dr'$.
-:::
-
-Check question:
-
-::: {.question}
-Which source is produced closest to the solar center?
-:::
-
-### What to Write
-
-One short conclusion:
-
-```text
-Source X is more central than source Y.
-For MSW this matters because Pee depends on the matter density at production.
-```
-
-::::
-
-# Spectra
-
-## Solar-Neutrino Energies
-
-:::: {.panel-tabset .story-tabs}
-
-### Spectrum Table
-
-File:
-
-```text
-data/student/energy_spectra.csv
-```
-
-Columns:
-
-```text
-source, E_MeV, spectrum_per_MeV, kind
-```
-
-For each source:
-
-$$
-\int f_i(E_\nu)\,dE_\nu = 1.
-$$
-
-### Flux in Energy
-
-For source $i$:
-
-$$
-\frac{d\Phi_i}{dE_\nu}
-=
-\Phi_i f_i(E_\nu).
-$$
-
-The total flux is
-
-$$
-\frac{d\Phi}{dE_\nu}
-=
-\sum_i \Phi_i f_i(E_\nu).
-$$
-
-Lines in the table are slightly broadened only to make plotting simple.
-
-### What to Plot
-
-Plot:
-
-::: {.compact}
-- normalized shapes $f_i(E_\nu)$;
-- physical fluxes $\Phi_i f_i(E_\nu)$;
-- the $0-2$ MeV region and the $2-18$ MeV region separately.
-:::
-
-At least one plot must use a logarithmic scale.
-
-### Check
-
-The plot should show:
-
-::: {.compact}
-- pp flux is enormous but low-energy;
-- $^7\mathrm{Be}$ and pep are lines;
-- $^8\mathrm{B}$ has a small normalization but extends to high energy;
-- hep barely affects the event count but sets the far tail.
-:::
-
-::::
-
-# Detector
-
-## From Neutrino to Electron
-
-:::: {.panel-tabset .story-tabs}
-
-### Channel
-
-For both teaching detectors, use
-
-$$
-\nu + e^- \to \nu + e^-.
-$$
-
-An electron neutrino has charged-current and neutral-current contributions.
-
-$\nu_\mu,\nu_\tau$ have only the neutral-current contribution.
-
-Today we first compute without oscillations:
+Oscillations are not fitted today:
 
 $$
 P_{ee}=1.
 $$
 
-### Kinematics
+## Main Output
 
-For a neutrino with energy $E_\nu$, the electron kinetic energy satisfies
+The notebook must produce:
 
-$$
-0<T_e<T_e^{\max},
-\qquad
-T_e^{\max}
-=
-\frac{2E_\nu^2}{m_e+2E_\nu}.
-$$
+::: {.compact}
+- $^8\mathrm{B}$ neutrino spectrum;
+- SK-like recoil spectrum $dN/dT_e$;
+- event total above a chosen threshold;
+- pseudo-data in the same bins;
+- $\hat\alpha_B$ and a one-dimensional interval from $q(\alpha_B)$.
+:::
 
-Cross-section table:
+# Inputs
 
-```text
-data/student/nu_electron_recoil_cross_sections.csv
+## Project Page
+
+:::: {.columns}
+
+::: {.column width=34%}
+![](../assets/figures/solar_masterclass_qr.png){fig-align="center" width="95%"}
+:::
+
+::: {.column width=66%}
+
+Project page:
+
+```{=html}
+<div style="font-family: monospace; font-size: 0.70em; line-height: 1.25;">
+https://neutrinohit.github.io/neutrinophysics/<br>
+solar-neutrino-masterclass/
+</div>
 ```
 
-### Event Rate
+Tables used today:
 
-For source $i$:
+```text
+data/masterclass1/solar_fluxes.csv
+data/masterclass1/energy_spectra.csv
+data/masterclass1/nu_electron_recoil_cross_sections.csv
+```
+
+:::
+
+::::
+
+## Load the Tables
+
+From the web page:
+
+```python
+import numpy as np
+import pandas as pd
+
+BASE = "https://neutrinohit.github.io/neutrinophysics/solar-neutrino-masterclass"
+
+fluxes = pd.read_csv(f"{BASE}/data/masterclass1/solar_fluxes.csv")
+spectra = pd.read_csv(f"{BASE}/data/masterclass1/energy_spectra.csv")
+xs = pd.read_csv(f"{BASE}/data/masterclass1/nu_electron_recoil_cross_sections.csv")
+```
+
+For a local notebook, replace `BASE` by the local project directory.
+
+## Select $^8\mathrm{B}$
+
+```python
+phi_b8 = float(
+    fluxes.loc[fluxes["source"] == "B8", "flux_cm2_s"].iloc[0]
+)
+
+b8 = spectra.loc[spectra["source"] == "B8"].copy()
+b8 = b8.sort_values("E_MeV")
+```
+
+Here
 
 $$
-\frac{dN_i}{dT_e}
+\Phi_{^8\mathrm{B}}=\int dE_\nu\,\frac{d\Phi_{^8\mathrm{B}}}{dE_\nu},
+\qquad
+\frac{d\Phi_{^8\mathrm{B}}}{dE_\nu}
 =
-N_eT
-\int dE_\nu\,
-\Phi_i f_i(E_\nu)
-\frac{d\sigma_e}{dT_e}
-\epsilon(T_e).
+\Phi_{^8\mathrm{B}} f_{^8\mathrm{B}}(E_\nu).
 $$
 
-In the first lesson:
+The table column `spectrum_per_MeV` is $f_{^8\mathrm{B}}(E_\nu)$.
 
-::: {.compact}
-- no oscillations;
-- backgrounds may be set to zero;
-- energy resolution may be ignored.
+Expected check:
+
+```text
+Phi_B8 = 5.460000e+06 cm^-2 s^-1
+```
+
+## Check the Spectrum
+
+:::: {.columns}
+
+::: {.column width=54%}
+
+Check the normalization:
+
+```python
+norm = np.trapezoid(b8["spectrum_per_MeV"], b8["E_MeV"])
+print(norm)
+```
+
+Expected output:
+
+```text
+1.000000000000
+```
+
+Plot:
+
+```python
+ax = b8.plot(
+    x="E_MeV",
+    y="spectrum_per_MeV",
+    logy=True,
+    legend=False
+)
+ax.set_xlabel(r"$E_\nu$ [MeV]")
+ax.set_ylabel(r"$f_{^8\mathrm{B}}(E_\nu)$ [MeV$^{-1}$]")
+```
+
 :::
 
-### Two Teaching Detectors
-
-SK-like:
-
-::: {.compact}
-- water;
-- high threshold;
-- main source: $^8\mathrm{B}$;
-- result: number of events above threshold.
+::: {.column width=46%}
+![](../assets/figures/mc1_b8_spectrum.png){fig-align="center" width="100%"}
 :::
 
-Borexino-like:
+::::
 
-::: {.compact}
-- low threshold;
-- $^7\mathrm{Be}$, pep, and CNO are visible;
-- result: source contributions in the low-energy region.
+# Event Model
+
+## Target Electrons
+
+For water,
+
+$$
+N_e
+=
+10 N_A\frac{M_{\rm water}}{18~\mathrm{g}}.
+$$
+
+For an exposure written as $M_{\rm water}T_{\rm live}$,
+
+$$
+N_eT_{\rm live}
+=
+10N_A\frac{M_{\rm water}}{18~\mathrm{g}}T_{\rm live}.
+$$
+
+The CSV units are practical units: flux in $\mathrm{cm^{-2}s^{-1}}$, cross section in $\mathrm{cm^2\,MeV^{-1}}$.
+
+## Target Electrons
+
+Use in the example:
+
+```python
+N_A = 6.02214076e23
+seconds_per_year = 365.25 * 24 * 3600
+
+mass_g = 100.0e9          # 100 kton water
+T_live = seconds_per_year # one year
+N_e = 10.0 * N_A * mass_g / 18.0
+```
+
+Expected check:
+
+```text
+N_e = 3.345634e+34
+```
+
+## Binned Prediction
+
+For recoil-energy bin $j$,
+
+$$
+\mu_j(\alpha_B)
+=
+\alpha_B\,N_eT_{\rm live}
+\int_{T_j}^{T_{j+1}}dT_e
+\int dE_\nu\,
+\Phi_{^8\mathrm{B}}f_{^8\mathrm{B}}(E_\nu)
+\frac{d\sigma_{\nu_e e}(E_\nu,T_e)}{dT_e}.
+$$
+
+Today:
+
+$$
+\mu_j(\alpha_B)=\alpha_B\,m_j.
+$$
+
+The fixed template $m_j$ is the reference prediction for $\alpha_B=1$.
+
+## Cross-Section Table
+
+Required columns:
+
+```text
+E_MeV
+T_e_MeV
+dsigma_nue_cm2_per_MeV
+```
+
+Use interpolation for the $^8\mathrm{B}$ spectral shape:
+
+```python
+shape = np.interp(
+    xs["E_MeV"],
+    b8["E_MeV"],
+    b8["spectrum_per_MeV"],
+    left=0.0,
+    right=0.0,
+)
+
+xs = xs.assign(dphi_dE=phi_b8 * shape)
+```
+
+Expected checks:
+
+```text
+cross-section grid = 188 x 181
+dE = 0.100267 MeV, dT = 0.100000 MeV
+```
+
+## Tabular Integral
+
+For each table row $(E_\nu^a,T_e^b)$, define a weight
+
+$$
+w_{ab} =
+N_eT_{\rm live}
+\Phi_{^8\mathrm{B}}f_{^8\mathrm{B}}(E_\nu^a)
+\frac{d\sigma_{\nu_e e}(E_\nu^a,T_e^b)}{dT_e}
+\Delta E_\nu\Delta T_e .
+$$
+
+Then the prediction in recoil bin $j$ is
+
+$$
+m_j
+\simeq
+\sum_{a,b:\,T_e^b\in [T_j,T_{j+1})} w_{ab}.
+$$
+
+First compute row weights. Then assign rows to recoil-energy bins.
+
+## Event Template
+
+```python
+E_grid = np.sort(xs["E_MeV"].unique())
+T_grid = np.sort(xs["T_e_MeV"].unique())
+dE = np.median(np.diff(E_grid))
+dT = np.median(np.diff(T_grid))
+```
+
+## Event Template
+
+```python
+Tmin, Tmax, bin_width = 4.5, 14.0, 0.5
+edges = np.arange(Tmin, Tmax + 0.5 * bin_width, bin_width)
+nbins = len(edges) - 1
+bin_id = np.digitize(xs["T_e_MeV"], edges) - 1
+
+valid = (0 <= bin_id) & (bin_id < nbins)
+integrand = (
+    N_e * T_live
+    * xs["dphi_dE"]
+    * xs["dsigma_nue_cm2_per_MeV"]
+    * dE * dT
+)
+
+m = np.bincount(bin_id[valid], weights=integrand[valid], minlength=nbins)
+centers = 0.5 * (edges[:-1] + edges[1:])
+```
+
+## Plot the Prediction
+
+:::: {.columns}
+
+::: {.column width=48%}
+
+```python
+import matplotlib.pyplot as plt
+
+plt.stairs(m, edges)
+plt.xlabel(r"$T_e$ [MeV]")
+plt.ylabel("expected events / bin")
+plt.yscale("log")
+plt.show()
+```
+
+Expected first bins:
+
+```text
+T_low  T_high  events
+4.5    5.0     22174.6
+5.0    5.5     20898.3
+5.5    6.0     19528.7
+```
+
+:::
+
+::: {.column width=52%}
+![](../assets/figures/mc1_recoil_template.png){fig-align="center" width="100%"}
 :::
 
 ::::
 
-# Group Work
+Useful checks:
 
-## What Each Group Does
+:::: {.columns}
 
-:::: {.panel-tabset .story-tabs}
+::: {.column width=48%}
 
-### Project 1: SK-like
+- $m_j\ge 0$;
+- $\sum_j m_j$ decreases when $T_{\min}$ increases;
 
-Question:
-
-::: {.question}
-Why does a detector with a MeV-scale threshold mostly see $^8\mathrm{B}$ neutrinos, although the pp flux is much larger?
 :::
 
-Today:
+::: {.column width=48%}
+- changing `nbins` should not change $\sum_j m_j$ much.
+:::
+::::
 
-::: {.compact}
-- plot all spectra;
-- compute no-oscillation events;
-- plot $dN/dT_e$;
-- find the $^8\mathrm{B}$ fraction above thresholds 3, 4.5, and 6 MeV.
+# Pseudo-Data and Fit
+
+## Generate Pseudo-Data
+
+:::: {.columns}
+
+::: {.column width=48%}
+
+Choose a true normalization:
+
+$$
+\alpha_B^{\rm true}=1.
+$$
+
+Generate counts:
+
+```python
+rng = np.random.default_rng(12345)
+alpha_true = 1.0
+n = rng.poisson(alpha_true * m)
+print(m.sum(), n.sum())
+```
+
+Plot data and expectation in the same bins.
+
+Expected output for this seed:
+
+```text
+186693.543 186665
+```
+
 :::
 
-### Project 2: Borexino-like
-
-Question:
-
-::: {.question}
-Which solar sources determine the low-energy event spectrum?
-:::
-
-Today:
-
-::: {.compact}
-- plot the $0-2$ MeV region;
-- compute events from pp, $^7\mathrm{Be}$, pep, and CNO;
-- estimate the $^7\mathrm{Be}$ line contribution;
-- write which backgrounds would matter in a real analysis.
-:::
-
-### Project 3: Day-Night
-
-Question:
-
-::: {.question}
-Which part of the source spectrum is most useful for the Earth-matter effect?
-:::
-
-Today:
-
-::: {.compact}
-- plot radial production distributions;
-- select the $^8\mathrm{B}$ region for the night analysis;
-- compute the no-oscillation daytime template;
-- prepare the list of quantities that tomorrow will become $P_{ee}^{day}$ and $P_{ee}^{night}$.
-:::
-
-### Common Check
-
-By the end of the lesson, each group has:
-
-::: {.compact}
-- a plot of $q_i(r)$ or $f_i(E_\nu)$;
-- a plot of $dN/dT_e$;
-- a table of source contributions;
-- one sentence with a physics conclusion.
+::: {.column width=52%}
+![](../assets/figures/mc1_pseudo_data.png){fig-align="center" width="100%"}
 :::
 
 ::::
+
+## Likelihood
+
+For Poisson bins,
+
+$$
+\ell(\alpha_B)
+=
+\sum_j
+\left[
+n_j\ln\mu_j(\alpha_B)-\mu_j(\alpha_B)
+\right]
++\mathrm{const}.
+$$
+
+Use
+
+$$
+q(\alpha_B)
+=
+-2\left[\ell(\alpha_B)-\ell(\hat\alpha_B)\right].
+$$
+
+For one fitted parameter, the usual $1\sigma$ interval is given by
+
+$$
+q(\alpha_B)=1.
+$$
+
+Equivalently, the one-dimensional $1\sigma$ contour is
+
+$$
+q(\alpha_B)\le 1.
+$$
+
+## Grid Fit
+
+```python
+alphas = np.linspace(0.98, 1.02, 401)
+mu = alphas[:, None] * m[None, :]
+mu = np.maximum(mu, 1e-300)
+
+ll = np.sum(n[None, :] * np.log(mu) - mu, axis=1)
+q = -2.0 * (ll - ll.max())
+
+alpha_hat = alphas[np.argmax(ll)]
+print(alpha_hat)
+```
+
+Plot $q(\alpha_B)$ and mark $q=1$.
+
+Expected output:
+
+```text
+alpha_hat = 0.9998
+q <= 1 interval: 0.99760 ... 1.00210
+```
+
+![](../assets/figures/mc1_alpha_scan.png){fig-align="center" width="62%"}
+
+## Analytic Check
+
+Because this first model is linear,
+
+$$
+\mu_j(\alpha_B)=\alpha_B m_j,
+$$
+
+the maximum-likelihood estimator is
+
+$$
+\hat\alpha_B
+=
+\frac{\sum_j n_j}{\sum_j m_j}.
+$$
+
+Use this as a check of the grid fit:
+
+```python
+alpha_hat_check = n.sum() / m.sum()
+print(alpha_hat, alpha_hat_check)
+```
+
+Expected output:
+
+```text
+0.9998 0.999847
+```
+
+# What to Study
+
+## Threshold Sensitivity
+
+Repeat the fit for several thresholds:
+
+$$
+T_{\min}=3,\ 4.5,\ 6~\mathrm{MeV}.
+$$
+
+For each threshold report:
+
+::: {.compact}
+- total expected events $\sum_j m_j$;
+- best fit $\hat\alpha_B$;
+- approximate $1\sigma$ interval;
+- whether the result is stable against binning changes.
+:::
+
+## Threshold Sensitivity
+
+Expected reference table for 100 kton year:
+
+```text
+Tmin [MeV]  bins  expected events  stat. scale
+3.0         22    259784.969       0.001962
+4.5         19    186693.543       0.002314
+6.0         16    124092.018       0.002839
+```
+
+## Numerical Stability
+
+Change:
+
+::: {.compact}
+- number of recoil-energy bins;
+- upper endpoint $T_{\max}$;
+- threshold $T_{\min}$;
+- random seed for pseudo-data.
+:::
+
+The fitted value moves because the pseudo-data change. The expected uncertainty should scale roughly as
+
+$$
+\sigma_{\alpha_B}\sim\frac{1}{\sqrt{\sum_j m_j}}.
+$$
 
 # Homework
 
-## After the First Lesson
+## Computational Part
 
-:::: {.panel-tabset .story-tabs}
-
-### Required Part
-
-Submit in the notebook:
+Submit a notebook with:
 
 ::: {.compact}
-1. Plot of radial shell contributions $p_i(r)$ for all sources.
-2. Plot of energy spectra $\Phi_i f_i(E_\nu)$.
-3. Event table without oscillations for your detector.
-4. Plot of $dN/dT_e$.
-5. One paragraph: what is already a project result.
+1. Plot of $f_{^8\mathrm{B}}(E_\nu)$ and $d\Phi_{^8\mathrm{B}}/dE_\nu$.
+2. SK-like recoil spectrum $m_j$ for $T_{\min}=4.5~\mathrm{MeV}$.
+3. Table of total expected events for $T_{\min}=3,\ 4.5,\ 6~\mathrm{MeV}$.
+4. One pseudo-data sample.
+5. Fit of $\alpha_B$: $\hat\alpha_B$, $q(\alpha_B)$, and the $1\sigma$ interval.
+6. A short check comparing the grid fit with $\hat\alpha_B=\sum n_j/\sum m_j$.
 :::
 
-### Number Checks
+## Theory Part
 
-Check:
+Study the Gamow window for:
+
+$$
+p+p,\qquad
+{}^3\mathrm{He}+{}^4\mathrm{He},\qquad
+{}^7\mathrm{Be}+p.
+$$
+
+For each reaction estimate $E_0$ at a solar-core temperature and compare the scales.
+
+## Theory Part
+
+Study the astrophysical $S$-factor.
+
+Choose one solar reaction and summarize:
 
 ::: {.compact}
-- each spectrum normalization is close to one;
-- $\sum_i N_i$ matches the sum over sources;
-- increasing the threshold decreases the number of events;
-- pp almost disappears for an SK-like threshold.
+- which experimental measurements exist;
+- what energy range they cover;
+- how far the extrapolation to solar energies is;
+- what dominates the uncertainty.
 :::
 
-### Project Draft
+The result should be a short critical note, not a list of references.
 
-Fill in four lines:
+## Advanced Part
 
-```text
-Physics question:
-Which data we use:
-What we compute:
-Main plot:
-```
+Derive or verify the $\nu e$ differential cross section from QFT:
 
-This formulation will be sharpened tomorrow after oscillations and the fit.
+$$
+\nu_\ell + e^- \to \nu_\ell + e^-.
+$$
 
-### What Not to Do
+Answer explicitly:
 
-Do not:
+::: {.question}
+Why is the $\nu_e e$ cross section larger than the $\nu_\mu e$ and $\nu_\tau e$ cross sections?
+:::
+
+## Optional Extensions
+
+Good extensions after the first session:
 
 ::: {.compact}
-- install PEANUTS;
-- build a full solar model;
-- build a full detector Monte Carlo;
-- hide toy approximations.
+- expected sensitivity to $\alpha_B$ as a function of threshold;
+- binning stability of the event integral;
+- comparison of $\nu_e e$ and $\nu_x e$ event templates;
+- compute the expected event contribution of each solar-neutrino source as a function of the recoil-electron threshold.
 :::
-
-::::

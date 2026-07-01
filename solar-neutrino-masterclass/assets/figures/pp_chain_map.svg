@@ -1,98 +1,184 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 650" role="img" aria-labelledby="title desc">
-  <title id="title">Proton-proton chain branch diagram</title>
-  <desc id="desc">Flow chart of pp, pep, pp I, pp II, pp III, and hep branches with approximate branching ratios.</desc>
-  <defs>
-    <marker id="arrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
-      <path d="M0,0 L14,7 L0,14 Z" fill="#111"/>
-    </marker>
-    <style>
-      .bg { fill: #bebdff; }
-      .line { fill: none; stroke: #111; stroke-width: 3.2; stroke-linecap: square; stroke-linejoin: miter; marker-end: url(#arrow); }
-      .box { fill: #fbfbfb; stroke: #111; stroke-width: 1.4; }
-      .tag { fill: #0712f4; }
-      .tag2 { fill: #4542a7; }
-      .reaction { fill: #050505; font: 32px Georgia, "Times New Roman", serif; }
-      .reaction.small { font-size: 30px; }
-      .reaction.tiny { font-size: 27px; }
-      .nu { fill: #f00; }
-      .tagtext { fill: #fff; font: 31px Georgia, "Times New Roman", serif; }
-      .ratio { fill: #050505; font: 26px Georgia, "Times New Roman", serif; }
-      .sup { font-size: 62%; baseline-shift: super; }
-      .sub { font-size: 62%; baseline-shift: sub; }
-    </style>
-  </defs>
-
-  <rect class="bg" x="0" y="0" width="1320" height="650" rx="22"/>
-
-  <!-- Entrance reactions -->
-  <rect class="box" x="44" y="54" width="430" height="80" rx="9"/>
-  <rect class="tag" x="35" y="18" width="96" height="50" rx="10"/>
-  <text class="tagtext" x="68" y="54">pp</text>
-  <text class="reaction" x="68" y="105">p<tspan class="sup">+</tspan> + p<tspan class="sup">+</tspan> → <tspan class="sup">2</tspan>H + e<tspan class="sup">+</tspan> + <tspan class="nu">ν</tspan><tspan class="nu sub">e</tspan></text>
-
-  <rect class="box" x="850" y="54" width="430" height="80" rx="9"/>
-  <rect class="tag" x="1180" y="18" width="96" height="50" rx="10"/>
-  <text class="tagtext" x="1214" y="54">pep</text>
-  <text class="reaction" x="875" y="105">p<tspan class="sup">+</tspan> + e<tspan class="sup">−</tspan> + p<tspan class="sup">+</tspan> → <tspan class="sup">2</tspan>H + <tspan class="nu">ν</tspan><tspan class="nu sub">e</tspan></text>
-
-  <path class="line" d="M474 94 H560 V154"/>
-  <text class="ratio" x="490" y="82">99.77 %</text>
-  <path class="line" d="M850 94 H758 V154"/>
-  <text class="ratio" x="784" y="82">0.23 %</text>
-
-  <!-- Common deuterium step -->
-  <rect class="box" x="470" y="154" width="380" height="80" rx="9"/>
-  <text class="reaction" x="520" y="205"><tspan class="sup">2</tspan>H + p<tspan class="sup">+</tspan> → <tspan class="sup">3</tspan>He + γ</text>
-
-  <!-- pp I branch -->
-  <path class="line" d="M520 194 H315 V511"/>
-  <text class="ratio" x="348" y="184">84.92 %</text>
-  <rect class="box" x="44" y="511" width="430" height="80" rx="9"/>
-  <text class="reaction small" x="76" y="562"><tspan class="sup">3</tspan>He + <tspan class="sup">3</tspan>He → <tspan class="sup">4</tspan>He + 2p<tspan class="sup">+</tspan></text>
-  <rect class="tag2" x="386" y="573" width="88" height="50" rx="9"/>
-  <text class="tagtext" x="411" y="608">ppI</text>
-
-  <!-- hep branch -->
-  <path class="line" d="M850 194 H890"/>
-  <text class="ratio" x="862" y="151">10<tspan class="sup">−5</tspan> %</text>
-  <rect class="box" x="900" y="154" width="380" height="80" rx="9"/>
-  <text class="reaction small" x="928" y="204"><tspan class="sup">3</tspan>He + p<tspan class="sup">+</tspan> → <tspan class="sup">4</tspan>He + e<tspan class="sup">+</tspan> + <tspan class="nu">ν</tspan><tspan class="nu sub">e</tspan></text>
-  <rect class="tag" x="1184" y="218" width="92" height="50" rx="10"/>
-  <text class="tagtext" x="1215" y="254">hep</text>
-
-  <!-- pp II / pp III split -->
-  <path class="line" d="M660 234 V296"/>
-  <text class="ratio" x="678" y="279">15.08 %</text>
-  <rect class="box" x="470" y="296" width="380" height="80" rx="9"/>
-  <text class="reaction" x="504" y="347"><tspan class="sup">3</tspan>He + <tspan class="sup">4</tspan>He → <tspan class="sup">7</tspan>Be + γ</text>
-
-  <path class="line" d="M660 376 V424"/>
-  <text class="ratio" x="678" y="413">99.9 %</text>
-  <rect class="box" x="470" y="424" width="380" height="80" rx="9"/>
-  <rect class="tag" x="460" y="386" width="96" height="50" rx="10"/>
-  <text class="tagtext" x="486" y="421"><tspan class="sup">7</tspan>Be</text>
-  <text class="reaction small" x="510" y="475"><tspan class="sup">7</tspan>Be + e<tspan class="sup">−</tspan> → <tspan class="sup">7</tspan>Li + <tspan class="nu">ν</tspan><tspan class="nu sub">e</tspan></text>
-
-  <path class="line" d="M660 504 V511"/>
-  <rect class="box" x="470" y="511" width="380" height="80" rx="9"/>
-  <text class="reaction small" x="515" y="562"><tspan class="sup">7</tspan>Li + p<tspan class="sup">+</tspan> → <tspan class="sup">4</tspan>He + <tspan class="sup">4</tspan>He</text>
-  <rect class="tag2" x="760" y="573" width="96" height="50" rx="9"/>
-  <text class="tagtext" x="784" y="608">ppII</text>
-
-  <path class="line" d="M850 336 H990 V424"/>
-  <text class="ratio" x="870" y="333">0.1 %</text>
-  <rect class="box" x="900" y="424" width="380" height="80" rx="9"/>
-  <text class="reaction small" x="948" y="475"><tspan class="sup">7</tspan>Be + p<tspan class="sup">+</tspan> → <tspan class="sup">8</tspan>B + γ</text>
-
-  <path class="line" d="M990 504 V511"/>
-  <rect class="box" x="900" y="511" width="380" height="80" rx="9"/>
-  <rect class="tag" x="1180" y="473" width="96" height="50" rx="10"/>
-  <text class="tagtext" x="1210" y="508"><tspan class="sup">8</tspan>B</text>
-  <text class="reaction small" x="940" y="562"><tspan class="sup">8</tspan>B → <tspan class="sup">8</tspan>Be* + e<tspan class="sup">+</tspan> + <tspan class="nu">ν</tspan><tspan class="nu sub">e</tspan></text>
-
-  <path class="line" d="M990 591 V613"/>
-  <rect class="box" x="900" y="613" width="380" height="34" rx="9"/>
-  <text class="reaction tiny" x="973" y="640"><tspan class="sup">8</tspan>Be* → <tspan class="sup">4</tspan>He + <tspan class="sup">4</tspan>He</text>
-  <rect class="tag2" x="1180" y="616" width="96" height="34" rx="9"/>
-  <text class="tagtext" x="1203" y="642">ppIII</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="930" height="1e3" viewBox="0 0 930 1000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<defs>
+		<style>
+			text, tspan { fill: #fff; }
+			path[stroke="#000"] { stroke: #fff; }
+			marker path { fill: #fff; stroke: #fff; }
+			.pp-bottom-legend { display: none; }
+		</style>
+		<marker id="i" overflow="visible" orient="auto">
+			<path transform="scale(.6) rotate(180) translate(0)" d="m8.72 4.03-10.9-4.02 10.9-4.02c-1.75 2.37-1.74 5.62-6e-7 8.04z" fill-rule="evenodd" stroke="#000" stroke-linejoin="round"/>
+		</marker>
+		<radialGradient id="a" cx="-228" cy="236" r="25" gradientTransform="matrix(.915 0 0 .915 259 -13.9)" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#fff" offset="0"/>
+			<stop stop-color="#b3b3b3" offset="1"/>
+		</radialGradient>
+		<radialGradient id="q" cx="-228" cy="236" r="25" gradientTransform="matrix(1.76,0,0,1.76,500,-114)" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#fff" offset="0"/>
+			<stop offset="1"/>
+		</radialGradient>
+		<radialGradient id="r" cx="-228" cy="236" r="25" gradientTransform="matrix(1.76,0,0,1.76,473,-382)" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#fff" offset="0"/>
+			<stop stop-color="#e00000" offset="1"/>
+		</radialGradient>
+		<filter id="d" x="-.3" y="-.3" width="1.6" height="1.6" color-interpolation-filters="sRGB">
+			<feGaussianBlur stdDeviation="5"/>
+		</filter>
+	</defs>
+	<g id="w">
+		<use transform="translate(53,252)" xlink:href="#x"/>
+		<path d="m209 586 111 73" fill="none" marker-end="url(#i)" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+		<path d="m325 705-66 58" fill="none" marker-end="url(#i)" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+	</g>
+	<g>
+		<text font-size="40"><tspan x="225" y="924" font-family="DejaVu Sans"><tspan baseline-shift="super" font-size="50%">4</tspan>He</tspan></text>
+		<text id="o" font-size="40"><tspan x="32" y="318" font-family="DejaVu Sans"><tspan baseline-shift="super" font-size="50%">2</tspan>H</tspan></text>
+		<text id="c" x="95" y="460" font-family="FreeSerif" font-size="40">γ</text>
+	</g>
+	<use class="pp-bottom-legend" transform="matrix(.6 0 0 .6 -22 881)" xlink:href="#e"/>
+	<use transform="translate(230,521)" xlink:href="#g"/>
+	<use class="pp-bottom-legend" transform="matrix(.6 0 0 .6 -6.97 859)" xlink:href="#h"/>
+	<g id="v">
+		<text id="n" x="175" y="215" font-family="FreeSerif" font-size="40">ν</text>
+		<circle id="h" cx="55" cy="205" r="13" fill="url(#a)"/>
+		<use transform="matrix(-1,0,0,1,240,0)" xlink:href="#s"/>
+		<g id="k">
+			<text id="j" font-size="40"><tspan x="5" y="55" font-family="DejaVu Sans"><tspan baseline-shift="super" font-size="50%">1</tspan>H</tspan></text>
+			<circle id="e" cx="80" cy="40" r="25" fill="url(#r)"/>
+		</g>
+		<g id="l">
+			<use transform="translate(80)" xlink:href="#e"/>
+			<use transform="translate(182)" xlink:href="#j"/>
+		</g>
+		<g id="x">
+			<path id="s" d="m102 173-32 22" fill="none" marker-end="url(#i)" stroke="#000" stroke-linecap="round" stroke-width="2"/>
+			<g id="g">
+				<circle cx="120" cy="160" r="17" fill="#f99" filter="url(#d)"/>
+				<path d="m129 182-9-17-9 17 6-19-19 6 17-9-17-9 19 6-6-19 9 17 9-17-6 19 19-6-17 9 17 9-19-6z" fill="#f2f200" stroke="#c7c700" stroke-width=".5"/>
+			</g>
+			<path id="f" d="m89 67 21 63" fill="none" marker-end="url(#i)" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+			<use transform="matrix(-1,0,0,1,240,0)" xlink:href="#f"/>
+			<path d="m120 185v75" fill="none" marker-end="url(#i)" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+		</g>
+	</g>
+	<path d="m350 713v141" fill="none" marker-end="url(#i)" stroke="#000" stroke-linecap="round" stroke-width="3"/>
+	<use class="pp-bottom-legend" transform="matrix(.6 0 0 .6 -38.2 762)" xlink:href="#m"/>
+	<use transform="translate(305,745)" xlink:href="#l"/>
+	<use transform="translate(155,745)" xlink:href="#k"/>
+	<use transform="translate(53,252)" xlink:href="#l"/>
+	<g id="b">
+		<circle id="m" cx="107" cy="308" r="25" fill="url(#q)"/>
+		<use transform="translate(53,252)" xlink:href="#e"/>
+	</g>
+	<use transform="translate(224,599)" xlink:href="#b"/>
+	<use transform="translate(236,616)" xlink:href="#b"/>
+	<text id="p" font-size="40"><tspan x="221" y="580" font-family="DejaVu Sans"><tspan baseline-shift="super" font-size="50%">3</tspan>He</tspan></text>
+	<g id="u" transform="translate(46,-50)">
+		<use transform="translate(7,308)" xlink:href="#b"/>
+		<use transform="translate(55,585)" xlink:href="#e"/>
+	</g>
+	<use transform="translate(407,252)" xlink:href="#k"/>
+	<use transform="translate(591)" xlink:href="#o"/>
+	<use transform="translate(487,252)" xlink:href="#e"/>
+	<use transform="translate(486)" xlink:href="#m"/>
+	<use transform="translate(187)" xlink:href="#p"/>
+	<use transform="translate(354)" xlink:href="#u"/>
+	<use transform="matrix(-1,0,0,1,698,0)" xlink:href="#w"/>
+	<use transform="translate(488)" xlink:href="#c"/>
+	<use class="pp-bottom-legend" transform="translate(574 488)" xlink:href="#c"/>
+	<use transform="translate(460)" xlink:href="#v"/>
+	<use class="pp-bottom-legend" transform="translate(494 775)" xlink:href="#n"/>
+	<g class="pp-bottom-legend" font-family="DejaVu Sans" font-size="25">
+		<switch transform="translate(50 915)">
+			<text systemLanguage="ca">Protó</text>
+			<text systemLanguage="de, en, fr, no, sv">Proton</text>
+			<text systemLanguage="el">Πρωτόνιο</text>
+			<text systemLanguage="es">Protón</text>
+			<text systemLanguage="hu, nl">proton</text>
+			<text systemLanguage="it">Protone</text>
+			<text systemLanguage="ja">陽子</text>
+			<text systemLanguage="mk, ru, uk">Протон</text>
+			<text systemLanguage="tr">Önelcik</text>
+			<text systemLanguage="zh">質子</text>
+			<text>Proton</text>
+		</switch>
+		<switch transform="translate(50 956)">
+			<text systemLanguage="ca">Neutró</text>
+			<text systemLanguage="de, en, fr, sv">Neutron</text>
+			<text systemLanguage="el">Νετρόνιο</text>
+			<text systemLanguage="es">Neutrón</text>
+			<text systemLanguage="hu, nl">neutron</text>
+			<text systemLanguage="it">Neutrone</text>
+			<text systemLanguage="ja">中性子</text>
+			<text systemLanguage="mk">Неутрон</text>
+			<text systemLanguage="no">Nøytron</text>
+			<text systemLanguage="ru, uk">Нейтрон</text>
+			<text systemLanguage="tr">Ilıncık</text>
+			<text systemLanguage="zh">中子</text>
+			<text>Neutron</text>
+		</switch>
+		<switch transform="translate(50 991)">
+			<text systemLanguage="ca">Positró</text>
+			<text systemLanguage="de, en, fr, no, sv">Positron</text>
+			<text systemLanguage="el">Ποζιτρόνιο</text>
+			<text systemLanguage="es">Positrón</text>
+			<text systemLanguage="hu">pozitron</text>
+			<text systemLanguage="it">Positrone</text>
+			<text systemLanguage="ja">陽電子</text>
+			<text systemLanguage="mk, ru, uk">Позитрон</text>
+			<text systemLanguage="nl">positron</text>
+			<text systemLanguage="tr">Artıcık</text>
+			<text systemLanguage="zh">正電子</text>
+			<text>Positron</text>
+		</switch>
+		<switch transform="translate(656 949)" text-anchor="end">
+			<text systemLanguage="ca">Raig gamma</text>
+			<text systemLanguage="de">Gammastrahlung</text>
+			<text systemLanguage="en">Gamma ray</text>
+			<text systemLanguage="el">Ακτίνες γάμμα</text>
+			<text systemLanguage="es">Rayos Gamma</text>
+			<text systemLanguage="fr">Rayon gamma</text>
+			<text systemLanguage="hu">foton</text>
+			<text systemLanguage="it">Raggio Gamma</text>
+			<text systemLanguage="ja">ガンマ線</text>
+			<text systemLanguage="mk">Гама-зрачење</text>
+			<text systemLanguage="nl">gammastraling</text>
+			<text systemLanguage="no">Gammastråling</text>
+			<text systemLanguage="ru">Гамма-квант</text>
+			<text systemLanguage="sv">Gammafoton</text>
+			<text systemLanguage="tr">Gama Işını</text>
+			<text systemLanguage="uk">Гамма-промені</text>
+			<text systemLanguage="zh">伽马射线</text>
+			<text>Gamma ray</text>
+		</switch>
+		<switch transform="translate(656 988)" text-anchor="end">
+			<text systemLanguage="ca">Neutrí</text>
+			<text systemLanguage="de, en, es, fr, it, sv">Neutrino</text>
+			<text systemLanguage="el">Νετρίνο</text>
+			<text systemLanguage="hu">neutrínó</text>
+			<text systemLanguage="ja">ニュートリノ</text>
+			<text systemLanguage="mk">Неутрино</text>
+			<text systemLanguage="nl">neutrino</text>
+			<text systemLanguage="no">Nøytrino</text>
+			<text systemLanguage="ru, uk">Нейтрино</text>
+			<text systemLanguage="tr">Nötrino</text>
+			<text systemLanguage="zh">微中子</text>
+			<text>Neutrino</text>
+		</switch>
+	</g>
+	<g id="pp-side-legend" transform="translate(745 410)" font-family="DejaVu Sans" font-size="26">
+		<line x1="-24" y1="-28" x2="-24" y2="196" stroke="#8ec5ff" stroke-width="4"/>
+		<text x="0" y="-38" font-weight="700">Legend</text>
+		<use transform="matrix(.5 0 0 .5 -40 -20)" xlink:href="#e"/>
+		<text x="28" y="10">Proton</text>
+		<use transform="matrix(.5 0 0 .5 -53.5 -109)" xlink:href="#m"/>
+		<text x="28" y="54">Neutron</text>
+		<use transform="matrix(.7 0 0 .7 -38.5 -59.5)" xlink:href="#h"/>
+		<text x="28" y="98">Positron</text>
+		<text x="-5" y="148" font-family="FreeSerif" font-size="42">γ</text>
+		<text x="28" y="142">Gamma ray</text>
+		<text x="-5" y="190" font-family="FreeSerif" font-size="42">ν</text>
+		<text x="28" y="184">Neutrino</text>
+	</g>
 </svg>

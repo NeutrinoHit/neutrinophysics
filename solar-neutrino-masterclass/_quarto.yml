@@ -2,9 +2,13 @@ project:
   type: default
   render:
     - index.qmd
-    - slides/*.qmd
-    - assignments/*.qmd
-    - notebooks/*.ipynb
+    - slides/00_solar_neutrino_physics.qmd
+    - slides/00_solar_neutrino_physics_appendix.qmd
+    - slides/01_solar_sources.qmd
+    - "!slides/02_msw_detector_statistics.qmd"
+    - "!slides/03_student_defense.qmd"
+    - "!assignments/*.qmd"
+    - "!notebooks/*.ipynb"
 
 lang: en
 
