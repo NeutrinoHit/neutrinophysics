@@ -1627,67 +1627,14 @@ $\nu e$ differential cross sections, the matter survival probability, and a Pois
 
 # Project Map
 
-## Two Working Sessions
-
-:::: {.columns}
-
-::: {.column width="50%"}
-Session 1:
+## Master Class 1
 
 ::: {.compact}
-- load tables;
-- plot $q_i(r)$ and $4\pi r^2q_i(r)$;
-- plot spectra;
-- compute no-oscillation events;
-- choose the main project question.
+- download the three working tables from the project page;
+- read fluxes, spectra, and $\nu e$ recoil cross sections;
+- build the no-oscillation SK-like event-rate model;
+- plot the $^8\mathrm{B}$ spectrum and the recoil-electron spectrum;
+- generate pseudo-data;
+- fit the $^8\mathrm{B}$ normalization with a Poisson likelihood;
+- find the best fit and the one-parameter confidence interval.
 :::
-:::
-
-::: {.column width="50%"}
-Session 2:
-
-::: {.compact}
-- add $P_{ee}^{day}$ and $P_{ee}^{night}$;
-- update event counts;
-- build pseudo-data;
-- compute $\Delta\chi^2$;
-- write the final formulation.
-:::
-:::
-
-::::
-
-## Integrated Project
-
-Question:
-
-::: {.question}
-How do solar sources, detector threshold, oscillations, and a fit combine into an SK-like solar-neutrino measurement?
-:::
-
-The project has one chain:
-
-::: {.compact}
-- source fluxes and spectra;
-- SK-like electron-recoil spectrum;
-- MSW survival probability and day-night templates;
-- pseudo-data and a likelihood or $\chi^2$ fit.
-:::
-
-## Final Map
-
-$$
-\begin{aligned}
-\text{Sun}
-&:
-\text{sources}\to\text{radius}\to\text{spectra},\\
-\text{oscillations}
-&:
-\text{MSW}\to\text{Earth}\to P_{ee},\\
-\text{project}
-&:
-\text{events}\to\chi^2\to\text{defensible conclusion}.
-\end{aligned}
-$$
-
-The notebooks should be simple because the physical objects have already been defined.
