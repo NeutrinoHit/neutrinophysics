@@ -17,8 +17,8 @@ toc: false
       <p class="course-kicker">Физика нейтрино</p>
       <h1>Курсы и мастер-классы</h1>
       <p>
-        Учебные материалы NeutrinoHit по физике нейтрино: вводные лекции,
-        мини-курсы, практические задания и воспроизводимые численные примеры.
+        Учебные материалы по физике нейтрино: вводные лекции, мини-курсы,
+        практические задания и воспроизводимые численные примеры.
       </p>
       <nav class="course-profile-links" aria-label="Ссылки раздела">
         <a href="https://neutrinohit.github.io/">NeutrinoHit</a>
@@ -28,15 +28,6 @@ toc: false
       </nav>
     </div>
   </header>
-
-  <section class="course-intro">
-    <h2>Материалы раздела</h2>
-    <p>
-      Раздел устроен как отдельный Quarto/GitHub Pages проект. Большие курсы и
-      короткие мастер-классы живут рядом, но имеют собственные страницы,
-      слайды и дополнительные материалы.
-    </p>
-  </section>
 
   <section class="course-accordion" aria-label="Курсы по физике нейтрино">
     <details class="course-row" open>
@@ -60,19 +51,18 @@ toc: false
 
     <details class="course-row">
       <summary>
-        <span class="course-row-kind">Mini-course</span>
+        <span class="course-row-kind">Masterclass</span>
         <span>Solar Neutrinos</span>
       </summary>
       <div class="course-row-body">
         <p>
-          A school masterclass: solar model inputs, MSW survival
-          probability, detector spectrum, pseudoexperiment, and likelihood fit.
+          A lecture, appendix, two masterclasses, and a final project on solar
+          neutrinos: fluxes, MSW oscillations, an SK-like spectrum,
+          pseudoexperiments, a likelihood fit, and data for a reproducible
+          analysis.
         </p>
         <div class="course-links">
-          <a href="solar-neutrino-masterclass/">Open mini-course</a>
-          <a href="solar-neutrino-masterclass/slides/01_solar_sources.html">Lesson 1</a>
-          <a href="solar-neutrino-masterclass/slides/02_msw_detector_statistics.html">Lesson 2</a>
-          <a href="solar-neutrino-masterclass/slides/03_student_defense.html">Lesson 3</a>
+          <a href="solar-neutrino-masterclass/">Open materials</a>
         </div>
       </div>
     </details>
