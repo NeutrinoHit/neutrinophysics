@@ -5,9 +5,11 @@ project:
     - slides/00_solar_neutrino_physics.qmd
     - slides/00_solar_neutrino_physics_appendix.qmd
     - slides/01_solar_sources.qmd
-    - "!slides/02_msw_detector_statistics.qmd"
+    - slides/02_msw_detector_statistics.qmd
+    - assignments/sk_integrated_project.qmd
     - "!slides/03_student_defense.qmd"
-    - "!assignments/*.qmd"
+    - "!assignments/defense_requirements.qmd"
+    - "!assignments/fit_recipes.qmd"
     - "!notebooks/*.ipynb"
 
 lang: en

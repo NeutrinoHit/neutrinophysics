@@ -1,0 +1,9 @@
+source,flux_cm2_s,kind,endpoint_MeV,line_energies_MeV,line_weights,group,comment
+pp,59800000000.0,continuum,0.42,,,pp-chain,dominant low-energy flux
+pep,144000000.0,line,,1.44,1.0,pp-chain,monoenergetic line
+hep,7980.0,continuum,18.8,,,pp-chain,rare high-energy tail
+Be7,4930000000.0,line,,0.384;0.862,0.103;0.897,pp-chain,electron-capture lines
+B8,5460000.0,continuum,16.0,,,pp-chain,high-energy branch
+N13,278000000.0,continuum,1.199,,,CNO,CNO beta spectrum
+O15,205000000.0,continuum,1.732,,,CNO,CNO beta spectrum
+F17,5290000.0,continuum,1.74,,,CNO,CNO beta spectrum

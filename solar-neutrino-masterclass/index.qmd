@@ -19,7 +19,7 @@ toc: false
     <h1>Solar Neutrinos</h1>
     <p>
       Lecture notes and working session materials for the solar-neutrino masterclass.
-      The current public version contains the lecture and the first masterclass.
+      The current public version contains the lecture and two masterclasses.
     </p>
   </section>
 
@@ -50,8 +50,9 @@ toc: false
       <div class="course-row-body">
         <p>
           Build the no-oscillation SK-like event model from fluxes, the
-          $^8$B spectrum, and the $\nu_e e$ recoil cross section. Then generate
-          pseudo-data and fit the $^8$B normalization.
+          <sup>8</sup>B spectrum, and the &nu;<sub>e</sub> e recoil cross
+          section. Then generate pseudo-data and fit the <sup>8</sup>B
+          normalization.
         </p>
         <div class="course-links">
           <a href="slides/01_solar_sources.html">Open masterclass</a>
@@ -60,17 +61,42 @@ toc: false
       </div>
     </details>
 
-    <details class="course-row">
+    <details class="course-row" open>
       <summary>
         <span class="course-row-kind">Masterclass 2</span>
-        <span>Oscillations and Fit</span>
+        <span>Oscillations and a Two-Parameter Fit</span>
       </summary>
       <div class="course-row-body">
         <p>
-          This session will add MSW survival probabilities, day-night templates,
-          pseudoexperiments, and contour construction. Materials will be added
-          after the first session is fixed.
+          Add PEANUTS survival-probability tables to the SK-like event model,
+          generate pseudo-data, and fit
+          sin<sup>2</sup>&theta;<sub>12</sub> and
+          &Delta;m<sup>2</sup><sub>21</sub>. The day-night table is included
+          for optional checks.
         </p>
+        <div class="course-links">
+          <a href="slides/02_msw_detector_statistics.html">Open masterclass</a>
+          <a href="data/masterclass2/masterclass2_data.zip" download>Download data (.zip)</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="course-row" open>
+      <summary>
+        <span class="course-row-kind">Project</span>
+        <span>Blind SK-like Solar Neutrino Fit</span>
+      </summary>
+      <div class="course-row-body">
+        <p>
+          Final integrated project: reproduce the homework chain, fit the
+          blinded recoil spectrum, study Earth regeneration, and answer the
+          theory questions. The hidden values of sin<sup>2</sup>&theta;<sub>12</sub>
+          and &Delta;m<sup>2</sup><sub>21</sub> will be revealed at the defense.
+        </p>
+        <div class="course-links">
+          <a href="assignments/sk_integrated_project.html">Open project</a>
+          <a href="data/project/solar_neutrino_project_data.zip" download>Download project data (.zip)</a>
+        </div>
       </div>
     </details>
   </section>

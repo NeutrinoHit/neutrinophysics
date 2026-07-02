@@ -1,482 +1,685 @@
 ---
 title: "Masterclass 2: Oscillations and Fit"
-subtitle: "Probabilities, events, pseudoexperiments, and project formulation"
+subtitle: "SK-like spectrum with PEANUTS survival probabilities"
 author: "Dmitry V. Naumov"
-institute: "NeutrinoHit"
+institute: "JINR"
 date: "June 2026"
 ---
 
-# Aim
+# Tasks
 
-## What Should Be Done Today
+## Goal for This Session
 
-:::: {.panel-tabset .story-tabs}
-
-### Today's Task
-
-Yesterday we had the no-oscillation chain:
+Masterclass 1 built the no-oscillation chain:
 
 $$
-\Phi_i f_i(E_\nu)
+\Phi_{^8\mathrm{B}} f_{^8\mathrm{B}}(E_\nu)
 \to
 \frac{dN}{dT_e}.
 $$
 
-Today we add:
+Today we add oscillations and fit two parameters:
 
 $$
-P_{ee}^{day}(E_\nu),\quad
-P_{ee}^{night}(E_\nu),\quad
-\chi^2,\quad
-\text{pseudo-data}.
+\Phi_{^8\mathrm{B}} f_{^8\mathrm{B}}(E_\nu)
+\to
+P_{ee}(E_\nu)
+\to
+\mu_j(\theta)
+\to
+n_j
+\to
+q(\theta).
 $$
 
-By the end of the lesson, each group must have the final project formulation.
+## Fit Parameters
 
-### Input Tables
+Use
 
-```text
-data/student/oscillation_probabilities.csv
-data/student/earth_regeneration.csv
-data/student/mass_state_cross_sections.csv
-data/student/sk_like_event_predictions.csv
-data/student/borexino_like_event_predictions.csv
-data/student/pseudo_data_sk_daynight.csv
-data/student/pseudo_data_borexino.csv
-```
+$$
+\theta
+=
+\left(
+\sin^2\theta_{12},
+\Delta m^2_{21}
+\right).
+$$
 
-All tables can later be replaced by PEANUTS outputs without changing student code.
+The main fit keeps the $^8\mathrm{B}$ normalization fixed:
 
-### Minimal Result
+$$
+\alpha_B=1.
+$$
 
-Today each group should obtain:
+The floating-normalization case is a homework extension.
+
+## Main Output
+
+The notebook must produce:
 
 ::: {.compact}
-- an updated oscillated event spectrum;
-- one pseudoexperiment;
-- one fit;
-- one number with an interval or contour;
-- the final project question.
+- $P_{ee}^{day}(E_\nu)$ for several parameter points;
+- oscillated SK-like recoil spectrum;
+- pseudo-data in recoil-energy bins;
+- best-fit point in $(\sin^2\theta_{12},\Delta m^2_{21})$;
+- 2D contour and 1D profile checks.
 :::
 
-### Main Rule
+# Inputs
 
-Do not attempt a global solar-neutrino analysis.
+## Project Page
 
-Follow a short chain honestly:
+:::: {.columns}
 
-$$
-\text{input tables}
-\to
-\mu_i(\theta)
-\to
-n_i
-\to
-\Delta\chi^2
-\to
-\text{conclusion}.
-$$
+::: {.column width=34%}
+![](../assets/figures/solar_masterclass_qr.png){fig-align="center" width="95%"}
+:::
+
+::: {.column width=66%}
+
+Project page:
+
+```{=html}
+<div style="font-family: monospace; font-size: 0.70em; line-height: 1.25;">
+https://neutrinohit.github.io/neutrinophysics/<br>
+solar-neutrino-masterclass/
+</div>
+```
+
+Tables used today:
+
+```text
+data/masterclass2/solar_fluxes.csv
+data/masterclass2/energy_spectra.csv
+data/masterclass2/nu_electron_recoil_cross_sections.csv
+data/masterclass2/oscillation_probabilities_grid.csv
+data/masterclass2/earth_regeneration_grid.csv
+data/masterclass2/earth_regeneration_parameter_scan.csv
+```
+
+:::
 
 ::::
 
-# Oscillations
+## Load the Tables
 
-## Survival Probability
+```python
+import numpy as np
+import pandas as pd
 
-:::: {.panel-tabset .story-tabs}
+BASE = "https://neutrinohit.github.io/neutrinophysics/solar-neutrino-masterclass"
 
-### Vacuum
-
-For averaged two-flavour oscillations:
-
-$$
-P_{ee}^{vac}
-\simeq
-1-\frac{1}{2}\sin^2 2\theta_{12}.
-$$
-
-This is a useful low-energy reference.
-
-In a three-flavour embedding:
-
-$$
-P_{ee}^{3\nu}
-\simeq
-\cos^4\theta_{13}P_{ee}^{2\nu}
-+\sin^4\theta_{13}.
-$$
-
-### Solar Matter
-
-Working input:
-
-```text
-data/student/oscillation_probabilities.csv
+fluxes = pd.read_csv(f"{BASE}/data/masterclass2/solar_fluxes.csv")
+spectra = pd.read_csv(f"{BASE}/data/masterclass2/energy_spectra.csv")
+xs = pd.read_csv(f"{BASE}/data/masterclass2/nu_electron_recoil_cross_sections.csv")
+osc = pd.read_csv(f"{BASE}/data/masterclass2/oscillation_probabilities_grid.csv")
+earth = pd.read_csv(f"{BASE}/data/masterclass2/earth_regeneration_grid.csv")
+earth_scan = pd.read_csv(f"{BASE}/data/masterclass2/earth_regeneration_parameter_scan.csv")
 ```
 
-Columns:
+The same archive is also available as:
 
 ```text
-E_MeV, Pee_vacuum, Pee_day, Pee_night_reference
+data/masterclass2/masterclass2_data.zip
 ```
 
-Checks:
+## PEANUTS Grids
+
+The oscillation tables are not analytic approximations.
+
+They were generated with PEANUTS for $^8\mathrm{B}$ neutrinos:
 
 ::: {.compact}
-- at low energy, $P_{ee}$ is near the vacuum value;
-- at high energy, $P_{ee}$ approaches $\sin^2\theta_{12}$;
-- the transition region matters for the spectrum shape.
+- `oscillation_probabilities_grid.csv`: $P_{ee}^{day}(E_\nu;\sin^2\theta_{12},\Delta m^2_{21})$;
+- `earth_regeneration_grid.csv`: $P_{ee}^{night}(E_\nu,\eta)-P_{ee}^{day}(E_\nu)$ at reference parameters;
+- `earth_regeneration_parameter_scan.csv`: the same Earth correction at selected $E_\nu$ and $\eta$ values while scanning $(\sin^2\theta_{12},\Delta m^2_{21})$;
 :::
 
-### Earth Matter
+The day-night material is optional today.
 
-At night, neutrinos pass through the Earth.
+Details are in the lecture appendix:
 
-Define the correction:
-
-$$
-\Delta P_{ee}^{\oplus}(E,\eta)
-=
-P_{ee}^{night}(E,\eta)-P_{ee}^{day}(E).
-$$
-
-For the project, a table in several nadir-angle bins is enough:
-
-```text
-data/student/earth_regeneration.csv
+```{=html}
+<a href="00_solar_neutrino_physics_appendix.html#/earth-matter">Earth Matter appendix</a>
 ```
 
-### What to Plot
+## Grid Check
 
-Plot:
-
-::: {.compact}
-- $P_{ee}^{vac}(E)$;
-- $P_{ee}^{day}(E)$;
-- $P_{ee}^{night}(E)-P_{ee}^{day}(E)$;
-- the ratio of oscillated to no-oscillation event spectra.
-:::
-
-For the day-night project, the main plot is $\Delta P_{ee}^{\oplus}(E)$ or $A_{DN}$.
-
-::::
-
-# Events
-
-## Updating Yesterday's Calculation
-
-:::: {.panel-tabset .story-tabs}
-
-### Flavour Form
-
-For $\nu e$ scattering:
-
-$$
-\frac{dN_i}{dT_e}
-=
-N_eT
-\int dE_\nu\,
-\Phi_i f_i(E_\nu)
-\left[
-P_{ee}\frac{d\sigma_e}{dT_e}
-+
-(1-P_{ee})\frac{d\sigma_x}{dT_e}
-\right]
-\epsilon(T_e).
-$$
-
-Here $\sigma_x$ means $\nu_\mu e$ or $\nu_\tau e$.
-
-### Mass-State Form
-
-If it is more convenient to compute with mass states after solar propagation:
-
-$$
-\sigma_k(E,T)
-=
-|U_{ek}|^2\sigma_e(E,T)
-+
-\left(1-|U_{ek}|^2\right)\sigma_x(E,T).
-$$
-
-Table:
+Required columns:
 
 ```text
-data/student/mass_state_cross_sections.csv
+E_MeV
+sin2theta12
+dm21_eV2
+Pee_day
 ```
 
-This is the same physics written in the mass-state basis.
+Expected checks:
 
-### Day and Night Templates
+```python
+print(len(osc), len(earth), len(earth_scan))
+print(osc["sin2theta12"].min(), osc["sin2theta12"].max())
+print(osc["dm21_eV2"].min(), osc["dm21_eV2"].max())
+```
 
-For each bin:
+```text
+236880 1504 18900
+0.24 0.38
+5.0e-05 0.0001
+```
+
+# Oscillation Model
+
+## Daytime Survival Probability
+
+Use the PEANUTS table as a function:
 
 $$
-\mu_i^{day}=\mu_i(P_{ee}^{day}),
+P_{ee}^{day}
+=
+P_{ee}^{day}
+\left(
+E_\nu;\sin^2\theta_{12},\Delta m^2_{21}
+\right).
+$$
+
+![](../assets/figures/mc2_pee_slices.png){fig-align="center" width="68%"}
+
+## Select a Parameter Point
+
+Reference point:
+
+$$
+\sin^2\theta_{12}=0.308,
 \qquad
-\mu_i^{night}=\mu_i(P_{ee}^{night}).
+\Delta m^2_{21}=7.42\times10^{-5}\ \mathrm{eV^2}.
 $$
 
-Asymmetry:
+```python
+sin2_ref = 0.308
+dm21_ref = 7.42e-5
 
-$$
-A_{DN}
-=
-2\frac{N_{night}-N_{day}}
-{N_{night}+N_{day}}.
-$$
-
-### What to Check
-
-Checks:
-
-::: {.compact}
-- oscillations reduce the electron-neutrino contribution;
-- the $\nu_x e$ contribution is not zero;
-- the spectrum normalization changes more than the shape;
-- the Earth effect is small and needs statistics.
-:::
-
-::::
-
-# Statistics
-
-## Pseudoexperiment and Sensitivity
-
-:::: {.panel-tabset .story-tabs}
-
-### Pseudo-Data
-
-For expected counts $\mu_i$:
-
-$$
-n_i\sim \mathrm{Poisson}(\mu_i).
-$$
-
-A fixed random seed makes the result reproducible.
-
-Ready-made files:
-
-```text
-data/student/pseudo_data_sk_daynight.csv
-data/student/pseudo_data_borexino.csv
+pee_ref_table = osc[
+    np.isclose(osc["sin2theta12"], sin2_ref)
+    & np.isclose(osc["dm21_eV2"], dm21_ref)
+].sort_values("E_MeV")
 ```
 
-### Poisson Chi-Square
+## Interpolate $P_{ee}$
 
-For counting data:
+The cross-section table is rectangular in $(E_\nu,T_e)$.
 
-$$
-\chi^2
-=
-2\sum_i
-\left[
-\mu_i-n_i+n_i\ln\frac{n_i}{\mu_i}
-\right].
-$$
+Interpolate $P_{ee}$ onto the same $E_\nu$ rows:
 
-If $n_i=0$:
-
-$$
-n_i\ln(n_i/\mu_i)=0.
-$$
-
-This is not the usual sum $(n-\mu)^2/\sigma^2$.
-
-### Sensitivity
-
-Following Cowan et al., the expected sensitivity can be estimated with an Asimov dataset:
-
-$$
-n_i^A=\mu_i(\theta_0).
-$$
-
-Then
-
-$$
-q(\theta)=
-\chi^2(\theta;n^A)-\chi^2(\theta_0;n^A).
-$$
-
-For one parameter, a common estimate is
-
-$$
-Z\simeq\sqrt{q}.
-$$
-
-### 1D Interval
-
-Recipe:
-
-::: {.compact}
-1. Choose a parameter $\theta$.
-2. Compute $\mu_i(\theta)$ on a grid.
-3. Find the minimum $\chi^2_{min}$.
-4. Plot $\Delta\chi^2=\chi^2-\chi^2_{min}$.
-5. Use $\Delta\chi^2=1$ for an approximate $1\sigma$ interval.
-:::
-
-For an approximate $2\sigma$ interval in 1D, use $\Delta\chi^2=4$.
-
-### 2D Contour
-
-For two parameters:
-
-$$
-\Delta\chi^2(\theta_1,\theta_2)
-=
-\chi^2(\theta_1,\theta_2)-\chi^2_{min}.
-$$
-
-Standard levels:
-
-| region | $\Delta\chi^2$ |
-|---:|---:|
-| about $1\sigma$ | 2.30 |
-| about $2\sigma$ | 6.18 |
-| about $3\sigma$ | 11.83 |
-
-### What Can Be Fitted
-
-Good fit parameters:
-
-::: {.compact}
-- total normalization;
-- effective $P_{ee}$;
-- CNO scale;
-- Earth-effect scale;
-- $\sin^2\theta_{12}$;
-- $\Delta m_{21}^2$.
-:::
-
-It is also valid to fit a parameter to which the experiment has little sensitivity. That is a result.
-
-::::
-
-# Group Work
-
-## Turning Work into Projects
-
-:::: {.panel-tabset .story-tabs}
-
-### Project 1: SK-like
-
-Final question:
-
-::: {.question}
-How do threshold and oscillations make $^8\mathrm{B}$ the dominant visible source in an SK-like detector?
-:::
-
-Today:
-
-::: {.compact}
-- replace $P_{ee}=1$ by $P_{ee}^{day}$;
-- plot the visible spectrum;
-- scan the threshold;
-- fit the $^8\mathrm{B}$ normalization or effective $P_{ee}$.
-:::
-
-### Project 2: Borexino-like
-
-Final question:
-
-::: {.question}
-Can the low-energy spectrum separate $^7\mathrm{Be}$, pep, and CNO contributions?
-:::
-
-Today:
-
-::: {.compact}
-- update rates with oscillations;
-- plot source contributions;
-- build a pseudoexperiment;
-- fit the $^7\mathrm{Be}$ or CNO scale.
-:::
-
-### Project 3: Day-Night
-
-Final question:
-
-::: {.question}
-What sensitivity does a day-night comparison give to Earth matter or to $\Delta m^2_{21}$?
-:::
-
-Today:
-
-::: {.compact}
-- plot day and night templates;
-- compute $A_{DN}$;
-- build day/night pseudo-data;
-- fit the regeneration scale $\alpha_\oplus$.
-:::
-
-### Final Formulation
-
-By the end of the lesson, each group fills in:
-
-```text
-Title:
-Physics question:
-Main observable:
-Fit parameter:
-Main plot:
-Main number:
-Validity limit:
+```python
+pee = np.interp(
+    xs["E_MeV"],
+    pee_ref_table["E_MeV"],
+    pee_ref_table["Pee_day"],
+    left=pee_ref_table["Pee_day"].iloc[0],
+    right=pee_ref_table["Pee_day"].iloc[-1],
+)
 ```
-
-This is the basis of the defense.
-
-::::
-
-# Homework
-
-## After the Second Lesson
-
-:::: {.panel-tabset .story-tabs}
-
-### Required Part
-
-Submit:
-
-::: {.compact}
-1. A notebook that runs from top to bottom.
-2. One main plot.
-3. One $\Delta\chi^2$ plot or 2D contour.
-4. A numerical result with an interval.
-5. The final project formulation.
-:::
-
-### Minimal Fit
-
-If time is short, do 1D:
-
-::: {.compact}
-- SK-like: $^8\mathrm{B}$ normalization or $P_{ee}^{eff}$;
-- Borexino-like: $^7\mathrm{Be}$ or CNO scale;
-- day-night: $\alpha_\oplus$ in $P_{ee}^{night}=P_{ee}^{day}+\alpha_\oplus\Delta P^\oplus$.
-:::
-
-### Stronger Version
-
-If the base part is ready:
-
-::: {.compact}
-- build a 2D contour;
-- compare pseudo-data and Asimov sensitivity;
-- check how the result changes with threshold;
-- add a simple background and repeat the fit.
-:::
-
-### Before the Defense
 
 Check:
 
-::: {.compact}
-- axes have units;
-- tables from PEANUTS or the solar model are identified;
-- the toy detector model is named;
-- $\chi^2$ is defined explicitly;
-- the conclusion follows from the number, not from general knowledge.
+```python
+print(pee.min(), pee.max())
+```
+
+## Effective Cross Section
+
+The detector sees recoil electrons.
+
+For each row $(E_\nu,T_e)$ use
+
+$$
+\frac{d\sigma_{\mathrm{eff}}}{dT_e}
+=
+P_{ee}\frac{d\sigma_{\nu_e e}}{dT_e}
++
+(1-P_{ee})\frac{d\sigma_{\nu_x e}}{dT_e}.
+$$
+
+Here $\nu_x$ means $\nu_\mu$ or $\nu_\tau$.
+
+The $\nu_e e$ cross section is larger because it has both charged-current and neutral-current contributions.
+The coupling constants are summarized in the appendix:
+
+```{=html}
+<a href="00_solar_neutrino_physics_appendix.html#/elastic-scattering-cross-section">Elastic Scattering Cross Section</a>
+```
+
+# Event Rate
+
+## Prediction Formula
+
+For recoil-energy bin $j$,
+
+$$
+\mu_j(\theta)
+=
+N_eT_{\rm live}
+\int_{T_j}^{T_{j+1}} dT_e
+\int dE_\nu\,
+\Phi_{^8\mathrm{B}}f_{^8\mathrm{B}}(E_\nu)
+\frac{d\sigma_{\mathrm{eff}}}{dT_e}.
+$$
+
+In the table calculation, this is again a sum of row weights.
+
+## Build the Template
+
+```python
+phi_b8 = float(fluxes.loc[fluxes["source"] == "B8", "flux_cm2_s"].iloc[0])
+b8 = spectra.loc[spectra["source"] == "B8"].sort_values("E_MeV")
+
+shape = np.interp(xs["E_MeV"], b8["E_MeV"], b8["spectrum_per_MeV"], left=0.0, right=0.0)
+xs = xs.assign(dphi_dE=phi_b8 * shape)
+
+effective_xs = (
+    pee * xs["dsigma_nue_cm2_per_MeV"]
+    + (1.0 - pee) * xs["dsigma_nux_cm2_per_MeV"]
+)
+```
+
+## Bin the Template
+
+```python
+N_A = 6.02214076e23
+seconds_per_year = 365.25 * 24 * 3600
+N_e = 10.0 * N_A * 100.0e9 / 18.0
+T_live = seconds_per_year
+
+E_grid = np.sort(xs["E_MeV"].unique())
+T_grid = np.sort(xs["T_e_MeV"].unique())
+dE = np.median(np.diff(E_grid))
+dT = np.median(np.diff(T_grid))
+
+edges = np.arange(4.5, 14.0 + 0.25, 0.5)
+bin_id = np.digitize(xs["T_e_MeV"], edges) - 1
+valid = (0 <= bin_id) & (bin_id < len(edges) - 1)
+```
+
+## Bin the Template
+
+```python
+weights = (
+    N_e * T_live
+    * xs["dphi_dE"]
+    * effective_xs
+    * dE * dT
+)
+
+m = np.bincount(
+    bin_id[valid],
+    weights=weights[valid],
+    minlength=len(edges) - 1,
+)
+```
+
+## Prediction Function
+
+Use one function for every parameter point:
+
+```python
+def prediction_from_pee(pee):
+    effective_xs = (
+        pee * xs["dsigma_nue_cm2_per_MeV"]
+        + (1.0 - pee) * xs["dsigma_nux_cm2_per_MeV"]
+    )
+    weights = (
+        N_e * T_live
+        * xs["dphi_dE"]
+        * effective_xs
+        * dE * dT
+    )
+    return np.bincount(
+        bin_id[valid],
+        weights=weights[valid],
+        minlength=len(edges) - 1,
+    )
+
+m = prediction_from_pee(pee)
+m_noosc = prediction_from_pee(np.ones_like(pee))
+```
+
+## Template Checks
+
+Expected checks:
+
+```text
+no-oscillation total = 186693.543
+oscillated expected total = 80130.365
+```
+
+## Plot the Template
+
+:::: {.columns}
+
+::: {.column width=45%}
+
+The oscillated spectrum is lower than the no-oscillation spectrum, but not simply by a constant factor.
+
+That shape difference is what the fit uses.
+
+Expected first bins:
+
+```text
+4.5 5.0 9863.1
+5.0 5.5 9211.5
+5.5 6.0 8534.9
+```
+
+:::
+
+::: {.column width=55%}
+![](../assets/figures/mc2_oscillated_template.png){fig-align="center" width="100%"}
 :::
 
 ::::
+
+# Pseudo-Data
+
+## Generate Pseudo-Data
+
+Generate counts in the same bins:
+
+```python
+rng = np.random.default_rng(24680)
+n = rng.poisson(m)
+print(m.sum(), n.sum())
+```
+
+Expected output:
+
+```text
+80130.365 79968
+```
+
+:::: {.columns}
+
+::: {.column width=46%}
+
+Use the same binning for data and prediction.
+
+Do not rebin after generating pseudo-data.
+
+:::
+
+::: {.column width=54%}
+![](../assets/figures/mc2_pseudo_data.png){fig-align="center" width="100%"}
+:::
+
+::::
+
+# Fit
+
+## Poisson Statistic
+
+For a parameter point $\theta$ compute $\mu_j(\theta)$.
+
+Use
+
+$$
+q(\theta)
+=
+2\sum_j
+\left[
+\mu_j(\theta)-n_j
++
+n_j\ln\frac{n_j}{\mu_j(\theta)}
+\right].
+$$
+
+Then subtract the minimum:
+
+$$
+\Delta q(\theta)=q(\theta)-q_{\min}.
+$$
+
+```python
+def poisson_q(n, mu):
+    mu = np.maximum(mu, 1e-300)
+    terms = mu.copy()
+    mask = n > 0
+    terms[mask] = mu[mask] - n[mask] + n[mask] * np.log(n[mask] / mu[mask])
+    return 2.0 * np.sum(terms)
+```
+
+## Grid Scan
+
+Loop over the PEANUTS grid:
+
+```python
+scan_rows = []
+
+for sin2 in np.sort(osc["sin2theta12"].unique()):
+    for dm21 in np.sort(osc["dm21_eV2"].unique()):
+        table = osc[
+            np.isclose(osc["sin2theta12"], sin2)
+            & np.isclose(osc["dm21_eV2"], dm21)
+        ].sort_values("E_MeV")
+
+        pee = np.interp(xs["E_MeV"], table["E_MeV"], table["Pee_day"])
+        mu = prediction_from_pee(pee)
+        q = poisson_q(n, mu)
+        scan_rows.append((sin2, dm21, q))
+```
+
+## Best Fit
+
+```python
+scan = pd.DataFrame(scan_rows, columns=["sin2theta12", "dm21_eV2", "q"])
+scan["Delta_q"] = scan["q"] - scan["q"].min()
+
+best = scan.loc[scan["q"].idxmin()]
+print(best)
+```
+
+Expected output for the supplied pseudo-data:
+
+```text
+best sin2theta12 = 0.31500
+best dm21 = 6.625000e-05 eV^2
+```
+
+The generated point is still
+
+$$
+\sin^2\theta_{12}=0.308,
+\qquad
+\Delta m^2_{21}=7.42\times10^{-5}\ \mathrm{eV^2}.
+$$
+
+## Two-Dimensional Contour
+
+For two fitted parameters, draw:
+
+$$
+\Delta q = 2.30,
+\qquad
+\Delta q = 6.18.
+$$
+
+![](../assets/figures/mc2_contour.png){fig-align="center" width="58%"}
+
+For the supplied pseudo-data, the approximate $68\%$ grid range is:
+
+```text
+sin2theta12 = 0.305 ... 0.325
+dm21_1e5   = 5.12 ... 7.62
+```
+
+## One-Dimensional Profiles
+
+A 1D profile is not a slice.
+
+For $\sin^2\theta_{12}$:
+
+$$
+\Delta q_{\rm prof}(\sin^2\theta_{12})
+=
+\min_{\Delta m^2_{21}}
+\Delta q(\sin^2\theta_{12},\Delta m^2_{21}).
+$$
+
+For $\Delta m^2_{21}$:
+
+$$
+\Delta q_{\rm prof}(\Delta m^2_{21})
+=
+\min_{\sin^2\theta_{12}}
+\Delta q(\sin^2\theta_{12},\Delta m^2_{21}).
+$$
+
+Use $\Delta q_{\rm prof}=1$ for the usual one-parameter interval.
+
+# Day-Night Optional
+
+## Earth Regeneration Table
+
+If time permits, inspect:
+
+```text
+data/masterclass2/earth_regeneration_grid.csv
+```
+
+It contains PEANUTS values of
+
+$$
+\Delta P_{ee}^{\oplus}(E_\nu,\eta)
+=
+P_{ee}^{night}(E_\nu,\eta)
+-
+P_{ee}^{day}(E_\nu)
+$$
+
+at the reference oscillation parameters.
+
+The explanation is in:
+
+```{=html}
+<a href="00_solar_neutrino_physics_appendix.html#/earth-matter">Earth Matter appendix</a>
+```
+
+## Why a Fixed Reference Table?
+
+The fixed-reference table is for the shape of the effect:
+
+$$
+\Delta P_{ee}^{\oplus}(E_\nu,\eta)
+\quad\hbox{as a function of energy and nadir angle.}
+$$
+
+It answers:
+
+::: {.compact}
+- where the Earth effect is large;
+- how it changes with neutrino energy;
+- which nadir angles matter.
+:::
+
+It does not answer parameter sensitivity.
+
+## Parameter Scan
+
+For parameter sensitivity use:
+
+```text
+data/masterclass2/earth_regeneration_parameter_scan.csv
+```
+
+This table scans
+
+$$
+\Delta P_{ee}^{\oplus}
+\left(E_\nu,\eta;\sin^2\theta_{12},\Delta m^2_{21}\right)
+$$
+
+at selected energies and nadir angles.
+
+![](../assets/figures/mc2_earth_parameter_scan.png){fig-align="center" width="62%"}
+
+## Parameter-Scan Check
+
+Example:
+
+```python
+view = earth_scan[
+    np.isclose(earth_scan["E_MeV"], 10.0)
+    & np.isclose(earth_scan["eta_rad"], 0.80)
+]
+
+for sin2, group in view.groupby("sin2theta12"):
+    if np.any(np.isclose(sin2, [0.28, 0.308, 0.34])):
+        plt.plot(group["dm21_1e5_eV2"], group["delta_Pee_earth"], label=sin2)
+```
+
+Use this table to ask whether a day-night measurement helps $\Delta m^2_{21}$.
+
+## Day-Night Check
+
+Plot the Earth correction for several nadir angles:
+
+```python
+for eta, group in earth.groupby("eta_rad"):
+    plt.plot(group["E_MeV"], group["delta_Pee_earth"], label=f"eta={eta:.2f}")
+
+plt.axhline(0.0, color="black", lw=0.8)
+plt.xlabel(r"$E_\nu$ [MeV]")
+plt.ylabel(r"$\Delta P_{ee}^{\oplus}$")
+plt.legend()
+plt.show()
+```
+
+This is not required for the main two-parameter fit.
+
+# Homework
+
+## Computational Part
+
+Finish the notebook:
+
+::: {.compact}
+- reproduce the oscillated event spectrum;
+- generate one pseudo-data sample;
+- scan $(\sin^2\theta_{12},\Delta m^2_{21})$;
+- draw the 2D contour;
+- draw both 1D profiles;
+:::
+
+## Fit Checks
+
+Repeat the fit for:
+
+::: {.compact}
+- a lower threshold, $T_{\min}=3~\mathrm{MeV}$;
+- a higher threshold, $T_{\min}=6~\mathrm{MeV}$;
+- a coarser and a finer recoil-energy binning.
+:::
+
+Report which change matters most.
+
+
+## Day-Night Extension
+
+Use `earth_regeneration_parameter_scan.csv` to study:
+
+::: {.compact}
+- the size of $\Delta P_{ee}^{\oplus}$;
+- its dependence on $\Delta m^2_{21}$;
+- whether the effect is larger at some energies or nadir angles;
+- whether adding a day-night observable would improve the fit.
+:::
+
+## Theory Part
+
+Prepare short answers:
+
+::: {.compact}
+- why the high-energy solar limit gives $P_{ee}\simeq \sin^2\theta_{12}$;
+- why SK-like data are sensitive to $\sin^2\theta_{12}$;
+- why $\Delta m^2_{21}$ is harder without day-night information;
+- what Earth regeneration means physically.
+:::

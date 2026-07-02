@@ -1,0 +1,283 @@
+---
+title: "Project: SK-like Solar Neutrino Fit"
+lang: en
+format:
+  html:
+    toc: true
+---
+
+# Goal
+
+Build one reproducible SK-like solar-neutrino analysis:
+
+$$
+{}^8\mathrm{B}\ \text{flux}
+\to
+P_{ee}(E_\nu)
+\to
+\nu e\ \text{scattering}
+\to
+\mu_j
+\to
+n_j
+\to
+\text{fit}.
+$$
+
+The final result is a fit of the blinded pseudo-data spectrum for
+
+$$
+\sin^2\theta_{12},
+\qquad
+\Delta m^2_{21}.
+$$
+
+The true values are hidden until the defense.
+
+# Data
+
+Download:
+
+[data/project/solar_neutrino_project_data.zip](../data/project/solar_neutrino_project_data.zip)
+
+The archive contains:
+
+```text
+solar_fluxes.csv
+energy_spectra.csv
+nu_electron_recoil_cross_sections.csv
+oscillation_probabilities_grid.csv
+earth_regeneration_grid.csv
+earth_regeneration_parameter_scan.csv
+blind_pseudo_data_sk.csv
+README.md
+```
+
+The oscillation and Earth-regeneration tables were generated with PEANUTS.
+Students do not need to install PEANUTS.
+
+# Homework Milestones
+
+After masterclass 1:
+
+1. Build the no-oscillation event-rate calculation.
+2. Plot the ${}^8\mathrm{B}$ spectrum and the recoil-electron spectrum.
+3. Check the dependence on the electron kinetic-energy threshold.
+4. Fit the ${}^8\mathrm{B}$ normalization in pseudo-data.
+5. Prepare short theory notes on the Gamow window, the astrophysical $S$ factor,
+   and why $\nu_e e$ scattering is larger than $\nu_{\mu,\tau}e$ scattering.
+
+After masterclass 2:
+
+1. Add the PEANUTS survival-probability table.
+2. Fit the blinded recoil spectrum in
+   $\left(\sin^2\theta_{12},\Delta m^2_{21}\right)$.
+3. Compute one-dimensional profiles and two-dimensional contours.
+4. Study the size of Earth regeneration as an extension.
+5. Freeze the result before unblinding.
+
+# Required Project Package
+
+Submit one notebook or script directory that reproduces the whole chain:
+
+1. Read the public tables from the project archive.
+2. Build the event-rate model.
+3. Generate at least one open pseudo-data sample and test the fit machinery.
+4. Fit the blinded spectrum without changing the procedure after looking at it.
+5. Produce plots and numerical tables for the defense.
+
+The result must be reproducible from the public archive and the code shown in
+the defense.
+
+# Part 1: Event Model
+
+Reproduce the first masterclass calculation.
+
+Required outputs:
+
+1. Plot the normalized ${}^8\mathrm{B}$ spectrum $f_{^8\mathrm{B}}(E_\nu)$.
+2. Compute the no-oscillation SK-like recoil spectrum.
+3. State the exposure and number of target electrons used.
+4. Check the total number of events above the chosen threshold.
+5. Repeat for at least two thresholds.
+
+Use the practical units printed in the CSV tables.
+Analytic formulas use $\hbar=c=1$.
+
+Homework theory from masterclass 1:
+
+1. Explain the Gamow window for at least three reactions, for example
+   $p+p$, ${}^7\mathrm{Be}+p$, and ${}^{14}\mathrm{N}+p$.
+2. Define the astrophysical $S$ factor through
+   $\sigma(E)=S(E)E^{-1}\exp[-\sqrt{E_G/E}]$.
+3. Find experimental information on one relevant $S$ factor and give a short
+   critical summary: what was measured, what is extrapolated, and what
+   uncertainty matters for the Sun.
+4. Derive or verify the $\nu e$ differential cross section used in the table.
+5. Explain why $\nu_e e$ scattering is larger than
+   $\nu_{\mu,\tau}e$ scattering.
+
+# Part 2: Oscillations
+
+Use
+
+```text
+oscillation_probabilities_grid.csv
+```
+
+as a table for
+
+$$
+P_{ee}^{day}
+\left(E_\nu;\sin^2\theta_{12},\Delta m^2_{21}\right).
+$$
+
+Required outputs:
+
+1. Plot $P_{ee}^{day}(E_\nu)$ for several parameter points.
+2. Compute the oscillated recoil spectrum.
+3. Compare it with the no-oscillation spectrum.
+4. Explain why the spectrum is not just rescaled by a constant factor.
+
+Homework theory from masterclass 2:
+
+1. Derive the two-flavour vacuum probability.
+2. Write the flavour-basis Hamiltonian in matter.
+3. Explain the high-density adiabatic solar limit.
+4. State what is meant by decoherence for solar neutrinos.
+5. Explain what information is lost when only the recoil spectrum is fitted.
+
+# Part 3: Fit
+
+For recoil bin $j$ compute
+
+$$
+\mu_j(\theta)
+=
+N_eT_{\rm live}
+\int_{T_j}^{T_{j+1}}dT_e
+\int dE_\nu\,
+\Phi_{^8\mathrm{B}}f_{^8\mathrm{B}}(E_\nu)
+\left[
+P_{ee}\frac{d\sigma_{\nu_e e}}{dT_e}
++
+(1-P_{ee})\frac{d\sigma_{\nu_x e}}{dT_e}
+\right].
+$$
+
+Use the Poisson statistic
+
+$$
+q(\theta)
+=
+2\sum_j
+\left[
+\mu_j(\theta)-n_j
++
+n_j\ln\frac{n_j}{\mu_j(\theta)}
+\right],
+\qquad
+\Delta q=q-q_{\min}.
+$$
+
+Required outputs:
+
+1. Best-fit point.
+2. Two-dimensional contour for $\Delta q=2.30$ and $\Delta q=6.18$.
+3. One-dimensional profile in $\sin^2\theta_{12}$.
+4. One-dimensional profile in $\Delta m^2_{21}$.
+5. A short statement of what the detector is sensitive to.
+
+Fit checks:
+
+1. Repeat the fit with $T_{\min}=3~\mathrm{MeV}$ and
+   $T_{\min}=6~\mathrm{MeV}$.
+2. Repeat the fit with coarser and finer recoil-energy binning.
+3. Compare the fixed-$^8\mathrm{B}$-normalization fit with a fit where
+   $\alpha_B$ is profiled.
+4. Explain which change affects $\sin^2\theta_{12}$ most and which affects
+   $\Delta m^2_{21}$ most.
+
+# Part 4: Blinded Spectrum
+
+Use
+
+```text
+blind_pseudo_data_sk.csv
+```
+
+as the project data.
+
+Rules:
+
+1. Decide the fit procedure before unblinding.
+2. Do not tune binning or thresholds after seeing the answer.
+3. Freeze the best fit and contour.
+4. During the defense, compare the frozen result with the unblinded point.
+
+Report:
+
+```text
+best sin2theta12 = ...
+best dm21 = ... eV^2
+68% contour = ...
+95% contour = ...
+```
+
+# Part 5: Earth Regeneration
+
+This is an optional but recommended extension.
+
+Use
+
+```text
+earth_regeneration_parameter_scan.csv
+```
+
+to study
+
+$$
+\Delta P_{ee}^{\oplus}
+=
+P_{ee}^{night}-P_{ee}^{day}.
+$$
+
+Answer:
+
+1. What is the typical size of the Earth effect?
+2. At which energies and nadir angles is it largest?
+3. Is it sensitive to $\Delta m^2_{21}$?
+4. Would a day-night observable help the fit?
+
+# Theory Questions
+
+Prepare short answers:
+
+1. What sets the Gamow-window peak and width?
+2. What is the astrophysical $S$ factor, and why is it introduced?
+3. Why is $\nu_e e$ scattering larger than $\nu_{\mu,\tau}e$ scattering?
+4. How does the matter Hamiltonian change the effective mixing angle?
+5. Why does the high-energy solar limit give $P_{ee}\simeq\sin^2\theta_{12}$?
+6. Why is $\Delta m^2_{21}$ harder to measure from the recoil spectrum alone?
+7. What is Earth regeneration?
+8. What is a profile likelihood?
+9. What is a blind analysis, and what bias does it avoid?
+
+# Defense
+
+Use this structure:
+
+```text
+Question
+Input tables
+Event-rate calculation
+Pseudo-data and blind-data fit
+Contours and intervals
+Theory interpretation
+Limitations
+Unblinding result
+```
+
+Keep the presentation short and numerical.
+
+The defense must show enough code or formulas that the result can be reproduced.

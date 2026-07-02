@@ -10,6 +10,8 @@ project:
     - "solar-neutrino-masterclass/assets/**"
     - "solar-neutrino-masterclass/data/b8_spectrum.csv"
     - "solar-neutrino-masterclass/data/masterclass1/**"
+    - "solar-neutrino-masterclass/data/masterclass2/**"
+    - "solar-neutrino-masterclass/data/project/**"
   render:
     - "*.qmd"
     - "introduction/index.qmd"
@@ -17,10 +19,12 @@ project:
     - "solar-neutrino-masterclass/slides/00_solar_neutrino_physics.qmd"
     - "solar-neutrino-masterclass/slides/00_solar_neutrino_physics_appendix.qmd"
     - "solar-neutrino-masterclass/slides/01_solar_sources.qmd"
+    - "solar-neutrino-masterclass/slides/02_msw_detector_statistics.qmd"
+    - "solar-neutrino-masterclass/assignments/sk_integrated_project.qmd"
     - "!introduction/neutrino-interactions.qmd"
-    - "!solar-neutrino-masterclass/slides/02_msw_detector_statistics.qmd"
     - "!solar-neutrino-masterclass/slides/03_student_defense.qmd"
-    - "!solar-neutrino-masterclass/assignments/*.qmd"
+    - "!solar-neutrino-masterclass/assignments/defense_requirements.qmd"
+    - "!solar-neutrino-masterclass/assignments/fit_recipes.qmd"
     - "!solar-neutrino-masterclass/notebooks/*.ipynb"
     - "!solar-neutrino-masterclass/report_template/*.qmd"
 
