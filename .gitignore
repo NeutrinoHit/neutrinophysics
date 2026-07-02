@@ -29,3 +29,10 @@ solar-neutrino-masterclass/report_template/*.tex
 solar-neutrino-masterclass/report_template/*.aux
 solar-neutrino-masterclass/report_template/*.log
 solar-neutrino-masterclass/report_template/*.toc
+
+# Solar-neutrino masterclass private/generated project files
+solar-neutrino-masterclass/data/teacher/
+solar-neutrino-masterclass/data/masterclass2/blind_pseudo_data_sk.csv
+solar-neutrino-masterclass/data/project/*.csv
+!solar-neutrino-masterclass/data/project/README.md
+!solar-neutrino-masterclass/data/project/solar_neutrino_project_data.zip
