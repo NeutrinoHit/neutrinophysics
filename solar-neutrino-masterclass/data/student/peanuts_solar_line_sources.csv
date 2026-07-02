@@ -1,0 +1,4 @@
+source,E_MeV,flux_fraction,uncertainty,total_source_flux_cm2_s,line_flux_cm2_s
+7Be,0.384,0.103,7%,4500000000.0,463500000.0
+7Be,0.862,0.897,7%,4500000000.0,4036500000.0
+pep,1.445,1.0,1.2%,146000000.0,146000000.0

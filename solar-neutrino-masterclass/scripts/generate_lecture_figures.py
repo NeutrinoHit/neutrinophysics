@@ -51,7 +51,7 @@ def save(fig, name):
 
 def beta_shape(E, emax):
     y = np.where((E >= 0.0) & (E <= emax), E**2 * (emax - E) ** 2, 0.0)
-    area = np.trapz(y, E)
+    area = np.trapezoid(y, E)
     return y / area if area > 0 else y
 
 
@@ -122,7 +122,7 @@ def figure_radial_production():
     fig, ax = plt.subplots(figsize=(8.2, 4.6))
     setup_axes(ax, "radius / solar radius", "relative production density")
     for label, (y, color) in components.items():
-        y = y / np.trapz(y, r)
+        y = y / np.trapezoid(y, r)
         y = y / y.max()
         ax.plot(r, y, lw=2.5, color=color, label=label)
     ax.axvspan(0.0, 0.10, color="#ffffff", alpha=0.08)
@@ -195,21 +195,22 @@ def figure_cross_sections():
 
 
 def figure_chi2_demo():
-    p = np.linspace(0.20, 0.46, 400)
-    best = 0.316
-    sigma = 0.032
-    chi2 = ((p - best) / sigma) ** 2
+    dm21 = np.linspace(5.5, 9.4, 500)  # in 10^{-5} eV^2
+    best = 7.42
+    sigma = 0.42
+    chi2 = ((dm21 - best) / sigma) ** 2
 
     fig, ax = plt.subplots(figsize=(8.2, 4.6))
-    setup_axes(ax, r"effective $P_{ee}$", r"$\Delta\chi^2$")
-    ax.plot(p, chi2, color=COLORS["green"], lw=3.0)
+    setup_axes(ax, r"$\Delta m^2_{21}$ [$10^{-5}$ eV$^2$]", r"$\Delta\chi^2$")
+    ax.plot(dm21, chi2, color=COLORS["green"], lw=3.0)
     ax.axhline(1.0, color=COLORS["orange"], ls="--", lw=1.6, label=r"$1\sigma$ for one parameter")
     ax.axvline(best, color=COLORS["gray"], lw=1.4)
-    ax.fill_between(p, 0, chi2, where=chi2 <= 1.0, color=COLORS["green"], alpha=0.18)
-    ax.text(best + 0.006, 6.0, f"best fit = {best:.3f}", color=COLORS["gray"], fontsize=10)
+    ax.fill_between(dm21, 0, chi2, where=chi2 <= 1.0, color=COLORS["green"], alpha=0.18)
+    ax.text(best + 0.10, 6.0, r"best fit = $7.42\times10^{-5}$ eV$^2$", color=COLORS["gray"], fontsize=10)
     ax.set_ylim(0, 8)
+    ax.set_xlim(dm21.min(), dm21.max())
     ax.legend(facecolor="#111111", edgecolor="#666666", labelcolor="#f0f0f0", loc="upper right")
-    ax.set_title("A fit turns a spectrum into a number with uncertainty")
+    ax.set_title(r"One-parameter fit of $\Delta m^2_{21}$")
     save(fig, "lecture_chi2_demo.png")
 
 
