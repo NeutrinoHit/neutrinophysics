@@ -1,5 +1,6 @@
 ---
 title: "Введение в физику нейтрино"
+format: html
 toc: false
 ---
 
@@ -11,51 +12,347 @@ toc: false
 </style>
 
 <div class="course-index course-subpage">
-  <a class="course-back-link" href="../index.html">← Все материалы по физике нейтрино</a>
-
-  <section class="course-intro">
-    <p class="course-kicker">Курс</p>
+  <section class="course-intro course-intro-primary">
+    <p class="course-kicker">Курс лекций</p>
     <h1>Введение в физику нейтрино</h1>
-    <p>
-      Вводный курс по физике нейтрино. Сейчас доступны три опубликованные
-      HTML-лекции, перенесенные из общего проекта карты сайта в отдельный
-      проект раздела.
-    </p>
+    <p>Курс лекций по физике нейтрино.</p>
   </section>
 
-  <section class="course-accordion" aria-label="Лекции вводного курса">
-    <details class="course-row" open>
+  <section class="lecture-accordion" aria-label="Лекции курса">
+    <details class="lecture-row">
       <summary>
-        <span class="course-row-kind">01</span>
-        <span>Введение в физику нейтрино</span>
+        <span class="lecture-index">01</span>
+        <span>Нейтрино 101</span>
       </summary>
-      <div class="course-row-body">
-        <div class="course-links">
-          <a href="Introduction/">Открыть лекцию</a>
+      <div class="lecture-row-body">
+      <p>Основные свойства, история открытия и открытые вопросы.</p>
+        <div class="lecture-links">
+          <a href="Introduction/index.html">Открыть лекцию</a>
         </div>
       </div>
     </details>
 
-    <details class="course-row">
+    <details class="lecture-row">
       <summary>
-        <span class="course-row-kind">02</span>
+        <span class="lecture-index">02</span>
         <span>Пространственная четность</span>
       </summary>
-      <div class="course-row-body">
-        <div class="course-links">
-          <a href="Parity/">Открыть лекцию</a>
+      <div class="lecture-row-body">
+      <p>Пространственная четность и слабые взаимодействия.</p>
+        <div class="lecture-links">
+          <a href="Parity/index.html">Открыть лекцию</a>
         </div>
       </div>
     </details>
 
-    <details class="course-row">
+    <details class="lecture-row">
       <summary>
-        <span class="course-row-kind">03</span>
-        <span>Спиральность нейтрино</span>
+        <span class="lecture-index">03</span>
+        <span>Спин и поляризация нейтрино</span>
       </summary>
-      <div class="course-row-body">
-        <div class="course-links">
-          <a href="Helicity/">Открыть лекцию</a>
+      <div class="lecture-row-body">
+      <p>Спин, поляризация и спиральность нейтрино.</p>
+        <div class="lecture-links">
+          <a href="Helicity/index.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">04</span>
+        <span>Прямое определение массы нейтрино</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Кинематика, ускорители и эксперименты с тритием.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/04_direct_neutrino_mass.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">05</span>
+        <span>Осцилляции нейтрино в вакууме</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Плосковолновая теория, длины осцилляций и практические примеры.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/05_vacuum_oscillations.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">06</span>
+        <span>Осцилляции нейтрино в веществе</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Потенциал взаимодействия, адиабатическое приближение и MSW-эффект.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/06_matter_oscillations.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">07</span>
+        <span>Парадоксы в теории осцилляций нейтрино</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Гипотезы, парадоксы, волновой пакет и одномерная теория.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/07_oscillation_paradoxes.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">08</span>
+        <span>Нейтрино в Стандартной модели</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Спиральность, киральность, природа Дирака или Майораны и генерация массы.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/08_standard_model_neutrinos.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">09</span>
+        <span>Электромагнитные свойства нейтрино</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Свойства в Стандартной модели, за ее пределами и эксперименты.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/09_electromagnetic_properties.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">10</span>
+        <span>Стерильные нейтрино</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Теория, эксперименты и текущий статус.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/10_sterile_neutrinos.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">11</span>
+        <span>Взаимодействие нейтрино с веществом</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Сечения, ядерные эффекты, когерентное рассеяние и neutrino floor.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/11_neutrino_interactions.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">12</span>
+        <span>Экспериментальные методы детектирования</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Сцинтилляторы, черенковские, радиохимические, трековые и другие методы.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/12_detection_methods.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">13</span>
+        <span>Солнечные нейтрино</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Модель Солнца, спектры, сечения, эксперименты и фит данных.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/13_solar_neutrinos.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">14</span>
+        <span>Атмосферные нейтрино</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>ШАЛ, моделирование, эксперименты, гипотезы дефицита и фит данных.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/14_atmospheric_neutrinos.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">15</span>
+        <span>Ускорительные нейтрино</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Пучки, спектры, сечения, эксперименты и осцилляционный анализ.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/15_accelerator_neutrinos.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">16</span>
+        <span>Реакторные нейтрино</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Реакторы, ядерные реакции, спектры, эксперименты и мониторинг.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/16_reactor_neutrinos.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">17</span>
+        <span>Геофизические нейтрино</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Термальная история Земли, радиоактивные изотопы и эксперименты.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/17_geophysical_neutrinos.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">18</span>
+        <span>Безнейтринный двойной бета-распад</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Феноменология, теория, методика экспериментов, результаты и перспективы.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/18_neutrinoless_double_beta_decay.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">19</span>
+        <span>Реликтовые нейтрино</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Космология, спектр, температура и экспериментальные идеи регистрации.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/19_relic_neutrinos.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">20</span>
+        <span>Астрофизические нейтрино сверхвысоких энергий</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Источники, энергетический баланс, эксперименты, методика и задачи.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/20_uhe_astrophysical_neutrinos.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">21</span>
+        <span>Нейтрино от сверхновой</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Теория сверхновой, спектры, осцилляции и коллективные эффекты.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/21_supernova_neutrinos.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">22</span>
+        <span>Глобальный анализ</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Chi2, правдоподобие, систематика, корреляции и вырождения.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/22_global_analysis.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">23</span>
+        <span>Смешивание и CP-нарушение</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Матрица смешивания, унитарность, CP-фаза, теория и эксперимент.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/23_mixing_cp_violation.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">24</span>
+        <span>Нейтрино как окно в новую физику</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Возможные проявления новой физики в нейтринном секторе.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/24_new_physics.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">25</span>
+        <span>Нейтринная томография</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Земля, MSW, геонейтрино и сверхвысокие энергии.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/25_neutrino_tomography.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">26</span>
+        <span>Реакторы как мониторинг</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Мониторинг реакторов нейтринными методами.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/26_reactor_monitoring.html">Открыть лекцию</a>
         </div>
       </div>
     </details>

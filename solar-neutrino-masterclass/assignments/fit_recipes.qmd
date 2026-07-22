@@ -8,6 +8,8 @@ format:
 
 # Poisson Chi-Square
 
+Use natural units, $\hbar=c=1$, for model formulas. The counts $n_i$ and $\mu_i$ are dimensionless bin counts.
+
 For binned counts:
 
 $$

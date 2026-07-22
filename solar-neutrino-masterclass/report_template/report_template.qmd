@@ -17,6 +17,8 @@ format:
 
 State the concrete question your team answered.
 
+Use natural units, $\hbar=c=1$, for analytic formulas. State practical table units explicitly when quoting numerical inputs and plot axes.
+
 # Model
 
 Write the minimum equations used in the project. Explain which parts are physical inputs and which parts are toy approximations.

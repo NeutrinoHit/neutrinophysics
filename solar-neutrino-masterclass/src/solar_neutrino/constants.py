@@ -1,4 +1,8 @@
-"""Physical constants used by the toy solar-neutrino calculations."""
+"""Physical constants for the toy solar-neutrino calculations.
+
+Analytic quantities use natural units, hbar = c = 1. Practical inputs such as
+cm^{-3} densities are converted explicitly where needed.
+"""
 
 from __future__ import annotations
 

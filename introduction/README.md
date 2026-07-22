@@ -1,17 +1,19 @@
 # Введение в физику нейтрино
 
-В папке хранятся опубликованные лекции вводного курса:
+В папке хранится структура вводного курса:
 
 - HTML-экспорты из Keynote лежат в отдельных подпапках с `index.html`;
-- новые лекции Quarto можно добавлять непосредственно как `.qmd`-файлы;
-- общие настройки будущих Quarto-слайдов находятся в `_metadata.yml`.
+- русские QMD-заготовки слайдов лежат в `ru/slides/`;
+- английские QMD-заготовки слайдов лежат в `en/slides/`;
+- RevealJS-настройки находятся прямо в YAML-шапках QMD-заготовок, чтобы
+  индексы `ru/slides/index.qmd` и `en/slides/index.qmd` оставались обычными
+  HTML-страницами.
 
-Для новой лекции Quarto достаточно создать файл, например
-`neutrino-interactions.qmd`, и выполнить из корня репозитория:
+Для рендера выполнить из корня репозитория:
 
 ```bash
 quarto render
 ```
 
-Страница лекции будет опубликована по адресу
-`https://neutrinohit.github.io/neutrinophysics/introduction/neutrino-interactions.html`.
+Новые русские QMD-слайды публикуются по адресу вида
+`https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/04_direct_neutrino_mass.html`.

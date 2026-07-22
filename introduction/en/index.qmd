@@ -1,0 +1,362 @@
+---
+title: "Introduction to Neutrino Physics"
+lang: en
+format: html
+toc: false
+---
+
+```{=html}
+<style>
+  .quarto-title-block {
+    display: none;
+  }
+</style>
+
+<div class="course-index course-subpage">
+  <section class="course-intro course-intro-primary">
+    <p class="course-kicker">Lecture Course</p>
+    <h1>Introduction to Neutrino Physics</h1>
+    <p>Lecture course in neutrino physics.</p>
+  </section>
+
+  <section class="lecture-accordion" aria-label="Course lectures">
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">01</span>
+        <span>Neutrino 101</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Basic properties, discovery history, and open questions.</p>
+        <div class="lecture-links">
+          <a href="../Introduction/index.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">02</span>
+        <span>Parity</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Parity and weak interactions.</p>
+        <div class="lecture-links">
+          <a href="../Parity/index.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">03</span>
+        <span>Spin and Neutrino Polarization</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Spin, polarization, and neutrino helicity.</p>
+        <div class="lecture-links">
+          <a href="../Helicity/index.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">04</span>
+        <span>Direct Determination of the Neutrino Mass</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Kinematics, accelerators, and tritium experiments.</p>
+        <div class="lecture-links">
+          <a href="slides/04_direct_neutrino_mass.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">05</span>
+        <span>Neutrino Oscillations in Vacuum</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Plane-wave theory, oscillation lengths, and practical examples.</p>
+        <div class="lecture-links">
+          <a href="slides/05_vacuum_oscillations.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">06</span>
+        <span>Neutrino Oscillations in Matter</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Interaction potential, adiabatic approximation, and the MSW effect.</p>
+        <div class="lecture-links">
+          <a href="slides/06_matter_oscillations.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">07</span>
+        <span>Paradoxes in Neutrino Oscillation Theory</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Assumptions, paradoxes, wave packets, and one-dimensional theory.</p>
+        <div class="lecture-links">
+          <a href="slides/07_oscillation_paradoxes.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">08</span>
+        <span>Neutrinos in the Standard Model</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Helicity, chirality, Dirac or Majorana nature, and mass generation.</p>
+        <div class="lecture-links">
+          <a href="slides/08_standard_model_neutrinos.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">09</span>
+        <span>Electromagnetic Properties of Neutrinos</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Properties in the Standard Model, beyond it, and experiments.</p>
+        <div class="lecture-links">
+          <a href="slides/09_electromagnetic_properties.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">10</span>
+        <span>Sterile Neutrinos</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Theory, experiments, and current status.</p>
+        <div class="lecture-links">
+          <a href="slides/10_sterile_neutrinos.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">11</span>
+        <span>Neutrino Interactions with Matter</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Cross sections, nuclear effects, coherent scattering, and the neutrino floor.</p>
+        <div class="lecture-links">
+          <a href="slides/11_neutrino_interactions.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">12</span>
+        <span>Experimental Methods of Neutrino Detection</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Scintillators, Cherenkov, radiochemical, tracking, and other methods.</p>
+        <div class="lecture-links">
+          <a href="slides/12_detection_methods.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">13</span>
+        <span>Solar Neutrinos</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Solar model, spectra, cross sections, experiments, and data fits.</p>
+        <div class="lecture-links">
+          <a href="slides/13_solar_neutrinos.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">14</span>
+        <span>Atmospheric Neutrinos</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Air showers, simulations, experiments, deficit hypotheses, and data fits.</p>
+        <div class="lecture-links">
+          <a href="slides/14_atmospheric_neutrinos.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">15</span>
+        <span>Accelerator Neutrinos</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Beams, spectra, cross sections, experiments, and oscillation analysis.</p>
+        <div class="lecture-links">
+          <a href="slides/15_accelerator_neutrinos.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">16</span>
+        <span>Reactor Neutrinos</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Reactors, nuclear reactions, spectra, experiments, and monitoring.</p>
+        <div class="lecture-links">
+          <a href="slides/16_reactor_neutrinos.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">17</span>
+        <span>Geophysical Neutrinos</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Earth thermal history, radioactive isotopes, and experiments.</p>
+        <div class="lecture-links">
+          <a href="slides/17_geophysical_neutrinos.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">18</span>
+        <span>Neutrinoless Double Beta Decay</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Phenomenology, theory, experimental methods, results, and prospects.</p>
+        <div class="lecture-links">
+          <a href="slides/18_neutrinoless_double_beta_decay.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">19</span>
+        <span>Relic Neutrinos</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Cosmology, spectrum, temperature, and experimental detection ideas.</p>
+        <div class="lecture-links">
+          <a href="slides/19_relic_neutrinos.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">20</span>
+        <span>Ultra-High-Energy Astrophysical Neutrinos</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Sources, energy balance, experiments, methods, and goals.</p>
+        <div class="lecture-links">
+          <a href="slides/20_uhe_astrophysical_neutrinos.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">21</span>
+        <span>Supernova Neutrinos</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Supernova theory, spectra, oscillations, and collective effects.</p>
+        <div class="lecture-links">
+          <a href="slides/21_supernova_neutrinos.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">22</span>
+        <span>Global Analysis</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Chi2, likelihood, systematics, correlations, and degeneracies.</p>
+        <div class="lecture-links">
+          <a href="slides/22_global_analysis.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">23</span>
+        <span>Mixing and CP Violation</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Mixing matrix, unitarity, CP phase, theory, and experiment.</p>
+        <div class="lecture-links">
+          <a href="slides/23_mixing_cp_violation.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">24</span>
+        <span>Neutrinos as a Window to New Physics</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Possible signatures of new physics in the neutrino sector.</p>
+        <div class="lecture-links">
+          <a href="slides/24_new_physics.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">25</span>
+        <span>Neutrino Tomography</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Earth, MSW physics, geoneutrinos, and ultra-high energies.</p>
+        <div class="lecture-links">
+          <a href="slides/25_neutrino_tomography.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">26</span>
+        <span>Reactors as Monitoring Tools</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Reactor monitoring with neutrino methods.</p>
+        <div class="lecture-links">
+          <a href="slides/26_reactor_monitoring.html">Open lecture</a>
+        </div>
+      </div>
+    </details>
+  </section>
+</div>
+```
