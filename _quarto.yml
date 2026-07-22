@@ -15,6 +15,9 @@ project:
   render:
     - "*.qmd"
     - "introduction/index.qmd"
+    - "introduction/en/index.qmd"
+    - "introduction/ru/slides/*.qmd"
+    - "introduction/en/slides/*.qmd"
     - "solar-neutrino-masterclass/index.qmd"
     - "solar-neutrino-masterclass/slides/00_solar_neutrino_physics.qmd"
     - "solar-neutrino-masterclass/slides/00_solar_neutrino_physics_appendix.qmd"

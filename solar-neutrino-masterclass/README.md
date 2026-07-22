@@ -2,13 +2,15 @@
 
 Materials for a masterclass on solar neutrinos.
 
+Convention: analytic formulas use natural units, `hbar = c = 1`. Numerical tables keep their stated practical units.
+
 Course logic:
 
 ```text
 lecture
 -> session 1: sources, production radius, spectra, no-oscillation events
 -> session 2: MSW, Earth effect, pseudo-data, fit
--> defense of three projects
+-> defense of one integrated SK-like project
 ```
 
 ## Installation
@@ -50,10 +52,31 @@ python scripts/generate_student_datasets.py
 
 Real PEANUTS/SSM tables can replace the same files if the column names are kept.
 
+## QR Code
+
+Generate a QR code for the public project page:
+
+```bash
+make qrcode
+```
+
+Direct command:
+
+```bash
+python scripts/generate_site_qrcode.py \
+  --url https://neutrinohit.github.io/neutrinophysics/solar-neutrino-masterclass/index.html \
+  --out assets/figures/solar_masterclass_qr.png \
+  --selfcheck
+```
+
+The script is based on the book QR-code generator in
+`/Users/dmitrijnaumov/Documents/dnaumov_documents/Papers/TheBook/pyplots/qrcodes/make_qrcode.py`.
+
 ## Build
 
 ```bash
 make datasets
+make qrcode
 make render
 ```
 
@@ -99,22 +122,23 @@ Then open the notebook from the Jupyter page in the browser.
 ## Structure
 
 - `slides/00_solar_neutrino_physics.qmd`: physics lecture.
+- `slides/00_solar_neutrino_physics_appendix.qmd`: derivations and technical details moved out of the one-hour lecture.
 - `slides/01_solar_sources.qmd`: masterclass 1.
 - `slides/02_msw_detector_statistics.qmd`: masterclass 2.
 - `slides/03_student_defense.qmd`: defense format.
-- `assignments/team_A_solar_sources.qmd`: project 1, SK-like and B8.
-- `assignments/team_B_msw_oscillations.qmd`: project 2, Borexino-like.
-- `assignments/team_C_detector_statistics.qmd`: project 3, day-night.
+- `assignments/sk_integrated_project.qmd`: common SK-like project.
 - `assignments/fit_recipes.qmd`: short fit recipes.
 - `data/student/`: student tables.
 
-## Group Projects
+## Integrated Project
 
-1. **SK-like and B8.** Why a high threshold selects $^8\mathrm{B}$.
-2. **Borexino-like.** Which sources are visible at low energy.
-3. **Day-night.** What can be extracted from the Earth effect.
+The project combines the earlier separate ideas into one analysis:
 
-Each group presents a physics question, model, main plot, fit, numerical result, and limitations.
+1. **Sources and detector.** Why an SK-like threshold selects mainly $^8\mathrm{B}$ neutrinos.
+2. **Oscillations.** How $P_{ee}^{day}$ and $P_{ee}^{night}$ change the expected spectrum.
+3. **Fit.** What can be extracted from pseudo-data: a normalization, an effective survival probability, or an Earth-effect scale.
+
+The defense presents one physics question, one model chain, one main plot, one fit, one numerical result, and limitations.
 
 ## Limitations
 
@@ -122,6 +146,6 @@ The materials are pedagogical:
 
 - the solar model is not solved during the sessions;
 - fluxes, spectra, and probabilities are taken from tables;
-- SK-like and Borexino-like detectors are simplified models;
+- the SK-like detector is a simplified model;
 - backgrounds and systematics are schematic;
-- the result is not a replacement for a Super-Kamiokande, Borexino, SNO, or JUNO analysis.
+- the result is not a replacement for a Super-Kamiokande, SNO, or JUNO analysis.

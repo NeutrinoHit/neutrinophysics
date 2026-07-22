@@ -8,11 +8,13 @@ format:
 
 # Format
 
-For each group:
+Use natural units, $\hbar=c=1$, for analytic formulas. Keep table units explicit on axes and in numerical results.
+
+For the common project:
 
 ```text
-7 minutes for the talk
-3 minutes for questions
+10-12 minutes for the talk
+8-10 minutes for questions
 ```
 
 Recommended 5-slide structure:

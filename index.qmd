@@ -30,21 +30,17 @@ toc: false
   </header>
 
   <section class="course-accordion" aria-label="Курсы по физике нейтрино">
-    <details class="course-row" open>
+    <details class="course-row">
       <summary>
         <span class="course-row-kind">Курс</span>
         <span>Введение в физику нейтрино</span>
       </summary>
       <div class="course-row-body">
         <p>
-          Вводный курс с опубликованными HTML-лекциями из Keynote:
-          введение, пространственная четность и спиральность нейтрино.
+          Вводный курс по физике нейтрино.
         </p>
         <div class="course-links">
-          <a href="introduction/">Открыть курс</a>
-          <a href="introduction/Introduction/">Лекция 1</a>
-          <a href="introduction/Parity/">Лекция 2</a>
-          <a href="introduction/Helicity/">Лекция 3</a>
+          <a href="introduction/index.html">Открыть курс</a>
         </div>
       </div>
     </details>
@@ -62,7 +58,7 @@ toc: false
           analysis.
         </p>
         <div class="course-links">
-          <a href="solar-neutrino-masterclass/">Open materials</a>
+          <a href="solar-neutrino-masterclass/index.html">Open materials</a>
         </div>
       </div>
     </details>

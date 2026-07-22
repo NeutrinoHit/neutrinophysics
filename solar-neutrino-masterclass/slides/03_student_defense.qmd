@@ -8,27 +8,25 @@ date: "June 2026"
 
 # Format
 
-## How We Defend the Project
+Use natural units, $\hbar=c=1$, when writing analytic formulas. Keep the practical units shown in the input tables on plot axes.
 
-:::: {.panel-tabset .story-tabs}
 
-### Timing
+## Timing
 
-For each group:
-
-```text
-7 minutes for the talk
-3 minutes for questions
-```
-
-Three groups:
+For the project:
 
 ```text
-30 minutes for defenses
-15-20 minutes for common discussion
+10-12 minutes for the talk
+8-10 minutes for questions
 ```
 
-### Goal
+Common discussion:
+
+```text
+15-20 minutes
+```
+
+## Goal
 
 Defend a short physics result, not a collection of plots:
 
@@ -46,7 +44,7 @@ $$
 
 One main plot is better than five disconnected ones.
 
-### Five Slides
+## Five Slides
 
 Recommended structure:
 
@@ -58,7 +56,7 @@ Recommended structure:
 5. Model limitations and next step.
 :::
 
-### Required Statements
+## Required Statements
 
 ::: {.compact}
 - which parameter was measured or tested;
@@ -68,35 +66,30 @@ Recommended structure:
 - what is simplified.
 :::
 
-::::
 
 # Content
 
-## What Must Be in the Defense
 
-:::: {.panel-tabset .story-tabs}
-
-### Main Plot
+## Main Plot
 
 Choose one:
 
 ::: {.compact}
 - source fractions after threshold;
 - event spectrum with oscillations;
-- $^7\mathrm{Be}$, pep, and CNO contributions;
 - $P_{ee}^{night}-P_{ee}^{day}$;
 - $\Delta\chi^2$ or a 2D contour.
 :::
 
 The plot must have axes, units, and a caption.
 
-### Main Number
+## Main Number
 
 Examples:
 
 ::: {.compact}
 - fraction of $^8\mathrm{B}$ events above 4.5 MeV;
-- best-fit $^7\mathrm{Be}$ normalization;
+- best-fit $^8\mathrm{B}$ normalization;
 - interval for $P_{ee}^{eff}$;
 - $A_{DN}$;
 - sensitivity to the Earth-effect scale.
@@ -104,7 +97,7 @@ Examples:
 
 A number without an uncertainty is only half of the result.
 
-### Short Code
+## Short Code
 
 Show one fragment that actually determines the result:
 
@@ -118,7 +111,7 @@ Show one fragment that actually determines the result:
 
 The code must fit on one slide.
 
-### Limitations
+## Limitations
 
 Say explicitly:
 
@@ -126,19 +119,15 @@ Say explicitly:
 - solar fluxes and probabilities are taken from tables;
 - the detector model is pedagogical;
 - backgrounds are simplified or switched off;
-- systematics are not real SK or Borexino systematics;
+- systematics are not real SK systematics;
 - the result is not a full experimental analysis.
 :::
 
-::::
 
 # Evaluation
 
-## How It Will Be Evaluated
 
-:::: {.panel-tabset .story-tabs}
-
-### Criteria
+## Criteria
 
 ::: {.compact}
 - the question is clear;
@@ -149,7 +138,7 @@ Say explicitly:
 - limitations are stated honestly.
 :::
 
-### Common Mistakes
+## Common Mistakes
 
 ::: {.compact}
 - plot without units;
@@ -160,7 +149,7 @@ Say explicitly:
 - interval drawn without stating the $\Delta\chi^2$ level.
 :::
 
-### Questions After the Talk
+## Questions After the Talk
 
 Expect questions of this type:
 
@@ -172,7 +161,7 @@ Expect questions of this type:
 - which systematic uncertainty would matter first in a real experiment.
 :::
 
-### Final Sentence
+## Final Sentence
 
 End with one concrete sentence:
 
@@ -181,5 +170,3 @@ In our teaching model we obtained ...
 This means ...
 The main limitation of the result is ...
 ```
-
-::::
