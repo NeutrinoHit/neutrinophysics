@@ -40,7 +40,7 @@ toc: false
       </summary>
       <div class="lecture-row-body">
         <div class="lecture-links">
-          <a href="../../Introduction/index.html">Open slides</a>
+          <a href="../../ru/slides/01_neutrino_101.html">Open slides</a>
         </div>
       </div>
     </details>
@@ -52,7 +52,7 @@ toc: false
       </summary>
       <div class="lecture-row-body">
         <div class="lecture-links">
-          <a href="../../Parity/index.html">Open slides</a>
+          <a href="../../ru/slides/02_parity.html">Open slides</a>
         </div>
       </div>
     </details>
@@ -64,7 +64,7 @@ toc: false
       </summary>
       <div class="lecture-row-body">
         <div class="lecture-links">
-          <a href="../../Helicity/index.html">Open slides</a>
+          <a href="../../ru/slides/03_helicity.html">Open slides</a>
         </div>
       </div>
     </details>
