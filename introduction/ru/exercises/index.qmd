@@ -25,3 +25,11 @@ format:
 ---
 
 {{< include ../../_includes/exercises/04_direct_neutrino_mass-ru.qmd >}}
+
+---
+
+{{< include ../../_includes/exercises/05_vacuum_oscillations-ru.qmd >}}
+
+---
+
+{{< include ../../_includes/exercises/13_solar_neutrinos-ru.qmd >}}

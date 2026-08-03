@@ -97,6 +97,7 @@ toc: false
       <p>Плосковолновая теория, длины осцилляций и практические примеры.</p>
         <div class="lecture-links">
           <a href="ru/slides/05_vacuum_oscillations.html">Открыть лекцию</a>
+          <a href="ru/exercises/05_vacuum_oscillations_exercises.html">Задачи</a>
         </div>
       </div>
     </details>
@@ -201,6 +202,7 @@ toc: false
       <p>Модель Солнца, спектры, сечения, эксперименты и фит данных.</p>
         <div class="lecture-links">
           <a href="ru/slides/13_solar_neutrinos.html">Открыть лекцию</a>
+          <a href="ru/exercises/13_solar_neutrinos_exercises.html">Задачи</a>
         </div>
       </div>
     </details>
