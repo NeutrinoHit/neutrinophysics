@@ -1,0 +1,181 @@
+::: {.spectrum-widget}
+```{ojs}
+//| echo: false
+
+viewof fermiMass = Inputs.range([0, 3], {
+  value: 1,
+  step: 0.1,
+  label: html`
+    <span class="spectrum-slider-label">
+      ${tex`m_\nu,\ \text{эВ}`}
+    </span>
+  `
+})
+
+fermiElectronMass = 511000
+fermiEndpoint = 18575
+fermiWindow = 3
+
+fermiSpectrum = (energy, mass) => {
+  const neutrinoEnergy = fermiEndpoint - energy;
+  if (neutrinoEnergy < mass) return 0;
+  const electronMomentum = Math.sqrt(
+    energy * energy + 2 * fermiElectronMass * energy
+  );
+  const neutrinoMomentum = Math.sqrt(Math.max(
+    0,
+    neutrinoEnergy * neutrinoEnergy - mass * mass
+  ));
+  return electronMomentum
+    * (energy + fermiElectronMass)
+    * neutrinoEnergy
+    * neutrinoMomentum;
+}
+
+fermiIntegrate = (lower, upper, mass, steps = 1000) => {
+  if (upper <= lower) return 0;
+  const step = (upper - lower) / steps;
+  let sum = (
+    fermiSpectrum(lower, mass)
+    + fermiSpectrum(upper, mass)
+  ) / 2;
+  for (let i = 1; i < steps; i += 1) {
+    sum += fermiSpectrum(lower + i * step, mass);
+  }
+  return sum * step;
+}
+
+fermiNorm = fermiSpectrum(fermiEndpoint - fermiWindow, 0)
+fermiTotalIntegral = fermiIntegrate(0, fermiEndpoint, 0, 8000)
+fermiShadedIntegral = fermiIntegrate(
+  fermiEndpoint - fermiMass,
+  fermiEndpoint,
+  0,
+  400
+)
+fermiShadedFraction = fermiShadedIntegral / fermiTotalIntegral
+fermiFractionExponent = fermiShadedFraction === 0
+  ? 0
+  : Math.floor(Math.log10(fermiShadedFraction))
+fermiFractionMantissa = fermiShadedFraction === 0
+  ? "0"
+  : (
+    fermiShadedFraction / 10 ** fermiFractionExponent
+  ).toFixed(2)
+
+fermiX = Array.from({length: 501}, (_, i) =>
+  -fermiWindow + fermiWindow * i / 500
+)
+fermiMassless = fermiX.map(x => ({
+  x,
+  y: fermiSpectrum(fermiEndpoint + x, 0) / fermiNorm
+}))
+fermiMassive = fermiX
+  .filter(x => -x >= fermiMass)
+  .map(x => ({
+    x,
+    y: fermiSpectrum(fermiEndpoint + x, fermiMass) / fermiNorm
+  }))
+fermiShaded = fermiMassless.filter(d => d.x >= -fermiMass)
+
+fermiPlot = Plot.plot({
+  width: 1120,
+  height: 300,
+  marginTop: 18,
+  marginRight: 25,
+  marginBottom: 45,
+  marginLeft: 72,
+  style: {
+    background: "#ffffff",
+    color: "#111111",
+    fontSize: "20px"
+  },
+  x: {
+    axis: "bottom",
+    label: null,
+    domain: [-fermiWindow, 0],
+    ticks: 6,
+    grid: true
+  },
+  y: {
+    axis: "left",
+    label: null,
+    domain: [0, 1.05],
+    ticks: 5,
+    grid: true,
+    tickFormat: value => value.toFixed(1)
+  },
+  marks: [
+    Plot.areaY(fermiShaded, {
+      x: "x",
+      y: "y",
+      fill: "#999999",
+      fillOpacity: 0.65
+    }),
+    Plot.ruleY([0], {
+      stroke: "#111111",
+      strokeWidth: 1.5
+    }),
+    Plot.line(fermiMassless, {
+      x: "x",
+      y: "y",
+      stroke: "#4ea1ff",
+      strokeWidth: 4
+    }),
+    Plot.line(fermiMassive, {
+      x: "x",
+      y: "y",
+      stroke: "#ffb347",
+      strokeWidth: 4
+    }),
+    Plot.ruleX([-fermiMass], {
+      stroke: "#ffb347",
+      strokeDasharray: "7,5",
+      strokeWidth: 2.5
+    }),
+    Plot.frame({stroke: "#111111"})
+  ]
+})
+
+html`
+<div class="spectrum-panel">
+  <div class="spectrum-legend">
+    <span>
+      <i class="spectrum-swatch spectrum-swatch-massless"></i>
+      ${tex`m_\nu=0`}
+    </span>
+    <span>
+      <i class="spectrum-swatch spectrum-swatch-massive"></i>
+      ${tex`m_\nu=${fermiMass.toFixed(1)}\ \mathrm{eV}`}
+    </span>
+  </div>
+  <div class="spectrum-plot-row">
+    <div class="spectrum-y-label">
+      ${tex`\dfrac{d\Gamma}{dE}\;(\mathrm{a.u.})`}
+    </div>
+    <div class="spectrum-plot-host">
+      ${fermiPlot}
+      <div class="spectrum-integral-overlay">
+        <span>
+          ${tex`\dfrac{\int_{E_0-m_\nu}^{E_0}(d\Gamma/dE)\,dE}
+          {\int_0^{E_0}(d\Gamma/dE)\,dE}`}
+        </span>
+        <span>
+          ≈ ${fermiFractionMantissa}
+          ${fermiShadedFraction === 0
+            ? ""
+            : html`× 10<sup>${fermiFractionExponent}</sup>`}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="spectrum-x-label">
+    ${tex`E-E_0\;(\mathrm{eV})`}
+  </div>
+  <div class="spectrum-summary">
+    <span>${tex`E_0=18.575\ \mathrm{keV}`}</span>
+    <span>${tex`E_{\max}=E_0-m_\nu`}</span>
+  </div>
+</div>`
+```
+:::

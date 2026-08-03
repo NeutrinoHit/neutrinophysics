@@ -1,0 +1,101 @@
+::: {.spectrum-widget .kurie-widget}
+```{ojs}
+//| echo: false
+
+kurieMass = 1
+kurieX = Array.from({length: 501}, (_, i) => -3 + 3 * i / 500)
+
+kurieValue = (x, mass) => {
+  const neutrinoEnergy = -x;
+  if (neutrinoEnergy < mass) return null;
+  return Math.sqrt(
+    neutrinoEnergy
+    * Math.sqrt(neutrinoEnergy * neutrinoEnergy - mass * mass)
+  );
+}
+
+kurieMassless = kurieX.map(x => ({
+  x,
+  y: kurieValue(x, 0)
+}))
+
+kurieMassive = kurieX
+  .filter(x => -x >= kurieMass)
+  .map(x => ({
+    x,
+    y: kurieValue(x, kurieMass)
+  }))
+
+kuriePlot = Plot.plot({
+  width: 1040,
+  height: 310,
+  marginTop: 18,
+  marginRight: 25,
+  marginBottom: 45,
+  marginLeft: 65,
+  style: {
+    background: "#ffffff",
+    color: "#111111",
+    fontSize: "20px"
+  },
+  x: {
+    axis: "bottom",
+    label: null,
+    domain: [-3, 0],
+    ticks: 6,
+    grid: true
+  },
+  y: {
+    axis: "left",
+    label: null,
+    domain: [0, 3.1],
+    ticks: 6,
+    grid: true,
+    tickFormat: value => value.toFixed(1)
+  },
+  marks: [
+    Plot.ruleY([0], {
+      stroke: "#111111",
+      strokeWidth: 1.5
+    }),
+    Plot.line(kurieMassless, {
+      x: "x",
+      y: "y",
+      stroke: "#4ea1ff",
+      strokeWidth: 4
+    }),
+    Plot.line(kurieMassive, {
+      x: "x",
+      y: "y",
+      stroke: "#ffb347",
+      strokeWidth: 4
+    }),
+    Plot.ruleX([-kurieMass], {
+      stroke: "#ffb347",
+      strokeDasharray: "7,5",
+      strokeWidth: 2.5
+    }),
+    Plot.frame({stroke: "#111111"})
+  ]
+})
+
+html`
+<div class="spectrum-panel">
+  <div class="spectrum-legend">
+    <span>
+      <i class="spectrum-swatch spectrum-swatch-massless"></i>
+      ${tex`m_\beta=0`}
+    </span>
+    <span>
+      <i class="spectrum-swatch spectrum-swatch-massive"></i>
+      ${tex`m_\beta=1\ \text{эВ}`}
+    </span>
+  </div>
+  <div class="spectrum-plot-row">
+    <div class="spectrum-y-label">${tex`K(E)\;(\text{отн. ед.})`}</div>
+    <div class="spectrum-plot-host">${kuriePlot}</div>
+  </div>
+  <div class="spectrum-x-label">${tex`E-E_0\;(\text{эВ})`}</div>
+</div>`
+```
+:::

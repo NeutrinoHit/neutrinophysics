@@ -1,0 +1,40 @@
+```{=html}
+<div class="parity-demo" role="img" aria-label="Пространственное отражение меняет направления координат и импульса">
+  <div class="parity-scene parity-before">
+    <div class="scene-label">до отражения</div>
+    <div class="coordinate-plane">
+      <span class="axis axis-x"></span>
+      <span class="axis axis-y"></span>
+      <span class="axis-label axis-label-x">\(x\)</span>
+      <span class="axis-label axis-label-y">\(y\)</span>
+      <span class="parity-particle">\(\mathbf r\)</span>
+      <span class="parity-vector parity-vector-r"></span>
+    </div>
+  </div>
+
+  <div class="parity-operator">
+    <span>\(P\)</span>
+    <span class="parity-operator-arrow">\(\longrightarrow\)</span>
+    <small>\(\mathbf r\mapsto-\mathbf r\)</small>
+  </div>
+
+  <div class="parity-scene parity-after">
+    <div class="scene-label">после отражения</div>
+    <div class="coordinate-plane">
+      <span class="axis axis-x"></span>
+      <span class="axis axis-y"></span>
+      <span class="axis-label axis-label-x">\(x\)</span>
+      <span class="axis-label axis-label-y">\(y\)</span>
+      <span class="parity-particle">\(-\mathbf r\)</span>
+      <span class="parity-vector parity-vector-r"></span>
+    </div>
+  </div>
+</div>
+```
+
+Пространственная чётность заменяет каждую точку её зеркальным образом
+относительно начала координат:
+
+$$
+P:\quad (x,y,z)\longmapsto(-x,-y,-z).
+$$

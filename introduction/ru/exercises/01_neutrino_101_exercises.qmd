@@ -1,0 +1,14 @@
+---
+title: "Задачи: Нейтрино 101"
+subtitle: "Введение в физику нейтрино"
+author: "Дмитрий В. Наумов"
+format:
+  html:
+    toc: false
+---
+
+[← Вернуться к лекции](../slides/01_neutrino_101.html) · [Все задачи курса](index.html)
+
+# Задачи
+
+{{< include ../../_includes/exercises/01_neutrino_101-ru.qmd >}}

@@ -1,0 +1,153 @@
+::: {.spectrum-widget .resolution-widget}
+```{ojs}
+//| echo: false
+
+viewof resolutionSigma = Inputs.range([0, 2], {
+  value: 0.5,
+  step: 0.1,
+  label: html`
+    <span class="spectrum-slider-label">
+      ${tex`\sigma_E,\ \text{эВ}`}
+    </span>
+  `
+})
+
+resolutionMass = 1
+resolutionXMin = -3
+resolutionXMax = 1.5
+resolutionGaussianNorm = Math.sqrt(2 * Math.PI)
+
+resolutionConvolvedSpectrum = (xReco, mass, sigma) => {
+  if (sigma === 0) {
+    return fermiSpectrum(fermiEndpoint + xReco, mass) / fermiNorm;
+  }
+
+  const lower = Math.max(-fermiEndpoint, xReco - 6 * sigma);
+  const upper = Math.min(-mass, xReco + 6 * sigma);
+  if (upper <= lower) return 0;
+
+  const steps = 240;
+  const step = (upper - lower) / steps;
+  const integrand = xTrue => {
+    const pull = (xReco - xTrue) / sigma;
+    const response = Math.exp(-0.5 * pull * pull)
+      / (resolutionGaussianNorm * sigma);
+    return response
+      * fermiSpectrum(fermiEndpoint + xTrue, mass)
+      / fermiNorm;
+  };
+
+  let sum = (integrand(lower) + integrand(upper)) / 2;
+  for (let i = 1; i < steps; i += 1) {
+    sum += integrand(lower + i * step);
+  }
+  return sum * step;
+}
+
+resolutionX = Array.from({length: 501}, (_, i) =>
+  resolutionXMin
+    + (resolutionXMax - resolutionXMin) * i / 500
+)
+
+resolutionData = resolutionX.map(x => ({
+  x,
+  massless: resolutionConvolvedSpectrum(x, 0, resolutionSigma),
+  massive: resolutionConvolvedSpectrum(
+    x,
+    resolutionMass,
+    resolutionSigma
+  )
+}))
+
+resolutionPlot = Plot.plot({
+  width: 1120,
+  height: 300,
+  marginTop: 18,
+  marginRight: 25,
+  marginBottom: 45,
+  marginLeft: 72,
+  style: {
+    background: "#ffffff",
+    color: "#111111",
+    fontSize: "20px"
+  },
+  x: {
+    axis: "bottom",
+    label: null,
+    domain: [resolutionXMin, resolutionXMax],
+    ticks: 7,
+    grid: true
+  },
+  y: {
+    axis: "left",
+    label: null,
+    domain: [0, 1.5],
+    ticks: 6,
+    grid: true,
+    tickFormat: value => value.toFixed(1)
+  },
+  marks: [
+    Plot.areaY(resolutionData, {
+      x: "x",
+      y1: "massive",
+      y2: "massless",
+      fill: "#999999",
+      fillOpacity: 0.55
+    }),
+    Plot.ruleY([0], {
+      stroke: "#111111",
+      strokeWidth: 1.5
+    }),
+    Plot.line(resolutionData, {
+      x: "x",
+      y: "massless",
+      stroke: "#4ea1ff",
+      strokeWidth: 4
+    }),
+    Plot.line(resolutionData, {
+      x: "x",
+      y: "massive",
+      stroke: "#ffb347",
+      strokeWidth: 4
+    }),
+    Plot.ruleX([0], {
+      stroke: "#4ea1ff",
+      strokeDasharray: "7,5",
+      strokeWidth: 2.5
+    }),
+    Plot.ruleX([-resolutionMass], {
+      stroke: "#ffb347",
+      strokeDasharray: "7,5",
+      strokeWidth: 2.5
+    }),
+    Plot.frame({stroke: "#111111"})
+  ]
+})
+
+html`
+<div class="spectrum-panel">
+  <div class="spectrum-legend">
+    <span>
+      <i class="spectrum-swatch spectrum-swatch-massless"></i>
+      ${tex`m_\nu=0`}
+    </span>
+    <span>
+      <i class="spectrum-swatch spectrum-swatch-massive"></i>
+      ${tex`m_\nu=1\ \text{эВ}`}
+    </span>
+  </div>
+  <div class="spectrum-plot-row">
+    <div class="spectrum-y-label">
+      ${tex`\dfrac{d\Gamma_{\mathrm{rec}}}{dE_{\mathrm{rec}}}
+      \;(\text{отн. ед.})`}
+    </div>
+    <div class="spectrum-plot-host">
+      ${resolutionPlot}
+    </div>
+  </div>
+  <div class="spectrum-x-label">
+    ${tex`E_{\mathrm{rec}}-E_0\;(\text{эВ})`}
+  </div>
+</div>`
+```
+:::

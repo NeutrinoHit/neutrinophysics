@@ -1,0 +1,28 @@
+```{=html}
+<div class="resonance-filter helicity-animated" aria-label="Доплеровский выбор фотонов, летящих вдоль отдачи ядра">
+  <div class="resonance-scene">
+    <div class="resonance-absorber">
+      <span>\(B\)</span>
+      <small>поглотитель</small>
+    </div>
+    <div class="resonance-source">\(B^*\)</div>
+    <div class="resonance-neutrino">\(\nu_e\)</div>
+    <div class="res-vector res-recoil"><span>отдача</span></div>
+    <div class="res-vector res-neutrino-path"><span>\(\mathbf p_\nu\)</span></div>
+    <div class="res-photon res-photon-good">\(\gamma\)</div>
+    <div class="res-photon res-photon-bad">\(\gamma\)</div>
+    <div class="resonance-flash"></div>
+  </div>
+  <div class="resonance-energy">
+    <div class="energy-scale">
+      <div class="energy-target"><span>резонанс</span></div>
+      <div class="energy-good"><span>\(E_\gamma\uparrow\)</span></div>
+      <div class="energy-bad"><span>\(E_\gamma\downarrow\)</span></div>
+    </div>
+    <div class="energy-caption">
+      <span class="caption-good">вдоль отдачи: поглощается</span>
+      <span class="caption-bad">против отдачи: не поглощается</span>
+    </div>
+  </div>
+</div>
+```

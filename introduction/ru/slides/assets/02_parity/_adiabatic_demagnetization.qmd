@@ -1,0 +1,39 @@
+```{=html}
+<div class="demag-flow">
+  <div class="demag-step random">
+    <span class="demag-number">1</span>
+    <h3>Тёплый кристалл</h3>
+    <div class="spin-row random-spins"><i>↗</i><i>↙</i><i>→</i><i>↖</i><i>↓</i></div>
+    <p>\(T_i\simeq1.2~\mathrm K\)</p>
+    <p>Большая спиновая энтропия.</p>
+  </div>
+
+  <div class="demag-arrow"><span>\(B_i\)</span><b>→</b></div>
+
+  <div class="demag-step aligned">
+    <span class="demag-number">2</span>
+    <h3>Намагничивание</h3>
+    <div class="spin-row aligned-spins"><i>↑</i><i>↑</i><i>↑</i><i>↑</i><i>↑</i></div>
+    <p>Кристалл связан с гелиевой ванной.</p>
+    <p>Тепло уходит в ванну.</p>
+  </div>
+
+  <div class="demag-arrow"><span>\(B_i\to B_f\)</span><b>→</b></div>
+
+  <div class="demag-step cold">
+    <span class="demag-number">3</span>
+    <h3>Размагничивание</h3>
+    <div class="spin-row cold-spins"><i>↑</i><i>↗</i><i>↑</i><i>↖</i><i>↑</i></div>
+    <p>Тепловой контакт отключён.</p>
+    <p>Энергия решётки уходит в спины.</p>
+  </div>
+</div>
+```
+
+При адиабатическом уменьшении поля отношение $B/T$ остаётся почти постоянным:
+
+$$
+\frac{B_i}{T_i}\simeq\frac{B_f}{T_f},
+\qquad
+T_f\simeq T_i\frac{B_f}{B_i}\sim10^{-2}\ \mathrm K.
+$$

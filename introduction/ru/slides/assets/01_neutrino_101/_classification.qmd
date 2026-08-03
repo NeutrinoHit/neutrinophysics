@@ -1,0 +1,24 @@
+```{=html}
+<div class="classification-grid">
+  <section class="particle-family">
+    <h3>Фермионы</h3>
+    <p>Полуцелый спин: \(1/2, 3/2, \ldots\)</p>
+    <p>Образуют вещество.</p>
+    <div class="particle-tags">
+      <span class="particle-tag">лептоны</span>
+      <span class="particle-tag quark">кварки</span>
+    </div>
+  </section>
+  <section class="particle-family">
+    <h3>Бозоны</h3>
+    <p>Целый спин: \(0, 1, \ldots\)</p>
+    <p>Переносят взаимодействия; поле Хиггса имеет спин 0.</p>
+    <div class="particle-tags">
+      <span class="particle-tag boson">&gamma;</span>
+      <span class="particle-tag boson">W<sup>&plusmn;</sup>, Z</span>
+      <span class="particle-tag boson">g</span>
+      <span class="particle-tag boson">H</span>
+    </div>
+  </section>
+</div>
+```

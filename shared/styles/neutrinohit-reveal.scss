@@ -235,6 +235,11 @@ $code-block-font-size: 0.58em;
   column-gap: 0.45rem !important;
 }
 
+.katrin-integral-widget form,
+.cres-frequency-widget form {
+  column-gap: 0.85rem !important;
+}
+
 .spectrum-widget .spectrum-slider-label {
   display: inline-flex;
   padding-right: 0.55rem;

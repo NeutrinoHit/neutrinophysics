@@ -1,0 +1,40 @@
+```{=html}
+<div class="wu-apparatus" role="img" aria-label="Схема установки опыта Ву">
+  <div class="apparatus-label gamma-label">сцинтиллятор<br>для \(\gamma\)-квантов</div>
+  <div class="apparatus-label beta-label">сцинтиллятор<br>для электронов</div>
+  <div class="apparatus-label vertical-label">вертикальное поле<br>поляризует \({}^{60}\mathrm{Co}\)</div>
+  <div class="apparatus-label cooling-label">поперечное поле<br>охлаждает кристалл</div>
+
+  <div class="apparatus-vessel">
+    <div class="apparatus-phase" aria-live="off">
+      <span class="phase-cooling">охлаждение</span>
+      <span class="phase-polarizing">поляризация</span>
+      <span class="phase-detecting">регистрация распада</span>
+    </div>
+    <span class="helium helium-outer">жидкий гелий</span>
+    <span class="helium helium-inner"></span>
+    <span class="crystal">
+      <span class="crystal-label">\({}^{60}\mathrm{Co}\)</span>
+      <span class="nuclear-spin spin-one">↑</span>
+      <span class="nuclear-spin spin-two">↑</span>
+      <span class="nuclear-spin spin-three">↑</span>
+    </span>
+    <span class="beta-detector"></span>
+    <span class="gamma-detector left"></span>
+    <span class="gamma-detector right"></span>
+    <span class="field-coil"></span>
+    <span class="field-arrow up">\(\mathbf B\)</span>
+    <span class="beta-ray"></span>
+    <span class="beta-particle">\(e^-\)</span>
+    <span class="gamma-ray gamma-ray-left"></span>
+    <span class="gamma-ray gamma-ray-right"></span>
+    <span class="gamma-particle gamma-particle-left">\(\gamma\)</span>
+    <span class="gamma-particle gamma-particle-right">\(\gamma\)</span>
+  </div>
+</div>
+```
+
+Два независимых наблюдения выполнялись одновременно:
+
+- электронный счётчик измерял асимметрию $\beta$-распада;
+- $\gamma$-счётчики контролировали поляризацию ядер.

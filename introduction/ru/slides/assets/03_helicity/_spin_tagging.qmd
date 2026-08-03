@@ -1,0 +1,27 @@
+```{=html}
+<div class="spin-tagging helicity-animated" aria-label="Передача проекции спина от нейтрино возбуждённому ядру и фотону">
+  <div class="tag-axis"><span>\(z\)</span></div>
+  <div class="tag-source">
+    <div class="tag-nucleus tag-a">\(A\)<small>\(J=0\)</small></div>
+    <div class="tag-electron">\(e^-\)<span class="tag-electron-spin">\(\mathbf S_e\)</span></div>
+  </div>
+  <div class="tag-capture-flash"></div>
+  <div class="tag-products">
+    <div class="tag-daughter">\(B^*\)<small>\(m=+1\)</small></div>
+    <div class="tag-neutrino">\(\nu_e\)</div>
+    <div class="tag-vector tag-recoil"><span>\(\mathbf p_{B^*}\)</span></div>
+    <div class="tag-vector tag-nu-momentum"><span>\(\mathbf p_\nu\)</span></div>
+    <div class="tag-vector tag-nu-spin"><span>\(\mathbf S_\nu\)</span></div>
+  </div>
+  <div class="tag-photon-stage">
+    <div class="tag-ground">\(B\)<small>\(J=0\)</small></div>
+    <div class="tag-photon">\(\gamma\)</div>
+    <div class="tag-vector tag-gamma-momentum"><span>\(\mathbf p_\gamma\)</span></div>
+    <div class="tag-vector tag-gamma-spin"><span>\(\mathbf S_\gamma\)</span></div>
+  </div>
+  <div class="tag-equation">
+    <span class="tag-eq-one">\(m_{B^*}=+1\Longrightarrow h_\nu=-1\)</span>
+    <span class="tag-eq-two">\(m_\gamma=m_{B^*}\Longrightarrow h_\gamma=h_\nu\)</span>
+  </div>
+</div>
+```

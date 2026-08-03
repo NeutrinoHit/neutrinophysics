@@ -1,0 +1,107 @@
+::: {.spectrum-widget .cres-frequency-widget}
+```{ojs}
+//| echo: false
+
+viewof cresEnergy = Inputs.range([5, 18.6], {
+  value: 18.0,
+  step: 0.1,
+  label: html`
+    <span class="spectrum-slider-label">
+      ${tex`K_0,\ \text{кэВ}`}
+    </span>
+  `
+})
+
+cresElectronRestEnergy = 510.99895
+cresField = 1
+cresNonRelFrequency = 27.99249
+cresRadiatedPower = 1.2
+cresLossRate = cresRadiatedPower * 6.241509e-6
+cresDuration = 120
+
+cresFrequency = energy =>
+  cresNonRelFrequency / (1 + energy / cresElectronRestEnergy)
+
+cresTimes = Array.from({length: 401}, (_, i) =>
+  cresDuration * i / 400
+)
+
+cresData = cresTimes.map(time => {
+  const energy = Math.max(0, cresEnergy - cresLossRate * time)
+  return {
+    time,
+    energy,
+    frequencyShift: 1e6 * (cresFrequency(energy) - cresStartFrequency)
+  }
+})
+
+cresStartFrequency = cresFrequency(cresEnergy)
+cresEndShift = cresData[cresData.length - 1].frequencyShift
+
+cresPlot = Plot.plot({
+  width: 1080,
+  height: 290,
+  marginTop: 18,
+  marginRight: 30,
+  marginBottom: 45,
+  marginLeft: 92,
+  style: {
+    background: "#ffffff",
+    color: "#111111",
+    fontSize: "20px"
+  },
+  x: {
+    axis: "bottom",
+    label: null,
+    domain: [0, cresDuration],
+    ticks: 7,
+    grid: true
+  },
+  y: {
+    axis: "left",
+    label: null,
+    domain: [0, 1.08 * cresEndShift],
+    ticks: 6,
+    grid: true,
+    tickFormat: value => value.toFixed(0)
+  },
+  marks: [
+    Plot.line(cresData, {
+      x: "time",
+      y: "frequencyShift",
+      stroke: "#4ea1ff",
+      strokeWidth: 5
+    }),
+    Plot.dot([cresData[0]], {
+      x: "time",
+      y: "frequencyShift",
+      r: 7,
+      fill: "#ffb347"
+    }),
+    Plot.frame({stroke: "#111111"})
+  ]
+})
+
+html`
+<div class="spectrum-panel">
+  <div class="spectrum-legend">
+    <span>
+      <i class="spectrum-swatch spectrum-swatch-massless"></i>
+      циклотронный трек
+    </span>
+    <span>${tex`B=1\ \text{Тл}`}</span>
+    <span>${tex`P\simeq1.2\ \text{фВт}`}</span>
+  </div>
+  <div class="spectrum-plot-row">
+    <div class="spectrum-y-label">${tex`f_c-f_c(0)\;(\text{кГц})`}</div>
+    <div class="spectrum-plot-host">${cresPlot}</div>
+  </div>
+  <div class="spectrum-x-label">${tex`t\;(\text{мкс})`}</div>
+  <div class="spectrum-summary">
+    <span>${tex`f_c(0)=${cresStartFrequency.toFixed(3)}\ \text{ГГц}`}</span>
+    <span>${tex`\Delta K=${(1000 * cresLossRate * cresDuration).toFixed(2)}\ \text{эВ}`}</span>
+    <span>потеря энергии ${tex`\Rightarrow f_c\uparrow`}</span>
+  </div>
+</div>`
+```
+:::

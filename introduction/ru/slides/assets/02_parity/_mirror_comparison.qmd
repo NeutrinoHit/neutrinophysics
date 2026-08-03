@@ -1,0 +1,25 @@
+```{=html}
+<div class="mirror-comparison">
+  <div class="mirror-world current-world">
+    <strong>Наш мир</strong>
+    <div class="mirror-vectors">
+      <span class="spin-vector">\(\mathbf I\)</span>
+      <span class="electron-dot">\(e^-\)</span>
+      <span class="momentum-vector left">\(\mathbf p_e\)</span>
+    </div>
+    <p>Электроны преимущественно летят против спина ядра.</p>
+  </div>
+
+  <div class="mirror-plane" aria-label="зеркало"></div>
+
+  <div class="mirror-world reflected-world">
+    <strong>Зеркальный мир</strong>
+    <div class="mirror-vectors">
+      <span class="spin-vector">\(\mathbf I\)</span>
+      <span class="electron-dot">\(e^-\)</span>
+      <span class="momentum-vector right">\(\mathbf p_e\)</span>
+    </div>
+    <p>Отражённый процесс предсказывает противоположную асимметрию.</p>
+  </div>
+</div>
+```

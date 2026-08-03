@@ -1,0 +1,27 @@
+```{=html}
+<div class="experiment-chain helicity-animated" aria-label="Полная цепочка опыта Голдхабера">
+  <div class="chain-step chain-capture">
+    <div class="chain-icon">\(e^-+A\)</div>
+    <strong>электронный захват</strong>
+    <span>рождает \(B^*\) и \(\nu_e\)</span>
+  </div>
+  <div class="chain-arrow"></div>
+  <div class="chain-step chain-recoil">
+    <div class="chain-icon">\(B^*\!\leftarrow\ \rightarrow\!\nu\)</div>
+    <strong>отдача</strong>
+    <span>задаёт противоположные пути</span>
+  </div>
+  <div class="chain-arrow"></div>
+  <div class="chain-step chain-resonance">
+    <div class="chain-icon">\(B+\gamma\to B^*\)</div>
+    <strong>резонанс</strong>
+    <span>выбирает \(\gamma\) вдоль отдачи</span>
+  </div>
+  <div class="chain-arrow"></div>
+  <div class="chain-step chain-polarization">
+    <div class="chain-icon">\(N_+-N_-\)</div>
+    <strong>анализатор</strong>
+    <span>измеряет знак \(h_\gamma=h_\nu\)</span>
+  </div>
+</div>
+```
