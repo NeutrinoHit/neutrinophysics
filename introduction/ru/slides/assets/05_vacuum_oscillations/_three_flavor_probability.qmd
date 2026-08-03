@@ -1,0 +1,558 @@
+## Амплитуда перехода {.three-flavor-tight}
+
+:::: {.panel-tabset .story-tabs}
+
+### Старт
+
+Источник создаёт нейтрино определённого флэйвора $\alpha$:
+
+$$
+\boxed{
+|\nu_\alpha;0\rangle
+=\sum_{i=1}^{3}U_{\alpha i}^*|\nu_i\rangle
+}.
+$$
+
+Массовые состояния являются собственными состояниями свободного
+гамильтониана:
+
+$$
+H|\nu_i\rangle=E_i|\nu_i\rangle.
+$$
+
+Следовательно, каждая компонента будет набирать собственную фазу.
+
+### Эволюция
+
+Через время $t$ состояние становится
+
+$$
+|\nu_\alpha;t\rangle
+=\sum_i U_{\alpha i}^*e^{-iE_it}|\nu_i\rangle.
+$$
+
+При распространении плоской волны на расстояние $L$:
+
+$$
+|\nu_\alpha;L,t\rangle
+=\sum_i U_{\alpha i}^*
+e^{-i(E_it-p_iL)}|\nu_i\rangle.
+$$
+
+::: {.marginnote .absolute top=485 left=1010 width=225 style="--note-font-size: 0.54em;"}
+Знак фазы следует из
+$e^{-ip\cdot x}=e^{-i(Et-\mathbf p\cdot\mathbf x)}$.
+:::
+
+### Проекция
+
+Детектор ищет флэйвор $\beta$. Комплексное сопряжение даёт
+
+$$
+|\nu_\beta\rangle
+=\sum_jU_{\beta j}^*|\nu_j\rangle
+\quad\Longrightarrow\quad
+\langle\nu_\beta|
+=\sum_jU_{\beta j}\langle\nu_j|.
+$$
+
+Поэтому
+
+$$
+\mathcal A_{\alpha\to\beta}(L,t)
+=\langle\nu_\beta|\nu_\alpha;L,t\rangle.
+$$
+
+Остаётся подставить оба разложения в эту проекцию.
+
+### Ортогональность
+
+После подстановки
+
+$$
+\mathcal A_{\alpha\to\beta}
+=\sum_{i,j}U_{\beta j}U_{\alpha i}^*
+e^{-i(E_it-p_iL)}\langle\nu_j|\nu_i\rangle.
+$$
+
+Но массовые состояния ортонормированы:
+
+$$
+\langle\nu_j|\nu_i\rangle=\delta_{ji}.
+$$
+
+Двойная сумма превращается в одинарную:
+
+$$
+\boxed{
+\mathcal A_{\alpha\to\beta}(L,t)
+=\sum_i U_{\beta i}U_{\alpha i}^*
+e^{-i(E_it-p_iL)}
+}.
+$$
+
+### УР-фаза
+
+Для ультрарелятивистского нейтрино при $t\simeq L$ предыдущий вывод даёт
+
+$$
+E_it-p_iL
+=\text{общая фаза}+\frac{m_i^2L}{2E}.
+$$
+
+Общая фаза исчезает из квадрата модуля. Поэтому можно записать
+
+$$
+\boxed{
+\mathcal A_{\alpha\to\beta}(L,E)
+=\sum_iU_{\beta i}U_{\alpha i}^*
+\exp\!\left(-i\frac{m_i^2L}{2E}\right)
+}.
+$$
+
+::: {.marginnote .absolute top=475 left=1010 width=225 style="--note-font-size: 0.54em;"}
+Идеализации с равными импульсами и равными энергиями дают эту фазу
+в одном ведущем порядке.
+:::
+
+### $\Delta m^2$
+
+Вынесем фазу первой компоненты:
+
+$$
+\mathcal A_{\alpha\to\beta}
+=e^{-im_1^2L/(2E)}
+\sum_iU_{\beta i}U_{\alpha i}^*
+e^{-i\Delta m_{i1}^2L/(2E)}.
+$$
+
+Первый множитель имеет единичный модуль. Введём
+
+$$
+\boxed{
+\Delta_{ij}\equiv\frac{\Delta m_{ij}^2L}{4E}},
+\qquad
+\Delta m_{ij}^2\equiv m_i^2-m_j^2.
+$$
+
+Тогда наблюдаемая относительная фаза равна $2\Delta_{ij}$.
+
+При $L=0$ унитарность сразу даёт
+
+$$
+\mathcal A_{\alpha\to\beta}(0)
+=\sum_iU_{\beta i}U_{\alpha i}^*
+=\delta_{\alpha\beta}.
+$$
+
+::::
+
+## Возводим амплитуду в квадрат {.three-flavor-tight}
+
+:::: {.panel-tabset .story-tabs}
+
+### Правило Борна
+
+Обозначим
+
+$$
+\phi_i\equiv\frac{m_i^2L}{2E}.
+$$
+
+Вероятность перехода равна
+
+$$
+P_{\alpha\to\beta}
+=|\mathcal A_{\alpha\to\beta}|^2
+=\mathcal A_{\alpha\to\beta}
+ \mathcal A_{\alpha\to\beta}^*.
+$$
+
+Комплексно-сопряжённая амплитуда:
+
+$$
+\mathcal A_{\alpha\to\beta}^*
+=\sum_jU_{\beta j}^*U_{\alpha j}e^{+i\phi_j}.
+$$
+
+### Двойная сумма
+
+Перемножая две суммы, получаем
+
+$$
+\begin{aligned}
+P_{\alpha\to\beta}
+&=\sum_{i,j}
+U_{\beta i}U_{\alpha i}^*
+U_{\beta j}^*U_{\alpha j}
+e^{-i(\phi_i-\phi_j)}.
+\end{aligned}
+$$
+
+Введём компактное обозначение
+
+$$
+\boxed{
+X_{\alpha\beta}^{ij}
+\equiv
+U_{\alpha i}^*U_{\beta i}
+U_{\alpha j}U_{\beta j}^*
+}.
+$$
+
+Поскольку $\phi_i-\phi_j=2\Delta_{ij}$,
+
+$$
+P_{\alpha\to\beta}
+=\sum_{i,j}X_{\alpha\beta}^{ij}e^{-2i\Delta_{ij}}.
+$$
+
+### Диагональ
+
+При $i=j$ фаза равна нулю, а
+
+$$
+X_{\alpha\beta}^{ii}
+=|U_{\alpha i}|^2|U_{\beta i}|^2.
+$$
+
+Поэтому диагональная часть равна
+
+$$
+P_{\rm diag}
+=\sum_i|U_{\alpha i}|^2|U_{\beta i}|^2.
+$$
+
+Она сама по себе не зависит от $L$, но не является всей вероятностью:
+нужно добавить интерференцию разных массовых компонент.
+
+### Пара $i,j$
+
+Для $i\ne j$ два переставленных слагаемых комплексно сопряжены:
+
+$$
+X_{\alpha\beta}^{ji}
+=\left(X_{\alpha\beta}^{ij}\right)^*,
+\qquad
+\Delta_{ji}=-\Delta_{ij}.
+$$
+
+Их сумма при $i>j$ равна
+
+$$
+\begin{aligned}
+&X_{\alpha\beta}^{ij}e^{-2i\Delta_{ij}}
++X_{\alpha\beta}^{ji}e^{-2i\Delta_{ji}}
+\\[1mm]
+&\hspace{22mm}
+=2\operatorname{Re}
+\!\left[X_{\alpha\beta}^{ij}e^{-2i\Delta_{ij}}\right].
+\end{aligned}
+$$
+
+### Разделяем части
+
+Пусть $X=a+ib$. Тогда
+
+$$
+\operatorname{Re}\!\left[Xe^{-2i\Delta}\right]
+=a\cos2\Delta+b\sin2\Delta.
+$$
+
+Следовательно,
+
+$$
+\begin{aligned}
+P_{\alpha\to\beta}
+={}&\sum_i|U_{\alpha i}|^2|U_{\beta i}|^2\\
+&+2\sum_{i>j}\operatorname{Re}X_{\alpha\beta}^{ij}
+\cos2\Delta_{ij}\\
+&+2\sum_{i>j}\operatorname{Im}X_{\alpha\beta}^{ij}
+\sin2\Delta_{ij}.
+\end{aligned}
+$$
+
+::::
+
+## Общая вероятность в вакууме {.three-flavor-tight}
+
+:::: {.panel-tabset .story-tabs}
+
+### Тождество
+
+При $L=0$ амплитуда равна $\delta_{\alpha\beta}$. Поэтому
+
+$$
+\begin{aligned}
+\delta_{\alpha\beta}
+&=\left|\sum_iU_{\beta i}U_{\alpha i}^*\right|^2\\
+&=\sum_i|U_{\alpha i}|^2|U_{\beta i}|^2
++2\sum_{i>j}\operatorname{Re}X_{\alpha\beta}^{ij}.
+\end{aligned}
+$$
+
+Здесь использовано $\delta_{\alpha\beta}^2=\delta_{\alpha\beta}$.
+
+### Косинус
+
+Используем
+
+$$
+\cos2\Delta=1-2\sin^2\Delta.
+$$
+
+Тогда CP-чётная часть предыдущего результата принимает вид
+
+$$
+\begin{aligned}
+&\sum_i|U_{\alpha i}|^2|U_{\beta i}|^2
++2\sum_{i>j}\operatorname{Re}X^{ij}_{\alpha\beta}\cos2\Delta_{ij}
+\\
+&\qquad
+=\delta_{\alpha\beta}
+-4\sum_{i>j}\operatorname{Re}X^{ij}_{\alpha\beta}
+\sin^2\Delta_{ij}.
+\end{aligned}
+$$
+
+### Результат
+
+Собирая действительную и мнимую части, получаем
+
+$$
+\boxed{
+\begin{aligned}
+P_{\alpha\to\beta}(L,E)
+={}&\delta_{\alpha\beta}
+-4\sum_{i>j}\operatorname{Re}X_{\alpha\beta}^{ij}
+\sin^2\Delta_{ij}
+\\
+&+2\sum_{i>j}\operatorname{Im}X_{\alpha\beta}^{ij}
+\sin2\Delta_{ij},
+\end{aligned}}
+$$
+
+где
+
+$$
+X_{\alpha\beta}^{ij}
+=U_{\alpha i}^*U_{\beta i}U_{\alpha j}U_{\beta j}^*,
+\qquad
+\Delta_{ij}=\frac{\Delta m_{ij}^2L}{4E}.
+$$
+
+### Выживание
+
+Если $\beta=\alpha$, то
+
+$$
+X_{\alpha\alpha}^{ij}
+=|U_{\alpha i}|^2|U_{\alpha j}|^2
+$$
+
+вещественно. Мнимая часть исчезает:
+
+$$
+\boxed{
+P_{\alpha\to\alpha}
+=1-4\sum_{i>j}|U_{\alpha i}|^2|U_{\alpha j}|^2
+\sin^2\Delta_{ij}
+}.
+$$
+
+Таким образом, CP-нечётный член возможен только в каналах появления.
+
+### Нормировка
+
+Просуммируем по всем регистрируемым флэйворам $\beta$:
+
+$$
+\begin{aligned}
+\sum_\beta X_{\alpha\beta}^{ij}
+&=U_{\alpha i}^*U_{\alpha j}
+\sum_\beta U_{\beta i}U_{\beta j}^*\\
+&=U_{\alpha i}^*U_{\alpha j}\,\delta_{ij}.
+\end{aligned}
+$$
+
+Для $i>j$ это ноль. Поэтому
+
+$$
+\boxed{\sum_\beta P_{\alpha\to\beta}=1}.
+$$
+
+Вероятность не теряется, а перераспределяется между тремя флэйворами.
+
+### Два флэйвора
+
+Если один массовый компонент не участвует, остаётся единственная пара
+$i,j$. Матрицу смешивания можно выбрать вещественной, поэтому
+$\operatorname{Im}X^{ij}=0$.
+
+Общая формула сводится к уже полученному результату
+
+$$
+P_{\alpha\to\beta}
+=\sin^22\theta\,\sin^2\Delta,
+\qquad \alpha\ne\beta.
+$$
+
+::: {.takeaway}
+Новая физика трёх флэйворов находится в одновременной интерференции трёх пар
+массовых состояний и в мнимой части произведений элементов $U$.
+:::
+
+::::
+
+## Две части вероятности {.three-flavor-tight}
+
+:::: {.panel-tabset .story-tabs}
+
+### Разложение
+
+Полезно записать
+
+$$
+P_{\alpha\to\beta}
+=P_{\alpha\beta}^{\rm even}
++P_{\alpha\beta}^{\rm odd},
+$$
+
+где
+
+$$
+\begin{aligned}
+P_{\alpha\beta}^{\rm even}
+&=\delta_{\alpha\beta}
+-4\sum_{i>j}\operatorname{Re}X_{\alpha\beta}^{ij}
+\sin^2\Delta_{ij},\\[1mm]
+P_{\alpha\beta}^{\rm odd}
+&=2\sum_{i>j}\operatorname{Im}X_{\alpha\beta}^{ij}
+\sin2\Delta_{ij}.
+\end{aligned}
+$$
+
+### Чётная часть
+
+При комплексном сопряжении матрицы смешивания
+
+$$
+U\longrightarrow U^*
+$$
+
+действительная часть $X_{\alpha\beta}^{ij}$ не меняется. Поэтому
+
+$$
+P_{\alpha\beta}^{\rm even}
+\longrightarrow P_{\alpha\beta}^{\rm even}.
+$$
+
+Эта часть содержит обычную зависимость $\sin^2\Delta_{ij}$ и присутствует
+уже при двух флэйворах.
+
+### Нечётная часть
+
+При $U\to U^*$
+
+$$
+\operatorname{Im}X_{\alpha\beta}^{ij}
+\longrightarrow
+-\operatorname{Im}X_{\alpha\beta}^{ij}.
+$$
+
+Значит,
+
+$$
+P_{\alpha\beta}^{\rm odd}
+\longrightarrow -P_{\alpha\beta}^{\rm odd}.
+$$
+
+Именно эта часть позволит вероятностям нейтрино и антинейтрино различаться
+в вакууме.
+
+### Что требуется
+
+Для ненулевого нечётного вклада одновременно нужны
+
+1. комплексная фаза в матрице $U$;
+2. ненулевые углы смешивания;
+3. невырожденные массовые состояния;
+4. канал появления $\alpha\ne\beta$.
+
+::: {.takeaway}
+CP-нарушение — не дополнительная частота: это различие знака одной
+интерференционной части общей трёхфлэйворной вероятности.
+:::
+
+::::
+
+## Почему разностей масс только две {.three-flavor-tight}
+
+:::: {.panel-tabset .story-tabs}
+
+### Общая фаза
+
+Амплитуду можно умножить на любую общую фазу без изменения вероятности:
+
+$$
+\left|e^{-i\chi}\mathcal A_{\alpha\to\beta}\right|^2
+=|\mathcal A_{\alpha\to\beta}|^2.
+$$
+
+Поэтому абсолютные фазы $m_i^2L/(2E)$ ненаблюдаемы. Измеримы только их
+разности.
+
+### Три пары
+
+Три массовых состояния образуют три пары:
+
+$$
+(2,1),\qquad(3,1),\qquad(3,2).
+$$
+
+Им соответствуют
+
+$$
+\Delta m_{21}^2,qquad
+\Delta m_{31}^2,qquad
+\Delta m_{32}^2.
+$$
+
+Но эти величины не независимы.
+
+### Связь
+
+Непосредственно из определений
+
+$$
+\begin{aligned}
+\Delta m_{31}^2
+&=m_3^2-m_1^2\\
+&=(m_3^2-m_2^2)+(m_2^2-m_1^2)\\
+&=\Delta m_{32}^2+\Delta m_{21}^2.
+\end{aligned}
+$$
+
+Следовательно,
+
+$$
+\boxed{\Delta_{31}=\Delta_{32}+\Delta_{21}}.
+$$
+
+### Два масштаба
+
+Удобный независимый набор:
+
+$$
+\boxed{\Delta m_{21}^2,qquad\Delta m_{31}^2}.
+$$
+
+Вместо второй величины можно использовать $\Delta m_{32}^2$ или специально
+определённую «атмосферную» разность масс.
+
+::: {.takeaway}
+Три интерференционные пары дают три члена в вероятности, но только две
+независимые осцилляционные частоты.
+:::
+
+::::

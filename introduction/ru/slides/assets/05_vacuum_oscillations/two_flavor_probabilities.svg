@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430"
+     role="img"
+     aria-label="Вероятности появления и выживания нейтрино, амплитуда смешивания и длина осцилляций">
+  <defs>
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="10" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#72e0a1"/>
+    </marker>
+    <marker id="arrow-cyan" viewBox="0 0 10 10" refX="10" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#55bfff"/>
+    </marker>
+    <style>
+      .label { font-family: "Helvetica Neue", Arial, sans-serif; fill: #f4f4f4; }
+      .muted { fill: #bfc7ce; }
+      .cyan { fill: #55bfff; }
+      .amber { fill: #ffcf66; }
+      .green { fill: #72e0a1; }
+      .axis { stroke: #d8dde2; stroke-width: 2.5; vector-effect: non-scaling-stroke; }
+      .tick { stroke: #aeb8c0; stroke-width: 2; vector-effect: non-scaling-stroke; }
+      .guide { stroke-width: 2; stroke-dasharray: 8 8; opacity: 0.72;
+               vector-effect: non-scaling-stroke; }
+      .appearance { fill: none; stroke: #55bfff; stroke-width: 6;
+                    vector-effect: non-scaling-stroke; }
+      .survival { fill: none; stroke: #ffcf66; stroke-width: 6;
+                  vector-effect: non-scaling-stroke; }
+    </style>
+  </defs>
+
+  <!-- Axes: 0 <= P <= 1, 0 <= L <= 2 L_osc. -->
+  <line class="axis" x1="90" y1="330" x2="1150" y2="330"/>
+  <line class="axis" x1="90" y1="330" x2="90" y2="48"/>
+  <text class="label" x="42" y="30" font-size="30" font-style="italic">P</text>
+  <text class="label" x="1160" y="341" font-size="30" font-style="italic">L</text>
+
+  <line class="tick" x1="82" y1="330" x2="90" y2="330"/>
+  <line class="tick" x1="82" y1="55" x2="90" y2="55"/>
+  <text class="label muted" x="62" y="338" font-size="23">0</text>
+  <text class="label muted" x="62" y="63" font-size="23">1</text>
+
+  <!-- Horizontal positions: 0, L_osc/2, L_osc, 3L_osc/2, 2L_osc. -->
+  <g class="label muted" font-size="22" text-anchor="middle">
+    <line class="tick" x1="90" y1="330" x2="90" y2="339"/>
+    <line class="tick" x1="352.5" y1="330" x2="352.5" y2="339"/>
+    <line class="tick" x1="615" y1="330" x2="615" y2="339"/>
+    <line class="tick" x1="877.5" y1="330" x2="877.5" y2="339"/>
+    <line class="tick" x1="1140" y1="330" x2="1140" y2="339"/>
+    <text x="90" y="363">0</text>
+    <text x="352.5" y="363">L<tspan font-size="16" dy="6">osc</tspan><tspan font-size="22" dy="-6">/2</tspan></text>
+    <text x="615" y="363">L<tspan font-size="16" dy="6">osc</tspan></text>
+    <text x="877.5" y="363">3L<tspan font-size="16" dy="6">osc</tspan><tspan font-size="22" dy="-6">/2</tspan></text>
+    <text x="1140" y="363">2L<tspan font-size="16" dy="6">osc</tspan></text>
+  </g>
+
+  <!-- Example amplitude A = sin^2(2 theta) = 0.72. -->
+  <line x1="90" y1="132" x2="352.5" y2="132"
+        stroke="#55bfff" class="guide"/>
+  <line x1="160" y1="330" x2="160" y2="132"
+        stroke="#55bfff" stroke-width="3"
+        marker-start="url(#arrow-cyan)" marker-end="url(#arrow-cyan)"/>
+  <text class="label cyan" x="112" y="231" font-size="19"
+        text-anchor="middle" transform="rotate(-90 112 231)">
+    амплитуда A = sin²2θ
+  </text>
+
+  <!-- P_alpha->beta = A sin^2(pi L/L_osc). -->
+  <path class="appearance"
+        d="M 90 330
+           C 177.5 330, 265 132, 352.5 132
+           C 440 132, 527.5 330, 615 330
+           C 702.5 330, 790 132, 877.5 132
+           C 965 132, 1052.5 330, 1140 330"/>
+
+  <!-- P_alpha->alpha = 1 - P_alpha->beta. -->
+  <path class="survival"
+        d="M 90 55
+           C 177.5 55, 265 253, 352.5 253
+           C 440 253, 527.5 55, 615 55
+           C 702.5 55, 790 253, 877.5 253
+           C 965 253, 1052.5 55, 1140 55"/>
+
+  <text class="label cyan" x="382" y="118" font-size="27">
+    P<tspan baseline-shift="sub" font-size="19">α→β</tspan>
+  </text>
+  <text class="label amber" x="382" y="285" font-size="27">
+    P<tspan baseline-shift="sub" font-size="19">α→α</tspan>
+  </text>
+
+  <!-- Distance between two equivalent maxima is one oscillation length. -->
+  <line x1="352.5" y1="392" x2="877.5" y2="392"
+        stroke="#72e0a1" stroke-width="3"
+        marker-start="url(#arrow-green)" marker-end="url(#arrow-green)"/>
+  <text class="label green" x="615" y="421" font-size="24" text-anchor="middle">
+    L<tspan font-size="17" dy="6">osc</tspan><tspan font-size="24" dy="-6"> = 4πE / |Δm²|</tspan>
+  </text>
+</svg>

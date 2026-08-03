@@ -1,0 +1,122 @@
+.reveal .slides section.nufit-tight {
+  font-size: 0.82em;
+}
+
+.reveal .slides section.nufit-tight > h2 {
+  font-size: calc(1.6em / 0.82);
+}
+
+.nufit-parameter-grid,
+.nufit-reading-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-top: 0.45rem;
+}
+
+.nufit-card {
+  min-width: 0;
+  padding: 0.48rem 0.65rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 0.35rem;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.nufit-card strong {
+  display: block;
+  margin-bottom: 0.16rem;
+  color: #58b8ff;
+}
+
+.nufit-number {
+  color: #ffd166;
+}
+
+.nufit-status-table {
+  width: 100%;
+  margin: 0.3rem auto 0;
+  border-collapse: collapse;
+  font-size: 0.78em;
+  line-height: 1.22;
+}
+
+.nufit-status-table th,
+.nufit-status-table td {
+  padding: 0.26rem 0.42rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.nufit-status-table th {
+  color: #58b8ff;
+  font-weight: 650;
+}
+
+.nufit-status-table td:first-child,
+.nufit-status-table th:first-child {
+  text-align: left;
+}
+
+.nufit-figure {
+  margin: 0.22rem auto 0;
+  text-align: center;
+}
+
+.nufit-figure img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 405px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 0.18rem;
+}
+
+.nufit-figure-wide img {
+  width: auto;
+  max-width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+}
+
+.nufit-cp-layout {
+  grid-template-columns: minmax(0, 1.42fr) minmax(280px, 0.78fr);
+}
+
+.nufit-cp-layout .nufit-figure-wide img {
+  max-height: 355px;
+}
+
+.nufit-figure-matrix img {
+  width: 88%;
+  max-height: 245px;
+  object-fit: contain;
+}
+
+.nufit-figure-source {
+  margin-top: 0.2rem;
+  font-size: 0.47em;
+  line-height: 1.2;
+  opacity: 0.76;
+}
+
+.nufit-figure-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.48fr) minmax(250px, 0.72fr);
+  gap: 0.72rem;
+  align-items: center;
+}
+
+.nufit-figure-layout .nufit-explanation {
+  font-size: 0.88em;
+  line-height: 1.28;
+}
+
+.nufit-figure-layout .nufit-explanation p {
+  margin: 0.32rem 0;
+}
+
+.nufit-compact-list li {
+  margin: 0.22rem 0;
+}
