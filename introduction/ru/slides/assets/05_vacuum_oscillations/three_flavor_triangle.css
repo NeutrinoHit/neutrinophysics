@@ -1,0 +1,210 @@
+.three-flavor-triangle {
+  display: grid;
+  grid-template-columns: 292px minmax(0, 1fr);
+  gap: 18px;
+  width: min(1160px, 100%);
+  margin: 0.12rem auto 0;
+  color: #eef3f8;
+  font: 17px/1.2 system-ui, sans-serif;
+}
+
+.three-flavor-triangle__controls,
+.three-flavor-triangle__visual {
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: rgba(6, 10, 16, 0.94);
+}
+
+.three-flavor-triangle__controls {
+  padding: 13px 15px;
+}
+
+.three-flavor-triangle__visual {
+  padding: 3px 8px 0;
+}
+
+.three-flavor-triangle__visual svg {
+  display: block;
+  width: 100%;
+  height: 423px;
+}
+
+.three-flavor-triangle__control + .three-flavor-triangle__control {
+  margin-top: 10px;
+}
+
+.three-flavor-triangle__label,
+.three-flavor-triangle__control label {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 4px;
+  color: #cfd8e3;
+  font-size: 0.88em;
+}
+
+.three-flavor-triangle__control output {
+  color: #72c8ff;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+
+.three-flavor-triangle input[type="range"] {
+  width: 100%;
+  accent-color: #58b8ff;
+}
+
+.three-flavor-triangle__buttons,
+.three-flavor-triangle__transport {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 5px;
+}
+
+.three-flavor-triangle button {
+  min-height: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 7px;
+  color: #dce6ef;
+  background: rgba(255, 255, 255, 0.055);
+  font: 700 0.82em/1 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.three-flavor-triangle button:hover,
+.three-flavor-triangle button:focus-visible {
+  border-color: #72c8ff;
+}
+
+.three-flavor-triangle button.is-active {
+  border-color: #58b8ff;
+  color: #06101a;
+  background: #58b8ff;
+}
+
+.three-flavor-triangle__readout {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 11px;
+  padding: 8px 9px;
+  border-radius: 7px;
+  color: #cfd8e3;
+  background: rgba(88, 184, 255, 0.1);
+  font-size: 0.82em;
+}
+
+.three-flavor-triangle__readout strong {
+  color: #fff;
+  font-variant-numeric: tabular-nums;
+}
+
+.three-flavor-triangle__transport {
+  margin-top: 9px;
+}
+
+.three-flavor-triangle__grid path {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.18);
+  stroke-width: 1.3;
+}
+
+.three-flavor-triangle__grid path:first-child {
+  stroke: rgba(255, 255, 255, 0.65);
+  stroke-width: 2.1;
+}
+
+.three-flavor-triangle__trail {
+  fill: none;
+  stroke: rgba(126, 226, 174, 0.72);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.three-flavor-triangle__halo {
+  fill: rgba(126, 226, 174, 0.16);
+  stroke: rgba(126, 226, 174, 0.52);
+  stroke-width: 1.5;
+}
+
+.three-flavor-triangle__point {
+  fill: #7ee2ae;
+  stroke: #061018;
+  stroke-width: 2.4;
+}
+
+.three-flavor-triangle__vertex {
+  font-size: 20px;
+  font-weight: 750;
+}
+
+.three-flavor-triangle__vertex tspan {
+  font-size: 14px;
+}
+
+.three-flavor-triangle__vertex--e,
+.three-flavor-triangle__value--e {
+  fill: #58b8ff;
+}
+
+.three-flavor-triangle__vertex--mu,
+.three-flavor-triangle__value--mu {
+  fill: #ffc85c;
+}
+
+.three-flavor-triangle__vertex--tau,
+.three-flavor-triangle__value--tau {
+  fill: #dd8bff;
+}
+
+.three-flavor-triangle__bar-bg {
+  fill: rgba(255, 255, 255, 0.07);
+  stroke: rgba(255, 255, 255, 0.18);
+}
+
+.three-flavor-triangle__bar--e {
+  fill: #58b8ff;
+}
+
+.three-flavor-triangle__bar--mu {
+  fill: #ffc85c;
+}
+
+.three-flavor-triangle__bar--tau {
+  fill: #dd8bff;
+}
+
+.three-flavor-triangle__values text {
+  font-size: 18px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.three-flavor-triangle__bar-labels text {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.three-flavor-triangle__status {
+  fill: #cdd7e1;
+  font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  .three-flavor-triangle {
+    grid-template-columns: 255px minmax(0, 1fr);
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .three-flavor-triangle__controls {
+    padding: 10px;
+  }
+
+  .three-flavor-triangle__visual svg {
+    height: 390px;
+  }
+}

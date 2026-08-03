@@ -1,0 +1,197 @@
+```{=html}
+<link rel="stylesheet" href="assets/05_vacuum_oscillations/three_flavor_triangle.css">
+```
+
+## Три вероятности на одном рисунке {.three-flavor-tight}
+
+:::: {.panel-tabset .story-tabs}
+
+### Интерактив
+
+```{=html}
+<div class="three-flavor-triangle" data-three-flavor-triangle>
+  <div class="three-flavor-triangle__controls">
+    <div class="three-flavor-triangle__control">
+      <span class="three-flavor-triangle__label">Начальный флэйвор</span>
+      <div class="three-flavor-triangle__buttons" role="group" aria-label="Начальный флэйвор">
+        <button type="button" data-source="0">ν<sub>e</sub></button>
+        <button type="button" data-source="1" class="is-active">ν<sub>μ</sub></button>
+        <button type="button" data-source="2">ν<sub>τ</sub></button>
+      </div>
+    </div>
+
+    <div class="three-flavor-triangle__control">
+      <span class="three-flavor-triangle__label">Частица</span>
+      <div class="three-flavor-triangle__buttons" role="group" aria-label="Нейтрино или антинейтрино">
+        <button type="button" data-antineutrino="false" class="is-active">ν</button>
+        <button type="button" data-antineutrino="true">ν̄</button>
+      </div>
+    </div>
+
+    <div class="three-flavor-triangle__control">
+      <label><span>Энергия <i>E</i></span><output data-energy-output>0.60 ГэВ</output></label>
+      <input type="range" min="0.20" max="5.00" step="0.05" value="0.60"
+             data-energy-input aria-label="Энергия нейтрино в ГэВ">
+    </div>
+
+    <div class="three-flavor-triangle__control">
+      <label><span>Путь <i>L</i></span><output data-baseline-output>295 км</output></label>
+      <input type="range" min="0" max="1300" step="5" value="295"
+             data-baseline-input aria-label="Путь нейтрино в километрах">
+    </div>
+
+    <div class="three-flavor-triangle__control">
+      <label><span>Фаза <i>δ</i><sub>CP</sub></span><output data-delta-output>212°</output></label>
+      <input type="range" min="0" max="360" step="1" value="212"
+             data-delta-input aria-label="CP-фаза в градусах">
+    </div>
+
+    <div class="three-flavor-triangle__readout">
+      <span><i>L/E</i></span><strong data-ratio-output>492 км/ГэВ</strong>
+    </div>
+
+    <div class="three-flavor-triangle__transport">
+      <button type="button" data-play>▶ Пустить</button>
+      <button type="button" data-reset>↺ В начало</button>
+    </div>
+  </div>
+
+  <div class="three-flavor-triangle__visual">
+    <svg viewBox="0 0 760 430" role="img"
+         aria-label="Треугольник вероятностей электронного, мюонного и тау-флэйворов">
+      <g class="three-flavor-triangle__grid" aria-hidden="true">
+        <path d="M380 42 L100 288 L660 288 Z"></path>
+        <path d="M310 103.5 L450 103.5"></path>
+        <path d="M240 165 L520 165"></path>
+        <path d="M170 226.5 L590 226.5"></path>
+        <path d="M310 103.5 L520 288"></path>
+        <path d="M240 165 L380 288"></path>
+        <path d="M170 226.5 L240 288"></path>
+        <path d="M450 103.5 L240 288"></path>
+        <path d="M520 165 L380 288"></path>
+        <path d="M590 226.5 L520 288"></path>
+      </g>
+
+      <path class="three-flavor-triangle__trail" data-trail></path>
+      <circle class="three-flavor-triangle__halo" data-halo r="18"></circle>
+      <circle class="three-flavor-triangle__point" data-point r="8"></circle>
+
+      <text class="three-flavor-triangle__vertex three-flavor-triangle__vertex--e"
+            x="380" y="27" text-anchor="middle">P<tspan baseline-shift="sub">e</tspan> = 1</text>
+      <text class="three-flavor-triangle__vertex three-flavor-triangle__vertex--mu"
+            x="92" y="316" text-anchor="end">P<tspan baseline-shift="sub">μ</tspan> = 1</text>
+      <text class="three-flavor-triangle__vertex three-flavor-triangle__vertex--tau"
+            x="668" y="316" text-anchor="start">P<tspan baseline-shift="sub">τ</tspan> = 1</text>
+
+      <g class="three-flavor-triangle__bar-labels">
+        <text x="120" y="344" class="three-flavor-triangle__value--e">Pₑ</text>
+        <text x="120" y="369" class="three-flavor-triangle__value--mu">Pμ</text>
+        <text x="120" y="394" class="three-flavor-triangle__value--tau">Pτ</text>
+      </g>
+
+      <g class="three-flavor-triangle__bars" transform="translate(150 330)">
+        <g transform="translate(0 0)">
+          <rect class="three-flavor-triangle__bar-bg" width="460" height="16" rx="8"></rect>
+          <rect class="three-flavor-triangle__bar three-flavor-triangle__bar--e"
+                data-bar="0" width="0" height="16" rx="8"></rect>
+        </g>
+        <g transform="translate(0 25)">
+          <rect class="three-flavor-triangle__bar-bg" width="460" height="16" rx="8"></rect>
+          <rect class="three-flavor-triangle__bar three-flavor-triangle__bar--mu"
+                data-bar="1" width="0" height="16" rx="8"></rect>
+        </g>
+        <g transform="translate(0 50)">
+          <rect class="three-flavor-triangle__bar-bg" width="460" height="16" rx="8"></rect>
+          <rect class="three-flavor-triangle__bar three-flavor-triangle__bar--tau"
+                data-bar="2" width="0" height="16" rx="8"></rect>
+        </g>
+      </g>
+
+      <g class="three-flavor-triangle__values">
+        <text x="620" y="344" class="three-flavor-triangle__value--e" data-probability="0">0.000</text>
+        <text x="620" y="369" class="three-flavor-triangle__value--mu" data-probability="1">1.000</text>
+        <text x="620" y="394" class="three-flavor-triangle__value--tau" data-probability="2">0.000</text>
+      </g>
+      <text class="three-flavor-triangle__status" x="380" y="418" text-anchor="middle"
+            data-status>νμ → (e, μ, τ)</text>
+    </svg>
+  </div>
+</div>
+```
+
+### Координаты
+
+Каждому моменту эволюции соответствует тройка
+
+$$
+\mathbf P_\alpha(L,E)
+=
+\left(P_{\alpha e},P_{\alpha\mu},P_{\alpha\tau}\right),
+\qquad
+P_{\alpha e}+P_{\alpha\mu}+P_{\alpha\tau}=1.
+$$
+
+Это барицентрические координаты точки внутри треугольника:
+
+- вершина $e$ означает $(1,0,0)$;
+- вершина $\mu$ означает $(0,1,0)$;
+- вершина $\tau$ означает $(0,0,1)$.
+
+Чем ближе точка к вершине, тем больше вероятность соответствующего
+флэйвора. В начале она находится в выбранной начальной вершине.
+
+### Числа
+
+В интерактиве использованы лучшие значения NuFIT 6.1 для нормального
+порядка с атмосферными данными IC24 и Super-Kamiokande:
+
+$$
+\begin{aligned}
+\sin^2\theta_{12}&=0.3088,&
+\sin^2\theta_{23}&=0.470,&
+\sin^2\theta_{13}&=0.02248,\\
+\Delta m^2_{21}&=7.537\times10^{-5}\ {\rm эВ}^2,&
+\Delta m^2_{31}&=2.511\times10^{-3}\ {\rm эВ}^2,&
+\delta_{\rm CP}&=212^\circ.
+\end{aligned}
+$$
+
+Фазу $\delta_{\rm CP}$ можно менять, чтобы непосредственно сравнить
+траектории нейтрино и антинейтрино.
+
+::: {.small}
+[NuFIT 6.1: таблица параметров](https://www.nu-fit.org/sites/default/files/v61.tbl-parameters.pdf),
+данные по ноябрь 2025 года.
+:::
+
+### Нормировка
+
+Эволюция в массовом базисе унитарна:
+
+$$
+S(L)=U\,
+\operatorname{diag}
+\left(e^{-i\phi_1},e^{-i\phi_2},e^{-i\phi_3}\right)
+U^\dagger,
+\qquad S^\dagger S=1.
+$$
+
+Поэтому для фиксированного начального флэйвора $\alpha$
+
+$$
+\sum_\beta P_{\alpha\to\beta}
+=\sum_\beta|S_{\beta\alpha}|^2
+=(S^\dagger S)_{\alpha\alpha}
+=1.
+$$
+
+::: {.takeaway}
+Треугольник показывает не три независимые величины, а одно нормированное
+распределение вероятностей измерения во флэйворном базисе.
+:::
+
+::::
+
+```{=html}
+<script src="assets/05_vacuum_oscillations/three_flavor_triangle.js"></script>
+```

@@ -1,0 +1,125 @@
+```{=html}
+<link rel="stylesheet" href="assets/05_vacuum_oscillations/lecture_summary.css">
+```
+
+## Что измеряют осцилляции {.lecture-summary-tight}
+
+:::: {.panel-tabset .story-tabs}
+
+### Измеряют
+
+В унитарной модели трёх нейтрино форма вероятностей содержит
+
+$$
+\boxed{
+\theta_{12},\theta_{13},\theta_{23};
+\qquad
+\Delta m^2_{21},\Delta m^2_{3\ell};
+\qquad
+\delta_{\rm CP}
+}.
+$$
+
+- амплитуды переходов определяют углы смешивания;
+- частоты по $L/E$ определяют разности квадратов масс;
+- различие каналов $\nu$ и $\bar\nu$ позволяет искать дираковскую
+  CP-фазу.
+
+Дискретный порядок масс устанавливается сравнением полной картины разных
+экспериментов; роль вещества будет разобрана отдельно.
+
+### Не измеряют
+
+Осцилляции сами по себе не дают:
+
+$$
+\boxed{m_{\rm lightest}}
+\qquad\text{и}\qquad
+\boxed{m_1+m_2+m_3},
+$$
+
+не различают природу Дирака и Майораны и не чувствительны к
+майорановским фазам.
+
+Для этих вопросов нужны другие наблюдаемые: кинематика $\beta$-распада,
+безнейтринный двойной $\beta$-распад и космология.
+
+### Почему не видна абсолютная масса
+
+Сдвинем все квадраты масс на одну величину:
+
+$$
+m_i^2\longrightarrow m_i^2+C.
+$$
+
+Тогда амплитуда превращается в
+
+$$
+\mathcal A_{\alpha\to\beta}
+\longrightarrow
+e^{-iCL/(2E)}
+\mathcal A_{\alpha\to\beta}.
+$$
+
+Это одна общая фаза, поэтому
+
+$$
+|\mathcal A_{\alpha\to\beta}|^2
+\longrightarrow
+|\mathcal A_{\alpha\to\beta}|^2.
+$$
+
+::: {.takeaway}
+Наблюдаемы только разности $m_i^2-m_j^2$.
+:::
+
+### Граница этой лекции
+
+Здесь использовалась когерентная эволюция плоских волн в вакууме.
+
+Два следующих уточнения намеренно вынесены отдельно:
+
+1. **вещество** меняет эффективный гамильтониан и смешивание;
+2. **волновые пакеты** определяют условия рождения, регистрации и потери
+   когерентности.
+
+Формула вакуумных осцилляций остаётся отправной точкой для обоих
+обобщений.
+
+::::
+
+## Пять главных выводов {.lecture-summary-tight}
+
+```{=html}
+<div class="lecture-summary-grid">
+  <div class="lecture-summary-card">
+    <span class="lecture-summary-number">1.</span>
+    <strong>Собственное состояние энергии</strong> меняется только общей
+    фазой; его вероятности стационарны.
+  </div>
+  <div class="lecture-summary-card">
+    <span class="lecture-summary-number">2.</span>
+    <strong>Флэйвор не имеет определённой энергии:</strong> это суперпозиция
+    массовых состояний, заданная матрицей PMNS.
+  </div>
+  <div class="lecture-summary-card">
+    <span class="lecture-summary-number">3.</span>
+    <strong>Осциллирует относительная фаза</strong>
+    <span class="math inline">\(\Delta\phi_{ij}=\Delta m^2_{ij}L/(2E)\)</span>,
+    поэтому естественная переменная — <span class="math inline">\(L/E\)</span>.
+  </div>
+  <div class="lecture-summary-card">
+    <span class="lecture-summary-number">4.</span>
+    <strong>Для двух флэйворов</strong>
+    <span class="math inline">\(P_{\alpha\to\beta}
+    =\sin^22\theta\,\sin^2(\Delta m^2L/4E)\)</span>;
+    амплитуда и длина осцилляций измеряют разные параметры.
+  </div>
+  <div class="lecture-summary-card">
+    <span class="lecture-summary-number">5.</span>
+    <strong>CP-нарушение требует трёх флэйворов:</strong> неустранимой
+    комплексной фазы и двух независимых разностей фаз. Его мера —
+    инвариант <span class="math inline">\(J_{\rm CP}\)</span>.
+  </div>
+</div>
+```

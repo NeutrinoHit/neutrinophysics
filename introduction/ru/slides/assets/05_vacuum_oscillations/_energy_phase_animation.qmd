@@ -1,0 +1,332 @@
+```{=html}
+<style>
+.energy-phase-demo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  width: min(1160px, 100%);
+  margin: 0.35rem auto 0;
+  color: #f2f2f2;
+  font-size: 22px;
+}
+
+.reveal .panel-tabset.energy-derivation-tabs > .tab-content {
+  font-size: 0.90em;
+  line-height: 1.18;
+}
+
+.reveal .panel-tabset.energy-derivation-tabs > .tab-content p {
+  margin-top: 0.38em;
+  margin-bottom: 0.38em;
+}
+
+.reveal .panel-tabset.energy-derivation-tabs > .tab-content .math.display {
+  margin-top: 0.32em;
+  margin-bottom: 0.32em;
+}
+
+.energy-phase-panel {
+  box-sizing: border-box;
+  min-height: 405px;
+  padding: 14px 18px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 50% 34%, rgba(124, 199, 255, 0.10), transparent 42%),
+    rgba(7, 11, 17, 0.92);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+}
+
+.energy-phase-panel.is-superposition {
+  background:
+    radial-gradient(circle at 50% 34%, rgba(255, 204, 138, 0.10), transparent 42%),
+    rgba(7, 11, 17, 0.92);
+}
+
+.energy-phase-title {
+  margin-bottom: 2px;
+  color: #ffffff;
+  font-size: 1.12em;
+  font-weight: 750;
+  text-align: center;
+}
+
+.energy-phase-subtitle {
+  min-height: 32px;
+  margin-bottom: 2px;
+  color: #cfd7e3;
+  font-size: 0.78em;
+  text-align: center;
+}
+
+.energy-phase-svg {
+  display: block;
+  width: 100%;
+  height: 205px;
+  margin: 0 auto;
+}
+
+.energy-phase-axis {
+  stroke: rgba(255, 255, 255, 0.20);
+  stroke-width: 1.5;
+}
+
+.energy-phase-circle {
+  fill: rgba(255, 255, 255, 0.015);
+  stroke: rgba(255, 255, 255, 0.30);
+  stroke-width: 2;
+}
+
+.energy-phase-arrow {
+  stroke-linecap: round;
+  stroke-width: 5;
+}
+
+.energy-phase-arrow.is-blue {
+  stroke: #7cc7ff;
+}
+
+.energy-phase-arrow.is-gold {
+  stroke: #ffcc8a;
+}
+
+.energy-phase-tip.is-blue {
+  fill: #7cc7ff;
+}
+
+.energy-phase-tip.is-gold {
+  fill: #ffcc8a;
+}
+
+.energy-phase-origin {
+  fill: #ffffff;
+}
+
+.energy-phase-label {
+  fill: #f2f2f2;
+  font-family: system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.energy-phase-muted-label {
+  fill: #bfc8d4;
+  font-family: system-ui, sans-serif;
+  font-size: 14px;
+}
+
+.energy-phase-readout {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 1px 4px 8px;
+  color: #dce3ec;
+  font-size: 0.78em;
+}
+
+.energy-phase-readout strong {
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+}
+
+.energy-phase-energy-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.energy-phase-energy-chip {
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  color: #dce3ec;
+  background: rgba(255, 255, 255, 0.04);
+  font-size: 0.72em;
+  text-align: center;
+}
+
+.energy-phase-bar-row {
+  display: grid;
+  grid-template-columns: 128px 1fr 48px;
+  gap: 9px;
+  align-items: center;
+  color: #f2f2f2;
+  font-size: 0.76em;
+}
+
+.energy-phase-track {
+  height: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.energy-phase-fill {
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #4ea1ff, #9bd7ff);
+}
+
+.energy-phase-fill.is-dynamic {
+  background: linear-gradient(90deg, #ffad5c, #ffe0ad);
+}
+
+.energy-phase-value {
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .energy-phase-demo {
+    gap: 12px;
+    font-size: 18px;
+  }
+
+  .energy-phase-panel {
+    min-height: 370px;
+    padding: 10px 12px;
+  }
+
+  .energy-phase-svg {
+    height: 180px;
+  }
+}
+</style>
+
+<div class="energy-phase-demo" data-energy-phase-demo role="img"
+     aria-label="Сравнение общей фазы состояния с одной энергией и относительной фазы суперпозиции двух энергий">
+  <div class="energy-phase-panel">
+    <div class="energy-phase-title">Одна энергия <i>E</i></div>
+    <div class="energy-phase-subtitle">Вектор амплитуды вращается как целое</div>
+    <svg class="energy-phase-svg" viewBox="0 0 500 220" aria-hidden="true">
+      <line class="energy-phase-axis" x1="142" y1="110" x2="358" y2="110"></line>
+      <line class="energy-phase-axis" x1="250" y1="15" x2="250" y2="205"></line>
+      <circle class="energy-phase-circle" cx="250" cy="110" r="78"></circle>
+      <line class="energy-phase-arrow is-blue" data-single-arrow x1="250" y1="110" x2="328" y2="110"></line>
+      <circle class="energy-phase-tip is-blue" data-single-tip cx="328" cy="110" r="7"></circle>
+      <circle class="energy-phase-origin" cx="250" cy="110" r="4"></circle>
+      <text class="energy-phase-label" x="354" y="105">Re</text>
+      <text class="energy-phase-label" x="258" y="28">Im</text>
+      <text class="energy-phase-muted-label" x="328" y="54">e⁻ⁱᴱᵗ</text>
+    </svg>
+    <div class="energy-phase-readout">
+      <span>Общая фаза меняется</span>
+      <strong data-single-phase>0.00 rad</strong>
+    </div>
+    <div class="energy-phase-bar-row">
+      <span><i>P</i>(<i>E</i>)</span>
+      <div class="energy-phase-track"><div class="energy-phase-fill"></div></div>
+      <span class="energy-phase-value">1.00</span>
+    </div>
+  </div>
+
+  <div class="energy-phase-panel is-superposition">
+    <div class="energy-phase-title">Две энергии <i>E</i><sub>1</sub> ≠ <i>E</i><sub>2</sub></div>
+    <div class="energy-phase-subtitle">Измеряем |+⟩ = (|E₁⟩ + |E₂⟩)/√2</div>
+    <svg class="energy-phase-svg" viewBox="0 0 500 220" aria-hidden="true">
+      <line class="energy-phase-axis" x1="142" y1="110" x2="358" y2="110"></line>
+      <line class="energy-phase-axis" x1="250" y1="15" x2="250" y2="205"></line>
+      <circle class="energy-phase-circle" cx="250" cy="110" r="78"></circle>
+      <line class="energy-phase-arrow is-blue" data-double-arrow-one x1="250" y1="110" x2="328" y2="110"></line>
+      <circle class="energy-phase-tip is-blue" data-double-tip-one cx="328" cy="110" r="7"></circle>
+      <line class="energy-phase-arrow is-gold" data-double-arrow-two x1="250" y1="110" x2="328" y2="110"></line>
+      <circle class="energy-phase-tip is-gold" data-double-tip-two cx="328" cy="110" r="7"></circle>
+      <circle class="energy-phase-origin" cx="250" cy="110" r="4"></circle>
+      <text class="energy-phase-label" x="354" y="105">Re</text>
+      <text class="energy-phase-label" x="258" y="28">Im</text>
+      <text class="energy-phase-muted-label" x="320" y="48" fill="#7cc7ff">E₁</text>
+      <text class="energy-phase-muted-label" x="320" y="68" fill="#ffcc8a">E₂</text>
+    </svg>
+    <div class="energy-phase-readout">
+      <span>Относительная фаза Δφ</span>
+      <strong data-relative-phase>0.00 rad</strong>
+    </div>
+    <div class="energy-phase-energy-row">
+      <div class="energy-phase-energy-chip"><i>P</i>(<i>E</i><sub>1</sub>) = 1/2</div>
+      <div class="energy-phase-energy-chip"><i>P</i>(<i>E</i><sub>2</sub>) = 1/2</div>
+    </div>
+    <div class="energy-phase-bar-row">
+      <span><i>P</i>(+)</span>
+      <div class="energy-phase-track"><div class="energy-phase-fill is-dynamic" data-interference-bar></div></div>
+      <span class="energy-phase-value" data-interference-value>1.00</span>
+    </div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const TAU = 2 * Math.PI;
+
+  function setArrow(line, tip, phase) {
+    const cx = 250;
+    const cy = 110;
+    const radius = 78;
+    const x = cx + radius * Math.cos(phase);
+    const y = cy - radius * Math.sin(phase);
+    line.setAttribute("x2", x.toFixed(2));
+    line.setAttribute("y2", y.toFixed(2));
+    tip.setAttribute("cx", x.toFixed(2));
+    tip.setAttribute("cy", y.toFixed(2));
+  }
+
+  function initialize(root) {
+    if (root.dataset.energyPhaseReady === "true") return;
+    root.dataset.energyPhaseReady = "true";
+
+    const singleArrow = root.querySelector("[data-single-arrow]");
+    const singleTip = root.querySelector("[data-single-tip]");
+    const doubleArrowOne = root.querySelector("[data-double-arrow-one]");
+    const doubleTipOne = root.querySelector("[data-double-tip-one]");
+    const doubleArrowTwo = root.querySelector("[data-double-arrow-two]");
+    const doubleTipTwo = root.querySelector("[data-double-tip-two]");
+    const singlePhaseText = root.querySelector("[data-single-phase]");
+    const relativePhaseText = root.querySelector("[data-relative-phase]");
+    const interferenceBar = root.querySelector("[data-interference-bar]");
+    const interferenceValue = root.querySelector("[data-interference-value]");
+
+    const omega = 1.25;
+    const omegaOne = 0.82;
+    const omegaTwo = 1.52;
+    const start = performance.now();
+
+    function draw(now) {
+      if (!document.body.contains(root)) return;
+
+      const slide = root.closest("section");
+      if (!slide || slide.classList.contains("present")) {
+        const time = (now - start) / 1000;
+        const singlePhase = (omega * time) % TAU;
+        const phaseOne = (omegaOne * time) % TAU;
+        const phaseTwo = (omegaTwo * time) % TAU;
+        const relativePhase = ((phaseTwo - phaseOne) % TAU + TAU) % TAU;
+        const probability = 0.5 * (1 + Math.cos(relativePhase));
+
+        setArrow(singleArrow, singleTip, -singlePhase);
+        setArrow(doubleArrowOne, doubleTipOne, -phaseOne);
+        setArrow(doubleArrowTwo, doubleTipTwo, -phaseTwo);
+
+        singlePhaseText.textContent = `${singlePhase.toFixed(2)} rad`;
+        relativePhaseText.textContent = `${relativePhase.toFixed(2)} rad`;
+        interferenceBar.style.width = `${(100 * probability).toFixed(1)}%`;
+        interferenceValue.textContent = probability.toFixed(2);
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  function initializeAll() {
+    document.querySelectorAll("[data-energy-phase-demo]").forEach(initialize);
+  }
+
+  initializeAll();
+  document.addEventListener("DOMContentLoaded", initializeAll, {once: true});
+})();
+</script>
+```

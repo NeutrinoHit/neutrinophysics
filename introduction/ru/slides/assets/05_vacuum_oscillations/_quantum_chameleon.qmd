@@ -1,0 +1,505 @@
+```{=html}
+<style>
+.quantum-chameleon-stage {
+  position: relative;
+  width: min(1200px, 100%);
+  aspect-ratio: 1200 / 620;
+  margin: 0.18rem auto 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+  background: #76cbea;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.34);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.quantum-chameleon-stage:focus-visible {
+  outline: 3px solid #ffe08a;
+  outline-offset: 4px;
+}
+
+.quantum-chameleon-stage svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.qc-branch-shadow {
+  fill: rgba(23, 28, 22, 0.16);
+  filter: blur(5px);
+}
+
+.qc-chameleon-outline {
+  fill: none;
+  stroke: #203a35;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.qc-chameleon-outline.is-far-leg {
+  stroke-width: 2.8;
+  opacity: 0.46;
+}
+
+.qc-chameleon-underlay {
+  fill: none;
+  stroke: #203a35;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.qc-chameleon-detail {
+  fill: none;
+  stroke: rgba(24, 54, 47, 0.82);
+  stroke-width: 2.3;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.qc-chameleon-scale {
+  fill: rgba(241, 255, 213, 0.34);
+  stroke: rgba(30, 67, 57, 0.42);
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+}
+
+.qc-eye-turret {
+  fill: rgba(202, 232, 142, 0.42);
+  stroke: #263d38;
+  stroke-width: 2.6;
+  vector-effect: non-scaling-stroke;
+}
+
+.qc-eye-white {
+  fill: rgba(243, 246, 212, 0.96);
+  stroke: #263d38;
+  stroke-width: 2.7;
+  vector-effect: non-scaling-stroke;
+}
+
+.qc-eye-iris {
+  fill: #ffd449;
+  stroke: #263d38;
+  stroke-width: 2.2;
+  vector-effect: non-scaling-stroke;
+}
+
+.qc-eye-pupil {
+  fill: #172926;
+}
+
+.qc-nostril {
+  fill: #243b35;
+  opacity: 0.88;
+}
+
+.qc-tongue-line {
+  fill: none;
+  stroke: #ef4763;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.qc-tongue-highlight {
+  fill: none;
+  stroke: rgba(255, 183, 190, 0.82);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.qc-tongue-tip {
+  fill: #f25a70;
+  stroke: #8f2d45;
+  stroke-width: 1.8;
+  vector-effect: non-scaling-stroke;
+}
+
+.qc-butterfly-wing {
+  fill: #ffd65c;
+  stroke: #705036;
+  stroke-width: 1.4;
+  vector-effect: non-scaling-stroke;
+}
+
+.qc-butterfly-body {
+  fill: #705036;
+}
+
+.qc-replay-hint {
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.88);
+  background: rgba(17, 50, 54, 0.32);
+  font: 600 14px/1 system-ui, sans-serif;
+  letter-spacing: 0.02em;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(4px);
+  transition: opacity 280ms ease, transform 280ms ease;
+  backdrop-filter: blur(5px);
+}
+
+.qc-metaphor-note {
+  position: absolute;
+  left: 18px;
+  bottom: 14px;
+  max-width: 780px;
+  padding: 7px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.96);
+  background: rgba(17, 50, 54, 0.68);
+  font: 600 14px/1.3 system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  pointer-events: none;
+  backdrop-filter: blur(6px);
+}
+
+.qc-metaphor-note strong {
+  color: #ffe08a;
+}
+
+.quantum-chameleon-stage:hover .qc-replay-hint,
+.quantum-chameleon-stage:focus-visible .qc-replay-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  .quantum-chameleon-stage {
+    border-radius: 12px;
+  }
+
+  .qc-replay-hint {
+    right: 10px;
+    bottom: 9px;
+    font-size: 11px;
+  }
+
+  .qc-metaphor-note {
+    left: 10px;
+    bottom: 9px;
+    max-width: calc(100% - 150px);
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+}
+</style>
+
+<div class="quantum-chameleon-stage"
+     data-quantum-chameleon
+     role="img"
+     tabindex="0"
+     aria-label="Метафорическая анимация: хамелеон идёт по ветке и меняет окраску. Она иллюстрирует разные наблюдаемые проявления одного объекта, но не периодичность нейтринных осцилляций. Нажмите, чтобы запустить сначала.">
+  <svg viewBox="0 0 1200 620" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <linearGradient id="qc-sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#63c4ea" />
+        <stop offset="0.68" stop-color="#8bd8ed" />
+        <stop offset="1" stop-color="#c7e9d0" />
+      </linearGradient>
+      <linearGradient id="qc-hill" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#93cf91" />
+        <stop offset="0.5" stop-color="#b4d987" />
+        <stop offset="1" stop-color="#80c697" />
+      </linearGradient>
+      <linearGradient id="qc-branch" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#72503d" />
+        <stop offset="0.55" stop-color="#543b33" />
+        <stop offset="1" stop-color="#382c2b" />
+      </linearGradient>
+      <radialGradient id="qc-leaf-light" cx="35%" cy="28%" r="80%">
+        <stop offset="0" stop-color="#d6ec55" />
+        <stop offset="1" stop-color="#79b93c" />
+      </radialGradient>
+      <radialGradient id="qc-flower-pink" cx="35%" cy="30%" r="85%">
+        <stop offset="0" stop-color="#ff8b9a" />
+        <stop offset="1" stop-color="#d94d71" />
+      </radialGradient>
+      <radialGradient id="qc-flower-orange" cx="38%" cy="28%" r="85%">
+        <stop offset="0" stop-color="#ffc261" />
+        <stop offset="1" stop-color="#ef7a3d" />
+      </radialGradient>
+
+      <filter id="qc-skin-base" x="-8%" y="-8%" width="116%" height="116%"
+              color-interpolation-filters="sRGB">
+        <feColorMatrix type="saturate" values="0.92" />
+        <feComponentTransfer>
+          <feFuncR type="linear" slope="0.78" intercept="0.10" />
+          <feFuncG type="linear" slope="0.78" intercept="0.11" />
+          <feFuncB type="linear" slope="0.78" intercept="0.09" />
+        </feComponentTransfer>
+      </filter>
+      <filter id="qc-stripe-dark" x="-8%" y="-8%" width="116%" height="116%"
+              color-interpolation-filters="sRGB">
+        <feColorMatrix type="saturate" values="1.35" />
+        <feComponentTransfer>
+          <feFuncR type="linear" slope="0.62" intercept="0.05" />
+          <feFuncG type="linear" slope="0.65" intercept="0.06" />
+          <feFuncB type="linear" slope="0.70" intercept="0.07" />
+        </feComponentTransfer>
+      </filter>
+      <filter id="qc-stripe-light" x="-8%" y="-8%" width="116%" height="116%"
+              color-interpolation-filters="sRGB">
+        <feColorMatrix type="saturate" values="0.84" />
+        <feComponentTransfer>
+          <feFuncR type="linear" slope="0.70" intercept="0.23" />
+          <feFuncG type="linear" slope="0.72" intercept="0.22" />
+          <feFuncB type="linear" slope="0.70" intercept="0.22" />
+        </feComponentTransfer>
+      </filter>
+
+      <g id="qc-world-paint">
+        <rect width="1200" height="620" fill="url(#qc-sky)" />
+        <circle cx="1035" cy="92" r="54" fill="#fff1a8" opacity="0.76" />
+        <path d="M0 382 C145 320 272 348 402 389 C540 432 699 350 824 370 C978 395 1051 326 1200 344 L1200 620 L0 620Z"
+              fill="url(#qc-hill)" />
+        <path d="M0 430 C150 385 275 432 420 414 C603 390 706 449 871 413 C1008 384 1091 405 1200 390 L1200 620 L0 620Z"
+              fill="#4f9e70" opacity="0.92" />
+
+        <g opacity="0.54" fill="#effcff">
+          <path d="M110 117 C130 78 184 79 204 116 C236 100 277 123 270 156 H86 C80 137 91 122 110 117Z" />
+          <path d="M685 92 C701 60 742 61 757 91 C783 77 817 96 814 124 H664 C659 109 670 96 685 92Z" />
+        </g>
+
+        <g fill="none" stroke="#5a4038" stroke-linecap="round">
+          <path d="M85 620 C113 504 111 394 122 270 C127 205 117 137 95 64" stroke-width="30" />
+          <path d="M116 341 C163 291 200 248 227 187" stroke-width="14" />
+          <path d="M1018 620 C1007 524 1030 434 1043 327 C1053 235 1074 150 1114 55" stroke-width="34" />
+          <path d="M1050 317 C1006 267 979 215 965 147" stroke-width="15" />
+          <path d="M1055 272 C1091 233 1133 207 1182 197" stroke-width="12" />
+        </g>
+
+        <g fill="url(#qc-leaf-light)">
+          <ellipse cx="70" cy="112" rx="48" ry="94" transform="rotate(-22 70 112)" />
+          <ellipse cx="153" cy="92" rx="64" ry="39" transform="rotate(18 153 92)" />
+          <ellipse cx="219" cy="148" rx="42" ry="80" transform="rotate(36 219 148)" />
+          <ellipse cx="972" cy="108" rx="78" ry="42" transform="rotate(-14 972 108)" />
+          <ellipse cx="1088" cy="90" rx="55" ry="89" transform="rotate(25 1088 90)" />
+          <ellipse cx="1164" cy="170" rx="34" ry="76" transform="rotate(16 1164 170)" />
+        </g>
+
+        <path d="M-25 486 C205 469 367 482 536 463 C704 445 864 462 1038 438 C1114 428 1168 430 1235 418"
+              fill="none" stroke="#2e2626" stroke-width="42" stroke-linecap="round" />
+        <path d="M-25 478 C205 461 367 474 536 455 C704 437 864 454 1038 430 C1114 420 1168 422 1235 410"
+              fill="none" stroke="url(#qc-branch)" stroke-width="34" stroke-linecap="round" />
+        <path d="M-10 468 C195 454 371 463 530 445 C708 425 855 445 1026 421"
+              fill="none" stroke="#94705a" stroke-width="5" stroke-linecap="round" opacity="0.62" />
+
+        <g fill="#4d963f">
+          <ellipse cx="251" cy="384" rx="78" ry="34" transform="rotate(-18 251 384)" />
+          <ellipse cx="299" cy="327" rx="34" ry="77" transform="rotate(43 299 327)" />
+          <ellipse cx="717" cy="378" rx="92" ry="38" transform="rotate(12 717 378)" />
+          <ellipse cx="766" cy="317" rx="38" ry="88" transform="rotate(51 766 317)" />
+          <ellipse cx="1115" cy="355" rx="74" ry="31" transform="rotate(-24 1115 355)" />
+        </g>
+
+        <g fill="url(#qc-flower-pink)" stroke="#bd3f62" stroke-width="2">
+          <ellipse cx="410" cy="320" rx="42" ry="72" transform="rotate(-8 410 320)" />
+          <ellipse cx="355" cy="375" rx="72" ry="40" transform="rotate(5 355 375)" />
+          <ellipse cx="465" cy="375" rx="72" ry="40" transform="rotate(-5 465 375)" />
+          <ellipse cx="410" cy="430" rx="42" ry="72" transform="rotate(8 410 430)" />
+          <circle cx="410" cy="375" r="24" fill="#ffd24b" stroke="#e5a52c" />
+        </g>
+
+        <g fill="url(#qc-flower-orange)" stroke="#d96038" stroke-width="2">
+          <ellipse cx="884" cy="304" rx="35" ry="68" transform="rotate(-10 884 304)" />
+          <ellipse cx="839" cy="356" rx="67" ry="34" transform="rotate(5 839 356)" />
+          <ellipse cx="929" cy="356" rx="67" ry="34" transform="rotate(-5 929 356)" />
+          <ellipse cx="884" cy="408" rx="35" ry="68" transform="rotate(10 884 408)" />
+          <circle cx="884" cy="356" r="21" fill="#ffe064" stroke="#e9ad2c" />
+        </g>
+
+        <g fill="#8070c6" stroke="#6554ad" stroke-width="2">
+          <ellipse cx="606" cy="340" rx="25" ry="51" transform="rotate(-8 606 340)" />
+          <ellipse cx="567" cy="379" rx="50" ry="25" transform="rotate(5 567 379)" />
+          <ellipse cx="645" cy="379" rx="50" ry="25" transform="rotate(-5 645 379)" />
+          <ellipse cx="606" cy="418" rx="25" ry="51" transform="rotate(8 606 418)" />
+          <circle cx="606" cy="379" r="16" fill="#ffd85b" stroke="#e1ae34" />
+        </g>
+
+        <g fill="#a8d94b">
+          <ellipse cx="24" cy="516" rx="102" ry="48" transform="rotate(18 24 516)" />
+          <ellipse cx="152" cy="554" rx="92" ry="42" transform="rotate(-12 152 554)" />
+          <ellipse cx="1040" cy="518" rx="98" ry="42" transform="rotate(-17 1040 518)" />
+          <ellipse cx="1161" cy="530" rx="105" ry="46" transform="rotate(15 1161 530)" />
+        </g>
+      </g>
+
+      <mask id="qc-chameleon-mask" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse"
+            x="-210" y="-105" width="430" height="290">
+        <rect x="-210" y="-105" width="430" height="290" fill="black" />
+        <path d="M-82 20 C-73 -15 -48 -41 -8 -52 C33 -63 78 -54 106 -34 C126 -20 135 1 128 23 C118 53 78 68 30 68 C-16 68 -59 52 -83 32Z" fill="white" />
+        <path d="M84 -27 C92 -46 107 -61 126 -65 C149 -69 169 -53 180 -32 C188 -17 191 2 188 16 C185 28 174 35 158 36 C151 51 136 60 118 58 C99 55 88 43 82 28 C77 13 78 -10 84 -27Z" fill="white" />
+        <path d="M92 -38 C99 -71 116 -91 135 -92 C152 -72 162 -47 163 -24 C141 -38 116 -44 92 -38Z" fill="white" />
+        <path d="M-68 -23 L-60 -38 L-51 -34 L-42 -49 L-32 -44 L-21 -58 L-10 -52 L3 -67 L15 -58 L29 -72 L42 -58 L56 -69 L68 -54 L80 -60 L89 -42Z" fill="white" />
+        <path d="M-74 18 C-118 2 -158 21 -166 56 C-176 99 -144 130 -106 126 C-70 122 -50 91 -61 66 C-72 42 -101 39 -118 55 C-135 70 -128 96 -109 100 C-91 104 -78 90 -82 76 C-85 64 -98 61 -106 69"
+              fill="none" stroke="white" stroke-width="34" stroke-linecap="round" stroke-linejoin="round" />
+        <path data-qc-leg="rear-far" d="M-37 27 Q-55 49 -45 65 Q-34 78 -9 76" fill="none" stroke="white" stroke-width="17" stroke-linecap="round" stroke-linejoin="round" />
+        <path data-qc-leg="front-far" d="M72 22 Q51 43 61 59 Q74 72 104 68" fill="none" stroke="white" stroke-width="17" stroke-linecap="round" stroke-linejoin="round" />
+        <path data-qc-leg="rear-near" d="M-29 35 Q-3 46 -13 67 Q-20 82 5 85 L30 82" fill="none" stroke="white" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
+        <path data-qc-leg="rear-near" d="M28 82 L42 73 M29 82 L44 82 M28 83 L40 91" fill="none" stroke="white" stroke-width="7" stroke-linecap="round" />
+        <path data-qc-leg="front-near" d="M75 31 Q50 48 65 66 Q78 82 105 80 L132 76" fill="none" stroke="white" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" />
+        <path data-qc-leg="front-near" d="M130 76 L145 67 M131 76 L147 76 M130 77 L143 85" fill="none" stroke="white" stroke-width="7" stroke-linecap="round" />
+      </mask>
+
+      <mask id="qc-dark-stripes" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse"
+            x="-210" y="-105" width="430" height="290">
+        <rect x="-210" y="-105" width="430" height="290" fill="black" />
+        <g fill="white">
+          <path d="M-61 -43 C-43 -27 -51 -7 -39 12 C-28 29 -35 49 -45 62 L-20 67 C-10 47 -11 26 -23 9 C-33 -7 -27 -30 -17 -56Z" />
+          <path d="M2 -61 C20 -38 12 -16 25 3 C39 23 31 49 22 68 L49 64 C61 42 57 17 44 0 C32 -16 39 -39 51 -55Z" />
+          <path d="M71 -49 C89 -28 82 -9 96 8 C110 26 103 47 94 59 L118 48 C128 28 121 7 110 -7 C101 -20 106 -35 114 -43Z" />
+          <path d="M104 -72 C116 -58 118 -44 114 -34 L133 -30 C135 -48 130 -65 121 -82Z" />
+          <path d="M143 -59 C154 -43 155 -25 151 -15 L171 -10 C172 -29 164 -47 153 -60Z" />
+          <path d="M151 28 C158 39 157 47 152 54 L174 35 C169 30 161 27 151 28Z" />
+        </g>
+        <g fill="none" stroke="white" stroke-width="13" stroke-linecap="round">
+          <path d="M-166 54 L-139 61" />
+          <path d="M-172 84 L-145 83" />
+          <path d="M-158 116 L-135 102" />
+          <path d="M-126 137 L-112 111" />
+          <path d="M-87 128 L-96 104" />
+          <path d="M-68 92 L-95 87" />
+        </g>
+      </mask>
+
+      <mask id="qc-light-stripes" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse"
+            x="-210" y="-105" width="430" height="290">
+        <rect x="-210" y="-105" width="430" height="290" fill="black" />
+        <g fill="none" stroke="white" stroke-width="4.5" stroke-linecap="round">
+          <path d="M-49 -42 C-34 -24 -42 -5 -31 12 C-21 29 -27 48 -35 59" />
+          <path d="M15 -56 C29 -36 22 -15 34 2 C47 21 40 46 33 61" />
+          <path d="M83 -45 C97 -27 91 -9 104 7 C116 24 111 43 103 54" />
+          <path d="M111 -72 C122 -56 124 -43 121 -34" />
+          <path d="M150 -55 C160 -40 161 -25 158 -15" />
+          <path d="M-165 58 L-140 65" />
+          <path d="M-155 120 L-132 105" />
+          <path d="M-84 131 L-93 107" />
+        </g>
+      </mask>
+    </defs>
+
+    <use href="#qc-world-paint" />
+
+    <g data-qc-chameleon opacity="0">
+      <ellipse class="qc-branch-shadow" cx="-2" cy="87" rx="137" ry="15" />
+
+      <g data-qc-outline-layer>
+        <path class="qc-chameleon-underlay" d="M-82 20 C-73 -15 -48 -41 -8 -52 C33 -63 78 -54 106 -34 C126 -20 135 1 128 23 C118 53 78 68 30 68 C-16 68 -59 52 -83 32Z"
+              fill="#203a35" stroke-width="7" />
+        <path class="qc-chameleon-underlay" d="M84 -27 C92 -46 107 -61 126 -65 C149 -69 169 -53 180 -32 C188 -17 191 2 188 16 C185 28 174 35 158 36 C151 51 136 60 118 58 C99 55 88 43 82 28 C77 13 78 -10 84 -27Z"
+              fill="#203a35" stroke-width="7" />
+        <path class="qc-chameleon-underlay" d="M92 -38 C99 -71 116 -91 135 -92 C152 -72 162 -47 163 -24 C141 -38 116 -44 92 -38Z"
+              fill="#203a35" stroke-width="7" />
+        <path class="qc-chameleon-underlay" d="M-68 -23 L-60 -38 L-51 -34 L-42 -49 L-32 -44 L-21 -58 L-10 -52 L3 -67 L15 -58 L29 -72 L42 -58 L56 -69 L68 -54 L80 -60 L89 -42Z"
+              fill="#203a35" stroke-width="6" />
+        <path class="qc-chameleon-underlay" d="M-74 18 C-118 2 -158 21 -166 56 C-176 99 -144 130 -106 126 C-70 122 -50 91 -61 66 C-72 42 -101 39 -118 55 C-135 70 -128 96 -109 100 C-91 104 -78 90 -82 76 C-85 64 -98 61 -106 69"
+              stroke-width="41" />
+        <path class="qc-chameleon-underlay" data-qc-leg="rear-far" d="M-37 27 Q-55 49 -45 65 Q-34 78 -9 76" stroke-width="23" />
+        <path class="qc-chameleon-underlay" data-qc-leg="front-far" d="M72 22 Q51 43 61 59 Q74 72 104 68" stroke-width="23" />
+        <path class="qc-chameleon-underlay" data-qc-leg="rear-near" d="M-29 35 Q-3 46 -13 67 Q-20 82 5 85 L30 82" stroke-width="26" />
+        <path class="qc-chameleon-underlay" data-qc-leg="rear-near" d="M28 82 L42 73 M29 82 L44 82 M28 83 L40 91" stroke-width="11" />
+        <path class="qc-chameleon-underlay" data-qc-leg="front-near" d="M75 31 Q50 48 65 66 Q78 82 105 80 L132 76" stroke-width="26" />
+        <path class="qc-chameleon-underlay" data-qc-leg="front-near" d="M130 76 L145 67 M131 76 L147 76 M130 77 L143 85" stroke-width="11" />
+      </g>
+
+      <g mask="url(#qc-chameleon-mask)">
+        <use href="#qc-world-paint" data-qc-camo-world filter="url(#qc-skin-base)" />
+        <rect x="-210" y="-105" width="430" height="290" fill="#72c778" opacity="0.70" />
+        <g mask="url(#qc-dark-stripes)">
+          <use href="#qc-world-paint" data-qc-camo-world filter="url(#qc-stripe-dark)" />
+        </g>
+        <g mask="url(#qc-light-stripes)">
+          <use href="#qc-world-paint" data-qc-camo-world filter="url(#qc-stripe-light)" />
+        </g>
+      </g>
+
+      <g data-qc-tongue opacity="0">
+        <path class="qc-tongue-line" data-qc-tongue-line d="M185 14 Q160 10 135 14" />
+        <path class="qc-tongue-highlight" data-qc-tongue-highlight d="M185 12 Q160 8 135 12" />
+        <ellipse class="qc-tongue-tip" data-qc-tongue-tip cx="135" cy="14" rx="8" ry="4.5" />
+      </g>
+
+      <g data-qc-outline-layer>
+        <path class="qc-chameleon-outline" d="M-82 20 C-73 -15 -48 -41 -8 -52 C33 -63 78 -54 106 -34 C126 -20 135 1 128 23 C118 53 78 68 30 68 C-16 68 -59 52 -83 32Z" />
+        <path class="qc-chameleon-outline" d="M84 -27 C92 -46 107 -61 126 -65 C149 -69 169 -53 180 -32 C188 -17 191 2 188 16 C185 28 174 35 158 36 C151 51 136 60 118 58 C99 55 88 43 82 28 C77 13 78 -10 84 -27Z" />
+        <path class="qc-chameleon-outline" d="M92 -38 C99 -71 116 -91 135 -92 C152 -72 162 -47 163 -24" />
+        <path class="qc-chameleon-outline" d="M-68 -23 L-60 -38 L-51 -34 L-42 -49 L-32 -44 L-21 -58 L-10 -52 L3 -67 L15 -58 L29 -72 L42 -58 L56 -69 L68 -54 L80 -60 L89 -42" />
+
+        <path class="qc-chameleon-detail" data-qc-leg="rear-far" d="M-37 27 Q-55 49 -45 65" opacity="0.34" />
+        <path class="qc-chameleon-detail" data-qc-leg="front-far" d="M72 22 Q51 43 61 59" opacity="0.34" />
+        <path class="qc-chameleon-detail" data-qc-leg="rear-near" d="M-45 28 Q-35 30 -29 35 Q-3 46 -13 67" />
+        <path class="qc-chameleon-detail" data-qc-leg="rear-near" d="M-13 67 Q-20 82 5 85" opacity="0.68" />
+        <path class="qc-chameleon-detail" data-qc-leg="front-near" d="M90 20 Q82 25 75 31 Q50 48 65 66" />
+        <path class="qc-chameleon-detail" data-qc-leg="front-near" d="M65 66 Q78 82 105 80" opacity="0.68" />
+
+        <path class="qc-chameleon-detail" d="M126 26 C145 28 169 23 187 14" />
+        <path class="qc-chameleon-detail" d="M119 42 Q141 53 160 36" />
+        <path class="qc-chameleon-detail" d="M94 31 Q104 51 124 56" opacity="0.78" />
+        <path class="qc-chameleon-detail" d="M106 -34 Q130 -47 153 -32" />
+        <path class="qc-chameleon-detail" d="M-46 -38 Q-7 -18 30 -40" opacity="0.44" />
+        <circle class="qc-nostril" cx="175" cy="1" r="2.7" />
+
+        <g opacity="0.78">
+          <circle class="qc-chameleon-scale" cx="-51" cy="25" r="3.3" />
+          <circle class="qc-chameleon-scale" cx="-21" cy="13" r="2.8" />
+          <circle class="qc-chameleon-scale" cx="9" cy="27" r="3.2" />
+          <circle class="qc-chameleon-scale" cx="39" cy="12" r="2.9" />
+          <circle class="qc-chameleon-scale" cx="68" cy="26" r="3.2" />
+          <circle class="qc-chameleon-scale" cx="105" cy="17" r="2.5" />
+          <circle class="qc-chameleon-scale" cx="151" cy="7" r="3.1" />
+          <circle class="qc-chameleon-scale" cx="160" cy="16" r="2.5" />
+          <circle class="qc-chameleon-scale" cx="148" cy="21" r="2.2" />
+        </g>
+
+        <g data-qc-eye>
+          <circle class="qc-eye-turret" cx="133" cy="-14" r="19" />
+          <circle class="qc-eye-white" cx="133" cy="-14" r="12.5" />
+          <circle class="qc-eye-iris" cx="133" cy="-14" r="7.5" />
+          <circle class="qc-eye-pupil" data-qc-pupil cx="138" cy="-14" r="4" />
+        </g>
+      </g>
+    </g>
+
+    <g data-qc-butterfly>
+      <ellipse class="qc-butterfly-wing" data-qc-wing="left" cx="-7" cy="-3" rx="9" ry="5" transform="rotate(28 -7 -3)" />
+      <ellipse class="qc-butterfly-wing" data-qc-wing="right" cx="7" cy="-3" rx="9" ry="5" transform="rotate(-28 7 -3)" />
+      <ellipse class="qc-butterfly-body" cx="0" cy="1" rx="2" ry="7" />
+    </g>
+
+    <g transform="translate(1006 22)" opacity="0.82" aria-hidden="true">
+      <rect width="170" height="38" rx="19" fill="#173943" opacity="0.72" />
+      <text x="85" y="25.5"
+            text-anchor="middle"
+            fill="#ffffff"
+            font-family="Inter, system-ui, sans-serif"
+            font-size="18"
+            font-weight="700"
+            letter-spacing="0.3">@NeutrinoHit</text>
+    </g>
+  </svg>
+  <span class="qc-metaphor-note" aria-hidden="true">
+    <strong>Метафора:</strong> один объект — разные проявления.
+    <strong>Не буквально:</strong> у нейтрино осциллируют вероятности, а не цвет.
+  </span>
+  <span class="qc-replay-hint" aria-hidden="true"><span>↻</span> повторить 30 с</span>
+</div>
+
+<script src="assets/05_vacuum_oscillations/quantum_chameleon.js"></script>
+```

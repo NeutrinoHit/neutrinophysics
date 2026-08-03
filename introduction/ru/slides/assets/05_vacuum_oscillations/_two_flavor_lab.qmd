@@ -1,0 +1,407 @@
+```{=html}
+<style>
+.two-flavor-lab {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+  width: min(1160px, 100%);
+  margin: 0.25rem auto 0;
+  color: #f3f5f7;
+  font-size: 19px;
+}
+
+.two-flavor-lab__controls,
+.two-flavor-lab__plot {
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  background: rgba(7, 11, 17, 0.92);
+}
+
+.two-flavor-lab__controls {
+  padding: 16px 18px;
+}
+
+.two-flavor-lab__plot {
+  position: relative;
+  padding: 8px 12px 4px;
+}
+
+.two-flavor-lab__axis-title {
+  position: absolute;
+  right: 38px;
+  bottom: 7px;
+  color: #ffffff;
+  font-family: system-ui, sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  line-height: 1;
+}
+
+.two-flavor-lab__control + .two-flavor-lab__control {
+  margin-top: 17px;
+}
+
+.two-flavor-lab__control label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 6px;
+  color: #dbe2ea;
+}
+
+.two-flavor-lab__control output {
+  color: #7cc7ff;
+  font-weight: 750;
+  font-variant-numeric: tabular-nums;
+}
+
+.two-flavor-lab input[type="range"] {
+  width: 100%;
+  accent-color: #58b8ff;
+}
+
+.two-flavor-lab__derived {
+  margin-top: 15px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(124, 199, 255, 0.09);
+  color: #dbe2ea;
+  text-align: center;
+}
+
+.two-flavor-lab__derived strong {
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+}
+
+.two-flavor-lab__probabilities {
+  margin-top: 16px;
+}
+
+.two-flavor-lab__probability + .two-flavor-lab__probability {
+  margin-top: 11px;
+}
+
+.two-flavor-lab__probability-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-size: 0.84em;
+}
+
+.two-flavor-lab__probability-head strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.two-flavor-lab__track {
+  height: 13px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.two-flavor-lab__fill {
+  height: 100%;
+  border-radius: inherit;
+  transition: width 80ms linear;
+}
+
+.two-flavor-lab__fill--appearance {
+  background: #58b8ff;
+}
+
+.two-flavor-lab__fill--survival {
+  background: #ffc85c;
+}
+
+.two-flavor-lab__hint {
+  margin-top: 15px;
+  color: #aeb9c7;
+  font-size: 0.76em;
+  line-height: 1.25;
+}
+
+.two-flavor-lab__svg {
+  display: block;
+  width: 100%;
+  height: 410px;
+}
+
+.two-flavor-lab__axis,
+.two-flavor-lab__tick {
+  stroke: rgba(255, 255, 255, 0.58);
+  stroke-width: 1.5;
+}
+
+.two-flavor-lab__grid {
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-width: 1;
+}
+
+.two-flavor-lab__curve {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 4.5;
+}
+
+.two-flavor-lab__curve--appearance {
+  stroke: #58b8ff;
+}
+
+.two-flavor-lab__curve--survival {
+  stroke: #ffc85c;
+}
+
+.two-flavor-lab__cursor {
+  stroke: #7ee2ae;
+  stroke-width: 2;
+  stroke-dasharray: 7 7;
+}
+
+.two-flavor-lab__point {
+  stroke: #07111a;
+  stroke-width: 2.5;
+}
+
+.two-flavor-lab__point--appearance {
+  fill: #58b8ff;
+}
+
+.two-flavor-lab__point--survival {
+  fill: #ffc85c;
+}
+
+.two-flavor-lab__text {
+  fill: #cfd7e2;
+  font-family: system-ui, sans-serif;
+  font-size: 17px;
+}
+
+.two-flavor-lab__text--axis {
+  fill: #ffffff;
+  font-size: 21px;
+  font-style: italic;
+}
+
+.two-flavor-lab__text--appearance {
+  fill: #58b8ff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.two-flavor-lab__text--survival {
+  fill: #ffc85c;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .two-flavor-lab {
+    grid-template-columns: 270px minmax(0, 1fr);
+    gap: 12px;
+    font-size: 16px;
+  }
+
+  .two-flavor-lab__controls {
+    padding: 12px;
+  }
+
+  .two-flavor-lab__svg {
+    height: 365px;
+  }
+}
+</style>
+
+<div class="two-flavor-lab" data-two-flavor-lab>
+  <div class="two-flavor-lab__controls">
+    <div class="two-flavor-lab__control">
+      <label>
+        <span>Угол смешивания <i>θ</i></span>
+        <output data-theta-output>30.0°</output>
+      </label>
+      <input data-theta-input type="range" min="0" max="45" step="0.5" value="30"
+             aria-label="Угол смешивания в градусах">
+    </div>
+
+    <div class="two-flavor-lab__derived">
+      Амплитуда<br>
+      <strong><i>A</i> = sin²2<i>θ</i> = <span data-amplitude-output>0.750</span></strong>
+    </div>
+
+    <div class="two-flavor-lab__control">
+      <label>
+        <span>Пройденный путь</span>
+        <output data-distance-output>0.25 <i>L</i><sub>osc</sub></output>
+      </label>
+      <input data-distance-input type="range" min="0" max="2" step="0.01" value="0.25"
+             aria-label="Расстояние в единицах длины осцилляций">
+    </div>
+
+    <div class="two-flavor-lab__probabilities">
+      <div class="two-flavor-lab__probability">
+        <div class="two-flavor-lab__probability-head">
+          <span><i>P</i><sub>α→β</sub></span>
+          <strong data-appearance-output>0.375</strong>
+        </div>
+        <div class="two-flavor-lab__track">
+          <div class="two-flavor-lab__fill two-flavor-lab__fill--appearance"
+               data-appearance-fill style="width: 37.5%"></div>
+        </div>
+      </div>
+
+      <div class="two-flavor-lab__probability">
+        <div class="two-flavor-lab__probability-head">
+          <span><i>P</i><sub>α→α</sub></span>
+          <strong data-survival-output>0.625</strong>
+        </div>
+        <div class="two-flavor-lab__track">
+          <div class="two-flavor-lab__fill two-flavor-lab__fill--survival"
+               data-survival-fill style="width: 62.5%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-flavor-lab__hint">
+      Здесь <i>x</i> = <i>L</i>/<i>L</i><sub>osc</sub>, поэтому
+      <i>P</i><sub>α→β</sub> = <i>A</i> sin²(π<i>x</i>).
+      Угол задаёт высоту, путь — положение на осцилляции.
+    </div>
+  </div>
+
+  <div class="two-flavor-lab__plot">
+    <svg class="two-flavor-lab__svg" viewBox="0 0 800 410"
+         role="img" aria-label="Интерактивные вероятности появления и выживания">
+      <line class="two-flavor-lab__grid" x1="62" y1="70" x2="752" y2="70"></line>
+      <line class="two-flavor-lab__grid" x1="62" y1="205" x2="752" y2="205"></line>
+      <line class="two-flavor-lab__axis" x1="62" y1="340" x2="752" y2="340"></line>
+      <line class="two-flavor-lab__axis" x1="62" y1="340" x2="62" y2="58"></line>
+
+      <g aria-hidden="true">
+        <line class="two-flavor-lab__tick" x1="62" y1="340" x2="62" y2="349"></line>
+        <line class="two-flavor-lab__tick" x1="234.5" y1="340" x2="234.5" y2="349"></line>
+        <line class="two-flavor-lab__tick" x1="407" y1="340" x2="407" y2="349"></line>
+        <line class="two-flavor-lab__tick" x1="579.5" y1="340" x2="579.5" y2="349"></line>
+        <line class="two-flavor-lab__tick" x1="752" y1="340" x2="752" y2="349"></line>
+        <text class="two-flavor-lab__text" x="62" y="374" text-anchor="middle">0</text>
+        <text class="two-flavor-lab__text" x="234.5" y="374" text-anchor="middle">1/2</text>
+        <text class="two-flavor-lab__text" x="407" y="374" text-anchor="middle">1</text>
+        <text class="two-flavor-lab__text" x="579.5" y="374" text-anchor="middle">3/2</text>
+        <text class="two-flavor-lab__text" x="752" y="374" text-anchor="middle">2</text>
+        <text class="two-flavor-lab__text" x="44" y="346" text-anchor="end">0</text>
+        <text class="two-flavor-lab__text" x="44" y="211" text-anchor="end">1/2</text>
+        <text class="two-flavor-lab__text" x="44" y="76" text-anchor="end">1</text>
+        <text class="two-flavor-lab__text two-flavor-lab__text--axis" x="24" y="48">P</text>
+      </g>
+
+      <path class="two-flavor-lab__curve two-flavor-lab__curve--appearance"
+            data-appearance-path></path>
+      <path class="two-flavor-lab__curve two-flavor-lab__curve--survival"
+            data-survival-path></path>
+      <line class="two-flavor-lab__cursor" data-cursor y1="58" y2="340"></line>
+      <circle class="two-flavor-lab__point two-flavor-lab__point--appearance"
+              data-appearance-point r="7"></circle>
+      <circle class="two-flavor-lab__point two-flavor-lab__point--survival"
+              data-survival-point r="7"></circle>
+      <text class="two-flavor-lab__text two-flavor-lab__text--appearance"
+            data-appearance-label x="265" y="124">P<tspan baseline-shift="sub" font-size="14">α→β</tspan></text>
+      <text class="two-flavor-lab__text two-flavor-lab__text--survival"
+            data-survival-label x="265" y="302">P<tspan baseline-shift="sub" font-size="14">α→α</tspan></text>
+    </svg>
+    <div class="two-flavor-lab__axis-title"><i>L</i> / <i>L</i><sub>osc</sub></div>
+  </div>
+</div>
+
+<script>
+(() => {
+  const X0 = 62;
+  const X1 = 752;
+  const Y0 = 340;
+  const Y1 = 70;
+
+  const plotX = x => X0 + (X1 - X0) * x / 2;
+  const plotY = probability => Y0 - (Y0 - Y1) * probability;
+
+  function probability(amplitude, x) {
+    return amplitude * Math.sin(Math.PI * x) ** 2;
+  }
+
+  function makePath(amplitude, survival) {
+    const points = [];
+    for (let index = 0; index <= 240; index += 1) {
+      const x = 2 * index / 240;
+      const appearance = probability(amplitude, x);
+      const value = survival ? 1 - appearance : appearance;
+      points.push(`${index === 0 ? "M" : "L"}${plotX(x).toFixed(2)},${plotY(value).toFixed(2)}`);
+    }
+    return points.join(" ");
+  }
+
+  function initialize(root) {
+    if (root.dataset.twoFlavorReady === "true") return;
+    root.dataset.twoFlavorReady = "true";
+
+    const thetaInput = root.querySelector("[data-theta-input]");
+    const distanceInput = root.querySelector("[data-distance-input]");
+    const thetaOutput = root.querySelector("[data-theta-output]");
+    const distanceOutput = root.querySelector("[data-distance-output]");
+    const amplitudeOutput = root.querySelector("[data-amplitude-output]");
+    const appearanceOutput = root.querySelector("[data-appearance-output]");
+    const survivalOutput = root.querySelector("[data-survival-output]");
+    const appearanceFill = root.querySelector("[data-appearance-fill]");
+    const survivalFill = root.querySelector("[data-survival-fill]");
+    const appearancePath = root.querySelector("[data-appearance-path]");
+    const survivalPath = root.querySelector("[data-survival-path]");
+    const cursor = root.querySelector("[data-cursor]");
+    const appearancePoint = root.querySelector("[data-appearance-point]");
+    const survivalPoint = root.querySelector("[data-survival-point]");
+    const appearanceLabel = root.querySelector("[data-appearance-label]");
+    const survivalLabel = root.querySelector("[data-survival-label]");
+
+    function draw() {
+      const thetaDegrees = Number(thetaInput.value);
+      const theta = thetaDegrees * Math.PI / 180;
+      const x = Number(distanceInput.value);
+      const amplitude = Math.sin(2 * theta) ** 2;
+      const appearance = probability(amplitude, x);
+      const survival = 1 - appearance;
+      const cursorX = plotX(x);
+
+      thetaOutput.textContent = `${thetaDegrees.toFixed(1)}°`;
+      distanceOutput.innerHTML = `${x.toFixed(2)} <i>L</i><sub>osc</sub>`;
+      amplitudeOutput.textContent = amplitude.toFixed(3);
+      appearanceOutput.textContent = appearance.toFixed(3);
+      survivalOutput.textContent = survival.toFixed(3);
+      appearanceFill.style.width = `${(100 * appearance).toFixed(1)}%`;
+      survivalFill.style.width = `${(100 * survival).toFixed(1)}%`;
+
+      appearancePath.setAttribute("d", makePath(amplitude, false));
+      survivalPath.setAttribute("d", makePath(amplitude, true));
+      cursor.setAttribute("x1", cursorX.toFixed(2));
+      cursor.setAttribute("x2", cursorX.toFixed(2));
+      appearancePoint.setAttribute("cx", cursorX.toFixed(2));
+      appearancePoint.setAttribute("cy", plotY(appearance).toFixed(2));
+      survivalPoint.setAttribute("cx", cursorX.toFixed(2));
+      survivalPoint.setAttribute("cy", plotY(survival).toFixed(2));
+      appearanceLabel.setAttribute("y", Math.max(82, plotY(amplitude) - 14).toFixed(2));
+      survivalLabel.setAttribute("y", Math.min(326, plotY(1 - amplitude) + 52).toFixed(2));
+    }
+
+    thetaInput.addEventListener("input", draw);
+    distanceInput.addEventListener("input", draw);
+    draw();
+  }
+
+  function initializeAll() {
+    document.querySelectorAll("[data-two-flavor-lab]").forEach(initialize);
+  }
+
+  initializeAll();
+  document.addEventListener("DOMContentLoaded", initializeAll, {once: true});
+})();
+</script>
+```

@@ -1,0 +1,38 @@
+.reveal .slides section.lecture-summary-tight {
+  font-size: 0.84em;
+}
+
+.reveal .slides section.lecture-summary-tight > h2 {
+  font-size: calc(1.6em / 0.84);
+}
+
+.lecture-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.52rem;
+  margin-top: 0.42rem;
+}
+
+.lecture-summary-card {
+  min-width: 0;
+  padding: 0.46rem 0.62rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 0.35rem;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.lecture-summary-card:last-child {
+  grid-column: 1 / -1;
+}
+
+.lecture-summary-number {
+  display: inline-block;
+  min-width: 1.25em;
+  margin-right: 0.22rem;
+  color: #58b8ff;
+  font-weight: 750;
+}
+
+.lecture-summary-card strong {
+  color: #ffd166;
+}
