@@ -40,7 +40,8 @@ toc: false
       </summary>
       <div class="lecture-row-body">
         <div class="lecture-links">
-          <a href="../../Introduction/index.html">Открыть слайды</a>
+          <a href="01_neutrino_101.html">Открыть слайды</a>
+          <a href="../exercises/01_neutrino_101_exercises.html">Задачи</a>
         </div>
       </div>
     </details>
@@ -52,7 +53,8 @@ toc: false
       </summary>
       <div class="lecture-row-body">
         <div class="lecture-links">
-          <a href="../../Parity/index.html">Открыть слайды</a>
+          <a href="02_parity.html">Открыть слайды</a>
+          <a href="../exercises/02_parity_exercises.html">Задачи</a>
         </div>
       </div>
     </details>
@@ -64,7 +66,8 @@ toc: false
       </summary>
       <div class="lecture-row-body">
         <div class="lecture-links">
-          <a href="../../Helicity/index.html">Открыть слайды</a>
+          <a href="03_helicity.html">Открыть слайды</a>
+          <a href="../exercises/03_helicity_exercises.html">Задачи</a>
         </div>
       </div>
     </details>

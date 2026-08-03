@@ -41,7 +41,8 @@ toc: false
       <div class="lecture-row-body">
       <p>Основные свойства, история открытия и открытые вопросы.</p>
         <div class="lecture-links">
-          <a href="Introduction/index.html">Открыть лекцию</a>
+          <a href="ru/slides/01_neutrino_101.html">Открыть лекцию</a>
+          <a href="ru/exercises/01_neutrino_101_exercises.html">Задачи</a>
         </div>
       </div>
     </details>
@@ -54,7 +55,8 @@ toc: false
       <div class="lecture-row-body">
       <p>Пространственная четность и слабые взаимодействия.</p>
         <div class="lecture-links">
-          <a href="Parity/index.html">Открыть лекцию</a>
+          <a href="ru/slides/02_parity.html">Открыть лекцию</a>
+          <a href="ru/exercises/02_parity_exercises.html">Задачи</a>
         </div>
       </div>
     </details>
@@ -67,7 +69,8 @@ toc: false
       <div class="lecture-row-body">
       <p>Спин, поляризация и спиральность нейтрино.</p>
         <div class="lecture-links">
-          <a href="Helicity/index.html">Открыть лекцию</a>
+          <a href="ru/slides/03_helicity.html">Открыть лекцию</a>
+          <a href="ru/exercises/03_helicity_exercises.html">Задачи</a>
         </div>
       </div>
     </details>

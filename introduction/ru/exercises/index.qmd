@@ -1,0 +1,27 @@
+---
+title: "Задачи к курсу"
+subtitle: "Введение в физику нейтрино"
+author: "Дмитрий В. Наумов"
+format:
+  html:
+    toc: true
+    toc-title: "Задачи"
+---
+
+[← Вернуться к курсу](../../index.html)
+
+# Задачи
+
+{{< include ../../_includes/exercises/01_neutrino_101-ru.qmd >}}
+
+---
+
+{{< include ../../_includes/exercises/02_parity-ru.qmd >}}
+
+---
+
+{{< include ../../_includes/exercises/03_helicity-ru.qmd >}}
+
+---
+
+{{< include ../../_includes/exercises/04_direct_neutrino_mass-ru.qmd >}}
