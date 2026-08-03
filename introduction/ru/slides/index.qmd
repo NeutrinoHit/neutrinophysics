@@ -189,7 +189,6 @@ toc: false
       <div class="lecture-row-body">
         <div class="lecture-links">
           <a href="13_solar_neutrinos.html">Открыть слайды</a>
-          <a href="../exercises/13_solar_neutrinos_exercises.html">Задачи</a>
         </div>
       </div>
     </details>

@@ -202,7 +202,6 @@ toc: false
       <p>Модель Солнца, спектры, сечения, эксперименты и фит данных.</p>
         <div class="lecture-links">
           <a href="ru/slides/13_solar_neutrinos.html">Открыть лекцию</a>
-          <a href="ru/exercises/13_solar_neutrinos_exercises.html">Задачи</a>
         </div>
       </div>
     </details>
