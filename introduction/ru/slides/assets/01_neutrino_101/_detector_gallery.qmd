@@ -1,0 +1,9 @@
+```{=html}
+<div class="detector-grid" aria-label="Эксперименты с солнечными нейтрино">
+  <figure class="detector-card"><img src="assets/01_neutrino_101/homestake.png" alt="Подземная лаборатория Homestake"><figcaption><strong>Homestake<br>США</strong></figcaption></figure>
+  <figure class="detector-card"><img src="assets/01_neutrino_101/sage.png" alt="Схема расположения эксперимента SAGE"><figcaption><strong>SAGE<br>СССР / Россия</strong></figcaption></figure>
+  <figure class="detector-card"><img src="assets/01_neutrino_101/super_kamiokande.png" alt="Внутренний объём Super-Kamiokande"><figcaption><strong>Super-Kamiokande<br>Япония</strong></figcaption></figure>
+  <figure class="detector-card"><img src="assets/01_neutrino_101/sno.png" alt="Детектор SNO"><figcaption><strong>SNO<br>Канада</strong></figcaption></figure>
+  <figure class="detector-card"><img src="assets/01_neutrino_101/borexino.png" alt="Подземная установка Borexino"><figcaption><strong>Borexino<br>Италия</strong></figcaption></figure>
+</div>
+```

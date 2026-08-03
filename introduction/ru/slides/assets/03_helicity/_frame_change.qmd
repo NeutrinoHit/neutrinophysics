@@ -1,0 +1,30 @@
+```{=html}
+<div class="frame-change helicity-animated" aria-label="Смена спиральности при переходе в систему отсчёта, обгоняющую массивную частицу">
+  <div class="frame-main">
+    <div class="frame-title">
+      <span class="frame-title-lab">Лабораторная система</span>
+      <span class="frame-title-fast">Наблюдатель обогнал частицу</span>
+    </div>
+    <div class="frame-track">
+      <div class="frame-observer"><span>наблюдатель</span></div>
+      <div class="frame-neutrino">ν</div>
+      <div class="frame-vector frame-spin"><span>\(\mathbf S\)</span></div>
+      <div class="frame-vector frame-momentum-right"><span>\(\mathbf p\)</span></div>
+      <div class="frame-vector frame-momentum-left"><span>\(\mathbf p'\)</span></div>
+    </div>
+    <div class="frame-helicity">
+      <span class="frame-h-plus">\(h=+1\)</span>
+      <span class="frame-h-minus">\(h'=-1\)</span>
+    </div>
+  </div>
+  <div class="frame-massless">
+    <div class="massless-label">безмассовая частица</div>
+    <div class="massless-track">
+      <div class="light-particle">ν</div>
+      <div class="light-front"></div>
+      <div class="light-observer">наблюдатель</div>
+    </div>
+    <div class="massless-note">обогнать нельзя: \(v<c\)</div>
+  </div>
+</div>
+```

@@ -1,0 +1,23 @@
+```{=html}
+<div class="photon-analyzer helicity-animated" aria-label="Измерение круговой поляризации фотонов в намагниченном железе">
+  <div class="analyzer-beam">
+    <div class="analyzer-source">\(\gamma\)</div>
+    <div class="analyzer-wave"></div>
+  </div>
+  <div class="iron-block">
+    <div class="iron-label">намагниченное железо</div>
+    <div class="iron-field"><span>\(\mathbf B\)</span></div>
+    <div class="iron-electrons">
+      <i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+  </div>
+  <div class="analyzer-detector">
+    <div class="detector-face"></div>
+    <div class="detector-label">детектор</div>
+  </div>
+  <div class="analyzer-counts">
+    <div class="count-row"><span>\(+B\)</span><div class="count-bar count-plus"></div><strong>\(N_+\)</strong></div>
+    <div class="count-row"><span>\(-B\)</span><div class="count-bar count-minus"></div><strong>\(N_-\)</strong></div>
+  </div>
+</div>
+```

@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="assets/05_vacuum_oscillations/three_flavor_triangle.css">
 ```
 
-## Три вероятности на одном рисунке {.three-flavor-tight}
+## Три вероятности на одном рисунке {#three-flavor-triangle .three-flavor-tight}
 
 :::: {.panel-tabset .story-tabs}
 

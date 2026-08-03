@@ -1,0 +1,41 @@
+```{=html}
+<div class="sm-layout sm-mass-layout">
+  <div class="sm-particle-map sm-mass-particle-map" aria-label="Стандартная модель с массивными нейтрино">
+    <div class="sm-sector sm-quark-sector">
+      <h3>Кварки</h3>
+      <div class="sm-doublet-row">
+        <div class="sm-doublet-stack" aria-label="Дублет кварков u и d"><div class="sm-doublet quark-doublet">\(\displaystyle\begin{pmatrix}u\\d\end{pmatrix}\)</div></div>
+        <div class="sm-doublet-stack" aria-label="Дублет кварков c и s"><div class="sm-doublet quark-doublet">\(\displaystyle\begin{pmatrix}c\\s\end{pmatrix}\)</div></div>
+        <div class="sm-doublet-stack" aria-label="Дублет кварков t и b"><div class="sm-doublet quark-doublet">\(\displaystyle\begin{pmatrix}t\\b\end{pmatrix}\)</div></div>
+      </div>
+      <div class="sm-multiplicity">\(\times 3\) цвета</div>
+    </div>
+
+    <div class="sm-sector sm-lepton-sector">
+      <h3>Лептоны</h3>
+      <div class="sm-doublet-row">
+        <div class="sm-doublet lepton-doublet" aria-label="Нейтрино nu 1 и электрон">\(\displaystyle\begin{pmatrix}\nu_1\\e\end{pmatrix}\)</div>
+        <div class="sm-doublet lepton-doublet" aria-label="Нейтрино nu 2 и мюон">\(\displaystyle\begin{pmatrix}\nu_2\\\mu\end{pmatrix}\)</div>
+        <div class="sm-doublet lepton-doublet" aria-label="Нейтрино nu 3 и тау-лептон">\(\displaystyle\begin{pmatrix}\nu_3\\\tau\end{pmatrix}\)</div>
+      </div>
+    </div>
+
+    <div class="sm-sector sm-boson-sector">
+      <h3>Бозоны</h3>
+      <div class="sm-boson-row">
+        <div class="sm-boson-cell gauge">\(\gamma\)</div>
+        <div class="sm-boson-cell gauge">\(W^\pm\)</div>
+        <div class="sm-boson-cell gauge">\(Z\)</div>
+        <div class="sm-boson-cell gauge sm-gluon-cell"><span>\(g\)</span><span class="sm-boson-multiplicity">\(\times 8\)</span></div>
+        <div class="sm-boson-cell higgs">\(H\)</div>
+      </div>
+    </div>
+  </div>
+  <div class="sm-pillars sm-mass-note">
+    <p><strong>В свободном распространении:</strong></p>
+    <p>нейтрино имеют определённые массы \(m_1,m_2,m_3\).</p>
+    <p><strong>В слабом взаимодействии:</strong></p>
+    <p>рождаются и детектируются состояния \(\nu_e,\nu_\mu,\nu_\tau\).</p>
+  </div>
+</div>
+```

@@ -1,0 +1,859 @@
+.reveal .neutrino101-statement {
+  display: grid;
+  min-height: 570px;
+  place-items: center;
+  text-align: center;
+}
+
+.reveal .neutrino101-statement p {
+  max-width: 1120px;
+  margin: 0;
+  font-size: 1.35em;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.reveal .matter-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 2.2rem;
+  align-items: center;
+  min-height: 580px;
+}
+
+.reveal .matter-scale {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.reveal .matter-level {
+  display: grid;
+  grid-template-columns: 8.2rem 1fr;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.45rem 0.7rem;
+  border-left: 0.22rem solid #7cc7ff;
+  background: linear-gradient(90deg, rgb(124 199 255 / 18%), transparent);
+}
+
+.reveal .matter-level:nth-child(2) {
+  margin-left: 1.5rem;
+  border-left-color: #7bdcb5;
+}
+
+.reveal .matter-level:nth-child(3) {
+  margin-left: 3rem;
+  border-left-color: #ffd166;
+}
+
+.reveal .matter-level:nth-child(4) {
+  margin-left: 4.5rem;
+  border-left-color: #ff8fab;
+}
+
+.reveal .matter-level .scale {
+  color: #d0d0d0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.72em;
+}
+
+.reveal .matter-summary {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid #3b5567;
+  border-radius: 0.5rem;
+  background: #09131b;
+}
+
+.reveal .matter-summary .equation {
+  margin: 0.65rem 0;
+  color: #ffffff;
+  font-size: 1.2em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.reveal .interaction-grid,
+.reveal .weak-interaction-grid {
+  display: grid;
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.reveal .interaction-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.reveal .weak-interaction-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.reveal .interaction-card {
+  text-align: center;
+}
+
+.reveal .interaction-card video {
+  display: block;
+  width: 100%;
+  height: 660px;
+  object-fit: contain;
+  background: #000000;
+}
+
+.reveal .weak-interaction-grid .interaction-card video {
+  height: 600px;
+}
+
+.reveal .interaction-label {
+  margin-top: 0.2rem;
+  color: #d7eafa;
+  font-size: 0.72em;
+  font-weight: 600;
+}
+
+.reveal .classification-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.1rem;
+}
+
+.reveal .particle-family {
+  min-height: 390px;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid #384956;
+  border-radius: 0.55rem;
+  background: #08131a;
+}
+
+.reveal .particle-family h3 {
+  margin-top: 0;
+  color: #8ec5ff;
+}
+
+.reveal .particle-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  justify-content: center;
+  margin-top: 1.2rem;
+}
+
+.reveal .particle-tag {
+  padding: 0.42rem 0.8rem;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #1c435d;
+  font-weight: 650;
+}
+
+.reveal .particle-tag.quark {
+  background: #7b3042;
+}
+
+.reveal .particle-tag.boson {
+  background: #6b4a13;
+}
+
+.reveal .sm-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.reveal .sm-particle-map {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.reveal .sm-sector {
+  padding: 0.45rem 0.65rem 0.5rem;
+  border: 1px solid #344753;
+  border-radius: 0.45rem;
+  background: #08131a;
+}
+
+.reveal .sm-sector h3 {
+  margin: 0 0 0.28rem;
+  color: #ffffff;
+  font-size: 0.72em;
+  letter-spacing: 0.04em;
+}
+
+.reveal .sm-doublet-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.reveal .sm-doublet-stack {
+  position: relative;
+  height: 102px;
+  margin: 10px 12px 0 0;
+}
+
+.reveal .sm-doublet-stack::before,
+.reveal .sm-doublet-stack::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  border: 1px solid;
+  border-radius: 0.35rem;
+}
+
+.reveal .sm-doublet-stack::before {
+  z-index: 0;
+  border-color: #4f8ed8;
+  background: #142f52;
+  transform: translate(12px, -10px);
+}
+
+.reveal .sm-doublet-stack::after {
+  z-index: 1;
+  border-color: #53b58a;
+  background: #153d30;
+  transform: translate(6px, -5px);
+}
+
+.reveal .sm-doublet {
+  display: grid;
+  min-height: 102px;
+  place-items: center;
+  border: 1px solid;
+  border-radius: 0.35rem;
+  font-size: 1.02em;
+  font-weight: 650;
+}
+
+.reveal .sm-doublet mjx-container,
+.reveal .sm-boson-cell mjx-container,
+.reveal .sm-multiplicity mjx-container {
+  margin: 0 !important;
+}
+
+.reveal .quark-doublet {
+  position: relative;
+  z-index: 2;
+  border-color: #df6c85;
+  background: #3a1720;
+}
+
+.reveal .lepton-doublet {
+  border-color: #67b9ee;
+  background: #102d3d;
+}
+
+.reveal .sm-multiplicity {
+  margin-top: 0.22rem;
+  color: #f5c7d1;
+  font-size: 0.62em;
+  font-weight: 650;
+  text-align: center;
+}
+
+.reveal .sm-boson-row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.42rem;
+}
+
+.reveal .sm-boson-cell {
+  display: grid;
+  min-height: 76px;
+  place-items: center;
+  border: 1px solid;
+  border-radius: 0.35rem;
+  font-size: 1em;
+  font-weight: 650;
+}
+
+.reveal .sm-boson-cell.gauge {
+  border-color: #d8a934;
+  background: #33270e;
+}
+
+.reveal .sm-boson-cell.higgs {
+  border-color: #79d0aa;
+  background: #123126;
+}
+
+.reveal .sm-gluon-cell {
+  align-content: center;
+  gap: 0.1rem;
+}
+
+.reveal .sm-boson-multiplicity,
+.reveal .sm-cell-multiplicity {
+  display: block;
+  color: #f0cf7a;
+  font-size: 0.58em;
+  line-height: 1;
+}
+
+.reveal .sm-mass-layout {
+  grid-template-columns: minmax(0, 1.42fr) minmax(0, 0.58fr);
+  gap: 1.6rem;
+}
+
+.reveal .sm-mass-particle-map {
+  gap: 0.42rem;
+}
+
+.reveal .sm-mass-particle-map .sm-sector {
+  padding-block: 0.32rem 0.38rem;
+}
+
+.reveal .sm-mass-particle-map .sm-doublet-stack,
+.reveal .sm-mass-particle-map .sm-doublet {
+  min-height: 102px;
+}
+
+.reveal .sm-mass-particle-map .sm-doublet-stack {
+  height: 102px;
+}
+
+.reveal .sm-mass-note {
+  font-size: 0.85em;
+}
+
+.reveal .sm-board {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.42rem;
+}
+
+.reveal .sm-cell {
+  display: grid;
+  min-height: 78px;
+  padding: 0.3rem;
+  place-items: center;
+  border: 1px solid #40515d;
+  border-radius: 0.35rem;
+  color: #ffffff;
+  background: #101a21;
+  font-size: 1.05em;
+  font-weight: 650;
+}
+
+.reveal .sm-cell.quark {
+  border-color: #e4778d;
+  background: #32151c;
+}
+
+.reveal .sm-cell.lepton {
+  border-color: #75c9ff;
+  background: #102a3a;
+}
+
+.reveal .sm-cell.gauge {
+  border-color: #ffd166;
+  background: #33270e;
+}
+
+.reveal .sm-cell.higgs {
+  border-color: #9be7c4;
+  background: #123126;
+}
+
+.reveal .sm-pillars {
+  margin: 0;
+  padding: 1rem 1rem 1rem 3.2rem;
+  border-left: 0.2rem solid #7cc7ff;
+  background: #08131a;
+}
+
+.reveal .sm-pillars li {
+  margin: 0.7rem 0;
+}
+
+.reveal .pmns-factorization {
+  font-size: 0.92em;
+}
+
+.reveal .pmns-factorization mjx-container[display="true"] {
+  margin: 0.45em 0 0.85em !important;
+}
+
+.reveal .atmo-path-demo {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.35rem 0.5rem 0.55rem;
+  border: 1px solid #314b5e;
+  border-radius: 0.5rem;
+  background: linear-gradient(180deg, #08131d, #050b11);
+  cursor: pointer;
+}
+
+.reveal .atmo-path-demo:focus-visible {
+  outline: 3px solid #7cc7ff;
+  outline-offset: 4px;
+}
+
+.reveal .atmo-earth {
+  display: block;
+  width: 100%;
+  max-height: 365px;
+  overflow: visible;
+}
+
+.reveal .atmo-atmosphere {
+  fill: none;
+  stroke: #7cc7ff;
+  stroke-dasharray: 5 7;
+  stroke-opacity: 0.46;
+  stroke-width: 6;
+}
+
+.reveal .atmo-earth-disc {
+  stroke: #76c8f5;
+  stroke-width: 3;
+}
+
+.reveal .atmo-mantle {
+  fill: none;
+  stroke: #9fdcff;
+  stroke-opacity: 0.18;
+  stroke-width: 2;
+}
+
+.reveal .atmo-core {
+  stroke: #ffd166;
+  stroke-opacity: 0.32;
+  stroke-width: 2;
+}
+
+.reveal .atmo-continent {
+  fill: #68b684;
+  opacity: 0.66;
+}
+
+.reveal .atmo-earth-label {
+  fill: #e7f5ff;
+  font-size: 27px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+
+.reveal .atmo-path-guide {
+  fill: none;
+  stroke-width: 5;
+  stroke-dasharray: 8 8;
+  stroke-linecap: round;
+}
+
+.reveal .atmo-path-guide-short {
+  stroke: #7cc7ff;
+  stroke-opacity: 0.38;
+}
+
+.reveal .atmo-path-guide-long {
+  stroke: #ff9f43;
+  stroke-opacity: 0.3;
+}
+
+.reveal .atmo-path-trace {
+  fill: none;
+  stroke-width: 9;
+  stroke-linecap: round;
+}
+
+.reveal .atmo-path-trace-short {
+  stroke: #7cc7ff;
+}
+
+.reveal .atmo-path-trace-long {
+  stroke: #ff9f43;
+}
+
+.reveal .atmo-source path {
+  fill: #ffe08a;
+}
+
+.reveal .atmo-source text,
+.reveal .atmo-detector-label,
+.reveal .atmo-distance-label {
+  fill: #dcebf4;
+  font-size: 22px;
+  font-weight: 650;
+}
+
+.reveal .atmo-distance-long {
+  fill: #ffc078;
+}
+
+.reveal .atmo-distance-short {
+  fill: #a9dcff;
+}
+
+.reveal .atmo-detector path {
+  fill: #ffffff;
+  stroke: #7cc7ff;
+  stroke-width: 3;
+}
+
+.reveal .atmo-detector circle {
+  fill: #7cc7ff;
+}
+
+.reveal .atmo-neutrino {
+  filter: url(#atmo-neutrino-glow);
+  opacity: 0;
+}
+
+.reveal .atmo-neutrino-short {
+  fill: #d9f3ff;
+  stroke: #7cc7ff;
+  stroke-width: 4;
+}
+
+.reveal .atmo-neutrino-long {
+  fill: #fff0d8;
+  stroke: #ff9f43;
+  stroke-width: 4;
+}
+
+.reveal .atmo-source-sweep {
+  fill: none;
+  stroke: #ffe08a;
+  stroke-dasharray: 4 9;
+  stroke-linecap: round;
+  stroke-opacity: 0.45;
+  stroke-width: 4;
+}
+
+.reveal .atmo-current-path-shadow,
+.reveal .atmo-current-path {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.reveal .atmo-current-path-shadow {
+  stroke: #ff9f43;
+  stroke-opacity: 0.18;
+  stroke-width: 18;
+}
+
+.reveal .atmo-current-path {
+  stroke: #ff9f43;
+  stroke-width: 8;
+}
+
+.reveal .atmo-source-marker path {
+  fill: #ffe08a;
+  stroke: #fff5c2;
+  stroke-width: 2;
+}
+
+.reveal .atmo-source-label,
+.reveal .atmo-sweep-label {
+  fill: #dcebf4;
+  font-size: 20px;
+  font-weight: 650;
+}
+
+.reveal .atmo-sweep-label-min {
+  fill: #9ed7ff;
+}
+
+.reveal .atmo-sweep-label-max {
+  fill: #ffc078;
+}
+
+.reveal .atmo-neutrino-current {
+  fill: #fff0d8;
+  stroke: #ff9f43;
+  stroke-width: 4;
+}
+
+.reveal .atmo-ratio-graph-panel {
+  padding: 0.38rem 0.55rem 0.32rem;
+  border-top: 1px solid #294052;
+}
+
+.reveal .atmo-graph-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) auto auto;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.reveal .atmo-graph-header .atmo-ratio-formula {
+  font-size: 0.54em;
+}
+
+.reveal .atmo-live-value {
+  color: #bdccd5;
+  font-size: 0.43em;
+  white-space: nowrap;
+}
+
+.reveal .atmo-live-value strong {
+  color: #ffb25c;
+}
+
+.reveal .atmo-ratio-graph {
+  display: block;
+  width: 100%;
+  max-height: 165px;
+  overflow: visible;
+}
+
+.reveal .atmo-graph-axis {
+  stroke: #b6c8d4;
+  stroke-width: 2;
+}
+
+.reveal .atmo-graph-expected {
+  stroke: #7cc7ff;
+  stroke-dasharray: 7 6;
+  stroke-opacity: 0.62;
+  stroke-width: 2;
+}
+
+.reveal .atmo-ratio-curve {
+  fill: none;
+  stroke: #ff9f43;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 7;
+}
+
+.reveal .atmo-graph-cursor {
+  stroke: #ffe0b8;
+  stroke-dasharray: 4 5;
+  stroke-opacity: 0.6;
+  stroke-width: 2;
+}
+
+.reveal .atmo-graph-point {
+  fill: #ff9f43;
+  stroke: #ffffff;
+  stroke-width: 4;
+}
+
+.reveal .atmo-graph-tick,
+.reveal .atmo-graph-label {
+  fill: #b9c9d3;
+  font-size: 17px;
+}
+
+.reveal .atmo-graph-label {
+  fill: #9ed7ff;
+  font-size: 16px;
+}
+
+.reveal .atmo-graph-note {
+  margin-top: -0.08rem;
+  color: #94a8b5;
+  font-size: 0.32em;
+  text-align: right;
+}
+
+.reveal .atmo-ratio-panel {
+  display: grid;
+  grid-template-columns: 1.35fr 0.55fr;
+  gap: 0.15rem 0.65rem;
+  align-items: center;
+  padding: 0.45rem 0.65rem 0.55rem;
+  border-top: 1px solid #294052;
+}
+
+.reveal .atmo-ratio-formula {
+  color: #ffffff;
+  font-size: 0.62em;
+}
+
+.reveal .atmo-ratio-readout {
+  color: #ffb25c;
+  font-size: 0.95em;
+  font-weight: 750;
+  text-align: right;
+}
+
+.reveal .atmo-ratio-scale {
+  position: relative;
+  grid-column: 1 / -1;
+  height: 12px;
+  margin: 0.62rem 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff9f43, #ffd166 48%, #7cc7ff);
+}
+
+.reveal .atmo-ratio-dot {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 24px;
+  height: 24px;
+  border: 4px solid #ffffff;
+  border-radius: 50%;
+  background: #ff9f43;
+  box-shadow: 0 0 14px rgb(255 159 67 / 75%);
+  transform: translate(-50%, -50%);
+}
+
+.reveal .atmo-ratio-tick,
+.reveal .atmo-ratio-expected {
+  position: absolute;
+  color: #b9c9d3;
+  font-size: 17px;
+  line-height: 1;
+}
+
+.reveal .atmo-ratio-tick {
+  top: 19px;
+}
+
+.reveal .atmo-ratio-tick-one {
+  left: 0;
+  transform: translateX(-50%);
+}
+
+.reveal .atmo-ratio-tick-two {
+  right: 0;
+  transform: translateX(50%);
+}
+
+.reveal .atmo-ratio-expected {
+  right: 0;
+  bottom: 19px;
+  color: #9ed7ff;
+}
+
+.reveal .atmo-ratio-state {
+  display: flex;
+  grid-column: 1 / -1;
+  gap: 0.5rem;
+  justify-content: space-between;
+  color: #c4d3dc;
+  font-size: 0.46em;
+}
+
+.reveal .atmo-path-demo[data-atmo-mode="short"] .atmo-ratio-state strong {
+  color: #9ed7ff;
+}
+
+.reveal .atmo-path-demo[data-atmo-mode="long"] .atmo-ratio-state strong {
+  color: #ffb96b;
+}
+
+.reveal .detector-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.65rem;
+  align-items: end;
+}
+
+.reveal .detector-card {
+  display: grid;
+  grid-template-rows: 315px auto;
+  gap: 0.35rem;
+  align-items: end;
+  text-align: center;
+}
+
+.reveal .detector-card img {
+  width: 100%;
+  max-height: 315px;
+  object-fit: contain;
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.reveal .detector-card strong {
+  font-size: 0.66em;
+}
+
+.reveal .instrument-grid,
+.reveal .roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1.1rem;
+}
+
+.reveal .instrument-card,
+.reveal .roadmap-card {
+  padding: 0.65rem 0.85rem;
+  border-left: 0.18rem solid #7cc7ff;
+  background: #08131a;
+}
+
+.reveal .instrument-card:nth-child(3n + 2),
+.reveal .roadmap-card:nth-child(3n + 2) {
+  border-left-color: #ffcc8a;
+}
+
+.reveal .instrument-card:nth-child(3n),
+.reveal .roadmap-card:nth-child(3n) {
+  border-left-color: #9be7c4;
+}
+
+.reveal .mass-ordering {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: 1.6rem;
+}
+
+.reveal .ordering-card {
+  padding: 1rem;
+  border: 1px solid #3c4d59;
+  border-radius: 0.5rem;
+  background: #08131a;
+  text-align: center;
+}
+
+.reveal .ordering-levels {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.reveal .ordering-level {
+  height: 0.12rem;
+  background: #7cc7ff;
+}
+
+.reveal .ordering-level.solar {
+  box-shadow: 0 0.35rem 0 #7cc7ff;
+}
+
+.reveal .absolute-mass-question {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.1rem;
+  align-items: center;
+  max-width: 1000px;
+  margin: 2rem auto 0;
+}
+
+.reveal .absolute-mass-question .question-mark {
+  color: #ffcc8a;
+  font-size: 5em;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.reveal .exercise-slide {
+  font-size: 0.9em;
+}
+
+.reveal .exercise-slide .given {
+  margin: 0.8rem 0;
+  padding: 0.65rem 0.85rem;
+  border-left: 0.18rem solid #7cc7ff;
+  background: #08131a;
+}
+
+@media (max-width: 900px) {
+  .reveal .interaction-grid,
+  .reveal .detector-grid,
+  .reveal .sm-layout,
+  .reveal .matter-layout {
+    grid-template-columns: 1fr;
+  }
+}

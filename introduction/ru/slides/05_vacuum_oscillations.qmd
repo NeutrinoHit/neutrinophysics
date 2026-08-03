@@ -124,12 +124,12 @@ $$
 
 # Нейтрино — квантовый хамелеон
 
-## Квантовый хамелеон
+## Квантовый хамелеон {#quantum-chameleon}
 
 
 {{< include assets/05_vacuum_oscillations/_quantum_chameleon.qmd >}}
 
-## Периодичность — в вероятностях
+## Периодичность — в вероятностях {#oscillation-phases}
 
 <video
   class="slide-video media-width-full"
@@ -1538,7 +1538,7 @@ $$
 
 # Практикум: два флэйвора
 
-## Соберите осцилляцию
+## Соберите осцилляцию {#two-flavor-lab}
 
 {{< include assets/05_vacuum_oscillations/_two_flavor_lab.qmd >}}
 

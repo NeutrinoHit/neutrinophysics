@@ -1,0 +1,208 @@
+```{=html}
+<style>
+.action-phase-demo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  width: min(1180px, 100%);
+  height: 390px;
+  margin: 0.2rem auto 0;
+  color: #f2f2f2;
+}
+
+.action-phase-pane {
+  min-width: 0;
+  padding: 0 24px;
+}
+
+.action-phase-pane + .action-phase-pane {
+  border-left: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.action-phase-title {
+  margin-bottom: 2px;
+  color: #ffffff;
+  font-size: 0.92em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.action-phase-subtitle {
+  min-height: 30px;
+  color: #bfc8d4;
+  font-size: 0.68em;
+  text-align: center;
+}
+
+.action-phase-svg {
+  display: block;
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.action-phase-axis {
+  stroke: rgba(255, 255, 255, 0.52);
+  stroke-width: 2;
+}
+
+.action-phase-guide {
+  stroke: rgba(255, 255, 255, 0.24);
+  stroke-width: 1.5;
+  stroke-dasharray: 7 7;
+}
+
+.action-phase-orbit {
+  fill: rgba(78, 161, 255, 0.10);
+  stroke: #4ea1ff;
+  stroke-width: 3;
+}
+
+.action-phase-vector {
+  stroke: #ffad5c;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.action-phase-dot {
+  fill: #ffad5c;
+  stroke: #ffffff;
+  stroke-width: 2.5;
+}
+
+.action-phase-origin {
+  fill: #ffffff;
+}
+
+.action-phase-label {
+  fill: #f2f2f2;
+  font-family: system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 650;
+}
+
+.action-phase-muted {
+  fill: #bfc8d4;
+  font-family: system-ui, sans-serif;
+  font-size: 17px;
+}
+
+.action-phase-equations {
+  margin-top: -0.12rem;
+  text-align: center;
+}
+
+.action-phase-equations .math.display {
+  margin: 0.15em 0;
+}
+</style>
+
+<div class="action-phase-demo" data-action-phase-demo role="img"
+     aria-label="Синхронное движение гармонического осциллятора в обычном и фазовом пространствах">
+  <div class="action-phase-pane">
+    <div class="action-phase-title">Обычное пространство</div>
+    <div class="action-phase-subtitle">Точка движется между двумя точками поворота</div>
+    <svg class="action-phase-svg" viewBox="0 0 560 300" aria-hidden="true">
+      <line class="action-phase-axis" x1="70" y1="150" x2="490" y2="150"></line>
+      <line class="action-phase-guide" x1="280" y1="55" x2="280" y2="235"></line>
+      <line class="action-phase-vector" data-space-vector x1="280" y1="150" x2="455" y2="150"></line>
+      <circle class="action-phase-origin" cx="280" cy="150" r="4"></circle>
+      <circle class="action-phase-dot" data-space-dot cx="455" cy="150" r="11"></circle>
+      <text class="action-phase-muted" x="92" y="180">−A</text>
+      <text class="action-phase-muted" x="272" y="180">0</text>
+      <text class="action-phase-muted" x="448" y="180">A</text>
+      <text class="action-phase-label" data-space-q x="462" y="126">q</text>
+    </svg>
+  </div>
+
+  <div class="action-phase-pane">
+    <div class="action-phase-title">Фазовое пространство</div>
+    <div class="action-phase-subtitle">Точка равномерно обходит замкнутую орбиту</div>
+    <svg class="action-phase-svg" viewBox="0 0 560 300" aria-hidden="true">
+      <line class="action-phase-axis" x1="65" y1="150" x2="500" y2="150"></line>
+      <line class="action-phase-axis" x1="280" y1="270" x2="280" y2="28"></line>
+      <ellipse class="action-phase-orbit" cx="280" cy="150" rx="175" ry="105"></ellipse>
+      <line class="action-phase-guide" data-phase-q-guide x1="455" y1="150" x2="455" y2="150"></line>
+      <line class="action-phase-guide" data-phase-p-guide x1="280" y1="150" x2="455" y2="150"></line>
+      <line class="action-phase-vector" data-phase-vector x1="280" y1="150" x2="455" y2="150"></line>
+      <circle class="action-phase-origin" cx="280" cy="150" r="4"></circle>
+      <circle class="action-phase-dot" data-phase-dot cx="455" cy="150" r="10"></circle>
+      <text class="action-phase-label" x="502" y="143">q</text>
+      <text class="action-phase-label" x="292" y="36">p</text>
+      <text class="action-phase-muted" x="390" y="72">H(q,p)=E</text>
+    </svg>
+  </div>
+</div>
+```
+
+::: {.action-phase-equations}
+$$
+q(t)=A\cos\theta,
+\qquad
+p(t)=-m\omega A\sin\theta,
+\qquad
+\theta=\omega t.
+$$
+:::
+
+```{=html}
+<script>
+(() => {
+  function initialize(root) {
+    if (root.dataset.actionPhaseReady === "true") return;
+    root.dataset.actionPhaseReady = "true";
+
+    const spaceDot = root.querySelector("[data-space-dot]");
+    const spaceVector = root.querySelector("[data-space-vector]");
+    const spaceQ = root.querySelector("[data-space-q]");
+    const phaseDot = root.querySelector("[data-phase-dot]");
+    const phaseVector = root.querySelector("[data-phase-vector]");
+    const qGuide = root.querySelector("[data-phase-q-guide]");
+    const pGuide = root.querySelector("[data-phase-p-guide]");
+    const start = performance.now();
+
+    function draw(now) {
+      if (!document.body.contains(root)) return;
+
+      const slide = root.closest("section");
+      if (!slide || slide.classList.contains("present")) {
+        const theta = 1.15 * (now - start) / 1000;
+        const q = Math.cos(theta);
+        const p = -Math.sin(theta);
+
+        const spaceX = 280 + 175 * q;
+        spaceDot.setAttribute("cx", spaceX.toFixed(2));
+        spaceVector.setAttribute("x2", spaceX.toFixed(2));
+        spaceQ.setAttribute("x", (spaceX + (q >= 0 ? 13 : -30)).toFixed(2));
+
+        const phaseX = 280 + 175 * q;
+        const phaseY = 150 - 105 * p;
+        phaseDot.setAttribute("cx", phaseX.toFixed(2));
+        phaseDot.setAttribute("cy", phaseY.toFixed(2));
+        phaseVector.setAttribute("x2", phaseX.toFixed(2));
+        phaseVector.setAttribute("y2", phaseY.toFixed(2));
+        qGuide.setAttribute("x1", phaseX.toFixed(2));
+        qGuide.setAttribute("x2", phaseX.toFixed(2));
+        qGuide.setAttribute("y1", phaseY.toFixed(2));
+        qGuide.setAttribute("y2", "150");
+        pGuide.setAttribute("x1", "280");
+        pGuide.setAttribute("x2", phaseX.toFixed(2));
+        pGuide.setAttribute("y1", phaseY.toFixed(2));
+        pGuide.setAttribute("y2", phaseY.toFixed(2));
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  function initializeAll() {
+    document.querySelectorAll("[data-action-phase-demo]").forEach(initialize);
+  }
+
+  initializeAll();
+  document.addEventListener("DOMContentLoaded", initializeAll, {once: true});
+})();
+</script>
+```

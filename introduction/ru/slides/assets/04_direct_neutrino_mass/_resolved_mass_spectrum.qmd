@@ -1,0 +1,197 @@
+::: {.spectrum-widget .resolved-spectrum-widget}
+```{ojs}
+//| echo: false
+
+resolvedEndpoint = 18.575
+resolvedXMin = -12.5
+resolvedXMax = -0.05
+
+viewof resolvedMasses = {
+  const control = html`<div class="resolved-mass-controls">
+    <label>
+      <span>${tex`m_1,\ \text{кэВ}`}</span>
+      <output></output>
+      <input name="mass1" type="range"
+        min="0" max="12" step="0.5" value="0">
+    </label>
+    <label>
+      <span>${tex`m_2,\ \text{кэВ}`}</span>
+      <output></output>
+      <input name="mass2" type="range"
+        min="0" max="12" step="0.5" value="0">
+    </label>
+    <label>
+      <span>${tex`m_3,\ \text{кэВ}`}</span>
+      <output></output>
+      <input name="mass3" type="range"
+        min="0" max="12" step="0.5" value="10">
+    </label>
+  </div>`;
+
+  const inputs = [...control.querySelectorAll("input")];
+  const outputs = [...control.querySelectorAll("output")];
+
+  function update(dispatch = true) {
+    control.value = inputs.map(input => Number(input.value));
+    outputs.forEach((output, i) => {
+      output.textContent = String(control.value[i]).replace(".", ",");
+    });
+    if (dispatch) {
+      control.dispatchEvent(new Event("input", {bubbles: true}));
+    }
+  }
+
+  inputs.forEach(input => {
+    input.addEventListener("input", () => update());
+  });
+  update(false);
+  return control;
+}
+
+resolvedWeights = [1 / 3, 1 / 3, 1 / 3]
+
+resolvedPhaseSpace = (x, mass) => {
+  const neutrinoEnergy = -x;
+  if (neutrinoEnergy < mass) return 0;
+  return neutrinoEnergy * Math.sqrt(
+    neutrinoEnergy * neutrinoEnergy - mass * mass
+  );
+}
+
+resolvedRate = x => resolvedMasses.reduce(
+  (sum, mass, i) =>
+    sum + resolvedWeights[i] * resolvedPhaseSpace(x, mass),
+  0
+)
+
+resolvedNorm = resolvedRate(resolvedXMin)
+resolvedX = Array.from({length: 801}, (_, i) =>
+  resolvedXMin + (resolvedXMax - resolvedXMin) * i / 800
+)
+
+resolvedData = resolvedX.map(x => ({
+  x,
+  y: resolvedRate(x) / resolvedNorm
+}))
+
+resolvedComponents = resolvedMasses.map((mass, i) =>
+  resolvedX
+    .map(x => ({
+      x,
+      y: resolvedWeights[i] * resolvedPhaseSpace(x, mass) / resolvedNorm
+    }))
+    .filter(d => d.y > 0)
+)
+
+resolvedThresholds = [...new Set(
+  resolvedMasses
+    .filter(mass => mass > 0)
+    .map(mass => Number(mass.toFixed(1)))
+)]
+
+resolvedSuperscript = value => {
+  const symbols = {
+    "-": "⁻",
+    "0": "⁰",
+    "1": "¹",
+    "2": "²",
+    "3": "³",
+    "4": "⁴",
+    "5": "⁵",
+    "6": "⁶",
+    "7": "⁷",
+    "8": "⁸",
+    "9": "⁹"
+  };
+  return String(value)
+    .split("")
+    .map(character => symbols[character])
+    .join("");
+}
+
+resolvedPowerLabel = value => {
+  const exponent = Math.log10(value);
+  if (Math.abs(exponent - Math.round(exponent)) > 1e-8) return "";
+  return exponent === 0
+    ? "1"
+    : `10${resolvedSuperscript(Math.round(exponent))}`;
+}
+
+resolvedPlot = Plot.plot({
+  width: 1040,
+  height: 270,
+  marginTop: 18,
+  marginRight: 25,
+  marginBottom: 45,
+  marginLeft: 82,
+  style: {
+    background: "#ffffff",
+    color: "#111111",
+    fontSize: "20px"
+  },
+  x: {
+    axis: "bottom",
+    label: null,
+    domain: [resolvedXMin, 0],
+    ticks: 7,
+    grid: true
+  },
+  y: {
+    axis: "left",
+    label: null,
+    type: "log",
+    domain: [1e-3, 1.1],
+    ticks: 7,
+    grid: true,
+    tickFormat: resolvedPowerLabel
+  },
+  marks: [
+    ...resolvedComponents.map(component => Plot.line(component, {
+      x: "x",
+      y: "y",
+      stroke: "#777777",
+      strokeWidth: 2,
+      strokeDasharray: "6,5",
+      clip: true
+    })),
+    Plot.line(resolvedData, {
+      x: "x",
+      y: "y",
+      stroke: "#4ea1ff",
+      strokeWidth: 4,
+      clip: true
+    }),
+    Plot.ruleX(resolvedThresholds.map(mass => -mass), {
+      stroke: "#ffb347",
+      strokeDasharray: "7,5",
+      strokeWidth: 2.5
+    }),
+    Plot.frame({stroke: "#111111"})
+  ]
+})
+
+html`
+<div class="spectrum-panel">
+  <div class="spectrum-legend">
+    <span>
+      <i class="spectrum-swatch spectrum-swatch-massless"></i>
+      сумма
+    </span>
+    <span>
+      <i class="spectrum-swatch" style="background:#777777"></i>
+      вклады ${tex`m_i`}
+    </span>
+    <span>
+      ${tex`|V_{ei}|^2=\frac13`}
+    </span>
+  </div>
+  <div class="spectrum-plot-row">
+    <div class="spectrum-y-label">
+      ${tex`\dfrac{1}{C(E)}\dfrac{d\Gamma}{dE}\;(\text{отн. ед.})`}
+    </div>
+    <div class="spectrum-plot-host">${resolvedPlot}</div>
+  </div>
+  <div class="spectrum-x-label">${tex`E-E_0\;(\text{кэВ})`}</div>
+</div>`
+```
+:::

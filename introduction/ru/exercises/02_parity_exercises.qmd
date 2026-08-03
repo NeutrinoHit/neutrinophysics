@@ -1,0 +1,14 @@
+---
+title: "Задачи: пространственная чётность"
+subtitle: "Введение в физику нейтрино"
+author: "Дмитрий В. Наумов"
+format:
+  html:
+    toc: false
+---
+
+[← Вернуться к лекции](../slides/02_parity.html) · [Все задачи курса](index.html)
+
+# Задачи
+
+{{< include ../../_includes/exercises/02_parity-ru.qmd >}}

@@ -1,0 +1,74 @@
+```{=html}
+<div class="atmo-path-demo" data-atmo-path-demo tabindex="0"
+     aria-label="Анимация короткого пути атмосферного нейтрино и длинного пути сквозь Землю. Для длинного пути отношение мюонных нейтрино к электронным уменьшается.">
+  <svg class="atmo-earth" viewBox="0 0 720 470" role="img" aria-hidden="true">
+    <defs>
+      <radialGradient id="atmo-earth-surface" cx="38%" cy="30%" r="72%">
+        <stop offset="0%" stop-color="#276a91"/>
+        <stop offset="68%" stop-color="#163e62"/>
+        <stop offset="100%" stop-color="#0b2339"/>
+      </radialGradient>
+      <radialGradient id="atmo-earth-core" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#ffd166" stop-opacity="0.48"/>
+        <stop offset="55%" stop-color="#ff8c42" stop-opacity="0.26"/>
+        <stop offset="100%" stop-color="#ff6b35" stop-opacity="0.06"/>
+      </radialGradient>
+      <filter id="atmo-neutrino-glow" x="-250%" y="-250%" width="600%" height="600%">
+        <feGaussianBlur stdDeviation="5" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+
+    <circle class="atmo-atmosphere" cx="355" cy="245" r="177"/>
+    <circle class="atmo-earth-disc" cx="355" cy="245" r="160" fill="url(#atmo-earth-surface)"/>
+    <circle class="atmo-mantle" cx="355" cy="245" r="112"/>
+    <circle class="atmo-core" cx="355" cy="245" r="61" fill="url(#atmo-earth-core)"/>
+    <path class="atmo-continent" d="M278 143c30-18 58-21 82-7l15 22-18 22-38-3-15 25-34-7-18-30z"/>
+    <path class="atmo-continent" d="M405 265c28-18 60-12 78 10l-5 31-28 11-12 35-30 9-18-29 11-25-13-22z"/>
+    <text class="atmo-earth-label" x="355" y="252">Земля</text>
+
+    <path class="atmo-source-sweep" d="M458 100 A177 177 0 0 0 252 390"/>
+    <path class="atmo-current-path-shadow" data-atmo-current-path-shadow d="M458 100 L447 116"/>
+    <path class="atmo-current-path" data-atmo-current-path d="M458 100 L447 116"/>
+
+    <g class="atmo-source-marker" data-atmo-source-marker>
+      <path d="M0-13l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z"/>
+    </g>
+    <text class="atmo-source-label" data-atmo-source-label>рождение в атмосфере</text>
+
+    <g class="atmo-detector" transform="translate(447 116) rotate(35)">
+      <path d="M-11 9L0-12 11 9z"/>
+      <circle cx="0" cy="1" r="3"/>
+    </g>
+    <text class="atmo-detector-label" x="476" y="119">детектор</text>
+
+    <text class="atmo-sweep-label atmo-sweep-label-max" x="80" y="414">через диаметр</text>
+
+    <circle class="atmo-neutrino atmo-neutrino-current" data-atmo-particle r="8"/>
+  </svg>
+
+  <div class="atmo-ratio-graph-panel">
+    <div class="atmo-graph-header">
+      <span class="atmo-ratio-formula">\(R_{\mu/e}=\dfrac{\nu_\mu+\bar\nu_\mu}{\nu_e+\bar\nu_e}\)</span>
+      <span class="atmo-live-value">\(L=\)<strong data-atmo-length>20 км</strong></span>
+      <span class="atmo-live-value">\(R_{\mu/e}=\)<strong data-atmo-ratio-value>2,00</strong></span>
+    </div>
+    <svg class="atmo-ratio-graph" viewBox="0 0 720 180" role="img"
+         aria-label="Схематический график уменьшения отношения мюонных нейтрино к электронным с ростом пройденного пути">
+      <line class="atmo-graph-axis" x1="72" y1="18" x2="72" y2="142"/>
+      <line class="atmo-graph-axis" x1="72" y1="142" x2="690" y2="142"/>
+      <line class="atmo-graph-expected" x1="72" y1="28" x2="690" y2="28"/>
+      <text class="atmo-graph-tick" x="54" y="34">2</text>
+      <text class="atmo-graph-tick" x="54" y="137">1</text>
+      <text class="atmo-graph-tick" x="72" y="168" text-anchor="middle">20 км</text>
+      <text class="atmo-graph-tick" x="690" y="168" text-anchor="middle">1,28·10⁴ км</text>
+      <text class="atmo-graph-label" x="105" y="20">ожидание без осцилляций</text>
+      <path class="atmo-ratio-curve" data-atmo-ratio-curve/>
+      <line class="atmo-graph-cursor" data-atmo-graph-cursor x1="72" y1="28" x2="72" y2="142"/>
+      <circle class="atmo-graph-point" data-atmo-graph-point cx="72" cy="28" r="8"/>
+    </svg>
+    <div class="atmo-graph-note">Схематично: отношение усреднено по энергиям атмосферных нейтрино.</div>
+  </div>
+</div>
+<script src="assets/01_neutrino_101/atmospheric_neutrino_paths.js"></script>
+```

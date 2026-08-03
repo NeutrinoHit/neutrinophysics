@@ -1,0 +1,34 @@
+```{=html}
+<div class="wu-result-grid">
+  <div class="wu-result-chart" role="img" aria-label="Электроны преимущественно испускаются против спина ядра">
+    <div class="result-y-label">\(W(\theta)\)</div>
+    <div class="result-x-label">\(\cos\theta\)</div>
+    <svg viewBox="0 0 560 330" preserveAspectRatio="none">
+      <line class="result-axis" x1="58" y1="22" x2="58" y2="292" />
+      <line class="result-axis" x1="58" y1="292" x2="535" y2="292" />
+      <line class="result-guide" x1="58" y1="157" x2="535" y2="157" />
+      <path class="result-symmetric" d="M58,157 L535,157" />
+      <path class="result-observed" d="M58,70 C200,102 370,218 535,258" />
+      <circle class="result-point" cx="58" cy="70" r="7" />
+      <circle class="result-point" cx="535" cy="258" r="7" />
+      <text x="43" y="315">−1</text>
+      <text x="528" y="315">+1</text>
+      <text class="result-note" x="95" y="54">против спина</text>
+      <text class="result-note" x="397" y="247">вдоль спина</text>
+    </svg>
+  </div>
+
+  <div class="wu-result-equations">
+    <p>Измеренная асимметрия:</p>
+    <div class="display-math">\[
+    \frac{W(0)-W(\pi)}{W(0)+W(\pi)}\simeq-0.25.
+    \]</div>
+    <p>При \(\mathcal P\simeq0.65\), \(v/c\simeq0.6\) и \(f_{\rm bs}\simeq2/3\):</p>
+    <div class="display-math accent">\[A\simeq-1.\]</div>
+  </div>
+</div>
+```
+
+Электроны испускались преимущественно **против спина ядра**. Эффект исчезал
+после нагрева образца и потери поляризации — именно так и должна вести себя
+физическая асимметрия.

@@ -1,0 +1,142 @@
+::: {.spectrum-widget .katrin-integral-widget}
+```{ojs}
+//| echo: false
+
+viewof katrinWindow = Inputs.range([1, 35], {
+  value: 12,
+  step: 1,
+  label: html`
+    <span class="spectrum-slider-label">
+      ${tex`\Delta,\ \text{эВ}`}
+    </span>
+  `
+})
+
+katrinResolution = 0.95
+katrinMass = 0
+katrinXMin = -40
+katrinXMax = 2
+katrinThreshold = -katrinWindow
+
+katrinShape = x => {
+  const neutrinoEnergy = -x
+  if (neutrinoEnergy <= katrinMass) return 0
+  return neutrinoEnergy * Math.sqrt(
+    neutrinoEnergy * neutrinoEnergy - katrinMass * katrinMass
+  )
+}
+
+katrinTransmission = x => {
+  const excess = x - katrinThreshold
+  if (excess <= 0) return 0
+  if (excess >= katrinResolution) return 1
+  return excess / katrinResolution
+}
+
+katrinX = Array.from({length: 701}, (_, i) =>
+  katrinXMin + (katrinXMax - katrinXMin) * i / 700
+)
+
+katrinNorm = katrinShape(katrinXMin)
+katrinData = katrinX.map(x => ({
+  x,
+  spectrum: katrinShape(x) / katrinNorm,
+  accepted: katrinShape(x) * katrinTransmission(x) / katrinNorm
+}))
+
+katrinIntegral = (data => {
+  let sum = 0
+  for (let i = 1; i < data.length; i += 1) {
+    const dx = data[i].x - data[i - 1].x
+    sum += 0.5 * dx * (data[i].accepted + data[i - 1].accepted)
+  }
+  return sum
+})(katrinData)
+
+katrinPlot = Plot.plot({
+  width: 1110,
+  height: 300,
+  marginTop: 18,
+  marginRight: 25,
+  marginBottom: 45,
+  marginLeft: 72,
+  style: {
+    background: "#ffffff",
+    color: "#111111",
+    fontSize: "20px"
+  },
+  x: {
+    axis: "bottom",
+    label: null,
+    domain: [katrinXMin, katrinXMax],
+    ticks: 8,
+    grid: true
+  },
+  y: {
+    axis: "left",
+    label: null,
+    domain: [0, 1.05],
+    ticks: 5,
+    grid: true,
+    tickFormat: value => value.toFixed(1)
+  },
+  marks: [
+    Plot.areaY(katrinData, {
+      x: "x",
+      y: "accepted",
+      fill: "#ffb347",
+      fillOpacity: 0.55
+    }),
+    Plot.line(katrinData, {
+      x: "x",
+      y: "spectrum",
+      stroke: "#4ea1ff",
+      strokeWidth: 4
+    }),
+    Plot.line(katrinData, {
+      x: "x",
+      y: "accepted",
+      stroke: "#ffb347",
+      strokeWidth: 3
+    }),
+    Plot.ruleX([katrinThreshold], {
+      stroke: "#ffb347",
+      strokeDasharray: "7,5",
+      strokeWidth: 2.5
+    }),
+    Plot.ruleX([katrinThreshold + katrinResolution], {
+      stroke: "#777777",
+      strokeDasharray: "4,5",
+      strokeWidth: 2
+    }),
+    Plot.frame({stroke: "#111111"})
+  ]
+})
+
+html`
+<div class="spectrum-panel">
+  <div class="spectrum-legend">
+    <span>
+      <i class="spectrum-swatch spectrum-swatch-massless"></i>
+      ${tex`d\Gamma/dE`}
+    </span>
+    <span>
+      <i class="spectrum-swatch spectrum-swatch-massive"></i>
+      прошедшая часть
+    </span>
+    <span>${tex`\Delta E=0.95\ \text{эВ}`}</span>
+  </div>
+  <div class="spectrum-plot-row">
+    <div class="spectrum-y-label">
+      ${tex`d\Gamma/dE\;(\text{отн. ед.})`}
+    </div>
+    <div class="spectrum-plot-host">${katrinPlot}</div>
+  </div>
+  <div class="spectrum-x-label">${tex`E-E_0\;(\text{эВ})`}</div>
+  <div class="spectrum-summary">
+    <span>${tex`\Delta\equiv E_0-e|U|=${katrinWindow}\ \text{эВ}`}</span>
+    <span>${tex`R(U)-b\ \propto\ ${katrinIntegral.toFixed(3)}`}</span>
+  </div>
+</div>`
+```
+:::
