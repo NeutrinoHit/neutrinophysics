@@ -42,7 +42,7 @@ toc: false
       <div class="lecture-row-body">
       <p>Basic properties, discovery history, and open questions.</p>
         <div class="lecture-links">
-          <a href="../Introduction/index.html">Open lecture</a>
+          <a href="../ru/slides/01_neutrino_101.html">Open lecture</a>
         </div>
       </div>
     </details>
@@ -55,7 +55,7 @@ toc: false
       <div class="lecture-row-body">
       <p>Parity and weak interactions.</p>
         <div class="lecture-links">
-          <a href="../Parity/index.html">Open lecture</a>
+          <a href="../ru/slides/02_parity.html">Open lecture</a>
         </div>
       </div>
     </details>
@@ -68,7 +68,7 @@ toc: false
       <div class="lecture-row-body">
       <p>Spin, polarization, and neutrino helicity.</p>
         <div class="lecture-links">
-          <a href="../Helicity/index.html">Open lecture</a>
+          <a href="../ru/slides/03_helicity.html">Open lecture</a>
         </div>
       </div>
     </details>
