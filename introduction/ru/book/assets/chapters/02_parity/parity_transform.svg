@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Пространственное отражение</title>
+  <desc id="desc">Вектор положения до и после преобразования P.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L10 4L0 8z" fill="#4ad4df"/>
+    </marker>
+    <marker id="axis" markerWidth="10" markerHeight="10" refX="8" refY="3.5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0L9 3.5L0 7z" fill="#93a8b0"/>
+    </marker>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#172832"/><stop offset="1" stop-color="#0d171d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="640" rx="24" fill="url(#bg)"/>
+  <text x="305" y="70" fill="#fff" font-family="Avenir Next,Segoe UI,sans-serif" font-size="30" font-weight="700" text-anchor="middle">до отражения</text>
+  <text x="895" y="70" fill="#fff" font-family="Avenir Next,Segoe UI,sans-serif" font-size="30" font-weight="700" text-anchor="middle">после отражения</text>
+  <g stroke="#93a8b0" stroke-width="4" marker-end="url(#axis)">
+    <path d="M305 350H525"/><path d="M305 350V125"/>
+    <path d="M895 350H1115"/><path d="M895 350V125"/>
+  </g>
+  <g fill="#b8c7cc" font-family="Libertinus Serif,serif" font-size="28">
+    <text x="520" y="390">x</text><text x="275" y="145">y</text>
+    <text x="1110" y="390">x</text><text x="865" y="145">y</text>
+  </g>
+  <g stroke="#4ad4df" stroke-width="9" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M305 350L448 197"/>
+    <path d="M895 350L752 503"/>
+  </g>
+  <g fill="#4ad4df" font-family="Libertinus Serif,serif" font-size="35" font-style="italic">
+    <text x="425" y="180">r</text><text x="710" y="530">−r</text>
+  </g>
+  <g font-family="Avenir Next,Segoe UI,sans-serif" text-anchor="middle">
+    <circle cx="600" cy="332" r="70" fill="#b54a3a"/>
+    <text x="600" y="349" fill="#fff" font-family="Libertinus Serif,serif" font-size="58" font-style="italic">P</text>
+    <text x="600" y="455" fill="#e4ecef" font-size="28">(x, y, z) → (−x, −y, −z)</text>
+  </g>
+</svg>

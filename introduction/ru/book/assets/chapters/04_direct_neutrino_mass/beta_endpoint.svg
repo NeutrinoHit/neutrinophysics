@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
+  <defs>
+    <style>.s{font-family:'Avenir Next','Segoe UI',sans-serif}.m{font-family:'Iowan Old Style',Georgia,serif}.ink{fill:#18262f}.muted{fill:#687984}.gold{fill:#9a6b17}</style>
+  </defs>
+  <rect width="1400" height="760" rx="34" fill="#f8f6f0"/>
+  <text x="700" y="72" text-anchor="middle" class="s ink" font-size="42" font-weight="700">Конец тритиевого β-спектра</text>
+  <rect x="105" y="125" width="1190" height="500" rx="24" fill="#fff" stroke="#ded8ca" stroke-width="4"/>
+  <line x1="190" y1="555" x2="1235" y2="555" stroke="#18262f" stroke-width="5"/>
+  <line x1="190" y1="555" x2="190" y2="185" stroke="#18262f" stroke-width="5"/>
+  <g stroke="#d9dfe2" stroke-width="2">
+    <line x1="365" y1="185" x2="365" y2="555"/><line x1="540" y1="185" x2="540" y2="555"/>
+    <line x1="715" y1="185" x2="715" y2="555"/><line x1="890" y1="185" x2="890" y2="555"/>
+    <line x1="1065" y1="185" x2="1065" y2="555"/>
+    <line x1="190" y1="460" x2="1235" y2="460"/><line x1="190" y1="365" x2="1235" y2="365"/>
+    <line x1="190" y1="270" x2="1235" y2="270"/>
+  </g>
+  <path d="M190 200 C380 305 535 395 680 460 C825 520 1010 552 1235 555" fill="none" stroke="#2f6f9f" stroke-width="10" stroke-linecap="round"/>
+  <path d="M190 207 C380 315 535 408 680 478 C805 535 945 552 1060 555" fill="none" stroke="#9a6b17" stroke-width="10" stroke-linecap="round"/>
+  <line x1="1060" y1="180" x2="1060" y2="555" stroke="#9a6b17" stroke-width="4" stroke-dasharray="12 10"/>
+  <line x1="1235" y1="180" x2="1235" y2="555" stroke="#2f6f9f" stroke-width="4" stroke-dasharray="12 10"/>
+  <path d="M1060 520 C1125 545 1180 552 1235 555 L1060 555 Z" fill="#9a6b17" opacity=".17"/>
+  <text x="1160" y="220" class="m" fill="#2f6f9f" font-size="31">mβ = 0</text>
+  <text x="900" y="280" class="m gold" font-size="31">mβ = 1 эВ</text>
+  <text x="1060" y="600" text-anchor="middle" class="m gold" font-size="27">E₀−mβ</text>
+  <text x="1235" y="600" text-anchor="middle" class="m" fill="#2f6f9f" font-size="27">E₀</text>
+  <text x="710" y="670" text-anchor="middle" class="m ink" font-size="30">кинетическая энергия электрона E</text>
+  <text x="53" y="385" text-anchor="middle" class="m ink" font-size="30" transform="rotate(-90 53 385)">dΓ/dE</text>
+  <text x="700" y="720" text-anchor="middle" class="s muted" font-size="25">масса одновременно сдвигает границу и меняет кривизну спектра</text>
+</svg>

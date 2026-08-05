@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="700" viewBox="0 0 1400 700">
+  <defs>
+    <marker id="arrow-momentum" viewBox="0 0 12 12" refX="10.5" refY="6" markerWidth="14" markerHeight="14" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#18262f"/>
+    </marker>
+    <marker id="arrow-spin" viewBox="0 0 12 12" refX="10.5" refY="6" markerWidth="20" markerHeight="20" markerUnits="userSpaceOnUse" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#d65d45"/>
+    </marker>
+    <style>
+      .sans{font-family:'Avenir Next','Segoe UI',sans-serif}.serif{font-family:'Iowan Old Style',Georgia,serif}
+      .ink{fill:#18262f}.muted{fill:#687984}.blue{fill:#465b8c}.spin{fill:#d65d45}
+      .momentum-line{fill:none;stroke:#18262f;stroke-width:4;stroke-linecap:round;marker-end:url(#arrow-momentum)}
+      .spin-line{fill:none;stroke:#d65d45;stroke-width:12;stroke-linecap:round;marker-end:url(#arrow-spin)}
+    </style>
+  </defs>
+  <rect width="1400" height="700" rx="34" fill="#f6f7fb"/>
+  <text x="700" y="78" text-anchor="middle" class="sans ink" font-size="42" font-weight="700">Спиральность: спин относительно импульса</text>
+  <rect x="70" y="130" width="600" height="480" rx="28" fill="#fff" stroke="#d8ddea" stroke-width="4"/>
+  <rect x="730" y="130" width="600" height="480" rx="28" fill="#fff" stroke="#d8ddea" stroke-width="4"/>
+  <circle cx="370" cy="325" r="65" fill="#465b8c"/>
+  <circle cx="1030" cy="325" r="65" fill="#465b8c"/>
+  <text x="370" y="343" text-anchor="middle" class="serif" font-size="56" fill="#fff">ν</text>
+  <text x="1030" y="343" text-anchor="middle" class="serif" font-size="56" fill="#fff">ν</text>
+  <path d="M 435 325 H 610" class="momentum-line"/>
+  <path d="M 435 325 H 540" class="spin-line"/>
+  <path d="M 1095 325 H 1260" class="momentum-line"/>
+  <path d="M 965 325 H 860" class="spin-line"/>
+  <text x="500" y="288" text-anchor="middle" class="sans spin" font-size="29" font-weight="700">S</text>
+  <text x="585" y="373" text-anchor="middle" class="sans ink" font-size="27">p</text>
+  <text x="900" y="288" text-anchor="middle" class="sans spin" font-size="29" font-weight="700">S</text>
+  <text x="1225" y="373" text-anchor="middle" class="sans ink" font-size="27">p</text>
+  <text x="370" y="500" text-anchor="middle" class="sans ink" font-size="37" font-weight="700">правоспиральное</text>
+  <text x="370" y="557" text-anchor="middle" class="serif blue" font-size="46" font-weight="700">h = +1</text>
+  <text x="1030" y="500" text-anchor="middle" class="sans ink" font-size="37" font-weight="700">левоспиральное</text>
+  <text x="1030" y="557" text-anchor="middle" class="serif blue" font-size="46" font-weight="700">h = −1</text>
+  <text x="700" y="663" text-anchor="middle" class="serif muted" font-size="30">Ось квантования в обоих случаях направлена вдоль импульса.</text>
+</svg>

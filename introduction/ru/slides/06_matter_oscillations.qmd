@@ -1,37 +1,46 @@
 ---
 title: "Осцилляции нейтрино в веществе"
-subtitle: "Введение в физику нейтрино · Лекция 06"
+subtitle: "Модуль из четырёх лекций"
+lang: ru-RU
 author: "Дмитрий В. Наумов"
 institute: "ОИЯИ"
-date: "готовится"
+date: "05.08.2026"
 format:
-  revealjs:
-    theme: [black, ../../../shared/styles/neutrinohit-reveal.scss]
-    logo: ../../../shared/reveal/dvnlogo.png
-    html-math-method: mathjax
+  html:
+    toc: false
     include-after-body:
-      - text: |
-          <script data-external="1" data-context-home="https://neutrinohit.github.io/neutrinophysics/introduction/" data-context-home-label="Страница курса" src="../../../shared/reveal/neutrinohit-reveal-footer.js"></script>
       - ../../../analytics/cloudflare-web-analytics.html
-    embed-resources: false
-    slide-number: true
-    slide-level: 2
-    toc: true
-    toc-depth: 1
-    toc-title: "План лекции"
-    transition: fade
-    width: 1280
-    height: 720
-    margin: 0.06
-    center: false
-    incremental: false
-    chalkboard: false
-    preview-links: false
-    code-line-numbers: false
-    code-copy: true
-
-execute:
-  echo: false
-  warning: false
-  message: false
 ---
+
+Старая большая лекция разделена на четыре самостоятельные части. Адрес этой
+страницы сохранён, чтобы продолжали работать прежние ссылки.
+
+## 07. Постоянная плотность
+
+Потенциал когерентного рассеяния вперёд, гамильтониан в трёх базисах,
+диагонализация слоя, точный пропагатор и интерактив всех режимов.
+
+[Открыть лекцию 07](06a_matter_constant_density.html){.btn .btn-primary}
+
+## 08. Адиабатический MSW-эффект
+
+Мгновенный массовый базис, геометрический член, критерий адиабатичности,
+солнечный выход, численный профиль и вопрос о сохранении энергии.
+
+[Открыть лекцию 08](06b_matter_adiabatic_msw.html){.btn .btn-primary}
+
+## 09. Исчезновение $\nu_1$ и механическая аналогия
+
+Полный пропагатор, интерференция путей в фиксированном массовом базисе,
+тонкий слой и система связанных маятников с управляемым потенциалом.
+
+[Открыть лекцию 09](06c_matter_interference_pendulums.html){.btn .btn-primary}
+
+## 10. Три нейтрино в веществе
+
+Гамильтониан $3\times3$, CP-асимметрия вещества, эффект день–ночь,
+экспериментальный статус и открытые задачи.
+
+[Открыть лекцию 10](06d_matter_three_flavors.html){.btn .btn-primary}
+
+[Вернуться к карте курса](index.html)

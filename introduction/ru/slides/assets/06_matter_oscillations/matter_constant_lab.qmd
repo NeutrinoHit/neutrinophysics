@@ -1,0 +1,42 @@
+```{=html}
+<div id="matter-constant-lab" class="matter-lab constant-lab">
+  <div class="matter-lab-controls">
+    <label>Вакуумный угол
+      <span><output data-out="theta">33.4</output>°</span>
+      <input data-control="theta" type="range" min="2" max="44" step="0.1" value="33.4">
+    </label>
+    <label>Потенциал A = 2EV/Δm²
+      <span><output data-out="A">0.40</output></span>
+      <input data-control="A" type="range" min="-3" max="5" step="0.01" value="0.40">
+    </label>
+    <label>Положение L/L<sub>vac</sub>
+      <span><output data-out="x">0.65</output></span>
+      <input data-control="x" type="range" min="0" max="5" step="0.005" value="0.65">
+    </label>
+    <div class="matter-presets" role="group" aria-label="Режимы плотности">
+      <button type="button" data-preset="vacuum">вакуум</button>
+      <button type="button" data-preset="resonance">резонанс</button>
+      <button type="button" data-preset="dense">A ≫ 1</button>
+      <button type="button" data-preset="antinu">антинейтрино</button>
+      <button type="button" data-action="play">▶ движение</button>
+    </div>
+  </div>
+  <div class="matter-lab-readouts" aria-live="polite">
+    <div><span>θ<sub>m</sub></span><b data-val="thetaM">—</b></div>
+    <div><span>Δ<sub>m</sub>/Δ</span><b data-val="R">—</b></div>
+    <div><span>sin²2θ<sub>m</sub></span><b data-val="amp">—</b></div>
+    <div><span>L<sub>m</sub>/L<sub>vac</sub></span><b data-val="period">—</b></div>
+    <div class="prob"><span>P(ν<sub>e</sub>→ν<sub>x</sub>)</span><b data-val="P">—</b></div>
+  </div>
+  <div class="matter-lab-plots">
+    <figure>
+      <svg data-plot="probability" viewBox="0 0 610 270" role="img" aria-label="Вероятность перехода в слое"></svg>
+      <figcaption>амплитуда и период в веществе</figcaption>
+    </figure>
+    <figure>
+      <svg data-plot="levels" viewBox="0 0 440 270" role="img" aria-label="Избегаемое пересечение уровней"></svg>
+      <figcaption>мгновенные уровни и состав верхней моды</figcaption>
+    </figure>
+  </div>
+</div>
+```

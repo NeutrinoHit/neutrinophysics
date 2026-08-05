@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#465b8c"/></marker>
+    <style>.s{font-family:'Avenir Next','Segoe UI',sans-serif}.m{font-family:'Iowan Old Style',Georgia,serif}.ink{fill:#18262f}.muted{fill:#687984}.blue{fill:#465b8c}.arr{stroke:#465b8c;stroke-width:8;stroke-linecap:round;marker-end:url(#a)}</style>
+  </defs>
+  <rect width="1400" height="720" rx="34" fill="#f6f7fb"/>
+  <text x="700" y="74" text-anchor="middle" class="s ink" font-size="42" font-weight="700">Логика опыта Голдхабера</text>
+  <g transform="translate(55,145)">
+    <rect width="270" height="410" rx="28" fill="#fff" stroke="#d8ddea" stroke-width="4"/>
+    <circle cx="135" cy="110" r="65" fill="#465b8c"/><text x="135" y="129" text-anchor="middle" class="m" font-size="48" fill="#fff">e⁻+A</text>
+    <text x="135" y="225" text-anchor="middle" class="s ink" font-size="30" font-weight="700">захват</text>
+    <text x="135" y="275" text-anchor="middle" class="m muted" font-size="25">рождает B* и ν</text>
+    <text x="135" y="340" text-anchor="middle" class="m blue" font-size="31">hν → m(B*)</text>
+  </g>
+  <path d="M 340 350 H 390" class="arr"/>
+  <g transform="translate(405,145)">
+    <rect width="270" height="410" rx="28" fill="#fff" stroke="#d8ddea" stroke-width="4"/>
+    <circle cx="135" cy="110" r="65" fill="#465b8c"/><text x="135" y="129" text-anchor="middle" class="m" font-size="48" fill="#fff">B*</text>
+    <text x="135" y="225" text-anchor="middle" class="s ink" font-size="30" font-weight="700">отдача</text>
+    <text x="135" y="275" text-anchor="middle" class="m muted" font-size="25">задаёт ось</text>
+    <text x="135" y="340" text-anchor="middle" class="m blue" font-size="31">p(B*) = −pν</text>
+  </g>
+  <path d="M 690 350 H 740" class="arr"/>
+  <g transform="translate(755,145)">
+    <rect width="270" height="410" rx="28" fill="#fff" stroke="#d8ddea" stroke-width="4"/>
+    <circle cx="135" cy="110" r="65" fill="#0f6972"/><text x="135" y="129" text-anchor="middle" class="m" font-size="48" fill="#fff">γ</text>
+    <text x="135" y="225" text-anchor="middle" class="s ink" font-size="30" font-weight="700">резонанс</text>
+    <text x="135" y="275" text-anchor="middle" class="m muted" font-size="25">выбирает направление</text>
+    <text x="135" y="340" text-anchor="middle" class="m blue" font-size="31">hγ = hν</text>
+  </g>
+  <path d="M 1040 350 H 1090" class="arr"/>
+  <g transform="translate(1105,145)">
+    <rect width="240" height="410" rx="28" fill="#fff" stroke="#d8ddea" stroke-width="4"/>
+    <circle cx="120" cy="110" r="65" fill="#c7472f"/><text x="120" y="128" text-anchor="middle" class="m" font-size="44" fill="#fff">N₊−N₋</text>
+    <text x="120" y="225" text-anchor="middle" class="s ink" font-size="30" font-weight="700">анализатор</text>
+    <text x="120" y="275" text-anchor="middle" class="m muted" font-size="25">считает асимметрию</text>
+    <text x="120" y="340" text-anchor="middle" class="m blue" font-size="31">знак hν</text>
+  </g>
+  <rect x="285" y="610" width="830" height="66" rx="18" fill="#e9edf7"/>
+  <text x="700" y="653" text-anchor="middle" class="s ink" font-size="29" font-weight="700">ни один этап отдельно не измеряет спиральность нейтрино</text>
+</svg>

@@ -1,0 +1,112 @@
+project:
+  type: book
+  output-dir: _book
+  resources:
+    - "assets/chapters/**"
+
+book:
+  title: "Введение в физику нейтрино"
+  author: "Дмитрий В. Наумов"
+  cover-image: assets/images/book-cover.jpg
+  site-url: "https://neutrinohit.github.io/neutrinophysics/introduction/ru/book/"
+  repo-url: "https://github.com/NeutrinoHit/neutrinophysics"
+  repo-subdir: "introduction/ru/book"
+  repo-actions: [source, issue]
+  search: true
+  reader-mode: true
+  downloads: [pdf, epub]
+  page-footer:
+    left: "© Дмитрий В. Наумов"
+    right: "NeutrinoHit · Введение в физику нейтрино"
+  chapters:
+    - index.qmd
+    - chapters/01_neutrino_101.qmd
+    - chapters/02_parity.qmd
+    - chapters/03_helicity.qmd
+    - chapters/04_direct_neutrino_mass.qmd
+    - chapters/05_vacuum_oscillations.qmd
+    - chapters/06_matter_oscillations.qmd
+    - chapters/07_oscillation_paradoxes.qmd
+    - chapters/08_standard_model_neutrinos.qmd
+    - chapters/09_electromagnetic_properties.qmd
+    - chapters/10_sterile_neutrinos.qmd
+    - chapters/11_neutrino_interactions.qmd
+    - chapters/12_detection_methods.qmd
+    - chapters/13_solar_neutrinos.qmd
+    - chapters/14_atmospheric_neutrinos.qmd
+    - chapters/15_accelerator_neutrinos.qmd
+    - chapters/16_reactor_neutrinos.qmd
+    - chapters/17_geophysical_neutrinos.qmd
+    - chapters/18_neutrinoless_double_beta_decay.qmd
+    - chapters/19_relic_neutrinos.qmd
+    - chapters/20_uhe_astrophysical_neutrinos.qmd
+    - chapters/21_supernova_neutrinos.qmd
+    - chapters/22_global_analysis.qmd
+    - chapters/23_mixing_cp_violation.qmd
+    - chapters/24_new_physics.qmd
+    - chapters/25_neutrino_tomography.qmd
+    - chapters/26_reactor_monitoring.qmd
+
+lang: ru-RU
+
+filters:
+  - assets/filters/hide-book-index.lua
+  - assets/filters/book-media.lua
+
+crossref:
+  fig-title: "Рис."
+  fig-prefix: "рис."
+  tbl-title: "Таблица"
+  tbl-prefix: "табл."
+  exr-title: "Задача"
+  exr-prefix: "задаче"
+  exm-title: "Пример"
+  exm-prefix: "примере"
+
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    grid:
+      sidebar-width: 260px
+      body-width: 1050px
+      margin-width: 230px
+      gutter-width: 1rem
+    css: assets/styles/book.css
+    theme: cosmo
+    code-copy: true
+    anchor-sections: true
+    smooth-scroll: true
+    link-external-newwindow: true
+    fig-responsive: true
+    include-after-body: ../../../analytics/cloudflare-web-analytics.html
+  pdf:
+    documentclass: scrbook
+    classoption:
+      - open=any
+    papersize: a4
+    fontsize: 11pt
+    geometry:
+      - top=18mm
+      - bottom=20mm
+      - inner=20mm
+      - outer=50mm
+      - marginparwidth=36mm
+      - marginparsep=6mm
+      - headheight=6mm
+      - headsep=5mm
+      - footskip=9mm
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    pdf-engine: lualatex
+    include-in-header: assets/latex/book.tex
+    template-partials:
+      - assets/latex/before-body.tex
+  epub:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    css: assets/styles/book.css
+    epub-cover-image: assets/images/book-cover.jpg

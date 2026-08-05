@@ -1,0 +1,185 @@
+::: {.spectrum-widget}
+```{ojs}
+//| echo: false
+
+solarGamowReactions = new Map([
+  ["pp", {
+    label: "p + p",
+    z1: 1,
+    z2: 1,
+    mu: 0.5,
+    xmax: 35,
+    note: "слабый первый шаг pp-цепочки"
+  }],
+  ["be7p", {
+    label: "⁷Be + p",
+    z1: 4,
+    z2: 1,
+    mu: 7 / 8,
+    xmax: 70,
+    note: "реакция, создающая высокоэнергетический источник ⁸B"
+  }],
+  ["n14p", {
+    label: "¹⁴N + p",
+    z1: 7,
+    z2: 1,
+    mu: 14 / 15,
+    xmax: 100,
+    note: "медленная реакция, ограничивающая скорость CNO-цикла"
+  }]
+])
+
+viewof solarGamowReaction = Inputs.select(
+  [...solarGamowReactions.keys()],
+  {
+    value: "pp",
+    label: "Реакция",
+    format: key => solarGamowReactions.get(key).label
+  }
+)
+
+viewof solarGamowKT = Inputs.range([0.8, 2.0], {
+  value: 1.3,
+  step: 0.05,
+  label: html`<span class="spectrum-slider-label">${tex`k_BT,\ \mathrm{кэВ}`}</span>`
+})
+
+solarGamowConfig = solarGamowReactions.get(solarGamowReaction)
+solarGamowEG = 978 * solarGamowConfig.mu * (solarGamowConfig.z1 * solarGamowConfig.z2) ** 2
+solarGamowPeak = (solarGamowEG * solarGamowKT ** 2 / 4) ** (1 / 3)
+
+solarGamowEnergy = Array.from({length: 600}, (_, index) =>
+  0.10 + (solarGamowConfig.xmax - 0.10) * index / 599
+)
+
+solarGamowRaw = solarGamowEnergy.map(energy => ({
+  energy,
+  thermal: Math.exp(-energy / solarGamowKT),
+  tunnel: Math.exp(-Math.sqrt(solarGamowEG / energy)),
+  window: Math.exp(-energy / solarGamowKT - Math.sqrt(solarGamowEG / energy))
+}))
+
+solarGamowMax = key => Math.max(...solarGamowRaw.map(row => row[key]))
+solarGamowThermalMax = solarGamowMax("thermal")
+solarGamowTunnelMax = solarGamowMax("tunnel")
+solarGamowWindowMax = solarGamowMax("window")
+
+solarGamowData = solarGamowRaw.map(row => ({
+  energy: row.energy,
+  thermal: row.thermal / solarGamowThermalMax,
+  tunnel: row.tunnel / solarGamowTunnelMax,
+  window: row.window / solarGamowWindowMax
+}))
+
+solarGamowPlot = Plot.plot({
+  width: 960,
+  height: 315,
+  marginTop: 16,
+  marginRight: 24,
+  marginBottom: 48,
+  marginLeft: 68,
+  style: {
+    background: "#ffffff",
+    color: "#111111",
+    fontSize: "18px"
+  },
+  x: {
+    domain: [0, solarGamowConfig.xmax],
+    label: "энергия в системе центра масс, кэВ",
+    grid: true,
+    ticks: 7
+  },
+  y: {
+    domain: [0, 1.05],
+    label: "относительный множитель",
+    grid: true,
+    ticks: 5
+  },
+  marks: [
+    Plot.areaY(solarGamowData, {
+      x: "energy",
+      y: "window",
+      fill: "#ffb347",
+      fillOpacity: 0.20
+    }),
+    Plot.line(solarGamowData, {
+      x: "energy",
+      y: "thermal",
+      stroke: "#4ea1ff",
+      strokeWidth: 3.2
+    }),
+    Plot.line(solarGamowData, {
+      x: "energy",
+      y: "tunnel",
+      stroke: "#8f8f8f",
+      strokeWidth: 3.2
+    }),
+    Plot.line(solarGamowData, {
+      x: "energy",
+      y: "window",
+      stroke: "#ff9f1c",
+      strokeWidth: 4.2
+    }),
+    Plot.ruleX([solarGamowPeak], {
+      stroke: "#ff9f1c",
+      strokeDasharray: "7,5",
+      strokeWidth: 2.4
+    }),
+    Plot.frame({stroke: "#111111"})
+  ]
+})
+
+html`
+<div class="solar-gamow-widget">
+  <div class="spectrum-legend">
+    <span><i style="background:#4ea1ff"></i>тепловой хвост</span>
+    <span><i style="background:#8f8f8f"></i>туннелирование</span>
+    <span><i style="background:#ff9f1c"></i>окно Гамова</span>
+  </div>
+  ${solarGamowPlot}
+  <div class="spectrum-summary">
+    <span>${solarGamowConfig.label}: ${solarGamowConfig.note}</span>
+    <span>${tex`E_G=${solarGamowEG.toFixed(0)}\ \mathrm{кэВ}`}</span>
+    <span>${tex`E_0\simeq${solarGamowPeak.toFixed(1)}\ \mathrm{кэВ}`}</span>
+  </div>
+</div>`
+```
+:::
+
+```{=html}
+<style>
+.solar-gamow-widget {
+  width: 100%;
+  display: grid;
+  justify-items: center;
+  gap: 0.12rem;
+}
+.solar-gamow-widget .spectrum-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.4rem;
+  color: #f2f2f2;
+  font-size: 0.72em;
+}
+.solar-gamow-widget .spectrum-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.solar-gamow-widget .spectrum-legend i {
+  width: 1.4rem;
+  height: 0.16rem;
+  display: inline-block;
+}
+.solar-gamow-widget .spectrum-summary {
+  width: 94%;
+  display: flex;
+  justify-content: space-between;
+  color: #f2f2f2;
+  font-size: 0.64em;
+}
+.solar-gamow-widget svg {
+  max-height: 315px;
+}
+</style>
+```

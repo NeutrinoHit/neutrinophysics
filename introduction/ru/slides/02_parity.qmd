@@ -1,5 +1,7 @@
 ---
 title: "Нарушение пространственной чётности"
+lecture-id: "02"
+lecture-number: 2
 lang: ru-RU
 subtitle: "Введение в физику нейтрино"
 author: "Дмитрий В. Наумов"

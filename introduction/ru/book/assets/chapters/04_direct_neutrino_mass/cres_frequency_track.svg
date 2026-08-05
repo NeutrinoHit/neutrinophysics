@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="740" viewBox="0 0 1400 740">
+  <defs><style>.s{font-family:'Avenir Next','Segoe UI',sans-serif}.m{font-family:'Iowan Old Style',Georgia,serif}.ink{fill:#18262f}.muted{fill:#687984}.gold{fill:#9a6b17}</style></defs>
+  <rect width="1400" height="740" rx="34" fill="#f8f6f0"/>
+  <text x="700" y="70" text-anchor="middle" class="s ink" font-size="42" font-weight="700">CRES: энергия электрона записана в частоте</text>
+  <rect x="105" y="120" width="1190" height="480" rx="24" fill="#fff" stroke="#ded8ca" stroke-width="4"/>
+  <line x1="190" y1="530" x2="1235" y2="530" stroke="#18262f" stroke-width="5"/><line x1="190" y1="530" x2="190" y2="180" stroke="#18262f" stroke-width="5"/>
+  <g stroke="#d9dfe2" stroke-width="2"><line x1="365" y1="180" x2="365" y2="530"/><line x1="540" y1="180" x2="540" y2="530"/><line x1="715" y1="180" x2="715" y2="530"/><line x1="890" y1="180" x2="890" y2="530"/><line x1="1065" y1="180" x2="1065" y2="530"/><line x1="190" y1="445" x2="1235" y2="445"/><line x1="190" y1="360" x2="1235" y2="360"/><line x1="190" y1="275" x2="1235" y2="275"/></g>
+  <path d="M220 485 C380 450 545 410 710 365 C835 330 915 300 970 270" fill="none" stroke="#2f6f9f" stroke-width="10" stroke-linecap="round"/>
+  <line x1="970" y1="270" x2="970" y2="385" stroke="#c7472f" stroke-width="8"/>
+  <path d="M970 385 C1050 355 1125 315 1210 270" fill="none" stroke="#2f6f9f" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="220" cy="485" r="13" fill="#9a6b17"/><circle cx="970" cy="270" r="13" fill="#9a6b17"/>
+  <text x="450" y="300" class="s" fill="#2f6f9f" font-size="29" font-weight="700">излучение: K↓, fc↑</text>
+  <text x="990" y="345" class="s" fill="#c7472f" font-size="26" font-weight="700">рассеяние</text>
+  <text x="710" y="650" text-anchor="middle" class="m ink" font-size="30">время</text>
+  <text x="58" y="360" text-anchor="middle" class="m ink" font-size="30" transform="rotate(-90 58 360)">частота fc</text>
+  <rect x="310" y="625" width="780" height="70" rx="18" fill="#eee8d9"/>
+  <text x="700" y="670" text-anchor="middle" class="m ink" font-size="31">K = mec² (f₀/fc − 1)</text>
+</svg>

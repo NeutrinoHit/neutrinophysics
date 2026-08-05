@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#18262f"/></marker>
+    <style>.s{font-family:'Avenir Next','Segoe UI',sans-serif}.m{font-family:'Iowan Old Style',Georgia,serif}.ink{fill:#18262f}.muted{fill:#687984}.blue{fill:#465b8c}.arr{stroke:#18262f;stroke-width:7;stroke-linecap:round;marker-end:url(#a)}</style>
+  </defs>
+  <rect width="1400" height="760" rx="34" fill="#f6f7fb"/>
+  <text x="700" y="68" text-anchor="middle" class="s ink" font-size="40" font-weight="700">Анализ круговой поляризации γ-квантов</text>
+  <circle cx="150" cy="310" r="62" fill="#465b8c"/><text x="150" y="330" text-anchor="middle" class="m" font-size="53" fill="#fff">γ</text>
+  <path d="M 220 310 C 270 240, 320 380, 370 310 C 420 240, 470 380, 520 310" fill="none" stroke="#465b8c" stroke-width="11" stroke-linecap="round"/>
+  <path d="M 500 310 H 570" class="arr"/>
+  <rect x="590" y="145" width="360" height="335" rx="25" fill="#e9edf7" stroke="#465b8c" stroke-width="5"/>
+  <text x="770" y="197" text-anchor="middle" class="s ink" font-size="29" font-weight="700">намагниченное железо</text>
+  <path d="M 680 275 V 215" class="arr"/><path d="M 770 275 V 215" class="arr"/><path d="M 860 275 V 215" class="arr"/>
+  <path d="M 680 390 V 330" class="arr"/><path d="M 770 390 V 330" class="arr"/><path d="M 860 390 V 330" class="arr"/>
+  <text x="770" y="447" text-anchor="middle" class="m blue" font-size="29">поляризованные электроны</text>
+  <path d="M 970 310 H 1050" class="arr"/>
+  <rect x="1070" y="185" width="220" height="250" rx="26" fill="#18262f"/>
+  <rect x="1120" y="230" width="120" height="160" rx="15" fill="#fff"/>
+  <circle cx="1180" cy="310" r="35" fill="#0f6972"/><text x="1180" y="482" text-anchor="middle" class="s ink" font-size="28" font-weight="700">детектор</text>
+  <rect x="120" y="565" width="1160" height="130" rx="25" fill="#fff" stroke="#d8ddea" stroke-width="4"/>
+  <text x="210" y="615" class="m ink" font-size="29">+B</text><rect x="290" y="585" width="610" height="38" rx="19" fill="#465b8c"/><text x="930" y="615" class="m blue" font-size="30" font-weight="700">N₊</text>
+  <text x="210" y="668" class="m ink" font-size="29">−B</text><rect x="290" y="638" width="430" height="38" rx="19" fill="#9aa5c1"/><text x="750" y="668" class="m blue" font-size="30" font-weight="700">N₋</text>
+  <text x="1130" y="645" text-anchor="middle" class="m ink" font-size="34">𝒜 = (N₊−N₋)/(N₊+N₋)</text>
+</svg>
