@@ -1,0 +1,133 @@
+:::: {.spectrum-widget .cres-spectrum-widget}
+```{ojs}
+//| echo: false
+
+viewof cresModulationIndex = Inputs.range([0, 4], {
+  value: 1.2,
+  step: 0.1,
+  label: html`
+    <span class="spectrum-slider-label">
+      ${tex`h=\Delta f/f_z`}
+    </span>
+  `
+})
+
+cresAxialFrequency = 25
+cresObservationTime = 80
+cresSpectrumOrders = Array.from({length: 13}, (_, i) => i - 6)
+
+cresFactorial = n => {
+  let value = 1
+  for (let k = 2; k <= n; ++k) value *= k
+  return value
+}
+
+cresBesselPositive = (n, x) => {
+  let value = 0
+  for (let k = 0; k < 24; ++k) {
+    value += ((k % 2 === 0) ? 1 : -1)
+      * Math.pow(x / 2, 2 * k + n)
+      / (cresFactorial(k) * cresFactorial(k + n))
+  }
+  return value
+}
+
+cresBessel = (n, x) => {
+  const order = Math.abs(n)
+  const value = cresBesselPositive(order, x)
+  return n < 0 && order % 2 === 1 ? -value : value
+}
+
+cresLineWeights = cresSpectrumOrders.map(order => ({
+  order,
+  frequency: order * cresAxialFrequency,
+  power: Math.pow(cresBessel(order, cresModulationIndex), 2)
+}))
+
+cresSinc = value => Math.abs(value) < 1e-12
+  ? 1
+  : Math.sin(value) / value
+
+cresFrequencyGrid = Array.from({length: 1201}, (_, i) => -150 + i / 4)
+cresSpectrum = cresFrequencyGrid.map(frequency => ({
+  frequency,
+  power: cresLineWeights.reduce((sum, line) => {
+    const argument = Math.PI
+      * (frequency - line.frequency)
+      * 1000
+      * cresObservationTime
+      * 1e-6
+    return sum + line.power * Math.pow(cresSinc(argument), 2)
+  }, 0)
+}))
+
+cresSpectrumMaximum = Math.max(...cresSpectrum.map(point => point.power))
+cresNormalizedSpectrum = cresSpectrum.map(point => ({
+  frequency: point.frequency,
+  power: point.power / cresSpectrumMaximum
+}))
+
+cresNormalizedLines = cresLineWeights.map(line => ({
+  frequency: line.frequency,
+  power: line.power / Math.max(...cresLineWeights.map(item => item.power))
+}))
+
+cresSpectrumPlot = Plot.plot({
+  width: 1040,
+  height: 160,
+  marginTop: 6,
+  marginRight: 25,
+  marginBottom: 30,
+  marginLeft: 72,
+  style: {
+    background: "#ffffff",
+    color: "#111111",
+    fontSize: "18px"
+  },
+  x: {
+    axis: "bottom",
+    label: null,
+    domain: [-150, 150],
+    ticks: 7,
+    grid: true
+  },
+  y: {
+    axis: "left",
+    label: null,
+    domain: [0, 1.05],
+    ticks: 3,
+    grid: true
+  },
+  marks: [
+    Plot.line(cresNormalizedSpectrum, {
+      x: "frequency",
+      y: "power",
+      stroke: "#4ea1ff",
+      strokeWidth: 3
+    }),
+    Plot.ruleX(cresNormalizedLines, {
+      x: "frequency",
+      y1: 0,
+      y2: "power",
+      stroke: "#ffb347",
+      strokeWidth: 3
+    }),
+    Plot.frame({stroke: "#111111"})
+  ]
+})
+
+html`
+<div class="spectrum-panel">
+  <div class="spectrum-plot-row">
+    <div class="spectrum-y-label">${tex`(dP/df)_{\rm norm}`}</div>
+    <div class="spectrum-plot-host">${cresSpectrumPlot}</div>
+  </div>
+  <div class="spectrum-x-label">${tex`f-f_c\;(\text{кГц})`}</div>
+  <div class="spectrum-summary">
+    <span>${tex`f_z=${cresAxialFrequency}\ \text{кГц}`}</span>
+    <span>${tex`T_{\rm obs}=${cresObservationTime}\ \text{мкс}`}</span>
+    <span>${tex`\Delta f_{\rm FWHM}\simeq0.886/T_{\rm obs}\simeq${(886 / cresObservationTime).toFixed(1)}\ \text{кГц}`}</span>
+  </div>
+</div>`
+```
+::::

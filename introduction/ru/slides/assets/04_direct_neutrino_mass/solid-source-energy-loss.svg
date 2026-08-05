@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430" viewBox="0 0 760 430" role="img" aria-labelledby="title desc">
+  <title id="title">Пути электронов в твёрдом тритиевом источнике</title>
+  <desc id="desc">Электроны рождаются на разной глубине плёнки и проходят в веществе разные пути, поэтому теряют разную энергию.</desc>
+  <defs>
+    <linearGradient id="film" x1="0" x2="1">
+      <stop offset="0" stop-color="#27384a"/>
+      <stop offset="1" stop-color="#52687c"/>
+    </linearGradient>
+    <marker id="arrow-orange" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffad3d"/>
+    </marker>
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#59b7ff"/>
+    </marker>
+  </defs>
+
+  <text x="78" y="39" fill="#ffffff" font-family="Arial, sans-serif" font-size="25" font-weight="700">плёнка тритированного валина</text>
+  <text x="615" y="39" fill="#ffffff" font-family="Arial, sans-serif" font-size="25" font-weight="700">вакуум</text>
+
+  <rect x="72" y="62" width="470" height="300" rx="3" fill="url(#film)" stroke="#9eb4c7" stroke-width="2"/>
+  <line x1="542" y1="62" x2="542" y2="362" stroke="#ffffff" stroke-width="4"/>
+
+  <circle cx="190" cy="260" r="8" fill="#ffad3d"/>
+  <circle cx="355" cy="160" r="8" fill="#ffad3d"/>
+  <text x="112" y="291" fill="#ffffff" font-family="Arial, sans-serif" font-size="22">распад 1</text>
+  <text x="292" y="135" fill="#ffffff" font-family="Arial, sans-serif" font-size="22">распад 2</text>
+
+  <line x1="190" y1="260" x2="656" y2="92" stroke="#ffad3d" stroke-width="5" marker-end="url(#arrow-orange)"/>
+  <line x1="355" y1="160" x2="676" y2="235" stroke="#ffad3d" stroke-width="5" marker-end="url(#arrow-orange)"/>
+
+  <line x1="190" y1="260" x2="542" y2="260" stroke="#59b7ff" stroke-width="2" stroke-dasharray="8 7"/>
+  <line x1="355" y1="160" x2="542" y2="160" stroke="#59b7ff" stroke-width="2" stroke-dasharray="8 7"/>
+  <line x1="190" y1="326" x2="542" y2="326" stroke="#59b7ff" stroke-width="3" marker-start="url(#arrow-blue)" marker-end="url(#arrow-blue)"/>
+  <line x1="355" y1="205" x2="542" y2="205" stroke="#59b7ff" stroke-width="3" marker-start="url(#arrow-blue)" marker-end="url(#arrow-blue)"/>
+
+  <text x="348" y="352" fill="#59b7ff" font-family="Georgia, serif" font-size="27" font-style="italic">z₁</text>
+  <text x="434" y="232" fill="#59b7ff" font-family="Georgia, serif" font-size="27" font-style="italic">z₂</text>
+  <text x="333" y="181" fill="#ffcf7a" font-family="Georgia, serif" font-size="27" font-style="italic" transform="rotate(-20 333 181)">ℓ₁</text>
+  <text x="448" y="204" fill="#ffcf7a" font-family="Georgia, serif" font-size="27" font-style="italic" transform="rotate(13 448 204)">ℓ₂</text>
+
+  <text x="75" y="405" fill="#ffffff" font-family="Arial, sans-serif" font-size="25">разные глубины и углы</text>
+  <text x="398" y="405" fill="#ffcf7a" font-family="Arial, sans-serif" font-size="25">разные потери энергии</text>
+</svg>
