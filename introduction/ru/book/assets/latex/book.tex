@@ -1,0 +1,276 @@
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\usepackage{unicode-math}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{marginnote}
+\usepackage[most]{tcolorbox}
+\usepackage{caption}
+\usepackage{ragged2e}
+\usepackage{etoc}
+\usepackage[automark]{scrlayer-scrpage}
+
+\defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}
+\setmainfont{Libertinus Serif}
+\setsansfont{Libertinus Sans}
+\setmonofont{Libertinus Mono}[Scale=0.9]
+\setmathfont{Libertinus Math}
+
+\definecolor{bookInk}{HTML}{18262F}
+\definecolor{bookMuted}{HTML}{687984}
+\definecolor{bookTeal}{HTML}{0F6972}
+\definecolor{bookCyan}{HTML}{4AD4DF}
+\definecolor{bookTealSoft}{HTML}{E8F1F2}
+\definecolor{bookBlue}{HTML}{2F6F9F}
+\definecolor{bookBlueSoft}{HTML}{EDF3FA}
+\definecolor{bookCoral}{HTML}{C7472F}
+\definecolor{bookCoralSoft}{HTML}{FAEEEB}
+\definecolor{bookMargin}{HTML}{F1F3F4}
+\definecolor{bookBiography}{HTML}{465B8C}
+\definecolor{bookBiographySoft}{HTML}{F0F2F8}
+
+% A restrained chapter palette. The outer margin is deliberately neutral;
+% only its top tab changes colour from chapter to chapter.
+\definecolor{bookChapterOne}{HTML}{0F6972}
+\definecolor{bookChapterTwo}{HTML}{B54A3A}
+\definecolor{bookChapterThree}{HTML}{465B8C}
+\definecolor{bookChapterFour}{HTML}{9A6B17}
+\definecolor{bookChapterFive}{HTML}{75558C}
+\definecolor{bookChapterSix}{HTML}{3F7652}
+\definecolor{bookChapterSeven}{HTML}{2E6F9E}
+\definecolor{bookChapterEight}{HTML}{A85C35}
+\definecolor{bookChapterNine}{HTML}{7D4966}
+\definecolor{bookChapterTen}{HTML}{287C78}
+\definecolor{bookChapterEleven}{HTML}{8B3F4A}
+\definecolor{bookChapterTwelve}{HTML}{6D712C}
+\definecolor{bookChapterThirteen}{HTML}{3B5EA7}
+\definecolor{bookChapterFourteen}{HTML}{B65D4A}
+\definecolor{bookChapterFifteen}{HTML}{2F6B55}
+\definecolor{bookChapterSixteen}{HTML}{69508B}
+\definecolor{bookChapterSeventeen}{HTML}{A46D19}
+\definecolor{bookChapterEighteen}{HTML}{4C6D86}
+\definecolor{bookChapterNineteen}{HTML}{A34867}
+\definecolor{bookChapterTwenty}{HTML}{267A8A}
+\definecolor{bookChapterTwentyOne}{HTML}{68445D}
+\definecolor{bookChapterTwentyTwo}{HTML}{5B7440}
+\definecolor{bookChapterTwentyThree}{HTML}{456A92}
+\definecolor{bookChapterTwentyFour}{HTML}{9C4E3D}
+\definecolor{bookChapterTwentyFive}{HTML}{356F6B}
+\definecolor{bookChapterTwentySix}{HTML}{824C63}
+
+\newcommand{\bookchaptercolor}{%
+  \ifcase\value{chapter}bookInk%
+  \or bookChapterOne\or bookChapterTwo\or bookChapterThree%
+  \or bookChapterFour\or bookChapterFive\or bookChapterSix%
+  \or bookChapterSeven\or bookChapterEight\or bookChapterNine%
+  \or bookChapterTen\or bookChapterEleven\or bookChapterTwelve%
+  \or bookChapterThirteen\or bookChapterFourteen\or bookChapterFifteen%
+  \or bookChapterSixteen\or bookChapterSeventeen\or bookChapterEighteen%
+  \or bookChapterNineteen\or bookChapterTwenty\or bookChapterTwentyOne%
+  \or bookChapterTwentyTwo\or bookChapterTwentyThree\or bookChapterTwentyFour%
+  \or bookChapterTwentyFive\or bookChapterTwentySix%
+  \else bookInk\fi
+}
+
+% Reduced wavelength. Keep a named command, parallel to \hbar, throughout
+% the source instead of constructing the symbol ad hoc in every formula.
+\newcommand{\lambdabar}{\mathord{\overline{\lambda}}}
+
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\PolyglossiaSetup{russian}{
+  bcp47=ru,
+  scripttag=cyrl,
+  langtag=RUS,
+  hyphennames={russian},
+  hyphenmins={2,2},
+  frenchspacing=true,
+  indentfirst=true
+}
+
+\setlength{\emergencystretch}{3em}
+\setlength{\marginparpush}{8pt}
+% Do not stretch paragraph and display-math glue to force every page to the
+% same bottom baseline. Short pages should leave a quiet blank area below the
+% text instead of opening huge holes between formulas and paragraphs.
+\raggedbottom
+\captionsetup{
+  font=small,
+  labelfont=bf,
+  justification=raggedright,
+  singlelinecheck=false
+}
+
+\newtcolorbox{semanticpdfbox}[1][]{
+  enhanced,
+  breakable,
+  sharp corners,
+  colback=bookTealSoft,
+  colframe=bookTeal,
+  boxrule=0pt,
+  borderline west={1.2mm}{0pt}{bookTeal},
+  left=4mm,
+  right=3mm,
+  top=2mm,
+  bottom=2mm,
+  #1
+}
+
+\AtBeginDocument{%
+  \tcolorboxenvironment{definition}{
+    enhanced,breakable,sharp corners,colback=bookTealSoft,colframe=bookTeal,
+    boxrule=0pt,borderline west={1.2mm}{0pt}{bookTeal},left=4mm,right=3mm
+  }%
+  \tcolorboxenvironment{example}{
+    enhanced,breakable,sharp corners,colback=bookTealSoft,colframe=bookTeal,
+    boxrule=0pt,borderline west={1.2mm}{0pt}{bookTeal},left=4mm,right=3mm
+  }%
+  \tcolorboxenvironment{exercise}{
+    enhanced,breakable,sharp corners,colback=bookCoralSoft,colframe=bookCoral,
+    boxrule=0pt,borderline west={1.2mm}{0pt}{bookCoral},left=4mm,right=3mm
+  }%
+}
+
+\clearpairofpagestyles
+\ihead{\headmark}
+\newcommand{\bookheaderpage}{\ifnum\value{chapter}=0\pagemark\fi}
+\ohead{\bookheaderpage}
+\setkomafont{pageheadfoot}{\small\sffamily\color{bookMuted}}
+\setkomafont{pagehead}{\small\sffamily\color{bookInk}}
+\KOMAoptions{headsepline=0.35pt}
+\addtokomafont{chapter}{\sffamily\color{bookInk}}
+\addtokomafont{section}{\sffamily\color{bookInk}}
+\addtokomafont{subsection}{\sffamily\color{bookInk}}
+
+% A numbered chapter opens on a dedicated page.  The local table of contents
+% is read from the main .toc file, so it stays in sync with section headings.
+\renewcommand*{\chapterformat}{}
+\renewcommand*{\chapterlinesformat}[3]{%
+  \ifnum\value{chapter}>0\relax
+    \parbox[t]{\linewidth}{%
+      {\sffamily\bfseries\color{\bookchaptercolor}%
+       \fontsize{15}{18}\selectfont Глава~\thechapter\par}%
+      \vspace{7mm}%
+      {\sffamily\bfseries\color{bookInk}%
+       \fontsize{34}{38}\selectfont #3\par}%
+      \vspace{9mm}%
+      {\color{\bookchaptercolor}\rule{\linewidth}{1.3mm}}%
+    }%
+  \else
+    \parbox[t]{\linewidth}{#3}%
+  \fi
+}
+\RedeclareSectionCommand[
+  beforeskip=10mm,
+  afterskip=0pt
+]{chapter}
+
+\newcommand{\bookchapteropeningcontents}{%
+  \vspace{14mm}%
+  \noindent
+  {\sffamily\bfseries\color{bookInk}\fontsize{18}{22}\selectfont
+   Содержание\par}%
+  \vspace{3mm}%
+  {\color{\bookchaptercolor}\rule{18mm}{0.8mm}}%
+  \vspace{5mm}%
+  \begingroup
+    \setlength{\parindent}{0pt}%
+    \etocsettocstyle{}{}%
+    \etocsetnexttocdepth{section}%
+    \localtableofcontents
+  \endgroup
+  \vfill
+  \clearpage
+}
+
+% Automatic page-navigator component.  These tokens are its public style
+% interface: dimensions and colours can be changed here without touching the
+% drawing code or individual pages.  The 48 mm rail inside a 50 mm outer
+% margin leaves the required 2 mm white gutter next to the text block.
+\newif\ifbookpagenavigator
+\bookpagenavigatortrue
+\newlength{\bookpagerailwidth}
+\newlength{\bookpagerailcenter}
+\newlength{\bookpagetabheight}
+\newlength{\bookpagetabcenter}
+\newlength{\bookpagenumberdiameter}
+\setlength{\bookpagerailwidth}{48mm}
+\setlength{\bookpagerailcenter}{24mm}
+\setlength{\bookpagetabheight}{28mm}
+\setlength{\bookpagetabcenter}{14mm}
+\setlength{\bookpagenumberdiameter}{17mm}
+\newcommand{\bookpagerailcolor}{bookMargin}
+\newcommand{\bookpagetabcolor}{\bookchaptercolor}
+\newcommand{\bookpagenumberfill}{white}
+\newcommand{\bookpagenumbercolor}{\bookchaptercolor}
+
+\tikzset{
+  book page rail/.style={fill=\bookpagerailcolor,draw=none},
+  book page tab/.style={fill=\bookpagetabcolor,draw=none},
+  book page number/.style={
+    circle,
+    fill=\bookpagenumberfill,
+    draw=none,
+    minimum size=\bookpagenumberdiameter,
+    inner sep=0pt,
+    font=\sffamily\bfseries\fontsize{22}{22}\selectfont,
+    text=\bookpagenumbercolor
+  }
+}
+
+\newcommand{\bookpagenavigatorleft}{%
+  \path[book page rail]
+    (current page.north west) rectangle
+    ([xshift=\bookpagerailwidth]current page.south west);
+  \path[book page tab]
+    (current page.north west) rectangle
+    ([xshift=\bookpagerailwidth,yshift=-\bookpagetabheight]current page.north west);
+  \node[book page number]
+    at ([xshift=\bookpagerailcenter,yshift=-\bookpagetabcenter]current page.north west)
+    {\thepage};
+}
+
+\newcommand{\bookpagenavigatorright}{%
+  \path[book page rail]
+    ([xshift=-\bookpagerailwidth]current page.north east) rectangle
+    (current page.south east);
+  \path[book page tab]
+    ([xshift=-\bookpagerailwidth]current page.north east) rectangle
+    ([yshift=-\bookpagetabheight]current page.north east);
+  \node[book page number]
+    at ([xshift=-\bookpagerailcenter,yshift=-\bookpagetabcenter]current page.north east)
+    {\thepage};
+}
+
+\newcommand{\bookrenderpagenavigator}{%
+  \ifbookpagenavigator
+    \ifnum\value{chapter}>0\relax
+      \begin{tikzpicture}[remember picture,overlay]
+        \ifodd\value{page}
+          \bookpagenavigatorright
+        \else
+          \bookpagenavigatorleft
+        \fi
+      \end{tikzpicture}%
+    \fi
+  \fi
+}
+
+% One automatic hook renders the component on every numbered book page.
+\AddToHook{shipout/background}{\bookrenderpagenavigator}
+
+\hypersetup{
+  pdfborder={0 0 0},
+  colorlinks=true,
+  linkcolor=bookInk,
+  citecolor=bookInk,
+  urlcolor=bookTeal
+}

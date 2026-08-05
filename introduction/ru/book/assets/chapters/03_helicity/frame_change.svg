@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#18262f"/></marker>
+    <style>.s{font-family:'Avenir Next','Segoe UI',sans-serif}.m{font-family:'Iowan Old Style',Georgia,serif}.ink{fill:#18262f}.muted{fill:#687984}.blue{fill:#465b8c}.v{stroke:#18262f;stroke-width:9;stroke-linecap:round;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1400" height="760" rx="34" fill="#f6f7fb"/>
+  <text x="700" y="70" text-anchor="middle" class="s ink" font-size="41" font-weight="700">Один спин — два знака импульса</text>
+  <rect x="65" y="115" width="610" height="410" rx="26" fill="#fff" stroke="#d8ddea" stroke-width="4"/>
+  <rect x="725" y="115" width="610" height="410" rx="26" fill="#fff" stroke="#d8ddea" stroke-width="4"/>
+  <text x="370" y="170" text-anchor="middle" class="s muted" font-size="28" font-weight="700">лабораторная система</text>
+  <text x="1030" y="170" text-anchor="middle" class="s muted" font-size="28" font-weight="700">наблюдатель обогнал частицу</text>
+  <line x1="130" y1="366" x2="610" y2="366" stroke="#c9d0d5" stroke-width="8" stroke-linecap="round"/>
+  <line x1="790" y1="366" x2="1270" y2="366" stroke="#c9d0d5" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="340" cy="338" r="61" fill="#465b8c"/><text x="340" y="357" text-anchor="middle" class="m" font-size="56" fill="#fff">ν</text>
+  <circle cx="1060" cy="338" r="61" fill="#465b8c"/><text x="1060" y="357" text-anchor="middle" class="m" font-size="56" fill="#fff">ν</text>
+  <path d="M 340 245 H 530" class="v"/><text x="435" y="222" text-anchor="middle" class="m ink" font-size="31">S</text>
+  <path d="M 340 430 H 560" class="v"/><text x="450" y="478" text-anchor="middle" class="m ink" font-size="31">p</text>
+  <path d="M 1060 245 H 1250" class="v"/><text x="1155" y="222" text-anchor="middle" class="m ink" font-size="31">S</text>
+  <path d="M 1060 430 H 840" class="v"/><text x="950" y="478" text-anchor="middle" class="m ink" font-size="31">p′</text>
+  <text x="370" y="505" text-anchor="middle" class="m blue" font-size="42" font-weight="700">h = +1</text>
+  <text x="1030" y="505" text-anchor="middle" class="m blue" font-size="42" font-weight="700">h′ = −1</text>
+  <rect x="65" y="565" width="1270" height="135" rx="25" fill="#e9edf7"/>
+  <circle cx="190" cy="632" r="37" fill="#465b8c"/><text x="190" y="647" text-anchor="middle" class="m" font-size="40" fill="#fff">ν</text>
+  <path d="M 247 632 H 535" class="v"/>
+  <path d="M 780 632 H 650" class="v"/>
+  <text x="1120" y="621" text-anchor="middle" class="s ink" font-size="31" font-weight="700">безмассовую частицу обогнать нельзя</text>
+  <text x="1120" y="663" text-anchor="middle" class="m muted" font-size="28">допустимый наблюдатель всегда имеет v &lt; c</text>
+</svg>

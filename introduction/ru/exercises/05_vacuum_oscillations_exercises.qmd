@@ -7,7 +7,7 @@ format:
     toc: false
 ---
 
-[← Вернуться к лекции](../slides/05_vacuum_oscillations.html) · [Все задачи курса](index.html)
+[← Вернуться к лекции](../slides/05a_vacuum_two_flavors.html) · [Все задачи курса](index.html)
 
 # Задачи
 

@@ -1,0 +1,29 @@
+$if(has-frontmatter)$
+\frontmatter
+$endif$
+$if(title)$
+\begin{titlepage}
+\newgeometry{margin=0pt}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \node[inner sep=0pt] at (current page.center) {\includegraphics[width=\paperwidth]{assets/images/book-cover-background.jpg}};
+  \draw[bookCyan,line width=1.8pt]
+    ([xshift=16mm,yshift=-20mm]current page.north west) -- ++(44mm,0);
+  \node[
+    anchor=north west,
+    align=left,
+    text width=150mm,
+    inner sep=0pt
+  ] at ([xshift=16mm,yshift=-30mm]current page.north west) {
+    \sffamily\bfseries\color{white}\fontsize{76}{80}\selectfont
+    Введение\\[-1mm]в физику\\[-1mm]нейтрино
+  };
+  \node[anchor=south west,inner sep=0pt]
+    at ([xshift=16mm,yshift=16mm]current page.south west) {
+      \sffamily\color{white}\fontsize{18}{22}\selectfont
+      $for(authors)$$it.name.literal$$sep$, $endfor$
+    };
+\end{tikzpicture}
+\end{titlepage}
+\restoregeometry
+$endif$

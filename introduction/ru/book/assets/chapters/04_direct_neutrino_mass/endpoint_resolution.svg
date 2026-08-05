@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
+  <defs><style>.s{font-family:'Avenir Next','Segoe UI',sans-serif}.m{font-family:'Iowan Old Style',Georgia,serif}.ink{fill:#18262f}.muted{fill:#687984}.gold{fill:#9a6b17}</style></defs>
+  <rect width="1400" height="760" rx="34" fill="#f8f6f0"/>
+  <text x="700" y="72" text-anchor="middle" class="s ink" font-size="42" font-weight="700">Разрешение размывает кинематическую границу</text>
+  <rect x="95" y="125" width="1210" height="500" rx="24" fill="#fff" stroke="#ded8ca" stroke-width="4"/>
+  <line x1="180" y1="550" x2="1240" y2="550" stroke="#18262f" stroke-width="5"/>
+  <line x1="180" y1="550" x2="180" y2="185" stroke="#18262f" stroke-width="5"/>
+  <g stroke="#d9dfe2" stroke-width="2"><line x1="390" y1="185" x2="390" y2="550"/><line x1="600" y1="185" x2="600" y2="550"/><line x1="810" y1="185" x2="810" y2="550"/><line x1="1020" y1="185" x2="1020" y2="550"/><line x1="180" y1="455" x2="1240" y2="455"/><line x1="180" y1="360" x2="1240" y2="360"/><line x1="180" y1="265" x2="1240" y2="265"/></g>
+  <path d="M180 205 C365 310 525 405 690 470 C825 520 935 545 1020 550 C1070 552 1105 550 1140 545 C1170 540 1205 545 1240 550" fill="none" stroke="#2f6f9f" stroke-width="9" stroke-linecap="round"/>
+  <path d="M180 214 C365 322 525 420 680 489 C785 535 855 548 905 550 C940 551 965 547 990 536 C1025 522 1070 526 1110 541 C1155 556 1195 554 1240 550" fill="none" stroke="#9a6b17" stroke-width="9" stroke-linecap="round"/>
+  <path d="M905 550 C960 545 1010 510 1075 526 C1120 537 1160 558 1240 550 L1240 550 Z" fill="#9a6b17" opacity=".18"/>
+  <line x1="1020" y1="180" x2="1020" y2="550" stroke="#9a6b17" stroke-width="4" stroke-dasharray="12 10"/>
+  <line x1="1140" y1="180" x2="1140" y2="550" stroke="#2f6f9f" stroke-width="4" stroke-dasharray="12 10"/>
+  <text x="870" y="235" class="m gold" font-size="30">mβ = 1 эВ</text>
+  <text x="1080" y="290" class="m" fill="#2f6f9f" font-size="30">mβ = 0</text>
+  <text x="1020" y="595" text-anchor="middle" class="m gold" font-size="26">E₀−mβ</text>
+  <text x="1140" y="595" text-anchor="middle" class="m" fill="#2f6f9f" font-size="26">E₀</text>
+  <text x="710" y="670" text-anchor="middle" class="m ink" font-size="30">реконструированная энергия Erec</text>
+  <text x="52" y="385" text-anchor="middle" class="m ink" font-size="30" transform="rotate(-90 52 385)">dΓrec/dErec</text>
+  <text x="700" y="720" text-anchor="middle" class="s muted" font-size="25">известная функция отклика столь же важна, как сама шкала энергии</text>
+</svg>

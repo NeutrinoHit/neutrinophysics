@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="760" viewBox="0 0 1400 760">
+  <defs><style>.s{font-family:'Avenir Next','Segoe UI',sans-serif}.m{font-family:'Iowan Old Style',Georgia,serif}.ink{fill:#18262f}.muted{fill:#687984}.gold{fill:#9a6b17}</style></defs>
+  <rect width="1400" height="760" rx="34" fill="#f8f6f0"/>
+  <text x="700" y="72" text-anchor="middle" class="s ink" font-size="42" font-weight="700">Если массовые пороги разрешены</text>
+  <rect x="100" y="125" width="1200" height="500" rx="24" fill="#fff" stroke="#ded8ca" stroke-width="4"/>
+  <line x1="185" y1="550" x2="1240" y2="550" stroke="#18262f" stroke-width="5"/><line x1="185" y1="550" x2="185" y2="185" stroke="#18262f" stroke-width="5"/>
+  <g stroke="#d9dfe2" stroke-width="2"><line x1="360" y1="185" x2="360" y2="550"/><line x1="535" y1="185" x2="535" y2="550"/><line x1="710" y1="185" x2="710" y2="550"/><line x1="885" y1="185" x2="885" y2="550"/><line x1="1060" y1="185" x2="1060" y2="550"/><line x1="185" y1="455" x2="1240" y2="455"/><line x1="185" y1="360" x2="1240" y2="360"/><line x1="185" y1="265" x2="1240" y2="265"/></g>
+  <path d="M185 210 C350 315 520 410 700 475 C850 527 990 548 1240 550" fill="none" stroke="#2f6f9f" stroke-width="10"/>
+  <path d="M185 355 C400 440 610 515 840 548" fill="none" stroke="#687984" stroke-width="5" stroke-dasharray="12 10"/>
+  <path d="M185 425 C300 470 415 520 535 550" fill="none" stroke="#687984" stroke-width="5" stroke-dasharray="12 10"/>
+  <path d="M185 465 C260 495 315 530 360 550" fill="none" stroke="#687984" stroke-width="5" stroke-dasharray="12 10"/>
+  <line x1="360" y1="185" x2="360" y2="550" stroke="#9a6b17" stroke-width="4" stroke-dasharray="12 10"/>
+  <line x1="535" y1="185" x2="535" y2="550" stroke="#9a6b17" stroke-width="4" stroke-dasharray="12 10"/>
+  <line x1="840" y1="185" x2="840" y2="550" stroke="#9a6b17" stroke-width="4" stroke-dasharray="12 10"/>
+  <text x="840" y="225" class="m gold" font-size="28">E₀−m₁</text><text x="535" y="270" class="m gold" font-size="28">E₀−m₂</text><text x="360" y="315" class="m gold" font-size="28">E₀−m₃</text>
+  <text x="955" y="335" class="m" fill="#2f6f9f" font-size="30">суммарный спектр</text>
+  <text x="710" y="675" text-anchor="middle" class="m ink" font-size="30">E−E₀</text>
+  <text x="53" y="385" text-anchor="middle" class="m ink" font-size="30" transform="rotate(-90 53 385)">dΓ/dE</text>
+  <text x="700" y="720" text-anchor="middle" class="s muted" font-size="25">в реальном трёхнейтринном спектре пороги сливаются из-за конечного разрешения</text>
+</svg>

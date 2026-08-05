@@ -1,7 +1,8 @@
 # Assets for Lecture 05: Vacuum Neutrino Oscillations
 
-Keep substantial interactive fragments, JavaScript, HTML, animations, portraits,
-and source notes for `05_vacuum_oscillations.qmd` in this directory.
+Keep substantial interactive code, JavaScript, HTML, animations, portraits,
+and source notes for `05a_vacuum_two_flavors.qmd` and `05b_vacuum_pmns.qmd`
+in this directory. Slide prose belongs directly in the lecture QMD files.
 
 Planned groups:
 

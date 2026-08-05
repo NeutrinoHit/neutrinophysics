@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Треугольник трёх флэйворных вероятностей</title>
+  <desc id="desc">Точка внутри треугольника показывает три вероятности, сумма которых равна единице.</desc>
+  <defs>
+    <linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#172832"/><stop offset="1" stop-color="#0d171d"/></linearGradient>
+    <filter id="pglow" x="-200%" y="-200%" width="500%" height="500%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1200" height="720" rx="24" fill="url(#bg3)"/>
+  <g font-family="Avenir Next,Segoe UI,sans-serif">
+    <text x="600" y="62" fill="#fff" font-size="34" font-weight="700" text-anchor="middle">Три флэйвора — одна нормированная вероятность</text>
+    <g transform="translate(70 76)">
+      <path d="M430 45L95 500H765Z" fill="#142a36" stroke="#d8e6ea" stroke-width="5"/>
+      <g fill="none" stroke="#87a0aa" stroke-width="2" opacity=".34">
+        <path d="M363 136H497M296 227H564M229 318H631M162 409H698"/>
+        <path d="M363 136L631 500M296 227L497 500M229 318L363 500M497 136L229 500M564 227L363 500M631 318L497 500"/>
+      </g>
+      <path d="M95 500C218 380 269 468 358 326S524 192 614 301S691 430 538 411S330 263 260 376S373 475 490 358" fill="none" stroke="#4ad4df" stroke-width="7" stroke-linecap="round" opacity=".82"/>
+      <circle cx="490" cy="358" r="15" fill="#ffd166" filter="url(#pglow)"/>
+      <text x="430" y="23" fill="#ef7d68" font-size="29" font-weight="700" text-anchor="middle">Pₑ = 1</text>
+      <text x="66" y="536" fill="#63c9e5" font-size="29" font-weight="700" text-anchor="middle">Pμ = 1</text>
+      <text x="794" y="536" fill="#ffd166" font-size="29" font-weight="700" text-anchor="middle">Pτ = 1</text>
+    </g>
+    <g transform="translate(850 185)">
+      <text x="125" y="0" fill="#fff" font-size="28" font-weight="700" text-anchor="middle">νμ → (e, μ, τ)</text>
+      <text x="0" y="80" fill="#ef7d68" font-size="25">Pₑ</text><rect x="48" y="58" width="205" height="25" rx="12" fill="#3c4b52"/><rect x="48" y="58" width="45" height="25" rx="12" fill="#ef7d68"/>
+      <text x="0" y="150" fill="#63c9e5" font-size="25">Pμ</text><rect x="48" y="128" width="205" height="25" rx="12" fill="#3c4b52"/><rect x="48" y="128" width="90" height="25" rx="12" fill="#63c9e5"/>
+      <text x="0" y="220" fill="#ffd166" font-size="25">Pτ</text><rect x="48" y="198" width="205" height="25" rx="12" fill="#3c4b52"/><rect x="48" y="198" width="70" height="25" rx="12" fill="#ffd166"/>
+      <path d="M2 292H252" stroke="#70858e" stroke-width="2"/>
+      <text x="125" y="344" fill="#fff" font-family="Libertinus Serif,serif" font-size="32" font-style="italic" text-anchor="middle">Pₑ + Pμ + Pτ = 1</text>
+      <text x="125" y="398" fill="#aebfc5" font-size="20" text-anchor="middle">точка движется при изменении L/E</text>
+    </g>
+  </g>
+</svg>

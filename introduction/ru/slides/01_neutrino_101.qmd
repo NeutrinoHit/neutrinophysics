@@ -1,5 +1,7 @@
 ---
 title: "Нейтрино 101"
+lecture-id: "01"
+lecture-number: 1
 lang: ru-RU
 subtitle: "Введение в физику нейтрино"
 author: "Дмитрий В. Наумов"

@@ -1,0 +1,42 @@
+```{=html}
+<div id="matter-adiabatic-lab" class="matter-lab adiabatic-lab">
+  <div class="matter-lab-controls">
+    <label>Начальный потенциал A<sub>0</sub>
+      <span><output data-out="A0">5.5</output></span>
+      <input data-control="A0" type="range" min="0.2" max="8" step="0.05" value="5.5">
+    </label>
+    <label>Длина профиля ΔX
+      <span><output data-out="T">55</output></span>
+      <input data-control="T" type="range" min="1" max="120" step="0.5" value="55">
+    </label>
+    <label>Вакуумный угол θ
+      <span><output data-out="theta">33.4</output>°</span>
+      <input data-control="theta" type="range" min="3" max="44" step="0.1" value="33.4">
+    </label>
+    <div class="matter-presets" role="group" aria-label="Скорость профиля">
+      <button type="button" data-preset="slow">адиабатично</button>
+      <button type="button" data-preset="fast">быстро</button>
+      <button type="button" data-preset="smallmix">малый θ</button>
+      <button type="button" data-action="play">▶ пройти профиль</button>
+    </div>
+  </div>
+  <div class="matter-lab-readouts">
+    <div><span>max η</span><b data-val="eta">—</b></div>
+    <div><span>min Δ<sub>m</sub>/Δ</span><b data-val="gap">—</b></div>
+    <div><span>P<sub>2m</sub>(выход)</span><b data-val="P2m">—</b></div>
+    <div><span>P<sub>2</sub>(выход)</span><b data-val="P2">—</b></div>
+    <div class="prob"><span>P<sub>e</sub>(выход)</span><b data-val="Pe">—</b></div>
+  </div>
+  <div class="adiabatic-progress"><i data-progress></i></div>
+  <div class="matter-lab-plots">
+    <figure>
+      <svg data-plot="profile" viewBox="0 0 610 285" role="img" aria-label="Плотность и вероятности в трех базисах"></svg>
+      <figcaption>одна волна, три способа разложения</figcaption>
+    </figure>
+    <figure>
+      <svg data-plot="branches" viewBox="0 0 440 285" role="img" aria-label="Следование по мгновенной ветви"></svg>
+      <figcaption>точное состояние на избегаемом пересечении</figcaption>
+    </figure>
+  </div>
+</div>
+```

@@ -91,12 +91,12 @@ toc: false
     <details class="lecture-row">
       <summary>
         <span class="lecture-index">05</span>
-        <span>Осцилляции нейтрино в вакууме</span>
+        <span>Осцилляции в вакууме: два флэйвора и маятники</span>
       </summary>
       <div class="lecture-row-body">
-      <p>Плосковолновая теория, длины осцилляций и практические примеры.</p>
+      <p>Квантовая природа осцилляций, двухфлэйворный вывод, интерактив и механическая модель.</p>
         <div class="lecture-links">
-          <a href="ru/slides/05_vacuum_oscillations.html">Открыть лекцию</a>
+          <a href="ru/slides/05a_vacuum_two_flavors.html">Открыть лекцию</a>
           <a href="ru/exercises/05_vacuum_oscillations_exercises.html">Задачи</a>
         </div>
       </div>
@@ -105,12 +105,12 @@ toc: false
     <details class="lecture-row">
       <summary>
         <span class="lecture-index">06</span>
-        <span>Осцилляции нейтрино в веществе</span>
+        <span>Осцилляции в вакууме: три флэйвора</span>
       </summary>
       <div class="lecture-row-body">
-      <p>Потенциал взаимодействия, адиабатическое приближение и MSW-эффект.</p>
+      <p>Матрица PMNS, полная вероятность, CP-нарушение и параметры NuFIT.</p>
         <div class="lecture-links">
-          <a href="ru/slides/06_matter_oscillations.html">Открыть лекцию</a>
+          <a href="ru/slides/05b_vacuum_pmns.html">Открыть лекцию</a>
         </div>
       </div>
     </details>
@@ -118,6 +118,58 @@ toc: false
     <details class="lecture-row">
       <summary>
         <span class="lecture-index">07</span>
+        <span>Осцилляции в веществе: постоянная плотность</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Потенциал вещества, три базиса, точное решение слоя и интерактив всех режимов.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/06a_matter_constant_density.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">08</span>
+        <span>Адиабатический MSW-эффект</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Мгновенный базис, критерий адиабатичности, солнечный выход и сохранение энергии.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/06b_matter_adiabatic_msw.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">09</span>
+        <span>Исчезновение ν₁ и механическая аналогия</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Интерференция в фиксированном массовом базисе и аналогия со связанными маятниками.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/06c_matter_interference_pendulums.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">10</span>
+        <span>Три нейтрино в веществе</span>
+      </summary>
+      <div class="lecture-row-body">
+      <p>Трёхфлэйворный гамильтониан, эффект день–ночь, данные и открытые проблемы.</p>
+        <div class="lecture-links">
+          <a href="ru/slides/06d_matter_three_flavors.html">Открыть лекцию</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="lecture-row">
+      <summary>
+        <span class="lecture-index">11</span>
         <span>Парадоксы в теории осцилляций нейтрино</span>
       </summary>
       <div class="lecture-row-body">
@@ -130,7 +182,7 @@ toc: false
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">08</span>
+        <span class="lecture-index">12</span>
         <span>Нейтрино в Стандартной модели</span>
       </summary>
       <div class="lecture-row-body">
@@ -143,7 +195,7 @@ toc: false
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">09</span>
+        <span class="lecture-index">13</span>
         <span>Электромагнитные свойства нейтрино</span>
       </summary>
       <div class="lecture-row-body">
@@ -156,7 +208,7 @@ toc: false
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">10</span>
+        <span class="lecture-index">14</span>
         <span>Стерильные нейтрино</span>
       </summary>
       <div class="lecture-row-body">
@@ -169,7 +221,7 @@ toc: false
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">11</span>
+        <span class="lecture-index">15</span>
         <span>Взаимодействие нейтрино с веществом</span>
       </summary>
       <div class="lecture-row-body">
@@ -182,7 +234,7 @@ toc: false
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">12</span>
+        <span class="lecture-index">16</span>
         <span>Экспериментальные методы детектирования</span>
       </summary>
       <div class="lecture-row-body">
@@ -195,20 +247,21 @@ toc: false
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">13</span>
+        <span class="lecture-index">17</span>
         <span>Солнечные нейтрино</span>
       </summary>
       <div class="lecture-row-body">
       <p>Модель Солнца, спектры, сечения, эксперименты и фит данных.</p>
         <div class="lecture-links">
           <a href="ru/slides/13_solar_neutrinos.html">Открыть лекцию</a>
+          <a href="ru/exercises/13_solar_neutrinos_exercises.html">Задачи</a>
         </div>
       </div>
     </details>
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">14</span>
+        <span class="lecture-index">18</span>
         <span>Атмосферные нейтрино</span>
       </summary>
       <div class="lecture-row-body">
@@ -221,7 +274,7 @@ toc: false
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">15</span>
+        <span class="lecture-index">19</span>
         <span>Ускорительные нейтрино</span>
       </summary>
       <div class="lecture-row-body">
@@ -234,7 +287,7 @@ toc: false
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">16</span>
+        <span class="lecture-index">20</span>
         <span>Реакторные нейтрино</span>
       </summary>
       <div class="lecture-row-body">
@@ -247,7 +300,7 @@ toc: false
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">17</span>
+        <span class="lecture-index">21</span>
         <span>Геофизические нейтрино</span>
       </summary>
       <div class="lecture-row-body">
@@ -260,7 +313,7 @@ toc: false
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">18</span>
+        <span class="lecture-index">22</span>
         <span>Безнейтринный двойной бета-распад</span>
       </summary>
       <div class="lecture-row-body">
@@ -273,7 +326,7 @@ toc: false
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">19</span>
+        <span class="lecture-index">23</span>
         <span>Реликтовые нейтрино</span>
       </summary>
       <div class="lecture-row-body">
@@ -286,7 +339,7 @@ toc: false
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">20</span>
+        <span class="lecture-index">24</span>
         <span>Астрофизические нейтрино сверхвысоких энергий</span>
       </summary>
       <div class="lecture-row-body">
@@ -299,7 +352,7 @@ toc: false
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">21</span>
+        <span class="lecture-index">25</span>
         <span>Нейтрино от сверхновой</span>
       </summary>
       <div class="lecture-row-body">
@@ -312,7 +365,7 @@ toc: false
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">22</span>
+        <span class="lecture-index">26</span>
         <span>Глобальный анализ</span>
       </summary>
       <div class="lecture-row-body">
@@ -325,7 +378,7 @@ toc: false
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">23</span>
+        <span class="lecture-index">27</span>
         <span>Смешивание и CP-нарушение</span>
       </summary>
       <div class="lecture-row-body">
@@ -338,7 +391,7 @@ toc: false
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">24</span>
+        <span class="lecture-index">28</span>
         <span>Нейтрино как окно в новую физику</span>
       </summary>
       <div class="lecture-row-body">
@@ -351,7 +404,7 @@ toc: false
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">25</span>
+        <span class="lecture-index">29</span>
         <span>Нейтринная томография</span>
       </summary>
       <div class="lecture-row-body">
@@ -364,7 +417,7 @@ toc: false
 
     <details class="lecture-row">
       <summary>
-        <span class="lecture-index">26</span>
+        <span class="lecture-index">30</span>
         <span>Реакторы как мониторинг</span>
       </summary>
       <div class="lecture-row-body">

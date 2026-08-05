@@ -1,5 +1,7 @@
 ---
 title: "Прямые методы измерения массы нейтрино"
+lecture-id: "04"
+lecture-number: 4
 subtitle: "Введение в физику нейтрино"
 author: "Дмитрий В. Наумов"
 institute: "ОИЯИ"

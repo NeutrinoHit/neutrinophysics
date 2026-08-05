@@ -25,6 +25,7 @@ project:
     - "introduction/ru/exercises/03_helicity_exercises.qmd"
     - "introduction/ru/exercises/04_direct_neutrino_mass_exercises.qmd"
     - "introduction/ru/exercises/05_vacuum_oscillations_exercises.qmd"
+    - "introduction/ru/exercises/13_solar_neutrinos_exercises.qmd"
     - "solar-neutrino-masterclass/index.qmd"
     - "solar-neutrino-masterclass/slides/00_solar_neutrino_physics.qmd"
     - "solar-neutrino-masterclass/slides/00_solar_neutrino_physics_appendix.qmd"

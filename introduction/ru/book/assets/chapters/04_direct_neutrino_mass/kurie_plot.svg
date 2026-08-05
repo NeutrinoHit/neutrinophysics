@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720">
+  <defs><style>.s{font-family:'Avenir Next','Segoe UI',sans-serif}.m{font-family:'Iowan Old Style',Georgia,serif}.ink{fill:#18262f}.muted{fill:#687984}.gold{fill:#9a6b17}</style></defs>
+  <rect width="1400" height="720" rx="34" fill="#f8f6f0"/>
+  <text x="700" y="70" text-anchor="middle" class="s ink" font-size="42" font-weight="700">График Кури превращает безмассовый конец в прямую</text>
+  <rect x="115" y="125" width="1170" height="455" rx="24" fill="#fff" stroke="#ded8ca" stroke-width="4"/>
+  <line x1="205" y1="520" x2="1215" y2="520" stroke="#18262f" stroke-width="5"/><line x1="205" y1="520" x2="205" y2="180" stroke="#18262f" stroke-width="5"/>
+  <g stroke="#d9dfe2" stroke-width="2"><line x1="405" y1="180" x2="405" y2="520"/><line x1="605" y1="180" x2="605" y2="520"/><line x1="805" y1="180" x2="805" y2="520"/><line x1="1005" y1="180" x2="1005" y2="520"/><line x1="205" y1="435" x2="1215" y2="435"/><line x1="205" y1="350" x2="1215" y2="350"/><line x1="205" y1="265" x2="1215" y2="265"/></g>
+  <path d="M205 190 L1215 520" fill="none" stroke="#2f6f9f" stroke-width="10" stroke-linecap="round"/>
+  <path d="M205 195 C520 295 775 385 960 455 C1020 480 1055 505 1075 520" fill="none" stroke="#9a6b17" stroke-width="10" stroke-linecap="round"/>
+  <line x1="1075" y1="180" x2="1075" y2="520" stroke="#9a6b17" stroke-width="4" stroke-dasharray="12 10"/>
+  <text x="845" y="265" class="m" fill="#2f6f9f" font-size="31">mβ = 0</text><text x="760" y="430" class="m gold" font-size="31">mβ ≠ 0</text>
+  <text x="1075" y="563" text-anchor="middle" class="m gold" font-size="27">E₀−mβ</text><text x="1215" y="563" text-anchor="middle" class="m" fill="#2f6f9f" font-size="27">E₀</text>
+  <text x="710" y="630" text-anchor="middle" class="m ink" font-size="30">энергия электрона E</text>
+  <text x="65" y="360" text-anchor="middle" class="m ink" font-size="30" transform="rotate(-90 65 360)">K(E)</text>
+  <text x="700" y="682" text-anchor="middle" class="s muted" font-size="25">искривление у конца — исторически наглядный признак ненулевой массы</text>
+</svg>

@@ -1,5 +1,7 @@
 ---
 title: "Спиральность нейтрино"
+lecture-id: "03"
+lecture-number: 3
 lang: ru-RU
 subtitle: "Спин, поляризация и опыт Голдхабера"
 author: "Дмитрий В. Наумов"
