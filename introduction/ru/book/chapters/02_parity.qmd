@@ -175,13 +175,13 @@ $\tau^+$ и $\theta^+$ --- две почти неразличимые части
 
 ## Опыт Ву
 
-У Цзяньсюн была одной из ведущих специалистов по $\beta$-распаду. В конце
+Ву Цзяньсюн была одной из ведущих специалистов по $\beta$-распаду. В конце
 1956 года её группа совместно со специалистами Национального бюро стандартов
 поляризовала ядра ${}^{60}\mathrm{Co}$ и измерила направления вылетающих
 электронов.
 
-::: {.biography name="У Цзяньсюн" years="1912–1997" photo="../assets/people/chien_shiung_wu.jpg" photo-alt="У Цзяньсюн в лаборатории" source="https://c250.columbia.edu/c250_celebrates/remarkable_columbians/chien-shiung_wu.html" source-label="Колумбийский университет" photo-source="https://commons.wikimedia.org/wiki/File:Chien-shiung_Wu_(1912-1997)_C.jpg" photo-credit="Smithsonian Institution Archives; без известных ограничений"}
-У Цзяньсюн была специалистом по экспериментальной физике $\beta$-распада. В
+::: {.biography name="Ву Цзяньсюн" years="1912–1997" photo="../assets/people/chien_shiung_wu.jpg" photo-alt="Ву Цзяньсюн в лаборатории" source="https://c250.columbia.edu/c250_celebrates/remarkable_columbians/chien-shiung_wu.html" source-label="Колумбийский университет" photo-source="https://commons.wikimedia.org/wiki/File:Chien-shiung_Wu_(1912-1997)_C.jpg" photo-credit="Smithsonian Institution Archives; без известных ограничений"}
+Ву Цзяньсюн была специалистом по экспериментальной физике $\beta$-распада. В
 1956 году она возглавила опыт с поляризованными ядрами ${}^{60}\mathrm{Co}$,
 который установил несохранение пространственной чётности в слабом
 взаимодействии.

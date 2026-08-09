@@ -1,10 +1,10 @@
 (() => {
   const restartSlideAnimations = (slide) => {
-    document.querySelectorAll(".parity-demo.is-active, .wu-apparatus.is-active").forEach((element) => {
+    document.querySelectorAll(".parity-demo.is-active, .wu-apparatus.is-active, .alien-hand-demo.is-active, .demag-animation.is-active").forEach((element) => {
       element.classList.remove("is-active");
     });
 
-    slide?.querySelectorAll(".parity-demo, .wu-apparatus").forEach((element) => {
+    slide?.querySelectorAll(".parity-demo, .wu-apparatus, .alien-hand-demo, .demag-animation").forEach((element) => {
       void element.offsetWidth;
       element.classList.add("is-active");
     });

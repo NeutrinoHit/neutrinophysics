@@ -1,0 +1,161 @@
+```{=html}
+<div class="alien-hand-demo" role="img" aria-label="Земляне посылают через межзвёздное пространство сообщение «Подними левую руку!». Радиально-симметричный восьмирукий октопус, показанный сверху, отвечает «Какую левую?!»: после поворота вокруг оси все его руки и глаза неразличимы">
+  <div class="alien-demo-kicker">
+    <span>сеанс межпланетной связи</span>
+  </div>
+
+  <svg viewBox="0 0 1500 500" aria-hidden="true">
+    <defs>
+      <linearGradient id="earth-panel-gradient" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#0b2434"/>
+        <stop offset="1" stop-color="#07131b"/>
+      </linearGradient>
+      <linearGradient id="alien-panel-gradient" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#102b2a"/>
+        <stop offset="1" stop-color="#071817"/>
+      </linearGradient>
+      <radialGradient id="alien-body-gradient" cx="35%" cy="28%" r="75%">
+        <stop offset="0" stop-color="#a4f7d8"/>
+        <stop offset="0.55" stop-color="#47c7a1"/>
+        <stop offset="1" stop-color="#176b63"/>
+      </radialGradient>
+      <filter id="alien-glow" x="-40%" y="-40%" width="180%" height="180%">
+        <feGaussianBlur stdDeviation="5" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <marker id="alien-arrow-earth" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffad5a"/>
+      </marker>
+      <marker id="alien-arrow-octopus" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#75ddb8"/>
+      </marker>
+      <g id="alien-tentacle">
+        <path d="M 0 -66 C -16 -103 -18 -143 0 -184" fill="none" stroke="#4cc5a3" stroke-linecap="round" stroke-width="28"/>
+        <circle cx="0" cy="-184" r="14" fill="#4cc5a3" stroke="#9df1d2" stroke-width="3"/>
+        <circle class="alien-sucker" cx="-7" cy="-128" r="4" fill="#153f3a" stroke="#9df1d2" stroke-width="2"/>
+        <circle class="alien-sucker" cx="5" cy="-151" r="4" fill="#153f3a" stroke="#9df1d2" stroke-width="2"/>
+      </g>
+      <g id="alien-eye-unit">
+        <ellipse class="alien-eye-white" cx="0" cy="-45" rx="12" ry="17" fill="#f5fff9" stroke="#163b36" stroke-width="3"/>
+        <circle class="alien-eye" cx="0" cy="-48" r="6" fill="#182229"/>
+        <circle class="alien-eye-glint" cx="-2" cy="-51" r="2" fill="#ffffff"/>
+      </g>
+    </defs>
+
+    <rect class="alien-scene-panel" x="12" y="12" width="560" height="420" rx="24" fill="url(#earth-panel-gradient)"/>
+    <rect class="alien-scene-panel" x="928" y="12" width="560" height="420" rx="24" fill="url(#alien-panel-gradient)"/>
+    <text class="alien-panel-title" x="40" y="54">ЗЕМЛЯНЕ</text>
+    <text class="alien-panel-title" x="956" y="54">ОКТОПУС · ВИД СВЕРХУ</text>
+
+    <!-- Землянин и его столь же убедительная зеркальная копия. -->
+    <g class="earth-person earth-person-a">
+      <circle class="earth-head" cx="164" cy="142" r="39"/>
+      <path class="earth-hair" d="M126 139 Q130 92 164 98 Q198 92 203 137 Q184 117 164 120 Q143 116 126 139Z"/>
+      <circle class="earth-eye" cx="150" cy="142" r="4"/>
+      <circle class="earth-eye" cx="178" cy="142" r="4"/>
+      <path class="earth-smile" d="M148 160 Q164 174 181 159"/>
+      <rect class="earth-shirt earth-shirt-a" x="117" y="183" width="94" height="132" rx="36"/>
+      <path class="earth-leg" d="M143 306 L132 380"/>
+      <path class="earth-leg" d="M186 306 L198 380"/>
+      <path class="earth-arm earth-arm-rest" d="M122 205 Q83 239 71 286"/>
+      <g class="earth-wave earth-wave-a">
+        <path class="earth-arm earth-arm-left" d="M205 205 Q237 165 253 109"/>
+        <circle class="earth-hand earth-hand-left" cx="253" cy="105" r="15"/>
+      </g>
+      <text class="earth-name" x="164" y="410">мы</text>
+      <g class="earth-left-label">
+        <rect x="190" y="62" width="82" height="31" rx="15"/>
+        <text x="231" y="84">левая</text>
+      </g>
+    </g>
+
+    <line class="earth-mirror" x1="292" y1="80" x2="292" y2="389"/>
+    <path class="earth-mirror-shine" d="M284 95 L300 130 L284 170 L300 215 L284 260 L300 305 L284 350"/>
+    <text class="earth-mirror-label" x="292" y="412">зеркало</text>
+
+    <g class="earth-person earth-person-b">
+      <circle class="earth-head" cx="420" cy="142" r="39"/>
+      <path class="earth-hair" d="M381 137 Q386 92 420 98 Q454 92 459 139 Q441 116 420 120 Q399 117 381 137Z"/>
+      <circle class="earth-eye" cx="406" cy="142" r="4"/>
+      <circle class="earth-eye" cx="434" cy="142" r="4"/>
+      <path class="earth-smile" d="M404 159 Q420 174 437 160"/>
+      <rect class="earth-shirt earth-shirt-b" x="373" y="183" width="94" height="132" rx="36"/>
+      <path class="earth-leg" d="M399 306 L388 380"/>
+      <path class="earth-leg" d="M442 306 L454 380"/>
+      <path class="earth-arm earth-arm-rest" d="M462 205 Q501 239 513 286"/>
+      <g class="earth-wave earth-wave-b">
+        <path class="earth-arm earth-arm-left" d="M379 205 Q347 165 331 109"/>
+        <circle class="earth-hand earth-hand-left" cx="331" cy="105" r="15"/>
+      </g>
+      <text class="earth-name" x="420" y="410">зеркальные мы</text>
+      <g class="earth-left-label">
+        <rect x="312" y="62" width="82" height="31" rx="15"/>
+        <text x="353" y="84">левая</text>
+      </g>
+    </g>
+
+    <!-- Обе реплики находятся между мирами, в межзвёздном пространстве. -->
+    <g class="alien-interstellar-space">
+      <circle cx="620" cy="76" r="2"/>
+      <circle cx="688" cy="350" r="3"/>
+      <circle cx="744" cy="38" r="2"/>
+      <circle cx="818" cy="390" r="2"/>
+      <circle cx="886" cy="92" r="3"/>
+      <text x="750" y="46">МЕЖЗВЁЗДНОЕ ПРОСТРАНСТВО</text>
+    </g>
+
+    <g class="alien-radio-link alien-radio-outbound">
+      <path class="alien-radio-line" d="M590 125 C680 78 820 78 910 125" marker-end="url(#alien-arrow-earth)"/>
+      <circle class="alien-radio-pulse pulse-one" cx="610" cy="115" r="7"/>
+      <circle class="alien-radio-pulse pulse-two" cx="610" cy="115" r="7"/>
+      <circle class="alien-radio-pulse pulse-three" cx="610" cy="115" r="7"/>
+      <rect class="alien-message alien-message-earth" x="610" y="132" width="280" height="62" rx="31"/>
+      <text class="alien-message-text" x="750" y="171">Подними левую руку!</text>
+    </g>
+
+    <g class="alien-radio-link alien-radio-return">
+      <path class="alien-radio-line" d="M910 330 C820 378 680 378 590 330" marker-end="url(#alien-arrow-octopus)"/>
+      <circle class="alien-radio-pulse pulse-one" cx="890" cy="342" r="7"/>
+      <circle class="alien-radio-pulse pulse-two" cx="890" cy="342" r="7"/>
+      <circle class="alien-radio-pulse pulse-three" cx="890" cy="342" r="7"/>
+      <rect class="alien-message alien-message-octopus" x="632" y="252" width="236" height="62" rx="31"/>
+      <text class="alien-message-text" x="750" y="291">Какую левую?!</text>
+      <text class="alien-message-note" x="750" y="414">после поворота ничего не изменилось</text>
+    </g>
+
+    <!-- Вид сверху: восемь одинаковых рук и восемь одинаковых глаз. -->
+    <g class="alien-octopus">
+      <g class="alien-tentacles" transform="translate(1208 225)">
+        <use href="#alien-tentacle" transform="rotate(0)"/>
+        <use href="#alien-tentacle" transform="rotate(45)"/>
+        <use href="#alien-tentacle" transform="rotate(90)"/>
+        <use href="#alien-tentacle" transform="rotate(135)"/>
+        <use href="#alien-tentacle" transform="rotate(180)"/>
+        <use href="#alien-tentacle" transform="rotate(225)"/>
+        <use href="#alien-tentacle" transform="rotate(270)"/>
+        <use href="#alien-tentacle" transform="rotate(315)"/>
+      </g>
+      <circle class="alien-body" cx="1208" cy="225" r="84" fill="url(#alien-body-gradient)"/>
+      <g class="alien-eye-ring" transform="translate(1208 225)">
+        <use href="#alien-eye-unit" transform="rotate(0)"/>
+        <use href="#alien-eye-unit" transform="rotate(45)"/>
+        <use href="#alien-eye-unit" transform="rotate(90)"/>
+        <use href="#alien-eye-unit" transform="rotate(135)"/>
+        <use href="#alien-eye-unit" transform="rotate(180)"/>
+        <use href="#alien-eye-unit" transform="rotate(225)"/>
+        <use href="#alien-eye-unit" transform="rotate(270)"/>
+        <use href="#alien-eye-unit" transform="rotate(315)"/>
+      </g>
+      <circle class="alien-axis-ring" cx="1208" cy="225" r="15"/>
+      <circle class="alien-axis-dot" cx="1208" cy="225" r="5"/>
+    </g>
+
+  </svg>
+
+  <div class="alien-demo-summary">
+    <span><b>Земля:</b> тело подсказывает картинку</span>
+    <span><b>Зеркальная Земля:</b> подсказывает обратную</span>
+    <strong>Нужен физический опыт, который не сохраняет чётность.</strong>
+  </div>
+</div>
+```
