@@ -21,9 +21,6 @@ format:
     slide-level: 2
     toc: false
     transition: fade
-    width: 1600
-    height: 900
-    margin: 0.06
     center: false
     incremental: false
     chalkboard: false
@@ -72,7 +69,7 @@ E^2=\mathbf p^2+m^2,
 \qquad
 E=\omega,
 \qquad
-\bar\lambda=\frac{1}{p},
+ƛ=\frac{1}{p}
 \qquad
 t\sim\frac{1}{E}.
 $$
@@ -276,13 +273,14 @@ $$
 \nu_\mu+n\not\to p+e^-.
 $$
 
+Из измерения ширины $Z$-бозона следует: лёгких **активных** нейтрино — три.
+
 :::
 
 ::: {.column width="42%"}
 
 ![](assets/01_neutrino_101/z_width_neutrinos.png){.slide-media .media-height-md fig-alt="Ширина Z-бозона допускает три лёгких активных нейтрино"}
 
-Из измерения ширины $Z$-бозона следует: лёгких **активных** нейтрино — три.
 
 :::
 
@@ -311,7 +309,8 @@ $$
 
 {{< include assets/01_neutrino_101/_weak_interactions.qmd >}}
 
-Нейтрино участвуют в слабом и гравитационном взаимодействиях. При доступных
+- Нейтрино участвуют в слабом и гравитационном взаимодействиях.
+- При доступных
 энергиях гравитационное взаимодействие отдельного нейтрино пренебрежимо мало.
 
 ## Сечение и длина взаимодействия
@@ -546,37 +545,91 @@ $$
 \Delta m_{ij}^2.
 $$
 
-## Солнечные нейтрино: оценка потока
+## Поток солнечных нейтрино — без модели Солнца {#solar-neutrino-flux .solar-flux-slide}
 
-Основная цепочка превращает четыре протона в ядро гелия:
+:::: {.solar-flux-layout}
+
+::: {.solar-flux-card .solar-flux-source}
+[**1. Два нейтрино на один цикл**]{.solar-flux-step-title}
+
+Как бы ни шли отдельные реакции, их суммарный результат:
 
 $$
 4p\to{}^4\mathrm{He}+2e^++2\nu_e,
-\qquad
+\qquad n_\nu=2.
+$$
+
+По разности масс известно энерговыделение
+
+$$
 Q\simeq26.7~\mathrm{МэВ}.
 $$
+:::
 
-Из светимости Солнца следует
+::: {.solar-flux-card .solar-flux-observation}
+[**2. У Земли измерен поток энергии**]{.solar-flux-step-title}
 
-$$
-\dot N_\nu\simeq\frac{2L_\odot}{Q},
-\qquad
-\Phi_\nu(r)=\frac{\dot N_\nu}{4\pi r^2}.
-$$
-
-На орбите Земли:
+Солнечная постоянная — это светимость, делённая на площадь сферы:
 
 $$
-\Phi_\nu(1~\mathrm{а.е.})
-\sim6.5\cdot10^{10}~\mathrm{см}^{-2}\mathrm{с}^{-1}.
+F_\odot\equiv\frac{L_\odot}{4\pi d^2}
+=1.361~\mathrm{кВт\,м^{-2}}.
+$$
+:::
+
+::: {.solar-flux-card .solar-flux-calculation}
+[**3. Считаем число циклов — и нейтрино**]{.solar-flux-step-title}
+
+Сначала переведём «цену» одного цикла в джоули:
+
+$$
+Q=26.7\times10^6\times1.602\times10^{-19}
+=4.28\times10^{-12}~\mathrm{Дж}.
 $$
 
-Историческая загадка состояла в дефиците именно **электронных** нейтрино;
-часть потока по дороге превращалась в $\nu_\mu$ и $\nu_\tau$.
+Число завершённых циклов в секунду на единицу площади:
+
+$$
+\frac{\dot N_{\rm cycle}}{4\pi d^2}
+=\frac{F_\odot}{Q}
+=\frac{1.361\times10^3}{4.28\times10^{-12}}
+=3.18\times10^{14}~\mathrm{м^{-2}\,с^{-1}}.
+$$
+
+Каждый цикл даёт два нейтрино:
+
+$$
+\Phi_\nu=\frac{2F_\odot}{Q}
+=6.36\times10^{14}~\mathrm{м^{-2}\,с^{-1}}
+=6.36\times10^{10}~\mathrm{см^{-2}\,с^{-1}}
+\approx\boxed{6.5\times10^{10}~\mathrm{см^{-2}\,с^{-1}}}.
+$$
+:::
+
+::::
+
+::: {.solar-flux-message}
+**В этом сила оценки:** не нужны температура и плотность ядра Солнца, сечения
+реакций или доли ветвей цепочки. Достаточно измеренного $F_\odot$, закона
+сохранения энергии и факта, что на одно ядро ${}^4\mathrm{He}$ рождаются два
+нейтрино.
+:::
+
+::: {.solar-flux-note}
+Точность оценки — несколько процентов: небольшую часть $Q$ уносят сами
+нейтрино. Исторический дефицит наблюдался в потоке $\nu_e$: часть его по дороге
+превращалась в $\nu_\mu$ и $\nu_\tau$.
+:::
 
 ## Эксперименты с солнечными нейтрино
 
 {{< include assets/01_neutrino_101/_detector_gallery.qmd >}}
+
+::: {.solar-flux-card}
+
+Результаты экспериментов с солнечными нейтрино показали, что поток электронных нейтрино на Земле примерно в три раза меньше, чем ожидалось. Это было первым убедительным свидетельством осцилляций нейтрино.
+
+:::
 
 ## Атмосферные нейтрино {#atmospheric-neutrino-ratio}
 
@@ -719,7 +772,7 @@ $$
 
 ::::
 
-<video class="slide-video" style="--media-max-height: 300px;" data-autoplay muted loop controls preload="metadata" playsinline poster="assets/01_neutrino_101/mass_ordering.jpg" src="assets/01_neutrino_101/mass_ordering.mp4"></video>
+<video class="slide-video" style="--media-max-height: 500px;" data-autoplay muted loop controls preload="metadata" playsinline poster="assets/01_neutrino_101/mass_ordering.jpg" src="assets/01_neutrino_101/mass_ordering.mp4"></video>
 
 ## Дираковское или майорановское?
 

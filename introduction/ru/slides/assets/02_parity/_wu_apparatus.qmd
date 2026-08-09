@@ -1,40 +1,142 @@
-```{=html}
-<div class="wu-apparatus" role="img" aria-label="Схема установки опыта Ву">
-  <div class="apparatus-label gamma-label">сцинтиллятор<br>для \(\gamma\)-квантов</div>
-  <div class="apparatus-label beta-label">сцинтиллятор<br>для электронов</div>
-  <div class="apparatus-label vertical-label">вертикальное поле<br>поляризует \({}^{60}\mathrm{Co}\)</div>
-  <div class="apparatus-label cooling-label">поперечное поле<br>охлаждает кристалл</div>
-
-  <div class="apparatus-vessel">
-    <div class="apparatus-phase" aria-live="off">
-      <span class="phase-cooling">охлаждение</span>
-      <span class="phase-polarizing">поляризация</span>
-      <span class="phase-detecting">регистрация распада</span>
+~~~{=html}
+<div class="wu-apparatus" role="img" aria-label="Цикл опыта Ву: образец охлаждают адиабатическим размагничиванием до одной сотой кельвина; два гамма-детектора вдоль и поперёк оси независимо измеряют степень поляризации ядер по анизотропии гамма-излучения; электронный детектор при перевороте поля регистрирует асимметрию бета-распада">
+  <div class="wu-cycle-steps" aria-hidden="true">
+    <div class="wu-cycle-step wu-cycle-step-cooling">
+      <b>1</b><span><strong>Охлаждаем</strong><small>1.2 K → 0.01 K</small></span>
     </div>
-    <span class="helium helium-outer">жидкий гелий</span>
-    <span class="helium helium-inner"></span>
-    <span class="crystal">
-      <span class="crystal-label">\({}^{60}\mathrm{Co}\)</span>
-      <span class="nuclear-spin spin-one">↑</span>
-      <span class="nuclear-spin spin-two">↑</span>
-      <span class="nuclear-spin spin-three">↑</span>
-    </span>
-    <span class="beta-detector"></span>
-    <span class="gamma-detector left"></span>
-    <span class="gamma-detector right"></span>
-    <span class="field-coil"></span>
-    <span class="field-arrow up">\(\mathbf B\)</span>
-    <span class="beta-ray"></span>
-    <span class="beta-particle">\(e^-\)</span>
-    <span class="gamma-ray gamma-ray-left"></span>
-    <span class="gamma-ray gamma-ray-right"></span>
-    <span class="gamma-particle gamma-particle-left">\(\gamma\)</span>
-    <span class="gamma-particle gamma-particle-right">\(\gamma\)</span>
+    <div class="wu-cycle-step wu-cycle-step-up">
+      <b>2</b><span><strong>Считаем при B ↑</strong><small>детектор направлен по полю</small></span>
+    </div>
+    <div class="wu-cycle-step wu-cycle-step-down">
+      <b>3</b><span><strong>Переворачиваем: B ↓</strong><small>тот же детектор теперь против поля</small></span>
+    </div>
+  </div>
+
+  <div class="wu-cycle-stage">
+    <div class="wu-cooling-link">
+      <div class="wu-panel-kicker">как на предыдущем слайде</div>
+      <h3>Адиабатическое<br>размагничивание</h3>
+
+      <div class="wu-cooling-field">
+        <span class="wu-cooling-field-label">B<sub>cool</sub></span>
+        <span class="wu-cooling-field-track"><i></i></span>
+        <small>поле уменьшаем</small>
+      </div>
+
+      <div class="wu-mini-thermometer">
+        <span class="wu-mini-thermometer-tube"><i></i></span>
+        <span class="wu-mini-thermometer-bulb"></span>
+        <span class="wu-temp-value wu-temp-hot">1.2 K</span>
+        <span class="wu-temp-value wu-temp-cold">0.01 K</span>
+      </div>
+
+      <p><strong>Спины забирают энергию решётки.</strong><br>Холодный образец сохраняет поляризацию.</p>
+      <span class="wu-cooling-connector">охладили → измеряем</span>
+    </div>
+
+    <div class="wu-rig">
+      <div class="wu-fixed-detector">
+        <span>электронный сцинтиллятор</span>
+        <small>положение не меняется</small>
+      </div>
+
+      <div class="wu-dewar">
+        <div class="wu-helium"><span>жидкий гелий</span></div>
+        <div class="wu-sample">
+          <span class="wu-sample-name"><sup>60</sup>Co</span>
+          <i class="wu-sample-spin wu-sample-spin-one">↑</i>
+          <i class="wu-sample-spin wu-sample-spin-two">↑</i>
+          <i class="wu-sample-spin wu-sample-spin-three">↑</i>
+        </div>
+        <div class="wu-measurement-field">
+          <span class="wu-field-name">B</span>
+          <i></i>
+        </div>
+        <div class="wu-beta-stream">
+          <i class="wu-beta-dot wu-beta-dot-one"></i>
+          <i class="wu-beta-dot wu-beta-dot-two"></i>
+          <i class="wu-beta-dot wu-beta-dot-three"></i>
+          <i class="wu-beta-dot wu-beta-dot-four"></i>
+        </div>
+      </div>
+
+      <svg class="wu-gamma-rays" viewBox="0 0 100 500" preserveAspectRatio="none" aria-hidden="true">
+        <path class="wu-gamma-ray wu-gamma-ray-axial" d="M50 350 L35 105"/>
+        <path class="wu-gamma-ray wu-gamma-ray-transverse" d="M50 350 L86 307"/>
+      </svg>
+
+      <div class="wu-gamma-detector wu-gamma-axial">
+        <i></i><span>γ</span><small>θ ≈ 0</small>
+      </div>
+      <div class="wu-gamma-detector wu-gamma-transverse">
+        <i></i><span>γ</span><small>θ ≈ π/2</small>
+      </div>
+      <div class="wu-gamma-caption">два γ-счётчика<br><small>анизотропия → поляризация</small></div>
+
+      <div class="wu-field-state wu-field-state-up">
+        <strong>B ↑</strong><span>детектор <b>по полю</b></span>
+      </div>
+      <div class="wu-field-state wu-field-state-down">
+        <strong>B ↓</strong><span>детектор <b>против поля</b></span>
+      </div>
+    </div>
+
+    <div class="wu-counts-panel">
+      <div class="wu-panel-kicker">одинаковое время измерения</div>
+      <h3>Электроны в верхнем детекторе</h3>
+
+      <div class="wu-bars" aria-hidden="true">
+        <div class="wu-bar-axis"><span>N(e<sup>−</sup>)</span></div>
+        <div class="wu-bar-column wu-bar-column-up">
+          <div class="wu-bar-ghost"></div>
+          <div class="wu-bar-value"><span>40</span></div>
+          <strong>B ↑</strong>
+          <small>по полю</small>
+        </div>
+        <div class="wu-bar-column wu-bar-column-down">
+          <div class="wu-bar-ghost"></div>
+          <div class="wu-bar-value"><span>80</span></div>
+          <strong>B ↓</strong>
+          <small>против поля</small>
+        </div>
+      </div>
+
+      <div class="wu-count-verdict">
+        <span>N<sub>против</sub> &gt; N<sub>по</sub></span>
+        <strong>электронов против поля больше</strong>
+      </div>
+
+      <div class="wu-gamma-counts">
+        <div class="wu-gamma-count-heading">
+          <span>независимый контроль</span>
+          <strong>γ-анизотропия</strong>
+        </div>
+
+        <div class="wu-gamma-bars" aria-hidden="true">
+          <div class="wu-gamma-bar-axis"><span>N(γ)</span></div>
+          <div class="wu-gamma-bar-column wu-gamma-bar-axial">
+            <div class="wu-gamma-bar-value"><span>N<sub>γ</sub>(0)</span></div>
+            <strong>θ ≈ 0</strong>
+            <small>вдоль оси</small>
+          </div>
+          <div class="wu-gamma-bar-column wu-gamma-bar-transverse">
+            <div class="wu-gamma-bar-value"><span>N<sub>γ</sub>(π/2)</span></div>
+            <strong>θ ≈ π/2</strong>
+            <small>поперёк оси</small>
+          </div>
+        </div>
+
+        <div class="wu-gamma-verdict">
+          <span>N<sub>γ</sub>(0) ≠ N<sub>γ</sub>(π/2)</span>
+          <strong>анизотропия ⇒ 𝒫 ≈ 0.65</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wu-cycle-conclusion">
+    γ-анизотропия независимо фиксирует поляризацию ядер. Затем переворачиваем только поле:
+    геометрия электронного детектора та же, а скорость счёта меняется — это асимметрия β-распада.
   </div>
 </div>
-```
-
-Два независимых наблюдения выполнялись одновременно:
-
-- электронный счётчик измерял асимметрию $\beta$-распада;
-- $\gamma$-счётчики контролировали поляризацию ядер.
+~~~

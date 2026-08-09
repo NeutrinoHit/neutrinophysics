@@ -849,11 +849,109 @@
   background: #08131a;
 }
 
+.reveal .solar-flux-slide {
+  font-size: 0.76em;
+}
+
+.reveal .solar-flux-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.32fr);
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  align-items: stretch;
+  margin-top: 0.25rem;
+}
+
+.reveal .solar-flux-card {
+  margin: 0;
+  padding: 0.58rem 0.72rem;
+  border: 1px solid #294454;
+  border-radius: 0.5rem;
+  background: linear-gradient(145deg, #08131a 0%, #0b1d27 100%);
+}
+
+.reveal .solar-flux-step-title {
+  display: block;
+  margin: 0 0 0.3rem;
+  color: #7cc7ff;
+  font-size: 1.02em;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.reveal .solar-flux-card p {
+  margin: 0.18rem 0;
+  line-height: 1.23;
+}
+
+.reveal .solar-flux-card .math.display {
+  margin: 0.24rem 0;
+  font-size: 0.85em;
+}
+
+.reveal .solar-flux-source {
+  grid-column: 1;
+  grid-row: 1;
+  border-left: 0.2rem solid #ffcc8a;
+}
+
+.reveal .solar-flux-observation {
+  grid-column: 1;
+  grid-row: 2;
+  border-left: 0.2rem solid #9be7c4;
+}
+
+.reveal .solar-flux-calculation {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  border-left: 0.2rem solid #7cc7ff;
+}
+
+.reveal .solar-flux-calculation > p:last-child {
+  margin-top: 0.3rem;
+  padding: 0.2rem 0.35rem;
+  border-radius: 0.35rem;
+  background: rgba(124, 199, 255, 0.1);
+  color: #fff;
+}
+
+.reveal .solar-flux-calculation > p:last-child .math.display {
+  font-size: 0.88em;
+}
+
+.reveal .solar-flux-message {
+  margin-top: 0.7rem;
+  padding: 0.5rem 0.72rem;
+  border-left: 0.22rem solid #ffcc8a;
+  background: #17140b;
+  line-height: 1.22;
+}
+
+.reveal .solar-flux-message strong {
+  color: #ffcc8a;
+}
+
+.reveal .solar-flux-note {
+  margin-top: 0.38rem;
+  color: #b9c7d0;
+  font-size: 0.72em;
+  line-height: 1.18;
+}
+
 @media (max-width: 900px) {
   .reveal .interaction-grid,
   .reveal .detector-grid,
   .reveal .sm-layout,
-  .reveal .matter-layout {
+  .reveal .matter-layout,
+  .reveal .solar-flux-layout {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .reveal .solar-flux-source,
+  .reveal .solar-flux-observation,
+  .reveal .solar-flux-calculation {
+    grid-column: 1;
+    grid-row: auto;
   }
 }

@@ -1,0 +1,5 @@
+format:
+  revealjs:
+    width: 1920
+    height: 1080
+    margin: 0.03
