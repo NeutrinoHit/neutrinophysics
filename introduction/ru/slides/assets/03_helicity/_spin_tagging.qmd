@@ -1,27 +1,82 @@
 ```{=html}
-<div class="spin-tagging helicity-animated" aria-label="Передача проекции спина от нейтрино возбуждённому ядру и фотону">
-  <div class="tag-axis"><span>\(z\)</span></div>
-  <div class="tag-source">
-    <div class="tag-nucleus tag-a">\(A\)<small>\(J=0\)</small></div>
-    <div class="tag-electron">\(e^-\)<span class="tag-electron-spin">\(\mathbf S_e\)</span></div>
+<div class="spin-tagging" aria-label="Две медленные сцены электронного захвата: электрон на орбите захватывается ядром, после чего его угловой момент распределяется между возбуждённым ядром и нейтрино">
+  <div class="tag-scene-steps">
+    <div class="tag-scene-step tag-step-capture">
+      <b>1</b>
+      <span>Захват электрона</span>
+    </div>
+    <div class="tag-scene-step tag-step-excited">
+      <b>2</b>
+      <span>Ядро в возбуждённом состоянии</span>
+    </div>
+    <button class="tag-play-button" type="button" aria-label="Запустить анимацию электронного захвата">
+      <span class="tag-play-icon" aria-hidden="true">▶</span>
+      <span class="tag-play-label">Запустить</span>
+    </button>
   </div>
-  <div class="tag-capture-flash"></div>
-  <div class="tag-products">
-    <div class="tag-daughter">\(B^*\)<small>\(m=+1\)</small></div>
-    <div class="tag-neutrino">\(\nu_e\)</div>
-    <div class="tag-vector tag-recoil"><span>\(\mathbf p_{B^*}\)</span></div>
-    <div class="tag-vector tag-nu-momentum"><span>\(\mathbf p_\nu\)</span></div>
-    <div class="tag-vector tag-nu-spin"><span>\(\mathbf S_\nu\)</span></div>
-  </div>
-  <div class="tag-photon-stage">
-    <div class="tag-ground">\(B\)<small>\(J=0\)</small></div>
-    <div class="tag-photon">\(\gamma\)</div>
-    <div class="tag-vector tag-gamma-momentum"><span>\(\mathbf p_\gamma\)</span></div>
-    <div class="tag-vector tag-gamma-spin"><span>\(\mathbf S_\gamma\)</span></div>
-  </div>
-  <div class="tag-equation">
-    <span class="tag-eq-one">\(m_{B^*}=+1\Longrightarrow h_\nu=-1\)</span>
-    <span class="tag-eq-two">\(m_\gamma=m_{B^*}\Longrightarrow h_\gamma=h_\nu\)</span>
+
+  <div class="tag-scene-window">
+    <div class="tag-scene tag-capture-scene">
+      <div class="tag-scene-kicker">До слабого перехода</div>
+      <div class="tag-capture-layout">
+        <div class="tag-atom-model">
+          <div class="tag-orbit-ring"></div>
+          <div class="tag-a-core">
+            <span>\(A\)</span>
+            <small>\(J=0\)</small>
+          </div>
+          <div class="tag-orbit-rotor">
+            <div class="tag-orbit-arm">
+              <div class="tag-orbit-electron">
+                <span>\(e^-\)</span>
+                <small>электрон оболочки</small>
+                <div class="tag-electron-spin-arrow">
+                  <span>\(\mathbf s_e,\ m_e=+\tfrac12\)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tag-capture-flash"></div>
+        </div>
+
+        <div class="tag-scene-card">
+          <div class="tag-scene-formula">\(A(0)+e^-\)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tag-scene tag-excited-scene">
+      <div class="tag-scene-kicker">Сразу после слабого перехода</div>
+      <div class="tag-excited-layout">
+        <div class="tag-excited-model">
+          <div class="tag-b-star-core">
+            <span>\(B^*\)</span>
+            <small>возбуждённое ядро<br>\(J=1\)</small>
+          </div>
+          <div class="tag-b-spin-arrow">
+            <span>\(\mathbf S_{B^*},\ m_{B^*}=+1\)</span>
+          </div>
+          <div class="tag-b-recoil-arrow">
+            <span>\(\mathbf p_{B^*}\)</span>
+          </div>
+        </div>
+
+        <div class="tag-excited-info">
+          <div class="tag-scene-formula">\(A(0)+e^-\longrightarrow B^*(1)+\nu_e\)</div>
+          <div class="tag-neutrino-state">
+            <div class="tag-static-neutrino">\(\nu_e\)</div>
+            <div class="tag-neutrino-spin-arrow">
+              <span>\(\mathbf s_\nu,\ m_\nu=-\tfrac12\)</span>
+            </div>
+            <div class="tag-neutrino-momentum-arrow">
+              <span>\(\mathbf p_\nu\)</span>
+            </div>
+          </div>
+          <p class="tag-spin-balance"><strong>Сохранение проекции:</strong>
+            \(+\tfrac12=+1-\tfrac12\).</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 ```

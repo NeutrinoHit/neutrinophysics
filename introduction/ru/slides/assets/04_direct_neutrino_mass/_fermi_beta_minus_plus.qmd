@@ -1,0 +1,392 @@
+<style>
+.reveal .fermi-function-tabs [role="tablist"] {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.reveal .fermi-function-tabs [role="tablist"] li {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.reveal .fermi-function-tabs [role="tab"] {
+  padding: 0.26em 0.25em;
+  font-size: 0.82em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.reveal .fermi-function-tabs > [role="tabpanel"] {
+  font-size: 0.9em;
+  line-height: 1.18;
+}
+
+.reveal .fermi-function-tabs > [role="tabpanel"] p {
+  margin: 0.3em 0;
+  line-height: 1.18;
+}
+
+.reveal .fermi-function-tabs > [role="tabpanel"] .math.display {
+  margin: 0.3em 0;
+}
+
+.reveal .fermi-compare-widget {
+  font-size: 0.86em;
+}
+
+.reveal .fermi-compare-widget .fermi-compare-controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  align-items: center;
+  width: 100%;
+  margin: 0.08rem 0 0.16rem;
+}
+
+.reveal .fermi-compare-widget .fermi-compare-controls label {
+  display: grid;
+  grid-template-columns: auto 3.1rem minmax(5rem, 1fr);
+  gap: 0.35rem;
+  align-items: center;
+  margin: 0;
+}
+
+.reveal .fermi-compare-widget .fermi-compare-controls output {
+  box-sizing: border-box;
+  min-width: 3.1rem;
+  padding: 0.12rem 0.25rem;
+  color: #111111;
+  text-align: center;
+  background: #f2f2f2;
+  border: 1px solid #999999;
+}
+
+.reveal .fermi-compare-widget .fermi-compare-controls input[type="range"] {
+  width: 100% !important;
+  min-width: 5rem;
+}
+
+.reveal .fermi-compare-widget .fermi-compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.reveal .fermi-compare-widget .fermi-compare-panel {
+  min-width: 0;
+}
+
+.reveal .fermi-compare-widget .fermi-compare-title {
+  margin-bottom: 0.04rem;
+  font-size: 0.86em;
+  font-weight: 700;
+  text-align: center;
+}
+
+.reveal .fermi-compare-widget .fermi-compare-readout {
+  margin-top: 0.08rem;
+  font-size: 0.72em;
+  text-align: center;
+}
+
+.reveal .fermi-compare-widget .fermi-compare-note {
+  margin-top: 0.14rem;
+  color: #d0d0d0;
+  font-size: 0.7em;
+  line-height: 1.18;
+  text-align: center;
+}
+
+.reveal .fermi-compare-widget .fermi-line-key {
+  display: inline-block;
+  width: 1.35rem;
+  margin-right: 0.28rem;
+  border-top: 0.16rem solid currentColor;
+  transform: translateY(-0.08rem);
+}
+
+.reveal .fermi-compare-widget .fermi-line-key-plane {
+  color: #8a8a8a;
+  border-top-style: dashed;
+}
+</style>
+
+::: {.spectrum-widget .fermi-compare-widget}
+```{ojs}
+//| echo: false
+
+viewof fermiCompareParameters = {
+  const control = html`<div class="fermi-compare-controls">
+    <label>
+      <span>${tex`Z_d`}</span>
+      <output></output>
+      <input name="charge" type="range"
+        min="1" max="60" step="1" value="29">
+    </label>
+    <label>
+      <span>${tex`A`}</span>
+      <output></output>
+      <input name="massNumber" type="range"
+        min="2" max="160" step="1" value="64">
+    </label>
+    <label>
+      <span>${tex`E_0,\ \text{МэВ}`}</span>
+      <output></output>
+      <input name="endpoint" type="range"
+        min="0.5" max="4" step="0.1" value="2">
+    </label>
+  </div>`;
+
+  const inputs = [...control.querySelectorAll("input")];
+  const outputs = [...control.querySelectorAll("output")];
+
+  function update(dispatch = true) {
+    control.value = {
+      charge: Number(inputs[0].value),
+      massNumber: Number(inputs[1].value),
+      endpoint: Number(inputs[2].value)
+    };
+    outputs[0].textContent = String(control.value.charge);
+    outputs[1].textContent = String(control.value.massNumber);
+    outputs[2].textContent = control.value.endpoint.toFixed(1).replace(".", ",");
+    if (dispatch) {
+      control.dispatchEvent(new Event("input", {bubbles: true}));
+    }
+  }
+
+  inputs.forEach(input => input.addEventListener("input", () => update()));
+  update(false);
+  return control;
+}
+
+fermiCompareAlpha = 1 / 137.035999084
+fermiCompareElectronMass = 510.99895
+fermiCompareHbarC = 197326.9804
+fermiCompareLanczos = [
+  676.5203681218851,
+  -1259.1392167224028,
+  771.3234287776531,
+  -176.6150291621406,
+  12.507343278686905,
+  -0.13857109526572012,
+  9.984369578019572e-6,
+  1.5056327351493116e-7
+]
+
+fermiCompareComplexAdd = (a, b) => ({
+  re: a.re + b.re,
+  im: a.im + b.im
+})
+
+fermiCompareComplexMultiply = (a, b) => ({
+  re: a.re * b.re - a.im * b.im,
+  im: a.re * b.im + a.im * b.re
+})
+
+fermiCompareRealDivide = (a, b) => {
+  const denominator = b.re * b.re + b.im * b.im;
+  return {
+    re: a * b.re / denominator,
+    im: -a * b.im / denominator
+  };
+}
+
+fermiCompareComplexLog = z => ({
+  re: Math.log(Math.hypot(z.re, z.im)),
+  im: Math.atan2(z.im, z.re)
+})
+
+fermiCompareLogGamma = z => {
+  const shifted = {re: z.re - 1, im: z.im};
+  let series = {re: 0.9999999999998099, im: 0};
+  fermiCompareLanczos.forEach((coefficient, index) => {
+    series = fermiCompareComplexAdd(
+      series,
+      fermiCompareRealDivide(coefficient, {
+        re: shifted.re + index + 1,
+        im: shifted.im
+      })
+    );
+  });
+  const t = {re: shifted.re + 7.5, im: shifted.im};
+  const power = fermiCompareComplexMultiply(
+    {re: shifted.re + 0.5, im: shifted.im},
+    fermiCompareComplexLog(t)
+  );
+  return fermiCompareComplexAdd(
+    {re: 0.5 * Math.log(2 * Math.PI) - t.re, im: -t.im},
+    fermiCompareComplexAdd(power, fermiCompareComplexLog(series))
+  );
+}
+
+fermiCompareFactor = (charge, massNumber, kineticEnergy, leptonSign) => {
+  const totalEnergy = kineticEnergy + fermiCompareElectronMass;
+  const momentum = Math.sqrt(
+    kineticEnergy * (kineticEnergy + 2 * fermiCompareElectronMass)
+  );
+  const gamma = Math.sqrt(1 - (charge * fermiCompareAlpha) ** 2);
+  const eta = leptonSign * charge * fermiCompareAlpha
+    * totalEnergy / momentum;
+  const radius = 1.2 * massNumber ** (1 / 3) / fermiCompareHbarC;
+  const logGammaReal = fermiCompareLogGamma({
+    re: 2 * gamma + 1,
+    im: 0
+  }).re;
+  const logGammaComplex = fermiCompareLogGamma({
+    re: gamma,
+    im: eta
+  }).re;
+  const logFactor = Math.log(2 * (1 + gamma))
+    - 2 * logGammaReal
+    + 2 * (gamma - 1) * Math.log(2 * momentum * radius)
+    + Math.PI * eta
+    + 2 * logGammaComplex;
+  return Math.exp(logFactor);
+}
+
+fermiCompareEndpoint = 1000 * fermiCompareParameters.endpoint
+
+fermiComparePlaneRate = kineticEnergy => {
+  const totalEnergy = kineticEnergy + fermiCompareElectronMass;
+  const momentum = Math.sqrt(
+    kineticEnergy * (kineticEnergy + 2 * fermiCompareElectronMass)
+  );
+  const neutrinoEnergy = fermiCompareEndpoint - kineticEnergy;
+  return momentum * totalEnergy * neutrinoEnergy * neutrinoEnergy;
+}
+
+fermiCompareKineticEnergies = Array.from({length: 601}, (_, index) =>
+  Math.max(0.05, fermiCompareEndpoint * index / 600)
+).filter(energy => energy < fermiCompareEndpoint)
+
+fermiCompareRaw = leptonSign => fermiCompareKineticEnergies.map(energy => {
+  const plane = fermiComparePlaneRate(energy);
+  const factor = fermiCompareFactor(
+    fermiCompareParameters.charge,
+    fermiCompareParameters.massNumber,
+    energy,
+    leptonSign
+  );
+  return {energy: energy / 1000, plane, corrected: factor * plane};
+})
+
+fermiCompareNormalize = data => {
+  const planeMaximum = Math.max(...data.map(d => d.plane));
+  const correctedMaximum = Math.max(...data.map(d => d.corrected));
+  return data.map(d => ({
+    energy: d.energy,
+    plane: d.plane / planeMaximum,
+    corrected: d.corrected / correctedMaximum
+  }));
+}
+
+fermiCompareMinusData = fermiCompareNormalize(fermiCompareRaw(1))
+fermiComparePlusData = fermiCompareNormalize(fermiCompareRaw(-1))
+
+fermiComparePlot = (data, color) => Plot.plot({
+  width: 840,
+  height: 370,
+  marginTop: 10,
+  marginRight: 18,
+  marginBottom: 50,
+  marginLeft: 62,
+  style: {
+    background: "#ffffff",
+    color: "#111111",
+    fontSize: "22px"
+  },
+  x: {
+    axis: "bottom",
+    label: "K (МэВ)",
+    domain: [0, fermiCompareParameters.endpoint],
+    ticks: 5,
+    grid: true
+  },
+  y: {
+    axis: "left",
+    label: null,
+    domain: [0, 1.05],
+    ticks: 5,
+    grid: true,
+    tickFormat: value => value.toFixed(1)
+  },
+  marks: [
+    Plot.areaY(data, {
+      x: "energy",
+      y: "corrected",
+      fill: color,
+      fillOpacity: 0.14
+    }),
+    Plot.line(data, {
+      x: "energy",
+      y: "plane",
+      stroke: "#777777",
+      strokeWidth: 2.5,
+      strokeDasharray: "7,5"
+    }),
+    Plot.line(data, {
+      x: "energy",
+      y: "corrected",
+      stroke: color,
+      strokeWidth: 4
+    }),
+    Plot.frame({stroke: "#111111"})
+  ]
+})
+
+fermiCompareMinusPlot = fermiComparePlot(
+  fermiCompareMinusData,
+  "#4ea1ff"
+)
+fermiComparePlusPlot = fermiComparePlot(
+  fermiComparePlusData,
+  "#ffb347"
+)
+
+fermiCompareProbeEnergy = Math.min(10, 0.02 * fermiCompareEndpoint)
+fermiCompareMinusProbe = fermiCompareFactor(
+  fermiCompareParameters.charge,
+  fermiCompareParameters.massNumber,
+  fermiCompareProbeEnergy,
+  1
+)
+fermiComparePlusProbe = fermiCompareFactor(
+  fermiCompareParameters.charge,
+  fermiCompareParameters.massNumber,
+  fermiCompareProbeEnergy,
+  -1
+)
+
+html`<div class="fermi-compare-grid">
+  <div class="fermi-compare-panel">
+    <div class="fermi-compare-title">
+      ${tex`\beta^-:`} притяжение к ядру
+    </div>
+    <div class="spectrum-plot-host">${fermiCompareMinusPlot}</div>
+    <div class="fermi-compare-readout">
+      ${tex`F(+Z_d,K=${fermiCompareProbeEnergy.toFixed(0)}\,\mathrm{keV})
+      =${fermiCompareMinusProbe.toFixed(2)}`}
+    </div>
+  </div>
+  <div class="fermi-compare-panel">
+    <div class="fermi-compare-title">
+      ${tex`\beta^+:`} отталкивание от ядра
+    </div>
+    <div class="spectrum-plot-host">${fermiComparePlusPlot}</div>
+    <div class="fermi-compare-readout">
+      ${tex`F(-Z_d,K=${fermiCompareProbeEnergy.toFixed(0)}\,\mathrm{keV})
+      =${fermiComparePlusProbe.toFixed(2)}`}
+    </div>
+  </div>
+</div>
+<div class="fermi-compare-note">
+  <span class="fermi-line-key fermi-line-key-plane"></span>
+  плоская волна;
+  <span class="fermi-line-key" style="color:#b8d9ff"></span>
+  с ${tex`F(\pm Z_d,E_e;A)`}.<br>
+  Каждая кривая нормирована на свой максимум; одинаковые параметры выделяют
+  чисто эффект знака заряда.
+</div>`
+```
+:::

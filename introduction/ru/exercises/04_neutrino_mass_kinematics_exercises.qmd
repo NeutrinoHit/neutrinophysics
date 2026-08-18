@@ -1,0 +1,14 @@
+---
+title: "Задачи: кинематика β-спектра"
+subtitle: "Лекция 04 · Введение в физику нейтрино"
+author: "Дмитрий В. Наумов"
+format:
+  html:
+    toc: false
+---
+
+[← Вернуться к лекции](../slides/04_neutrino_mass_kinematics.html) · [Все задачи курса](index.html)
+
+# Задачи
+
+{{< include ../../_includes/exercises/04_neutrino_mass_kinematics-ru.qmd >}}

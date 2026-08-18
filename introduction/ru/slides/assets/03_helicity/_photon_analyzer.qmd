@@ -1,7 +1,61 @@
 ```{=html}
-<div class="photon-analyzer helicity-animated" aria-label="Измерение круговой поляризации фотонов в намагниченном железе">
+<div class="photon-analyzer-principle" aria-label="Почему взаимодействие фотона с поляризованными электронами зависит от взаимного направления спинов">
+  <div class="analyzer-spin-cases">
+    <div class="analyzer-spin-case favored">
+      <div class="analyzer-spin-sketch">
+        <span class="analyzer-spin-particle photon">\(\gamma\)<i class="analyzer-spin-arrow left"></i><small>\(m_\gamma=-1\)</small></span>
+        <span class="analyzer-spin-operator">+</span>
+        <span class="analyzer-spin-particle electron">\(e^-\)<i class="analyzer-spin-arrow right"></i><small>\(m_s=+\tfrac12\)</small></span>
+        <span class="analyzer-spin-operator">\(\longrightarrow\)</span>
+        <span class="analyzer-spin-particle electron final">\(e^-\)<i class="analyzer-spin-arrow left"></i><small>\(m_s=-\tfrac12\)</small></span>
+      </div>
+      <div class="analyzer-spin-meaning">
+        <b>Антипараллельные спины</b>
+        <span>\(-1+\tfrac12=-\tfrac12\)</span>
+        <strong>взаимодействие сильнее</strong>
+      </div>
+    </div>
+    <div class="analyzer-spin-case suppressed">
+      <div class="analyzer-spin-sketch">
+        <span class="analyzer-spin-particle photon">\(\gamma\)<i class="analyzer-spin-arrow right"></i><small>\(m_\gamma=+1\)</small></span>
+        <span class="analyzer-spin-operator">+</span>
+        <span class="analyzer-spin-particle electron">\(e^-\)<i class="analyzer-spin-arrow right"></i><small>\(m_s=+\tfrac12\)</small></span>
+        <span class="analyzer-spin-operator">\(\longrightarrow\)</span>
+        <span class="analyzer-spin-particle electron final muted hypothetical">\(e^-\)<i class="analyzer-spin-arrow right"></i><small>\(m_s=+\tfrac32\)</small></span>
+      </div>
+      <div class="analyzer-spin-meaning">
+        <b>Параллельные спины</b>
+        <span>\(1+\tfrac12=\tfrac32\)</span>
+        <strong>у электрона нет \(m_s=\tfrac32\)</strong>
+      </div>
+    </div>
+  </div>
+  <div class="analyzer-refinement">
+    <b>Точное утверждение</b>
+    <p>Наивная картинка правильно передаёт знак эффекта, но не даёт строгого запрета:</p>
+    <div class="analyzer-cross-section">
+      \[
+      \frac{d\sigma_{\uparrow\downarrow}}{d\Omega}
+      >
+      \frac{d\sigma_{\uparrow\uparrow}}{d\Omega}.
+      \]
+    </div>
+    <strong>Антипараллельная конфигурация сильнее ослабляет пучок.</strong>
+  </div>
+</div>
+
+<div class="photon-analyzer analyzer-compact helicity-animated" data-manual-animation aria-label="Измерение круговой поляризации фотонов в намагниченном железе">
+  <div class="animation-controls" role="group" aria-label="Управление анимацией">
+    <button class="animation-control animation-play" type="button" data-animation-action="play">
+      <span aria-hidden="true">▶</span> Запустить
+    </button>
+    <button class="animation-control animation-pause" type="button" data-animation-action="pause" disabled>
+      <span aria-hidden="true">Ⅱ</span> Пауза
+    </button>
+  </div>
   <div class="analyzer-beam">
     <div class="analyzer-source">\(\gamma\)</div>
+    <div class="analyzer-photon-spin"><i></i><b>\(S_\gamma\)</b></div>
     <div class="analyzer-wave"></div>
   </div>
   <div class="iron-block">
@@ -15,9 +69,20 @@
     <div class="detector-face"></div>
     <div class="detector-label">детектор</div>
   </div>
-  <div class="analyzer-counts">
-    <div class="count-row"><span>\(+B\)</span><div class="count-bar count-plus"></div><strong>\(N_+\)</strong></div>
-    <div class="count-row"><span>\(-B\)</span><div class="count-bar count-minus"></div><strong>\(N_-\)</strong></div>
+  <div class="analyzer-histogram">
+    <div class="histogram-title">прошедшие фотоны</div>
+    <div class="histogram-axis"><span>события</span></div>
+    <div class="analyzer-counts">
+      <div class="count-row"><strong>\(N_+\)</strong><div class="count-bar count-plus"></div><span>\(+B\)</span></div>
+      <div class="count-row"><strong>\(N_-\)</strong><div class="count-bar count-minus"></div><span>\(-B\)</span></div>
+    </div>
   </div>
 </div>
 ```
+
+::: {.nh-box tone="accent" size="md" align="center" weight="bold"}
+
+Разворачивая магнитное поле, меняем направление спинов электронов.
+Разность пропусканий $N_+-N_-$ измеряет круговую поляризацию фотона.
+
+:::

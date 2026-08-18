@@ -1,0 +1,288 @@
+```{=html}
+<style>
+.planar-rotor-demo {
+  width: min(610px, 100%);
+  margin: 0.05rem auto 0;
+  color: #f4f7fb;
+  font-size: 0.72em;
+}
+
+.planar-rotor-frame {
+  overflow: hidden;
+  border: 1px solid rgba(112, 190, 255, 0.38);
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(36, 112, 171, 0.17), transparent 46%),
+    linear-gradient(180deg, #06111f 0%, #02070e 100%);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.28);
+}
+
+.planar-rotor-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.planar-rotor-orbit {
+  fill: none;
+  stroke: rgba(104, 190, 255, 0.7);
+  stroke-width: 3;
+  stroke-dasharray: 9 10;
+}
+
+.planar-rotor-axis {
+  stroke: rgba(255, 255, 255, 0.28);
+  stroke-width: 2;
+}
+
+.planar-rotor-angle {
+  fill: none;
+  stroke: #ffd166;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.planar-rotor-rod {
+  stroke: #e9f4ff;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.planar-rotor-velocity {
+  stroke: #58d6c2;
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.planar-rotor-ball {
+  fill: url(#planar-rotor-ball-gradient);
+  stroke: #ffe5a2;
+  stroke-width: 4;
+  filter: drop-shadow(0 0 13px rgba(255, 171, 64, 0.72));
+}
+
+.planar-rotor-pivot-ring {
+  fill: #06111f;
+  stroke: #f4f7fb;
+  stroke-width: 5;
+}
+
+.planar-rotor-pivot-dot {
+  fill: #f4f7fb;
+}
+
+.planar-rotor-label {
+  fill: #f4f7fb;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 28px;
+  font-weight: 650;
+}
+
+.planar-rotor-label-accent {
+  fill: #ffd166;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.planar-rotor-readout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.35rem 0.65rem 0.45rem;
+  border-top: 1px solid rgba(112, 190, 255, 0.24);
+  background: rgba(4, 13, 25, 0.9);
+}
+
+.planar-rotor-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  color: #dceafb;
+  font-variant-numeric: tabular-nums;
+}
+
+.planar-rotor-values strong {
+  color: #ffd166;
+}
+
+.planar-rotor-toggle {
+  flex: 0 0 auto;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid rgba(112, 190, 255, 0.62);
+  border-radius: 999px;
+  background: rgba(18, 55, 88, 0.86);
+  color: #f4f7fb;
+  font: inherit;
+  cursor: pointer;
+}
+
+.planar-rotor-toggle:hover,
+.planar-rotor-toggle:focus-visible {
+  background: rgba(31, 91, 140, 0.94);
+  outline: none;
+}
+
+.planar-rotor-caption {
+  margin: 0.25rem 0 0;
+  color: #b9c9d9;
+  font-size: 0.84em;
+  line-height: 1.25;
+  text-align: center;
+}
+</style>
+
+<div class="planar-rotor-demo" data-planar-rotor>
+  <div class="planar-rotor-frame">
+    <svg class="planar-rotor-svg" viewBox="0 0 620 520" role="img"
+         aria-label="Шарик на жёстком стержне равномерно вращается вокруг неподвижной точки O">
+      <defs>
+        <radialGradient id="planar-rotor-ball-gradient" cx="34%" cy="28%" r="72%">
+          <stop offset="0%" stop-color="#fff3be"/>
+          <stop offset="38%" stop-color="#ffbe55"/>
+          <stop offset="100%" stop-color="#ee7d22"/>
+        </radialGradient>
+        <marker id="planar-rotor-arrow" viewBox="0 0 10 10" refX="8.5" refY="5"
+                markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#58d6c2"/>
+        </marker>
+      </defs>
+
+      <line class="planar-rotor-axis" x1="75" y1="270" x2="565" y2="270"/>
+      <circle class="planar-rotor-orbit" cx="310" cy="270" r="175"/>
+      <path class="planar-rotor-angle" data-angle-arc d=""/>
+
+      <g data-moving-arm>
+        <line class="planar-rotor-rod" x1="310" y1="270" x2="485" y2="270"/>
+        <circle class="planar-rotor-ball" cx="485" cy="270" r="27"/>
+        <line class="planar-rotor-velocity" x1="485" y1="245" x2="485" y2="164"
+              marker-end="url(#planar-rotor-arrow)"/>
+      </g>
+
+      <circle class="planar-rotor-pivot-ring" cx="310" cy="270" r="18"/>
+      <circle class="planar-rotor-pivot-dot" cx="310" cy="270" r="6"/>
+
+      <text class="planar-rotor-label" x="286" y="315">O</text>
+      <text class="planar-rotor-label" data-radius-label x="396" y="294">R</text>
+      <text class="planar-rotor-label" data-ball-label x="510" y="248">m</text>
+      <text class="planar-rotor-label" data-velocity-label x="504" y="176">v</text>
+      <text class="planar-rotor-label-accent" data-angle-label x="375" y="250">φ</text>
+    </svg>
+
+    <div class="planar-rotor-readout">
+      <div class="planar-rotor-values">
+        <span><strong data-angle-value>φ = 0.00</strong> рад</span>
+        <span>R = const</span>
+        <span>ω = const</span>
+      </div>
+      <button class="planar-rotor-toggle" type="button" data-toggle aria-pressed="false">Пауза</button>
+    </div>
+  </div>
+  <p class="planar-rotor-caption">
+    Стержень задаёт постоянный радиус; сила связи направлена к точке O и не создаёт момента относительно O.
+  </p>
+
+  <script>
+  (() => {
+    const root = document.currentScript.closest("[data-planar-rotor]");
+    if (!root || root.dataset.initialized === "true") return;
+    root.dataset.initialized = "true";
+
+    const arm = root.querySelector("[data-moving-arm]");
+    const arc = root.querySelector("[data-angle-arc]");
+    const angleLabel = root.querySelector("[data-angle-label]");
+    const radiusLabel = root.querySelector("[data-radius-label]");
+    const ballLabel = root.querySelector("[data-ball-label]");
+    const velocityLabel = root.querySelector("[data-velocity-label]");
+    const value = root.querySelector("[data-angle-value]");
+    const toggle = root.querySelector("[data-toggle]");
+
+    const cx = 310;
+    const cy = 270;
+    const orbitRadius = 175;
+    const arcRadius = 72;
+    const turnMs = 4600;
+    const holdMs = 900;
+    const cycleMs = turnMs + holdMs;
+    let paused = false;
+    let pausedAngle = 0;
+    let timeOrigin = performance.now();
+
+    function point(radius, angle) {
+      return {
+        x: cx + radius * Math.cos(angle),
+        y: cy - radius * Math.sin(angle)
+      };
+    }
+
+    function render(angle) {
+      const degrees = angle * 180 / Math.PI;
+      arm.setAttribute("transform", `rotate(${-degrees} ${cx} ${cy})`);
+
+      const safeAngle = Math.min(angle, 2 * Math.PI - 0.001);
+      if (safeAngle < 0.002) {
+        arc.setAttribute("d", "");
+      } else {
+        const start = point(arcRadius, 0);
+        const end = point(arcRadius, safeAngle);
+        const large = safeAngle > Math.PI ? 1 : 0;
+        arc.setAttribute(
+          "d",
+          `M ${start.x} ${start.y} A ${arcRadius} ${arcRadius} 0 ${large} 0 ${end.x} ${end.y}`
+        );
+      }
+
+      const labelPoint = point(arcRadius + 27, Math.max(0.22, safeAngle / 2));
+      angleLabel.setAttribute("x", labelPoint.x - 8);
+      angleLabel.setAttribute("y", labelPoint.y + 8);
+
+      const radiusPoint = point(orbitRadius * 0.55, angle);
+      radiusLabel.setAttribute("x", radiusPoint.x + 16 * Math.sin(angle) - 8);
+      radiusLabel.setAttribute("y", radiusPoint.y + 16 * Math.cos(angle) + 8);
+
+      const ballPoint = point(orbitRadius, angle);
+      ballLabel.setAttribute("x", ballPoint.x + 23);
+      ballLabel.setAttribute("y", ballPoint.y - 18);
+
+      const velocityPoint = point(orbitRadius + 42, angle + 0.25);
+      velocityLabel.setAttribute("x", velocityPoint.x);
+      velocityLabel.setAttribute("y", velocityPoint.y);
+
+      value.textContent = `φ = ${angle.toFixed(2)}`;
+    }
+
+    function frame(now) {
+      if (!paused) {
+        const phase = (now - timeOrigin) % cycleMs;
+        const angle = phase < turnMs ? 2 * Math.PI * phase / turnMs : 2 * Math.PI;
+        pausedAngle = angle;
+        render(angle);
+      }
+      requestAnimationFrame(frame);
+    }
+
+    toggle.addEventListener("click", () => {
+      paused = !paused;
+      toggle.textContent = paused ? "Продолжить" : "Пауза";
+      toggle.setAttribute("aria-pressed", String(paused));
+      if (!paused) {
+        const phase = Math.min(pausedAngle / (2 * Math.PI), 1) * turnMs;
+        timeOrigin = performance.now() - phase;
+      }
+    });
+
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      paused = true;
+      pausedAngle = Math.PI / 3;
+      render(pausedAngle);
+      toggle.textContent = "Запустить";
+      toggle.setAttribute("aria-pressed", "true");
+    } else {
+      render(0);
+    }
+    requestAnimationFrame(frame);
+  })();
+  </script>
+</div>
+```

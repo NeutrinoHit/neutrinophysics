@@ -1,4 +1,8 @@
-# Спин и поляризация нейтрино {#sec-helicity}
+---
+body-classes: lecture-page topic-1
+---
+
+# Спин нейтрино. Спиральность и поляризация {#sec-helicity}
 
 ::: {.book-lead}
 Спин нейтрино нельзя измерить так же, как спин заряженной частицы: нейтрино не
@@ -88,7 +92,7 @@ $$
 h\longrightarrow-h.
 $$ {#eq-helicity-frame-change}
 
-::: {#anim-helicity-frame-change .animation title="Смена спиральности при выборе системы отсчёта" epub-src="../assets/chapters/03_helicity/frame_change.mp4" poster="../assets/chapters/03_helicity/frame_change.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/03_helicity.html#/frame-change" qr="../assets/chapters/03_helicity/qr/frame_change.png"}
+::: {#anim-helicity-frame-change .animation title="Смена спиральности при выборе системы отсчёта" epub-src="../assets/chapters/03_helicity/frame_change.mp4" poster="../assets/chapters/03_helicity/frame_change.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/03_neutrino_spin.html#/frame-change" qr="../assets/chapters/03_helicity/qr/frame_change.png"}
 В верхней части показана массивная частица: после перехода в систему,
 обгоняющую её, импульс меняет знак относительно спина. В нижней части показано,
 почему тот же приём невозможен для безмассовой частицы.
@@ -241,7 +245,7 @@ $m_\nu$ при разных проекциях начального электр
 $m_{B^*}=+1$ однозначно метит $h_\nu=-1$, а $m_{B^*}=-1$ ---
 $h_\nu=+1$.
 
-::: {#anim-spin-tagging .animation title="Передача спиновой метки от нейтрино к фотону" epub-src="../assets/chapters/03_helicity/spin_tagging.mp4" poster="../assets/chapters/03_helicity/spin_tagging.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/03_helicity.html#/spin-tagging" qr="../assets/chapters/03_helicity/qr/spin_tagging.png"}
+::: {#anim-spin-tagging .animation title="Передача спиновой метки от нейтрино к фотону" epub-src="../assets/chapters/03_helicity/spin_tagging.mp4" poster="../assets/chapters/03_helicity/spin_tagging.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/03_neutrino_spin.html#/spin-tagging" qr="../assets/chapters/03_helicity/qr/spin_tagging.png"}
 Анимация последовательно показывает электронный захват, разлёт нейтрино и
 ядра отдачи, а затем $\gamma$-переход. Ось квантования всё время связана с
 импульсом нейтрино.
@@ -364,7 +368,7 @@ $$ {#eq-doppler-bridges-recoil}
 Доплеровский сдвиг, обусловленный отдачей при электронном захвате, закрывает
 разрыв между линиями испускания и поглощения.
 
-::: {#anim-resonance-filter .animation title="Резонанс как фильтр направления" epub-src="../assets/chapters/03_helicity/resonance_filter.mp4" poster="../assets/chapters/03_helicity/resonance_filter.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/03_helicity.html#/resonance-filter" qr="../assets/chapters/03_helicity/qr/resonance_filter.png"}
+::: {#anim-resonance-filter .animation title="Резонанс как фильтр направления" epub-src="../assets/chapters/03_helicity/resonance_filter.mp4" poster="../assets/chapters/03_helicity/resonance_filter.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/03_neutrino_spin.html#/resonance-filter" qr="../assets/chapters/03_helicity/qr/resonance_filter.png"}
 Фотон вдоль отдачи получает положительный доплеровский сдвиг и возбуждает
 резонанс в самариевом поглотителе. Фотон противоположного направления теряет
 энергию и не попадает в резонансную линию.
@@ -455,7 +459,7 @@ $$ {#eq-goldhaber-analyzing-power}
 установки. Эти множители уменьшают величину асимметрии, но её знак после
 калибровки задаёт знак $h_\gamma$.
 
-::: {#anim-photon-analyzer .animation title="Магнитный анализатор круговой поляризации" epub-src="../assets/chapters/03_helicity/photon_analyzer.mp4" poster="../assets/chapters/03_helicity/photon_analyzer.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/03_helicity.html#/photon-analyzer" qr="../assets/chapters/03_helicity/qr/photon_analyzer.png"}
+::: {#anim-photon-analyzer .animation title="Магнитный анализатор круговой поляризации" epub-src="../assets/chapters/03_helicity/photon_analyzer.mp4" poster="../assets/chapters/03_helicity/photon_analyzer.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/03_neutrino_spin.html#/photon-analyzer" qr="../assets/chapters/03_helicity/qr/photon_analyzer.png"}
 При смене направления магнитного поля меняется спин-зависимая часть
 пропускания. Разность $N_+-N_-$ выделяет её на фоне гораздо большего
 неполяризованного потока.
@@ -473,7 +477,7 @@ $$ {#eq-goldhaber-analyzing-power}
 5. намагниченное железо превращает круговую поляризацию фотона в счётную
    асимметрию.
 
-::: {#anim-goldhaber-chain .animation title="Цепочка измерения спиральности нейтрино" epub-src="../assets/chapters/03_helicity/experiment_chain.mp4" poster="../assets/chapters/03_helicity/experiment_chain.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/03_helicity.html#/experiment-chain" qr="../assets/chapters/03_helicity/qr/experiment_chain.png"}
+::: {#anim-goldhaber-chain .animation title="Цепочка измерения спиральности нейтрино" epub-src="../assets/chapters/03_helicity/experiment_chain.mp4" poster="../assets/chapters/03_helicity/experiment_chain.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/03_neutrino_spin.html#/experiment-chain" qr="../assets/chapters/03_helicity/qr/experiment_chain.png"}
 Показана передача спиновой метки от нейтрино к ядру и фотону, отбор направления
 по доплеровскому сдвигу и измерение круговой поляризации фотона.
 :::
@@ -721,7 +725,7 @@ $f_{\mathrm{res}}P_ea_\gamma=0.020$. Найдите $h_\gamma$ и его ста�
 магнитного поля, а какие требуют отдельной калибровки?
 :::
 
-## Литература к главе {.unnumbered}
+## Литература к лекции {.unnumbered}
 
 ::: {.chapter-literature}
 1. M. Goldhaber, L. Grodzins, A. W. Sunyar. Helicity of Neutrinos.

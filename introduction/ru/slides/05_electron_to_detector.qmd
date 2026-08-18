@@ -1,0 +1,1189 @@
+---
+title: "Прямое измерение массы нейтрино. Ведём электрон к детектору"
+lecture-id: "05"
+lecture-number: 5
+subtitle: "Введение в физику нейтрино"
+lang: ru-RU
+author: "Дмитрий В. Наумов"
+institute: "ОИЯИ"
+format:
+  revealjs:
+    theme: [black, ../../../shared/styles/neutrinohit-reveal.scss]
+    logo: ../../../shared/reveal/dvnlogo.png
+    html-math-method: mathjax
+    include-after-body:
+      - text: |
+          <script data-external="1" data-context-home="https://neutrinohit.github.io/neutrinophysics/introduction/" data-context-home-label="Страница курса" src="../../../shared/reveal/neutrinohit-reveal-footer.js"></script>
+      - ../../../analytics/cloudflare-web-analytics.html
+    embed-resources: false
+    slide-number: true
+    slide-level: 2
+    toc: false
+    transition: fade
+    center: false
+    incremental: false
+    chalkboard: false
+    preview-links: false
+    code-line-numbers: false
+    code-copy: true
+
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+# Задача $\beta$-спектрометра
+
+## Интегральное измерение энергии
+
+- Масса нейтрино меняет форму $\beta$-спектра у его конца. Событий там мало, а электроны неполяризованного источника вылетают изотропно:
+
+$$
+\frac{dN}{d\Omega}=\mathrm{const}.
+$$
+
+- Маленький детектор, смотрящий только в одном направлении, потеряет почти всю
+статистику.
+
+- Поэтому установка должна принимать электроны из большого телесного угла.
+
+- Энергию можно измерять интегрально. Поставим перед детектором запирающий электростатический потенциал $U$:
+
+$$
+E<e|U|\ \Longrightarrow\ \text{электрон отражается},
+\qquad
+E>e|U|\ \Longrightarrow\ \text{электрон проходит}.
+$$
+
+При сканировании $U$ детектор измеряет число электронов выше порога:
+
+$$
+\boxed{
+R(U)\propto
+\int_{e|U|}^{E_0}\frac{d\Gamma}{dE}\,dE
+}.
+$$
+
+::: {.takeaway}
+Задача прибора: собрать как можно больше $\beta$-электронов и сравнить их энергию с управляемым электростатическим порогом.
+:::
+
+## Продольное и поперечное движение
+
+- Одномерное условие $E>e|U|$ предполагает, что электрон летит вдоль оси спектрометра. В реальности его импульс образует с осью угол $\alpha$:
+
+$$
+\mathbf p=\mathbf p_\parallel+\mathbf p_\perp,
+\qquad
+E=E_\parallel+E_\perp,
+\qquad
+\tan\alpha=\frac{p_\perp}{p_\parallel}.
+$$
+
+- Для потенциала $U(z)$ поперечный импульс сохраняется. На подъём против потенциала расходуется продольная энергия, поэтому
+
+$$
+\boxed{E_\parallel>e|U|},
+\qquad
+E_\parallel=E\cos^2\alpha
+\quad\text{(в нерелятивистском режиме)}.
+$$
+
+- При одной и той же $E$ электроны с разными $\alpha$ проходят разный порог.
+
+- Оставить только малые углы нельзя: источник изотропен, и статистика исчезнет.
+
+- Требуется магнитная система, которая
+
+  1. собирает большой телесный угол и ведёт электроны к фильтру;
+  2. сохраняет $E$;
+  3. перед фильтром переводит $E_\perp$ в $E_\parallel$.
+
+# К чему мы придём
+
+<video class="slide-video" style="--media-max-height: 850px;"  controls preload="metadata" playsinline  src="assets/04_direct_neutrino_mass/katrin_mac_e_electric.mp4"></video>
+
+<p class="media-caption">
+  MAC-E: электроны выше порога проходят, ниже порога — отражаются.
+</p>
+
+# Однородное магнитное поле
+
+## Движение в однородном постоянном магнитном поле {#uniform-b-motion}
+
+:::::: {.panel-tabset .story-tabs}
+
+### Главное
+
+Однородное магнитное поле не меняет энергию частицы: оно разделяет движение
+на равномерное вдоль поля и циклотронное вращение поперёк поля.
+
+:::: {.columns}
+
+::: {.column width="49%"}
+
+**Сохраняются**
+
+$$
+\boxed{p_\parallel=\mathrm{const}},
+\qquad
+\boxed{p_\perp=\mathrm{const}},
+\qquad
+\boxed{E=\mathrm{const}}.
+$$
+
+**Винтовая траектория**
+
+$$
+\boxed{(x-X)^2+(y-Y)^2=\rho_L^2},
+$$
+
+$$
+\boxed{z(t)=z_0+v_\parallel t}.
+$$
+
+:::
+
+::: {.column width="49%"}
+
+**За один оборот**
+
+$$
+\boxed{\omega_c=\frac{|q|B}{m}},
+\qquad
+\boxed{T_c=\frac{2\pi m}{|q|B}}.
+$$
+
+$$
+\boxed{\rho_L=\frac{p_\perp}{|q|B}},
+\qquad
+\boxed{h=\frac{2\pi p_\parallel}{|q|B}}.
+$$
+
+**Орбитальный магнитный момент**
+
+$$
+\boxed{
+\mu=\frac{E_\perp}{B}
+=\frac{mv_\perp^2}{2B}
+=\mathrm{const}
+}.
+$$
+
+:::
+
+::::
+
+**Релятивистский случай:**
+$\omega_c=|q|B/(\gamma m)$, $T_c=2\pi\gamma m/(|q|B)$; формулы для
+$\rho_L$ и $h$ через импульс не меняются.
+
+### Уравнение
+
+Рассмотрим нерелятивистскую частицу заряда $q$ и массы $m$:
+
+$$
+\mathbf B=B\mathbf e_z,
+\qquad
+\mathbf E=0.
+$$
+
+Сила Лоренца даёт
+
+$$
+m\dot{\mathbf v}
+=q\,\mathbf v\times\mathbf B
+=qB(v_y,-v_x,0),
+$$
+
+$$
+\dot v_x=\Omega v_y,
+\qquad
+\dot v_y=-\Omega v_x,
+\qquad
+\dot v_z=0.
+$$
+
+$$
+\boxed{\Omega=\frac{qB}{m}},
+\qquad
+\boxed{\omega_c=|\Omega|=\frac{|q|B}{m}}.
+$$
+
+$\Omega$ — знаковая, а $\omega_c$ — положительная циклотронная частота.
+
+### Интегралы
+
+Магнитное поле не совершает работу:
+
+$$
+m\mathbf v\cdot\dot{\mathbf v}
+=
+q\mathbf v\cdot(\mathbf v\times\mathbf B)
+=0.
+$$
+
+Следовательно,
+
+$$
+\frac{d}{dt}\frac{mv^2}{2}=0,
+\qquad
+v^2=v_\parallel^2+v_\perp^2=\mathrm{const}.
+$$
+
+Кроме того,
+
+$$
+v_\parallel=v_z=\mathrm{const},
+\qquad
+v_\perp^2=v_x^2+v_y^2=\mathrm{const}.
+$$
+
+Поле меняет направление $\mathbf v_\perp$, но не её модуль.
+
+### Скорость
+
+$$
+\ddot v_x=-\Omega^2v_x,
+\qquad
+\ddot v_y=-\Omega^2v_y.
+$$
+
+Поэтому
+
+$$
+\boxed{
+\begin{aligned}
+v_x(t)
+&=
+v_{x0}\cos\Omega t
++
+v_{y0}\sin\Omega t,
+\\
+v_y(t)
+&=
+v_{y0}\cos\Omega t
+-
+v_{x0}\sin\Omega t.
+\end{aligned}}
+$$
+
+$$
+v_x^2(t)+v_y^2(t)
+=
+v_{x0}^2+v_{y0}^2
+=v_\perp^2.
+$$
+
+Конец вектора $\mathbf v_\perp$ движется по окружности в пространстве скоростей.
+
+### Траектория
+
+Интегрируя скорость, получаем
+
+$$
+\begin{aligned}
+x(t)
+&=
+x_0+\frac{v_{x0}}{\Omega}\sin\Omega t
++\frac{v_{y0}}{\Omega}(1-\cos\Omega t),
+\\
+y(t)
+&=
+y_0+\frac{v_{y0}}{\Omega}\sin\Omega t
+-\frac{v_{x0}}{\Omega}(1-\cos\Omega t),
+\\
+z(t)
+&=
+z_0+v_\parallel t.
+\end{aligned}
+$$
+
+- В плоскости, перпендикулярной $\mathbf B$, частица движется по окружности.
+
+- Вдоль поля движение равномерное.
+
+$$
+\boxed{\Omega=\frac{qB}{m}},
+\qquad
+\boxed{\omega_c=|\Omega|=\frac{|q|B}{m}}.
+$$
+
+### Радиус
+
+Введём координаты центра окружности:
+
+$$
+\boxed{
+X=x+\frac{v_y}{\Omega},
+\qquad
+Y=y-\frac{v_x}{\Omega}
+}.
+$$
+
+Используя $\dot v_x=\Omega v_y$ и $\dot v_y=-\Omega v_x$, получаем
+
+$$
+\dot X=\dot Y=0.
+$$
+
+Значит, $(X,Y)$ — неподвижный **направляющий центр**, а расстояние до него
+
+$$
+\begin{aligned}
+\rho_L^2
+&=(x-X)^2+(y-Y)^2\\
+&=\frac{v_x^2+v_y^2}{\Omega^2}.
+\end{aligned}
+$$
+
+Отсюда
+
+$$
+\boxed{
+\rho_L
+=\frac{v_\perp}{\omega_c}
+=\frac{mv_\perp}{|q|B}
+=\frac{p_\perp}{|q|B}
+}.
+$$
+
+### Период
+
+За один оборот фаза меняется на $2\pi$. Поэтому
+
+$$
+\omega_cT_c=2\pi
+\quad\Longrightarrow\quad
+\boxed{T_c=\frac{2\pi m}{|q|B}}.
+$$
+
+За то же время направляющий центр проходит вдоль поля расстояние
+
+$$
+\boxed{
+h=v_\parallel T_c
+=\frac{2\pi p_\parallel}{|q|B}
+}.
+$$
+
+Геометрия спирали непосредственно задаёт угол входа:
+
+$$
+\boxed{
+\frac{h}{2\pi\rho_L}
+=\frac{p_\parallel}{p_\perp}
+=\cot\alpha
+}.
+$$
+
+Для электрона с $K=18.6~\mathrm{кэВ}$ в поле $B=3.6~\mathrm{Тл}$,
+с учётом $\gamma=1.036$, получаем
+
+$$
+T_c\simeq10.3~\mathrm{пс},
+\qquad
+\rho_{L,\max}\simeq0.129~\mathrm{мм}.
+$$
+
+### Момент
+
+Циклотронная орбита эквивалентна токовому витку. Модуль тока и площадь
+витка равны
+
+$$
+|I|=\frac{|q|}{T_c}=\frac{|q|\omega_c}{2\pi},
+\qquad
+S=\pi\rho_L^2.
+$$
+
+Поэтому
+
+$$
+\begin{aligned}
+\mu=|I|S
+&=\frac{|q|\omega_c\rho_L^2}{2}\\
+&=\frac{mv_\perp^2}{2B}
+=\frac{E_\perp}{B}.
+\end{aligned}
+$$
+
+Направление момента противоположно полю:
+
+$$
+\boxed{
+\boldsymbol{\mu}_{\mathrm{orb}}=-\mu\,\mathbf b
+},
+\qquad
+\mathbf b=\frac{\mathbf B}{B}.
+$$
+
+В однородном поле $E_\perp$ и $B$ постоянны, следовательно,
+
+$$
+\boxed{\mu=\frac{E_\perp}{B}=\mathrm{const}}.
+$$
+
+### Анимация
+
+<video class="slide-video" style="--media-max-height: 750px;" controls preload="metadata" playsinline poster="assets/04_direct_neutrino_mass/uniform_b_ensemble.jpg" src="assets/04_direct_neutrino_mass/uniform_b_ensemble.mp4"></video>
+
+<p class="media-caption">
+  Три электрона показаны в один и тот же момент времени. Их скорости равны
+  по модулю, но $v_z=v\cos\alpha$: меньший угол даёт большее продвижение
+  вдоль поля за то же время.
+</p>
+
+::::::
+
+# Фазовый портрет
+
+## Три языка
+
+::::: {.panel-tabset .story-tabs}
+
+### Ньютон
+
+- На предыдущих слайдах мы воспользовились ньютоновским формализмом, чтобы явно найти траекторию электрона в 3D:
+$$
+\mathbf r(t)=(x(t),y(t),z(t))
+$$
+- Некоторые свойства физической системы проще увидеть на **фазовой траектории**
+
+$$
+(Q(t),P(t))
+$$
+
+- Например, для гармонического осциллятора с энергией
+$$
+H = \frac{p^2}{2m} + \frac{m\omega^2q^2}{2}=E
+$$
+частное решение есть:
+$$
+q(t) = A\cos{\omega t}
+$$
+- В переменных $q$ и $p = m\dot{q}$ это **эллипс**
+
+
+### Эллипс
+
+{{< include assets/04_direct_neutrino_mass/_action_phase_animation.qmd >}}
+
+- Одна и та же частица совершает колебание в обычном пространстве и обходит замкнутую кривую в фазовой плоскости.
+
+- Очевидно, что площадь эллипса не меняется со временем. Есть ли у неё физический смысл?
+
+- Сейчас разберемся!
+
+### Лагранж
+
+- Функция Лагранжа зависит от обобщенной координаты $q$ и скорости $\dot{q}$
+$$
+L(q,\dot{q},t)
+$$
+- Уравнения движения:
+$$
+\frac{d}{dt}\frac{\partial L}{\partial \dot{q}}-\frac{\partial L}{\partial q} = 0.
+$$
+- Это уравнение второго порядка
+
+### Гамильтон
+
+- Определим канонический импульс:
+$$
+p\equiv\frac{\partial L}{\partial\dot q}
+$$
+- Гамильтониан
+
+$$
+H(q,p,t)\equiv p\dot q-L.
+$$
+
+- Уравнения Гамильтона:
+
+$$
+\dot q=\frac{\partial H}{\partial p},
+\qquad
+\dot p=-\frac{\partial H}{\partial q}.
+$$
+
+- Это два уравнения первого порядка
+
+:::::
+
+# Гамильтонов формализм
+
+## Фазовая траектория
+
+:::: {.panel-tabset .story-tabs}
+
+### Постоянная энергия
+
+Если $H$ не зависит явно от времени, то
+
+$$
+\begin{aligned}
+\frac{dH}{dt}
+&=\frac{\partial H}{\partial q}\dot q
++\frac{\partial H}{\partial p}\dot p\\
+&=-\dot p\dot q+\dot q\dot p=0.
+\end{aligned}
+$$
+
+Следовательно, фазовая точка движется вдоль линии постоянной энергии:
+
+$$
+\boxed{H(q,p)=E}.
+$$
+
+- **Фазовая точка** $(q,p)$ задаёт состояние системы.
+- **Фазовая траектория** — одна линия $H=E$.
+- **Фазовый портрет** — семейство траекторий для разных начальных условий.
+
+### Осциллятор
+
+Для гармонического осциллятора
+
+$$
+H(q,p)=\frac{p^2}{2m}+\frac{m\omega^2q^2}{2}=E.
+$$
+
+- Фазовые траектории — вложенные эллипсы:
+
+$$
+\frac{q^2}{q_{\max}^2}+\frac{p^2}{p_{\max}^2}=1,
+$$
+
+$$
+q_{\max}=\sqrt{\frac{2E}{m\omega^2}},
+\qquad
+p_{\max}=\sqrt{2mE}.
+$$
+
+- Площадь эллипса:
+$$
+S=\pi q_{\max}p_{\max}=\frac{2\pi E}{\omega}.
+$$
+- Изменение $E$ выбирает другой эллипс. Изменение параметров $m$ или $\omega$
+перестраивает весь фазовый портрет.
+
+::: {.marginnote .note-right .absolute top=225 left=1460 width=320 style="--note-font-size: 0.62em; --note-math-font-size: 1em; --note-padding: 0.7rem 0.8rem;"}
+<span class="note-title">Площадь эллипса</span>
+<img src="assets/04_direct_neutrino_mass/ellipse-area.svg" alt="Эллипс с полуосями a и b на плоскости x, y" style="display:block; width:100%; margin:0.05rem auto 0.15rem;">
+
+$$
+S=\pi ab
+$$
+:::
+
+### $J$ (действие)
+
+- Так какой физический смысл у площади эллипса в фазовой плоскости?
+
+- Определим эту площадь через **действие** $J$:
+
+$$
+\boxed{
+J(E)=\frac{1}{2\pi}\oint p\,dq
+}.
+$$
+
+- Размерность $J$ — действие, то есть энергия, умноженная на время.
+
+- Действие $J$ - интеграл движения, если гамильтониан не зависит явно от времени:
+
+$$
+\boxed{
+\dot E=0,
+\qquad
+J=J(E)
+\quad\Longrightarrow\quad
+\dot J=\frac{dJ}{dE}\dot E=0
+}.
+$$
+
+
+### $J$ и $(\omega, T)$
+
+- Красивая формула связывает действие $J$ с периодом $T$ и частотой $\omega = \frac{2\pi}{T}$:
+$$
+\boxed{\frac{dJ}{dE}=\frac{T}{2\pi} = \frac{1}{\omega}}.
+$$
+
+- Доказательство:
+$$
+\begin{aligned}
+\frac{dJ}{dE}
+&=\frac{1}{2\pi}\oint
+\left(\frac{\partial p}{\partial E}\right)_q dq
+=\frac{1}{2\pi}\oint\frac{dq}{\dot q}\\
+&=\frac{1}{2\pi}\int_0^Tdt
+=\frac{T}{2\pi}=\frac{1}{\omega}.
+\end{aligned}
+$$
+
+::: {.marginnote .note-right .absolute top=225 left=1460 width=320 style="--note-font-size: 0.62em; --note-math-font-size: 1em; --note-padding: 0.7rem 0.8rem;"}
+<span class="note-title">Четыре строчки</span>
+
+$$
+\begin{aligned}
+H\bigl(q,p\bigr)& =E.\\
+\frac{\partial H}{\partial p}
+\left(\frac{\partial p}{\partial E}\right)_q&=1.\\
+\partial H/\partial p&=\dot q,\\
+({\partial p}/{\partial E})_q&=1/\dot q.
+\end{aligned}
+$$
+
+:::
+
+- Пример: гармонический осциллятор
+$$
+J=\frac{1}{2\pi}\pi q_{\max}p_{\max}=\frac{E}{\omega}, \qquad\frac{dJ}{dE} = \frac{1}{\omega}.
+$$
+
+### $J$ и интегралы движения
+
+- $J$ -  интеграл движения.
+
+- Для одной степени свободы  $J$ не является интегралом движения независимым от $E$.
+
+- Для $N>1$  $J_i$ интегралы движения, независимые от $E$.
+
+::::
+
+## Канонические переменные
+
+::::: {.panel-tabset .story-tabs}
+
+### Замена переменных
+
+- Одно и то же движение можно описывать разными  переменными.
+
+- Простейший пример — растяжение одной оси и сжатие другой:
+
+$$
+Q=aq,
+\qquad
+P=\frac{p}{a}.
+$$
+
+Тогда
+
+$$
+P\,dQ=p\,dq,
+$$
+
+поэтому площадь фазовой орбиты не меняется.
+
+### Канонические переменные
+
+- Преобразование $(q,p)\to(Q,P)$ называется **каноническим**, если в новых переменных уравнения Гамильтона имеют тот же вид:
+$$
+\dot Q=\frac{\partial H}{\partial P},\qquad
+\dot P=-\frac{\partial H}{\partial Q}.
+$$
+
+- Каноническое преобразование может растягивать и деформировать фазовую плоскость, но сохраняет ориентированную площадь:
+$$
+dq\,dp=dQ\,dP.
+$$
+
+- Строго это записывается через симплектическую форму:
+
+$$
+dq\wedge dp=dQ\wedge dP,
+$$
+
+- Тогда,
+
+$$
+\oint p\,dq = \oint P\,dQ.
+$$
+
+
+:::::
+
+## Циклотронная орбита в переменных $(\theta,J)$
+
+:::: {.panel-tabset .story-tabs}
+
+### $(Q,P)$
+
+::: {.marginnote .note-right .absolute top=525 left=1660 width=320 style="--note-font-size: 0.62em; --note-math-font-size: 1em; --note-padding: 0.7rem 0.8rem;"}
+<span class="note-title">Уравнения Гамильтона</span>
+
+$$
+\dot Q=\frac{\partial H}{\partial P},
+\qquad
+\dot P=-\frac{\partial H}{\partial Q}.
+$$
+:::
+
+
+- Отделим движение относительно направляющего центра. При
+$\Omega=qB/m$ и $\omega_c=|\Omega|$ введём
+
+$$
+Q\equiv x-X=-\frac{v_y}{\Omega},
+\qquad
+P\equiv m\dot Q=mv_x.
+$$
+
+- Тогда циклотронные уравнения принимают вид
+
+$$
+\dot Q=\frac{P}{m},
+\qquad
+\dot P=-m\omega_c^2Q.
+$$
+
+- Это уравнения Гамильтона для осциллятора
+
+$$
+\boxed{
+H_\perp(Q,P)
+=\frac{P^2}{2m}+\frac{m\omega_c^2Q^2}{2}
+=E_\perp
+}.
+$$
+
+Таким образом, $(Q,P)$ — каноническая пара для одной периодической степени
+свободы.
+
+###  $J$
+
+- Применим к эллипсу $H_\perp(Q,P)=E_\perp$ уже введённое определение
+действия:
+
+$$
+\boxed{
+J\equiv\frac{1}{2\pi}\oint P\,dQ
+=\frac{E_\perp}{\omega_c}
+}.
+$$
+
+- Поэтому $J$:
+
+$$
+\boxed{
+J(Q,P)
+=\frac{H_\perp(Q,P)}{\omega_c}
+=\frac{P^2}{2m\omega_c}+\frac{m\omega_cQ^2}{2}
+}.
+$$
+
+- $J$ определяет, **какой эллипс** выбран. Где же находится частица на нём?
+
+### $\theta$
+
+- Положение на выбранном эллипсе зададим углом
+
+$$
+\boxed{
+\theta(Q,P)
+=\operatorname{atan2}\!\left(m\omega_cQ,\,P\right)
+}.
+$$
+
+$\operatorname{atan2}(y,x)$ — обычный полярный угол точки $(x,y)$ с
+правильным выбором квадранта. Здесь это угол точки $(P,m\omega_cQ)$.
+
+- Вместе определения $J(Q,P)$ и $\theta(Q,P)$ дают обратную замену
+
+$$
+Q=\sqrt{\frac{2J}{m\omega_c}}\sin\theta,
+\qquad
+P=\sqrt{2m\omega_cJ}\cos\theta.
+$$
+
+$J$ задаёт эллипс, а $\theta$ — положение фазовой точки на нём. В центре
+$J=0$ угол не определён, поскольку сама орбита вырождается в точку.
+
+### Скобка Пуассона
+
+- Для функций фазовых переменных скобка Пуассона определена как
+
+$$
+\boxed{
+\{f,g\}_{Q,P}
+\equiv
+\frac{\partial f}{\partial Q}\frac{\partial g}{\partial P}
+-\frac{\partial f}{\partial P}\frac{\partial g}{\partial Q}
+}.
+$$
+
+- Подставляя найденные $\theta(Q,P)$ и $J(Q,P)$, получаем
+
+$$
+\begin{gathered}
+D\equiv P^2+(m\omega_cQ)^2,\\
+\frac{\partial\theta}{\partial Q}=\frac{m\omega_cP}{D},
+\qquad
+\frac{\partial\theta}{\partial P}=-\frac{m\omega_cQ}{D},\\
+\frac{\partial J}{\partial P}=\frac{P}{m\omega_c},
+\qquad
+\frac{\partial J}{\partial Q}=m\omega_cQ.
+\end{gathered}
+$$
+
+$$
+\boxed{
+\{\theta,J\}_{Q,P}
+=\frac{P^2+(m\omega_cQ)^2}
+       {P^2+(m\omega_cQ)^2}
+=1
+}.
+$$
+
+Для одной пары $\{\theta,J\}=1$ — условие каноничности
+($\{\theta,\theta\}=\{J,J\}=0$ автоматически). Поэтому $\theta$ —
+координата, $J$ — сопряжённый импульс, и уравнения Гамильтона сохраняют вид.
+
+### Уравнения движения
+
+- В переменных $(\theta,J)$ гамильтониан не зависит от угла:
+
+$$
+\boxed{H_\perp=\omega_cJ},
+\qquad
+\frac{\partial H_\perp}{\partial\theta}=0.
+$$
+
+- Поскольку $(\theta,J)$ — каноническая пара,
+
+$$
+\dot\theta=\frac{\partial H_\perp}{\partial J},
+\qquad
+\dot J=-\frac{\partial H_\perp}{\partial\theta}.
+$$
+
+- Отсюда непосредственно
+
+$$
+\boxed{\dot\theta=\omega_c},
+\qquad
+\boxed{\dot J=0}.
+$$
+
+$J$ остаётся постоянным, а фазовая точка равномерно обходит выбранную
+орбиту: $\theta(t)=\theta_0+\omega_ct$.
+
+
+### От $(\mathbf r,\mathbf p)$ к $(J,\theta)$
+
+- Полное состояние частицы в трёхмерном пространстве задаётся шестью числами
+$(\mathbf r,\mathbf p)$:
+
+$$
+\boxed{
+(\mathbf r,\mathbf p)
+\ \longleftrightarrow\
+\underbrace{(X,Y)}_{\substack{\text{направляющий}\\\text{центр}}}
+\oplus
+\underbrace{(z,p_\parallel)}_{\substack{\text{движение}\\\text{вдоль поля}}}
+\oplus
+\underbrace{(Q,P)}_{\substack{\text{циклотронное}\\\text{движение}}}
+}.
+$$
+
+- В однородном поле
+
+$$
+\dot X=\dot Y=\dot p_\parallel=0,
+\qquad
+\dot z=\frac{p_\parallel}{m}.
+$$
+
+- Остаются $z,Q,P$: координата $z$ равномерно
+растёт, а точка $(Q,P)$ движется по замкнутой орбите.
+
+- Для циклотронного
+движения мы заменяем одну каноническую пару другой:
+
+$$
+\boxed{(Q,P)\ \longleftrightarrow\ (\theta,J)},
+\qquad
+\boxed{\{\theta,J\}=1}.
+$$
+
+- $J$ выбирает орбиту. Сопряжённая ему координата $\theta$ задаёт положение частицы на этой орбите.
+
+### Портрет
+
+
+{{< include assets/05_electron_to_detector/_cyclotron_phase_portrait.qmd >}}
+
+::::
+
+
+## Многоликое действие $J$
+
+::::: {.panel-tabset .story-tabs}
+
+### Циклотронная орбита
+
+::: {.marginnote .note-right .absolute top=225 left=1660 width=320 style="--note-font-size: 0.62em; --note-math-font-size: 1em; --note-padding: 0.7rem 0.8rem;"}
+<span class="note-title">Напомним</span>
+
+$$
+\omega_c=\frac{|q|B}{m}
+$$
+:::
+
+::: {.marginnote .note-right .absolute top=625 left=1660 width=320 style="--note-font-size: 0.62em; --note-math-font-size: 1em; --note-padding: 0.7rem 0.8rem;"}
+<span class="note-title">Напомним</span>
+
+$$
+\rho_L=\frac{p_\perp}{|q|B}
+$$
+:::
+
+- Для циклотронного движения действие:
+
+$$
+\boxed{
+J
+=\frac{1}{2\pi}\oint P\,dQ
+=\frac{E_\perp}{\omega_c}
+=\frac{p_\perp^2}{2|q|B}
+}.
+$$
+
+- Для круговой циклотронной орбиты действие $J$ связано:
+  - с орбитальным моментом импульса $L_{\mathrm{orb}}\equiv|\mathbf L_{\mathrm{orb}}|=\rho_Lp_\perp$:
+  $$
+  J=\frac{L_{\mathrm{orb}}}{2}.
+  $$
+  - с орбитальным магнитным моментом $\mu=\frac{|q|L_{\mathrm{orb}}}{2m}$:
+  $$
+  J = \frac{m}{|q|}\mu.
+  $$
+  - с магнитным потоком $\Phi=\pi\rho_L^2B$ через площадь орбиты:
+  $$
+  J=\frac{|q|}{2\pi}\Phi
+  $$
+
+### Плоский ротатор
+
+:::: {.columns}
+
+::: {.column width="56%"}
+
+- Шарик массы $m$ закреплён на конце невесомого жёсткого стержня длины $R$.
+
+- Точка $O$ неподвижна; стержень без трения вращается в горизонтальной
+плоскости.
+
+- Это **плоский ротатор**.
+
+- Радиус фиксирован, поэтому остаётся одна координата — угол $\varphi$:
+
+$$
+I=mR^2,
+\qquad
+\mathcal L=\frac{I\dot\varphi^2}{2},
+\qquad
+p_\varphi=\frac{\partial\mathcal L}{\partial\dot\varphi}
+=I\dot\varphi=L_z.
+$$
+
+- Угол $\varphi$ не входит в $\mathcal L$, поэтому он циклический и $p_\varphi$ сохраняется.
+
+- Гамильтониан имеет вид
+
+$$
+H=\frac{p_\varphi^2}{2I},
+\qquad
+\dot p_\varphi=0.
+$$
+
+
+:::
+
+::: {.column width="42%"}
+
+{{< include assets/05_electron_to_detector/_planar_rotor_animation.qmd >}}
+
+:::
+
+::::
+
+### Действие ротатора
+
+:::: {.columns}
+
+::: {.column width="49%"}
+
+- Рассмотрим  вращение в выбранном направлении, например
+$p_\varphi>0$. На этой ветви $p_\varphi$ постоянно, а за один оборот
+$\varphi$ увеличивается на $2\pi$:
+
+$$
+\begin{aligned}
+J
+&=\frac{1}{2\pi}\oint p_\varphi\,d\varphi \\
+&=\frac{1}{2\pi}
+  \int_{\varphi_0}^{\varphi_0+2\pi}p_\varphi\,d\varphi
+=p_\varphi=L_z.
+\end{aligned}
+$$
+
+- В общем случае действие выбирают положительным:
+
+$$
+\boxed{J=|p_\varphi|=|L_z|}.
+$$
+
+:::
+
+::: {.column width="49%"}
+
+- Для ветви $p_\varphi>0$ сопряжённым углом служит сама координата
+$\theta=\varphi$. Действительно,
+
+$$
+\{\theta,J\}=\{\varphi,p_\varphi\}=1,
+\qquad
+H(J)=\frac{J^2}{2I}.
+$$
+
+- Уравнения Гамильтона дают равномерное вращение:
+
+$$
+\boxed{
+\dot\theta=\frac{\partial H}{\partial J}=\frac{J}{I}=\omega,
+\qquad
+\dot J=-\frac{\partial H}{\partial\theta}=0
+}.
+$$
+
+- $J$ указывает, **какое вращение** выбрано: его момент и энергию;
+- $\theta$ указывает, **где шарик находится** внутри оборота.
+
+У ротатора действие совпало с модулем момента импульса. Это частный
+результат; общим остаётся определение $J=(2\pi)^{-1}\oint p\,dq$.
+
+:::
+
+::::
+
+### Маятник
+
+:::: {.columns}
+
+::: {.column width="51%"}
+
+У маятника пространственное движение идёт вперёд и назад, но в фазовой
+плоскости $(\varphi,p_\varphi)$ колебанию соответствует замкнутая кривая.
+
+Для каждого колебательного режима получаем свою орбиту:
+
+$$
+H(\varphi,p_\varphi)=E,
+\qquad
+J(E)=\frac{1}{2\pi}\oint p_\varphi\,d\varphi.
+$$
+
+Орбита маятника уже не эллипс, однако её фазовая площадь по-прежнему даёт
+метку периодического движения. Определение $J$ работает для любой замкнутой
+фазовой траектории.
+
+:::
+
+::: {.column width="47%"}
+
+{{< include assets/05_electron_to_detector/_pendulum_phase_portrait.qmd >}}
+
+:::
+
+::::
+
+:::::
+
+## Итоги
+
+:::: {.columns}
+
+::: {.column width="49%"}
+
+**Спектрометр измеряет продольную энергию**
+
+$$
+\boxed{E_\parallel>e|U|}.
+$$
+
+Магнитная система должна собрать большой телесный угол, провести электроны
+к фильтру и перед ним перевести $E_\perp$ в $E_\parallel$ при
+$E=\mathrm{const}$.
+
+**Однородное магнитное поле**
+
+$$
+\begin{gathered}
+E=\mathrm{const},
+\qquad
+p_\parallel=\mathrm{const},
+\qquad
+p_\perp=\mathrm{const},\\[0.4em]
+\rho_L=\frac{p_\perp}{|q|B},
+\qquad
+\omega_c=\frac{|q|B}{m}.
+\end{gathered}
+$$
+
+$$
+\tan\alpha=\frac{p_\perp}{p_\parallel}=\mathrm{const}
+$$
+
+Траектория винтовая, направляющий центр неподвижен. Поле ведёт электрон,
+но не коллимирует пучок.
+
+:::
+
+::: {.column width="49%"}
+
+**Одна периодическая степень свободы**
+
+$$
+J=\frac{1}{2\pi}\oint p\,dq
+\qquad
+\frac{dJ}{dE}=\frac{1}{\omega}
+$$
+
+$2\pi J$ — площадь внутри замкнутой фазовой орбиты.
+
+**Циклотронное движение**
+
+$$
+J=\frac{E_\perp}{\omega_c}
+=\frac{p_\perp^2}{2|q|B}
+=\frac{m}{|q|}\mu
+$$
+
+$$
+(Q,P)\longleftrightarrow(\theta,J),
+\qquad
+\{\theta,J\}=1
+$$
+
+$$
+H_\perp=\omega_cJ,
+\qquad
+\dot J=0,
+\qquad
+\dot\theta=\omega_c
+$$
+
+$J$ задаёт циклотронную орбиту; $\theta$ — положение частицы на ней.
+
+
+:::
+
+::::
+
+::: {.takeaway style="text-align: center; font-size: 1.08em; margin-top: 0.25rem; padding: 0.42rem 0.8rem; border: 2px solid #58b8ee; border-radius: 14px; background: rgba(55, 145, 205, 0.12);"}
+$J$ станет центральной величиной в методе
+**адиабатической коллимации**.
+:::

@@ -1,4 +1,8 @@
-# Пространственная чётность {#sec-parity}
+---
+body-classes: lecture-page topic-1
+---
+
+# Слабое взаимодействие. Нарушение пространственной чётности {#sec-parity}
 
 ::: {.book-lead}
 Зеркальное отражение меняет направление координат и импульса, но не меняет
@@ -28,7 +32,7 @@ $$ {#eq-parity-position}
 $P^2=1$. Само преобразование не является обычным вращением: никаким поворотом
 правую систему координат нельзя совместить с левой.
 
-::: {#anim-parity-transform .animation title="Пространственное отражение" epub-src="../assets/chapters/02_parity/parity_transform.mp4" poster="../assets/chapters/02_parity/parity_transform.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/02_parity.html#/parity-transform" qr="../assets/chapters/02_parity/qr/parity_transform.png"}
+::: {#anim-parity-transform .animation title="Пространственное отражение" epub-src="../assets/chapters/02_parity/parity_transform.mp4" poster="../assets/chapters/02_parity/parity_transform.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/02_parity_violation.html#/parity-transform" qr="../assets/chapters/02_parity/qr/parity_transform.png"}
 Интерактивная схема отражает вектор положения относительно начала координат.
 Она показывает именно инверсию пространства, а не поворот рисунка на
 $180^\circ$.
@@ -343,7 +347,7 @@ $$
 A\simeq-1.
 $$ {#eq-wu-asymmetry}
 
-::: {#anim-wu-result .animation title="Результат опыта Ву" epub-src="../assets/chapters/02_parity/wu_result.mp4" poster="../assets/chapters/02_parity/wu_result.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/02_parity.html#/wu-result" qr="../assets/chapters/02_parity/qr/wu_result.png"}
+::: {#anim-wu-result .animation title="Результат опыта Ву" epub-src="../assets/chapters/02_parity/wu_result.mp4" poster="../assets/chapters/02_parity/wu_result.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/02_parity_violation.html#/wu-result" qr="../assets/chapters/02_parity/qr/wu_result.png"}
 На интерактивном слайде показаны угловое распределение электронов и его
 изменение при потере поляризации образца. Ненулевой наклон --- прямое проявление
 псевдоскалярной корреляции $\mathbf I\cdot\mathbf p_e$.
@@ -570,7 +574,7 @@ $$
 позволит двум цивилизациям одинаково определить левое и правое.
 :::
 
-## Литература к главе {.unnumbered}
+## Литература к лекции {.unnumbered}
 
 ::: {.chapter-literature}
 1. T. D. Lee, C. N. Yang. Question of Parity Conservation in Weak

@@ -20,11 +20,14 @@
   <div class="frame-massless">
     <div class="massless-label">безмассовая частица</div>
     <div class="massless-track">
+      <div class="light-observer">
+        <span>наблюдатель</span>
+        <b>\(v_{\rm obs}&lt;1\)</b>
+      </div>
       <div class="light-particle">ν</div>
-      <div class="light-front"></div>
-      <div class="light-observer">наблюдатель</div>
+      <div class="light-front"><span>\(v_\nu=1\)</span></div>
     </div>
-    <div class="massless-note">обогнать нельзя: \(v<c\)</div>
+    <div class="massless-note">импульс не меняет знак: \(h\) сохраняется</div>
   </div>
 </div>
 ```

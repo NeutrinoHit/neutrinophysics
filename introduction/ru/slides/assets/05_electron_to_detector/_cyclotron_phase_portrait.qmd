@@ -1,0 +1,270 @@
+```{=html}
+<style>
+.cyclotron-portrait {
+  display: grid;
+  grid-template-columns: 330px minmax(0, 1fr);
+  gap: 28px;
+  width: min(1460px, 100%);
+  height: 500px;
+  margin: 0.15rem auto 0;
+  color: #f2f2f2;
+}
+
+.cyclotron-portrait-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 10px;
+  background: rgba(20, 34, 54, 0.62);
+}
+
+.cyclotron-portrait-control label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 7px;
+  font-size: 0.78em;
+  font-weight: 650;
+}
+
+.cyclotron-portrait-control output {
+  min-width: 3.2em;
+  color: #ffb04f;
+  text-align: right;
+}
+
+.cyclotron-portrait-control input[type="range"] {
+  width: 100%;
+  accent-color: #ffad5c;
+}
+
+.cyclotron-portrait-readout {
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  color: #d7e5f5;
+  font-size: 0.62em;
+  line-height: 1.32;
+}
+
+.cyclotron-portrait-readout strong {
+  color: #ffffff;
+}
+
+.cyclotron-portrait-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  background: rgba(3, 13, 28, 0.72);
+}
+
+.cyclotron-portrait-grid {
+  stroke: rgba(126, 184, 235, 0.12);
+  stroke-width: 1;
+}
+
+.cyclotron-portrait-axis {
+  stroke: rgba(255, 255, 255, 0.58);
+  stroke-width: 2;
+}
+
+.cyclotron-portrait-contour {
+  fill: none;
+  stroke: rgba(154, 184, 211, 0.34);
+  stroke-width: 2;
+}
+
+.cyclotron-portrait-current {
+  fill: rgba(78, 161, 255, 0.12);
+  stroke: #4ea1ff;
+  stroke-width: 4;
+}
+
+.cyclotron-portrait-radius {
+  stroke: #ffad5c;
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.cyclotron-portrait-dot {
+  fill: #ffad5c;
+  stroke: #ffffff;
+  stroke-width: 2.5;
+}
+
+.cyclotron-portrait-label {
+  fill: #f2f2f2;
+  font-family: system-ui, sans-serif;
+  font-size: 23px;
+  font-weight: 650;
+}
+
+.cyclotron-portrait-muted {
+  fill: #aebed0;
+  font-family: system-ui, sans-serif;
+  font-size: 18px;
+}
+
+</style>
+
+<div class="cyclotron-portrait" data-cyclotron-portrait>
+  <div class="cyclotron-portrait-controls">
+    <div class="cyclotron-portrait-control">
+      <label>
+        <span>Поперечная энергия, E⊥/E₀</span>
+        <output data-portrait-energy>1,00</output>
+      </label>
+      <input data-portrait-energy-input type="range" min="0.45" max="2.00"
+             step="0.01" value="1.00" aria-label="Поперечная энергия">
+    </div>
+
+    <div class="cyclotron-portrait-control">
+      <label>
+        <span>Магнитное поле, B/B₀</span>
+        <output data-portrait-field>1,00</output>
+      </label>
+      <input data-portrait-field-input type="range" min="0.70" max="1.50"
+             step="0.01" value="1.00" aria-label="Магнитное поле">
+    </div>
+
+    <div class="cyclotron-portrait-readout">
+      <div><strong>Полуось по Q:</strong> ∝ √E⊥/B</div>
+      <div><strong>Полуось по P:</strong> ∝ √E⊥</div>
+      <div><strong>Фазовая площадь:</strong> 2πJ</div>
+      <div><strong>J/J₀:</strong> <span data-portrait-action>1,00</span></div>
+    </div>
+  </div>
+
+  <svg class="cyclotron-portrait-svg" viewBox="0 0 1000 505"
+       role="img" aria-label="Фазовый портрет циклотронного движения">
+    <g aria-hidden="true">
+      <line class="cyclotron-portrait-grid" x1="80" y1="95" x2="940" y2="95"></line>
+      <line class="cyclotron-portrait-grid" x1="80" y1="175" x2="940" y2="175"></line>
+      <line class="cyclotron-portrait-grid" x1="80" y1="335" x2="940" y2="335"></line>
+      <line class="cyclotron-portrait-grid" x1="80" y1="415" x2="940" y2="415"></line>
+      <line class="cyclotron-portrait-grid" x1="190" y1="45" x2="190" y2="460"></line>
+      <line class="cyclotron-portrait-grid" x1="350" y1="45" x2="350" y2="460"></line>
+      <line class="cyclotron-portrait-grid" x1="670" y1="45" x2="670" y2="460"></line>
+      <line class="cyclotron-portrait-grid" x1="830" y1="45" x2="830" y2="460"></line>
+
+      <line class="cyclotron-portrait-axis" x1="70" y1="255" x2="950" y2="255"></line>
+      <line class="cyclotron-portrait-axis" x1="510" y1="465" x2="510" y2="35"></line>
+
+      <g data-portrait-contours></g>
+      <ellipse class="cyclotron-portrait-current" data-portrait-current
+               cx="510" cy="255" rx="180" ry="110"></ellipse>
+      <line class="cyclotron-portrait-radius" data-portrait-radius
+            x1="510" y1="255" x2="690" y2="255"></line>
+      <circle class="cyclotron-portrait-dot" data-portrait-dot
+              cx="690" cy="255" r="10"></circle>
+
+      <text class="cyclotron-portrait-label" x="955" y="246">Q</text>
+      <text class="cyclotron-portrait-label" x="525" y="45">P</text>
+      <text class="cyclotron-portrait-muted" x="735" y="76">H⊥(Q,P)=E⊥</text>
+      <text class="cyclotron-portrait-muted" x="735" y="106">серые линии: разные E⊥</text>
+    </g>
+  </svg>
+</div>
+
+<script>
+(() => {
+  const NS = "http://www.w3.org/2000/svg";
+
+  function initialize(root) {
+    if (root.dataset.cyclotronPortraitReady === "true") return;
+    root.dataset.cyclotronPortraitReady = "true";
+
+    const energyInput = root.querySelector("[data-portrait-energy-input]");
+    const fieldInput = root.querySelector("[data-portrait-field-input]");
+    const energyOutput = root.querySelector("[data-portrait-energy]");
+    const fieldOutput = root.querySelector("[data-portrait-field]");
+    const actionOutput = root.querySelector("[data-portrait-action]");
+    const contourGroup = root.querySelector("[data-portrait-contours]");
+    const current = root.querySelector("[data-portrait-current]");
+    const radius = root.querySelector("[data-portrait-radius]");
+    const dot = root.querySelector("[data-portrait-dot]");
+    const centerX = 510;
+    const centerY = 255;
+    const energyLevels = [0.50, 0.85, 1.20, 1.55, 1.90];
+    const contours = energyLevels.map(() => {
+      const ellipse = document.createElementNS(NS, "ellipse");
+      ellipse.setAttribute("class", "cyclotron-portrait-contour");
+      ellipse.setAttribute("cx", centerX);
+      ellipse.setAttribute("cy", centerY);
+      contourGroup.appendChild(ellipse);
+      return ellipse;
+    });
+    const start = performance.now();
+
+    function radii(energy, field) {
+      return {
+        q: 180 * Math.sqrt(energy) / field,
+        p: 110 * Math.sqrt(energy)
+      };
+    }
+
+    function format(value) {
+      return value.toFixed(2).replace(".", ",");
+    }
+
+    function updateStatic() {
+      const energy = Number(energyInput.value);
+      const field = Number(fieldInput.value);
+      const selected = radii(energy, field);
+
+      energyOutput.value = format(energy);
+      energyOutput.textContent = format(energy);
+      fieldOutput.value = format(field);
+      fieldOutput.textContent = format(field);
+      actionOutput.textContent = format(energy / field);
+
+      current.setAttribute("rx", selected.q.toFixed(2));
+      current.setAttribute("ry", selected.p.toFixed(2));
+
+      contours.forEach((ellipse, index) => {
+        const contour = radii(energyLevels[index], field);
+        ellipse.setAttribute("rx", contour.q.toFixed(2));
+        ellipse.setAttribute("ry", contour.p.toFixed(2));
+      });
+    }
+
+    function draw(now) {
+      if (!document.body.contains(root)) return;
+
+      const slide = root.closest("section");
+      if (!slide || slide.classList.contains("present")) {
+        const energy = Number(energyInput.value);
+        const field = Number(fieldInput.value);
+        const selected = radii(energy, field);
+        const theta = 0.85 * (now - start) / 1000;
+        const x = centerX + selected.q * Math.cos(theta);
+        const y = centerY - selected.p * Math.sin(theta);
+
+        dot.setAttribute("cx", x.toFixed(2));
+        dot.setAttribute("cy", y.toFixed(2));
+        radius.setAttribute("x2", x.toFixed(2));
+        radius.setAttribute("y2", y.toFixed(2));
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    energyInput.addEventListener("input", updateStatic);
+    fieldInput.addEventListener("input", updateStatic);
+    updateStatic();
+    requestAnimationFrame(draw);
+  }
+
+  function initializeAll() {
+    document.querySelectorAll("[data-cyclotron-portrait]").forEach(initialize);
+  }
+
+  initializeAll();
+  document.addEventListener("DOMContentLoaded", initializeAll, {once: true});
+})();
+</script>
+```
