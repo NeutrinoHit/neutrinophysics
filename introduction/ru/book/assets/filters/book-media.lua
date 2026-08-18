@@ -395,6 +395,17 @@ local semantic_labels = {
 }
 
 function Div(div)
+  if has_class(div, "quarto-book-part") and FORMAT:match("epub") then
+    -- Pandoc otherwise drops Quarto part divs from the EPUB spine and TOC.
+    -- Unwrapping preserves a real, unnumbered topic page.
+    return div.content
+  end
+
+  if has_class(div, "topic-landing") and FORMAT:match("latex") then
+    -- PDF topic pages build the same list automatically from the main TOC.
+    return {}
+  end
+
   if has_class(div, "biography") then
     return render_biography(div)
   end
@@ -465,11 +476,12 @@ function Header(header)
     inside_exercises = true
   elseif inside_exercises
       and header.level == 2
-      and title:match("^Литература к главе") then
+      and (title:match("^Литература к главе")
+        or title:match("^Литература к лекции")) then
     inside_exercises = false
   elseif inside_exercises then
     -- Individual problems are typographic labels, not sections of the
-    -- chapter. Keep the common "Задачи" section in every TOC, but suppress
+    -- lecture. Keep the common "Задачи" section in every TOC, but suppress
     -- its children and avoid duplicated numbers such as 5.13 / 05.1.
     add_class(header, "unnumbered")
     add_class(header, "unlisted")
@@ -491,8 +503,8 @@ function Header(header)
     return header
   end
 
-  -- A numbered PDF chapter gets a dedicated opener: the normal chapter
-  -- heading, followed by a chapter-local table of contents and a page break.
+  -- A numbered PDF lecture gets a dedicated opener: the normal lecture
+  -- heading, followed by a lecture-local table of contents and a page break.
   -- Keeping the original Header preserves Quarto numbering and cross-references.
   if FORMAT:match("latex")
       and header.level == 1

@@ -20,10 +20,11 @@ book:
     right: "NeutrinoHit · Введение в физику нейтрино"
   chapters:
     - index.qmd
-    - chapters/01_neutrino_101.qmd
-    - chapters/02_parity.qmd
-    - chapters/03_helicity.qmd
-    - chapters/04_direct_neutrino_mass.qmd
+    - chapters/01_neutrino_first_contact.qmd
+    - chapters/02_parity_violation.qmd
+    - chapters/03_neutrino_spin.qmd
+    - chapters/04_neutrino_mass_kinematics.qmd
+    - chapters/05_electron_to_detector.qmd
     - chapters/05_vacuum_oscillations.qmd
     - chapters/06_matter_oscillations.qmd
     - chapters/07_oscillation_paradoxes.qmd

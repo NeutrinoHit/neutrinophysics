@@ -1,4 +1,8 @@
-# Нейтрино 101 {#sec-neutrino-101}
+---
+body-classes: lecture-page topic-1
+---
+
+# Нейтрино. Первое знакомство {#sec-neutrino-101}
 
 ::: {.book-lead}
 Нейтрино --- электрически нейтральные фермионы, участвующие в слабом
@@ -123,7 +127,7 @@ $$
 
 где $f$ --- электрон, кварк или другая допустимая мишень.
 
-::: {#anim-interaction-gallery .animation title="Три обменных взаимодействия" epub-src="../assets/chapters/01_neutrino_101/interaction_gallery.mp4" poster="../assets/chapters/01_neutrino_101/interaction_gallery_frame.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/01_neutrino_101.html#/interaction-gallery" qr="../assets/chapters/01_neutrino_101/qr/interaction_gallery.png"}
+::: {#anim-interaction-gallery .animation title="Три обменных взаимодействия" epub-src="../assets/chapters/01_neutrino_101/interaction_gallery.mp4" poster="../assets/chapters/01_neutrino_101/interaction_gallery_frame.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/01_neutrino_first_contact.html#/interaction-gallery" qr="../assets/chapters/01_neutrino_101/qr/interaction_gallery.png"}
 Слева направо показаны заряженный слабый ток с обменом $W$-бозоном,
 электромагнитное рассеяние с обменом фотоном и сильное рассеяние с обменом
 глюоном.
@@ -143,7 +147,7 @@ $$
 
 Для строго безмассовой частицы киральность и спиральность связаны однозначно;
 при ненулевой массе их необходимо различать.
-См. главы [-@sec-parity] «Пространственная чётность» и [-@sec-helicity]
+См. лекции [-@sec-parity] «Нарушение пространственной чётности» и [-@sec-helicity]
 «Спин и поляризация нейтрино».
 
 ## Почему нейтрино почти не замечают вещество
@@ -379,7 +383,7 @@ $$
 каскад. Распады пионов и мюонов внутри каскада создают атмосферные нейтрино.
 :::
 
-::: {#anim-atmospheric-ratio .animation title="Отношение потоков атмосферных нейтрино" epub-src="../assets/chapters/01_neutrino_101/atmospheric_neutrino_paths.mp4" poster="../assets/chapters/01_neutrino_101/atmospheric_neutrino_paths_frame.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/01_neutrino_101.html#/atmospheric-neutrino-ratio" qr="../assets/chapters/01_neutrino_101/qr/atmospheric_ratio.png"}
+::: {#anim-atmospheric-ratio .animation title="Отношение потоков атмосферных нейтрино" epub-src="../assets/chapters/01_neutrino_101/atmospheric_neutrino_paths.mp4" poster="../assets/chapters/01_neutrino_101/atmospheric_neutrino_paths_frame.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/01_neutrino_first_contact.html#/atmospheric-neutrino-ratio" qr="../assets/chapters/01_neutrino_101/qr/atmospheric_ratio.png"}
 Источник атмосферных нейтрино один, а длина пути до детектора меняется от
 десятков до примерно $12\,800$ км. Интерактивная схема сопоставляет этот путь с
 отношением
@@ -510,7 +514,7 @@ $$
 n\simeq2.5\cdot10^{-7}~\text{см}^{-3},
 $$
 
-и значения сечений, обсуждавшиеся в главе:
+и значения сечений, обсуждавшиеся в этой лекции:
 
 $$
 \sigma_{\nu e}(1~\text{МэВ})\sim10^{-44}~\text{см}^2,
@@ -608,7 +612,7 @@ $P(\nu_\mu\to\nu_\mu)$ и проверьте унитарность.
 обычных экспериментах рассеяния?
 :::
 
-## Литература к главе {.unnumbered}
+## Литература к лекции {.unnumbered}
 
 ::: {.chapter-literature}
 1. V. A. Naumov. *Neutrinos in Physics & Astrophysics*. Lecture notes.

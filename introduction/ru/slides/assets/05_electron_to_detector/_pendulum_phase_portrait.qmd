@@ -1,0 +1,157 @@
+```{=html}
+<style>
+.pendulum-phase-portrait {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.pendulum-phase-portrait svg {
+  display: block;
+  width: 100%;
+  height: 390px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  background: rgba(3, 13, 28, 0.72);
+}
+
+.pendulum-phase-axis {
+  stroke: rgba(255, 255, 255, 0.55);
+  stroke-width: 2;
+}
+
+.pendulum-phase-grid {
+  stroke: rgba(126, 184, 235, 0.13);
+  stroke-width: 1;
+}
+
+.pendulum-phase-orbit {
+  fill: rgba(78, 161, 255, 0.045);
+  stroke: #4ea1ff;
+  stroke-width: 2.5;
+}
+
+.pendulum-phase-separatrix {
+  fill: none;
+  stroke: #ffad5c;
+  stroke-width: 2.5;
+  stroke-dasharray: 8 7;
+}
+
+.pendulum-phase-label {
+  fill: #f2f2f2;
+  font-family: system-ui, sans-serif;
+  font-size: 21px;
+  font-weight: 650;
+}
+
+.pendulum-phase-muted {
+  fill: #aebed0;
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+}
+</style>
+
+<div class="pendulum-phase-portrait" data-pendulum-phase-portrait>
+  <svg viewBox="0 0 620 390" role="img"
+       aria-label="Фазовый портрет математического маятника">
+    <line class="pendulum-phase-grid" x1="80" y1="95" x2="570" y2="95"></line>
+    <line class="pendulum-phase-grid" x1="80" y1="295" x2="570" y2="295"></line>
+    <line class="pendulum-phase-grid" x1="205" y1="40" x2="205" y2="350"></line>
+    <line class="pendulum-phase-grid" x1="445" y1="40" x2="445" y2="350"></line>
+    <line class="pendulum-phase-axis" x1="70" y1="195" x2="580" y2="195"></line>
+    <line class="pendulum-phase-axis" x1="325" y1="355" x2="325" y2="32"></line>
+    <g data-pendulum-orbits></g>
+    <text class="pendulum-phase-label" x="584" y="187">φ</text>
+    <text class="pendulum-phase-label" x="337" y="43">pφ</text>
+    <text class="pendulum-phase-muted" x="92" y="374">−π</text>
+    <text class="pendulum-phase-muted" x="563" y="374">π</text>
+    <text class="pendulum-phase-muted" x="382" y="72">замкнутые колебательные орбиты</text>
+    <text class="pendulum-phase-muted" x="382" y="94">штриховая линия: сепаратриса</text>
+  </svg>
+</div>
+
+<script>
+(() => {
+  const NS = "http://www.w3.org/2000/svg";
+
+  function initialize(root) {
+    if (root.dataset.pendulumPhaseReady === "true") return;
+    root.dataset.pendulumPhaseReady = "true";
+
+    const group = root.querySelector("[data-pendulum-orbits]");
+    const centerX = 325;
+    const centerY = 195;
+    const xScale = 245 / Math.PI;
+    const pScale = 70;
+
+    function point(phi, momentum) {
+      return [
+        centerX + xScale * phi,
+        centerY - pScale * momentum
+      ];
+    }
+
+    function orbitPath(energy) {
+      const turningPoint = Math.acos(1 - energy);
+      const upper = [];
+      const lower = [];
+      const samples = 150;
+
+      for (let index = 0; index <= samples; index += 1) {
+        const phi = -turningPoint + 2 * turningPoint * index / samples;
+        const momentum = Math.sqrt(Math.max(0, 2 * (energy - 1 + Math.cos(phi))));
+        upper.push(point(phi, momentum));
+      }
+      for (let index = samples; index >= 0; index -= 1) {
+        const phi = -turningPoint + 2 * turningPoint * index / samples;
+        const momentum = -Math.sqrt(Math.max(0, 2 * (energy - 1 + Math.cos(phi))));
+        lower.push(point(phi, momentum));
+      }
+
+      return [...upper, ...lower]
+        .map(([x, y], index) => `${index === 0 ? "M" : "L"}${x.toFixed(2)},${y.toFixed(2)}`)
+        .join(" ") + " Z";
+    }
+
+    function separatrixPath() {
+      const upper = [];
+      const lower = [];
+      const samples = 180;
+
+      for (let index = 0; index <= samples; index += 1) {
+        const phi = -Math.PI + 2 * Math.PI * index / samples;
+        upper.push(point(phi, 2 * Math.cos(phi / 2)));
+      }
+      for (let index = samples; index >= 0; index -= 1) {
+        const phi = -Math.PI + 2 * Math.PI * index / samples;
+        lower.push(point(phi, -2 * Math.cos(phi / 2)));
+      }
+
+      return [...upper, ...lower]
+        .map(([x, y], index) => `${index === 0 ? "M" : "L"}${x.toFixed(2)},${y.toFixed(2)}`)
+        .join(" ") + " Z";
+    }
+
+    [0.22, 0.55, 0.95, 1.40, 1.78].forEach((energy, index) => {
+      const path = document.createElementNS(NS, "path");
+      path.setAttribute("class", "pendulum-phase-orbit");
+      path.setAttribute("d", orbitPath(energy));
+      path.setAttribute("opacity", String(0.48 + 0.10 * index));
+      group.appendChild(path);
+    });
+
+    const separatrix = document.createElementNS(NS, "path");
+    separatrix.setAttribute("class", "pendulum-phase-separatrix");
+    separatrix.setAttribute("d", separatrixPath());
+    group.appendChild(separatrix);
+  }
+
+  function initializeAll() {
+    document.querySelectorAll("[data-pendulum-phase-portrait]").forEach(initialize);
+  }
+
+  initializeAll();
+  document.addEventListener("DOMContentLoaded", initializeAll, {once: true});
+})();
+</script>
+```

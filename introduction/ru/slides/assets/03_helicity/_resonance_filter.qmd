@@ -1,28 +1,88 @@
 ```{=html}
-<div class="resonance-filter helicity-animated" aria-label="Доплеровский выбор фотонов, летящих вдоль отдачи ядра">
-  <div class="resonance-scene">
-    <div class="resonance-absorber">
-      <span>\(B\)</span>
-      <small>поглотитель</small>
+<div class="resonance-explorer" data-resonance-explorer aria-label="Интерактивная демонстрация доплеровской настройки ядерного резонанса">
+  <div class="resonance-controls">
+    <div class="resonance-control-heading">
+      <strong>Угол между отдачей \(B^*\) и фотоном</strong>
+      <output data-resonance-angle>\(\theta=90^\circ\) — фотон летит поперёк отдачи</output>
     </div>
-    <div class="resonance-source">\(B^*\)</div>
-    <div class="resonance-neutrino">\(\nu_e\)</div>
-    <div class="res-vector res-recoil"><span>отдача</span></div>
-    <div class="res-vector res-neutrino-path"><span>\(\mathbf p_\nu\)</span></div>
-    <div class="res-photon res-photon-good">\(\gamma\)</div>
-    <div class="res-photon res-photon-bad">\(\gamma\)</div>
-    <div class="resonance-flash"></div>
+
+    <div class="resonance-slider-row">
+      <span>вдоль отдачи</span>
+      <input
+        type="range"
+        min="0"
+        max="180"
+        value="90"
+        step="1"
+        data-resonance-slider
+        aria-label="Угол между импульсом возбуждённого ядра и импульсом фотона"
+      >
+      <span>против отдачи</span>
+      <button type="button" class="resonance-fire-button" data-resonance-fire>
+        <span aria-hidden="true">▶</span> Испустить фотон
+      </button>
+    </div>
+
+    <div class="resonance-slider-scale" aria-hidden="true">
+      <span>\(0^\circ\)</span>
+      <span>\(90^\circ\)</span>
+      <span>\(180^\circ\)</span>
+    </div>
   </div>
-  <div class="resonance-energy">
-    <div class="energy-scale">
-      <div class="energy-target"><span>резонанс</span></div>
-      <div class="energy-good"><span>\(E_\gamma\uparrow\)</span></div>
-      <div class="energy-bad"><span>\(E_\gamma\downarrow\)</span></div>
+
+  <div class="resonance-stage" data-resonance-stage>
+    <div class="resonance-flight-line"></div>
+
+    <div class="resonance-absorber" data-resonance-absorber>
+      <span class="resonance-nucleus-label resonance-ground-label">\(B\)</span>
+      <span class="resonance-nucleus-label resonance-excited-label">\(B^*\)</span>
+      <small>поглотитель покоится</small>
     </div>
-    <div class="energy-caption">
-      <span class="caption-good">вдоль отдачи: поглощается</span>
-      <span class="caption-bad">против отдачи: не поглощается</span>
+
+    <div class="resonance-source" data-resonance-source>
+      <span class="resonance-nucleus-label resonance-ground-label">\(B\)</span>
+      <span class="resonance-nucleus-label resonance-excited-label">\(B^*\)</span>
+      <small>источник</small>
     </div>
+
+    <div class="resonance-source-momentum" data-resonance-vector>
+      <i></i>
+    </div>
+    <div class="resonance-momentum-label">\(\mathbf p_{B^*}\): направление меняется, модуль задан нейтрино</div>
+
+    <div class="resonance-test-photon" data-resonance-photon>\(\gamma\)</div>
+    <div class="resonance-absorption-flash"></div>
+
+    <div class="resonance-direction-note">
+      \(\mathbf p_\gamma\) всегда направлен влево, к поглотителю
+      <span aria-hidden="true">←</span>
+    </div>
+  </div>
+
+  <div class="resonance-readout">
+    <div class="resonance-energy-heading">
+      <strong>Энергия фотона в системе покоя поглотителя</strong>
+      <span data-resonance-energy-text>\(E_\gamma<E_{\rm рез}\) — энергии не хватает</span>
+    </div>
+
+    <div class="resonance-energy-scale">
+      <div class="resonance-energy-window">
+        <span>условное окно: \(\lvert E_\gamma-E_\gamma^{\rm abs}\rvert&lt;0{,}10\,\mathrm{эВ}\)</span>
+      </div>
+      <div class="resonance-energy-marker" data-resonance-energy-marker>
+        <span>\(E_\gamma\)</span>
+      </div>
+    </div>
+
+    <div class="resonance-energy-labels">
+      <span>ниже</span>
+      <span>\(E_\gamma^{\rm abs}\)</span>
+      <span>выше</span>
+    </div>
+  </div>
+
+  <div class="resonance-outcome" data-resonance-outcome>
+    При \(\theta=90^\circ\) фотон проходит сквозь поглотитель.
   </div>
 </div>
 ```

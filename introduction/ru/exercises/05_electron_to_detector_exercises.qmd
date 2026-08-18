@@ -1,0 +1,14 @@
+---
+title: "Задачи: ведём электрон к детектору"
+subtitle: "Лекция 05 · Введение в физику нейтрино"
+author: "Дмитрий В. Наумов"
+format:
+  html:
+    toc: false
+---
+
+[← Вернуться к лекции](../slides/05_electron_to_detector.html) · [Все задачи курса](index.html)
+
+# Задачи
+
+{{< include ../../_includes/exercises/05_electron_to_detector-ru.qmd >}}

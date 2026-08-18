@@ -1,0 +1,87 @@
+:::: {.panel-tabset .story-tabs .helicity-story-tabs .photon-tag-tabs}
+
+### $\gamma$-переход
+
+```{=html}
+<div class="photon-tag-transfer" aria-label="Проекция спина возбуждённого ядра передаётся фотону">
+  <div class="photon-tag-object photon-tag-nucleus excited">
+    <span class="photon-tag-symbol">\(B^*\)</span>
+    <span class="photon-tag-caption">\(J=1\)</span>
+    <span class="photon-tag-vector spin up"><i></i><b>\(S_z(B^*)=+1\)</b></span>
+  </div>
+  <div class="photon-tag-decay">\(\longrightarrow\)</div>
+  <div class="photon-tag-products">
+    <div class="photon-tag-object photon-tag-nucleus ground">
+      <span class="photon-tag-symbol">\(B\)</span>
+      <span class="photon-tag-caption">\(J=0\)</span>
+    </div>
+    <div class="photon-tag-plus">+</div>
+    <div class="photon-tag-object photon-tag-photon">
+      <span class="photon-tag-symbol">\(\gamma\)</span>
+      <span class="photon-tag-vector spin up"><i></i><b>\(S_z(\gamma)=+1\)</b></span>
+    </div>
+  </div>
+</div>
+```
+
+::: {.nh-box tone="success" size="lg" align="center" weight="bold"}
+
+Поскольку конечное ядро имеет спин $0$, фотон уносит проекцию спина
+возбуждённого ядра:
+
+$$
+m_\gamma=m_{B^*}=\pm1.
+$$
+
+:::
+
+### Цепочка меток
+
+**Логика измерения:** проекция спина нейтрино задаёт проекцию $B^*$,
+а фотон сохраняет эту метку.
+
+```{=html}
+<div class="photon-story-axis"><b>толстая стрелка — спин</b><span>\(+z\)</span><i></i></div>
+<div class="photon-story photon-story-single" aria-label="Два перехода переносят спиновую метку нейтрино на фотон">
+  <div class="photon-story-node">
+    <span class="photon-story-momentum left"><i></i><b>\(\mathbf p_\nu\)</b></span>
+    <span class="photon-story-ball neutrino">\(\nu\)</span>
+    <span class="photon-story-spin neutrino right"><i></i></span>
+  </div>
+  <span class="photon-story-space"></span>
+  <div class="photon-story-node source">
+    <span class="photon-story-ball nucleus">\(A\)</span>
+    <span class="photon-story-caption">\(A+e^-\)</span>
+  </div>
+  <span class="photon-story-space"></span>
+  <div class="photon-story-node">
+    <span class="photon-story-ball nucleus excited">\(B^*\)</span>
+    <span class="photon-story-spin nucleus left"><i></i></span>
+    <span class="photon-story-momentum right"><i></i><b>\(\mathbf p_{B^*}\)</b></span>
+  </div>
+  <div class="photon-story-products aligned-products">
+    <div class="photon-story-product photon">
+      <div class="photon-story-node">
+        <span class="photon-story-ball photon">\(\gamma\)</span>
+        <span class="photon-story-spin photon left"><i></i></span>
+        <span class="photon-story-momentum right"><i></i><b>\(\mathbf p_\gamma\)</b></span>
+      </div>
+    </div>
+    <div class="photon-story-product">
+      <div class="photon-story-node">
+        <span class="photon-story-ball nucleus ground">\(B\)</span>
+        <span class="photon-story-momentum right"><i></i><b>\(\mathbf p_B\)</b></span>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+::: {.nh-box tone="accent" size="lg" align="center" weight="bold"}
+
+Нейтрино не регистрируем: по спину фотона узнаём проекцию $B^*$,
+а по ней — проекцию спина нейтрино.
+
+:::
+
+::::

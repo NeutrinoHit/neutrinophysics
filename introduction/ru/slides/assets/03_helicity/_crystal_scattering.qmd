@@ -1,0 +1,59 @@
+```{=html}
+<div class="crystal-scattering helicity-animated"
+     data-manual-animation
+     data-animation-end="crystal-scatter-finish"
+     aria-label="Возбуждённое ядро движется через кристалл; столкновения меняют его траекторию и направление спина">
+  <div class="crystal-scattering-head">
+    <strong>Столкновения стирают исходное направление</strong>
+    <div class="animation-controls" role="group" aria-label="Управление анимацией">
+      <button class="animation-control animation-play" type="button" data-animation-action="play">
+        <span aria-hidden="true">▶</span> Запустить
+      </button>
+      <button class="animation-control animation-pause" type="button" data-animation-action="pause" disabled>
+        <span aria-hidden="true">Ⅱ</span> Пауза
+      </button>
+    </div>
+  </div>
+
+  <div class="crystal-scattering-stage">
+    <div class="crystal-lattice" aria-hidden="true">
+      <span class="crystal-site" style="--x:12%;--y:20%">A</span>
+      <span class="crystal-site" style="--x:31%;--y:20%">A</span>
+      <span class="crystal-site" style="--x:50%;--y:20%">A</span>
+      <span class="crystal-site" style="--x:69%;--y:20%">A</span>
+      <span class="crystal-site" style="--x:88%;--y:20%">A</span>
+      <span class="crystal-site" style="--x:12%;--y:50%">A</span>
+      <span class="crystal-site" style="--x:31%;--y:50%">A</span>
+      <span class="crystal-site" style="--x:50%;--y:50%">A</span>
+      <span class="crystal-site" style="--x:69%;--y:50%">A</span>
+      <span class="crystal-site" style="--x:88%;--y:50%">A</span>
+      <span class="crystal-site" style="--x:12%;--y:80%">A</span>
+      <span class="crystal-site" style="--x:31%;--y:80%">A</span>
+      <span class="crystal-site" style="--x:50%;--y:80%">A</span>
+      <span class="crystal-site" style="--x:69%;--y:80%">A</span>
+      <span class="crystal-site" style="--x:88%;--y:80%">A</span>
+    </div>
+
+    <svg class="crystal-scattering-track" viewBox="0 0 1000 360" preserveAspectRatio="none" aria-hidden="true">
+      <polyline points="35,180 290,180 505,92 710,260 930,165" />
+    </svg>
+
+    <span class="crystal-collision collision-one" aria-hidden="true">✦</span>
+    <span class="crystal-collision collision-two" aria-hidden="true">✦</span>
+    <span class="crystal-collision collision-three" aria-hidden="true">✦</span>
+
+    <div class="crystal-projectile" aria-hidden="true">
+      <span class="crystal-projectile-ball"><span class="crystal-projectile-symbol">B<sup>*</sup></span></span>
+      <span class="crystal-projectile-spin"></span>
+    </div>
+
+    <span class="crystal-label crystal-label-start">исходный спин</span>
+    <span class="crystal-label crystal-label-end">направление забыто</span>
+    <span class="crystal-scattering-sentinel" aria-hidden="true"></span>
+  </div>
+
+  <div class="crystal-scattering-caption">
+    Столкновения с решёткой меняют импульс ядра и переориентируют его спин.
+  </div>
+</div>
+```

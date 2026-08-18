@@ -36,12 +36,12 @@ toc: false
     <details class="lecture-row">
       <summary>
         <span class="lecture-index">01</span>
-        <span>Нейтрино 101</span>
+        <span>Нейтрино. Первое знакомство</span>
       </summary>
       <div class="lecture-row-body">
         <div class="lecture-links">
-          <a href="01_neutrino_101.html">Открыть слайды</a>
-          <a href="../exercises/01_neutrino_101_exercises.html">Задачи</a>
+          <a href="01_neutrino_first_contact.html">Открыть слайды</a>
+          <a href="../exercises/01_neutrino_first_contact_exercises.html">Задачи</a>
         </div>
       </div>
     </details>
@@ -49,12 +49,12 @@ toc: false
     <details class="lecture-row">
       <summary>
         <span class="lecture-index">02</span>
-        <span>Пространственная четность</span>
+        <span>Слабое взаимодействие. Нарушение пространственной чётности</span>
       </summary>
       <div class="lecture-row-body">
         <div class="lecture-links">
-          <a href="02_parity.html">Открыть слайды</a>
-          <a href="../exercises/02_parity_exercises.html">Задачи</a>
+          <a href="02_parity_violation.html">Открыть слайды</a>
+          <a href="../exercises/02_parity_violation_exercises.html">Задачи</a>
         </div>
       </div>
     </details>
@@ -62,12 +62,12 @@ toc: false
     <details class="lecture-row">
       <summary>
         <span class="lecture-index">03</span>
-        <span>Спин и поляризация нейтрино</span>
+        <span>Спин нейтрино. Спиральность и поляризация</span>
       </summary>
       <div class="lecture-row-body">
         <div class="lecture-links">
-          <a href="03_helicity.html">Открыть слайды</a>
-          <a href="../exercises/03_helicity_exercises.html">Задачи</a>
+          <a href="03_neutrino_spin.html">Открыть слайды</a>
+          <a href="../exercises/03_neutrino_spin_exercises.html">Задачи</a>
         </div>
       </div>
     </details>
@@ -75,11 +75,12 @@ toc: false
     <details class="lecture-row">
       <summary>
         <span class="lecture-index">04</span>
-        <span>Прямое определение массы нейтрино</span>
+        <span>Прямое измерение массы нейтрино. Кинематика β-спектра</span>
       </summary>
       <div class="lecture-row-body">
         <div class="lecture-links">
-          <a href="04_direct_neutrino_mass.html">Открыть слайды</a>
+          <a href="04_neutrino_mass_kinematics.html">Открыть слайды</a>
+          <a href="../exercises/04_neutrino_mass_kinematics_exercises.html">Задачи</a>
         </div>
       </div>
     </details>
@@ -87,12 +88,12 @@ toc: false
     <details class="lecture-row">
       <summary>
         <span class="lecture-index">05</span>
-        <span>Осцилляции в вакууме: два флэйвора и маятники</span>
+        <span>Прямое измерение массы нейтрино. Ведём электрон к детектору</span>
       </summary>
       <div class="lecture-row-body">
         <div class="lecture-links">
-          <a href="05a_vacuum_two_flavors.html">Открыть слайды</a>
-          <a href="../exercises/05_vacuum_oscillations_exercises.html">Задачи</a>
+          <a href="05_electron_to_detector.html">Открыть слайды</a>
+          <a href="../exercises/05_electron_to_detector_exercises.html">Задачи</a>
         </div>
       </div>
     </details>

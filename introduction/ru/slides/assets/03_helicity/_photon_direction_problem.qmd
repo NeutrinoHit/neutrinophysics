@@ -1,0 +1,86 @@
+Проекция спина на фиксированную ось $z$ — ещё не спиральность: нужно знать,
+в какую сторону летела частица. Сравним два направления вылета фотона.
+
+```{=html}
+<div class="photon-story-axis"><b>толстая стрелка — спин</b><span>\(+z\)</span><i></i></div>
+<div class="photon-story-cases" aria-label="Одна спиральность нейтрино допускает две спиральности фотона при разных направлениях его вылета">
+  <div class="photon-story-case story-forward">
+    <span class="photon-story-number">1</span>
+    <div class="photon-story-node">
+      <span class="photon-story-momentum left"><i></i><b>\(\mathbf p_\nu\)</b></span>
+      <span class="photon-story-ball neutrino">\(\nu\)</span>
+      <span class="photon-story-spin neutrino right"><i></i></span>
+    </div>
+    <span class="photon-story-space"></span>
+    <div class="photon-story-node source">
+      <span class="photon-story-ball nucleus">\(A\)</span>
+      <span class="photon-story-caption">\(A+e^-\)</span>
+    </div>
+    <span class="photon-story-space"></span>
+    <div class="photon-story-node">
+      <span class="photon-story-ball nucleus excited">\(B^*\)</span>
+      <span class="photon-story-spin nucleus left"><i></i></span>
+      <span class="photon-story-momentum right"><i></i><b>\(\mathbf p_{B^*}\)</b></span>
+    </div>
+    <div class="photon-story-products aligned-products">
+      <div class="photon-story-product photon">
+        <div class="photon-story-node">
+          <span class="photon-story-ball photon">\(\gamma\)</span>
+          <span class="photon-story-spin photon left"><i></i></span>
+          <span class="photon-story-momentum right"><i></i><b>\(\mathbf p_\gamma\)</b></span>
+        </div>
+      </div>
+      <div class="photon-story-product">
+        <div class="photon-story-node">
+          <span class="photon-story-ball nucleus ground">\(B\)</span>
+          <span class="photon-story-momentum right"><i></i><b>\(\mathbf p_B\)</b></span>
+        </div>
+      </div>
+    </div>
+    <div class="photon-story-result">\(h_\nu=-1\)<br>\(h_\gamma=-1\)</div>
+  </div>
+
+  <div class="photon-story-case story-reverse">
+    <span class="photon-story-number">2</span>
+    <div class="photon-story-node">
+      <span class="photon-story-ball nucleus excited">\(B^*\)</span>
+      <span class="photon-story-spin nucleus right"><i></i></span>
+      <span class="photon-story-momentum left"><i></i><b>\(\mathbf p_{B^*}\)</b></span>
+    </div>
+    <div class="photon-story-products aligned-products">
+      <div class="photon-story-product photon">
+        <div class="photon-story-node">
+          <span class="photon-story-ball photon">\(\gamma\)</span>
+          <span class="photon-story-spin photon right"><i></i></span>
+          <span class="photon-story-momentum right separate-from-spin"><i></i><b>\(\mathbf p_\gamma\)</b></span>
+        </div>
+      </div>
+      <div class="photon-story-product">
+        <div class="photon-story-node">
+          <span class="photon-story-ball nucleus ground">\(B\)</span>
+          <span class="photon-story-momentum left"><i></i><b>\(\mathbf p_B\)</b></span>
+        </div>
+      </div>
+    </div>
+    <span class="photon-story-space"></span>
+    <div class="photon-story-node source">
+      <span class="photon-story-ball nucleus">\(A\)</span>
+      <span class="photon-story-caption">\(A+e^-\)</span>
+    </div>
+    <span class="photon-story-space"></span>
+    <div class="photon-story-node">
+      <span class="photon-story-ball neutrino">\(\nu\)</span>
+      <span class="photon-story-spin neutrino left"><i></i></span>
+      <span class="photon-story-momentum right"><i></i><b>\(\mathbf p_\nu\)</b></span>
+    </div>
+    <div class="photon-story-result">\(h_\nu=-1\)<br>\(h_\gamma=+1\)</div>
+  </div>
+</div>
+```
+
+::: {.nh-box tone="warning" size="md" align="center" weight="bold"}
+
+Одна и та же спиральность нейтрино допускает обе спиральности фотона.
+Нужно отобрать фотоны по направлению относительно отдачи $B^*$.
+
+:::

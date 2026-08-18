@@ -1,27 +1,146 @@
 ```{=html}
-<div class="experiment-chain helicity-animated" aria-label="Полная цепочка опыта Голдхабера">
-  <div class="chain-step chain-capture">
-    <div class="chain-icon">\(e^-+A\)</div>
-    <strong>электронный захват</strong>
-    <span>рождает \(B^*\) и \(\nu_e\)</span>
+<div class="experiment-build" data-experiment-scenes aria-label="Пятисценовый проигрыватель опыта Голдхабера">
+  <div class="experiment-scene-player" role="group" aria-label="Проигрыватель сцен">
+    <div class="experiment-scene-progress" aria-hidden="true">
+      <span class="experiment-scene-dot is-current">1</span>
+      <span class="experiment-scene-dot">2</span>
+      <span class="experiment-scene-dot">3</span>
+      <span class="experiment-scene-dot experiment-scene-phase-two">4</span>
+      <span class="experiment-scene-dot">5</span>
+    </div>
+    <span class="experiment-scene-label" data-experiment-scene-label aria-live="polite">Сцена 1/5 · Сборка детектора</span>
+    <button class="experiment-scene-next" type="button" data-experiment-scene-next>
+      <span aria-hidden="true" data-experiment-scene-icon>▶</span>
+      <span data-experiment-scene-button-label>Запустить</span>
+    </button>
   </div>
-  <div class="chain-arrow"></div>
-  <div class="chain-step chain-recoil">
-    <div class="chain-icon">\(B^*\!\leftarrow\ \rightarrow\!\nu\)</div>
-    <strong>отдача</strong>
-    <span>задаёт противоположные пути</span>
+
+  <div class="experiment-reactions" aria-label="Две возможные геометрии распада">
+    <div class="experiment-case experiment-case-one">
+      <span class="experiment-case-badge">1</span>
+      <span class="experiment-node case-one-neutrino">\(\nu_e\)</span>
+      <span class="experiment-node case-one-source">\(A\)</span>
+      <span class="experiment-node case-one-excited">\(B^*\)</span>
+      <span class="experiment-node experiment-node-photon case-one-photon">\(\gamma\)</span>
+      <span class="experiment-node case-one-daughter">\(B\)</span>
+      <i class="experiment-reaction-arrow case-one-arrow-neutrino"></i>
+      <i class="experiment-reaction-arrow case-one-arrow-recoil"></i>
+      <i class="experiment-reaction-arrow case-one-arrow-photon"></i>
+      <i class="experiment-reaction-arrow case-one-arrow-daughter"></i>
+    </div>
+
+    <div class="experiment-case experiment-case-two">
+      <span class="experiment-case-badge">2</span>
+      <span class="experiment-node case-two-daughter">\(B\)</span>
+      <span class="experiment-node case-two-excited">\(B^*\)</span>
+      <span class="experiment-node case-two-source">\(A\)</span>
+      <span class="experiment-node case-two-neutrino">\(\nu_e\)</span>
+      <span class="experiment-node experiment-node-photon case-two-photon">\(\gamma\)</span>
+      <i class="experiment-reaction-arrow case-two-arrow-daughter"></i>
+      <i class="experiment-reaction-arrow case-two-arrow-recoil"></i>
+      <i class="experiment-reaction-arrow case-two-arrow-neutrino"></i>
+      <i class="experiment-reaction-arrow case-two-arrow-photon"></i>
+    </div>
   </div>
-  <div class="chain-arrow"></div>
-  <div class="chain-step chain-resonance">
-    <div class="chain-icon">\(B+\gamma\to B^*\)</div>
-    <strong>резонанс</strong>
-    <span>выбирает \(\gamma\) вдоль отдачи</span>
+
+  <div class="experiment-apparatus">
+    <svg class="experiment-flight-paths" viewBox="0 0 1920 820" preserveAspectRatio="none" aria-hidden="true">
+      <path class="experiment-path experiment-path-neutrino-one" d="M 307 619 L 48 682" pathLength="1"></path>
+      <path class="experiment-path experiment-path-photon-one" d="M 307 619 L 1050 439" pathLength="1"></path>
+      <path class="experiment-path experiment-path-neutrino-two" d="M 307 619 L 690 769" pathLength="1"></path>
+      <path class="experiment-path experiment-path-photon-two" d="M 307 619 L 1120 789" pathLength="1"></path>
+    </svg>
+
+    <div class="experiment-iron">
+      <strong>намагниченное железо</strong>
+      <div class="experiment-field-indicator" aria-hidden="true">
+        <span class="experiment-field-label experiment-field-label-plus">\(+\mathbf B\)</span>
+        <span class="experiment-field-label experiment-field-label-minus">\(-\mathbf B\)</span>
+        <i class="experiment-field-vector"></i>
+        <span class="experiment-electron-spin-label">спины \(e^-\)</span>
+        <span class="experiment-electron-spin-vectors"><i></i><i></i><i></i></span>
+      </div>
+    </div>
+
+    <div class="experiment-source-nucleus experiment-apparatus-particle">\(A\)</div>
+    <div class="experiment-electron experiment-apparatus-particle">\(e^-\)</div>
+    <div class="experiment-capture-flash" aria-hidden="true"></div>
+
+    <div class="experiment-recoil experiment-apparatus-particle">
+      \(B^*\)
+      <i class="experiment-spin-arrow experiment-recoil-spin"><b>\(\mathbf S_{B^*}\)</b></i>
+    </div>
+
+    <div class="experiment-neutrino-one experiment-apparatus-particle">
+      \(\nu_e\)
+      <i class="experiment-spin-arrow experiment-neutrino-spin"></i>
+    </div>
+
+    <div class="experiment-photon-one experiment-apparatus-particle">\(\gamma\)</div>
+    <div class="experiment-neutrino-two experiment-apparatus-particle">\(\nu_e\)</div>
+    <div class="experiment-photon-two experiment-apparatus-particle">\(\gamma\)</div>
+
+    <div class="experiment-lead-shield"><span>свинцовая<br>защита</span></div>
+
+    <div class="experiment-scintillator"><span>сцинтиллятор</span></div>
+    <div class="experiment-pmt"><span>ФЭУ</span></div>
+
+    <div class="experiment-absorber experiment-absorber-top">
+      <span class="experiment-absorber-nucleus">\(B\)</span>
+    </div>
+    <div class="experiment-absorber experiment-absorber-bottom">
+      <span class="experiment-absorber-nucleus">\(B\)</span>
+    </div>
+
+    <div class="experiment-marker experiment-marker-one">1</div>
+    <div class="experiment-marker experiment-marker-two">2</div>
+    <div class="experiment-marker experiment-graph-marker experiment-graph-marker-one">1</div>
+    <div class="experiment-marker experiment-graph-marker experiment-graph-marker-two">2</div>
+
+    <div class="experiment-scope experiment-scope-one" aria-label="Фотон поглощён, есть сигнал">
+      <svg viewBox="0 0 225 115" preserveAspectRatio="none" aria-hidden="true">
+        <path class="experiment-scope-axis" d="M 8 8 L 8 103 L 216 103"></path>
+        <path class="experiment-scope-wave" d="M 10 72 L 40 72 L 47 36 L 55 92 L 64 18 L 73 78 L 82 45 L 92 75 L 103 52 L 115 73 L 128 57 L 143 71 L 159 62 L 177 70 L 199 66" pathLength="1"></path>
+      </svg>
+      <strong>фотон поглощён<br>есть сигнал</strong>
+    </div>
+
+    <div class="experiment-scope experiment-scope-two" aria-label="Фотон не поглощён, сигнала нет">
+      <svg viewBox="0 0 225 115" preserveAspectRatio="none" aria-hidden="true">
+        <path class="experiment-scope-axis" d="M 8 8 L 8 103 L 216 103"></path>
+        <path class="experiment-scope-flat" d="M 10 72 L 199 72"></path>
+      </svg>
+      <strong>фотон не поглощён<br>сигнала нет</strong>
+    </div>
+
+    <div class="experiment-field-phase-caption" aria-hidden="true">
+      <strong>Резонансная геометрия зафиксирована</strong>
+      <span>меняется только направление магнитного поля в железе</span>
+    </div>
+
+    <div class="experiment-analysis-photon experiment-analysis-photon-plus" aria-hidden="true">\(\gamma\)</div>
+    <div class="experiment-analysis-photon experiment-analysis-photon-minus" aria-hidden="true">\(\gamma\)</div>
+
+    <div class="experiment-count-panel" aria-label="Сравнение числа прошедших резонансных фотонов">
+      <strong class="experiment-count-title">прошедшие резонансные фотоны</strong>
+      <div class="experiment-count-row experiment-count-row-plus">
+        <span>\(N_+=N(B)\)</span>
+        <i><b></b></i>
+      </div>
+      <div class="experiment-count-row experiment-count-row-minus">
+        <span>\(N_-=N(-B)\)</span>
+        <i><b></b></i>
+      </div>
+      <div class="experiment-count-asymmetry">
+        \(\displaystyle \mathcal A=\frac{N_+-N_-}{N_++N_-}\)
+      </div>
+    </div>
   </div>
-  <div class="chain-arrow"></div>
-  <div class="chain-step chain-polarization">
-    <div class="chain-icon">\(N_+-N_-\)</div>
-    <strong>анализатор</strong>
-    <span>измеряет знак \(h_\gamma=h_\nu\)</span>
-  </div>
+
+  <span class="experiment-scene-sentinel experiment-assembly-finish" aria-hidden="true"></span>
+  <span class="experiment-scene-sentinel experiment-one-finish" aria-hidden="true"></span>
+  <span class="experiment-scene-sentinel experiment-two-finish" aria-hidden="true"></span>
+  <span class="experiment-scene-sentinel experiment-field-plus-finish" aria-hidden="true"></span>
+  <span class="experiment-scene-sentinel experiment-field-minus-finish" aria-hidden="true"></span>
 </div>
 ```

@@ -1,0 +1,14 @@
+---
+title: "Задачи: спин, спиральность и поляризация нейтрино"
+subtitle: "Введение в физику нейтрино"
+author: "Дмитрий В. Наумов"
+format:
+  html:
+    toc: false
+---
+
+[← Вернуться к лекции](../slides/03_neutrino_spin.html) · [Все задачи курса](index.html)
+
+# Задачи
+
+{{< include ../../_includes/exercises/03_neutrino_spin-ru.qmd >}}

@@ -1,0 +1,255 @@
+---
+body-classes: lecture-page topic-2
+---
+
+# Ведём электрон к детектору {#sec-electron-to-detector}
+
+::: {.book-lead}
+Магнитное поле направляет β-электроны от источника к спектрометру. Для расчёта
+их движения нужны винтовая траектория, направляющий центр, магнитный момент и
+переменная действия.
+:::
+
+## Электрон в однородном магнитном поле
+
+Магнитное поле переносит электроны от источника к анализатору. Сначала
+рассмотрим нерелятивистскую частицу в поле
+$\mathbf B=B\mathbf e_z$ при $\mathbf E=0$. Уравнение Лоренца даёт
+
+$$
+m\dot{\mathbf v}
+=q\,\mathbf v\times\mathbf B
+=qB(v_y,-v_x,0).
+$$ {#eq-lorentz-magnetic}
+
+Введём знаковую частоту $\Omega=qB/m$ и положительную циклотронную частоту
+$\omega_c=|\Omega|$. Тогда
+
+$$
+\dot v_x=\Omega v_y,
+\qquad
+\dot v_y=-\Omega v_x,
+\qquad
+\dot v_z=0.
+$$ {#eq-uniform-field-components}
+
+Сила Лоренца не совершает работы:
+
+$$
+\frac{d}{dt}\frac{mv^2}{2}
+=q\,\mathbf v\cdot(\mathbf v\times\mathbf B)=0.
+$$
+
+Поэтому $v_\parallel=v_z$ и $v_\perp^2=v_x^2+v_y^2$ постоянны. Решение для
+поперечных компонент скорости имеет вид
+
+$$
+\begin{aligned}
+v_x(t)&=v_{x0}\cos\Omega t+v_{y0}\sin\Omega t,\\
+v_y(t)&=v_{y0}\cos\Omega t-v_{x0}\sin\Omega t.
+\end{aligned}
+$$ {#eq-uniform-field-velocity}
+
+Интегрируя скорость, получаем
+
+$$
+\begin{aligned}
+x(t)&=x_0+\frac{v_{x0}}{\Omega}\sin\Omega t
+       +\frac{v_{y0}}{\Omega}(1-\cos\Omega t),\\
+y(t)&=y_0+\frac{v_{y0}}{\Omega}\sin\Omega t
+       -\frac{v_{x0}}{\Omega}(1-\cos\Omega t),\\
+z(t)&=z_0+v_\parallel t.
+\end{aligned}
+$$ {#eq-uniform-field-trajectory}
+
+В плоскости, перпендикулярной полю, частица движется по окружности; вдоль поля
+--- равномерно. Знак $q$ меняет направление вращения, но не направление
+движения вдоль поля.
+
+### Направляющий центр
+
+Координаты центра окружности равны
+
+$$
+X=x+\frac{v_y}{\Omega},
+\qquad
+Y=y-\frac{v_x}{\Omega}.
+$$ {#eq-guiding-center-coordinates}
+
+Из @eq-uniform-field-components следует $\dot X=\dot Y=0$. В однородном поле
+направляющий центр не дрейфует поперёк $\mathbf B$, а движется вдоль него со
+скоростью $v_\parallel$. Радиус и период обращения равны
+
+$$
+\rho_L=\frac{v_\perp}{\omega_c}
+=\frac{p_\perp}{|q|B},
+\qquad
+T_c=\frac{2\pi}{\omega_c}.
+$$ {#eq-cyclotron-motion}
+
+Для релятивистского электрона
+
+$$
+\omega_c=\frac{|q|B}{\gamma m},
+\qquad
+\rho_L=\frac{p_\perp}{|q|B}.
+$$ {#eq-relativistic-cyclotron-motion}
+
+У электрона с кинетической энергией $18.6~\text{кэВ}$ в поле
+$3.6~\text{Тл}$ максимальный ларморовский радиус составляет примерно
+$0.13~\text{мм}$.
+
+::: {#anim-uniform-b-motion .animation title="Движение ансамбля электронов в однородном магнитном поле" src="../assets/chapters/04_direct_neutrino_mass/uniform_b_ensemble.mp4" poster="../assets/chapters/04_direct_neutrino_mass/uniform_b_ensemble.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/04_direct_neutrino_mass/uniform_b_ensemble.mp4" qr="../assets/chapters/04_direct_neutrino_mass/qr/uniform_b_motion.png"}
+Показаны электроны одинаковой энергии с начальными углами $15^\circ$,
+$45^\circ$ и $75^\circ$. Продольная скорость задаёт шаг винтовой линии,
+поперечный импульс --- её радиус.
+:::
+
+### Орбитальный магнитный момент
+
+Относительно направляющего центра орбитальный момент импульса равен
+
+$$
+L_z
+=m\bigl[(x-X)v_y-(y-Y)v_x\bigr]
+=-\frac{mv_\perp^2}{\Omega}.
+$$
+
+Из $\boldsymbol\mu_{\mathrm{orb}}=(q/2m)\mathbf L$ следует
+
+$$
+\boldsymbol\mu_{\mathrm{orb}}
+=-\frac{mv_\perp^2}{2B}\,\mathbf e_z
+=-\frac{E_\perp}{B}\,\mathbf e_z.
+$$ {#eq-orbital-magnetic-moment-vector}
+
+Его положительный модуль
+
+$$
+\mu\equiv|\boldsymbol\mu_{\mathrm{orb}}|
+=\frac{E_\perp}{B}
+=\frac{p_\perp^2}{2mB}
+$$ {#eq-orbital-magnetic-moment}
+
+не зависит от знака заряда. Это момент циклотронной орбиты, а не спиновый
+магнитный момент электрона. В однородном поле $E_\perp$ и $B$ постоянны по
+отдельности. Для неоднородного поля требуется условие адиабатичности.
+
+## Переменная действия
+
+Для координаты $q(t)$ действие определяется интегралом
+
+$$
+S[q]=\int_{t_1}^{t_2}L(q,\dot q,t)\,dt.
+$$
+
+Стационарность $S$ при вариации
+$q\to q+\varepsilon\eta$, $\eta(t_1)=\eta(t_2)=0$, даёт
+
+$$
+\delta S
+=\int_{t_1}^{t_2}
+\left[
+\frac{\partial L}{\partial q}
+-\frac{d}{dt}\frac{\partial L}{\partial\dot q}
+\right]\eta\,dt=0
+$$
+
+и уравнение Эйлера--Лагранжа. После введения канонического импульса и
+гамильтониана
+
+$$
+p=\frac{\partial L}{\partial\dot q},
+\qquad
+H(q,p,t)=p\dot q-L
+$$
+
+получаются уравнения
+
+$$
+\dot q=\frac{\partial H}{\partial p},
+\qquad
+\dot p=-\frac{\partial H}{\partial q}.
+$$ {#eq-hamilton-equations}
+
+Если $H$ явно не зависит от времени, движение идёт по линии постоянной энергии
+$H(q,p)=E$. Для одномерного связанного движения эта линия замкнута. Переменная
+действия равна
+
+$$
+J(E)=\frac{1}{2\pi}\oint p\,dq.
+$$ {#eq-action-variable}
+
+Интеграл $\oint p\,dq$ представляет ориентированную площадь внутри фазовой
+орбиты. На энергетической линии $p=p(q,E)$ выполняется
+
+$$
+\frac{\partial H}{\partial p}
+\left(\frac{\partial p}{\partial E}\right)_q=1,
+\qquad
+\left(\frac{\partial p}{\partial E}\right)_q=\frac{1}{\dot q}.
+$$
+
+Отсюда
+
+$$
+\frac{dJ}{dE}
+=\frac{1}{2\pi}\oint\frac{dq}{\dot q}
+=\frac{T}{2\pi}
+=\frac{1}{\omega},
+\qquad
+\frac{dE}{dJ}=\omega.
+$$ {#eq-action-period-relation}
+
+Для гармонического осциллятора
+
+$$
+H=\frac{p^2}{2m}+\frac{m\omega^2q^2}{2}=E
+$$
+
+фазовая орбита является эллипсом с полуосями
+$q_{\max}=\sqrt{2E/(m\omega^2)}$ и $p_{\max}=\sqrt{2mE}$. Поэтому
+
+$$
+J=\frac{\pi q_{\max}p_{\max}}{2\pi}=\frac{E}{\omega}.
+$$ {#eq-harmonic-action}
+
+### Действие циклотронного движения
+
+Положим $Q=x-X=-v_y/\Omega$ и $P=m\dot Q=mv_x$. Поперечная энергия
+записывается как энергия одномерного осциллятора:
+
+$$
+E_\perp
+=\frac{m}{2}(v_x^2+v_y^2)
+=\frac{P^2}{2m}+\frac{m\omega_c^2Q^2}{2}.
+$$ {#eq-cyclotron-oscillator}
+
+Подстановка @eq-harmonic-action даёт
+
+$$
+J_c
+=\frac{E_\perp}{\omega_c}
+=\frac{p_\perp^2}{2|q|B}.
+$$ {#eq-cyclotron-action}
+
+## Краткое резюме
+
+1. В однородном магнитном поле электрон движется по винтовой траектории.
+2. Направляющий центр отделяет быстрое циклотронное движение от переноса вдоль
+   силовой линии.
+3. Для циклотронного движения $J_c=E_\perp/\omega_c$.
+
+## Задачи
+
+{{< include ../../../_includes/exercises/05_electron_to_detector-ru.qmd >}}
+
+## Литература к лекции {.unnumbered}
+
+::: {.chapter-literature}
+1. L. D. Landau, E. M. Lifshitz. *Mechanics*. 3rd ed.
+   Butterworth-Heinemann, 1976.
+2. J. D. Jackson. *Classical Electrodynamics*. 3rd ed. Wiley, 1998.
+3. KATRIN Collaboration. *KATRIN Design Report 2004*.
+   [FZKA 7090](https://publikationen.bibliothek.kit.edu/270060419).
+:::
