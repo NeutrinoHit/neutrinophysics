@@ -1,0 +1,4 @@
+---
+title: "Солнечные нейтрино"
+body-classes: lecture-page topic-7
+---

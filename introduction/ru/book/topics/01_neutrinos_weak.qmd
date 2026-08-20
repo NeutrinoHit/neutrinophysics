@@ -1,0 +1,12 @@
+---
+title: "ТЕМА 1. Нейтрино и слабое взаимодействие: симметрии, спин и спиральность"
+body-classes: topic-page topic-1
+---
+
+::: {.topic-landing}
+## Лекции {.unnumbered .unlisted}
+
+- [Лекция 1. Нейтрино. Первое знакомство](../chapters/01_neutrino_first_contact.qmd)
+- [Лекция 2. Слабое взаимодействие. Нарушение пространственной чётности](../chapters/02_parity_violation.qmd)
+- [Лекция 3. Спин нейтрино. Спиральность и поляризация](../chapters/03_neutrino_spin.qmd)
+:::

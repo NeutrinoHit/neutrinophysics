@@ -1,0 +1,289 @@
+---
+body-classes: lecture-page topic-2
+---
+
+# MAC-E-спектрометр {#sec-mac-e-spectrometer}
+
+::: {.book-lead}
+MAC-E-фильтр сочетает магнитную адиабатическую коллимацию с электростатическим
+анализом энергии. Поперечная энергия электронов преобразуется в продольную, а
+задерживающий потенциал задаёт порог пропускания.
+:::
+
+## Адиабатически меняющееся поле
+
+Пусть поле, наблюдаемое направляющим центром, мало меняется за циклотронный
+оборот:
+
+$$
+\frac{\rho_L|\nabla B|}{B}\ll1,
+\qquad
+\frac{1}{\omega_cB}\left|\frac{dB}{dt}\right|\ll1.
+$$ {#eq-adiabatic-conditions}
+
+Второе неравенство эквивалентно $T_c\ll\tau_B$, где $\tau_B$ --- характерное
+время изменения поля вдоль траектории. Поле может заметно различаться в начале
+и конце установки; требуется только малое изменение за один быстрый оборот.
+
+Рассмотрим поперечный гамильтониан с медленной частотой
+$\omega_c=\omega_c(t)$:
+
+$$
+H_\perp(Q,P;t)
+=\frac{P^2}{2m}+\frac{m\omega_c^2(t)Q^2}{2}
+=E_\perp.
+$$
+
+По уравнениям Гамильтона полная производная энергии сводится к явной
+производной по времени:
+
+$$
+\dot E_\perp
+=\frac{\partial H_\perp}{\partial t}
+=m\omega_c\dot\omega_c Q^2.
+$$
+
+За один оборот $E_\perp$ и $\omega_c$ почти постоянны. Для
+$Q=A\cos(\omega_ct+\varphi)$
+
+$$
+\langle Q^2\rangle=\frac{A^2}{2}
+=\frac{E_\perp}{m\omega_c^2},
+$$
+
+поэтому
+
+$$
+\langle\dot E_\perp\rangle
+=\frac{E_\perp\dot\omega_c}{\omega_c},
+\qquad
+\left\langle
+\frac{d}{dt}\frac{E_\perp}{\omega_c}
+\right\rangle=0.
+$$ {#eq-adiabatic-action-derivation}
+
+Переменная действия сохраняется после усреднения по быстрому движению:
+
+$$
+J_c=\frac{E_\perp}{\omega_c}\simeq\text{const}.
+$$
+
+С учётом $\omega_c=|q|B/m$ первый адиабатический инвариант принимает вид
+
+$$
+\mu_{\mathrm{ad}}
+=\frac{|q|}{m}J_c
+=\frac{E_\perp}{B}
+=\frac{p_\perp^2}{2mB}
+\simeq\text{const}.
+$$ {#eq-adiabatic-magnetic-moment}
+
+Столкновения и резкие изменения поля нарушают это приближение. В статическом
+магнитном поле модуль полного импульса постоянен. Если $\theta$ --- угол между
+импульсом и локальным полем, то
+
+$$
+p_\perp(s)=p_{\perp,0}\sqrt{\frac{B(s)}{B_0}},
+\qquad
+\sin^2\theta(s)=\sin^2\theta_0\frac{B(s)}{B_0}.
+$$ {#eq-pitch-angle-invariant}
+
+При уменьшении $B$ угол уменьшается; при увеличении поля он растёт.
+
+### Направляющий центр и магнитное зеркало
+
+Для статического поля $B=B(s)$ вдоль силовой линии
+
+$$
+E_\perp(s)=\mu_{\mathrm{ad}}B(s),
+\qquad
+E_\parallel(s)=E-\mu_{\mathrm{ad}}B(s).
+$$ {#eq-guiding-center-energies}
+
+Движение направляющего центра описывает гамильтониан
+
+$$
+\mathcal H_{\mathrm{gc}}
+=\frac{p_\parallel^2}{2m}+\mu_{\mathrm{ad}}B(s).
+$$
+
+Величина $\mu_{\mathrm{ad}}B(s)$ играет роль потенциальной энергии, а
+
+$$
+\dot p_\parallel
+=-\mu_{\mathrm{ad}}\frac{\partial B}{\partial s}
+$$ {#eq-mirror-force}
+
+есть сила магнитного зеркала. Она направлена в сторону более слабого поля.
+Если электрон стартует в поле $B_s$ под углом $\theta_s$, отражение происходит
+при
+
+$$
+B_{\mathrm{mirror}}=\frac{B_s}{\sin^2\theta_s}.
+$$ {#eq-mirror-field}
+
+Пусть $B_{\max}$ --- максимальное поле на пути. Условие прохождения и угол
+акцептанса равны
+
+$$
+\sin^2\theta_s<\frac{B_s}{B_{\max}},
+\qquad
+\theta_{\mathrm{acc}}
+=\arcsin\sqrt{\frac{B_s}{B_{\max}}}.
+$$ {#eq-magnetic-mirror-acceptance}
+
+Для релятивистского электрона сохраняется та же комбинация
+$p_\perp^2/(2m_eB)$. При этом $E=E_\parallel+E_\perp$ является только
+нерелятивистской записью. Связь кинетической энергии с импульсом имеет вид
+
+$$
+\frac{p^2}{2m_e}
+=E\left(1+\frac{E}{2m_ec^2}\right).
+$$ {#eq-relativistic-momentum-correction}
+
+У конца тритиевого спектра поправка $E/(2m_ec^2)$ составляет около $1.8\%$.
+
+### Коллимация в KATRIN
+
+В газовом источнике KATRIN поле равно примерно
+$B_s=3.6~\text{Тл}$, а максимальное поле транспортной системы ---
+$B_{\max}=6~\text{Тл}$. Поэтому
+
+$$
+\theta_{\mathrm{acc}}
+=\arcsin\sqrt{\frac{3.6}{6}}
+\simeq50.8^\circ.
+$$
+
+Сильное поле источника ведёт электроны по узким спиралям, но не коллимирует
+их. Основная коллимация происходит у входа в главный спектрометр, где поле
+падает до $B_{\min}\simeq0.35~\text{мТл}$:
+
+$$
+\frac{p_{\perp,\min}}{p_{\perp,s}}
+=\sqrt{\frac{B_{\min}}{B_s}}
+\simeq9.9\cdot10^{-3}.
+$$ {#eq-katrin-collimation-factor}
+
+Начальный угол $50^\circ$ уменьшается примерно до $0.43^\circ$. При этом
+сохраняется магнитный поток трубки,
+
+$$
+\Phi_{\mathrm{tube}}\simeq BA=\text{const},
+\qquad
+d\propto B^{-1/2}.
+$$ {#eq-flux-tube-expansion}
+
+При падении поля примерно в $10^4$ раз площадь магнитной трубки возрастает во
+столько же раз, а диаметр --- примерно в сто раз. Поэтому диаметр главного
+спектрометра близок к десяти метрам.
+
+::: {#anim-magnetic-collimation .animation title="Адиабатическая магнитная коллимация" src="../assets/chapters/04_direct_neutrino_mass/katrin_magnetic_collimation.mp4" poster="../assets/chapters/04_direct_neutrino_mass/katrin_magnetic_collimation.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/04_direct_neutrino_mass/katrin_magnetic_collimation.mp4" qr="../assets/chapters/04_direct_neutrino_mass/qr/magnetic_collimation.png"}
+Расчёт начинается в поле источника $3.603~\text{Тл}$. При входе в главный
+спектрометр $p_\perp$ уменьшается, после анализирующей плоскости снова растёт.
+Электрическое поле в этой анимации отключено.
+:::
+
+## MAC-E-фильтр
+
+Название MAC-E расшифровывается как magnetic adiabatic collimation combined
+with an electrostatic filter. Магнитное поле уменьшает поперечный импульс в
+анализирующей плоскости, после чего электростатический потенциал проверяет
+оставшуюся продольную энергию.
+
+### Энергетический порог
+
+Пусть $e=|q_e|$, а $U$ --- задерживающая разность потенциалов. В анализирующей
+плоскости
+
+$$
+E_{\parallel,\mathrm A}
+\simeq E-e|U|-E_{\perp,\mathrm A}.
+$$ {#eq-mace-transmission-condition}
+
+Электрон проходит при $E_{\parallel,\mathrm A}>0$ и отражается при
+$E_{\parallel,\mathrm A}<0$. Остаточная поперечная энергия зависит от
+начального угла и превращает идеальную ступеньку в переход конечной ширины.
+
+::: {#anim-mac-e-filter .animation title="Электростатическая фильтрация в MAC-E-спектрометре" src="../assets/chapters/04_direct_neutrino_mass/katrin_mac_e_electric.mp4" poster="../assets/chapters/04_direct_neutrino_mass/katrin_mac_e_electric.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/04_direct_neutrino_mass/katrin_mac_e_electric.mp4" qr="../assets/chapters/04_direct_neutrino_mass/qr/mac_e_filter.png"}
+Электроны с энергией выше запирающего потенциала проходят к детектору, а
+остальные отражаются. Изменяя потенциал, измеряют интегральный спектр.
+:::
+
+Ненулевая остаточная поперечная энергия определяет ширину края пропускания:
+
+$$
+\Delta E
+=
+E\,\frac{B_{\min}}{B_{\max}}\,
+\frac{\gamma+1}{2}.
+$$ {#eq-mace-resolution}
+
+Для KATRIN при $E\simeq18.6~\text{кэВ}$ она составляет примерно
+$0.95~\text{эВ}$. Отношение магнитных полей задаёт ширину перехода, а высокое
+напряжение --- положение порога.
+
+### Функция пропускания
+
+Для моноэнергетических электронов, изотропно испущенных в принятом конусе,
+функцию пропускания можно записать как
+
+$$
+T(E,U)=
+\begin{cases}
+0, & E<e|U|,\\[3pt]
+\dfrac{1-\cos\theta_T}{1-\cos\theta_{\mathrm{acc}}},&
+e|U|\le E\le e|U|+\Delta E,\\[9pt]
+1, & E>e|U|+\Delta E,
+\end{cases}
+$$ {#eq-ideal-mace-transmission}
+
+где до насыщения
+
+$$
+\sin^2\theta_T
+=\frac{E-e|U|}{E}\frac{B_s}{B_{\min}},
+\qquad
+\sin^2\theta_{\mathrm{acc}}=\frac{B_s}{B_{\max}}.
+$$ {#eq-mace-transmission-angles}
+
+### Рассеяние в источнике
+
+В газовом источнике электрон может $s$ раз неупруго рассеяться и потерять
+суммарную энергию $\varepsilon$. Полный отклик содержит вероятности $P_s$ и
+распределения потерь $g_s$:
+
+$$
+f(E,U)
+=P_0T(E,U)
++\sum_{s\ge1}P_s
+\int d\varepsilon\,g_s(\varepsilon)T(E-\varepsilon,U).
+$$ {#eq-mace-response-scattering}
+
+Функция $f(E,U)$ связывает β-спектр в источнике со скоростью счёта на
+детекторе.
+
+## Краткое резюме
+
+1. В адиабатическом поле сохраняется $E_\perp/B$.
+2. Уменьшение поля коллимирует электронный пучок; увеличение поля создаёт
+   магнитное зеркало.
+3. Разрешение MAC-E-фильтра определяется отношением минимального и
+   максимального магнитных полей.
+
+## Задачи
+
+{{< include ../../../_includes/exercises/06_mac_e_spectrometer-ru.qmd >}}
+
+## Литература к лекции {.unnumbered}
+
+::: {.chapter-literature}
+1. P. Kruit, F. H. Read. Magnetic field paralleliser for $2\pi$ electron
+   spectrometer and electron-image magnifier. *Journal of Physics E* **16**,
+   313 (1983). [doi:10.1088/0022-3735/16/4/016](https://doi.org/10.1088/0022-3735/16/4/016).
+2. V. M. Lobashev, P. E. Spivak. A method for measuring the electron
+   antineutrino rest mass. *Nuclear Instruments and Methods A* **240**,
+   305–310 (1985). [doi:10.1016/0168-9002(85)90640-0](https://doi.org/10.1016/0168-9002(85)90640-0).
+3. KATRIN Collaboration. *KATRIN Design Report 2004*.
+   [FZKA 7090](https://publikationen.bibliothek.kit.edu/270060419).
+:::

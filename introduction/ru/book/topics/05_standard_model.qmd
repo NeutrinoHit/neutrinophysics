@@ -1,0 +1,12 @@
+---
+title: "ТЕМА 5. Нейтрино в Стандартной модели и за её пределами"
+body-classes: topic-page topic-5
+---
+
+::: {.topic-landing}
+## Лекции {.unnumbered .unlisted}
+
+- [Лекция 17. Нейтрино в Стандартной модели](../chapters/17_standard_model_neutrinos.qmd)
+- [Лекция 18. Электромагнитные свойства нейтрино](../chapters/18_electromagnetic_properties.qmd)
+- [Лекция 19. Стерильные нейтрино](../chapters/19_sterile_neutrinos.qmd)
+:::

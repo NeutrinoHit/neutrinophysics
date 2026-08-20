@@ -1,0 +1,14 @@
+---
+title: "Задачи: MAC-E-спектрометр"
+subtitle: "Лекция 06 · Введение в физику нейтрино"
+author: "Дмитрий В. Наумов"
+format:
+  html:
+    toc: false
+---
+
+[← Вернуться к лекции](../slides/06_mac_e_spectrometer.html) · [Все задачи курса](index.html)
+
+# Задачи
+
+{{< include ../../_includes/exercises/06_mac_e_spectrometer-ru.qmd >}}

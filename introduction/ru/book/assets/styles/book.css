@@ -15,10 +15,23 @@
   --book-coral-soft: #faeeeb;
   --book-biography: #465b8c;
   --book-biography-soft: #f0f2f8;
+  --topic-color: var(--book-teal);
+  --topic-soft: var(--book-teal-soft);
   --book-shadow: 0 18px 42px -34px rgba(24, 38, 47, 0.5);
   --book-serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
   --book-sans: "Avenir Next", Avenir, "Segoe UI", system-ui, sans-serif;
 }
+
+body.topic-1 { --topic-color: #0f6972; --topic-soft: #e8f1f2; }
+body.topic-2 { --topic-color: #9a6b17; --topic-soft: #f6f0e4; }
+body.topic-3 { --topic-color: #75558c; --topic-soft: #f1edf4; }
+body.topic-4 { --topic-color: #3f7652; --topic-soft: #eaf2ed; }
+body.topic-5 { --topic-color: #2f6f9f; --topic-soft: #edf3fa; }
+body.topic-6 { --topic-color: #a85c35; --topic-soft: #f8eee9; }
+body.topic-7 { --topic-color: #7d4966; --topic-soft: #f5edf2; }
+body.topic-8 { --topic-color: #287c78; --topic-soft: #e9f3f2; }
+body.topic-9 { --topic-color: #8b3f4a; --topic-soft: #f7ecee; }
+body.topic-10 { --topic-color: #6d712c; --topic-soft: #f2f2e7; }
 
 html {
   scroll-behavior: smooth;
@@ -178,14 +191,81 @@ main.content .sourceCode,
   margin: 0 auto;
 }
 
+.topic-page #title-block-header {
+  margin-bottom: 0;
+  padding-bottom: 1.8rem;
+  border-bottom: 0.42rem solid var(--topic-color);
+}
+
+.topic-page .quarto-title .title {
+  max-width: 15ch;
+  color: var(--book-ink);
+  font-size: clamp(2.5rem, 5vw, 4.6rem);
+  line-height: 1.03;
+}
+
+.topic-landing {
+  margin: 2.2rem 0 1rem;
+  padding: 1.4rem 1.6rem 1.1rem;
+  border-top: 0.32rem solid var(--topic-color);
+  background: var(--topic-soft);
+}
+
+.topic-landing h2 {
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 0;
+  color: var(--topic-color);
+  font-size: 1.45rem;
+}
+
+.topic-landing ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.topic-landing li + li {
+  border-top: 1px solid color-mix(in srgb, var(--topic-color) 22%, transparent);
+}
+
+.topic-landing a {
+  display: block;
+  padding: 0.78rem 0.1rem;
+  color: var(--book-ink);
+  font-family: var(--book-sans);
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+.topic-landing a:hover,
+.topic-landing a:focus {
+  color: var(--topic-color);
+}
+
 .chapter-number {
   display: block;
   margin-bottom: 0.7rem;
-  color: var(--book-coral);
+  color: var(--topic-color);
   font-size: 0.82rem;
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.lecture-page .chapter-number::before {
+  content: "Лекция ";
+}
+
+.sidebar .chapter-number::before,
+.nav-page .chapter-number::before {
+  content: "Лекция ";
+}
+
+.lecture-page .book-lead {
+  border-left-color: var(--topic-color);
+  background: var(--topic-soft);
 }
 
 .sidebar {
@@ -204,7 +284,7 @@ main.content .sourceCode,
 }
 
 .sidebar-item .sidebar-link.active {
-  color: var(--book-teal-dark);
+  color: var(--topic-color);
   font-weight: 700;
 }
 
@@ -215,8 +295,8 @@ main.content .sourceCode,
 
 .sidebar nav[role="doc-toc"] ul > li > a.active,
 .sidebar nav[role="doc-toc"] ul > li > ul > li > a.active {
-  color: var(--book-teal);
-  border-left-color: var(--book-teal);
+  color: var(--topic-color);
+  border-left-color: var(--topic-color);
 }
 
 /* Keep the chapter TOC visible when the book is opened directly from disk.

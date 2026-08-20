@@ -37,48 +37,28 @@
 \definecolor{bookBiography}{HTML}{465B8C}
 \definecolor{bookBiographySoft}{HTML}{F0F2F8}
 
-% A restrained chapter palette. The outer margin is deliberately neutral;
-% only its top tab changes colour from chapter to chapter.
-\definecolor{bookChapterOne}{HTML}{0F6972}
-\definecolor{bookChapterTwo}{HTML}{B54A3A}
-\definecolor{bookChapterThree}{HTML}{465B8C}
-\definecolor{bookChapterFour}{HTML}{9A6B17}
-\definecolor{bookChapterFive}{HTML}{75558C}
-\definecolor{bookChapterSix}{HTML}{3F7652}
-\definecolor{bookChapterSeven}{HTML}{2E6F9E}
-\definecolor{bookChapterEight}{HTML}{A85C35}
-\definecolor{bookChapterNine}{HTML}{7D4966}
-\definecolor{bookChapterTen}{HTML}{287C78}
-\definecolor{bookChapterEleven}{HTML}{8B3F4A}
-\definecolor{bookChapterTwelve}{HTML}{6D712C}
-\definecolor{bookChapterThirteen}{HTML}{3B5EA7}
-\definecolor{bookChapterFourteen}{HTML}{B65D4A}
-\definecolor{bookChapterFifteen}{HTML}{2F6B55}
-\definecolor{bookChapterSixteen}{HTML}{69508B}
-\definecolor{bookChapterSeventeen}{HTML}{A46D19}
-\definecolor{bookChapterEighteen}{HTML}{4C6D86}
-\definecolor{bookChapterNineteen}{HTML}{A34867}
-\definecolor{bookChapterTwenty}{HTML}{267A8A}
-\definecolor{bookChapterTwentyOne}{HTML}{68445D}
-\definecolor{bookChapterTwentyTwo}{HTML}{5B7440}
-\definecolor{bookChapterTwentyThree}{HTML}{456A92}
-\definecolor{bookChapterTwentyFour}{HTML}{9C4E3D}
-\definecolor{bookChapterTwentyFive}{HTML}{356F6B}
-\definecolor{bookChapterTwentySix}{HTML}{824C63}
+% The palette belongs to topics, not individual lectures.  Both the lecture
+% opener and the page navigator read the current part counter, so rearranging
+% lectures inside a topic requires no style edits.
+\definecolor{bookTopicOne}{HTML}{0F6972}
+\definecolor{bookTopicTwo}{HTML}{9A6B17}
+\definecolor{bookTopicThree}{HTML}{75558C}
+\definecolor{bookTopicFour}{HTML}{3F7652}
+\definecolor{bookTopicFive}{HTML}{2F6F9F}
+\definecolor{bookTopicSix}{HTML}{A85C35}
+\definecolor{bookTopicSeven}{HTML}{7D4966}
+\definecolor{bookTopicEight}{HTML}{287C78}
+\definecolor{bookTopicNine}{HTML}{8B3F4A}
+\definecolor{bookTopicTen}{HTML}{6D712C}
 
 \newcommand{\bookchaptercolor}{%
-  \ifcase\value{chapter}bookInk%
-  \or bookChapterOne\or bookChapterTwo\or bookChapterThree%
-  \or bookChapterFour\or bookChapterFive\or bookChapterSix%
-  \or bookChapterSeven\or bookChapterEight\or bookChapterNine%
-  \or bookChapterTen\or bookChapterEleven\or bookChapterTwelve%
-  \or bookChapterThirteen\or bookChapterFourteen\or bookChapterFifteen%
-  \or bookChapterSixteen\or bookChapterSeventeen\or bookChapterEighteen%
-  \or bookChapterNineteen\or bookChapterTwenty\or bookChapterTwentyOne%
-  \or bookChapterTwentyTwo\or bookChapterTwentyThree\or bookChapterTwentyFour%
-  \or bookChapterTwentyFive\or bookChapterTwentySix%
+  \ifcase\value{part}bookInk%
+  \or bookTopicOne\or bookTopicTwo\or bookTopicThree\or bookTopicFour%
+  \or bookTopicFive\or bookTopicSix\or bookTopicSeven\or bookTopicEight%
+  \or bookTopicNine\or bookTopicTen%
   \else bookInk\fi
 }
+\newcommand{\bookpartcolor}{\bookchaptercolor}
 
 % Reduced wavelength. Keep a named command, parallel to \hbar, throughout
 % the source instead of constructing the symbol ad hoc in every formula.
@@ -150,14 +130,14 @@
 \addtokomafont{section}{\sffamily\color{bookInk}}
 \addtokomafont{subsection}{\sffamily\color{bookInk}}
 
-% A numbered chapter opens on a dedicated page.  The local table of contents
+% A numbered lecture opens on a dedicated page.  The local table of contents
 % is read from the main .toc file, so it stays in sync with section headings.
 \renewcommand*{\chapterformat}{}
 \renewcommand*{\chapterlinesformat}[3]{%
   \ifnum\value{chapter}>0\relax
     \parbox[t]{\linewidth}{%
       {\sffamily\bfseries\color{\bookchaptercolor}%
-       \fontsize{15}{18}\selectfont Глава~\thechapter\par}%
+       \fontsize{15}{18}\selectfont Лекция~\thechapter\par}%
       \vspace{7mm}%
       {\sffamily\bfseries\color{bookInk}%
        \fontsize{34}{38}\selectfont #3\par}%
@@ -172,6 +152,53 @@
   beforeskip=10mm,
   afterskip=0pt
 ]{chapter}
+
+% Topic openers use the same colour token as their lectures.  The topic name
+% is supplied by the Quarto part title and therefore appears identically in
+% the PDF contents and in the HTML navigation.
+\renewcommand*{\partformat}{}
+\renewcommand*{\partlineswithprefixformat}[3]{%
+  \parbox[t]{\linewidth}{%
+    {\sffamily\bfseries\color{\bookpartcolor}%
+     \fontsize{13}{16}\selectfont РАЗДЕЛ КУРСА\par}%
+    \vspace{9mm}%
+    {\sffamily\bfseries\color{bookInk}%
+     \fontsize{32}{37}\selectfont #3\par}%
+    \vspace{11mm}%
+    {\color{\bookpartcolor}\rule{\linewidth}{1.5mm}}\par
+    \vspace{13mm}%
+    {\sffamily\bfseries\color{bookInk}%
+     \fontsize{18}{22}\selectfont Лекции\par}%
+    \vspace{3mm}%
+    {\color{\bookpartcolor}\rule{18mm}{0.8mm}}\par
+    \vspace{5mm}%
+    \begingroup
+      \normalfont
+      \setlength{\parindent}{0pt}%
+      \etocsettocstyle{}{}%
+      \etocsetnexttocdepth{chapter}%
+      \localtableofcontents
+    \endgroup
+  }%
+}
+\RedeclareSectionCommand[
+  beforeskip=20mm,
+  afterskip=0pt
+]{part}
+
+% The word "ТЕМА" and its number already belong to the part title.  Suppress
+% KOMA's additional Roman part number in the main contents, and identify book
+% chapters there as lectures.
+\newcommand{\bookhidepartnumber}[1]{}
+\newcommand{\booklecturetocnumber}[1]{Лекция~#1}
+\DeclareTOCStyleEntry[
+  numwidth=0pt,
+  entrynumberformat=\bookhidepartnumber
+]{tocline}{part}
+\DeclareTOCStyleEntry[
+  numwidth=5.6em,
+  entrynumberformat=\booklecturetocnumber
+]{tocline}{chapter}
 
 \newcommand{\bookchapteropeningcontents}{%
   \vspace{14mm}%

@@ -58,7 +58,7 @@ $$ {#eq-endpoint-relative-mass-effect}
 $E_\nu=m_\nu$ она меняет кривизну спектра и обрывает его при
 $E=E_0-m_\nu$.
 
-::: {#anim-beta-endpoint .animation title="Масса нейтрино и конец β-спектра" epub-src="../assets/chapters/04_direct_neutrino_mass/beta_endpoint.mp4" poster="../assets/chapters/04_direct_neutrino_mass/beta_endpoint.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/04_direct_neutrino_mass.html#/beta-endpoint-spectrum" qr="../assets/chapters/04_direct_neutrino_mass/qr/beta_endpoint.png"}
+::: {#anim-beta-endpoint .animation title="Масса нейтрино и конец β-спектра" epub-src="../assets/chapters/04_direct_neutrino_mass/beta_endpoint.mp4" poster="../assets/chapters/04_direct_neutrino_mass/beta_endpoint.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/04_neutrino_mass_kinematics.html#/beta-endpoint-spectrum" qr="../assets/chapters/04_direct_neutrino_mass/qr/beta_endpoint.png"}
 При увеличении массы конечная точка сдвигается влево, а последняя часть спектра
 подавляется.
 :::
@@ -90,7 +90,7 @@ $$ {#eq-spectrum-convolution}
 конца в редкую конечную область. Если ширина отклика сравнима с искомой массой,
 форма сигнала существенно искажается.
 
-::: {#anim-endpoint-resolution .animation title="Как разрешение размывает конец спектра" epub-src="../assets/chapters/04_direct_neutrino_mass/endpoint_resolution.mp4" poster="../assets/chapters/04_direct_neutrino_mass/endpoint_resolution.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/04_direct_neutrino_mass.html#/endpoint-resolution" qr="../assets/chapters/04_direct_neutrino_mass/qr/endpoint_resolution.png"}
+::: {#anim-endpoint-resolution .animation title="Как разрешение размывает конец спектра" epub-src="../assets/chapters/04_direct_neutrino_mass/endpoint_resolution.mp4" poster="../assets/chapters/04_direct_neutrino_mass/endpoint_resolution.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/04_neutrino_mass_kinematics.html#/endpoint-resolution" qr="../assets/chapters/04_direct_neutrino_mass/qr/endpoint_resolution.png"}
 Интерактивный график сопоставляет истинный спектр со спектром после гауссова
 размытия. Особенно заметно изменение последних нескольких электронвольт.
 :::
@@ -158,7 +158,7 @@ $$ {#eq-effective-beta-mass}
 Это положительно определённая сумма. Майорановские фазы в неё не входят, а
 вклады разных массовых состояний не могут взаимно уничтожиться.
 
-::: {#anim-resolved-mass-spectrum .animation title="Один β-спектр и несколько массовых порогов" epub-src="../assets/chapters/04_direct_neutrino_mass/resolved_mass_spectrum.mp4" poster="../assets/chapters/04_direct_neutrino_mass/resolved_mass_spectrum.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/04_direct_neutrino_mass.html#/resolved-mass-spectrum" qr="../assets/chapters/04_direct_neutrino_mass/qr/resolved_mass_spectrum.png"}
+::: {#anim-resolved-mass-spectrum .animation title="Один β-спектр и несколько массовых порогов" epub-src="../assets/chapters/04_direct_neutrino_mass/resolved_mass_spectrum.mp4" poster="../assets/chapters/04_direct_neutrino_mass/resolved_mass_spectrum.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/04_neutrino_mass_kinematics.html#/resolved-mass-spectrum" qr="../assets/chapters/04_direct_neutrino_mass/qr/resolved_mass_spectrum.png"}
 При достаточно хорошем разрешении каждому $m_i$ соответствовал бы собственный
 излом с весом $|U_{ei}|^2$. В реальном эксперименте эти пороги сливаются в одну
 деформацию, задаваемую $m_\beta$.
@@ -189,7 +189,7 @@ $$ {#eq-kurie-definition}
 пересекающую ось энергии в $E_0$. Ненулевая масса искривляет последнюю часть
 линии и сдвигает её конец.
 
-::: {#anim-kurie-plot .animation title="График Кури вблизи конечной точки" epub-src="../assets/chapters/04_direct_neutrino_mass/kurie_plot.mp4" poster="../assets/chapters/04_direct_neutrino_mass/kurie_plot.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/04_direct_neutrino_mass.html#/kurie-plot" qr="../assets/chapters/04_direct_neutrino_mass/qr/kurie_plot.png"}
+::: {#anim-kurie-plot .animation title="График Кури вблизи конечной точки" epub-src="../assets/chapters/04_direct_neutrino_mass/kurie_plot.mp4" poster="../assets/chapters/04_direct_neutrino_mass/kurie_plot.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/04_neutrino_mass_kinematics.html#/kurie-plot" qr="../assets/chapters/04_direct_neutrino_mass/qr/kurie_plot.png"}
 Безмассовый спектр даёт прямую, а масса искривляет её у конца. В анализе
 данных подгоняют исходный спектр, а не преобразованный график, вместе с полной
 функцией отклика.
@@ -834,7 +834,7 @@ $$ {#eq-katrin-integral-rate}
 $f_{\mathrm{resp}}$ объединяет пропускание, потери энергии и геометрию
 источника.
 
-::: {#anim-katrin-integral .animation title="Интегральный спектр KATRIN" epub-src="../assets/chapters/04_direct_neutrino_mass/katrin_integral_spectrum.mp4" poster="../assets/chapters/04_direct_neutrino_mass/katrin_integral_spectrum.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/04_direct_neutrino_mass.html#/katrin-integral-spectrum" qr="../assets/chapters/04_direct_neutrino_mass/qr/katrin_integral.png"}
+::: {#anim-katrin-integral .animation title="Интегральный спектр KATRIN" epub-src="../assets/chapters/04_direct_neutrino_mass/katrin_integral_spectrum.mp4" poster="../assets/chapters/04_direct_neutrino_mass/katrin_integral_spectrum.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/07_katrin.html#/katrin-integral-spectrum" qr="../assets/chapters/04_direct_neutrino_mass/qr/katrin_integral.png"}
 Запирающий потенциал задаёт нижнюю границу интеграла. Точки ближе всего к
 конечной энергии сильнее зависят от массы и содержат меньше событий.
 :::
@@ -1054,7 +1054,7 @@ $$
 \simeq\frac{0.886}{T_{\mathrm{obs}}}.
 $$ {#eq-cres-finite-track-width}
 
-::: {#anim-cres-frequency-track .animation title="Частотный трек CRES" epub-src="../assets/chapters/04_direct_neutrino_mass/cres_frequency_track.mp4" poster="../assets/chapters/04_direct_neutrino_mass/cres_frequency_track.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/04_direct_neutrino_mass.html#/cres-frequency-track" qr="../assets/chapters/04_direct_neutrino_mass/qr/cres_frequency_track.png"}
+::: {#anim-cres-frequency-track .animation title="Частотный трек CRES" epub-src="../assets/chapters/04_direct_neutrino_mass/cres_frequency_track.mp4" poster="../assets/chapters/04_direct_neutrino_mass/cres_frequency_track.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/08_alternative_neutrino_mass.html#/cres-frequency-track" qr="../assets/chapters/04_direct_neutrino_mass/qr/cres_frequency_track.png"}
 Наклон линии возникает из-за радиационных потерь. Резкие скачки соответствуют
 столкновениям с остаточным газом, после которых начинается новый сегмент трека.
 :::
@@ -1277,7 +1277,15 @@ $$ {#eq-mbeta-inverted-floor}
 
 ## Задачи
 
-{{< include ../../../_includes/exercises/04_direct_neutrino_mass-ru.qmd >}}
+{{< include ../../../_includes/exercises/04_neutrino_mass_kinematics-ru.qmd >}}
+
+{{< include ../../../_includes/exercises/05_electron_to_detector-ru.qmd >}}
+
+{{< include ../../../_includes/exercises/06_mac_e_spectrometer-ru.qmd >}}
+
+{{< include ../../../_includes/exercises/07_katrin-ru.qmd >}}
+
+{{< include ../../../_includes/exercises/08_alternative_neutrino_mass-ru.qmd >}}
 
 ## Литература к главе {.unnumbered}
 

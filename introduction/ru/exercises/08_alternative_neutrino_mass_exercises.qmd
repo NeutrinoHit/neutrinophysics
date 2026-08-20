@@ -1,0 +1,14 @@
+---
+title: "Задачи: другие способы взвесить нейтрино"
+subtitle: "Лекция 08 · Введение в физику нейтрино"
+author: "Дмитрий В. Наумов"
+format:
+  html:
+    toc: false
+---
+
+[← Вернуться к лекции](../slides/08_alternative_neutrino_mass.html) · [Все задачи курса](index.html)
+
+# Задачи
+
+{{< include ../../_includes/exercises/08_alternative_neutrino_mass-ru.qmd >}}

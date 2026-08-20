@@ -1,0 +1,13 @@
+---
+title: "ТЕМА 8. Майорановская масса и нейтрино Вселенной"
+body-classes: topic-page topic-8
+---
+
+::: {.topic-landing}
+## Лекции {.unnumbered .unlisted}
+
+- [Лекция 27. Безнейтринный двойной бета-распад](../chapters/27_neutrinoless_double_beta_decay.qmd)
+- [Лекция 28. Реликтовые нейтрино](../chapters/28_relic_neutrinos.qmd)
+- [Лекция 29. Астрофизические нейтрино сверхвысоких энергий](../chapters/29_uhe_astrophysical_neutrinos.qmd)
+- [Лекция 30. Нейтрино от сверхновой](../chapters/30_supernova_neutrinos.qmd)
+:::

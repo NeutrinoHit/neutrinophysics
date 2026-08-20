@@ -1,0 +1,4 @@
+---
+title: "Электромагнитные свойства нейтрино"
+body-classes: lecture-page topic-5
+---

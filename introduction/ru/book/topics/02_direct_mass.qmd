@@ -1,0 +1,14 @@
+---
+title: "ТЕМА 2. Прямое измерение массы нейтрино"
+body-classes: topic-page topic-2
+---
+
+::: {.topic-landing}
+## Лекции {.unnumbered .unlisted}
+
+- [Лекция 4. Кинематика β-спектра](../chapters/04_neutrino_mass_kinematics.qmd)
+- [Лекция 5. Ведём электрон к детектору](../chapters/05_electron_to_detector.qmd)
+- [Лекция 6. MAC-E-спектрометр](../chapters/06_mac_e_spectrometer.qmd)
+- [Лекция 7. Эксперимент KATRIN](../chapters/07_katrin.qmd)
+- [Лекция 8. Другие способы взвесить нейтрино](../chapters/08_alternative_neutrino_mass.qmd)
+:::

@@ -20,33 +20,61 @@ book:
     right: "NeutrinoHit · Введение в физику нейтрино"
   chapters:
     - index.qmd
-    - chapters/01_neutrino_first_contact.qmd
-    - chapters/02_parity_violation.qmd
-    - chapters/03_neutrino_spin.qmd
-    - chapters/04_neutrino_mass_kinematics.qmd
-    - chapters/05_electron_to_detector.qmd
-    - chapters/05_vacuum_oscillations.qmd
-    - chapters/06_matter_oscillations.qmd
-    - chapters/07_oscillation_paradoxes.qmd
-    - chapters/08_standard_model_neutrinos.qmd
-    - chapters/09_electromagnetic_properties.qmd
-    - chapters/10_sterile_neutrinos.qmd
-    - chapters/11_neutrino_interactions.qmd
-    - chapters/12_detection_methods.qmd
-    - chapters/13_solar_neutrinos.qmd
-    - chapters/14_atmospheric_neutrinos.qmd
-    - chapters/15_accelerator_neutrinos.qmd
-    - chapters/16_reactor_neutrinos.qmd
-    - chapters/17_geophysical_neutrinos.qmd
-    - chapters/18_neutrinoless_double_beta_decay.qmd
-    - chapters/19_relic_neutrinos.qmd
-    - chapters/20_uhe_astrophysical_neutrinos.qmd
-    - chapters/21_supernova_neutrinos.qmd
-    - chapters/22_global_analysis.qmd
-    - chapters/23_mixing_cp_violation.qmd
-    - chapters/24_new_physics.qmd
-    - chapters/25_neutrino_tomography.qmd
-    - chapters/26_reactor_monitoring.qmd
+    - part: topics/01_neutrinos_weak.qmd
+      chapters:
+        - chapters/01_neutrino_first_contact.qmd
+        - chapters/02_parity_violation.qmd
+        - chapters/03_neutrino_spin.qmd
+    - part: topics/02_direct_mass.qmd
+      chapters:
+        - chapters/04_neutrino_mass_kinematics.qmd
+        - chapters/05_electron_to_detector.qmd
+        - chapters/06_mac_e_spectrometer.qmd
+        - chapters/07_katrin.qmd
+        - chapters/08_alternative_neutrino_mass.qmd
+    - part: topics/03_vacuum_oscillations.qmd
+      chapters:
+        - chapters/09_vacuum_two_flavors.qmd
+        - chapters/10_vacuum_pmns.qmd
+    - part: topics/04_matter_oscillations.qmd
+      chapters:
+        - chapters/11_matter_refraction.qmd
+        - chapters/12_matter_constant_density.qmd
+        - chapters/13_matter_adiabatic_msw.qmd
+        - chapters/14_matter_interference_pendulums.qmd
+        - chapters/15_matter_three_flavors.qmd
+        - chapters/16_oscillation_paradoxes.qmd
+    - part: topics/05_standard_model.qmd
+      chapters:
+        - chapters/17_standard_model_neutrinos.qmd
+        - chapters/18_electromagnetic_properties.qmd
+        - chapters/19_sterile_neutrinos.qmd
+    - part: topics/06_interactions_detection.qmd
+      chapters:
+        - chapters/20_neutrino_interactions.qmd
+        - chapters/21_detection_methods.qmd
+    - part: topics/07_sources.qmd
+      chapters:
+        - chapters/22_solar_neutrinos.qmd
+        - chapters/23_atmospheric_neutrinos.qmd
+        - chapters/24_accelerator_neutrinos.qmd
+        - chapters/25_reactor_neutrinos.qmd
+        - chapters/26_geophysical_neutrinos.qmd
+    - part: topics/08_majorana_cosmic.qmd
+      chapters:
+        - chapters/27_neutrinoless_double_beta_decay.qmd
+        - chapters/28_relic_neutrinos.qmd
+        - chapters/29_uhe_astrophysical_neutrinos.qmd
+        - chapters/30_supernova_neutrinos.qmd
+    - part: topics/09_global_new_physics.qmd
+      chapters:
+        - chapters/31_global_analysis.qmd
+        - chapters/32_mixing_cp_violation.qmd
+        - chapters/33_new_physics.qmd
+    - part: topics/10_applications.qmd
+      chapters:
+        - chapters/34_neutrino_tomography.qmd
+        - chapters/35_reactor_monitoring.qmd
 
 lang: ru-RU
 

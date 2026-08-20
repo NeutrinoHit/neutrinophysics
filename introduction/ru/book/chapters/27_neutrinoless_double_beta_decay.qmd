@@ -1,0 +1,4 @@
+---
+title: "Безнейтринный двойной бета-распад"
+body-classes: lecture-page topic-8
+---
