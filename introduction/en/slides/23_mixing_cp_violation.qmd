@@ -21,9 +21,6 @@ format:
     toc-depth: 1
     toc-title: "Lecture Plan"
     transition: fade
-    width: 1280
-    height: 720
-    margin: 0.06
     center: false
     incremental: false
     chalkboard: false
