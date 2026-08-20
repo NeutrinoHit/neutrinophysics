@@ -1,0 +1,387 @@
+---
+body-classes: lecture-page topic-2
+---
+
+# Другие способы взвесить нейтрино {#sec-alternative-neutrino-mass}
+
+::: {.book-lead}
+Энергию электрона можно определять не только электростатическим анализом.
+Project 8 измеряет циклотронную частоту, а ECHo и HOLMES — полную энергию
+калориметрического события электронного захвата.
+:::
+
+## Project 8: энергия как частота
+
+В магнитном поле релятивистская циклотронная частота электрона зависит от его
+кинетической энергии:
+
+$$
+f_c
+=
+\frac{|e|B}{2\pi\gamma m_e}
+=
+\frac{f_0}{\gamma},
+\qquad
+f_0=\frac{|e|B}{2\pi m_e}.
+$$ {#eq-cres-frequency}
+
+По измеренной частоте кинетическая энергия находится непосредственно:
+
+$$
+K
+=
+m_ec^2\left(\frac{f_0}{f_c}-1\right).
+$$ {#eq-cres-energy}
+
+При $B=1~\text{Тл}$ электрон конца тритиевого спектра излучает на частоте около
+$27~\text{ГГц}$. Метод CRES --- cyclotron radiation emission spectroscopy ---
+определяет энергию по этому радиосигналу.
+
+### Мощность и регистрация
+
+Мощность циклотронного излучения свободного электрона равна
+
+$$
+P
+=\frac{e^4B^2}{6\pi\varepsilon_0m_e^2c}
+\gamma^2\beta_\perp^2,
+\qquad
+\beta_\perp=\beta\sin\theta.
+$$ {#eq-cres-radiated-power}
+
+Для $K=18.6~\text{кэВ}$, $B=1~\text{Тл}$ и $\theta=90^\circ$ получаем
+$P\simeq1.2\cdot10^{-15}~\text{Вт}$. В Phase II излучение возбуждало моду
+ячейки-волновода. Сигнал проходил через криогенный усилитель, перенос частоты
+и аналого-цифровой преобразователь; преобразование Фурье давало спектрограмму.
+
+::: {#anim-project8-cres .animation title="Циклотронное излучение одного электрона" src="../assets/chapters/04_direct_neutrino_mass/project8_cres.mp4" poster="../assets/chapters/04_direct_neutrino_mass/project8_cres.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/04_direct_neutrino_mass/project8_cres.mp4" qr="../assets/chapters/04_direct_neutrino_mass/qr/project8_cres.png"}
+Электрон движется в магнитной ловушке и излучает микроволновый сигнал.
+Частота задаёт энергию, а продолжительность трека --- время наблюдения до
+рассеяния или выхода из ловушки.
+:::
+
+Пока электрон излучает, $\dot K<0$, $\dot\gamma<0$ и $\dot f_c>0$. Поэтому
+одиночное событие образует на спектрограмме возрастающий частотный трек.
+
+### Ловушка и боковые полосы
+
+В однородном поле при постоянной энергии принятый сигнал был бы
+монохроматическим. В ловушке электрон колеблется вдоль оси, и принятая фаза
+содержит два вклада:
+
+$$
+\Phi_{\mathrm{rec}}(t)
+=\int_0^t2\pi f_c(t')\,dt'
++\Phi_{\mathrm{prop}}[z(t)],
+\qquad
+f_c(t)=\frac{eB[\mathbf r(t)]}{2\pi\gamma(t)m_e}.
+$$ {#eq-cres-received-phase}
+
+Первый вклад меняется из-за неоднородности магнитного поля, второй --- из-за
+изменения пути волны до приёмника. Для одной гармоники фазовой модуляции
+
+$$
+\Phi(t)=2\pi f_ct+h\sin(2\pi f_zt),
+\qquad
+h=\frac{\Delta f}{f_z},
+$$
+
+где $f_z$ --- частота продольных колебаний. Разложение Якоби--Ангера
+
+$$
+e^{ih\sin\vartheta}
+=\sum_{n=-\infty}^{\infty}J_n(h)e^{in\vartheta}
+$$
+
+даёт гребёнку линий
+
+$$
+f_n=f_c+nf_z,
+\qquad
+\frac{dP}{df}
+=P\sum_nJ_n^2(h)\,\delta(f-f_n),
+\qquad
+\sum_nJ_n^2(h)=1.
+$$ {#eq-cres-sidebands}
+
+В симметричной ловушке $B[z(t)]$ обычно создаёт гармонику $2f_z$, а фаза
+распространения --- гармонику $f_z$. Поэтому реконструкция должна определять
+не только энергию, но также угол и положение электрона.
+
+Если линия наблюдается в течение конечного времени $T_{\mathrm{obs}}$, её
+амплитуда Фурье имеет вид
+
+$$
+A_n(f)
+=T_{\mathrm{obs}}
+e^{i\pi(f_n-f)T_{\mathrm{obs}}}
+\operatorname{sinc}\!\left[\pi(f_n-f)T_{\mathrm{obs}}\right],
+$$
+
+а ширина пика равна
+
+$$
+\Delta f_{\mathrm{FWHM}}
+\simeq\frac{0.886}{T_{\mathrm{obs}}}.
+$$ {#eq-cres-finite-track-width}
+
+::: {#anim-cres-frequency-track .animation title="Частотный трек CRES" epub-src="../assets/chapters/04_direct_neutrino_mass/cres_frequency_track.mp4" poster="../assets/chapters/04_direct_neutrino_mass/cres_frequency_track.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/08_alternative_neutrino_mass.html#/cres-frequency-track" qr="../assets/chapters/04_direct_neutrino_mass/qr/cres_frequency_track.png"}
+Наклон линии возникает из-за радиационных потерь. Резкие скачки соответствуют
+столкновениям с остаточным газом, после которых начинается новый сегмент трека.
+:::
+
+### Энергетическое разрешение
+
+Дифференцируя @eq-cres-energy, получаем
+
+$$
+|\delta K|
+=(m_ec^2+K)\frac{|\delta f_c|}{f_c}.
+$$ {#eq-cres-resolution}
+
+У конца тритиевого спектра разрешение $\Delta K=0.10~\text{эВ}$ требует
+$\Delta f_c\simeq5.1~\text{кГц}$ и, только по фурье-пределу,
+$T_{\mathrm{obs}}\gtrsim0.17~\text{мс}$. Реальное разрешение зависит также от
+неоднородности поля, боковых полос, угла, положения электрона и рассеяния.
+
+Во второй фазе Project 8 на молекулярном тритии было достигнуто разрешение
+$\Delta E_{\mathrm{FWHM}}=1.66\pm0.19~\text{эВ}$. Получены пределы
+$m_\beta<155~\text{эВ}$ в байесовском и $m_\beta<152~\text{эВ}$ в
+частотном анализе, оба при уровне $90\%$. Эти значения
+характеризуют демонстрацию CRES, а не достигнутую KATRIN чувствительность.
+
+Для большого объёма исследуется свободнопространственная система с массивом
+антенн: относительные фазы позволяют локализовать электрон и когерентно
+суммировать сигнал. Концепция Phase IV использует атомарный тритий и ставит
+цель около $40~\text{мэВ}$.
+
+## Калориметрия электронного захвата в гольмии-163
+
+Другой путь к прямой массе использует электронный захват
+
+$$
+{}^{163}\mathrm{Ho}+e^-_{\mathrm{atomic}}
+\longrightarrow
+{}^{163}\mathrm{Dy}^{*}+\nu_e.
+$$ {#eq-ho-electron-capture}
+
+После появления вакансии атом диспрозия испускает рентгеновские кванты и
+оже-электроны. Микрокалориметр поглощает всю эту энергию, кроме энергии
+нейтрино:
+
+$$
+E_c=Q-E_\nu.
+$$ {#eq-ho-calorimetric-balance}
+
+Для $^{163}\mathrm{Ho}$ значение $Q$ близко к $2.86~\text{кэВ}$, а конец
+калориметрического спектра равен
+
+$$
+E_c^{\max}=Q-m_\beta.
+$$
+
+Спектр состоит из атомных линий, умноженных на нейтринный фазовый объём:
+
+$$
+\frac{d\Gamma}{dE_c}
+\propto
+(Q-E_c)
+\sqrt{(Q-E_c)^2-m_\beta^2}
+\sum_i
+n_i C_i\beta_i^2B_i\,
+\frac{\Gamma_i/2\pi}
+{(E_c-E_i)^2+\Gamma_i^2/4}.
+$$ {#eq-ho-calorimetric-spectrum}
+
+Изотоп имплантируется в поглотитель. Поглощённая энергия повышает температуру
+пикселя на
+
+$$
+\Delta T=\frac{E_c}{C},
+$$ {#eq-microcalorimeter-temperature}
+
+где $C$ --- его теплоёмкость. ECHo использует металлические магнитные
+калориметры, HOLMES --- датчики на краю сверхпроводящего перехода TES.
+Поскольку источник находится в детекторе, потерь энергии при выходе электрона
+из вещества нет.
+
+Ограничение создают неразрешённые наложения импульсов. При активности одного
+пикселя $a$ и временном разрешении $\tau_r$
+
+$$
+f_{\mathrm{pu}}\simeq a\tau_r
+$$ {#eq-holmium-pileup-fraction}
+
+для $a\tau_r\ll1$. Энергетический спектр таких пар является свёрткой двух
+одночастичных спектров и может заходить в область конца. Поэтому набор
+статистики требует большого числа быстрых пикселей, а не только повышения
+активности каждого из них.
+
+Эксперименты ECHo и HOLMES используют массивы криогенных микрокалориметров с
+имплантированным $\,{}^{163}\mathrm{Ho}$. ECHo проанализировал около
+$2\cdot10^8$ событий и получил $Q=2862(4)~\text{эВ}$ и
+$m_\beta<15~\text{эВ}$. HOLMES набрал около $7\cdot10^7$ событий при
+разрешении около $6~\text{эВ}$ FWHM и получил $m_\beta<27~\text{эВ}$.
+Оба предела указаны для $90\%$ доверительной вероятности.
+
+| Свойство | Тритиевый β-распад | Захват в $\,{}^{163}\mathrm{Ho}$ |
+|:---|:---|:---|
+| Измеряемая энергия | энергия β-электрона | вся атомная энергия девозбуждения |
+| Тип спектрометра | внешний интегральный фильтр или CRES | микрокалориметр с внутренним источником |
+| Основная атомно-молекулярная структура | конечные состояния $\mathrm{{}^3HeT^+}$ | линии и многодырочные состояния Dy |
+| Характерный инструментальный риск | потери в источнике, потенциал, фон | pile-up, форма импульса, тепловой отклик |
+
+: Два независимых подхода к прямому определению $m_\beta$. {#tbl-direct-mass-methods}
+
+## Другие прямые методы
+
+Кинематический принцип применим к любому распаду, где один из продуктов ---
+нейтрино.
+
+Изотоп $^{187}\mathrm{Re}$ имеет малую энергию β-распада,
+$Q\simeq2.47~\text{кэВ}$, и может измеряться калориметрически. Однако его
+период полураспада равен примерно $4.3\cdot10^{10}$ лет, поэтому удельная
+активность мала. Дополнительные ограничения дают медленный тепловой отклик,
+наложения импульсов и модификация формы спектра при распространении
+электронов в кристалле. Для современных массивов микрокалориметров
+$^{163}\mathrm{Ho}$ оказался практичнее.
+
+Для двухчастичного распада пиона в системе его покоя
+
+$$
+\pi^+\longrightarrow\mu^++\nu_\mu
+$$
+
+масса мюонного нейтрино выражается через измеренный импульс мюона:
+
+$$
+m_{\nu_\mu}^2
+=
+m_\pi^2+m_\mu^2-2m_\pi\sqrt{p_\mu^2+m_\mu^2}.
+$$ {#eq-muon-neutrino-mass}
+
+Точность ограничивается знанием масс пиона и мюона, импульсной шкалой и
+энергетическими потерями. Лабораторный предел находится на уровне
+$m_{\nu_\mu}<190~\text{кэВ}$.
+
+Для $\nu_\tau$ используют многотельные распады $\tau$-лептона и двумерную
+границу распределения по энергии и инвариантной массе адронной системы.
+Получаемый предел, $m_{\nu_\tau}<18.2~\text{МэВ}$, значительно слабее.
+Причина не в особом свойстве $\nu_\tau$, а в ограниченной статистике и сложной
+кинематике распада.
+
+Сверхновая предоставляет ещё один кинематический тест. Для
+ультрарелятивистского нейтрино задержка относительно безмассовой частицы равна
+
+$$
+\Delta t
+\simeq
+\frac{L}{2c}\frac{m_\nu^2}{E_\nu^2}.
+$$ {#eq-neutrino-time-delay}
+
+Исходный временной профиль нейтринной вспышки задаётся моделью сверхновой.
+Поэтому такой предел содержит астрофизические предположения, отсутствующие в
+лабораторном анализе β-спектра.
+
+| Канал | Характерная энергия | Прямой предел массы |
+|:---|---:|---:|
+| тритиевый β-спектр | $18.6~\text{кэВ}$ | $m_\beta<0.45~\text{эВ}$ |
+| захват $^{163}\mathrm{Ho}$ | $2.86~\text{кэВ}$ | $m_\beta<15~\text{эВ}$ |
+| $\pi^+\to\mu^+\nu_\mu$ | $30~\text{МэВ}$ | $m_{\nu_\mu}<190~\text{кэВ}$ |
+| $\tau\to5\pi\nu_\tau$ | $1.8~\text{ГэВ}$ | $m_{\nu_\tau}<18.2~\text{МэВ}$ |
+
+: Прямые кинематические ограничения из разных каналов. {#tbl-flavor-direct-limits}
+
+## Масштаб, заданный осцилляциями
+
+Осцилляции определяют разности квадратов масс. Если самая лёгкая масса мала,
+то при нормальном порядке
+
+$$
+m_\beta
+\simeq
+\sqrt{
+|U_{e2}|^2\Delta m_{21}^2
++
+|U_{e3}|^2\Delta m_{31}^2
+}
+\approx9~\text{мэВ},
+$$ {#eq-mbeta-normal-floor}
+
+а при инвертированном порядке
+
+$$
+m_\beta
+\simeq
+\sqrt{|\Delta m_{31}^2|}
+\approx50~\text{мэВ}.
+$$ {#eq-mbeta-inverted-floor}
+
+Чувствительность $40$--$50~\text{мэВ}$ достигает минимального масштаба
+инвертированного порядка при почти безмассовом лёгчайшем состоянии. Эта оценка
+следует из осцилляционных данных в модели трёх активных нейтрино и не заменяет
+прямого измерения.
+
+## Краткое резюме
+
+1. Project 8 определяет энергию по циклотронной частоте. Неоднородность поля
+   создаёт фазовую модуляцию и боковые полосы, а конечная длина трека задаёт
+   частотное разрешение.
+2. ECHo и HOLMES измеряют калориметрический спектр электронного захвата
+   $\,{}^{163}\mathrm{Ho}$; для них существенны энергетическое разрешение и
+   наложение импульсов.
+3. Осцилляционные данные задают минимальный масштаб $m_\beta$ внутри
+   трёхнейтринной модели, но не заменяют прямого измерения.
+
+## Задачи
+
+{{< include ../../../_includes/exercises/08_alternative_neutrino_mass-ru.qmd >}}
+
+## Литература к лекции {.unnumbered}
+
+1. E. Fermi. Versuch einer Theorie der β-Strahlen. *Zeitschrift für Physik*
+   **88**, 161–177 (1934).
+   [doi:10.1007/BF01351864](https://doi.org/10.1007/BF01351864).
+2. P. Kruit, F. H. Read. Magnetic field paralleliser for $2\pi$ electron
+   spectrometer and electron-image magnifier. *Journal of Physics E* **16**,
+   313 (1983).
+   [doi:10.1088/0022-3735/16/4/016](https://doi.org/10.1088/0022-3735/16/4/016).
+3. V. M. Lobashev, P. E. Spivak. A method for measuring the electron
+   antineutrino rest mass. *Nuclear Instruments and Methods A* **240**, 305–310
+   (1985).
+   [doi:10.1016/0168-9002(85)90640-0](https://doi.org/10.1016/0168-9002(85)90640-0).
+4. V. A. Lubimov et al. An estimate of the electron-neutrino mass from the
+   β-spectrum of tritium in the valine molecule. *Physics Letters B* **94**,
+   266–268 (1980).
+   [doi:10.1016/0370-2693(80)90873-4](https://doi.org/10.1016/0370-2693(80)90873-4).
+5. KATRIN Collaboration. *KATRIN Design Report 2004*.
+   [FZKA 7090](https://publikationen.bibliothek.kit.edu/270060419).
+6. M. Kleesiek et al. β-decay spectrum, response function and statistical
+   model for neutrino mass measurements with the KATRIN experiment.
+   *European Physical Journal C* **79**, 204 (2019).
+   [doi:10.1140/epjc/s10052-019-6686-7](https://doi.org/10.1140/epjc/s10052-019-6686-7).
+7. KATRIN Collaboration. Direct neutrino-mass measurement based on 259 days of
+   KATRIN data. *Science* **388**, 180–185 (2025).
+   [doi:10.1126/science.adq9592](https://doi.org/10.1126/science.adq9592).
+8. Project 8 Collaboration. Tritium beta spectrum measurement and neutrino mass
+   limit from cyclotron radiation emission spectroscopy. *Physical Review
+   Letters* **131**, 102502 (2023).
+   [doi:10.1103/PhysRevLett.131.102502](https://doi.org/10.1103/PhysRevLett.131.102502).
+9. ECHo Collaboration. High statistics measurement of the
+   $\,{}^{163}\mathrm{Ho}$ electron-capture $Q$ value and direct neutrino mass
+   limit. (2025).
+   [arXiv:2509.03423](https://arxiv.org/abs/2509.03423).
+10. HOLMES Collaboration. First measurement of the $\,{}^{163}\mathrm{Ho}$
+   electron-capture spectrum with the HOLMES microcalorimeters. (2025).
+   [arXiv:2503.19920](https://arxiv.org/abs/2503.19920).
+11. G. Drexlin, C. Weinheimer. Direct neutrino mass experiments: present and
+    future. (2026).
+    [arXiv:2601.00248](https://arxiv.org/abs/2601.00248).
+12. C. Giunti, C. W. Kim. *Fundamentals of Neutrino Physics and
+    Astrophysics*. Oxford University Press, 2007.
+13. Project 8 Collaboration. Electron Radiated Power in Cyclotron Radiation
+    Emission Spectroscopy Experiments. *Physical Review C* **100**, 062501
+    (2019). [arXiv:1901.02844](https://arxiv.org/abs/1901.02844).
+14. Project 8 Collaboration. Project 8 Apparatus for Cyclotron Radiation
+    Emission Spectroscopy with $^{83\mathrm m}\mathrm{Kr}$ and Tritium. (2025).
+    [arXiv:2503.08807](https://arxiv.org/abs/2503.08807).

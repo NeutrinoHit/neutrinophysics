@@ -1,0 +1,15 @@
+---
+title: "ТЕМА 4. Осцилляции нейтрино в веществе и квантовомеханические тонкости"
+body-classes: topic-page topic-4
+---
+
+::: {.topic-landing}
+## Лекции {.unnumbered .unlisted}
+
+- [Лекция 11. Откуда берётся преломление](../chapters/11_matter_refraction.qmd)
+- [Лекция 12. Постоянная плотность](../chapters/12_matter_constant_density.qmd)
+- [Лекция 13. Адиабатический MSW-эффект](../chapters/13_matter_adiabatic_msw.qmd)
+- [Лекция 14. Интерференция и маятники](../chapters/14_matter_interference_pendulums.qmd)
+- [Лекция 15. Три флэйвора в веществе](../chapters/15_matter_three_flavors.qmd)
+- [Лекция 16. Парадоксы и тонкости осцилляций нейтрино](../chapters/16_oscillation_paradoxes.qmd)
+:::

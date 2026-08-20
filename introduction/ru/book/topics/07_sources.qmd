@@ -1,0 +1,14 @@
+---
+title: "ТЕМА 7. Источники нейтрино"
+body-classes: topic-page topic-7
+---
+
+::: {.topic-landing}
+## Лекции {.unnumbered .unlisted}
+
+- [Лекция 22. Солнечные нейтрино](../chapters/22_solar_neutrinos.qmd)
+- [Лекция 23. Атмосферные нейтрино](../chapters/23_atmospheric_neutrinos.qmd)
+- [Лекция 24. Ускорительные нейтрино](../chapters/24_accelerator_neutrinos.qmd)
+- [Лекция 25. Реакторные нейтрино](../chapters/25_reactor_neutrinos.qmd)
+- [Лекция 26. Геофизические нейтрино](../chapters/26_geophysical_neutrinos.qmd)
+:::

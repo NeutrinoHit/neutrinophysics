@@ -1,0 +1,4 @@
+---
+title: "Атмосферные нейтрино"
+body-classes: lecture-page topic-7
+---

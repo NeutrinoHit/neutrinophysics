@@ -7,9 +7,7 @@ toc: false
 
 ```{=html}
 <style>
-  .quarto-title-block {
-    display: none;
-  }
+  .quarto-title-block { display: none; }
 </style>
 
 <div class="course-index course-subpage">
@@ -20,10 +18,7 @@ toc: false
 
   <section class="lecture-accordion" aria-label="Слайды курса">
     <details id="recommended-literature" class="lecture-row reference-row">
-      <summary>
-        <span class="lecture-index">00</span>
-        <span>Рекомендуемая литература</span>
-      </summary>
+      <summary><span class="lecture-index">00</span><span>Рекомендуемая литература</span></summary>
       <div class="lecture-row-body reference-row-body">
 ```
 
@@ -33,371 +28,41 @@ toc: false
       </div>
     </details>
 
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">01</span>
-        <span>Нейтрино. Первое знакомство</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="01_neutrino_first_contact.html">Открыть слайды</a>
-          <a href="../exercises/01_neutrino_first_contact_exercises.html">Задачи</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">02</span>
-        <span>Слабое взаимодействие. Нарушение пространственной чётности</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="02_parity_violation.html">Открыть слайды</a>
-          <a href="../exercises/02_parity_violation_exercises.html">Задачи</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">03</span>
-        <span>Спин нейтрино. Спиральность и поляризация</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="03_neutrino_spin.html">Открыть слайды</a>
-          <a href="../exercises/03_neutrino_spin_exercises.html">Задачи</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">04</span>
-        <span>Прямое измерение массы нейтрино. Кинематика β-спектра</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="04_neutrino_mass_kinematics.html">Открыть слайды</a>
-          <a href="../exercises/04_neutrino_mass_kinematics_exercises.html">Задачи</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">05</span>
-        <span>Прямое измерение массы нейтрино. Ведём электрон к детектору</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="05_electron_to_detector.html">Открыть слайды</a>
-          <a href="../exercises/05_electron_to_detector_exercises.html">Задачи</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">06</span>
-        <span>Осцилляции в вакууме: три флэйвора</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="05b_vacuum_pmns.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">07</span>
-        <span>Осцилляции в веществе: постоянная плотность</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="06a_matter_constant_density.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">08</span>
-        <span>Адиабатический MSW-эффект</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="06b_matter_adiabatic_msw.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">09</span>
-        <span>Исчезновение ν₁ и механическая аналогия</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="06c_matter_interference_pendulums.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">10</span>
-        <span>Три нейтрино в веществе</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="06d_matter_three_flavors.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">11</span>
-        <span>Парадоксы в теории осцилляций нейтрино</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="07_oscillation_paradoxes.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">12</span>
-        <span>Нейтрино в Стандартной модели</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="08_standard_model_neutrinos.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">13</span>
-        <span>Электромагнитные свойства нейтрино</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="09_electromagnetic_properties.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">14</span>
-        <span>Стерильные нейтрино</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="10_sterile_neutrinos.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">15</span>
-        <span>Взаимодействие нейтрино с веществом</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="11_neutrino_interactions.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">16</span>
-        <span>Экспериментальные методы детектирования</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="12_detection_methods.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">17</span>
-        <span>Солнечные нейтрино</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="13_solar_neutrinos.html">Открыть слайды</a>
-          <a href="../exercises/13_solar_neutrinos_exercises.html">Задачи</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">18</span>
-        <span>Атмосферные нейтрино</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="14_atmospheric_neutrinos.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">19</span>
-        <span>Ускорительные нейтрино</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="15_accelerator_neutrinos.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">20</span>
-        <span>Реакторные нейтрино</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="16_reactor_neutrinos.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">21</span>
-        <span>Геофизические нейтрино</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="17_geophysical_neutrinos.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">22</span>
-        <span>Безнейтринный двойной бета-распад</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="18_neutrinoless_double_beta_decay.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">23</span>
-        <span>Реликтовые нейтрино</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="19_relic_neutrinos.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">24</span>
-        <span>Астрофизические нейтрино сверхвысоких энергий</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="20_uhe_astrophysical_neutrinos.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">25</span>
-        <span>Нейтрино от сверхновой</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="21_supernova_neutrinos.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">26</span>
-        <span>Глобальный анализ</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="22_global_analysis.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">27</span>
-        <span>Смешивание и CP-нарушение</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="23_mixing_cp_violation.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">28</span>
-        <span>Нейтрино как окно в новую физику</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="24_new_physics.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">29</span>
-        <span>Нейтринная томография</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="25_neutrino_tomography.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="lecture-row">
-      <summary>
-        <span class="lecture-index">30</span>
-        <span>Реакторы как мониторинг</span>
-      </summary>
-      <div class="lecture-row-body">
-        <div class="lecture-links">
-          <a href="26_reactor_monitoring.html">Открыть слайды</a>
-        </div>
-      </div>
-    </details>
+    <details class="lecture-row"><summary><span class="lecture-index">01</span><span>Нейтрино. Первое знакомство</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="01_neutrino_first_contact.html">Открыть слайды</a><a href="../exercises/01_neutrino_first_contact_exercises.html">Задачи</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">02</span><span>Слабое взаимодействие. Нарушение пространственной чётности</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="02_parity_violation.html">Открыть слайды</a><a href="../exercises/02_parity_violation_exercises.html">Задачи</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">03</span><span>Спин нейтрино. Спиральность и поляризация</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="03_neutrino_spin.html">Открыть слайды</a><a href="../exercises/03_neutrino_spin_exercises.html">Задачи</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">04</span><span>Прямое измерение массы нейтрино. Кинематика β-спектра</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="04_neutrino_mass_kinematics.html">Открыть слайды</a><a href="../exercises/04_neutrino_mass_kinematics_exercises.html">Задачи</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">05</span><span>Прямое измерение массы нейтрино. Ведём электрон к детектору</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="05_electron_to_detector.html">Открыть слайды</a><a href="../exercises/05_electron_to_detector_exercises.html">Задачи</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">06</span><span>Прямое измерение массы нейтрино. MAC-E-спектрометр</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="06_mac_e_spectrometer.html">Открыть слайды</a><a href="../exercises/06_mac_e_spectrometer_exercises.html">Задачи</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">07</span><span>Прямое измерение массы нейтрино. Эксперимент KATRIN</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="07_katrin.html">Открыть слайды</a><a href="../exercises/07_katrin_exercises.html">Задачи</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">08</span><span>Прямое измерение массы нейтрино. Другие способы взвесить нейтрино</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="08_alternative_neutrino_mass.html">Открыть слайды</a><a href="../exercises/08_alternative_neutrino_mass_exercises.html">Задачи</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">09</span><span>Осцилляции в вакууме. Два флэйвора</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="09_vacuum_two_flavors.html">Открыть слайды</a><a href="../exercises/09_vacuum_oscillations_exercises.html">Задачи</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">10</span><span>Осцилляции в вакууме. Три флэйвора и матрица PMNS</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="10_vacuum_pmns.html">Открыть слайды</a><a href="../exercises/10_vacuum_pmns_exercises.html">Задачи</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">11</span><span>Осцилляции в веществе. Откуда берётся преломление</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="11_matter_refraction.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">12</span><span>Осцилляции в веществе. Постоянная плотность</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="12_matter_constant_density.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">13</span><span>Осцилляции в веществе. Адиабатический MSW-эффект</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="13_matter_adiabatic_msw.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">14</span><span>Осцилляции в веществе. Интерференция и маятники</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="14_matter_interference_pendulums.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">15</span><span>Осцилляции в веществе. Три флэйвора</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="15_matter_three_flavors.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">16</span><span>Осцилляции нейтрино. Парадоксы и тонкости</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="16_oscillation_paradoxes.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">17</span><span>Нейтрино в Стандартной модели</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="17_standard_model_neutrinos.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">18</span><span>Электромагнитные свойства нейтрино</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="18_electromagnetic_properties.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">19</span><span>Стерильные нейтрино</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="19_sterile_neutrinos.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">20</span><span>Взаимодействие нейтрино с веществом</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="20_neutrino_interactions.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">21</span><span>Детектирование нейтрино. Экспериментальные методы</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="21_detection_methods.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">22</span><span>Источники нейтрино. Солнце</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="22_solar_neutrinos.html">Открыть слайды</a><a href="../exercises/22_solar_neutrinos_exercises.html">Задачи</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">23</span><span>Источники нейтрино. Атмосфера</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="23_atmospheric_neutrinos.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">24</span><span>Источники нейтрино. Ускорители</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="24_accelerator_neutrinos.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">25</span><span>Источники нейтрино. Реакторы</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="25_reactor_neutrinos.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">26</span><span>Источники нейтрино. Земля</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="26_geophysical_neutrinos.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">27</span><span>Майорановская масса. Безнейтринный двойной β-распад</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="27_neutrinoless_double_beta_decay.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">28</span><span>Космические нейтрино. Реликтовый фон</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="28_relic_neutrinos.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">29</span><span>Космические нейтрино. Сверхвысокие энергии</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="29_uhe_astrophysical_neutrinos.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">30</span><span>Космические нейтрино. Сверхновые</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="30_supernova_neutrinos.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">31</span><span>Глобальный анализ нейтринных данных</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="31_global_analysis.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">32</span><span>Смешивание нейтрино. CP-нарушение</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="32_mixing_cp_violation.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">33</span><span>Нейтрино за пределами Стандартной модели</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="33_new_physics.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">34</span><span>Применения нейтрино. Томография Земли</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="34_neutrino_tomography.html">Открыть слайды</a></div></div></details>
+    <details class="lecture-row"><summary><span class="lecture-index">35</span><span>Применения нейтрино. Мониторинг реакторов</span></summary><div class="lecture-row-body"><div class="lecture-links"><a href="35_reactor_monitoring.html">Открыть слайды</a></div></div></details>
   </section>
 </div>
 ```

@@ -1,0 +1,4 @@
+---
+title: "Стерильные нейтрино"
+body-classes: lecture-page topic-5
+---

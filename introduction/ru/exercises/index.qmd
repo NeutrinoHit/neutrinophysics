@@ -32,4 +32,24 @@ format:
 
 ---
 
-{{< include ../../_includes/exercises/13_solar_neutrinos-ru.qmd >}}
+{{< include ../../_includes/exercises/06_mac_e_spectrometer-ru.qmd >}}
+
+---
+
+{{< include ../../_includes/exercises/07_katrin-ru.qmd >}}
+
+---
+
+{{< include ../../_includes/exercises/08_alternative_neutrino_mass-ru.qmd >}}
+
+---
+
+{{< include ../../_includes/exercises/09_vacuum_oscillations-ru.qmd >}}
+
+---
+
+{{< include ../../_includes/exercises/10_vacuum_pmns-ru.qmd >}}
+
+---
+
+{{< include ../../_includes/exercises/22_solar_neutrinos-ru.qmd >}}

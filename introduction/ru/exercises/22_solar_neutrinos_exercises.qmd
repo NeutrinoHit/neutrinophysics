@@ -1,0 +1,16 @@
+---
+title: "Задачи: солнечные нейтрино"
+lang: ru-RU
+subtitle: "Введение в физику нейтрино"
+author: "Дмитрий В. Наумов"
+format:
+  html:
+    toc: true
+    toc-title: "Задачи"
+---
+
+[← Вернуться к лекции](../slides/22_solar_neutrinos.html) · [Все задачи курса](index.html)
+
+# Задачи
+
+{{< include ../../_includes/exercises/22_solar_neutrinos-ru.qmd >}}

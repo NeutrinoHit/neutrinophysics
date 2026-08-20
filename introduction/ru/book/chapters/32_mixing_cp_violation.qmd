@@ -1,0 +1,4 @@
+---
+title: "Смешивание и CP-нарушение"
+body-classes: lecture-page topic-9
+---

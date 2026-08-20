@@ -1,0 +1,4 @@
+---
+title: "Экспериментальные методы детектирования"
+body-classes: lecture-page topic-6
+---

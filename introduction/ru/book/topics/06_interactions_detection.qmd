@@ -1,0 +1,11 @@
+---
+title: "ТЕМА 6. Взаимодействия и детектирование нейтрино"
+body-classes: topic-page topic-6
+---
+
+::: {.topic-landing}
+## Лекции {.unnumbered .unlisted}
+
+- [Лекция 20. Взаимодействие нейтрино с веществом](../chapters/20_neutrino_interactions.qmd)
+- [Лекция 21. Экспериментальные методы детектирования](../chapters/21_detection_methods.qmd)
+:::

@@ -1,0 +1,11 @@
+---
+title: "ТЕМА 10. Прикладная нейтринная физика"
+body-classes: topic-page topic-10
+---
+
+::: {.topic-landing}
+## Лекции {.unnumbered .unlisted}
+
+- [Лекция 34. Нейтринная томография](../chapters/34_neutrino_tomography.qmd)
+- [Лекция 35. Реакторы как мониторинг](../chapters/35_reactor_monitoring.qmd)
+:::

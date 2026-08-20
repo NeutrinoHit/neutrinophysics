@@ -465,6 +465,55 @@ function Math(math)
   return math
 end
 
+local epub_lecture_targets = {
+  ["chapters/01_neutrino_first_contact.qmd"] = "#sec-neutrino-101",
+  ["chapters/02_parity_violation.qmd"] = "#sec-parity",
+  ["chapters/03_neutrino_spin.qmd"] = "#sec-helicity",
+  ["chapters/04_neutrino_mass_kinematics.qmd"] = "#sec-direct-neutrino-mass",
+  ["chapters/05_electron_to_detector.qmd"] = "#sec-electron-to-detector",
+  ["chapters/06_mac_e_spectrometer.qmd"] = "#sec-mac-e-spectrometer",
+  ["chapters/07_katrin.qmd"] = "#sec-katrin",
+  ["chapters/08_alternative_neutrino_mass.qmd"] = "#sec-alternative-neutrino-mass",
+  ["chapters/09_vacuum_two_flavors.qmd"] = "#sec-vacuum-oscillations",
+  ["chapters/10_vacuum_pmns.qmd"] = "#sec-vacuum-pmns",
+  ["chapters/11_matter_refraction.qmd"] = "#откуда-берётся-преломление",
+  ["chapters/12_matter_constant_density.qmd"] = "#постоянная-плотность",
+  ["chapters/13_matter_adiabatic_msw.qmd"] = "#адиабатический-msw-эффект",
+  ["chapters/14_matter_interference_pendulums.qmd"] = "#интерференция-и-маятники",
+  ["chapters/15_matter_three_flavors.qmd"] = "#три-флэйвора-в-веществе",
+  ["chapters/16_oscillation_paradoxes.qmd"] = "#парадоксы-и-тонкости-осцилляций-нейтрино",
+  ["chapters/17_standard_model_neutrinos.qmd"] = "#нейтрино-в-стандартной-модели-1",
+  ["chapters/18_electromagnetic_properties.qmd"] = "#электромагнитные-свойства-нейтрино",
+  ["chapters/19_sterile_neutrinos.qmd"] = "#стерильные-нейтрино",
+  ["chapters/20_neutrino_interactions.qmd"] = "#взаимодействие-нейтрино-с-веществом",
+  ["chapters/21_detection_methods.qmd"] = "#экспериментальные-методы-детектирования",
+  ["chapters/22_solar_neutrinos.qmd"] = "#солнечные-нейтрино-1",
+  ["chapters/23_atmospheric_neutrinos.qmd"] = "#атмосферные-нейтрино-1",
+  ["chapters/24_accelerator_neutrinos.qmd"] = "#ускорительные-нейтрино",
+  ["chapters/25_reactor_neutrinos.qmd"] = "#реакторные-нейтрино",
+  ["chapters/26_geophysical_neutrinos.qmd"] = "#геофизические-нейтрино",
+  ["chapters/27_neutrinoless_double_beta_decay.qmd"] = "#безнейтринный-двойной-бета-распад",
+  ["chapters/28_relic_neutrinos.qmd"] = "#реликтовые-нейтрино",
+  ["chapters/29_uhe_astrophysical_neutrinos.qmd"] = "#астрофизические-нейтрино-сверхвысоких-энергий",
+  ["chapters/30_supernova_neutrinos.qmd"] = "#нейтрино-от-сверхновой",
+  ["chapters/31_global_analysis.qmd"] = "#глобальный-анализ",
+  ["chapters/32_mixing_cp_violation.qmd"] = "#смешивание-и-cp-нарушение",
+  ["chapters/33_new_physics.qmd"] = "#нейтрино-как-окно-в-новую-физику",
+  ["chapters/34_neutrino_tomography.qmd"] = "#нейтринная-томография",
+  ["chapters/35_reactor_monitoring.qmd"] = "#реакторы-как-мониторинг"
+}
+
+function Link(link)
+  if FORMAT:match("epub") then
+    local key = link.target:gsub("^%.%./", "")
+    local target = epub_lecture_targets[key]
+    if target then
+      link.target = target
+      return link
+    end
+  end
+end
+
 local inside_exercises = false
 
 function Header(header)

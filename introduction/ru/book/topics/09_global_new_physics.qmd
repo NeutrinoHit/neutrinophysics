@@ -1,0 +1,12 @@
+---
+title: "ТЕМА 9. Глобальная картина и новая физика"
+body-classes: topic-page topic-9
+---
+
+::: {.topic-landing}
+## Лекции {.unnumbered .unlisted}
+
+- [Лекция 31. Глобальный анализ](../chapters/31_global_analysis.qmd)
+- [Лекция 32. Смешивание и CP-нарушение](../chapters/32_mixing_cp_violation.qmd)
+- [Лекция 33. Нейтрино как окно в новую физику](../chapters/33_new_physics.qmd)
+:::

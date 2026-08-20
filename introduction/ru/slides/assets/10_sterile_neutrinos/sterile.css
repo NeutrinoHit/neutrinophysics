@@ -86,39 +86,6 @@
   border-color: rgba(181, 101, 255, 0.64);
 }
 
-.reveal .sterile-emphasis,
-.reveal .sterile-question,
-.reveal .sterile-warning,
-.reveal .sterile-verdict,
-.reveal .sterile-definition {
-  border-radius: 0.45rem;
-  padding: 0.65rem 0.9rem;
-  margin: 0.65rem 0;
-}
-
-.reveal .sterile-emphasis,
-.reveal .sterile-definition {
-  background: rgba(47, 168, 220, 0.14);
-  border-left: 0.24rem solid #4cc9f0;
-}
-
-.reveal .sterile-question {
-  background: rgba(181, 101, 255, 0.14);
-  border-left: 0.24rem solid #b565ff;
-}
-
-.reveal .sterile-warning {
-  background: rgba(247, 184, 1, 0.12);
-  border-left: 0.24rem solid #f7b801;
-}
-
-.reveal .sterile-verdict {
-  background: rgba(46, 196, 182, 0.14);
-  border: 1px solid rgba(46, 196, 182, 0.48);
-  text-align: center;
-  font-size: 1.08em;
-}
-
 .reveal .basis-arrow {
   display: flex;
   justify-content: center;

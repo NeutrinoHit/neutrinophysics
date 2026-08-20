@@ -1,0 +1,4 @@
+---
+title: "Нейтрино от сверхновой"
+body-classes: lecture-page topic-8
+---

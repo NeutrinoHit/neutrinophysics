@@ -1,0 +1,4 @@
+---
+title: "Взаимодействие нейтрино с веществом"
+body-classes: lecture-page topic-6
+---

@@ -1,0 +1,4 @@
+---
+title: "Глобальный анализ"
+body-classes: lecture-page topic-9
+---

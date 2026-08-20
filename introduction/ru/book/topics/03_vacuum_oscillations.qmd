@@ -1,0 +1,11 @@
+---
+title: "ТЕМА 3. Осцилляции нейтрино в вакууме"
+body-classes: topic-page topic-3
+---
+
+::: {.topic-landing}
+## Лекции {.unnumbered .unlisted}
+
+- [Лекция 9. Два флэйвора](../chapters/09_vacuum_two_flavors.qmd)
+- [Лекция 10. Три флэйвора и матрица PMNS](../chapters/10_vacuum_pmns.qmd)
+:::

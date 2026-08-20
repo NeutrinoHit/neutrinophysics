@@ -1,0 +1,4 @@
+---
+title: "Астрофизические нейтрино сверхвысоких энергий"
+body-classes: lecture-page topic-8
+---

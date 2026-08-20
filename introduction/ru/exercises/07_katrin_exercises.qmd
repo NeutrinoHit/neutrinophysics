@@ -1,0 +1,14 @@
+---
+title: "Задачи: эксперимент KATRIN"
+subtitle: "Лекция 07 · Введение в физику нейтрино"
+author: "Дмитрий В. Наумов"
+format:
+  html:
+    toc: false
+---
+
+[← Вернуться к лекции](../slides/07_katrin.html) · [Все задачи курса](index.html)
+
+# Задачи
+
+{{< include ../../_includes/exercises/07_katrin-ru.qmd >}}

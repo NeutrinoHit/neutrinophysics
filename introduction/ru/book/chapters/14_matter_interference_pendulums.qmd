@@ -1,0 +1,4 @@
+---
+title: "Интерференция и маятники"
+body-classes: lecture-page topic-4
+---
