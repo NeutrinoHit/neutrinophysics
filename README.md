@@ -1,12 +1,14 @@
 # Neutrino physics lectures
 
-Отдельный Quarto/GitHub Pages проект раздела NeutrinoHit "Физика нейтрино".
+Отдельный Quarto-проект раздела NeutrinoHit "Физика нейтрино".
 
 ## Render
 
 ```bash
-quarto render
+make site
 ```
+
+Готовый сайт записывается в `_site/`.
 
 ## Local preview
 

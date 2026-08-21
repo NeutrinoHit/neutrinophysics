@@ -1,7 +1,9 @@
-.PHONY: render preview preview-paths preview-solar preview-solar-lecture preview-solar-session1 preview-solar-session2 preview-solar-defense
+.PHONY: site render preview preview-paths preview-solar preview-solar-lecture preview-solar-session1 preview-solar-session2 preview-solar-defense
 
-render:
+site:
 	quarto render
+
+render: site
 
 preview-paths:
 	@mkdir -p _site
