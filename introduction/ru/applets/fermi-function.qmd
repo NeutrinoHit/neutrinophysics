@@ -1,0 +1,12 @@
+---
+title: "Функция Ферми"
+description: "Кулоновская поправка к β-спектру"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Меняйте заряд дочернего ядра, массовое число и граничную энергию. Сравните, как кулоновское поле усиливает β⁻-спектр и подавляет β⁺-спектр.
+
+::: {.applet-stage .applet-stage--large .applet-stage--reveal .reveal}
+{{< include ../slides/assets/04_direct_neutrino_mass/_fermi_beta_minus_plus.qmd >}}
+:::

@@ -1,0 +1,20 @@
+---
+title: "Доплеровская настройка ядерного резонанса"
+description: "Интерактив к опыту Голдхабера"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Меняйте угол $\theta$ между отдачей возбуждённого ядра и фотоном. В каком направлении доплеровский сдвиг точно настроит фотон на поглощение?
+
+```{=html}
+<link rel="stylesheet" href="../slides/assets/03_helicity/helicity.css">
+```
+
+::: {.applet-stage .applet-stage--large .applet-stage--reveal .reveal}
+{{< include ../slides/assets/03_helicity/_resonance_filter.qmd >}}
+:::
+
+```{=html}
+<script src="../slides/assets/03_helicity/helicity.js"></script>
+```

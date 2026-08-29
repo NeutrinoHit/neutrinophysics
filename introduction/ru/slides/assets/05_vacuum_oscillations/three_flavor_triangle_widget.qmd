@@ -1,6 +1,4 @@
 ```{=html}
-<link rel="stylesheet" href="assets/05_vacuum_oscillations/three_flavor_triangle.css">
-
 <div class="three-flavor-triangle" data-three-flavor-triangle>
   <div class="three-flavor-triangle__controls">
     <div class="three-flavor-triangle__control">
@@ -110,5 +108,4 @@
   </div>
 </div>
 
-<script src="assets/05_vacuum_oscillations/three_flavor_triangle.js"></script>
 ```

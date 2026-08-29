@@ -1,0 +1,17 @@
+---
+title: "Осцилляции в веществе постоянной плотности"
+description: "Амплитуда, период и MSW-резонанс в однородном слое"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Меняйте потенциал вещества. Сравните вакуум, резонанс и плотную среду и проследите, как перестраиваются смешивание и уровни энергии.
+
+```{=html}
+<link rel="stylesheet" href="../slides/assets/06_matter_oscillations/matter_oscillations.css">
+<script defer src="../slides/assets/06_matter_oscillations/matter_oscillations.js"></script>
+```
+
+::: {.applet-stage .applet-stage--large}
+{{< include ../slides/assets/06_matter_oscillations/matter_constant_lab.qmd >}}
+:::

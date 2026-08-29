@@ -1,0 +1,17 @@
+---
+title: "Адиабатический MSW-переход"
+description: "Осцилляции нейтрино в меняющемся профиле плотности"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Сравните медленный и быстрый профили плотности. Когда состояние успевает следовать за мгновенной собственной модой, а когда адиабатичность нарушается?
+
+```{=html}
+<link rel="stylesheet" href="../slides/assets/06_matter_oscillations/matter_oscillations.css">
+<script defer src="../slides/assets/06_matter_oscillations/matter_oscillations.js"></script>
+```
+
+::: {.applet-stage .applet-stage--large}
+{{< include ../slides/assets/06_matter_oscillations/matter_adiabatic_lab.qmd >}}
+:::

@@ -1,0 +1,20 @@
+---
+title: "Треугольник флэйворов"
+description: "Трёхфлэйворные осцилляции в вакууме"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Выберите начальный флэйвор, энергию, длину пути и CP-фазу. Точка внутри треугольника показывает сразу три вероятности, сумма которых всегда равна единице.
+
+```{=html}
+<link rel="stylesheet" href="../slides/assets/05_vacuum_oscillations/three_flavor_triangle.css">
+```
+
+::: {.applet-stage .applet-stage--large}
+{{< include ../slides/assets/05_vacuum_oscillations/three_flavor_triangle_widget.qmd >}}
+:::
+
+```{=html}
+<script src="../slides/assets/05_vacuum_oscillations/three_flavor_triangle.js"></script>
+```

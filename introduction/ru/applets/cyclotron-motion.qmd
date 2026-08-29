@@ -1,0 +1,12 @@
+---
+title: "Электрон в однородном магнитном поле"
+description: "Циклотронное движение в координатном и фазовом пространствах"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Меняйте импульс электрона и магнитное поле. Слева видна орбита частицы, справа — то же движение в пространстве поперечных импульсов.
+
+::: {.applet-stage .applet-stage--large}
+{{< include ../slides/assets/05_electron_to_detector/_cyclotron_phase_portrait.qmd >}}
+:::
