@@ -1,0 +1,12 @@
+---
+title: "Связанные маятники и осцилляции"
+description: "Механическая модель двух связанных состояний"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Запустите один маятник и наблюдайте, как энергия переходит к другому и возвращается обратно.
+
+::: {.applet-stage .applet-stage--large}
+{{< include ../slides/assets/05_vacuum_oscillations/_coupled_pendula.qmd >}}
+:::

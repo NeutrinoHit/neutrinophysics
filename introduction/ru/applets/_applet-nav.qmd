@@ -1,0 +1,6 @@
+```{=html}
+<nav class="applet-nav" aria-label="Навигация по апплетам">
+  <a href="index.html">← Все апплеты</a>
+  <a href="../../index.html">К курсу</a>
+</nav>
+```

@@ -1,0 +1,476 @@
+.loss-cone-lab {
+  --lc-text: #eef7ff;
+  --lc-muted: #a9bfd0;
+  --lc-line: #67d5ff;
+  --lc-line-soft: rgba(103, 213, 255, 0.28);
+  --lc-particle: #f8c45c;
+  --lc-perp: #ff8a63;
+  --lc-loss: #ff6b63;
+  --lc-trapped: #68d7ff;
+  --lc-panel: rgba(6, 23, 40, 0.84);
+  width: min(1760px, 100%);
+  margin: 0.08rem auto 0;
+  color: var(--lc-text);
+  font-family: system-ui, sans-serif;
+}
+
+.loss-cone-lab-intro {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 0.15rem 1.4rem;
+  margin: 0 0 0.38rem;
+  padding-left: 1.15rem;
+  font-size: 0.47em;
+  line-height: 1.22;
+}
+
+.loss-cone-lab-intro li::marker,
+.loss-cone-setup li::marker {
+  color: var(--lc-line);
+}
+
+.loss-cone-lab-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2.65fr) minmax(390px, 0.88fr);
+  gap: 18px;
+  height: 680px;
+}
+
+.loss-cone-lab-stage {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 15px;
+  background:
+    radial-gradient(circle at 76% 32%, rgba(47, 111, 155, 0.14), transparent 31%),
+    linear-gradient(165deg, rgba(8, 29, 50, 0.98), rgba(2, 12, 24, 0.98));
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.24);
+}
+
+.loss-cone-lab-stage svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.loss-cone-lab-controls {
+  box-sizing: border-box;
+  min-width: 0;
+  height: 100%;
+  padding: 12px 15px 10px;
+  overflow: hidden;
+  border-left: 2px solid rgba(103, 213, 255, 0.34);
+  background: linear-gradient(90deg, rgba(10, 33, 53, 0.62), rgba(6, 22, 38, 0.2));
+  font-size: 0.43em;
+  line-height: 1.2;
+}
+
+.loss-cone-setup h3 {
+  margin: 0 0 0.2rem;
+  color: #ffffff;
+  font-size: 1.16em;
+  font-weight: 700;
+}
+
+.loss-cone-setup ul {
+  margin: 0 0 0.55rem;
+  padding-left: 1.2rem;
+}
+
+.loss-cone-setup li {
+  margin: 0.16rem 0;
+}
+
+.loss-cone-index-note {
+  margin: -0.18rem 0 0.45rem;
+  color: var(--lc-muted);
+  font-size: 0.84em;
+}
+
+.loss-cone-control-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-top: 0.46rem;
+  color: #dcecf8;
+}
+
+.loss-cone-control-label strong {
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+}
+
+.loss-cone-lab input[type="range"] {
+  display: block;
+  width: 100%;
+  margin: 0.18rem 0 0.08rem;
+  accent-color: #67d5ff;
+  cursor: pointer;
+}
+
+.loss-cone-control-detail {
+  color: var(--lc-muted);
+  font-size: 0.88em;
+  line-height: 1.15;
+}
+
+.loss-cone-control-detail strong {
+  color: #dff5ff;
+  font-variant-numeric: tabular-nums;
+}
+
+.loss-cone-prediction {
+  margin: 0.54rem 0 0.38rem;
+  padding: 0.42rem 0.55rem;
+  border-left: 5px solid var(--lc-trapped);
+  background: rgba(103, 213, 255, 0.09);
+  color: #eefaff;
+  font-weight: 700;
+}
+
+.loss-cone-prediction.is-loss {
+  border-left-color: var(--lc-loss);
+  background: rgba(255, 107, 99, 0.10);
+}
+
+.loss-cone-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.25rem 0.65rem;
+  margin: 0 0 0.34rem;
+}
+
+.loss-cone-values div {
+  min-width: 0;
+}
+
+.loss-cone-values dt {
+  color: var(--lc-muted);
+  font-size: 0.84em;
+}
+
+.loss-cone-values dd {
+  margin: 0.06rem 0 0;
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+}
+
+.loss-cone-energy {
+  margin-top: 0.28rem;
+  padding-top: 0.32rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.loss-cone-energy-row {
+  display: grid;
+  grid-template-columns: 35px minmax(0, 1fr) 42px;
+  align-items: center;
+  gap: 7px;
+  margin: 0.25rem 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.loss-cone-energy-row output {
+  text-align: right;
+}
+
+.loss-cone-energy-track {
+  height: 13px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.loss-cone-energy-track > span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 80ms linear;
+}
+
+.loss-cone-energy-track .parallel {
+  background: linear-gradient(90deg, #55c8ff, #5f8fff);
+}
+
+.loss-cone-energy-track .perp {
+  background: linear-gradient(90deg, #ffbd58, #ff815f);
+}
+
+.loss-cone-energy-track .total {
+  background: linear-gradient(90deg, #dbeaff, #ffffff);
+}
+
+.loss-cone-energy-row.total {
+  margin-top: 0.38rem;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.loss-cone-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 7px;
+  margin-top: 0.47rem;
+}
+
+.loss-cone-buttons button {
+  padding: 0.28rem 0.25rem;
+  border: 1px solid rgba(103, 213, 255, 0.58);
+  border-radius: 8px;
+  background: rgba(31, 116, 157, 0.18);
+  color: #e5f8ff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.loss-cone-buttons button:first-child {
+  background: rgba(49, 148, 190, 0.34);
+}
+
+.loss-cone-buttons button:hover {
+  background: rgba(64, 164, 207, 0.42);
+}
+
+.loss-cone-buttons button:focus-visible,
+.loss-cone-lab input:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.loss-cone-state-explanation {
+  min-height: 2.7em;
+  margin: 0.42rem 0 0;
+  color: #c8d9e7;
+  font-size: 0.9em;
+  line-height: 1.22;
+}
+
+.loss-cone-earth {
+  fill: url(#loss-cone-earth-gradient);
+  stroke: rgba(125, 210, 255, 0.58);
+  stroke-width: 2;
+}
+
+.loss-cone-atmosphere {
+  fill: none;
+  stroke: url(#loss-cone-atmosphere-gradient);
+  stroke-width: 8;
+}
+
+.loss-cone-earth-label {
+  fill: #eaf8ff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.loss-cone-atmosphere-label {
+  fill: #9fd6ef;
+  font-size: 16px;
+}
+
+.loss-cone-equator {
+  stroke: rgba(255, 255, 255, 0.17);
+  stroke-width: 1.5;
+  stroke-dasharray: 7 8;
+}
+
+.loss-cone-field-line {
+  fill: none;
+  stroke: var(--lc-line);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.loss-cone-travelled-path {
+  fill: none;
+  stroke: var(--lc-particle);
+  stroke-width: 5;
+  stroke-linecap: round;
+  opacity: 0.42;
+}
+
+.loss-cone-mirror-points circle {
+  fill: #071727;
+  stroke: var(--lc-trapped);
+  stroke-width: 4;
+}
+
+.loss-cone-particle > circle:first-child {
+  fill: var(--lc-particle);
+  stroke: #ffffff;
+  stroke-width: 2.5;
+}
+
+.loss-cone-particle-halo {
+  fill: none;
+  stroke: var(--lc-particle);
+  stroke-width: 2;
+  opacity: 0.32;
+}
+
+.loss-cone-particle.is-loss > circle:first-child {
+  fill: var(--lc-loss);
+}
+
+.loss-cone-particle.is-loss .loss-cone-particle-halo {
+  stroke: var(--lc-loss);
+}
+
+.loss-cone-impact-glow {
+  fill: var(--lc-loss);
+  opacity: 0;
+}
+
+.loss-cone-svg-label,
+.loss-cone-line-label,
+.loss-cone-direction-hint text,
+.loss-cone-plot-title,
+.loss-cone-plot-tick,
+.loss-cone-axis-title,
+.loss-cone-plot-note,
+.loss-cone-mirror-level-label {
+  font-family: system-ui, sans-serif;
+}
+
+.loss-cone-svg-label {
+  fill: #d9f2ff;
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.loss-cone-svg-muted {
+  fill: #8faabd;
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+}
+
+.loss-cone-line-label {
+  fill: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.loss-cone-separator {
+  stroke: rgba(255, 255, 255, 0.13);
+  stroke-width: 1;
+}
+
+.loss-cone-plot-title {
+  fill: #eef8ff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.loss-cone-plot-axis,
+.loss-cone-velocity-axis {
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 1.5;
+}
+
+.loss-cone-plot-grid {
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 1;
+}
+
+.loss-cone-plot-tick,
+.loss-cone-axis-title,
+.loss-cone-plot-note {
+  fill: var(--lc-muted);
+  font-size: 14px;
+}
+
+.loss-cone-field-plot-path {
+  fill: none;
+  stroke: var(--lc-line);
+  stroke-width: 3;
+}
+
+.loss-cone-mirror-level {
+  stroke: var(--lc-particle);
+  stroke-width: 2;
+  stroke-dasharray: 7 6;
+}
+
+.loss-cone-mirror-level.is-loss {
+  stroke: var(--lc-loss);
+}
+
+.loss-cone-mirror-level-label {
+  fill: var(--lc-particle);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.loss-cone-mirror-level-label.is-loss {
+  fill: var(--lc-loss);
+}
+
+.loss-cone-plot-mirror {
+  stroke: var(--lc-trapped);
+  stroke-width: 2;
+  stroke-dasharray: 4 5;
+}
+
+.loss-cone-plot-particle {
+  fill: var(--lc-particle);
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+.loss-cone-velocity-circle {
+  fill: rgba(255, 255, 255, 0.025);
+  stroke: rgba(255, 255, 255, 0.46);
+  stroke-width: 2;
+}
+
+.loss-cone-loss-sector {
+  fill: rgba(255, 107, 99, 0.27);
+  stroke: rgba(255, 107, 99, 0.76);
+  stroke-width: 1.5;
+}
+
+.loss-cone-velocity-arrow {
+  color: var(--lc-particle);
+  stroke: currentColor;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.loss-cone-velocity-handle {
+  fill: var(--lc-particle);
+  stroke: #ffffff;
+  stroke-width: 2;
+  cursor: grab;
+}
+
+.loss-cone-velocity-hit {
+  fill: transparent;
+  pointer-events: all;
+  cursor: crosshair;
+}
+
+@media (max-width: 1050px) {
+  .loss-cone-lab-layout {
+    grid-template-columns: minmax(0, 1fr);
+    height: auto;
+  }
+
+  .loss-cone-lab-stage {
+    min-height: 440px;
+  }
+
+  .loss-cone-lab-controls {
+    height: auto;
+    border-left: 0;
+    border-top: 2px solid rgba(103, 213, 255, 0.34);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loss-cone-energy-track > span {
+    transition: none;
+  }
+}

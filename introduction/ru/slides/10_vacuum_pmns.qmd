@@ -1144,7 +1144,15 @@ $$
 
 ### Интерактив
 
+```{=html}
+<link rel="stylesheet" href="assets/05_vacuum_oscillations/three_flavor_triangle.css">
+```
+
 {{< include assets/05_vacuum_oscillations/three_flavor_triangle_widget.qmd >}}
+
+```{=html}
+<script src="assets/05_vacuum_oscillations/three_flavor_triangle.js"></script>
+```
 
 ### Координаты
 

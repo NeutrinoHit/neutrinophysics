@@ -1,0 +1,573 @@
+```{=html}
+<style>
+.adiabatic-trough {
+  width: min(1580px, 100%);
+  margin: 0.05rem auto 0;
+  color: #eef6ff;
+  font-family: system-ui, sans-serif;
+}
+
+.adiabatic-trough-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.45rem;
+}
+
+.adiabatic-trough-lead {
+  font-size: 0.72em;
+  line-height: 1.25;
+}
+
+.adiabatic-trough-lead strong {
+  color: #ffffff;
+}
+
+.adiabatic-trough-static {
+  padding: 0.3rem 0.65rem;
+  border: 1px solid rgba(102, 209, 255, 0.58);
+  border-radius: 999px;
+  background: rgba(21, 104, 145, 0.22);
+  color: #8dddff;
+  font-size: 0.56em;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.adiabatic-trough-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(360px, 0.82fr);
+  gap: 18px;
+  height: 480px;
+}
+
+.adiabatic-trough-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 15px;
+  background: linear-gradient(160deg, rgba(12, 31, 53, 0.96), rgba(3, 14, 28, 0.96));
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+}
+
+.adiabatic-trough-channel {
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.adiabatic-trough-svg,
+.adiabatic-trough-phase-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.adiabatic-trough-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.34rem 0.7rem 0.42rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #c7d8e8;
+  font-size: 0.48em;
+  line-height: 1.25;
+}
+
+.adiabatic-trough-caption strong {
+  color: #ffffff;
+}
+
+.adiabatic-trough-side {
+  display: grid;
+  grid-template-rows: 245px 1fr;
+  gap: 14px;
+}
+
+.adiabatic-trough-phase {
+  padding: 0.25rem 0.35rem 0.1rem;
+}
+
+.adiabatic-trough-energy {
+  padding: 0.55rem 0.7rem 0.5rem;
+}
+
+.adiabatic-trough-panel-title {
+  margin: 0 0 0.35rem;
+  color: #ffffff;
+  font-size: 0.55em;
+  font-weight: 750;
+  letter-spacing: 0.01em;
+}
+
+.adiabatic-trough-energy-row {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr) 52px;
+  align-items: center;
+  gap: 9px;
+  margin: 0.42rem 0;
+  font-size: 0.47em;
+}
+
+.adiabatic-trough-energy-track {
+  height: 19px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.adiabatic-trough-energy-fill {
+  width: 50%;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 80ms linear;
+}
+
+.adiabatic-trough-energy-fill.perp {
+  background: linear-gradient(90deg, #ffb95a, #ff805b);
+}
+
+.adiabatic-trough-energy-fill.parallel {
+  background: linear-gradient(90deg, #56c9ff, #5f8cff);
+}
+
+.adiabatic-trough-energy-value {
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.adiabatic-trough-equations {
+  margin-top: 0.5rem;
+  padding-top: 0.45rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  color: #d7e7f5;
+  font-size: 0.43em;
+  line-height: 1.45;
+}
+
+.adiabatic-trough-equations .accent {
+  color: #ffbc67;
+  font-weight: 750;
+}
+
+.adiabatic-trough-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  margin-top: 0.4rem;
+}
+
+.adiabatic-trough-button {
+  padding: 0.28rem 0.62rem;
+  border: 1px solid rgba(102, 209, 255, 0.62);
+  border-radius: 999px;
+  background: rgba(44, 144, 190, 0.18);
+  color: #dff6ff;
+  font: inherit;
+  font-size: 0.42em;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.adiabatic-trough-progress {
+  flex: 1;
+  height: 5px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.adiabatic-trough-progress > span {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: #62d1ff;
+}
+
+.adiabatic-trough-axis {
+  stroke: rgba(255, 255, 255, 0.52);
+  stroke-width: 2;
+}
+
+.adiabatic-trough-contour {
+  fill: none;
+  stroke: rgba(88, 180, 229, 0.20);
+  stroke-width: 2;
+}
+
+.adiabatic-trough-boundary {
+  fill: none;
+  stroke: rgba(112, 211, 255, 0.76);
+  stroke-width: 3;
+}
+
+.adiabatic-trough-path {
+  fill: none;
+  stroke: rgba(255, 184, 92, 0.34);
+  stroke-width: 3;
+}
+
+.adiabatic-trough-trail {
+  fill: none;
+  stroke: #ffb85c;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.adiabatic-trough-particle {
+  fill: #ffb85c;
+  stroke: #ffffff;
+  stroke-width: 3;
+}
+
+.adiabatic-trough-arrow-parallel {
+  stroke: #63cfff;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.adiabatic-trough-arrow-perp {
+  stroke: #ff8a63;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.adiabatic-trough-svg-label {
+  fill: #dceaf6;
+  font-family: system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 650;
+}
+
+.adiabatic-trough-svg-muted {
+  fill: #9eb6c9;
+  font-family: system-ui, sans-serif;
+  font-size: 17px;
+}
+
+.adiabatic-trough-phase-grid {
+  stroke: rgba(255, 255, 255, 0.1);
+  stroke-width: 1;
+}
+
+.adiabatic-trough-phase-axis {
+  stroke: rgba(255, 255, 255, 0.5);
+  stroke-width: 2;
+}
+
+.adiabatic-trough-phase-ellipse {
+  fill: rgba(255, 181, 83, 0.12);
+  stroke: #ffb653;
+  stroke-width: 4;
+}
+
+.adiabatic-trough-phase-dot {
+  fill: #ff8760;
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+@media (max-width: 1100px) {
+  .adiabatic-trough-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .adiabatic-trough-channel {
+    min-height: 380px;
+  }
+
+  .adiabatic-trough-side {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 270px;
+  }
+}
+</style>
+
+<div class="adiabatic-trough" data-adiabatic-trough>
+  <div class="adiabatic-trough-head">
+    <div class="adiabatic-trough-lead">
+      Материальная точка запущена с \(p_\parallel(0)>0\) вдоль
+      <strong>неподвижного</strong> канала. Кривизна поперечного потенциала
+      \(k(x)=m\omega^2(x)\) плавно уменьшается.
+    </div>
+    <div class="adiabatic-trough-static">H = const, J ≃ const</div>
+  </div>
+
+  <div class="adiabatic-trough-grid">
+    <div class="adiabatic-trough-card adiabatic-trough-channel">
+      <svg class="adiabatic-trough-svg" viewBox="0 0 1000 430"
+           role="img" aria-label="Частица движется и колеблется в неподвижном канале с плавным профилем">
+        <defs>
+          <marker id="trough-arrow-blue" viewBox="0 0 10 10" refX="8" refY="5"
+                  markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#63cfff"></path>
+          </marker>
+          <marker id="trough-arrow-orange" viewBox="0 0 10 10" refX="8" refY="5"
+                  markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff8a63"></path>
+          </marker>
+        </defs>
+        <g data-trough-contours aria-hidden="true"></g>
+        <path class="adiabatic-trough-boundary" data-trough-upper></path>
+        <path class="adiabatic-trough-boundary" data-trough-lower></path>
+        <line class="adiabatic-trough-axis" x1="55" y1="215" x2="955" y2="215"></line>
+        <path class="adiabatic-trough-path" data-trough-path></path>
+        <path class="adiabatic-trough-trail" data-trough-trail></path>
+        <line class="adiabatic-trough-arrow-parallel" data-trough-parallel
+              marker-end="url(#trough-arrow-blue)"></line>
+        <line class="adiabatic-trough-arrow-perp" data-trough-perp
+              marker-end="url(#trough-arrow-orange)"></line>
+        <circle class="adiabatic-trough-particle" data-trough-particle r="11"></circle>
+        <text class="adiabatic-trough-svg-label" x="700" y="42">профиль задан в пространстве</text>
+        <text class="adiabatic-trough-svg-muted" x="78" y="400">сильное поперечное удержание</text>
+        <text class="adiabatic-trough-svg-muted" x="716" y="400">слабое поперечное удержание</text>
+        <text class="adiabatic-trough-svg-label" data-trough-parallel-label>p∥</text>
+        <text class="adiabatic-trough-svg-label" data-trough-perp-label>P</text>
+      </svg>
+      <div class="adiabatic-trough-caption">
+        <span><strong>Амплитуда растёт:</strong> \(Q_{\max}\propto\omega^{-1/2}\)</span>
+        <span><strong>Поперечный импульс падает:</strong> \(P_{\max}\propto\omega^{1/2}\)</span>
+      </div>
+    </div>
+
+    <div class="adiabatic-trough-side">
+      <div class="adiabatic-trough-card adiabatic-trough-phase">
+        <div class="adiabatic-trough-panel-title">Фазовый эллипс \((Q,P)\)</div>
+        <svg class="adiabatic-trough-phase-svg" viewBox="0 0 500 245"
+             role="img" aria-label="Фазовый эллипс расширяется по координате и сжимается по импульсу">
+          <g aria-hidden="true">
+            <line class="adiabatic-trough-phase-grid" x1="70" y1="60" x2="455" y2="60"></line>
+            <line class="adiabatic-trough-phase-grid" x1="70" y1="185" x2="455" y2="185"></line>
+            <line class="adiabatic-trough-phase-grid" x1="155" y1="25" x2="155" y2="220"></line>
+            <line class="adiabatic-trough-phase-grid" x1="355" y1="25" x2="355" y2="220"></line>
+            <line class="adiabatic-trough-phase-axis" x1="55" y1="123" x2="470" y2="123"></line>
+            <line class="adiabatic-trough-phase-axis" x1="255" y1="225" x2="255" y2="20"></line>
+            <ellipse class="adiabatic-trough-phase-ellipse" data-trough-ellipse
+                     cx="255" cy="123" rx="92" ry="75"></ellipse>
+            <circle class="adiabatic-trough-phase-dot" data-trough-phase-dot r="8"></circle>
+            <text class="adiabatic-trough-svg-label" x="470" y="115">Q</text>
+            <text class="adiabatic-trough-svg-label" x="268" y="25">P</text>
+            <text class="adiabatic-trough-svg-muted" x="72" y="38">площадь = 2πJ = const</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="adiabatic-trough-card adiabatic-trough-energy">
+        <div class="adiabatic-trough-panel-title">Перераспределение одной полной энергии</div>
+        <div class="adiabatic-trough-energy-row">
+          <span>\(E_\perp\)</span>
+          <div class="adiabatic-trough-energy-track"><div class="adiabatic-trough-energy-fill perp" data-trough-eperp></div></div>
+          <span class="adiabatic-trough-energy-value" data-trough-eperp-value></span>
+        </div>
+        <div class="adiabatic-trough-energy-row">
+          <span>\(E_\parallel\)</span>
+          <div class="adiabatic-trough-energy-track"><div class="adiabatic-trough-energy-fill parallel" data-trough-eparallel></div></div>
+          <span class="adiabatic-trough-energy-value" data-trough-eparallel-value></span>
+        </div>
+        <div class="adiabatic-trough-equations">
+          <div>\(H=E_\parallel+E_\perp,\quad E_\perp=P^2/(2m)+m\omega^2(x)Q^2/2\)</div>
+          <div>\(J=E_\perp/\omega\simeq\mathrm{const}\)</div>
+          <div><span class="accent">ω ↓ ⇒ E⊥ = Jω ↓</span> ⇒ \(E_\parallel=H-E_\perp ↑\)</div>
+        </div>
+        <div class="adiabatic-trough-controls">
+          <button class="adiabatic-trough-button" type="button" data-trough-toggle>Пауза</button>
+          <button class="adiabatic-trough-button" type="button" data-trough-restart>Сначала</button>
+          <div class="adiabatic-trough-progress" aria-hidden="true"><span data-trough-progress></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(() => {
+  const NS = "http://www.w3.org/2000/svg";
+
+  function initialize(root) {
+    if (root.dataset.adiabaticTroughReady === "true") return;
+    root.dataset.adiabaticTroughReady = "true";
+
+    const upper = root.querySelector("[data-trough-upper]");
+    const lower = root.querySelector("[data-trough-lower]");
+    const contourGroup = root.querySelector("[data-trough-contours]");
+    const path = root.querySelector("[data-trough-path]");
+    const trail = root.querySelector("[data-trough-trail]");
+    const particle = root.querySelector("[data-trough-particle]");
+    const parallel = root.querySelector("[data-trough-parallel]");
+    const perpendicular = root.querySelector("[data-trough-perp]");
+    const parallelLabel = root.querySelector("[data-trough-parallel-label]");
+    const perpendicularLabel = root.querySelector("[data-trough-perp-label]");
+    const ellipse = root.querySelector("[data-trough-ellipse]");
+    const phaseDot = root.querySelector("[data-trough-phase-dot]");
+    const ePerpFill = root.querySelector("[data-trough-eperp]");
+    const eParallelFill = root.querySelector("[data-trough-eparallel]");
+    const ePerpValue = root.querySelector("[data-trough-eperp-value]");
+    const eParallelValue = root.querySelector("[data-trough-eparallel-value]");
+    const toggle = root.querySelector("[data-trough-toggle]");
+    const restart = root.querySelector("[data-trough-restart]");
+    const progressBar = root.querySelector("[data-trough-progress]");
+
+    const x0 = 72;
+    const x1 = 930;
+    const centerY = 215;
+    const samples = 520;
+    const points = [];
+
+    function smoothstep(s) {
+      return s * s * (3 - 2 * s);
+    }
+
+    function omega(s) {
+      return 1 - 0.72 * smoothstep(s);
+    }
+
+    function halfWidth(s) {
+      return 66 + 106 * smoothstep(s);
+    }
+
+    let phase = -Math.PI / 2;
+    const phaseScale = 2 * Math.PI * 13 / 0.64;
+    for (let i = 0; i <= samples; i += 1) {
+      const s = i / samples;
+      if (i > 0) {
+        const previous = (i - 0.5) / samples;
+        phase += phaseScale * omega(previous) / samples;
+      }
+      const w = omega(s);
+      const amplitude = 39 / Math.sqrt(w);
+      points.push({
+        s: s,
+        x: x0 + (x1 - x0) * s,
+        y: centerY + amplitude * Math.sin(phase),
+        phase: phase,
+        w: w,
+        amplitude: amplitude
+      });
+    }
+
+    function linePath(values) {
+      return values.map((point, index) =>
+        (index === 0 ? "M" : "L") + point[0].toFixed(1) + "," + point[1].toFixed(1)
+      ).join(" ");
+    }
+
+    const upperPoints = [];
+    const lowerPoints = [];
+    for (let i = 0; i <= 160; i += 1) {
+      const s = i / 160;
+      const x = x0 + (x1 - x0) * s;
+      const width = halfWidth(s);
+      upperPoints.push([x, centerY - width]);
+      lowerPoints.push([x, centerY + width]);
+    }
+    upper.setAttribute("d", linePath(upperPoints));
+    lower.setAttribute("d", linePath(lowerPoints));
+    path.setAttribute("d", linePath(points.map(point => [point.x, point.y])));
+
+    [0.34, 0.60, 0.82].forEach(level => {
+      [-1, 1].forEach(sign => {
+        const contour = document.createElementNS(NS, "path");
+        const contourPoints = upperPoints.map((point, index) => {
+          const s = index / (upperPoints.length - 1);
+          return [point[0], centerY + sign * halfWidth(s) * level];
+        });
+        contour.setAttribute("class", "adiabatic-trough-contour");
+        contour.setAttribute("d", linePath(contourPoints));
+        contourGroup.appendChild(contour);
+      });
+    });
+
+    let running = true;
+    let progress = 0;
+    let lastTime = performance.now();
+    const duration = 12.5;
+
+    function formatEnergy(value) {
+      return value.toFixed(2).replace(".", ",");
+    }
+
+    function update(s) {
+      const index = Math.min(samples, Math.max(0, Math.round(s * samples)));
+      const point = points[index];
+      const w = point.w;
+      const ePerp = 0.68 * w;
+      const eParallel = 1 - ePerp;
+      const pParallel = Math.sqrt(eParallel);
+      const pPerp = Math.sqrt(w) * Math.cos(point.phase);
+
+      particle.setAttribute("cx", point.x);
+      particle.setAttribute("cy", point.y);
+      trail.setAttribute("d", linePath(points.slice(Math.max(0, index - 54), index + 1).map(item => [item.x, item.y])));
+
+      const parallelLength = 68 + 55 * pParallel;
+      parallel.setAttribute("x1", point.x);
+      parallel.setAttribute("y1", point.y);
+      parallel.setAttribute("x2", point.x + parallelLength);
+      parallel.setAttribute("y2", point.y);
+      parallelLabel.setAttribute("x", point.x + parallelLength + 9);
+      parallelLabel.setAttribute("y", point.y - 9);
+
+      const perpendicularLength = 68 * pPerp;
+      perpendicular.setAttribute("x1", point.x);
+      perpendicular.setAttribute("y1", point.y);
+      perpendicular.setAttribute("x2", point.x);
+      perpendicular.setAttribute("y2", point.y - perpendicularLength);
+      perpendicularLabel.setAttribute("x", point.x + 12);
+      perpendicularLabel.setAttribute("y", point.y - perpendicularLength + (perpendicularLength >= 0 ? -8 : 23));
+
+      const rx = 86 / Math.sqrt(w);
+      const ry = 71 * Math.sqrt(w);
+      ellipse.setAttribute("rx", rx);
+      ellipse.setAttribute("ry", ry);
+      phaseDot.setAttribute("cx", 255 + rx * Math.sin(point.phase));
+      phaseDot.setAttribute("cy", 123 - ry * Math.cos(point.phase));
+
+      ePerpFill.style.width = String(100 * ePerp) + "%";
+      eParallelFill.style.width = String(100 * eParallel) + "%";
+      ePerpValue.textContent = formatEnergy(ePerp);
+      eParallelValue.textContent = formatEnergy(eParallel);
+      progressBar.style.width = String(100 * s) + "%";
+    }
+
+    function isVisible() {
+      const slide = root.closest("section");
+      return document.visibilityState !== "hidden" && (!slide || slide.classList.contains("present"));
+    }
+
+    function frame(now) {
+      const dt = Math.min(0.05, Math.max(0, (now - lastTime) / 1000));
+      lastTime = now;
+      if (running && isVisible()) {
+        progress += dt / duration;
+        if (progress > 1.08) progress = 0;
+        update(Math.min(1, progress));
+      }
+      requestAnimationFrame(frame);
+    }
+
+    toggle.addEventListener("click", () => {
+      running = !running;
+      toggle.textContent = running ? "Пауза" : "Продолжить";
+    });
+
+    restart.addEventListener("click", () => {
+      progress = 0;
+      running = true;
+      toggle.textContent = "Пауза";
+      update(0);
+    });
+
+    update(0);
+    requestAnimationFrame(frame);
+  }
+
+  document.querySelectorAll("[data-adiabatic-trough]").forEach(initialize);
+})();
+</script>
+```

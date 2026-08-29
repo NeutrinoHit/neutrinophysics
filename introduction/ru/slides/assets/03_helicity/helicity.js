@@ -434,14 +434,17 @@
   };
 
   const initialize = () => {
-    if (!window.Reveal) return;
     initializeSpinTagging();
     initializeManualAnimations();
     initializeExperimentScenes();
     initializeResonanceExplorers();
-    Reveal.on("ready", (event) => restartAnimations(event.currentSlide));
-    Reveal.on("slidechanged", (event) => restartAnimations(event.currentSlide));
-    restartAnimations(Reveal.getCurrentSlide());
+    if (window.Reveal) {
+      Reveal.on("ready", (event) => restartAnimations(event.currentSlide));
+      Reveal.on("slidechanged", (event) => restartAnimations(event.currentSlide));
+      restartAnimations(Reveal.getCurrentSlide());
+    } else {
+      restartAnimations(document);
+    }
   };
 
   if (document.readyState === "loading") {

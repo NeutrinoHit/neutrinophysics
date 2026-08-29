@@ -1,0 +1,24 @@
+---
+title: "Радиационные пояса Земли"
+description: "Интерактивная игра о магнитном зеркале и конусе потерь"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Выберите силовую линию и угол скорости частицы к магнитному полю на экваторе. Затем попробуйте заранее угадать: частица останется в радиационном поясе или войдёт в атмосферу?
+
+```{=html}
+<link rel="stylesheet" href="../slides/assets/06_mac_e_spectrometer/loss_cone_interactive.css">
+```
+
+::: {.applet-stage .applet-stage--large .applet-stage--reveal-scale}
+{{< include ../slides/assets/06_mac_e_spectrometer/_loss_cone_interactive.qmd >}}
+:::
+
+```{=html}
+<script src="../slides/assets/06_mac_e_spectrometer/loss_cone_interactive.js"></script>
+```
+
+::: {.applet-note}
+Модель использует дипольное поле Земли и адиабатический инвариант. Показано движение направляющего центра: быстрая циклотронная спираль не рисуется.
+:::

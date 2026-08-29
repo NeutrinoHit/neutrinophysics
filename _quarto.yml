@@ -20,6 +20,8 @@ project:
     - "*.qmd"
     - "introduction/index.qmd"
     - "introduction/en/index.qmd"
+    - "introduction/ru/applets/*.qmd"
+    - "!introduction/ru/applets/_*.qmd"
     - "introduction/ru/slides/*.qmd"
     - "introduction/en/slides/*.qmd"
     - "introduction/ru/exercises/index.qmd"
@@ -59,6 +61,8 @@ website:
         text: Физика нейтрино
       - href: introduction/index.qmd
         text: Введение
+      - href: introduction/ru/applets/index.qmd
+        text: Апплеты
       - href: solar-neutrino-masterclass/index.qmd
         text: Solar Neutrinos
       - href: https://neutrinohit.github.io/lectures.html

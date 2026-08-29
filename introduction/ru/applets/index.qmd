@@ -1,0 +1,83 @@
+---
+title: "Интерактивные апплеты"
+description: "Интерактивные модели к курсу «Введение в физику нейтрино»"
+---
+
+```{=html}
+<div class="applet-index-lead">
+  <p>Здесь собраны интерактивные модели из лекций. Их можно открыть отдельно, развернуть на весь экран и спокойно исследовать в собственном темпе.</p>
+  <a class="course-back-link" href="../../index.html">← К курсу</a>
+</div>
+
+<section class="applet-card-grid" aria-label="Апплеты курса">
+  <article class="applet-card applet-card--featured">
+    <span class="applet-card-kicker">Магнитное зеркало · игра</span>
+    <h2><a href="radiation-belts.html">Радиационные пояса Земли</a></h2>
+    <p>Выберите силовую линию и угол старта. Частица отразится магнитным зеркалом или попадёт в атмосферу?</p>
+    <a class="applet-card-action" href="radiation-belts.html">Запустить игру →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 03</span>
+    <h2><a href="resonance-filter.html">Ядерный резонанс</a></h2>
+    <p>Доплеровская настройка энергии фотона в опыте Голдхабера.</p>
+    <a class="applet-card-action" href="resonance-filter.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 04</span>
+    <h2><a href="fermi-function.html">Функция Ферми</a></h2>
+    <p>Как кулоновское поле ядра по-разному меняет β⁻- и β⁺-спектры.</p>
+    <a class="applet-card-action" href="fermi-function.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 04</span>
+    <h2><a href="mass-spectrum.html">Массовые пороги</a></h2>
+    <p>Как несколько массовых состояний нейтрино проявляются у конца β-спектра.</p>
+    <a class="applet-card-action" href="mass-spectrum.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 05</span>
+    <h2><a href="cyclotron-motion.html">Электрон в магнитном поле</a></h2>
+    <p>Одно и то же движение в координатном и фазовом пространствах.</p>
+    <a class="applet-card-action" href="cyclotron-motion.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 09</span>
+    <h2><a href="two-flavor-oscillations.html">Два флэйвора</a></h2>
+    <p>Угол смешивания, разность масс и развитие квантового состояния.</p>
+    <a class="applet-card-action" href="two-flavor-oscillations.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 09</span>
+    <h2><a href="coupled-pendula.html">Связанные маятники</a></h2>
+    <p>Механическая модель осцилляций и обмена энергией между состояниями.</p>
+    <a class="applet-card-action" href="coupled-pendula.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 10</span>
+    <h2><a href="flavor-triangle.html">Треугольник флэйворов</a></h2>
+    <p>Трёхфлэйворные осцилляции, энергия, база и CP-фаза.</p>
+    <a class="applet-card-action" href="flavor-triangle.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 12</span>
+    <h2><a href="matter-constant.html">Осцилляции в слое</a></h2>
+    <p>Амплитуда, период и резонанс при постоянной плотности вещества.</p>
+    <a class="applet-card-action" href="matter-constant.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 13</span>
+    <h2><a href="matter-adiabatic.html">Адиабатический MSW-переход</a></h2>
+    <p>Медленный и быстрый профили плотности на избегаемом пересечении.</p>
+    <a class="applet-card-action" href="matter-adiabatic.html">Открыть →</a>
+  </article>
+</section>
+```

@@ -1,0 +1,7 @@
+lang: ru-RU
+
+format:
+  html:
+    css: applets.css
+    toc: false
+    page-layout: full
