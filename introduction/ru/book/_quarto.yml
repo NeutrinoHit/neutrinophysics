@@ -1,13 +1,14 @@
 project:
   type: book
-  output-dir: _book
+  output-dir: ../../../_site/introduction/ru/book
   resources:
     - "assets/chapters/**"
+    - "assets/covers/**"
 
 book:
   title: "Введение в физику нейтрино"
   author: "Дмитрий В. Наумов"
-  cover-image: assets/images/book-cover.jpg
+  cover-image: assets/covers/front.svg
   site-url: "https://neutrinohit.github.io/neutrinophysics/introduction/ru/book/"
   repo-url: "https://github.com/NeutrinoHit/neutrinophysics"
   repo-subdir: "introduction/ru/book"
@@ -102,7 +103,9 @@ format:
       body-width: 1050px
       margin-width: 230px
       gutter-width: 1rem
-    css: assets/styles/book.css
+    css:
+      - assets/styles/book.css
+      - assets/covers/covers.css
     theme: cosmo
     code-copy: true
     anchor-sections: true
@@ -130,7 +133,10 @@ format:
     toc-depth: 2
     number-sections: true
     pdf-engine: lualatex
-    include-in-header: assets/latex/book.tex
+    include-in-header:
+      - assets/latex/book.tex
+      - assets/covers/covers.tex
+    include-after-body: assets/covers/back-cover.tex
     template-partials:
       - assets/latex/before-body.tex
   epub:
