@@ -4,3 +4,14 @@ body-classes: book-cover-page
 ---
 
 # Введение в физику нейтрино {.unnumbered}
+
+::: {.content-visible when-format="html"}
+```{=html}
+<details class="book-cover-back">
+  <summary>Задняя обложка · о книге и авторе</summary>
+  <a href="assets/covers/back.svg" aria-label="Открыть заднюю обложку крупно">
+    <img src="assets/covers/back.svg" width="210" height="297" loading="lazy" alt="Задняя обложка: «От квантового состояния к экспериментальному открытию», об авторе и наградах в составе Daya Bay">
+  </a>
+</details>
+```
+:::
