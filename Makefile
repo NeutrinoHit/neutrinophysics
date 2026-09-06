@@ -1,6 +1,11 @@
 .PHONY: site render ci-setup book book-html book-pdf book-epub preview preview-paths preview-solar preview-solar-lecture preview-solar-session1 preview-solar-session2 preview-solar-defense
 
 BOOK_DIR := introduction/ru/book
+BOOK_RENDER_FLAGS :=
+ifeq ($(GITHUB_ACTIONS),true)
+# CI prepares TeX packages before rendering; report actual LaTeX errors directly.
+BOOK_RENDER_FLAGS += -M latex-auto-install:false
+endif
 
 ci-setup:
 	@if command -v rsvg-convert >/dev/null 2>&1; then \
@@ -12,7 +17,10 @@ ci-setup:
 	  exit 1; \
 	fi
 	@rsvg-convert --version
-	@if command -v lualatex >/dev/null 2>&1; then \
+	@if [ "$(GITHUB_ACTIONS)" = true ]; then \
+	  quarto install tinytex --no-prompt && \
+	  sh scripts/setup_book_tex.sh; \
+	elif command -v lualatex >/dev/null 2>&1; then \
 	  echo 'LuaLaTeX already installed.'; \
 	else \
 	  quarto install tinytex --no-prompt; \
@@ -34,16 +42,16 @@ site:
 render: site
 
 book:
-	quarto render $(BOOK_DIR)
+	quarto render $(BOOK_DIR) $(BOOK_RENDER_FLAGS)
 
 book-html:
-	quarto render $(BOOK_DIR) --to html
+	quarto render $(BOOK_DIR) --to html $(BOOK_RENDER_FLAGS)
 
 book-pdf:
-	quarto render $(BOOK_DIR) --to pdf
+	quarto render $(BOOK_DIR) --to pdf $(BOOK_RENDER_FLAGS)
 
 book-epub:
-	quarto render $(BOOK_DIR) --to epub
+	quarto render $(BOOK_DIR) --to epub $(BOOK_RENDER_FLAGS)
 
 preview-paths:
 	@mkdir -p _site
