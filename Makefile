@@ -3,6 +3,15 @@
 BOOK_DIR := introduction/ru/book
 
 ci-setup:
+	@if command -v rsvg-convert >/dev/null 2>&1; then \
+	  echo 'rsvg-convert already installed.'; \
+	elif command -v apt-get >/dev/null 2>&1; then \
+	  sudo apt-get update && sudo apt-get install -y --no-install-recommends librsvg2-bin; \
+	else \
+	  echo 'Install rsvg-convert: librsvg2-bin on Debian/Ubuntu, librsvg on macOS.' >&2; \
+	  exit 1; \
+	fi
+	@rsvg-convert --version
 	@if command -v lualatex >/dev/null 2>&1; then \
 	  echo 'LuaLaTeX already installed.'; \
 	else \
