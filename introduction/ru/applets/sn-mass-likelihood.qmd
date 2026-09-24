@@ -1,0 +1,25 @@
+---
+title: "Масса по временам прилёта"
+description: "Нейтрино от сверхновой приходят вразнобой: правдоподобие превращает разброс в оценку массы"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Пятнадцать нейтрино от сверхновой на расстоянии 10 кпк. Массивное нейтрино
+опаздывает, и тем сильнее, чем меньше его энергия. Момент вспышки неизвестен,
+поэтому работает только зависимость задержки от энергии.
+
+::: {.applet-stage .applet-stage--large}
+{{< include ../slides/assets/08_alternative_neutrino_mass/_sn_mass_likelihood.qmd >}}
+:::
+
+::: {.applet-note}
+Модель: задержка $\Delta t=5{,}15\ \text{мс}\cdot(m/\text{эВ})^2\cdot(10\ \text{МэВ}/E)^2$,
+время рождения каждого нейтрино разбросано по Гауссу с шириной $\sigma_t$.
+Оценка массы — метод наименьших квадратов, он же максимум правдоподобия для
+гауссовых ошибок; неизвестный момент вспышки исключён аналитически.
+Отрицательная оценка $m^2$ здесь так же законна, как в KATRIN.
+
+[Объяснение в лекции 08](../slides/08_alternative_neutrino_mass.qmd) ·
+[Исходный код](https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/slides/assets/08_alternative_neutrino_mass/_sn_mass_likelihood.qmd)
+:::

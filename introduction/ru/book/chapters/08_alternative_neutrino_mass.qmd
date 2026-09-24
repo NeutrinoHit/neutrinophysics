@@ -28,14 +28,14 @@ $$ {#eq-cres-frequency}
 По измеренной частоте кинетическая энергия находится непосредственно:
 
 $$
-K
+E
 =
 m_ec^2\left(\frac{f_0}{f_c}-1\right).
 $$ {#eq-cres-energy}
 
 При $B=1~\text{Тл}$ электрон конца тритиевого спектра излучает на частоте около
-$27~\text{ГГц}$. Метод CRES --- cyclotron radiation emission spectroscopy ---
-определяет энергию по этому радиосигналу.
+$27~\text{ГГц}$. Метод циклотронной радиоспектроскопии (CRES) определяет
+энергию по этому радиосигналу.
 
 ### Мощность и регистрация
 
@@ -49,18 +49,18 @@ P
 \beta_\perp=\beta\sin\theta.
 $$ {#eq-cres-radiated-power}
 
-Для $K=18.6~\text{кэВ}$, $B=1~\text{Тл}$ и $\theta=90^\circ$ получаем
-$P\simeq1.2\cdot10^{-15}~\text{Вт}$. В Phase II излучение возбуждало моду
-ячейки-волновода. Сигнал проходил через криогенный усилитель, перенос частоты
+Для $E=18.6~\text{кэВ}$, $B=1~\text{Тл}$ и $\theta=90^\circ$ получаем
+$P\simeq1.2\cdot10^{-15}~\text{Вт}$. На втором этапе излучение возбуждало моду
+ячейки-волновода. Сигнал проходил через криогенный усилитель, преобразователь частоты
 и аналого-цифровой преобразователь; преобразование Фурье давало спектрограмму.
 
-::: {#anim-project8-cres .animation title="Циклотронное излучение одного электрона" src="../assets/chapters/04_direct_neutrino_mass/project8_cres.mp4" poster="../assets/chapters/04_direct_neutrino_mass/project8_cres.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/04_direct_neutrino_mass/project8_cres.mp4" qr="../assets/chapters/04_direct_neutrino_mass/qr/project8_cres.png"}
+::: {#anim-project8-cres .animation title="Циклотронное излучение одного электрона" src="../assets/chapters/04_direct_neutrino_mass/project8_cres.mp4" poster="../assets/chapters/04_direct_neutrino_mass/project8_cres.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/04_direct_neutrino_mass/project8_cres.mp4" qr="../assets/chapters/04_direct_neutrino_mass/qr/project8_cres.png" repo="https://github.com/NeutrinoHit/dvnanima/tree/main/project8_cres" repo-label="dvnanima/project8_cres"}
 Электрон движется в магнитной ловушке и излучает микроволновый сигнал.
 Частота задаёт энергию, а продолжительность трека --- время наблюдения до
 рассеяния или выхода из ловушки.
 :::
 
-Пока электрон излучает, $\dot K<0$, $\dot\gamma<0$ и $\dot f_c>0$. Поэтому
+Пока электрон излучает, $\dot E<0$, $\dot\gamma<0$ и $\dot f_c>0$. Поэтому
 одиночное событие образует на спектрограмме возрастающий частотный трек.
 
 ### Ловушка и боковые полосы
@@ -84,14 +84,14 @@ $$
 \Phi(t)=2\pi f_ct+h\sin(2\pi f_zt),
 \qquad
 h=\frac{\Delta f}{f_z},
-$$
+$$ {#eq-cres-phase-modulation}
 
 где $f_z$ --- частота продольных колебаний. Разложение Якоби--Ангера
 
 $$
 e^{ih\sin\vartheta}
 =\sum_{n=-\infty}^{\infty}J_n(h)e^{in\vartheta}
-$$
+$$ {#eq-jacobi-anger-expansion}
 
 даёт гребёнку линий
 
@@ -116,7 +116,7 @@ A_n(f)
 =T_{\mathrm{obs}}
 e^{i\pi(f_n-f)T_{\mathrm{obs}}}
 \operatorname{sinc}\!\left[\pi(f_n-f)T_{\mathrm{obs}}\right],
-$$
+$$ {#eq-cres-finite-track-amplitude}
 
 а ширина пика равна
 
@@ -125,7 +125,7 @@ $$
 \simeq\frac{0.886}{T_{\mathrm{obs}}}.
 $$ {#eq-cres-finite-track-width}
 
-::: {#anim-cres-frequency-track .animation title="Частотный трек CRES" epub-src="../assets/chapters/04_direct_neutrino_mass/cres_frequency_track.mp4" poster="../assets/chapters/04_direct_neutrino_mass/cres_frequency_track.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/08_alternative_neutrino_mass.html#/cres-frequency-track" qr="../assets/chapters/04_direct_neutrino_mass/qr/cres_frequency_track.png"}
+::: {#interactive-cres-observables .interactive title="Спектр излучения и частотный трек CRES" embed="../../applets/cres-observables.html" height="50rem" poster="../assets/chapters/04_direct_neutrino_mass/cres_frequency_track.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/cres-observables.html" qr="../assets/chapters/04_direct_neutrino_mass/qr/cres_frequency_track.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/cres-observables.qmd" repo-label="код апплета"}
 Наклон линии возникает из-за радиационных потерь. Резкие скачки соответствуют
 столкновениям с остаточным газом, после которых начинается новый сегмент трека.
 :::
@@ -135,25 +135,25 @@ $$ {#eq-cres-finite-track-width}
 Дифференцируя @eq-cres-energy, получаем
 
 $$
-|\delta K|
-=(m_ec^2+K)\frac{|\delta f_c|}{f_c}.
+|\delta E|
+=(m_ec^2+E)\frac{|\delta f_c|}{f_c}.
 $$ {#eq-cres-resolution}
 
-У конца тритиевого спектра разрешение $\Delta K=0.10~\text{эВ}$ требует
+У конца тритиевого спектра разрешение $\Delta E=0.10~\text{эВ}$ требует
 $\Delta f_c\simeq5.1~\text{кГц}$ и, только по фурье-пределу,
 $T_{\mathrm{obs}}\gtrsim0.17~\text{мс}$. Реальное разрешение зависит также от
 неоднородности поля, боковых полос, угла, положения электрона и рассеяния.
 
-Во второй фазе Project 8 на молекулярном тритии было достигнуто разрешение
-$\Delta E_{\mathrm{FWHM}}=1.66\pm0.19~\text{эВ}$. Получены пределы
+На втором этапе Project 8 с молекулярным тритием была достигнута полная ширина
+линии на половине максимума $\Delta E=1.66\pm0.19~\text{эВ}$. Получены пределы
 $m_\beta<155~\text{эВ}$ в байесовском и $m_\beta<152~\text{эВ}$ в
 частотном анализе, оба при уровне $90\%$. Эти значения
 характеризуют демонстрацию CRES, а не достигнутую KATRIN чувствительность.
 
 Для большого объёма исследуется свободнопространственная система с массивом
 антенн: относительные фазы позволяют локализовать электрон и когерентно
-суммировать сигнал. Концепция Phase IV использует атомарный тритий и ставит
-цель около $40~\text{мэВ}$.
+суммировать сигнал. На четвёртом этапе предполагается использовать атомарный
+тритий и достичь чувствительности около $40~\text{мэВ}$.
 
 ## Калориметрия электронного захвата в гольмии-163
 
@@ -178,7 +178,7 @@ $$ {#eq-ho-calorimetric-balance}
 
 $$
 E_c^{\max}=Q-m_\beta.
-$$
+$$ {#eq-ho-calorimetric-endpoint}
 
 Спектр состоит из атомных линий, умноженных на нейтринный фазовый объём:
 
@@ -229,7 +229,7 @@ $m_\beta<15~\text{эВ}$. HOLMES набрал около $7\cdot10^7$ событ
 | Измеряемая энергия | энергия β-электрона | вся атомная энергия девозбуждения |
 | Тип спектрометра | внешний интегральный фильтр или CRES | микрокалориметр с внутренним источником |
 | Основная атомно-молекулярная структура | конечные состояния $\mathrm{{}^3HeT^+}$ | линии и многодырочные состояния Dy |
-| Характерный инструментальный риск | потери в источнике, потенциал, фон | pile-up, форма импульса, тепловой отклик |
+| Характерный инструментальный риск | потери в источнике, потенциал, фон | наложение импульсов, форма импульса, тепловой отклик |
 
 : Два независимых подхода к прямому определению $m_\beta$. {#tbl-direct-mass-methods}
 
@@ -250,7 +250,7 @@ $^{163}\mathrm{Ho}$ оказался практичнее.
 
 $$
 \pi^+\longrightarrow\mu^++\nu_\mu
-$$
+$$ {#eq-pion-muon-neutrino-decay}
 
 масса мюонного нейтрино выражается через измеренный импульс мюона:
 
@@ -282,6 +282,12 @@ $$ {#eq-neutrino-time-delay}
 Исходный временной профиль нейтринной вспышки задаётся моделью сверхновой.
 Поэтому такой предел содержит астрофизические предположения, отсутствующие в
 лабораторном анализе β-спектра.
+
+::: {#interactive-sn-mass-likelihood .interactive title="Масса нейтрино по временам прилёта" embed="../../applets/sn-mass-likelihood.html" height="50rem" poster="../assets/chapters/08_alternative_neutrino_mass/flight-delay.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/sn-mass-likelihood.html" qr="../assets/chapters/08_alternative_neutrino_mass/qr/sn_mass_likelihood.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/sn-mass-likelihood.qmd" repo-label="код апплета"}
+Меняйте массу, число зарегистрированных нейтрино и разброс времени рождения.
+Наклон зависимости времени прилёта от $1/E^2$ определяет $m^2$, а свободный
+член поглощает неизвестный момент вспышки.
+:::
 
 | Канал | Характерная энергия | Прямой предел массы |
 |:---|---:|---:|
@@ -322,22 +328,24 @@ $$ {#eq-mbeta-inverted-floor}
 следует из осцилляционных данных в модели трёх активных нейтрино и не заменяет
 прямого измерения.
 
-## Краткое резюме
+## Итоги главы
 
-1. Project 8 определяет энергию по циклотронной частоте. Неоднородность поля
-   создаёт фазовую модуляцию и боковые полосы, а конечная длина трека задаёт
-   частотное разрешение.
-2. ECHo и HOLMES измеряют калориметрический спектр электронного захвата
-   $\,{}^{163}\mathrm{Ho}$; для них существенны энергетическое разрешение и
-   наложение импульсов.
-3. Осцилляционные данные задают минимальный масштаб $m_\beta$ внутри
-   трёхнейтринной модели, но не заменяют прямого измерения.
+- Project 8 определяет энергию по циклотронной частоте. Неоднородность поля
+  создаёт фазовую модуляцию и боковые полосы, а конечная длина трека задаёт
+  частотное разрешение.
+- ECHo и HOLMES измеряют калориметрический спектр электронного захвата
+  $\,{}^{163}\mathrm{Ho}$; для них существенны энергетическое разрешение и
+  наложение импульсов.
+- Осцилляционные данные задают минимальный масштаб $m_\beta$ внутри
+  трёхнейтринной модели, но не заменяют прямого измерения.
 
 ## Задачи
 
 {{< include ../../../_includes/exercises/08_alternative_neutrino_mass-ru.qmd >}}
 
-## Литература к лекции {.unnumbered}
+## Литература {.unnumbered}
+
+::: {.chapter-literature}
 
 1. E. Fermi. Versuch einer Theorie der β-Strahlen. *Zeitschrift für Physik*
    **88**, 161–177 (1934).
@@ -385,3 +393,4 @@ $$ {#eq-mbeta-inverted-floor}
 14. Project 8 Collaboration. Project 8 Apparatus for Cyclotron Radiation
     Emission Spectroscopy with $^{83\mathrm m}\mathrm{Kr}$ and Tritium. (2025).
     [arXiv:2503.08807](https://arxiv.org/abs/2503.08807).
+:::

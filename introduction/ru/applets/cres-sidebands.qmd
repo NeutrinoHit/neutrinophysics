@@ -1,0 +1,23 @@
+---
+title: "Боковые частоты CRES"
+description: "Как периодическое движение создаёт частотные линии одного электрона"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Меняйте безразмерный индекс фазовой модуляции $h=\Delta f/f_z$.
+Одна гармоника превращается в набор линий, разделённых частотой продольного движения.
+
+::: {.applet-stage .applet-stage--large}
+{{< include ../slides/assets/04_direct_neutrino_mass/_cres_radiation_spectrum.qmd >}}
+:::
+
+::: {.applet-note}
+Показана модель одной гармоники фазовой модуляции с фиксированной начальной фазой.
+Оранжевые линии обозначают относительные мощности бесконечно долгого сигнала;
+синяя кривая — квадрат модуля суммы амплитуд для прямоугольного окна 80 мкс.
+Высоты нормированы на максимум каждой кривой.
+
+[Объяснение в лекции 08](../slides/08_alternative_neutrino_mass.qmd) ·
+[Исходный код](https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/slides/assets/04_direct_neutrino_mass/_cres_radiation_spectrum.qmd)
+:::

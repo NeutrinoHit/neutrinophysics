@@ -19,11 +19,19 @@ body-classes: lecture-page topic-2
 Перрен в 1933 году и Энрико Ферми в 1934 году. Первые такие измерения выполнили
 Курран, Ангус и Кокрофт в 1948 году, затем Ханна и Понтекорво в 1949 году.
 
+::: {.biography name="Энрико Ферми" years="1901–1954" source="https://www.nobelprize.org/prizes/physics/1938/fermi/biographical/" source-label="Nobel Prize"}
+В 1934 году Ферми построил теорию β-распада, соединив идею Паули о нейтрино с
+квантовой теорией переходов. Теория сразу дала не только полную вероятность
+распада, но и форму непрерывного электронного спектра. Поэтому масса
+невидимой частицы стала кинематической величиной: её можно искать по тому,
+как заканчивается измеряемый спектр.
+:::
+
 Рассмотрим разрешённый β-распад
 
 $$
 (A,Z)\longrightarrow(A,Z+1)+e^-+\bar\nu_e .
-$$
+$$ {#eq-beta-decay-process}
 
 Если отдачей дочернего ядра пока пренебречь, доступная электрону и антинейтрино
 энергия равна $E_0$. Спектр электронов имеет вид
@@ -39,6 +47,47 @@ $$ {#eq-beta-spectrum-mass}
 где $E$ --- кинетическая энергия электрона, $F(Z,E)$ --- кулоновская поправка,
 а $C$ содержит ядерный матричный элемент и медленно меняющиеся множители.
 Масса нейтрино входит только в последний фазовый множитель.
+
+### Кулоновская поправка
+
+После рождения электрон движется в кулоновском поле дочернего ядра. Для
+$\beta^-$-распада ядро притягивает электрон, поэтому плотность его волновой
+функции у ядра больше, чем у свободной плоской волны. В простейшем
+нерелятивистском приближении это учитывает функция Ферми
+
+$$
+F_0(Z_d,E)
+=\frac{2\pi\eta}{1-e^{-2\pi\eta}},
+\qquad
+\eta=\alpha Z_d\frac{E+m_e}{p_e},
+$$ {#eq-fermi-function-simple}
+
+где $Z_d=Z+1$ --- заряд дочернего ядра. При малой скорости $\eta$ растёт и
+кулоновское притяжение заметно усиливает спектр. Для $\beta^+$-распада знак
+$\eta$ меняется: отталкивание, напротив, подавляет выход позитрона.
+
+Для релятивистского электрона и ядра конечного радиуса $R$ часто используют
+
+$$
+F(Z_d,E)
+=\frac{2(1+\gamma_C)(2p_eR)^{2(\gamma_C-1)}e^{\pi\eta}
+\left|\Gamma(\gamma_C+i\eta)\right|^2}
+{\Gamma^2(2\gamma_C+1)},
+\qquad
+\gamma_C=\sqrt{1-(\alpha Z_d)^2}.
+$$ {#eq-fermi-function-relativistic}
+
+Эта формула уже содержит релятивистское искажение электронной волны у ядра.
+В точном анализе к ней добавляют экранирование атомными электронами, конечный
+размер и распределение заряда ядра, радиационные поправки и отдачу. Они меняют
+медленную оболочку спектра, но не заменяют фазовый множитель, в котором
+находится чувствительность к $m_\nu$.
+
+::: {#interactive-fermi-function .interactive title="Кулоновская поправка к β-спектру" embed="../../applets/fermi-function.html" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/fermi-function.html" qr="../assets/chapters/04_direct_neutrino_mass/qr/fermi_function.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/fermi-function.qmd" repo-label="код апплета"}
+Меняйте заряд дочернего ядра и сравнивайте β⁻- и β⁺-распады. Притяжение
+электрона усиливает спектр при малых энергиях, а отталкивание позитрона
+подавляет его.
+:::
 
 В пределе $m_\nu=0$ спектр обрывается при $E=E_0$. При ненулевой массе
 
@@ -94,7 +143,7 @@ $$ {#eq-spectrum-convolution}
 конца в редкую конечную область. Если ширина отклика сравнима с искомой массой,
 форма сигнала существенно искажается.
 
-::: {#anim-endpoint-resolution .animation title="Как разрешение размывает конец спектра" epub-src="../assets/chapters/04_direct_neutrino_mass/endpoint_resolution.mp4" poster="../assets/chapters/04_direct_neutrino_mass/endpoint_resolution.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/04_neutrino_mass_kinematics.html#/endpoint-resolution" qr="../assets/chapters/04_direct_neutrino_mass/qr/endpoint_resolution.png"}
+::: {#interactive-endpoint-resolution .interactive title="Масса нейтрино и энергетическое разрешение" embed="../../applets/beta-endpoint-resolution.html" height="52rem" poster="../assets/chapters/04_direct_neutrino_mass/endpoint_resolution.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/beta-endpoint-resolution.html" qr="../assets/chapters/04_direct_neutrino_mass/qr/endpoint_resolution.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/beta-endpoint-resolution.qmd" repo-label="код апплета"}
 Интерактивный график сопоставляет истинный спектр со спектром после гауссова
 размытия. Особенно заметно изменение последних нескольких электронвольт.
 :::
@@ -114,8 +163,14 @@ $$ {#eq-spectrum-convolution}
 $$
 |\bar\nu_e\rangle
 =
-\sum_i U_{ei}^{*}|\bar\nu_i\rangle .
-$$
+\sum_i U_{ei}|\bar\nu_i\rangle .
+$$ {#eq-electron-antineutrino-decomposition}
+
+В главах об осцилляциях мы выбрали соглашение
+$|\nu_\alpha\rangle=\sum_iU_{\alpha i}^{*}|\nu_i\rangle$. Для антинейтрино
+матрица смешивания комплексно сопрягается, поэтому в уравнении
+[-@eq-electron-antineutrino-decomposition] стоит $U_{ei}$, а вероятность
+рождения каждого массового состояния в обоих случаях равна $|U_{ei}|^2$.
 
 Разные $\nu_i$ не регистрируются. Поэтому вероятности, а не амплитуды их
 рождения складываются:
@@ -147,7 +202,7 @@ E_\nu\left[
 1-\frac{1}{2E_\nu^2}\sum_i|U_{ei}|^2m_i^2
 \right].
 \end{aligned}
-$$
+$$ {#eq-effective-beta-mass-expansion}
 
 Сравнение с разложением $\sqrt{E_\nu^2-m_\beta^2}$ даёт эффективную массу
 
@@ -162,7 +217,7 @@ $$ {#eq-effective-beta-mass}
 Это положительно определённая сумма. Майорановские фазы в неё не входят, а
 вклады разных массовых состояний не могут взаимно уничтожиться.
 
-::: {#anim-resolved-mass-spectrum .animation title="Один β-спектр и несколько массовых порогов" epub-src="../assets/chapters/04_direct_neutrino_mass/resolved_mass_spectrum.mp4" poster="../assets/chapters/04_direct_neutrino_mass/resolved_mass_spectrum.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/04_neutrino_mass_kinematics.html#/resolved-mass-spectrum" qr="../assets/chapters/04_direct_neutrino_mass/qr/resolved_mass_spectrum.png"}
+::: {#interactive-resolved-mass-spectrum .interactive title="Один β-спектр и несколько массовых порогов" embed="../../applets/mass-spectrum.html" poster="../assets/chapters/04_direct_neutrino_mass/resolved_mass_spectrum.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/mass-spectrum.html" qr="../assets/chapters/04_direct_neutrino_mass/qr/resolved_mass_spectrum.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/mass-spectrum.qmd" repo-label="код апплета"}
 При достаточно хорошем разрешении каждому $m_i$ соответствовал бы собственный
 излом с весом $|U_{ei}|^2$. В реальном эксперименте эти пороги сливаются в одну
 деформацию, задаваемую $m_\beta$.
@@ -217,19 +272,19 @@ $$
 {}^3\mathrm H
 \longrightarrow
 {}^3\mathrm{He}^{+}+e^-+\bar\nu_e
-$$
+$$ {#eq-atomic-tritium-decay}
 
 имеет малую конечную энергию, короткий период полураспада
 $T_{1/2}=12.32$ года и сверхразрешённый ядерный переход. Низкое значение
-$E_0$ увеличивает долю событий у конца спектра согласно
-@eq-endpoint-fraction. Для лёгкой ядерной системы можно точно учитывать
+$E_0$ увеличивает долю событий у конца спектра согласно уравнению
+[-@eq-endpoint-fraction]. Для лёгкой ядерной системы можно точно учитывать
 отдачу и распределение молекулярных конечных состояний.
 
 В газовом источнике KATRIN распадается молекулярный тритий:
 
 $$
 \mathrm T_2\longrightarrow{}^3\mathrm{HeT}^{+}+e^-+\bar\nu_e.
-$$
+$$ {#eq-molecular-tritium-decay}
 
 Дочерний молекулярный ион может остаться в разных вращательных, колебательных и
 электронных состояниях. Если возбуждение имеет энергию $V_f$ и вероятность
@@ -252,18 +307,18 @@ $\mathrm T_2$. Узкая область около $1.7~\text{эВ}$ соотв
 холодный атомарный источник должен также подавлять рекомбинацию атомов в
 молекулы.
 
-## Краткое резюме
+## Итоги главы
 
-1. Масса нейтрино меняет форму β-спектра вблизи его конечной точки.
-2. Неразрешённый спектр измеряет $m_\beta^2=\sum_i|U_{ei}|^2m_i^2$.
-3. Тритий удобен малой конечной энергией; для молекулярного источника нужно
-   учитывать распределение возбуждённых конечных состояний.
+- Масса нейтрино меняет форму β-спектра вблизи его конечной точки.
+- Неразрешённый спектр измеряет $m_\beta^2=\sum_i|U_{ei}|^2m_i^2$.
+- Тритий удобен малой конечной энергией; для молекулярного источника нужно
+  учитывать распределение возбуждённых конечных состояний.
 
 ## Задачи
 
 {{< include ../../../_includes/exercises/04_neutrino_mass_kinematics-ru.qmd >}}
 
-## Литература к лекции {.unnumbered}
+## Литература {.unnumbered}
 
 ::: {.chapter-literature}
 1. E. Fermi. Versuch einer Theorie der β-Strahlen. *Zeitschrift für Physik*
@@ -275,4 +330,6 @@ $\mathrm T_2$. Узкая область около $1.7~\text{эВ}$ соотв
    [doi:10.1140/epjc/s10052-019-6686-7](https://doi.org/10.1140/epjc/s10052-019-6686-7).
 3. C. Giunti, C. W. Kim. *Fundamentals of Neutrino Physics and Astrophysics*.
    Oxford University Press, 2007.
+4. H. Behrens, W. Bühring. *Electron Radial Wave Functions and Nuclear Beta
+   Decay*. Clarendon Press, 1982.
 :::

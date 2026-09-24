@@ -25,13 +25,13 @@ body-classes: lecture-page topic-3
 
 $$
 \widehat H|E\rangle=E|E\rangle.
-$$
+$$ {#eq-ch09-001}
 
 Уравнение Шрёдингера
 
 $$
 i\frac{d}{dt}|\psi(t)\rangle=\widehat H|\psi(t)\rangle
-$$
+$$ {#eq-ch09-002}
 
 с начальным условием $|\psi(0)\rangle=|E\rangle$ имеет решение
 
@@ -49,14 +49,14 @@ P(a,t)
 &=|e^{-iEt}|^2|\langle a|E\rangle|^2\\
 &=P(a,0).
 \end{aligned}
-$$
+$$ {#eq-ch09-003}
 
 То же видно из матрицы плотности:
 
 $$
 \rho(t)=|\psi(t)\rangle\langle\psi(t)|
 =|E\rangle\langle E|=\rho(0).
-$$
+$$ {#eq-ch09-004}
 
 Состояния $|\psi\rangle$ и $e^{i\varphi}|\psi\rangle$ описывают один и тот же
 физический луч в гильбертовом пространстве. Общая фаза не наблюдаема.
@@ -69,7 +69,7 @@ $$
 |\psi(0)\rangle=c_1|E_1\rangle+c_2|E_2\rangle,
 \qquad
 |c_1|^2+|c_2|^2=1.
-$$
+$$ {#eq-ch09-005}
 
 Через время $t$
 
@@ -77,7 +77,7 @@ $$
 |\psi(t)\rangle
 =c_1e^{-iE_1t}|E_1\rangle
 +c_2e^{-iE_2t}|E_2\rangle.
-$$
+$$ {#eq-ch09-006}
 
 Вынесем фазу первой компоненты:
 
@@ -86,7 +86,7 @@ $$
 =e^{-iE_1t}
 \left[c_1|E_1\rangle
 +c_2e^{-i(E_2-E_1)t}|E_2\rangle\right].
-$$
+$$ {#eq-ch09-007}
 
 Внешний множитель не наблюдаем, но внутри скобок остаётся относительная фаза
 
@@ -100,7 +100,7 @@ $$ {#eq-relative-energy-phase}
 $|c_2|^2$. Осциллировать может вероятность измерения в другом базисе, где в
 одной амплитуде складываются обе энергетические компоненты.
 
-::: {#anim-oscillation-phases .animation title="Массовые фазы и флэйворные вероятности" src="../assets/chapters/05_vacuum_oscillations/neutrino_oscillation_phases.mp4" poster="../assets/chapters/05_vacuum_oscillations/neutrino_oscillation_phases.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/05_vacuum_oscillations/neutrino_oscillation_phases.mp4" qr="../assets/chapters/05_vacuum_oscillations/qr/oscillation_phases.png"}
+::: {#anim-oscillation-phases .animation title="Массовые фазы и флэйворные вероятности" src="../assets/chapters/05_vacuum_oscillations/neutrino_oscillation_phases.mp4" poster="../assets/chapters/05_vacuum_oscillations/neutrino_oscillation_phases.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/05_vacuum_oscillations/neutrino_oscillation_phases.mp4" qr="../assets/chapters/05_vacuum_oscillations/qr/oscillation_phases.png" repo="https://github.com/NeutrinoHit/dvnanima/tree/main/neutrino_oscillations_phases" repo-label="dvnanima/neutrino_oscillations_phases"}
 Доли массовых состояний постоянны. Меняется разность их фаз, а вместе с ней
 результат интерференции при проекции на флэйворный базис.
 :::
@@ -133,7 +133,7 @@ $$
 |\psi(t)\rangle
 =c_\theta e^{-iE_1t}|E_1\rangle
 +s_\theta e^{-iE_2t}|E_2\rangle.
-$$
+$$ {#eq-ch09-008}
 
 Амплитуда перехода равна
 
@@ -144,7 +144,7 @@ $$
 &=s_\theta c_\theta
 \left(e^{-iE_2t}-e^{-iE_1t}\right).
 \end{aligned}
-$$
+$$ {#eq-ch09-009}
 
 Введём среднюю энергию и расщепление:
 
@@ -152,7 +152,7 @@ $$
 \overline E=\frac{E_1+E_2}{2},
 \qquad
 \Delta E=E_2-E_1.
-$$
+$$ {#eq-ch09-010}
 
 Тогда
 
@@ -160,7 +160,7 @@ $$
 \mathcal A_{\alpha\to\beta}(t)
 =-i e^{-i\overline Et}\sin2\theta
 \sin\!\left(\frac{\Delta E\,t}{2}\right),
-$$
+$$ {#eq-ch09-011}
 
 и после взятия квадрата модуля общая фаза исчезает:
 
@@ -185,7 +185,7 @@ $P_{\alpha\to\beta}^{\max}=\sin^2 2\theta$, а расщепление энерг
 
 $$
 T_{\mathrm{osc}}=\frac{2\pi}{|\Delta E|}.
-$$
+$$ {#eq-ch09-012}
 
 ## Флэйворный и массовый базисы
 
@@ -195,7 +195,7 @@ $$
 W^+\longrightarrow\ell_\alpha^++\nu_\alpha,
 \qquad
 \nu_\beta+N\longrightarrow\ell_\beta^-+X.
-$$
+$$ {#eq-ch09-013}
 
 Источник приготавливает $|\nu_\alpha\rangle$, а детектор проектирует
 пришедшее состояние на $|\nu_\beta\rangle$. Свободно распространяются
@@ -205,7 +205,7 @@ $$
 \widehat H_0|\nu_i\rangle=E_i|\nu_i\rangle,
 \qquad
 E_i(p)=\sqrt{p^2+m_i^2}.
-$$
+$$ {#eq-ch09-014}
 
 В двухфлэйворном приближении
 
@@ -239,7 +239,7 @@ $$ {#eq-two-flavor-mixing}
 $$
 |\nu_\alpha\rangle
 =c_\theta|\nu_1\rangle+s_\theta|\nu_2\rangle
-$$
+$$ {#eq-ch09-015}
 
 измерение энергии даёт $E_1$ с вероятностью $c_\theta^2$ и $E_2$ с
 вероятностью $s_\theta^2$. Среднее и дисперсия равны
@@ -247,7 +247,7 @@ $$
 $$
 \langle H_0\rangle_\alpha
 =c_\theta^2E_1+s_\theta^2E_2,
-$$
+$$ {#eq-ch09-016}
 
 $$
 \operatorname{Var}_\alpha(H_0)
@@ -270,7 +270,7 @@ $$ {#eq-flavor-energy-variance}
 $$
 |\nu_i;t,L\rangle
 =e^{-i(E_it-p_iL)}|\nu_i\rangle.
-$$
+$$ {#eq-ch09-017}
 
 Наблюдаема разность фаз
 
@@ -285,7 +285,7 @@ $$ {#eq-plane-wave-relative-phase}
 $$
 E_i=\sqrt{p^2+m_i^2}
 \simeq p+\frac{m_i^2}{2p},
-$$
+$$ {#eq-ch09-018}
 
 и
 
@@ -295,7 +295,7 @@ $$
 \simeq\frac{\Delta m^2}{2E},
 \qquad
 \Delta m^2=m_2^2-m_1^2.
-$$
+$$ {#eq-ch09-019}
 
 Отсюда
 
@@ -344,7 +344,7 @@ $$
 L_{\mathrm{osc}}=\frac{4\pi E}{|\Delta m^2|}.
 $$ {#eq-vacuum-oscillation-length}
 
-::: {#anim-two-flavor-lab .animation title="Лаборатория двухфлэйворных осцилляций" epub-src="../assets/chapters/05_vacuum_oscillations/two_flavor_lab.mp4" poster="../assets/chapters/05_vacuum_oscillations/two_flavor_probabilities.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/09_vacuum_two_flavors.html#/two-flavor-lab" qr="../assets/chapters/05_vacuum_oscillations/qr/two_flavor_lab.png"}
+::: {#interactive-two-flavor-lab .interactive title="Лаборатория двухфлэйворных осцилляций" embed="../../applets/two-flavor-oscillations.html" poster="../assets/chapters/05_vacuum_oscillations/two_flavor_probabilities.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/two-flavor-oscillations.html" qr="../assets/chapters/05_vacuum_oscillations/qr/two_flavor_lab.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/two-flavor-oscillations.qmd" repo-label="код апплета"}
 Интерактив позволяет независимо менять угол смешивания и путь в единицах
 $L_{\mathrm{osc}}$. Первый управляет амплитудой, второй --- фазой. В каждой
 точке выполняется $P_{\alpha\to\alpha}+P_{\alpha\to\beta}=1$.
@@ -377,20 +377,20 @@ $$
 \Delta E(p)
 =\sqrt{p^2+m_2^2}-\sqrt{p^2+m_1^2}
 =\frac{\Delta m^2}{E_2(p)+E_1(p)}.
-$$
+$$ {#eq-ch09-020}
 
 Если $p\ll m_i$, то
 
 $$
 E_i=m_i+\frac{p^2}{2m_i}+O\!\left(\frac{p^4}{m_i^3}\right),
-$$
+$$ {#eq-ch09-021}
 
 $$
 \Delta E\simeq
 \Delta m\left(1-\frac{p^2}{2m_1m_2}\right),
 \qquad
 \Delta m=m_2-m_1.
-$$
+$$ {#eq-ch09-022}
 
 В ведущем порядке
 
@@ -411,7 +411,7 @@ $m_2$ могут различаться. Локальные координаты
 маятников, нормальные координаты --- собственные моды всей системы. Это та же
 структура двух базисов, которая возникла для флэйворных и массовых состояний.
 
-::: {#anim-coupled-pendula .animation title="Связанные маятники разных масс" epub-src="../assets/chapters/05_vacuum_oscillations/coupled_pendula.mp4" poster="../assets/chapters/05_vacuum_oscillations/coupled_pendula.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/09_vacuum_two_flavors.html#/%D0%B4%D0%B2%D0%B0-%D0%BC%D0%B0%D1%8F%D1%82%D0%BD%D0%B8%D0%BA%D0%B0-%D1%80%D0%B0%D0%B7%D0%BD%D1%8B%D1%85-%D0%BC%D0%B0%D1%81%D1%81" qr="../assets/chapters/05_vacuum_oscillations/qr/coupled_pendula.png"}
+::: {#interactive-coupled-pendula .interactive title="Связанные маятники разных масс" embed="../../applets/coupled-pendula.html" poster="../assets/chapters/05_vacuum_oscillations/coupled_pendula.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/coupled-pendula.html" qr="../assets/chapters/05_vacuum_oscillations/qr/coupled_pendula.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/coupled-pendula.qmd" repo-label="код апплета"}
 Отношение масс задаёт угол смешивания, жёсткость пружины --- разность
 собственных частот. График показывает точные нормированные величины
 $P_i=|a_i|^2/(|a_1|^2+|a_2|^2)$, а не приближённое распределение энергии.
@@ -425,21 +425,21 @@ $$
 \omega_0^2=\frac{g}{\ell},
 \qquad
 \varphi_i\ll1.
-$$
+$$ {#eq-ch09-023}
 
 При малых углах горизонтальное смещение груза равно
 $x_i\simeq\ell\varphi_i$, а удлинение пружины
 
 $$
 \delta s\simeq\ell(\varphi_2-\varphi_1).
-$$
+$$ {#eq-ch09-024}
 
 Кинетическая и потенциальная энергии в квадратичном приближении имеют вид
 
 $$
 T=\frac{\ell^2}{2}
 \left(m_1\dot\varphi_1^2+m_2\dot\varphi_2^2\right),
-$$
+$$ {#eq-ch09-025}
 
 $$
 V=\frac{\ell^2}{2}
@@ -447,7 +447,7 @@ V=\frac{\ell^2}{2}
 \omega_0^2(m_1\varphi_1^2+m_2\varphi_2^2)
 +k(\varphi_1-\varphi_2)^2
 \right].
-$$
+$$ {#eq-ch09-026}
 
 Последнее слагаемое связывает движения двух маятников. Уравнения Эйлера ---
 Лагранжа:
@@ -459,14 +459,14 @@ m_1\ddot\varphi_1+m_1\omega_0^2\varphi_1
 m_2\ddot\varphi_2+m_2\omega_0^2\varphi_2
 +k(\varphi_2-\varphi_1)&=0.
 \end{aligned}
-$$
+$$ {#eq-ch09-027}
 
 В матричной записи
 
 $$
 \mathsf M\ddot{\boldsymbol\varphi}
 +\mathsf K\boldsymbol\varphi=0,
-$$
+$$ {#eq-ch09-028}
 
 $$
 \mathsf M=
@@ -477,7 +477,7 @@ $$
 m_1\omega_0^2+k&-k\\
 -k&m_2\omega_0^2+k
 \end{pmatrix}.
-$$
+$$ {#eq-ch09-029}
 
 Если просто разделить первое уравнение на $m_1$, а второе на $m_2$, при
 $m_1\ne m_2$ получится несимметричная динамическая матрица. Причина в выборе
@@ -500,7 +500,7 @@ $\boldsymbol\varphi=\mathsf M^{-1/2}\boldsymbol x$ даёт
 
 $$
 \ddot{\boldsymbol x}+\Omega^2\boldsymbol x=0,
-$$
+$$ {#eq-ch09-030}
 
 $$
 \boxed{
@@ -526,7 +526,7 @@ $$
 \left[
 \omega_0^2+k\left(\frac1{m_1}+\frac1{m_2}\right)-\lambda
 \right].
-$$
+$$ {#eq-ch09-031}
 
 Собственные частоты равны
 
@@ -546,7 +546,7 @@ m_\Sigma=m_1+m_2,
 c=\sqrt{\frac{m_1}{m_\Sigma}},
 \qquad
 s=\sqrt{\frac{m_2}{m_\Sigma}}.
-$$
+$$ {#eq-ch09-032}
 
 Нормированные собственные векторы можно записать как
 
@@ -556,7 +556,7 @@ $$
 \qquad
 \boldsymbol e_-=
 \begin{pmatrix}-s\\c\end{pmatrix}.
-$$
+$$ {#eq-ch09-033}
 
 Положив $c=\cos\theta$ и $s=\sin\theta$, находим
 
@@ -580,7 +580,7 @@ U(\theta)=
 \boldsymbol x=U\boldsymbol q,
 \qquad
 \boldsymbol q=U^{\mathsf T}\boldsymbol x.
-$$
+$$ {#eq-ch09-034}
 
 Векторы $\boldsymbol x$ и $\boldsymbol q$ играют роли флэйворных и массовых
 амплитуд соответственно.
@@ -593,7 +593,7 @@ $\Omega^2$:
 
 $$
 \Omega\boldsymbol e_\pm=\omega_\pm\boldsymbol e_\pm.
-$$
+$$ {#eq-ch09-035}
 
 Объединим координаты и скорости в комплексную амплитуду
 
@@ -612,7 +612,7 @@ $$
 &=\dot{\boldsymbol x}+i\Omega^{-1}\ddot{\boldsymbol x}\\
 &=\dot{\boldsymbol x}-i\Omega\boldsymbol x,
 \end{aligned}
-$$
+$$ {#eq-ch09-036}
 
 то есть
 
@@ -624,7 +624,7 @@ $$ {#eq-pendulum-schrodinger}
 
 $$
 \frac{d}{dt}(\boldsymbol a^\dagger\boldsymbol a)=0.
-$$
+$$ {#eq-ch09-037}
 
 $$
 P_i(t)=\frac{|a_i(t)|^2}{\boldsymbol a^\dagger\boldsymbol a},
@@ -639,7 +639,7 @@ $$
 b_+(t)=b_+(0)e^{-i\omega_+t},
 \qquad
 b_-(t)=b_-(0)e^{-i\omega_-t}.
-$$
+$$ {#eq-ch09-038}
 
 Как и для нейтрино, наблюдаема разность фаз
 $\Delta\phi=(\omega_--\omega_+)t$.
@@ -651,14 +651,14 @@ $\Delta\phi=(\omega_--\omega_+)t$.
 $$
 \boldsymbol a(0)=A
 \begin{pmatrix}1\\0\end{pmatrix}.
-$$
+$$ {#eq-ch09-039}
 
 В нормальном базисе
 
 $$
 \boldsymbol b(0)=U^{\mathsf T}\boldsymbol a(0)
 =A\begin{pmatrix}c\\-s\end{pmatrix}.
-$$
+$$ {#eq-ch09-040}
 
 После набега фаз и обратного поворота
 
@@ -669,7 +669,7 @@ $$
 \frac{a_2(t)}{A}
 &=cs\left(e^{-i\omega_+t}-e^{-i\omega_-t}\right).
 \end{aligned}
-$$
+$$ {#eq-ch09-041}
 
 Отсюда
 
@@ -685,7 +685,7 @@ $$ {#eq-pendulum-transition}
 
 $$
 P_{1\to1}(t)=1-P_{1\to2}(t).
-$$
+$$ {#eq-ch09-042}
 
 Формула совпадает с @eq-two-level-transition после замены
 $\Delta E\to\Delta\omega$.
@@ -698,7 +698,7 @@ $$
 \boldsymbol x(t)=\operatorname{Re}\boldsymbol a(t),
 \qquad
 \varphi_i(t)=\frac{x_i(t)}{\sqrt{m_i}}.
-$$
+$$ {#eq-ch09-043}
 
 Величины $P_i$ в @eq-pendulum-probabilities --- доли сохраняющейся нормы
 комплексной амплитуды. Полная механическая энергия также сохраняется:
@@ -709,7 +709,7 @@ E=\frac{\ell^2}{2}
 \dot{\boldsymbol x}^{\mathsf T}\dot{\boldsymbol x}
 +\boldsymbol x^{\mathsf T}\Omega^2\boldsymbol x
 \right).
-$$
+$$ {#eq-ch09-044}
 
 При слабой связи $\Omega\simeq\omega_0I$, и тогда
 
@@ -717,7 +717,7 @@ $$
 a_i\simeq x_i+i\frac{\dot x_i}{\omega_0},
 \qquad
 E_i^{(0)}\simeq\frac{\ell^2\omega_0^2}{2}|a_i|^2.
-$$
+$$ {#eq-ch09-045}
 
 Только в этом пределе $P_i$ можно одновременно толковать как доли
 усреднённой локальной энергии. Точное соответствие с квантовой вероятностью
@@ -735,21 +735,21 @@ $$
 
 : Соответствие механической и нейтринной двухуровневых систем. {#tbl-pendulum-neutrino-analogy}
 
-## Краткое резюме
+## Итоги главы
 
-1. Флэйворное состояние является суперпозицией массовых состояний; при
-   распространении меняется их относительная фаза.
-2. В двухфлэйворной системе $\sin^2 2\theta$ задаёт амплитуду, а
-   $\Delta m^2$ — длину осцилляций.
-3. В ультрарелятивистском пределе вероятность зависит от $L/E$.
-4. Связанные маятники после массовой нормировки образуют двухуровневую
-   механическую модель той же математической структуры.
+- Флэйворное состояние является суперпозицией массовых состояний; при
+  распространении меняется их относительная фаза.
+- В двухфлэйворной системе $\sin^2 2\theta$ задаёт амплитуду, а
+  $\Delta m^2$ — длину осцилляций.
+- В ультрарелятивистском пределе вероятность зависит от $L/E$.
+- Связанные маятники после массовой нормировки образуют двухуровневую
+  механическую модель той же математической структуры.
 
 ## Задачи
 
 {{< include ../../../_includes/exercises/09_vacuum_oscillations-ru.qmd >}}
 
-## Литература к лекции {.unnumbered}
+## Литература {.unnumbered}
 
 ::: {.chapter-literature}
 1. B. Pontecorvo. Mesonium and Antimesonium. *Soviet Physics JETP* **6**

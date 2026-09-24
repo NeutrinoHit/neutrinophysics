@@ -1,0 +1,22 @@
+---
+title: "Частотный трек электрона"
+description: "Излучение уменьшает энергию электрона и повышает циклотронную частоту"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Выберите начальную кинетическую энергию электрона. Проследите, как потеря энергии
+на излучение меняет его циклотронную частоту.
+
+::: {.applet-stage .applet-stage--large}
+{{< include ../slides/assets/04_direct_neutrino_mass/_cres_frequency_track.qmd >}}
+:::
+
+::: {.applet-note}
+В модели поле постоянно, $B=1$ Тл, а мощность излучения принята равной 1,2 фВт
+при всех начальных энергиях. Рассеяние и движение в неоднородном поле не учитываются.
+Величина $\Delta E$ — энергия, потерянная за время наблюдения.
+
+[Объяснение в лекции 08](../slides/08_alternative_neutrino_mass.qmd) ·
+[Исходный код](https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/slides/assets/04_direct_neutrino_mass/_cres_frequency_track.qmd)
+:::

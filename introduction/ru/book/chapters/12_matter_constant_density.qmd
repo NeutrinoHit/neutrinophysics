@@ -1,4 +1,503 @@
 ---
-title: "Постоянная плотность"
 body-classes: lecture-page topic-4
 ---
+
+# Нейтрино в веществе постоянной плотности {#sec-matter-constant-density}
+
+::: {.book-lead}
+В предыдущей главе среда вошла в уравнение через амплитуду рассеяния вперёд.
+Теперь вычислим эту добавку для слабого взаимодействия, запишем один и тот же
+гамильтониан в трёх базисах и решим задачу однородного слоя без дальнейших
+приближений.
+:::
+
+## Потенциал из слабого взаимодействия
+
+Когерентное рассеяние вперёд не меняет импульс нейтрино:
+
+$$
+q^\mu=p_{\mathrm{out}}^\mu-p_{\mathrm{in}}^\mu=0.
+$$ {#eq-matter-forward-four-momentum}
+
+Среда остаётся в том же макроскопическом состоянии. Вместо последовательности
+наблюдаемых столкновений нейтрино получает поправку к дисперсионному
+соотношению,
+
+$$
+E\simeq p+\frac{m^2}{2E}+V.
+$$ {#eq-matter-dispersion-potential}
+
+Энергии солнечных нейтрино много меньше массы $W$-бозона, поэтому обмен
+$W$ можно заменить локальным взаимодействием Ферми. Для электронного
+нейтрино и электрона лагранжиан заряженного тока равен
+
+$$
+\mathcal L_{\mathrm{CC}}^{\nu_e e}
+=-\frac{G_F}{\sqrt2}
+\bigl[\bar e\gamma_\mu(1-\gamma^5)\nu_e\bigr]
+\bigl[\bar\nu_e\gamma^\mu(1-\gamma^5)e\bigr].
+$$ {#eq-matter-cc-lagrangian-original}
+
+Перестановка Фирца группирует нейтринные и электронные поля в отдельные токи:
+
+$$
+\mathcal L_{\mathrm{CC}}^{\nu_e e}
+=-\frac{G_F}{\sqrt2}
+\bigl[\bar\nu_e\gamma_\mu(1-\gamma^5)\nu_e\bigr]
+\bigl[\bar e\gamma^\mu(1-\gamma^5)e\bigr].
+$$ {#eq-matter-cc-lagrangian-fierz}
+
+Рассмотрим электрически нейтральное, неполяризованное вещество, покоящееся в
+выбранной системе отсчёта. Усреднение по электронам среды даёт
+
+$$
+\left\langle\bar e\gamma^i e\right\rangle=0,
+\qquad
+\left\langle\bar e\gamma^\mu\gamma^5e\right\rangle=0,
+\qquad
+\left\langle\bar e\gamma^0e\right\rangle=N_e.
+$$ {#eq-matter-electron-current-average}
+
+Пространственный ток исчезает, потому что у среды нет среднего движения;
+аксиальный — потому что спины не полярованы. Остаётся электронная плотность
+$N_e$. Она создаёт потенциал заряженного тока
+
+$$
+\boxed{V_{\mathrm{CC}}=\sqrt2\,G_FN_e}.
+$$ {#eq-matter-cc-potential}
+
+Он действует только на $\nu_e$. В двухфлэйворном базисе
+$(\nu_e,\nu_x)$, где $x=\mu$ или $\tau$,
+
+$$
+H_{\mathrm{CC}}^{(f)}=
+\begin{pmatrix}V_{\mathrm{CC}}&0\\0&0\end{pmatrix}.
+$$ {#eq-matter-cc-hamiltonian}
+
+### Нейтральный ток
+
+Через $Z$-бозон рассеиваются все активные флэйворы. В обычном электронно-
+ядерном веществе электронный и протонный вклады в векторный ток сокращаются,
+а нейтроны дают
+
+$$
+V_{\mathrm{NC}}=-\frac{G_F}{\sqrt2}N_n.
+$$ {#eq-matter-nc-potential}
+
+Для пары активных нейтрино
+
+$$
+H_{\mathrm{mat}}^{(f)}
+=V_{\mathrm{NC}}\mathbb I+
+\begin{pmatrix}V_{\mathrm{CC}}&0\\0&0\end{pmatrix}.
+$$ {#eq-matter-total-active-potential}
+
+Первое слагаемое добавляет обеим компонентам одну фазу
+$e^{-iV_{\mathrm{NC}}L}$ и не меняет вероятности переходов. Поэтому дальше пишем
+
+$$
+V\equiv V_{\mathrm{CC}}=\sqrt2\,G_FN_e.
+$$ {#eq-matter-potential-definition}
+
+Для смешивания активного и стерильного нейтрино общий нейтральный ток уже не
+сокращается: стерильная компонента его не чувствует.
+
+::: {.physical-comment title="Что было отброшено"}
+Мы удаляем только часть гамильтониана, пропорциональную единичной матрице.
+Она меняет общую фазу состояния, но не относительную фазу компонент. Всё, что
+различает флэйворы, должно остаться.
+:::
+
+### Насколько велик потенциал
+
+Электронную плотность удобно выразить через плотность вещества $\rho$ и
+электронную долю $Y_e$:
+
+$$
+N_e=Y_e\frac{\rho}{m_N},
+\qquad
+Y_e\equiv\frac{N_e}{N_p+N_n}.
+$$ {#eq-matter-electron-density}
+
+В практических единицах
+
+$$
+\boxed{
+V=7.63\times10^{-14}\ \text{эВ}\,
+Y_e\frac{\rho}{\text{г}/\text{см}^3}}.
+$$ {#eq-matter-potential-numerical}
+
+Сравнивать $V$ нужно не с полной энергией нейтрино, а с вакуумным
+расщеплением фазовых скоростей
+
+$$
+\Delta\equiv\frac{\Delta m^2}{2E}.
+$$ {#eq-matter-vacuum-frequency}
+
+Поэтому вводят безразмерный параметр
+
+$$
+\boxed{A\equiv\frac{V}{\Delta}=\frac{2EV}{\Delta m^2}}.
+$$ {#eq-matter-dimensionless-potential}
+
+Малый потенциал может быть существен, потому что $\Delta m^2/(2E)$ тоже
+чрезвычайно мало. Для антинейтрино слабая амплитуда вперёд меняет знак:
+
+$$
+\boxed{V_{\bar\nu}=-V_\nu},
+\qquad
+A_{\bar\nu}=-A_\nu.
+$$ {#eq-matter-antineutrino-sign}
+
+::: {.biography name="Линкольн Вольфенстайн" years="1923–2015" source="https://www.cmu.edu/news/stories/archives/2015/april/lincoln-wolfenstein-obituary.html" source-label="Университет Карнеги — Меллона"}
+Линкольн Вольфенстайн был физиком-теоретиком, более полувека работавшим в
+Университете Карнеги — Меллона. В 1978 году он показал, что когерентное
+рассеяние нейтрино вперёд в веществе меняет осцилляции. В той работе появился
+потенциал, который мы только что вычислили. Позднее Михеев и Смирнов увидели,
+что в меняющейся солнечной плотности тот же механизм может давать сильную
+конверсию флэйвора.
+:::
+
+## Один гамильтониан в трёх базисах
+
+Вакуумное смешивание двух флэйворов определим поворотом
+
+$$
+\begin{pmatrix}\nu_e\\\nu_x\end{pmatrix}
+=U(\theta)
+\begin{pmatrix}\nu_1\\\nu_2\end{pmatrix},
+\qquad
+U(\theta)=
+\begin{pmatrix}\cos\theta&\sin\theta\\-\sin\theta&\cos\theta\end{pmatrix}.
+$$ {#eq-matter-two-flavor-mixing}
+
+После удаления общей вакуумной фазы массовый гамильтониан равен
+
+$$
+H_{\mathrm{vac}}^{(m)}=\frac12
+\begin{pmatrix}-\Delta&0\\0&\Delta\end{pmatrix}.
+$$ {#eq-matter-vacuum-mass-hamiltonian}
+
+Во флэйворном базисе к нему добавляется диагональный потенциал. После удаления
+ещё одной общей фазы $V\mathbb I/2$ остаётся
+
+$$
+\boxed{
+H_f'=\frac12
+\begin{pmatrix}
+V-\Delta\cos2\theta&\Delta\sin2\theta\\
+\Delta\sin2\theta&-V+\Delta\cos2\theta
+\end{pmatrix}}.
+$$ {#eq-matter-flavor-hamiltonian}
+
+Это бесследовая часть физического гамильтониана. Во флэйворном базисе
+вещество диагонально, а вакуумное смешивание находится во внедиагональных
+элементах.
+
+В вакуумном массовом базисе тот же оператор равен
+
+$$
+\boxed{
+H_m'=U^T(\theta)H_f'U(\theta)
+=\frac12
+\begin{pmatrix}
+-\Delta+V\cos2\theta&V\sin2\theta\\
+V\sin2\theta&\Delta-V\cos2\theta
+\end{pmatrix}}.
+$$ {#eq-matter-mass-basis-hamiltonian}
+
+Здесь свободное распространение диагонально, а среда связывает фиксированные
+вакуумные моды $\nu_1$ и $\nu_2$. Эти две записи не описывают два процесса;
+это координаты одного унитарного движения.
+
+## Диагонализация: собственные волны вещества
+
+Обозначим компоненты эффективного двумерного поля
+
+$$
+B_x=\Delta\sin2\theta,
+\qquad
+B_z=\Delta\cos2\theta-V.
+$$ {#eq-matter-effective-field-components}
+
+Тогда собственные значения матрицы [-@eq-matter-flavor-hamiltonian] равны
+$\lambda_{1m,2m}=\mp\Delta_m/2$, где
+
+$$
+\boxed{
+\Delta_m=
+\sqrt{(\Delta\cos2\theta-V)^2+(\Delta\sin2\theta)^2}
+=\Delta R},
+$$ {#eq-matter-level-splitting}
+
+$$
+R\equiv
+\sqrt{(\cos2\theta-A)^2+\sin^22\theta}.
+$$ {#eq-matter-r-factor}
+
+Определим угол в веществе $0\leq\theta_m\leq\pi/2$ так, чтобы
+
+$$
+H_f'=U(\theta_m)
+\frac12\begin{pmatrix}-\Delta_m&0\\0&\Delta_m\end{pmatrix}
+U^T(\theta_m).
+$$ {#eq-matter-local-diagonalization}
+
+Сравнение матричных элементов даёт
+
+$$
+\boxed{
+\sin2\theta_m=\frac{\sin2\theta}{R},
+\qquad
+\cos2\theta_m=\frac{\cos2\theta-A}{R}}.
+$$ {#eq-matter-angle}
+
+Формула для тангенса теряет квадрант. Для вычислений безопаснее пользоваться
+
+$$
+2\theta_m=\operatorname{atan2}
+\bigl(\sin2\theta,\cos2\theta-A\bigr).
+$$ {#eq-matter-angle-atan2}
+
+Собственные состояния вещества определяются равенством
+
+$$
+\begin{pmatrix}\nu_e\\\nu_x\end{pmatrix}
+=U(\theta_m)
+\begin{pmatrix}\nu_{1m}\\\nu_{2m}\end{pmatrix}.
+$$ {#eq-matter-eigenstate-definition}
+
+То есть
+
+$$
+|\nu_{1m}\rangle=\cos\theta_m|\nu_e\rangle-
+\sin\theta_m|\nu_x\rangle,
+\qquad
+|\nu_{2m}\rangle=\sin\theta_m|\nu_e\rangle+
+\cos\theta_m|\nu_x\rangle.
+$$ {#eq-matter-eigenstates}
+
+Полезно держать рядом три угла:
+
+| Базисы | Поворот | Физическая роль |
+|:---|:---:|:---|
+| флэйвор $\leftrightarrow$ вакуумная масса | $\theta$ | рождение и детектирование против свободных мод |
+| флэйвор $\leftrightarrow$ масса в веществе | $\theta_m$ | рождение и детектирование против мод слоя |
+| вакуумная масса $\leftrightarrow$ масса в веществе | $\alpha=\theta_m-\theta$ | состав мод вещества в вакуумном базисе |
+
+: Три базиса двухфлэйворной задачи. {#tbl-matter-three-bases}
+
+При $V\to0$ выполняется $\theta_m\to\theta$ и
+$|\nu_{im}\rangle\to|\nu_i\rangle$. Это граничное условие понадобится при
+выходе нейтрино из Солнца.
+
+## Точное решение однородного слоя
+
+При $V=\mathrm{const}$ состояния $\nu_{1m}$ и $\nu_{2m}$ набирают фазы
+независимо:
+
+$$
+b_1(L)=e^{+i\Delta_mL/2}b_1(0),
+\qquad
+b_2(L)=e^{-i\Delta_mL/2}b_2(0).
+$$ {#eq-matter-eigenmode-phases}
+
+Начальное электронное нейтрино раскладывается как
+
+$$
+|\nu_e\rangle=\cos\theta_m|\nu_{1m}\rangle+
+\sin\theta_m|\nu_{2m}\rangle.
+$$ {#eq-matter-electron-decomposition}
+
+После пути $L$
+
+$$
+|\psi(L)\rangle=
+\cos\theta_m e^{+i\phi_m}|\nu_{1m}\rangle+
+\sin\theta_m e^{-i\phi_m}|\nu_{2m}\rangle,
+\qquad
+\phi_m\equiv\frac{\Delta_mL}{2}.
+$$ {#eq-matter-state-after-layer}
+
+Проекция на
+$|\nu_x\rangle=-\sin\theta_m|\nu_{1m}\rangle+
+\cos\theta_m|\nu_{2m}\rangle$ даёт
+
+$$
+\mathcal A_{e\to x}
+=-i\sin2\theta_m\sin\phi_m.
+$$ {#eq-matter-transition-amplitude}
+
+Следовательно,
+
+$$
+\boxed{
+P_{e\to x}(L)=
+\sin^22\theta_m\,
+\sin^2\!\left(\frac{\Delta_mL}{2}\right)},
+\qquad
+P_{e\to e}=1-P_{e\to x}.
+$$ {#eq-matter-constant-probability}
+
+Амплитуду осцилляций задаёт $\theta_m$, период — $\Delta_m$. В терминах
+$A$ результат принимает вид
+
+$$
+\boxed{
+P_{e\to x}=
+\frac{\sin^22\theta}{(\cos2\theta-A)^2+\sin^22\theta}
+\sin^2\!\left[
+\frac{\Delta L}{2}
+\sqrt{(\cos2\theta-A)^2+\sin^22\theta}
+\right]}.
+$$ {#eq-matter-constant-probability-a}
+
+### Пропагатор слоя
+
+Для произвольного входного состояния удобнее знать всю матрицу эволюции.
+Поскольку $(2H_f'/\Delta_m)^2=\mathbb I$,
+
+$$
+\boxed{
+S_f(L)=e^{-iH_f'L}
+=\cos\phi_m\,\mathbb I
+-i\sin\phi_m\frac{2H_f'}{\Delta_m}}.
+$$ {#eq-matter-layer-propagator-compact}
+
+В явном виде
+
+$$
+\boxed{
+S_f(L)=
+\begin{pmatrix}
+\cos\phi_m+i\cos2\theta_m\sin\phi_m&
+-i\sin2\theta_m\sin\phi_m\\
+-i\sin2\theta_m\sin\phi_m&
+\cos\phi_m-i\cos2\theta_m\sin\phi_m
+\end{pmatrix}}.
+$$ {#eq-matter-layer-propagator}
+
+Матрица унитарна и имеет определитель один после удаления общей фазы. Для
+нескольких слоёв
+
+$$
+S_{\mathrm{total}}=S_N S_{N-1}\cdots S_2S_1.
+$$ {#eq-matter-multilayer-propagator}
+
+Порядок множителей существен: гамильтонианы слоёв разной плотности обычно не
+коммутируют.
+
+## Резонанс и избегаемое пересечение
+
+Смешивание в веществе максимально, когда диагональная разность в уравнении
+[-@eq-matter-flavor-hamiltonian] обращается в ноль:
+
+$$
+\boxed{
+V_{\mathrm{res}}=\Delta\cos2\theta,
+\qquad
+A_{\mathrm{res}}=\cos2\theta}.
+$$ {#eq-matter-resonance-condition}
+
+Тогда $\theta_m=45^\circ$, но расщепление не исчезает:
+
+$$
+\boxed{\Delta_{m,\min}=\Delta\sin2\theta}.
+$$ {#eq-matter-minimum-gap}
+
+Если бы смешивания не было, уровни пересеклись бы. Ненулевой внедиагональный
+элемент оставляет минимальный зазор — избегаемое пересечение.
+
+Резонансная электронная плотность равна
+
+$$
+\boxed{
+N_{e,\mathrm{res}}=
+\frac{\Delta m^2\cos2\theta}{2\sqrt2\,G_FE}}.
+$$ {#eq-matter-resonance-density}
+
+Физическая плотность положительна, поэтому резонанс существует лишь при
+
+$$
+V\,\Delta m^2\cos2\theta>0.
+$$ {#eq-matter-resonance-sign}
+
+Для солнечной пары $\Delta m^2_{21}>0$ и $\theta_{12}<45^\circ$ резонанс
+возникает у нейтрино, но не у антинейтрино в обычном веществе.
+
+Резонанс делает огибающую вероятности единичной. Он не гарантирует полной
+конверсии в однородном слое: нужна также фаза
+
+$$
+\frac{\Delta_mL}{2}=\frac{\pi}{2},\frac{3\pi}{2},\ldots
+$$ {#eq-matter-full-conversion-phase}
+
+Период осцилляций в веществе равен
+
+$$
+\boxed{
+L_m=\frac{2\pi}{\Delta_m}=\frac{L_{\mathrm{vac}}}{R}},
+\qquad
+L_{\mathrm{vac}}=\frac{4\pi E}{\Delta m^2}.
+$$ {#eq-matter-oscillation-length}
+
+На резонансе при малом вакуумном угле амплитуда велика, но период длинен:
+$L_m=L_{\mathrm{vac}}/\sin2\theta$.
+
+::: {#interactive-matter-constant .interactive title="Осцилляции при постоянной плотности" embed="../../applets/matter-constant.html" poster="../assets/chapters/06_matter_oscillations/msw_constant_matter.png" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/matter-constant.html" qr="../assets/chapters/06_matter_oscillations/qr/matter_constant.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/matter-constant.qmd" repo-label="код апплета"}
+Сравните вакуум, резонанс и область высокой плотности. Вещество меняет две
+разные величины: высоту огибающей $\sin^22\theta_m$ и длину осцилляций
+$L_m$. Далеко за резонансом электронный флэйвор становится почти собственной
+модой, поэтому переход подавляется.
+:::
+
+### Периодическая плотность
+
+Два слоя могут по отдельности давать малую вероятность перехода, но их
+последовательность — большую. Причина не в средней плотности, а в порядке
+некоммутирующих матриц:
+
+$$
+[H(V_1),H(V_2)]\ne0.
+$$ {#eq-matter-layer-noncommutativity}
+
+При подходящих фазах повторы $S_2S_1$ накапливают амплитуду. Это называется
+параметрическим усилением.
+
+::: {#anim-matter-parametric .animation title="Параметрическое усиление в чередующихся слоях" src="../assets/chapters/06_matter_oscillations/msw_parametric.mp4" poster="../assets/chapters/06_matter_oscillations/msw_parametric.png" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/12_matter_constant_density.html#/periodic-density"}
+Усреднение плотности теряет относительные фазы слоёв. Поэтому чередование двух
+слабо конвертирующих слоёв способно дать почти полный переход.
+:::
+
+## Итоги главы
+
+- Когерентное рассеяние на электронах создаёт
+  $V=\sqrt2G_FN_e$; для антинейтрино знак потенциала противоположен.
+- Общий нейтральный ток активных флэйворов меняет только общую фазу.
+- В однородном веществе собственные волны задаются углом $\theta_m$ и
+  расщеплением $\Delta_m$.
+- Резонанс означает максимальное смешивание, но полная конверсия в одном слое
+  требует ещё и подходящей фазы.
+- Произвольный профиль можно приближать произведением точных пропагаторов
+  тонких слоёв.
+
+## Задачи
+
+{{< include ../../../_includes/exercises/12_matter_constant_density-ru.qmd >}}
+
+## Литература {.unnumbered}
+
+::: {.chapter-literature}
+1. L. Wolfenstein. Neutrino oscillations in matter. *Physical Review D*
+   **17**, 2369–2374 (1978).
+   [doi:10.1103/PhysRevD.17.2369](https://doi.org/10.1103/PhysRevD.17.2369).
+2. S. P. Mikheyev, A. Yu. Smirnov. Resonant amplification of neutrino
+   oscillations in matter and solar-neutrino spectroscopy. *Il Nuovo Cimento
+   C* **9**, 17–26 (1986).
+   [doi:10.1007/BF02508049](https://doi.org/10.1007/BF02508049).
+3. C. Giunti, C. W. Kim. *Fundamentals of Neutrino Physics and
+   Astrophysics*. Oxford University Press, 2007.
+4. M. Blennow, A. Yu. Smirnov. Neutrino propagation in matter. *Advances in
+   High Energy Physics* **2013**, 972485 (2013).
+   [doi:10.1155/2013/972485](https://doi.org/10.1155/2013/972485).
+:::

@@ -14,7 +14,7 @@ viewof cresModulationIndex = Inputs.range([0, 4], {
 
 cresAxialFrequency = 25
 cresObservationTime = 80
-cresSpectrumOrders = Array.from({length: 13}, (_, i) => i - 6)
+cresSpectrumOrders = Array.from({length: 29}, (_, i) => i - 14)
 
 cresFactorial = n => {
   let value = 1
@@ -41,6 +41,7 @@ cresBessel = (n, x) => {
 cresLineWeights = cresSpectrumOrders.map(order => ({
   order,
   frequency: order * cresAxialFrequency,
+  amplitude: cresBessel(order, cresModulationIndex),
   power: Math.pow(cresBessel(order, cresModulationIndex), 2)
 }))
 
@@ -51,14 +52,21 @@ cresSinc = value => Math.abs(value) < 1e-12
 cresFrequencyGrid = Array.from({length: 1201}, (_, i) => -150 + i / 4)
 cresSpectrum = cresFrequencyGrid.map(frequency => ({
   frequency,
-  power: cresLineWeights.reduce((sum, line) => {
-    const argument = Math.PI
-      * (frequency - line.frequency)
-      * 1000
-      * cresObservationTime
-      * 1e-6
-    return sum + line.power * Math.pow(cresSinc(argument), 2)
-  }, 0)
+  power: (() => {
+    let real = 0
+    let imaginary = 0
+    for (const line of cresLineWeights) {
+      const argument = Math.PI
+        * (frequency - line.frequency)
+        * 1000
+        * cresObservationTime
+        * 1e-6
+      const amplitude = line.amplitude * cresSinc(argument)
+      real += amplitude * Math.cos(argument)
+      imaginary -= amplitude * Math.sin(argument)
+    }
+    return real * real + imaginary * imaginary
+  })()
 }))
 
 cresSpectrumMaximum = Math.max(...cresSpectrum.map(point => point.power))
@@ -74,7 +82,7 @@ cresNormalizedLines = cresLineWeights.map(line => ({
 
 cresSpectrumPlot = Plot.plot({
   width: 1040,
-  height: 160,
+  height: 260,
   marginTop: 6,
   marginRight: 25,
   marginBottom: 30,

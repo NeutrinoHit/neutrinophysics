@@ -10,6 +10,33 @@ body-classes: lecture-page topic-2
 переменная действия.
 :::
 
+## Задача спектрометра
+
+Электрон рождается в источнике с кинетической энергией $E$, но направление
+его импульса заранее неизвестно. Разложим импульс на составляющие вдоль и
+поперёк магнитного поля:
+
+$$
+\mathbf p=p_\parallel\mathbf b+\mathbf p_\perp,
+\qquad
+\mathbf b=\frac{\mathbf B}{B},
+\qquad
+E=E_\parallel+E_\perp
+=\frac{p_\parallel^2}{2m}+\frac{p_\perp^2}{2m}.
+$$ {#eq-longitudinal-transverse-decomposition}
+
+Задерживающее электрическое поле проверяет прежде всего продольное движение.
+Если значительная часть энергии осталась в циклотронном вращении, два
+электрона с одной и той же полной энергией могут пройти разные пороги.
+
+- Магнитное поле должно собрать электроны и провести их к детектору.
+- Перед электрическим барьером нужно сделать $E_\perp$ малой.
+- Само магнитное поле работы не совершает, поэтому потерянная поперечная
+  энергия должна перейти в продольную.
+
+Чтобы проследить этот обмен, отделим быстрое вращение от медленного движения
+направляющего центра.
+
 ## Электрон в однородном магнитном поле
 
 Магнитное поле переносит электроны от источника к анализатору. Сначала
@@ -38,7 +65,7 @@ $$ {#eq-uniform-field-components}
 $$
 \frac{d}{dt}\frac{mv^2}{2}
 =q\,\mathbf v\cdot(\mathbf v\times\mathbf B)=0.
-$$
+$$ {#eq-magnetic-force-no-work}
 
 Поэтому $v_\parallel=v_z$ и $v_\perp^2=v_x^2+v_y^2$ постоянны. Решение для
 поперечных компонент скорости имеет вид
@@ -99,10 +126,15 @@ $$ {#eq-relativistic-cyclotron-motion}
 $3.6~\text{Тл}$ максимальный ларморовский радиус составляет примерно
 $0.13~\text{мм}$.
 
-::: {#anim-uniform-b-motion .animation title="Движение ансамбля электронов в однородном магнитном поле" src="../assets/chapters/04_direct_neutrino_mass/uniform_b_ensemble.mp4" poster="../assets/chapters/04_direct_neutrino_mass/uniform_b_ensemble.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/04_direct_neutrino_mass/uniform_b_ensemble.mp4" qr="../assets/chapters/04_direct_neutrino_mass/qr/uniform_b_motion.png"}
+::: {#anim-uniform-b-motion .animation title="Движение ансамбля электронов в однородном магнитном поле" src="../assets/chapters/04_direct_neutrino_mass/uniform_b_ensemble.mp4" poster="../assets/chapters/04_direct_neutrino_mass/uniform_b_ensemble.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/04_direct_neutrino_mass/uniform_b_ensemble.mp4" qr="../assets/chapters/04_direct_neutrino_mass/qr/uniform_b_motion.png" repo="https://github.com/NeutrinoHit/dvnanima/tree/main/mac-e-filter" repo-label="dvnanima/mac-e-filter"}
 Показаны электроны одинаковой энергии с начальными углами $15^\circ$,
 $45^\circ$ и $75^\circ$. Продольная скорость задаёт шаг винтовой линии,
 поперечный импульс --- её радиус.
+:::
+
+::: {#interactive-cyclotron-motion .interactive title="Циклотронное движение в двух пространствах" embed="../../applets/cyclotron-motion.html" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/cyclotron-motion.html" qr="../assets/chapters/04_direct_neutrino_mass/qr/cyclotron_motion.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/cyclotron-motion.qmd" repo-label="код апплета"}
+Меняйте импульс и магнитное поле. Слева показана орбита электрона, справа ---
+то же движение в плоскости поперечных импульсов.
 :::
 
 ### Орбитальный магнитный момент
@@ -113,7 +145,7 @@ $$
 L_z
 =m\bigl[(x-X)v_y-(y-Y)v_x\bigr]
 =-\frac{mv_\perp^2}{\Omega}.
-$$
+$$ {#eq-cyclotron-orbital-angular-momentum}
 
 Из $\boldsymbol\mu_{\mathrm{orb}}=(q/2m)\mathbf L$ следует
 
@@ -137,64 +169,64 @@ $$ {#eq-orbital-magnetic-moment}
 
 ## Переменная действия
 
-Для координаты $q(t)$ действие определяется интегралом
+Для обобщённой координаты $Q(t)$ действие определяется интегралом
 
 $$
-S[q]=\int_{t_1}^{t_2}L(q,\dot q,t)\,dt.
-$$
+S[Q]=\int_{t_1}^{t_2}L(Q,\dot Q,t)\,dt.
+$$ {#eq-mechanical-action}
 
 Стационарность $S$ при вариации
-$q\to q+\varepsilon\eta$, $\eta(t_1)=\eta(t_2)=0$, даёт
+$Q\to Q+\varepsilon\eta$, $\eta(t_1)=\eta(t_2)=0$, даёт
 
 $$
 \delta S
 =\int_{t_1}^{t_2}
 \left[
-\frac{\partial L}{\partial q}
--\frac{d}{dt}\frac{\partial L}{\partial\dot q}
+\frac{\partial L}{\partial Q}
+-\frac{d}{dt}\frac{\partial L}{\partial\dot Q}
 \right]\eta\,dt=0
-$$
+$$ {#eq-euler-lagrange-variation}
 
 и уравнение Эйлера--Лагранжа. После введения канонического импульса и
 гамильтониана
 
 $$
-p=\frac{\partial L}{\partial\dot q},
+P=\frac{\partial L}{\partial\dot Q},
 \qquad
-H(q,p,t)=p\dot q-L
-$$
+H(Q,P,t)=P\dot Q-L
+$$ {#eq-canonical-momentum-hamiltonian}
 
 получаются уравнения
 
 $$
-\dot q=\frac{\partial H}{\partial p},
+\dot Q=\frac{\partial H}{\partial P},
 \qquad
-\dot p=-\frac{\partial H}{\partial q}.
+\dot P=-\frac{\partial H}{\partial Q}.
 $$ {#eq-hamilton-equations}
 
 Если $H$ явно не зависит от времени, движение идёт по линии постоянной энергии
-$H(q,p)=E$. Для одномерного связанного движения эта линия замкнута. Переменная
+$H(Q,P)=E$. Для одномерного связанного движения эта линия замкнута. Переменная
 действия равна
 
 $$
-J(E)=\frac{1}{2\pi}\oint p\,dq.
+J(E)=\frac{1}{2\pi}\oint P\,dQ.
 $$ {#eq-action-variable}
 
-Интеграл $\oint p\,dq$ представляет ориентированную площадь внутри фазовой
-орбиты. На энергетической линии $p=p(q,E)$ выполняется
+Интеграл $\oint P\,dQ$ представляет ориентированную площадь внутри фазовой
+орбиты. На энергетической линии $P=P(Q,E)$ выполняется
 
 $$
-\frac{\partial H}{\partial p}
-\left(\frac{\partial p}{\partial E}\right)_q=1,
+\frac{\partial H}{\partial P}
+\left(\frac{\partial P}{\partial E}\right)_Q=1,
 \qquad
-\left(\frac{\partial p}{\partial E}\right)_q=\frac{1}{\dot q}.
-$$
+\left(\frac{\partial P}{\partial E}\right)_Q=\frac{1}{\dot Q}.
+$$ {#eq-action-energy-derivative-step}
 
 Отсюда
 
 $$
 \frac{dJ}{dE}
-=\frac{1}{2\pi}\oint\frac{dq}{\dot q}
+=\frac{1}{2\pi}\oint\frac{dQ}{\dot Q}
 =\frac{T}{2\pi}
 =\frac{1}{\omega},
 \qquad
@@ -204,15 +236,52 @@ $$ {#eq-action-period-relation}
 Для гармонического осциллятора
 
 $$
-H=\frac{p^2}{2m}+\frac{m\omega^2q^2}{2}=E
-$$
+H=\frac{P^2}{2m}+\frac{m\omega^2Q^2}{2}=E
+$$ {#eq-harmonic-oscillator-phase-orbit}
 
 фазовая орбита является эллипсом с полуосями
-$q_{\max}=\sqrt{2E/(m\omega^2)}$ и $p_{\max}=\sqrt{2mE}$. Поэтому
+$Q_{\max}=\sqrt{2E/(m\omega^2)}$ и $P_{\max}=\sqrt{2mE}$. Поэтому
 
 $$
-J=\frac{\pi q_{\max}p_{\max}}{2\pi}=\frac{E}{\omega}.
+J=\frac{\pi Q_{\max}P_{\max}}{2\pi}=\frac{E}{\omega}.
 $$ {#eq-harmonic-action}
+
+### Что видно на фазовой плоскости
+
+Обычная траектория показывает, где находится частица. Фазовая траектория
+показывает одновременно координату $Q$ и канонический импульс $P$.
+
+- У гармонического осциллятора замкнутая орбита --- эллипс. Его площадь равна
+  $2\pi J$.
+- У свободного ротатора координата является углом, поэтому фазовое
+  пространство свёрнуто в цилиндр. Орбита обходит цилиндр, не возвращаясь к
+  прежнему значению развёрнутого угла.
+- У маятника малые колебания дают замкнутые орбиты, а вращение --- орбиты,
+  обходящие цилиндр. Их разделяет сепаратриса; возле неё период становится
+  большим, и адиабатическое приближение может нарушиться.
+
+На каждой гладкой замкнутой орбите можно выбрать угол $\vartheta$, который
+равномерно отсчитывает фазу движения. Пара $(J,\vartheta)$ каноническая:
+
+$$
+\{\vartheta,J\}=1,
+\qquad
+H=H(J),
+\qquad
+\dot\vartheta=\frac{dH}{dJ}=\omega,
+\qquad
+\dot J=0.
+$$ {#eq-action-angle-equations}
+
+Угол быстро меняется и хранит фазу, а действие измеряет размер орбиты. При
+медленном изменении системы фаза успевает совершить много оборотов; малые
+прибавки к $J$ на разных участках цикла почти взаимно сокращаются. В следующей
+главе это утверждение будет проверено прямым вычислением.
+
+::: {#interactive-planar-rotor .interactive title="Плоский ротатор" embed="../../applets/planar-rotor.html" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/planar-rotor.html" qr="../assets/chapters/04_direct_neutrino_mass/qr/planar_rotor.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/planar-rotor.qmd" repo-label="код апплета"}
+Остановите движение в произвольной фазе и сравните угол с касательной
+скоростью. Координата возвращается к тому же направлению через $2\pi$.
+:::
 
 ### Действие циклотронного движения
 
@@ -225,7 +294,7 @@ E_\perp
 =\frac{P^2}{2m}+\frac{m\omega_c^2Q^2}{2}.
 $$ {#eq-cyclotron-oscillator}
 
-Подстановка @eq-harmonic-action даёт
+Подстановка уравнения [-@eq-harmonic-action] даёт
 
 $$
 J_c
@@ -233,18 +302,25 @@ J_c
 =\frac{p_\perp^2}{2|q|B}.
 $$ {#eq-cyclotron-action}
 
-## Краткое резюме
+Здесь $P=m\dot Q$ является каноническим импульсом уже для приведённого
+одномерного осциллятора. Его не следует безоговорочно отождествлять с
+декартовой компонентой механического импульса заряженной частицы: в исходной
+задаче канонический импульс зависит от выбора векторного потенциала.
 
-1. В однородном магнитном поле электрон движется по винтовой траектории.
-2. Направляющий центр отделяет быстрое циклотронное движение от переноса вдоль
-   силовой линии.
-3. Для циклотронного движения $J_c=E_\perp/\omega_c$.
+## Итоги главы
+
+- В однородном магнитном поле электрон движется по винтовой траектории.
+- Направляющий центр отделяет быстрое циклотронное движение от переноса вдоль
+  силовой линии.
+- Действие $J$ равно фазовой площади, делённой на $2\pi$; сопряжённый угол
+  отсчитывает фазу быстрого движения.
+- Для циклотронного движения $J_c=E_\perp/\omega_c$.
 
 ## Задачи
 
 {{< include ../../../_includes/exercises/05_electron_to_detector-ru.qmd >}}
 
-## Литература к лекции {.unnumbered}
+## Литература {.unnumbered}
 
 ::: {.chapter-literature}
 1. L. D. Landau, E. M. Lifshitz. *Mechanics*. 3rd ed.

@@ -25,7 +25,7 @@ $$ {#eq-pmns-three-flavor}
 
 $$
 U^\dagger U=UU^\dagger=I.
-$$
+$$ {#eq-ch10-001}
 
 Унитарность сохраняет норму и обеспечивает ортогональность флэйворных
 состояний. В стандартной параметризации
@@ -53,7 +53,7 @@ $$
 \sum_\alpha U_{\alpha j}|\nu_\alpha\rangle
 =\sum_{\alpha,i}U_{\alpha j}U_{\alpha i}^*|\nu_i\rangle
 =\sum_i\delta_{ji}|\nu_i\rangle.
-$$
+$$ {#eq-ch10-002}
 
 Ортогональность строк и столбцов выражается равенствами
 
@@ -74,7 +74,7 @@ $$
 c_{ij}=\cos\theta_{ij},
 \qquad
 s_{ij}=\sin\theta_{ij}.
-$$
+$$ {#eq-ch10-003}
 
 Три множителя в @eq-pmns-factorization равны
 
@@ -85,7 +85,7 @@ c_{12}&s_{12}&0\\
 -s_{12}&c_{12}&0\\
 0&0&1
 \end{pmatrix},
-$$
+$$ {#eq-ch10-004}
 
 $$
 U_{13}(\delta)=
@@ -101,7 +101,7 @@ R_{23}=
 0&c_{23}&s_{23}\\
 0&-s_{23}&c_{23}
 \end{pmatrix}.
-$$
+$$ {#eq-ch10-005}
 
 Их произведение:
 
@@ -149,7 +149,7 @@ $$
 \widetilde U
 =U\operatorname{diag}
 \left(1,e^{i\alpha_{21}/2},e^{i\alpha_{31}/2}\right).
-$$
+$$ {#eq-ch10-006}
 
 В осцилляционной амплитуде элементы каждого столбца входят попарно:
 
@@ -158,7 +158,7 @@ $$
 =U_{\beta i}e^{i\eta_i}
  U_{\alpha i}^*e^{-i\eta_i}
 =U_{\beta i}U_{\alpha i}^*.
-$$
+$$ {#eq-ch10-007}
 
 Майорановские фазы сокращаются. Поэтому осцилляции не различают частицы
 Дирака и Майораны.
@@ -171,7 +171,7 @@ $$
 |\nu_\alpha;L\rangle
 =\sum_iU_{\alpha i}^*
 \exp\!\left(-i\frac{m_i^2L}{2E}\right)|\nu_i\rangle.
-$$
+$$ {#eq-ch10-008}
 
 Проекция на флэйвор $\beta$ даёт
 
@@ -190,14 +190,14 @@ X_{\alpha\beta}^{ij}
 =U_{\alpha i}^*U_{\beta i}U_{\alpha j}U_{\beta j}^*,
 \qquad
 \Delta_{ij}=\frac{\Delta m_{ij}^2L}{4E}.
-$$
+$$ {#eq-ch10-009}
 
 Возведение амплитуды в квадрат сначала даёт двойную сумму
 
 $$
 P_{\alpha\to\beta}
 =\sum_{i,j}X_{\alpha\beta}^{ij}e^{-2i\Delta_{ij}}.
-$$
+$$ {#eq-ch10-010}
 
 При $i=j$ фаза равна нулю. Для каждой пары $i\ne j$
 
@@ -206,7 +206,7 @@ X_{\alpha\beta}^{ji}
 =\left(X_{\alpha\beta}^{ij}\right)^*,
 \qquad
 \Delta_{ji}=-\Delta_{ij},
-$$
+$$ {#eq-ch10-011}
 
 и два переставленных слагаемых объединяются в
 
@@ -215,7 +215,7 @@ $$
 \left(X_{\alpha\beta}^{ij}e^{-2i\Delta_{ij}}\right)
 =2\operatorname{Re}X_{\alpha\beta}^{ij}\cos2\Delta_{ij}
 +2\operatorname{Im}X_{\alpha\beta}^{ij}\sin2\Delta_{ij}.
-$$
+$$ {#eq-ch10-012}
 
 При $L=0$ унитарность даёт
 
@@ -223,7 +223,7 @@ $$
 \delta_{\alpha\beta}
 =\sum_i|U_{\alpha i}|^2|U_{\beta i}|^2
 +2\sum_{i>j}\operatorname{Re}X_{\alpha\beta}^{ij}.
-$$
+$$ {#eq-ch10-013}
 
 Используя $\cos2\Delta=1-2\sin^2\Delta$, постоянную часть можно заменить
 на $\delta_{\alpha\beta}$.
@@ -248,13 +248,13 @@ $$
 P_{\alpha\to\alpha}
 =1-4\sum_{i>j}|U_{\alpha i}|^2|U_{\alpha j}|^2
 \sin^2\Delta_{ij}.
-$$
+$$ {#eq-ch10-014}
 
 Суммирование по всем регистрируемым флэйворам даёт
 
 $$
 \sum_\beta P_{\alpha\to\beta}=1.
-$$
+$$ {#eq-ch10-015}
 
 Это следует из
 $\sum_\beta U_{\beta i}U_{\beta j}^*=\delta_{ij}$: вероятность не исчезает,
@@ -271,7 +271,7 @@ $$ {#eq-three-flavor-phase-relation}
 Поэтому в трёхфлэйворной картине есть три интерференционных члена, но лишь
 две независимые частоты.
 
-::: {#anim-three-flavor-triangle .animation title="Три флэйворные вероятности" epub-src="../assets/chapters/05_vacuum_oscillations/three_flavor_triangle.mp4" poster="../assets/chapters/05_vacuum_oscillations/three_flavor_triangle_frame.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/10_vacuum_pmns.html#/three-flavor-triangle" qr="../assets/chapters/05_vacuum_oscillations/qr/three_flavor_triangle.png"}
+::: {#interactive-three-flavor-triangle .interactive title="Три флэйворные вероятности" embed="../../applets/flavor-triangle.html" poster="../assets/chapters/05_vacuum_oscillations/three_flavor_triangle_frame.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/flavor-triangle.html" qr="../assets/chapters/05_vacuum_oscillations/qr/three_flavor_triangle.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/flavor-triangle.qmd" repo-label="код апплета"}
 Точка внутри треугольника имеет барицентрические координаты
 $(P_{\alpha e},P_{\alpha\mu},P_{\alpha\tau})$. Интерактив позволяет менять
 начальный флэйвор, $L$, $E$, $\delta_{\mathrm{CP}}$ и переключаться между
@@ -292,7 +292,7 @@ $$
 \overline{\mathcal A}_{\alpha\to\beta}
 =\sum_iU_{\beta i}^*U_{\alpha i}
 \exp\!\left(-i\frac{m_i^2L}{2E}\right).
-$$
+$$ {#eq-ch10-016}
 
 Следовательно,
 $X_{\alpha\beta}^{ij}\to(X_{\alpha\beta}^{ij})^*$. Действительная часть
@@ -335,7 +335,7 @@ $$
 J_{\mathrm{CP}}
 =\operatorname{Im}
 \left(U_{e2}^*U_{\mu2}U_{e1}U_{\mu1}^*\right),
-$$
+$$ {#eq-ch10-017}
 
 не меняется при независимом переопределении фаз строк и столбцов $U$.
 Для канала $e\to\mu$
@@ -370,7 +370,7 @@ $$
 \Delta m^2_{21},\Delta m^2_{3\ell};
 \qquad
 \delta_{\mathrm{CP}},
-$$
+$$ {#eq-ch10-018}
 
 и один дискретный выбор --- нормальный или обратный порядок масс.
 
@@ -393,7 +393,7 @@ $$
 \text{NO:}&\quad m_1<m_2<m_3,\\
 \text{IO:}&\quad m_3<m_1<m_2.
 \end{aligned}
-$$
+$$ {#eq-ch10-019}
 
 ### Числа NuFIT 6.1
 
@@ -429,7 +429,7 @@ $\theta_{23}$ пересекает $45^\circ$, поэтому октант по�
 
 $$
 \frac{|\Delta m^2_{3\ell}|}{\Delta m^2_{21}}\simeq33.
-$$
+$$ {#eq-ch10-020}
 
 При одной энергии длина осцилляций, связанная с солнечным расщеплением,
 примерно в 33 раза больше длины, связанной с атмосферным расщеплением.
@@ -445,7 +445,7 @@ $$
 \delta_{\mathrm{CP}}=274^{+22}_{-25}\!{}^\circ,
 &&203^\circ\!\longrightarrow335^\circ.
 \end{aligned}
-$$
+$$ {#eq-ch10-021}
 
 Интервал NO включает $180^\circ$ и почти достигает
 $360^\circ\equiv0^\circ$. Лучшее значение $\delta_{\mathrm{CP}}$ само по себе
@@ -460,7 +460,7 @@ $$
 1.5,&\text{IC23 без SK-atm},\\
 5.9,&\text{IC24 + SK-atm}.
 \end{cases}
-$$
+$$ {#eq-ch10-022}
 
 Глобальный минимум расположен в NO, но установленного экспериментального
 выбора между NO и IO пока нет. Для дискретных гипотез величину
@@ -500,7 +500,7 @@ $$
 J_{\mathrm{CP}}^{\max}\simeq0.0338,
 \qquad
 J_{\mathrm{CP}}\simeq-0.0179.
-$$
+$$ {#eq-ch10-023}
 
 Профиль всё ещё допускает $J_{\mathrm{CP}}=0$.
 
@@ -513,7 +513,7 @@ $$
 U_{e1}U_{\mu1}^*
 +U_{e2}U_{\mu2}^*
 +U_{e3}U_{\mu3}^*=0.
-$$
+$$ {#eq-ch10-024}
 
 Три слагаемых образуют стороны замкнутого треугольника. Его площадь равна
 $|J_{\mathrm{CP}}|/2$.
@@ -534,20 +534,20 @@ $e^{-iCL/(2E)}$. Поэтому осцилляции не определяют �
 кинематика $\beta$-распада, безнейтринный двойной $\beta$-распад и космология.
 :::
 
-## Краткое резюме
+## Итоги главы
 
-1. Трёхфлэйворная модель содержит три угла, две независимые разности квадратов
-   масс и одну дираковскую CP-фазу.
-2. CP-нечётная часть вероятности пропорциональна инварианту Ярлскога и
-   исчезает в двухфлэйворном пределе.
-3. Осцилляции чувствительны к разностям квадратов масс, но не к абсолютному
-   масштабу масс.
+- Трёхфлэйворная модель содержит три угла, две независимые разности квадратов
+  масс и одну дираковскую CP-фазу.
+- CP-нечётная часть вероятности пропорциональна инварианту Ярлскога и исчезает
+  в двухфлэйворном пределе.
+- Осцилляции чувствительны к разностям квадратов масс, но не к абсолютному
+  масштабу масс.
 
 ## Задачи
 
 {{< include ../../../_includes/exercises/10_vacuum_pmns-ru.qmd >}}
 
-## Литература к лекции {.unnumbered}
+## Литература {.unnumbered}
 
 ::: {.chapter-literature}
 1. B. Pontecorvo. Mesonium and Antimesonium. *Soviet Physics JETP* **6**

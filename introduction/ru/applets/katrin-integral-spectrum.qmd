@@ -1,0 +1,19 @@
+---
+title: "Интегральный спектр KATRIN"
+description: "От β-спектра к скорости счёта"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Меняйте положение задерживающего порога. Закрашенная часть дифференциального спектра даёт электроны, которые проходят фильтр и попадают на детектор.
+
+::: {.applet-stage .applet-stage--large}
+{{< include ../slides/assets/04_direct_neutrino_mass/_katrin_integral_spectrum.qmd >}}
+:::
+
+::: {.applet-note}
+Один выбор потенциала даёт одну точку интегрального спектра. Сканирование потенциала восстанавливает форму спектра около конечной точки.
+
+[Объяснение в лекции 07](../slides/07_katrin.qmd) ·
+[Исходный код](https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/slides/assets/04_direct_neutrino_mass/_katrin_integral_spectrum.qmd)
+:::

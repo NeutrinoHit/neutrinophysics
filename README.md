@@ -21,6 +21,9 @@ make site
 `introduction/ru/book/assets/covers/README.md`. Книга собирается без доступа
 к соседнему проекту и без установки шрифтов обложки.
 
+Push в `main` автоматически публикует сайт. `workflow_dispatch` позволяет
+повторить публикацию вручную.
+
 ## Local preview
 
 ```bash
