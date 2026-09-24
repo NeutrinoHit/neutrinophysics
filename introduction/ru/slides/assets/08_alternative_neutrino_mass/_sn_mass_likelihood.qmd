@@ -1,0 +1,130 @@
+::: {.spectrum-widget .sn-mass-widget}
+```{ojs}
+//| echo: false
+
+viewof snTrueMass = Inputs.range([0, 2], {
+  value: 1.0, step: 0.05,
+  label: html`<span class="spectrum-slider-label">${tex`m_{\text{истинная}},\ \text{эВ}`}</span>`
+})
+
+viewof snSpread = Inputs.range([0.2, 20], {
+  value: 2.0, step: 0.2,
+  label: html`<span class="spectrum-slider-label">${tex`\sigma_t,\ \text{мс}`}</span>`
+})
+
+viewof snCount = Inputs.range([5, 40], {
+  value: 15, step: 1,
+  label: html`<span class="spectrum-slider-label">${tex`N\ \text{событий}`}</span>`
+})
+
+viewof snReroll = Inputs.button("Новое событие", {
+  value: 0, reduce: value => value + 1
+})
+
+// Расстояние 10 кпк: задержка = 5.15 мс * (m/эВ)^2 * (10 МэВ/E)^2.
+snScale = 5.15
+
+// Набор энергий и флуктуаций держится, пока не нажата кнопка.
+snPool = {
+  let state = (20260921 + 7919 * snReroll) >>> 0
+  const random = () => {
+    state = (state * 1664525 + 1013904223) >>> 0
+    return state / 4294967296
+  }
+  return Array.from({length: 40}, () => {
+    const u = random()
+    const energy = 6 + 30 * u * u
+    const a = Math.max(random(), 1e-9)
+    const b = random()
+    return {
+      energy,
+      gauss: Math.sqrt(-2 * Math.log(a)) * Math.cos(2 * Math.PI * b),
+      inverseSquare: Math.pow(10 / energy, 2)
+    }
+  })
+}
+
+snEvents = snPool.slice(0, snCount).map(event => ({
+  ...event,
+  time: snScale * snTrueMass * snTrueMass * event.inverseSquare + snSpread * event.gauss
+}))
+
+// Наклон прямой t(x), x = (10 МэВ/E)^2, даёт m^2. Момент вспышки уходит в свободный член.
+snFit = {
+  const n = snEvents.length
+  const meanX = snEvents.reduce((s, e) => s + e.inverseSquare, 0) / n
+  const meanT = snEvents.reduce((s, e) => s + e.time, 0) / n
+  const sxx = snEvents.reduce((s, e) => s + (e.inverseSquare - meanX) ** 2, 0)
+  const sxt = snEvents.reduce((s, e) => s + (e.inverseSquare - meanX) * (e.time - meanT), 0)
+  const slope = sxt / sxx
+  const massSquared = slope / snScale
+  const error = snSpread / Math.sqrt(sxx) / snScale
+  return {meanX, meanT, slope, massSquared, error,
+          intercept: meanT - slope * meanX}
+}
+
+snProfile = {
+  const half = Math.max(3.5 * snFit.error, 0.4)
+  return Array.from({length: 241}, (_, i) => {
+    const massSquared = snFit.massSquared - half + 2 * half * i / 240
+    const residuals = snEvents.map(e => e.time - snScale * massSquared * e.inverseSquare)
+    const mean = residuals.reduce((s, r) => s + r, 0) / residuals.length
+    const chi2 = residuals.reduce((s, r) => s + (r - mean) ** 2, 0) / (snSpread * snSpread)
+    return {massSquared, chi2}
+  })
+}
+
+snChi2Min = Math.min(...snProfile.map(point => point.chi2))
+
+snDataPlot = Plot.plot({
+  width: 500, height: 300,
+  marginTop: 20, marginRight: 20, marginBottom: 54, marginLeft: 74,
+  style: {background: "#ffffff", color: "#111111", fontSize: "17px"},
+  x: {label: "(10 МэВ / E)² →", grid: true, domain: [0, 3]},
+  y: {label: "↑ время прилёта, мс", grid: true},
+  marks: [
+    Plot.line([{x: 0, y: snFit.intercept},
+               {x: 3, y: snFit.intercept + 3 * snFit.slope}],
+              {x: "x", y: "y", stroke: "#4ea1ff", strokeWidth: 4}),
+    Plot.dot(snEvents, {x: "inverseSquare", y: "time", r: 6, fill: "#ffb347",
+                        stroke: "#111111", strokeWidth: 1}),
+    Plot.frame({stroke: "#111111"})
+  ]
+})
+
+snProfilePlot = Plot.plot({
+  width: 500, height: 300,
+  marginTop: 20, marginRight: 20, marginBottom: 54, marginLeft: 74,
+  style: {background: "#ffffff", color: "#111111", fontSize: "17px"},
+  x: {label: "m², эВ² →", grid: true},
+  y: {label: "↑ −2 ln L (отсчёт от минимума)", grid: true, domain: [0, 9]},
+  marks: [
+    Plot.ruleY([1], {stroke: "#111111", strokeDasharray: "5 5"}),
+    Plot.ruleX([0], {stroke: "#111111", strokeOpacity: 0.35}),
+    Plot.line(snProfile, {x: "massSquared", y: d => d.chi2 - snChi2Min,
+                          stroke: "#4ea1ff", strokeWidth: 4}),
+    Plot.dot([{x: snFit.massSquared, y: 0}], {x: "x", y: "y", r: 7, fill: "#ffb347"}),
+    Plot.frame({stroke: "#111111"})
+  ]
+})
+
+html`
+<div class="spectrum-panel">
+  <div class="spectrum-legend">
+    <span>слева: чем меньше энергия, тем больше задержка</span>
+    <span>справа: профиль правдоподобия по ${tex`m^2`}</span>
+  </div>
+  <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap;">
+    <div>${snDataPlot}</div>
+    <div>${snProfilePlot}</div>
+  </div>
+  <div class="spectrum-summary">
+    <span>${tex`\hat m^2=${snFit.massSquared.toFixed(2)}\pm${snFit.error.toFixed(2)}\ \text{эВ}^2`}</span>
+    <span>${snFit.massSquared > 0
+      ? tex`\hat m=${Math.sqrt(snFit.massSquared).toFixed(2)}\ \text{эВ}`
+      : tex`\hat m^2<0:\ \text{статистическая флуктуация}`}</span>
+    <span>${tex`\text{истина}:\ m^2=${(snTrueMass * snTrueMass).toFixed(2)}\ \text{эВ}^2`}</span>
+  </div>
+</div>`
+```
+:::

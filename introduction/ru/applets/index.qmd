@@ -39,10 +39,66 @@ description: "Интерактивные модели к курсу «Введе
   </article>
 
   <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 04</span>
+    <h2><a href="beta-endpoint-resolution.html">Конец β-спектра</a></h2>
+    <p>Как масса нейтрино сдвигает конечную точку и как энергетическое разрешение размывает этот след.</p>
+    <a class="applet-card-action" href="beta-endpoint-resolution.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
     <span class="applet-card-kicker">Лекция 05</span>
     <h2><a href="cyclotron-motion.html">Электрон в магнитном поле</a></h2>
     <p>Одно и то же движение в координатном и фазовом пространствах.</p>
     <a class="applet-card-action" href="cyclotron-motion.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 05</span>
+    <h2><a href="planar-rotor.html">Плоский ротатор</a></h2>
+    <p>Угол, касательная скорость и периодическое движение — геометрия переменной действие–угол.</p>
+    <a class="applet-card-action" href="planar-rotor.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 06</span>
+    <h2><a href="adiabatic-trough.html">Медленно меняющийся осциллятор</a></h2>
+    <p>Классическая модель адиабатического инварианта: орбита, фазовый портрет и перераспределение энергии.</p>
+    <a class="applet-card-action" href="adiabatic-trough.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 07</span>
+    <h2><a href="katrin-integral-spectrum.html">Интегральный спектр KATRIN</a></h2>
+    <p>Как задерживающий потенциал отбирает электроны и превращает β-спектр в измеряемую скорость счёта.</p>
+    <a class="applet-card-action" href="katrin-integral-spectrum.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 08 · статистика</span>
+    <h2><a href="sn-mass-likelihood.html">Масса по временам прилёта</a></h2>
+    <p>Нейтрино от сверхновой приходят вразнобой. Правдоподобие превращает разброс в оценку массы — иногда отрицательную.</p>
+    <a class="applet-card-action" href="sn-mass-likelihood.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 08</span>
+    <h2><a href="cres-observables.html">Что измеряет CRES</a></h2>
+    <p>Боковые частотные полосы и медленный дрейф частоты одного электрона.</p>
+    <a class="applet-card-action" href="cres-observables.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 08</span>
+    <h2><a href="cres-sidebands.html">Боковые частоты CRES</a></h2>
+    <p>Как фазовая модуляция распределяет мощность одного электрона по нескольким частотным линиям.</p>
+    <a class="applet-card-action" href="cres-sidebands.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 08</span>
+    <h2><a href="cres-frequency-track.html">Частотный трек электрона</a></h2>
+    <p>Начальная энергия, радиационные потери и растущая частота циклотронного сигнала.</p>
+    <a class="applet-card-action" href="cres-frequency-track.html">Открыть →</a>
   </article>
 
   <article class="applet-card">
@@ -78,6 +134,13 @@ description: "Интерактивные модели к курсу «Введе
     <h2><a href="matter-adiabatic.html">Адиабатический MSW-переход</a></h2>
     <p>Медленный и быстрый профили плотности на избегаемом пересечении.</p>
     <a class="applet-card-action" href="matter-adiabatic.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Солнечные нейтрино</span>
+    <h2><a href="gamow-window.html">Окно Гамова</a></h2>
+    <p>Тепловой хвост, кулоновское туннелирование и узкий интервал энергий, где горят звёзды.</p>
+    <a class="applet-card-action" href="gamow-window.html">Открыть →</a>
   </article>
 </section>
 ```

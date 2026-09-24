@@ -1,4 +1,433 @@
 ---
-title: "Адиабатический MSW-эффект"
 body-classes: lecture-page topic-4
 ---
+
+# Адиабатический MSW-эффект {#sec-matter-adiabatic-msw}
+
+::: {.book-lead}
+В однородном слое собственные волны вещества неподвижны. В Солнце плотность
+падает от центра к поверхности, поэтому собственные векторы непрерывно
+поворачиваются. Главный вопрос этой главы прост: успевает ли нейтрино
+поворачиваться вместе с ними?
+:::
+
+## От слоя к профилю
+
+Пусть потенциал зависит от координаты $x$ вдоль траектории:
+
+$$
+V=V(x),
+\qquad
+\theta_m=\theta_m(x),
+\qquad
+\Delta_m=\Delta_m(x).
+$$ {#eq-msw-varying-parameters}
+
+В каждой точке гамильтониан можно диагонализовать тем же поворотом, что и в
+однородной среде:
+
+$$
+H_f'(x)=U(\theta_m(x))
+\frac12\begin{pmatrix}-\Delta_m(x)&0\\0&\Delta_m(x)\end{pmatrix}
+U^T(\theta_m(x)).
+$$ {#eq-msw-local-diagonalization}
+
+Но локальная диагонализация ещё не решает задачу. Пока нейтрино проходит
+малый участок, сам базис успевает измениться. Поэтому нужно выяснить, не
+создаёт ли вращение базиса переходы между мгновенными модами.
+
+::: {.physical-comment title="Что требуется доказать"}
+Фраза «нейтрино следует за собственной модой» не является новым постулатом.
+Она должна следовать из уравнения движения. Для этого перейдём в мгновенный
+базис и сравним внедиагональную связь, вызванную вращением базиса, с зазором
+между уровнями.
+:::
+
+## Уравнение в мгновенном базисе
+
+Запишем флэйворные амплитуды через мгновенные массовые амплитуды $b(x)$:
+
+$$
+\psi_f(x)=U_m(x)b(x),
+\qquad
+U_m(x)\equiv U(\theta_m(x)).
+$$ {#eq-msw-instantaneous-basis-definition}
+
+Исходное уравнение распространения имеет вид
+
+$$
+i\frac{d\psi_f}{dx}=H_f'(x)\psi_f.
+$$ {#eq-msw-flavor-evolution}
+
+Дифференцируя уравнение [-@eq-msw-instantaneous-basis-definition], получаем
+
+$$
+i\left(\frac{dU_m}{dx}b+U_m\frac{db}{dx}\right)=H_f'U_mb.
+$$ {#eq-msw-differentiated-state}
+
+Умножим слева на $U_m^T=U_m^{-1}$ и воспользуемся локальной
+диагонализацией [-@eq-msw-local-diagonalization]:
+
+$$
+i\frac{db}{dx}=
+\left[
+\frac12\begin{pmatrix}-\Delta_m&0\\0&\Delta_m\end{pmatrix}
+-iU_m^T\frac{dU_m}{dx}
+\right]b.
+$$ {#eq-msw-instantaneous-hamiltonian-general}
+
+Для вещественной матрицы поворота
+
+$$
+U_m^T\frac{dU_m}{dx}=
+\begin{pmatrix}
+0&d\theta_m/dx\\
+-d\theta_m/dx&0
+\end{pmatrix}.
+$$ {#eq-msw-connection-matrix}
+
+Следовательно,
+
+$$
+\boxed{
+i\frac d{dx}
+\begin{pmatrix}b_1\\b_2\end{pmatrix}
+=
+\begin{pmatrix}
+-\Delta_m/2&-i\,d\theta_m/dx\\
+i\,d\theta_m/dx&\Delta_m/2
+\end{pmatrix}
+\begin{pmatrix}b_1\\b_2\end{pmatrix}}.
+$$ {#eq-msw-instantaneous-evolution}
+
+Диагональные элементы раздвигают фазы двух мгновенных мод. Внедиагональные
+элементы появляются только потому, что базис вращается. Они и переводят
+$\nu_{1m}$ в $\nu_{2m}$ и обратно.
+
+Если
+
+$$
+\boxed{
+\left|\frac{d\theta_m}{dx}\right|\ll\Delta_m},
+$$ {#eq-msw-adiabatic-condition}
+
+вращение базиса мало за длину, на которой две моды набирают относительную фазу
+порядка единицы. Тогда
+
+$$
+|b_1(x)|^2\simeq\mathrm{const},
+\qquad
+|b_2(x)|^2\simeq\mathrm{const}.
+$$ {#eq-msw-adiabatic-populations}
+
+Сохраняется заселённость мгновенной моды, а не её флэйворный состав. Сам
+собственный вектор продолжает поворачиваться.
+
+## Где адиабатичность нарушается первой
+
+Напомним определения
+
+$$
+A(x)=\frac{V(x)}{\Delta},
+\qquad
+R(x)=\sqrt{[\cos2\theta-A(x)]^2+\sin^22\theta},
+\qquad
+\Delta_m=\Delta R.
+$$ {#eq-msw-local-r-definitions}
+
+Из
+
+$$
+2\theta_m=\operatorname{atan2}
+\bigl(\sin2\theta,\cos2\theta-A\bigr)
+$$ {#eq-msw-angle-atan2}
+
+следует
+
+$$
+\boxed{
+\frac{d\theta_m}{dx}=
+\frac{\sin2\theta}{2R^2}\frac{dA}{dx}}.
+$$ {#eq-msw-angle-derivative}
+
+Удобная локальная мера неадиабатичности равна
+
+$$
+\boxed{
+\eta(x)\equiv
+\frac{|d\theta_m/dx|}{\Delta_m}
+=\frac{|dA/dx|\sin2\theta}{2\Delta R^3}}.
+$$ {#eq-msw-nonadiabaticity}
+
+- При $\eta\ll1$ состояние следует за мгновенной ветвью.
+- При $\eta\gtrsim1$ возможен переход между ветвями.
+
+В окрестности резонанса $A=\cos2\theta$ зазор минимален,
+$R=\sin2\theta$, и поэтому адиабатичность наиболее уязвима. На резонансе
+
+$$
+\eta_{\mathrm{res}}=
+\frac{|dA/dx|_{\mathrm{res}}}{2\Delta\sin^22\theta}.
+$$ {#eq-msw-resonance-eta}
+
+Обратную величину принято записывать как
+
+$$
+\boxed{
+\gamma_{\mathrm{res}}=
+\frac{\Delta\sin^22\theta}
+{\cos2\theta\,|d\ln N_e/dx|_{\mathrm{res}}}},
+\qquad
+\eta_{\mathrm{res}}=\frac1{2\gamma_{\mathrm{res}}}.
+$$ {#eq-msw-resonance-gamma}
+
+Для линейного пересечения, продолженного достаточно далеко по обе стороны,
+формула Ландау—Зенера даёт приближённую вероятность скачка между
+адиабатическими ветвями:
+
+$$
+\boxed{P_c\simeq\exp\!\left(-\frac{\pi}{2}\gamma_{\mathrm{res}}\right)}.
+$$ {#eq-msw-landau-zener}
+
+Это не универсальная формула для любого профиля. Она опирается на локальную
+линейность диагональной разности и постоянство внедиагональной связи. Для
+реального солнечного профиля надёжнее интегрировать исходное уравнение.
+
+::: {.biography name="Станислав Михеев" years="1940–2011" source="https://www.ictp.it/news/2011/5/memoriam" source-label="Международный центр теоретической физики"}
+Станислав Михеев работал в Институте ядерных исследований РАН. Вместе с
+Алексеем Смирновым он применил идею Вольфенстайна к среде переменной плотности
+и в 1985 году обнаружил резонансное усиление и адиабатическую конверсию
+солнечных нейтрино. За эту работу Михеев и Смирнов получили премию Сакураи
+Американского физического общества 2008 года.
+:::
+
+::: {.biography name="Алексей Смирнов" source="https://www.ictp.it/news/2019/3/scientist-achievement" source-label="Международный центр теоретической физики"}
+Алексей Смирнов развил теорию резонансного преобразования нейтрино вместе со
+Станиславом Михеевым и продолжил исследование осцилляций в Солнце, Земле и
+астрофизических средах. В его изложениях MSW-эффект последовательно отделён
+от простой фразы «резонанс усиливает осцилляции»: сильная солнечная конверсия
+возникает благодаря прохождению по меняющейся собственной ветви.
+:::
+
+## Солнечный выход
+
+Рассмотрим электронное нейтрино, рождённое в солнечном ядре. Для достаточно
+высокой энергии
+
+$$
+A_0\gg\cos2\theta,
+\qquad
+\theta_m(x_0)\simeq\frac\pi2.
+$$ {#eq-msw-high-density-production}
+
+Из определения собственных состояний вещества следует
+
+$$
+|\nu_e\rangle\simeq|\nu_{2m}(x_0)\rangle.
+$$ {#eq-msw-electron-upper-branch}
+
+Если условие [-@eq-msw-adiabatic-condition] выполнено, верхняя мода остаётся
+заселённой:
+
+$$
+b_2(x)=e^{-i\Phi_2(x)}b_2(x_0),
+\qquad
+b_1(x)\simeq0,
+\qquad
+\Phi_2(x)=\int_{x_0}^{x}\frac{\Delta_m(x')}{2}\,dx'.
+$$ {#eq-msw-upper-branch-evolution}
+
+У поверхности $N_e\to0$, поэтому $\theta_m\to\theta$ и
+$|\nu_{2m}\rangle\to|\nu_2\rangle$. Получаем
+
+$$
+\boxed{
+|\nu_e\rangle_{\mathrm{core}}
+\longrightarrow e^{-i\Phi_2}|\nu_2\rangle_{\mathrm{vacuum}}}.
+$$ {#eq-msw-adiabatic-solar-conversion}
+
+Детектор видит массовое состояние $\nu_2$ как электронный флэйвор с
+вероятностью
+
+$$
+\boxed{
+P_{ee}^{\text{high }E}\simeq
+|\langle\nu_e|\nu_2\rangle|^2=\sin^2\theta}.
+$$ {#eq-msw-high-energy-survival}
+
+Для солнечного угла это около $0.30$. Сильное изменение вероятности возникло
+без поглощения и без настройки длины Солнца на нечётное число полупериодов.
+
+::: {#anim-msw-solar-bases .animation title="Солнечный выход в трёх базисах" src="../assets/chapters/06_matter_oscillations/msw_solar_exit_bases.mp4" poster="../assets/chapters/06_matter_oscillations/msw_solar_exit_bases.png" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/13_matter_adiabatic_msw.html#/solar-exit-bases"}
+Одно и то же состояние показано во флэйворном, фиксированном вакуумном
+массовом и мгновенном массовом базисах. Заселённость $\nu_{2m}$ почти не
+меняется, хотя проекции на $\nu_e$ и $\nu_2$ меняются сильно.
+:::
+
+### Общая адиабатическая вероятность
+
+Пусть нейтрино родилось как $\nu_e$ при угле $\theta_m^0$. После длинного
+пути к Земле когерентность между $\nu_1$ и $\nu_2$ теряется из-за конечной
+ширины области рождения, энергетического разрешения и размера волновых
+пакетов. Тогда вероятности массовых альтернатив складываются:
+
+$$
+P_{ee}=
+|U_{e1}|^2|U^m_{e1}(x_0)|^2+
+|U_{e2}|^2|U^m_{e2}(x_0)|^2.
+$$ {#eq-msw-decoherent-projection}
+
+Следовательно,
+
+$$
+\boxed{
+P_{ee}^{\mathrm{ad,decoh}}
+=\cos^2\theta\cos^2\theta_m^0+
+\sin^2\theta\sin^2\theta_m^0
+=\frac12\left(1+\cos2\theta\cos2\theta_m^0\right)}.
+$$ {#eq-msw-adiabatic-survival}
+
+Два предела уравнения [-@eq-msw-adiabatic-survival] различны:
+
+$$
+\boxed{
+P_{ee}\simeq
+\begin{cases}
+1-\dfrac12\sin^22\theta,&A_0\ll1,\\[2mm]
+\sin^2\theta,&A_0\gg1.
+\end{cases}}
+$$ {#eq-msw-survival-limits}
+
+При низкой энергии получаются вакуумные осцилляции с усреднённой фазой. При
+высокой — адиабатическая конверсия. Между двумя плато лежит плавный подъём
+$P_{ee}$ при уменьшении энергии; это не узкий пик на одной резонансной
+энергии.
+
+Если эволюция частично неадиабатична, после декогеренции формула Парка даёт
+
+$$
+\boxed{
+P_{ee}=\frac12+
+\left(\frac12-P_c\right)
+\cos2\theta_m^0\cos2\theta}.
+$$ {#eq-msw-parke-survival}
+
+При $P_c=0$ возвращается адиабатический результат. Точное значение $P_c$
+зависит от профиля плотности; для современных параметров солнечного сектора
+основная часть распространения в Солнце очень близка к адиабатической.
+
+::: {#interactive-msw-adiabatic-passage .interactive title="Медленный и быстрый проход через избегаемое пересечение" embed="../../applets/matter-adiabatic.html" poster="../assets/chapters/06_matter_oscillations/msw_adiabatic_passage.png" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/matter-adiabatic.html" qr="../assets/chapters/06_matter_oscillations/qr/matter_adiabatic.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/matter-adiabatic.qmd" repo-label="код апплета"}
+При медленном профиле $P_{2m}$ остаётся близкой к единице. При быстром
+профиле состояние отстаёт от поворачивающегося собственного вектора и
+появляется настоящий переход между мгновенными ветвями.
+:::
+
+## Как считать произвольный профиль
+
+Разобьём траекторию на короткие участки. На шаге $\delta x$ возьмём
+потенциал в середине и применим точный пропагатор постоянного слоя:
+
+$$
+\psi_f(x+\delta x)=
+\exp[-iH_f'(V(x+\delta x/2))\delta x]\,\psi_f(x).
+$$ {#eq-msw-midpoint-layer-step}
+
+Каждый шаг унитарен, поэтому норма не дрейфует. Сходимость проверяют,
+последовательно уменьшая $\delta x$. Одновременно полезно вычислять проекции
+
+$$
+\psi_m=U^T(\theta)\psi_f,
+\qquad
+b=U^T(\theta_m)\psi_f,
+$$ {#eq-msw-three-basis-projections}
+
+и контролировать
+
+$$
+|\psi_e|^2+|\psi_x|^2
+=|c_1|^2+|c_2|^2
+=|b_1|^2+|b_2|^2=1.
+$$ {#eq-msw-unitarity-check}
+
+Разные наборы проекций не являются разными процессами. Это одно состояние,
+записанное в трёх координатных системах.
+
+## Что сохраняется в статическом профиле
+
+Потенциал в Солнце зависит от положения, но почти не зависит от времени:
+$V=V(\mathbf x)$. Такая среда не обладает пространственной однородностью и
+может менять импульс волны, но обладает временной однородностью и сохраняет
+энергию.
+
+В уравнении распространения
+
+$$
+i\frac d{dx}\psi=H_{\mathrm{osc}}(x;E)\psi
+$$ {#eq-msw-spatial-evolution-generator}
+
+лабораторная энергия $E$ фиксирована. Матрица $H_{\mathrm{osc}}$ имеет размерность
+энергии, но здесь она служит генератором фазы по расстоянию — поправкой к
+локальному волновому числу. По мере движения меняются локальный импульс,
+фазовая скорость и состав собственных мод.
+
+Для настоящей временной эволюции
+
+$$
+i\frac d{dt}|\psi\rangle=H(t)|\psi\rangle
+$$ {#eq-msw-time-evolution}
+
+выполняется
+
+$$
+\boxed{
+\frac d{dt}\langle H\rangle=
+\left\langle\frac{\partial H}{\partial t}\right\rangle}.
+$$ {#eq-msw-energy-change-theorem}
+
+Если среда стационарна, $\partial H/\partial t=0$ и энергия сохраняется.
+Если плотность действительно меняет внешний привод, нейтринная подсистема
+может обмениваться энергией с ним; полная система по-прежнему сохраняет
+энергию.
+
+::: {.physical-comment title="Простая классическая аналогия"}
+Луч света проходит через неподвижную границу стекла: частота сохраняется, а
+длина волны меняется. Если же показатель преломления самого стекла
+модулировать во времени, частота света может измениться — энергию отдаёт
+привод. Пространственно меняющийся солнечный профиль относится к первой
+постановке, не ко второй.
+:::
+
+## Итоги главы
+
+- В мгновенном базисе вращение собственных векторов создаёт связь
+  $d\theta_m/dx$ между ветвями.
+- Адиабатическое условие сравнивает эту связь с локальным зазором
+  $\Delta_m$.
+- Высокоэнергетическое $\nu_e$, рождённое в солнечном ядре, следует по верхней
+  ветви и выходит преимущественно как $\nu_2$.
+- После декогеренции солнечная вероятность меняется от
+  $1-\tfrac12\sin^22\theta$ при низкой энергии до $\sin^2\theta$ при высокой.
+- В статически неоднородной среде сохраняется энергия; меняются локальные
+  волновые числа и состав мод.
+
+## Задачи
+
+{{< include ../../../_includes/exercises/13_matter_adiabatic_msw-ru.qmd >}}
+
+## Литература {.unnumbered}
+
+::: {.chapter-literature}
+1. S. P. Mikheyev, A. Yu. Smirnov. Resonance amplification of neutrino
+   oscillations in matter and solar-neutrino spectroscopy. *Il Nuovo Cimento
+   C* **9**, 17–26 (1986).
+   [doi:10.1007/BF02508049](https://doi.org/10.1007/BF02508049).
+2. S. P. Mikheyev, A. Yu. Smirnov. Neutrino oscillations in a medium with
+   variable density. *Soviet Physics Uspekhi* **29**, 1155–1157 (1986).
+   [doi:10.1070/PU1986v029n12ABEH003628](https://doi.org/10.1070/PU1986v029n12ABEH003628).
+3. S. J. Parke. Nonadiabatic level crossing in resonant neutrino
+   oscillations. *Physical Review Letters* **57**, 1275–1278 (1986).
+   [doi:10.1103/PhysRevLett.57.1275](https://doi.org/10.1103/PhysRevLett.57.1275).
+4. M. Blennow, A. Yu. Smirnov. Neutrino propagation in matter. *Advances in
+   High Energy Physics* **2013**, 972485 (2013).
+   [doi:10.1155/2013/972485](https://doi.org/10.1155/2013/972485).
+:::

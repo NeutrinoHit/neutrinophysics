@@ -21,7 +21,7 @@ $$
 \ell=\frac{z}{\cos\theta},
 \qquad
 E_{\mathrm{det}}=E-\Delta E(\ell).
-$$
+$$ {#eq-ch07-001}
 
 Наблюдаемый спектр является свёрткой с распределением потерь $L$:
 
@@ -61,7 +61,7 @@ $$
 \rho d\simeq4\cdot10^{17}~\text{см}^{-2},
 \qquad
 \sigma_{\mathrm{inel}}\simeq3.4\cdot10^{-18}~\text{см}^2.
-$$
+$$ {#eq-ch07-002}
 
 Оптическая толщина полного столба равна
 
@@ -91,7 +91,7 @@ $$
 B_{\min}\simeq0.35~\text{мТл},
 \qquad
 \Delta E\simeq0.95~\text{эВ}.
-$$
+$$ {#eq-ch07-003}
 
 Прошедшие электроны ускоряются к сегментированному кремниевому детектору. Он
 регистрирует число электронов и координату попадания; анализируемую энергию
@@ -118,7 +118,7 @@ $$ {#eq-katrin-integral-rate}
 $f_{\mathrm{resp}}$ объединяет пропускание, потери энергии и геометрию
 источника.
 
-::: {#anim-katrin-integral .animation title="Интегральный спектр KATRIN" epub-src="../assets/chapters/04_direct_neutrino_mass/katrin_integral_spectrum.mp4" poster="../assets/chapters/04_direct_neutrino_mass/katrin_integral_spectrum.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/07_katrin.html#/katrin-integral-spectrum" qr="../assets/chapters/04_direct_neutrino_mass/qr/katrin_integral.png"}
+::: {#interactive-katrin-integral .interactive title="Интегральный спектр KATRIN" embed="../../applets/katrin-integral-spectrum.html" poster="../assets/chapters/04_direct_neutrino_mass/katrin_integral_spectrum.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/katrin-integral-spectrum.html" qr="../assets/chapters/04_direct_neutrino_mass/qr/katrin_integral.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/katrin-integral-spectrum.qmd" repo-label="код апплета"}
 Запирающий потенциал задаёт нижнюю границу интеграла. Точки ближе всего к
 конечной энергии сильнее зависят от массы и содержат меньше событий.
 :::
@@ -132,7 +132,7 @@ $$
 \lambda_k=t_kR(U_k),
 \qquad
 n_k\sim\operatorname{Poisson}(\lambda_k).
-$$
+$$ {#eq-ch07-004}
 
 Пуассоновский девианс можно записать как
 
@@ -148,7 +148,7 @@ $$ {#eq-katrin-likelihood}
 
 $$
 m_\beta^2,\qquad E_0,\qquad A,\qquad b.
-$$
+$$ {#eq-ch07-005}
 
 Конечную энергию нельзя жёстко фиксировать извне: небольшая ошибка энергетической
 шкалы слишком похожа на изменение спектра. Нормировка и фон также коррелируют с
@@ -189,7 +189,7 @@ $$
 m_\beta^2
 =
 -0.14^{+0.13}_{-0.15}~\text{эВ}^2,
-$$
+$$ {#eq-ch07-006}
 
 что соответствует верхнему пределу
 
@@ -223,19 +223,19 @@ $$ {#eq-heavy-neutrino-kink}
 создать интенсивный холодный источник и подавить рекомбинацию. Такой источник
 не имеет молекулярного распределения конечных состояний.
 
-## Краткое резюме
+## Итоги главы
 
-1. KATRIN измеряет интегральный спектр у конечной точки задерживающим
-   потенциалом.
-2. В фит входят $m_\beta^2$, конечная энергия, нормировка и фон.
-3. Потери энергии, молекулярные конечные состояния и стабильность потенциала
-   входят в функцию отклика установки.
+- KATRIN измеряет интегральный спектр у конечной точки задерживающим
+  потенциалом.
+- В подгонку входят $m_\beta^2$, конечная энергия, нормировка и фон.
+- Потери энергии, молекулярные конечные состояния и стабильность потенциала
+  входят в функцию отклика установки.
 
 ## Задачи
 
 {{< include ../../../_includes/exercises/07_katrin-ru.qmd >}}
 
-## Литература к лекции {.unnumbered}
+## Литература {.unnumbered}
 
 ::: {.chapter-literature}
 1. KATRIN Collaboration. *KATRIN Design Report 2004*.

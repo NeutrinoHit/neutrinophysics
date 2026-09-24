@@ -51,15 +51,15 @@ toc: false
     </details>
     <details class="lecture-row">
       <summary><span class="lecture-index">06</span><span>Прямое измерение массы нейтрино. MAC-E-спектрометр</span></summary>
-      <div class="lecture-row-body"><p>Магнитная коллимация, электростатический фильтр, акцептанс и разрешение.</p><div class="lecture-links"><a href="ru/slides/06_mac_e_spectrometer.html">Открыть лекцию</a><a href="ru/exercises/06_mac_e_spectrometer_exercises.html">Задачи</a><a href="ru/applets/radiation-belts.html">Игра: радиационные пояса</a></div></div>
+      <div class="lecture-row-body"><p>Магнитная коллимация, электростатический фильтр, акцептанс и разрешение.</p><div class="lecture-links"><a href="ru/slides/06_mac_e_spectrometer.html">Открыть лекцию</a><a href="ru/exercises/06_mac_e_spectrometer_exercises.html">Задачи</a><a href="ru/applets/adiabatic-trough.html">Адиабатический инвариант</a><a href="ru/applets/radiation-belts.html">Радиационные пояса</a></div></div>
     </details>
     <details class="lecture-row">
       <summary><span class="lecture-index">07</span><span>Прямое измерение массы нейтрино. Эксперимент KATRIN</span></summary>
-      <div class="lecture-row-body"><p>Установка, функция отклика, статистическая модель, систематики и результат.</p><div class="lecture-links"><a href="ru/slides/07_katrin.html">Открыть лекцию</a><a href="ru/exercises/07_katrin_exercises.html">Задачи</a></div></div>
+      <div class="lecture-row-body"><p>Установка, функция отклика, статистическая модель, систематики и результат.</p><div class="lecture-links"><a href="ru/slides/07_katrin.html">Открыть лекцию</a><a href="ru/exercises/07_katrin_exercises.html">Задачи</a><a href="ru/applets/katrin-integral-spectrum.html">Интегральный спектр</a></div></div>
     </details>
     <details class="lecture-row">
       <summary><span class="lecture-index">08</span><span>Прямое измерение массы нейтрино. Другие способы взвесить нейтрино</span></summary>
-      <div class="lecture-row-body"><p>Project 8, калориметрия гольмия и кинематические методы для других флэйворов.</p><div class="lecture-links"><a href="ru/slides/08_alternative_neutrino_mass.html">Открыть лекцию</a><a href="ru/exercises/08_alternative_neutrino_mass_exercises.html">Задачи</a></div></div>
+      <div class="lecture-row-body"><p>Project 8, калориметрия гольмия и кинематические методы для других флэйворов.</p><div class="lecture-links"><a href="ru/slides/08_alternative_neutrino_mass.html">Открыть лекцию</a><a href="ru/exercises/08_alternative_neutrino_mass_exercises.html">Задачи</a><a href="ru/applets/cres-observables.html">Апплеты CRES</a><a href="ru/applets/sn-mass-likelihood.html">Времена прилёта</a></div></div>
     </details>
     <details class="lecture-row">
       <summary><span class="lecture-index">09</span><span>Осцилляции в вакууме. Два флэйвора</span></summary>

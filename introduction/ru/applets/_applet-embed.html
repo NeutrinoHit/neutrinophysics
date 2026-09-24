@@ -1,0 +1,23 @@
+<script>
+if (window.self !== window.top || new URLSearchParams(window.location.search).has("embed")) {
+  document.documentElement.classList.add("is-embedded-applet");
+}
+</script>
+<style>
+html.is-embedded-applet body { background: transparent; }
+html.is-embedded-applet #quarto-header,
+html.is-embedded-applet #title-block-header,
+html.is-embedded-applet .applet-nav,
+html.is-embedded-applet .nav-footer { display: none !important; }
+html.is-embedded-applet #quarto-content,
+html.is-embedded-applet main.content { margin: 0 !important; padding: 0 !important; }
+html.is-embedded-applet main.content > p,
+html.is-embedded-applet main.content > .applet-note { display: none !important; }
+html.is-embedded-applet main.content > .applet-stage {
+  width: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+</style>

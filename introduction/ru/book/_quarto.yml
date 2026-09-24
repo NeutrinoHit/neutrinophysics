@@ -79,8 +79,39 @@ book:
 
 lang: ru-RU
 
+# Subject profile for the canonical NeutrinoHit book components.
+book-part-titles:
+  - "ТЕМА 1. Нейтрино и слабое взаимодействие: симметрии, спин и спиральность"
+  - "ТЕМА 2. Прямое измерение массы нейтрино"
+  - "ТЕМА 3. Осцилляции нейтрино в вакууме"
+  - "ТЕМА 4. Осцилляции нейтрино в веществе и квантовомеханические тонкости"
+  - "ТЕМА 5. Нейтрино в Стандартной модели и за её пределами"
+  - "ТЕМА 6. Взаимодействия и детектирование нейтрино"
+  - "ТЕМА 7. Источники нейтрино"
+  - "ТЕМА 8. Майорановская масса и нейтрино Вселенной"
+  - "ТЕМА 9. Глобальная картина и новая физика"
+  - "ТЕМА 10. Прикладная нейтринная физика"
+
+# Optional editorial line breaks for printed titles. They do not change the
+# corresponding HTML headings, PDF bookmarks or table-of-contents entries.
+book-pdf-title-lines:
+  "Нейтрино. Первое знакомство":
+    - "Нейтрино."
+    - "Первое знакомство"
+  "ТЕМА 9. Глобальная картина и новая физика":
+    - "ТЕМА 9. Глобальная картина"
+    - "и новая физика"
+  "Астрофизические нейтрино сверхвысоких энергий":
+    - "Астрофизические"
+    - "нейтрино сверхвысоких"
+    - "энергий"
+  "Смешивание и CP-нарушение":
+    - "Смешивание"
+    - "и CP-нарушение"
+
 filters:
   - assets/filters/hide-book-index.lua
+  - assets/filters/neutrinohit-book.lua
   - assets/filters/book-media.lua
 
 crossref:
@@ -104,6 +135,7 @@ format:
       margin-width: 230px
       gutter-width: 1rem
     css:
+      - assets/styles/neutrinohit-book.css
       - assets/styles/book.css
       - assets/covers/covers.css
     theme: cosmo
@@ -120,20 +152,21 @@ format:
     papersize: a4
     fontsize: 11pt
     geometry:
-      - top=18mm
+      - top=22mm
       - bottom=20mm
       - inner=20mm
-      - outer=50mm
-      - marginparwidth=36mm
-      - marginparsep=6mm
-      - headheight=6mm
-      - headsep=5mm
+      - outer=40mm
+      - marginparwidth=28mm
+      - marginparsep=5mm
+      - headheight=8.5mm
+      - headsep=5.5mm
       - footskip=9mm
     toc: true
     toc-depth: 2
     number-sections: true
     pdf-engine: lualatex
     include-in-header:
+      - ../../../shared/latex/neutrinohit-book.tex
       - assets/latex/book.tex
       - assets/covers/covers.tex
     include-after-body: assets/covers/back-cover.tex
@@ -143,5 +176,7 @@ format:
     toc: true
     toc-depth: 2
     number-sections: true
-    css: assets/styles/book.css
+    css:
+      - assets/styles/neutrinohit-book.css
+      - assets/styles/book.css
     epub-cover-image: assets/images/book-cover.jpg

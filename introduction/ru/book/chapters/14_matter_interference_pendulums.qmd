@@ -1,4 +1,436 @@
 ---
-title: "Интерференция и маятники"
 body-classes: lecture-page topic-4
 ---
+
+# Интерференция, мгновенные моды и маятники {#sec-matter-interference-pendulums}
+
+::: {.book-lead}
+При адиабатическом выходе из Солнца заселённость верхней мгновенной моды почти
+постоянна. Но в фиксированном вакуумном базисе амплитуда $\nu_1$ может упасть
+до нуля. Куда она делась, если гамильтониан эрмитов и связь между состояниями
+обратима? Ответ виден в комплексных амплитудах и в механической модели двух
+связанных маятников.
+:::
+
+## Парадокс фиксированного базиса
+
+В вакуумном массовом базисе состояние записывается как
+
+$$
+\psi_m(x)=
+\begin{pmatrix}c_1(x)\\c_2(x)\end{pmatrix}.
+$$ {#eq-interference-fixed-mass-state}
+
+Вещество создаёт симметричные внедиагональные элементы:
+
+$$
+H_m'(x)=\frac12
+\begin{pmatrix}
+-\Delta+V\cos2\theta&V\sin2\theta\\
+V\sin2\theta&\Delta-V\cos2\theta
+\end{pmatrix}.
+$$ {#eq-interference-fixed-mass-hamiltonian}
+
+Значит, уравнения содержат переходы $\nu_1\leftrightarrow\nu_2$ в обе
+стороны. Однако при адиабатическом выходе начальная верхняя мода вещества
+становится вакуумным $\nu_2$, и $|c_1|^2\to0$.
+
+Ошибочная логика звучит так: если матричные элементы переходов равны, поток
+вероятности в обе стороны тоже равен. Эрмитовость гарантирует сохранение
+полной нормы, но направление мгновенного потока задаётся ещё и относительной
+фазой амплитуд.
+
+## Поток вероятности зависит от фазы
+
+Пусть
+
+$$
+i\dot c_1=H_{11}c_1+H_{12}c_2,
+\qquad
+i\dot c_2=H_{21}c_1+H_{22}c_2,
+$$ {#eq-interference-component-equations}
+
+где точка означает производную по координате распространения, а
+$H_{21}=H_{12}^*$. Дифференцируя $P_1=|c_1|^2$, получаем
+
+$$
+\begin{aligned}
+\dot P_1
+&=\dot c_1c_1^*+c_1\dot c_1^*\\
+&=2\operatorname{Im}\!\left(H_{12}c_2c_1^*\right).
+\end{aligned}
+$$ {#eq-interference-probability-current-one}
+
+Аналогично,
+
+$$
+\dot P_2=-2\operatorname{Im}\!\left(H_{12}c_2c_1^*\right)
+=-\dot P_1.
+$$ {#eq-interference-probability-current-two}
+
+Отсюда
+
+$$
+\frac d{dx}(P_1+P_2)=0.
+$$ {#eq-interference-total-probability}
+
+Модуль $H_{12}$ задаёт возможную скорость обмена, а знак потока определяется
+фазой
+
+$$
+\arg c_2-\arg c_1+\arg H_{12}.
+$$ {#eq-interference-current-phase}
+
+Симметричная связь поэтому совместима с односторонним потоком на данном
+участке траектории. Через некоторое время относительная фаза может измениться,
+и поток обратится.
+
+::: {.physical-comment title="Что утверждает эрмитовость"}
+Эрмитовость не обещает, что вероятности двух компонент постоянны. Она обещает,
+что уменьшение одной вероятности равно увеличению другой. Для направления
+перетекания нужно знать комплексное состояние, а не только матрицу связи.
+:::
+
+## Полный пропагатор и две интерферирующие истории
+
+Эволюция в фиксированном массовом базисе задаётся упорядоченной экспонентой
+
+$$
+\boxed{
+U_m(x,0)=\mathcal T
+\exp\!\left[-i\int_0^xH_m(x')\,dx'\right]}.
+$$ {#eq-interference-full-propagator}
+
+Первая конечная амплитуда равна
+
+$$
+c_1(x)=U_{11}(x,0)c_1(0)+U_{12}(x,0)c_2(0).
+$$ {#eq-interference-final-c1}
+
+Обозначим два полных вклада
+
+$$
+d(x)\equiv U_{11}(x,0)c_1(0),
+\qquad
+f(x)\equiv U_{12}(x,0)c_2(0).
+$$ {#eq-interference-two-full-amplitudes}
+
+$d$ включает все истории, начинающиеся и заканчивающиеся в $\nu_1$;
+$f$ — все истории, начинающиеся в $\nu_2$ и заканчивающиеся в $\nu_1$.
+Каждый из них уже содержит любое число переходов внутри среды. Вероятность
+равна
+
+$$
+\boxed{
+P_1=|d+f|^2
+=|d|^2+|f|^2+2\operatorname{Re}(df^*)}.
+$$ {#eq-interference-c1-probability}
+
+Поэтому $P_1=0$ не требует исчезновения обоих путей. Достаточно
+
+$$
+|d|=|f|,
+\qquad
+\arg(f/d)=\pi\pmod{2\pi}.
+$$ {#eq-interference-cancellation-condition}
+
+Две ненулевые амплитуды гасят друг друга. Это не потеря вероятности, а
+деструктивная интерференция в выбранном конечном канале.
+
+::: {#anim-msw-mode-cancellation .animation title="Исчезновение проекции на фиксированную моду" src="../assets/chapters/06_matter_oscillations/msw_mode_cancellation.mp4" poster="../assets/chapters/06_matter_oscillations/msw_mode_cancellation.png" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/14_matter_interference_pendulums.html#/mode-cancellation"}
+Анимация показывает модули и фазы двух полных вкладов $d$ и $f$. На выходе
+они остаются ненулевыми, но их векторная сумма почти исчезает.
+:::
+
+## Почему адиабатическая отмена не требует настройки пути
+
+Пусть $b=(b_1,b_2)^T$ — амплитуды мгновенных мод, а
+
+$$
+W(\alpha)=
+\begin{pmatrix}\cos\alpha&\sin\alpha\\-\sin\alpha&\cos\alpha\end{pmatrix},
+\qquad
+\alpha(x)=\theta_m(x)-\theta,
+$$ {#eq-interference-relative-rotation}
+
+так что $\psi_m=W(\alpha)b$. В адиабатическом пределе переходами между
+ветвями можно пренебречь. Тогда пропагатор равен
+
+$$
+\boxed{
+U_{\mathrm{ad}}(x,0)=
+W(\alpha_x)
+\begin{pmatrix}\zeta_1&0\\0&\zeta_2\end{pmatrix}
+W^T(\alpha_0)},
+$$ {#eq-interference-adiabatic-propagator}
+
+где $\zeta_i=e^{-i\Phi_i}$ и $|\zeta_i|=1$ — накопленные динамические
+множители.
+
+Начальная верхняя мгновенная мода имеет в фиксированном базисе вид
+
+$$
+\psi_m(0)=W(\alpha_0)
+\begin{pmatrix}0\\1\end{pmatrix}
+=\begin{pmatrix}\sin\alpha_0\\\cos\alpha_0\end{pmatrix}.
+$$ {#eq-interference-initial-upper-mode}
+
+На выходе в вакуум $\alpha_x=0$, поэтому первая строка пропагатора содержит
+
+$$
+U_{11}=\zeta_1\cos\alpha_0,
+\qquad
+U_{12}=-\zeta_1\sin\alpha_0.
+$$ {#eq-interference-propagator-first-row}
+
+Два вклада в $c_1$ равны
+
+$$
+d=\zeta_1\cos\alpha_0\sin\alpha_0,
+\qquad
+f=-\zeta_1\sin\alpha_0\cos\alpha_0.
+$$ {#eq-interference-adiabatic-df}
+
+Следовательно,
+
+$$
+\boxed{c_1=d+f=0}.
+$$ {#eq-interference-exact-cancellation}
+
+Оба вклада несут один динамический множитель $\zeta_1$. Противоположный знак возникает
+из ортогональности поворота $W$, а не из случайного подбора длины пути.
+
+## Один тонкий резонансный слой
+
+Полезно увидеть тот же механизм на одном простом шаге. В подходящей картине
+взаимодействия пропагатор резонансного слоя можно записать как
+
+$$
+S(\gamma)=\cos\gamma\,\mathbb I-i\sin\gamma\,\sigma_x.
+$$ {#eq-interference-resonant-layer}
+
+Пусть входные амплитуды равны
+
+$$
+c_1=A,
+\qquad
+c_2=Be^{-i\varepsilon}.
+$$ {#eq-interference-layer-input}
+
+После слоя
+
+$$
+\begin{aligned}
+c_1'&=A\cos\gamma-iBe^{-i\varepsilon}\sin\gamma,\\
+c_2'&=Be^{-i\varepsilon}\cos\gamma-iA\sin\gamma.
+\end{aligned}
+$$ {#eq-interference-layer-output}
+
+Для $A=B=1/\sqrt2$
+
+$$
+\boxed{
+P_1=\frac12[1-\sin2\gamma\sin\varepsilon],
+\qquad
+P_2=\frac12[1+\sin2\gamma\sin\varepsilon]}.
+$$ {#eq-interference-layer-probabilities}
+
+Один унитарный слой уменьшает одну проекцию ровно настолько, насколько
+увеличивает другую. Знак обмена задаёт входная фаза $\varepsilon$.
+
+::: {#anim-msw-thin-layer .animation title="Волны и фазоры в тонком резонансном слое" src="../assets/chapters/06_matter_oscillations/msw_thin_layer_interference.mp4" poster="../assets/chapters/06_matter_oscillations/msw_thin_layer_interference.png" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/14_matter_interference_pendulums.html#/thin-layer"}
+Слева показаны две волны, справа — те же комплексные амплитуды как стрелки.
+Слой добавляет повёрнутую на $90^\circ$ конверсионную амплитуду; входная фаза
+решает, будет интерференция конструктивной или деструктивной.
+:::
+
+## Что означает это в квантовой теории поля
+
+Вакуумное массовое состояние — одночастичное возбуждение соответствующего
+нейтринного поля. Свободный пропагатор диагонален по массовым полям: постоянного
+физического превращения $\nu_1\leftrightarrow\nu_2$ в пустом вакууме нет.
+
+Среда добавляет матричную собственную энергию. Её полюса и собственные векторы
+задают коллективные моды $\nu_{1m}$ и $\nu_{2m}$. В бесстолкновительном
+ультрарелятивистском пределе уравнение для одночастичных амплитуд сводится к
+использованному двухуровневому уравнению.
+
+Разложение Дайсона содержит любое число вставок среды:
+
+$$
+\mathcal T\exp\!\left[-i\int H_m(x)\,dx\right].
+$$ {#eq-interference-dyson-series}
+
+Отдельная диаграмма не является вероятностью. Сначала суммируются комплексные
+амплитуды всех неразличимых историй, затем берётся квадрат модуля. Фраза
+«$\nu_1$ исчезло» означает только
+
+$$
+\langle\nu_1|\psi_{\mathrm{out}}\rangle=0.
+$$ {#eq-interference-qft-meaning}
+
+Поле $\nu_1$ и норма состояния не исчезают. В идеальной когерентной системе
+обращённый профиль обратил бы эволюцию.
+
+## Механическая модель: два связанных маятника
+
+Два слабо связанных маятника передают возбуждение друг другу, когда их
+частоты близки. Расстройка частот подавляет передачу. Если частоту первого
+маятника медленно провести через резонанс, система может остаться в одной
+мгновенной нормальной моде, хотя рисунок движения этой моды изменится.
+
+::: {#anim-msw-pendulum-regimes .animation title="Вакуум, резонанс и подавление в модели маятников" src="../assets/chapters/06_matter_oscillations/msw_constant_matter.mp4" poster="../assets/chapters/06_matter_oscillations/msw_constant_matter.png" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/14_matter_interference_pendulums.html#/pendulum-regimes"}
+При близких частотах энергия периодически переходит между маятниками. Большая
+расстройка делает локальное колебание почти нормальной модой и подавляет
+обмен.
+:::
+
+### Точные уравнения малых колебаний
+
+Пусть $x_1,x_2$ — малые горизонтальные смещения грузов, а
+$q_i=\sqrt{m_i}x_i$ — координаты с массовой нормировкой. Тогда
+
+$$
+\ddot{\mathbf q}+D(t)\mathbf q=0,
+\qquad
+\mathbf q=\begin{pmatrix}q_1\\q_2\end{pmatrix}.
+$$ {#eq-interference-pendulum-matrix-equation}
+
+Для одинаковой длины $L$ и горизонтальной пружины жёсткости $k$
+
+$$
+D_0=
+\begin{pmatrix}
+g/L+k/m_1&-\kappa\\
+-\kappa&g/L+k/m_2
+\end{pmatrix},
+\qquad
+\kappa=\frac{k}{\sqrt{m_1m_2}}.
+$$ {#eq-interference-pendulum-dynamical-matrix}
+
+Нормальные моды $D_0$ играют роль вакуумных массовых состояний. Возбудить
+только первый физический маятник — значит приготовить суперпозицию двух
+нормальных мод, аналог флэйворного состояния.
+
+Веществу соответствует диагональное управление одной локальной частотой:
+
+$$
+D(t)=D_0+
+\begin{pmatrix}u(t)&0\\0&0\end{pmatrix}.
+$$ {#eq-interference-mechanical-potential}
+
+### Как менять одну частоту
+
+Если длина первого маятника равна $\ell(t)$, линейное уравнение для
+горизонтального смещения содержит
+
+$$
+\boxed{
+\ddot x_1+
+\frac{g-\ddot\ell(t)}{\ell(t)}x_1+
+\frac{k}{m_1}(x_1-x_2)=0}.
+$$ {#eq-interference-variable-length-pendulum}
+
+Член $-\ddot\ell/\ell$ нельзя отбрасывать при быстром управлении. Другой
+способ — оставить длину $L$ постоянной и сообщить опоре ускорение $a(t)$
+вверх:
+
+$$
+\boxed{
+\ddot x_1+
+\frac{g+a(t)}{L}x_1+
+\frac{k}{m_1}(x_1-x_2)=0}.
+$$ {#eq-interference-accelerated-support-pendulum}
+
+Два уравнения совпадают, если
+
+$$
+\boxed{
+\frac{g+a(t)}{L}=
+\frac{g-\ddot\ell(t)}{\ell(t)}}.
+$$ {#eq-interference-control-equivalence}
+
+В медленном пределе $|\ddot\ell|\ll g$
+
+$$
+a(t)\simeq g\left[\frac{L}{\ell(t)}-1\right].
+$$ {#eq-interference-control-slow-limit}
+
+::: {#anim-msw-control-equivalence .animation title="Два способа управлять частотой маятника" src="../assets/chapters/06_matter_oscillations/msw_control_equivalence.mp4" poster="../assets/chapters/06_matter_oscillations/msw_control_equivalence.png" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/14_matter_interference_pendulums.html#/control-equivalence"}
+Изменение длины и вертикальное ускорение опоры дают одну динамическую матрицу,
+если выполнено уравнение [-@eq-interference-control-equivalence]. Привод может
+совершать работу, поэтому механическая энергия подсистемы не обязана
+сохраняться.
+:::
+
+### От уравнения второго порядка к двум амплитудам
+
+Выберем быструю опорную частоту $\omega_c$ и запишем
+
+$$
+\mathbf q(t)=\operatorname{Re}
+\left[\boldsymbol\psi(t)e^{-i\omega_ct}\right].
+$$ {#eq-interference-slow-envelope}
+
+Если $|\dot\psi|\ll\omega_c|\psi|$ и связь слаба, для медленной огибающей
+получается уравнение первого порядка. Перед его записью изменим знак второй
+координаты, $q_2\to-q_2$; такой выбор фазы делает внедиагональный элемент
+положительным и не меняет наблюдаемого движения:
+
+$$
+i\dot{\boldsymbol\psi}=H_{\mathrm{mech}}(t)\boldsymbol\psi,
+\qquad
+H_{\mathrm{mech}}=\frac1{4\omega_c}
+\begin{pmatrix}\delta(t)&2\kappa\\2\kappa&-\delta(t)\end{pmatrix}.
+$$ {#eq-interference-envelope-hamiltonian}
+
+Словарь с нейтринной системой имеет вид
+
+$$
+V(t)\longleftrightarrow\frac{u(t)}{2\omega_c},
+\qquad
+\Delta\sin2\theta\longleftrightarrow\frac\kappa{\omega_c},
+\qquad
+V-\Delta\cos2\theta\longleftrightarrow
+\frac{\delta}{2\omega_c}.
+$$ {#eq-interference-mechanical-dictionary}
+
+Механическая модель воспроизводит унитарную двухуровневую структуру, резонанс,
+избегаемое пересечение и адиабатическое следование. Но границы аналогии надо
+сохранить:
+
+- вероятность соответствует норме медленной комплексной огибающей;
+- локальная механическая энергия пропорциональна $|\psi_i|^2$ лишь после
+  усреднения и в слабосвязанном пределе;
+- быстрый привод нарушает приближение медленной огибающей;
+- нейтрино не является маленьким маятником, а вещество не ускоряет его
+  механически.
+
+## Итоги главы
+
+- Эрмитовость сохраняет сумму вероятностей, но направление обмена задаётся
+  относительной фазой амплитуд.
+- Конечная проекция на $\nu_1$ — сумма полных амплитуд нескольких
+  неразличимых историй; она может исчезнуть из-за интерференции.
+- В адиабатическом пределе точная отмена следует из ортогональности
+  вращающегося базиса и не требует настройки длины пути.
+- Связанные маятники воспроизводят двухуровневую динамику для медленных
+  комплексных огибающих и делают поворот нормальных мод наблюдаемым.
+
+## Задачи
+
+{{< include ../../../_includes/exercises/14_matter_interference_pendulums-ru.qmd >}}
+
+## Литература {.unnumbered}
+
+::: {.chapter-literature}
+1. S. P. Mikheyev, A. Yu. Smirnov. Resonant neutrino oscillations in matter.
+   *Physics–Uspekhi* **30**, 759–790 (1987).
+   [doi:10.3367/UFNr.0153.198709a.0003](https://doi.org/10.3367/UFNr.0153.198709a.0003).
+2. S. J. Parke. Nonadiabatic level crossing in resonant neutrino
+   oscillations. *Physical Review Letters* **57**, 1275–1278 (1986).
+   [doi:10.1103/PhysRevLett.57.1275](https://doi.org/10.1103/PhysRevLett.57.1275).
+3. L. D. Landau, E. M. Lifshitz. *Mechanics*. 3rd ed.
+   Butterworth-Heinemann, 1976.
+4. A. Messiah. *Quantum Mechanics*. Dover, 1999.
+:::

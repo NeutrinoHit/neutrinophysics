@@ -19,7 +19,7 @@ body-classes: lecture-page topic-1
 
 $$
 \hbar=c=1.
-$$
+$$ {#eq-ch01-001}
 
 Тогда энергия, импульс и масса измеряются в одних и тех же единицах, а длина и
 время имеют размерность обратной энергии. Привычные формулы принимают особенно
@@ -33,10 +33,10 @@ E=\omega,
 \lambdabar=\frac{1}{p},
 \qquad
 t\sim\frac{1}{E}.
-$$
+$$ {#eq-ch01-002}
 
 Множители $\hbar$ и $c$ всегда можно восстановить из размерности. Далее, если не
-оговорено обратное, используется именно эта система единиц.
+оговорено обратное, используется эта система единиц.
 
 ## Материя, поля и взаимодействия
 
@@ -50,7 +50,7 @@ $$
 энергию, импульс и квантовые числа. Электрон является возбуждением электронного
 поля, фотон --- электромагнитного, а нейтрино --- нейтринного поля.
 
-::: {#anim-coupled-fields .animation title="Связанные осцилляторы как модель поля" src="../assets/chapters/01_neutrino_101/coupled_oscillators_baikal.mp4" poster="../assets/chapters/01_neutrino_101/coupled_oscillators_baikal.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/01_neutrino_101/coupled_oscillators_baikal.mp4" qr="../assets/chapters/01_neutrino_101/qr/coupled_oscillators.png"}
+::: {#anim-coupled-fields .animation title="Связанные осцилляторы как модель поля" src="../assets/chapters/01_neutrino_101/coupled_oscillators_baikal.mp4" poster="../assets/chapters/01_neutrino_101/coupled_oscillators_baikal.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/01_neutrino_101/coupled_oscillators_baikal.mp4" qr="../assets/chapters/01_neutrino_101/qr/coupled_oscillators.png" repo="https://github.com/NeutrinoHit/dvnanima/tree/main/fields/coupled_oscillators_3d" repo-label="dvnanima/fields/coupled_oscillators_3d"}
 Возмущение распространяется по цепочке маятников. Нормальные колебания всей
 системы играют ту же математическую роль, что массовые состояния при описании
 нейтринных осцилляций.
@@ -112,7 +112,7 @@ $$
 \nu_e+n\longrightarrow p+e^-,
 \qquad
 \nu_\mu+n\longrightarrow p+\mu^-.
-$$
+$$ {#eq-ch01-003}
 
 Флэйвор нейтрино определяют по рождённому заряженному лептону. В вершине
 заряженного тока мюонное нейтрино рождает мюон, а не электрон; реакция
@@ -123,11 +123,11 @@ $\nu_\mu+n\to p+e^-$ запрещена.
 
 $$
 \nu_\alpha+f\longrightarrow\nu_\alpha+f,
-$$
+$$ {#eq-ch01-004}
 
 где $f$ --- электрон, кварк или другая допустимая мишень.
 
-::: {#anim-interaction-gallery .animation title="Три обменных взаимодействия" epub-src="../assets/chapters/01_neutrino_101/interaction_gallery.mp4" poster="../assets/chapters/01_neutrino_101/interaction_gallery_frame.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/01_neutrino_first_contact.html#/interaction-gallery" qr="../assets/chapters/01_neutrino_101/qr/interaction_gallery.png"}
+::: {#anim-interaction-gallery .animation title="Три обменных взаимодействия" epub-src="../assets/chapters/01_neutrino_101/interaction_gallery.mp4" poster="../assets/chapters/01_neutrino_101/interaction_gallery_frame.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/01_neutrino_101/interaction_gallery.mp4" qr="../assets/chapters/01_neutrino_101/qr/interaction_gallery.png" repo="https://github.com/NeutrinoHit/dvnanima/tree/main/feynman_scattering" repo-label="dvnanima/feynman_scattering"}
 Слева направо показаны заряженный слабый ток с обменом $W$-бозоном,
 электромагнитное рассеяние с обменом фотоном и сильное рассеяние с обменом
 глюоном.
@@ -143,7 +143,7 @@ $$
 \begin{pmatrix}\nu_\mu\\\mu\end{pmatrix}_L,
 \qquad
 \begin{pmatrix}\nu_\tau\\\tau\end{pmatrix}_L.
-$$
+$$ {#eq-ch01-005}
 
 Для строго безмассовой частицы киральность и спиральность связаны однозначно;
 при ненулевой массе их необходимо различать.
@@ -172,7 +172,7 @@ $$
 n_{\mathrm{atom}}=\frac{\rho N_A}{A},
 \qquad
 n_e=Z\frac{\rho N_A}{A}.
-$$
+$$ {#eq-ch01-006}
 
 Здесь $\rho$ --- плотность, $A$ --- молярная масса, $Z$ --- число электронов в
 атоме, а $N_A$ --- число Авогадро.
@@ -185,14 +185,14 @@ $$
 \sigma(\nu_e e\to\nu_e e)\sim10^{-44}~\text{см}^2,
 \qquad
 n_e\sim7\cdot10^{23}~\text{см}^{-3}.
-$$
+$$ {#eq-ch01-007}
 
 Тогда
 
 $$
 \lambda_\nu\sim\frac{1}{n_e\sigma}
 \sim10^{20}~\text{см}\sim10^9R_\odot.
-$$
+$$ {#eq-ch01-008}
 
 Нейтрино, рождённое в центре Солнца, почти наверняка покинет его, не испытав
 рассеяния.
@@ -205,13 +205,13 @@ $$
 \sigma(\nu N)\sim10^{-33}~\text{см}^2,
 \qquad
 n_N\sim3.3\cdot10^{24}~\text{см}^{-3}.
-$$
+$$ {#eq-ch01-009}
 
 Отсюда
 
 $$
 \lambda_\nu\sim3\cdot10^8~\text{см}\sim3000~\text{км}.
-$$
+$$ {#eq-ch01-010}
 
 Эта длина уже меньше диаметра Земли. Утверждение «нейтрино проходит сквозь всё»
 верно лишь при указании энергии нейтрино и состава вещества.
@@ -276,7 +276,7 @@ $$
 |\nu_1\rangle\\
 |\nu_2\rangle
 \end{pmatrix}.
-$$
+$$ {#eq-ch01-011}
 
 В релятивистском приближении вероятности осцилляций в вакууме равны
 
@@ -307,7 +307,7 @@ $$ {#eq-oscillation-phase}
 $L/E$ --- разностью квадратов масс $\Delta m^2$. Если $\Delta m^2=0$ или
 $\theta=0$, осцилляции исчезают.
 
-::: {#anim-oscillation-chameleon .animation title="Нейтрино как квантовый хамелеон" src="../assets/chapters/01_neutrino_101/oscillation_chameleon.mp4" poster="../assets/chapters/01_neutrino_101/oscillation_chameleon.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/01_neutrino_101/oscillation_chameleon.mp4" qr="../assets/chapters/01_neutrino_101/qr/oscillation_chameleon.png"}
+::: {#anim-oscillation-chameleon .animation title="Нейтрино как квантовый хамелеон" src="../assets/chapters/01_neutrino_101/oscillation_chameleon.mp4" poster="../assets/chapters/01_neutrino_101/oscillation_chameleon.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/01_neutrino_101/oscillation_chameleon.mp4" qr="../assets/chapters/01_neutrino_101/qr/oscillation_chameleon.png" repo="https://github.com/NeutrinoHit/dvnanima/tree/main/neutrino_oscillations_phases" repo-label="dvnanima/neutrino_oscillations_phases"}
 Цвет условно обозначает флэйвор. Нейтрино не обязано взаимодействовать в
 промежуточной точке, чтобы «переключиться»: изменение вероятности обнаружить
 тот или иной флэйвор является результатом когерентного фазового движения
@@ -337,7 +337,7 @@ $$
 4p\longrightarrow{}^4\mathrm{He}+2e^++2\nu_e,
 \qquad
 Q\simeq26.7~\text{МэВ}.
-$$
+$$ {#eq-ch01-012}
 
 Из светимости Солнца можно оценить скорость рождения нейтрино и поток на
 расстоянии $r$:
@@ -365,20 +365,20 @@ $$
 \pi^+\to\mu^++\nu_\mu,
 \qquad
 \mu^+\to e^++\nu_e+\bar\nu_\mu.
-$$
+$$ {#eq-ch01-013}
 
 Без осцилляций при не слишком высоких энергиях ожидается примерно
 
 $$
 \frac{\nu_\mu+\bar\nu_\mu}{\nu_e+\bar\nu_e}\simeq2.
-$$
+$$ {#eq-ch01-014}
 
 Нейтрино, пришедшие сверху, проходят лишь несколько десятков километров.
 Нейтрино, пришедшие из-под горизонта, пересекают значительную часть Земли.
 Длины пути $L$ лежат в диапазоне от десятков до примерно $12\,800$ км, а
 распределение по энергии позволяет исследовать зависимость от $L/E$.
 
-::: {#anim-air-shower .animation title="Атмосферный каскад" src="../assets/chapters/01_neutrino_101/air_shower.mp4" poster="../assets/chapters/01_neutrino_101/air_shower.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/01_neutrino_101/air_shower.mp4" qr="../assets/chapters/01_neutrino_101/qr/air_shower.png"}
+::: {#anim-air-shower .animation title="Атмосферный каскад" src="../assets/chapters/01_neutrino_101/air_shower.mp4" poster="../assets/chapters/01_neutrino_101/air_shower.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/01_neutrino_101/air_shower.mp4" qr="../assets/chapters/01_neutrino_101/qr/air_shower.png" repo="https://github.com/NeutrinoHit/dvnanima/tree/main/airshower" repo-label="dvnanima/airshower"}
 Первичная частица космического излучения сталкивается с ядром воздуха и рождает
 каскад. Распады пионов и мюонов внутри каскада создают атмосферные нейтрино.
 :::
@@ -409,13 +409,13 @@ $\Delta m_{ij}^2$ означают, что минимальная Стандар
 
 $$
 \text{нормальный порядок:}\quad m_1<m_2<m_3,
-$$
+$$ {#eq-ch01-015}
 
 $$
 \text{обратный порядок:}\quad m_3<m_1<m_2.
-$$
+$$ {#eq-ch01-016}
 
-::: {#anim-mass-ordering .animation title="Нормальный и обратный порядок масс" src="../assets/chapters/01_neutrino_101/mass_ordering.mp4" poster="../assets/chapters/01_neutrino_101/mass_ordering.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/01_neutrino_101/mass_ordering.mp4" qr="../assets/chapters/01_neutrino_101/qr/mass_ordering.png"}
+::: {#anim-mass-ordering .animation title="Нормальный и обратный порядок масс" src="../assets/chapters/01_neutrino_101/mass_ordering.mp4" poster="../assets/chapters/01_neutrino_101/mass_ordering.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/01_neutrino_101/mass_ordering.mp4" qr="../assets/chapters/01_neutrino_101/qr/mass_ordering.png" repo="https://github.com/NeutrinoHit/dvnanima/tree/main/mass_hierarchy" repo-label="dvnanima/mass_hierarchy"}
 Цветные доли показывают флэйворный состав массовых состояний. Анимация меняет
 взаимное расположение уровней, не меняя уже измеренных малой и большой разностей
 квадратов масс.
@@ -430,7 +430,7 @@ $$
 P(\nu_\alpha\to\nu_\beta)
 \ne
 P(\bar\nu_\alpha\to\bar\nu_\beta).
-$$
+$$ {#eq-ch01-017}
 
 Наблюдение такого различия должно учитывать влияние вещества, которое само по
 себе неодинаково действует на нейтрино и антинейтрино.
@@ -443,7 +443,7 @@ $$
 \nu\ne\bar\nu
 \qquad\text{или}\qquad
 \nu=\bar\nu.
-$$
+$$ {#eq-ch01-018}
 
 В первом случае нейтрино является дираковской частицей, во втором ---
 майорановской. Главный экспериментальный путь к проверке майорановской природы
@@ -478,22 +478,18 @@ $$
 изучать внутренность Солнца, взрывы сверхновых, высокоэнергичные источники во
 Вселенной, структуру протона и плотность вещества на пути нейтринного пучка.
 
-## Краткое резюме
+## Итоги главы
 
-\(i\) Нейтрино --- электрически нейтральный фермион со спином $1/2$, участвующий
-в слабом и гравитационном взаимодействиях.
-
-\(ii\) Три активных флэйвора рождаются и детектируются в слабых процессах, а
-распространяются суперпозиции трёх массовых состояний.
-
-\(iii\) Нейтринные сечения малы, но растут с энергией. Поэтому прозрачность
-вещества всегда следует обсуждать вместе с энергией нейтрино.
-
-\(iv\) Осцилляции являются интерференционным эффектом и доказывают ненулевые
-разности квадратов масс.
-
-\(v\) Порядок масс, абсолютный масштаб масс, величина CP-нарушения и
-дираковская или майорановская природа нейтрино остаются открытыми вопросами.
+- Нейтрино --- электрически нейтральный фермион со спином $1/2$, участвующий
+  в слабом и гравитационном взаимодействиях.
+- Три активных флэйвора рождаются и детектируются в слабых процессах, а
+  распространяются суперпозиции трёх массовых состояний.
+- Нейтринные сечения малы, но растут с энергией. Поэтому прозрачность вещества
+  всегда следует обсуждать вместе с энергией нейтрино.
+- Осцилляции являются интерференционным эффектом и доказывают ненулевые
+  разности квадратов масс.
+- Порядок масс, абсолютный масштаб масс, величина CP-нарушения и дираковская
+  или майорановская природа нейтрино остаются открытыми вопросами.
 
 ## Задачи
 
@@ -512,7 +508,7 @@ $$
 \lambda_\nu=\frac{1}{n\sigma},
 \qquad
 n\simeq2.5\cdot10^{-7}~\text{см}^{-3},
-$$
+$$ {#eq-ch01-019}
 
 и значения сечений, обсуждавшиеся в этой лекции:
 
@@ -520,7 +516,7 @@ $$
 \sigma_{\nu e}(1~\text{МэВ})\sim10^{-44}~\text{см}^2,
 \qquad
 \sigma_{\nu N}(1~\text{ПэВ})\sim10^{-33}~\text{см}^2.
-$$
+$$ {#eq-ch01-020}
 
 Примите диаметр наблюдаемой Вселенной равным
 $D_{\text{набл}}\simeq8.8\cdot10^{28}~\text{см}$. Объясните, почему в $n$ следует
@@ -534,7 +530,7 @@ $D_{\text{набл}}\simeq8.8\cdot10^{28}~\text{см}$. Объясните, по
 $$
 4p\longrightarrow{}^4\mathrm{He}+2e^++2\nu_e+Q,
 \qquad Q=26.7~\text{МэВ},
-$$
+$$ {#eq-ch01-021}
 
 и используйте
 
@@ -544,13 +540,13 @@ L_\odot=3.83\cdot10^{26}~\text{Вт},
 r_\oplus=1~\text{а.е.},
 \qquad
 r_J=5.20~\text{а.е.},
-$$
+$$ {#eq-ch01-022}
 
 $$
 1~\text{а.е.}=1.496\cdot10^{11}~\text{м},
 \qquad
 1~\text{эВ}=1.602\cdot10^{-19}~\text{Дж}.
-$$
+$$ {#eq-ch01-023}
 
 \(i\) Найдите скорость рождения нейтрино $\dot N_\nu$ из светимости Солнца.
 
@@ -572,7 +568,7 @@ E_\nu=1~\text{ГэВ},
 \sin^2 2\theta=1,
 \qquad
 \Delta m^2=2.5\cdot10^{-3}~\text{эВ}^2.
-$$
+$$ {#eq-ch01-024}
 
 В вакууме
 
@@ -584,7 +580,7 @@ P(\nu_\mu\to\nu_\tau)
 1.267\,
 \frac{\Delta m^2[\text{эВ}^2]L[\text{км}]}{E_\nu[\text{ГэВ}]}
 \right).
-$$
+$$ {#eq-ch01-025}
 
 \(i\) Постройте $P(\nu_\mu\to\nu_\tau)$ как функцию $x=L/D_\oplus$ в
 диапазоне $0\le x\le1$, где $D_\oplus=12\,742~\text{км}$ --- диаметр Земли.
@@ -612,7 +608,7 @@ $P(\nu_\mu\to\nu_\mu)$ и проверьте унитарность.
 обычных экспериментах рассеяния?
 :::
 
-## Литература к лекции {.unnumbered}
+## Литература {.unnumbered}
 
 ::: {.chapter-literature}
 1. V. A. Naumov. *Neutrinos in Physics & Astrophysics*. Lecture notes.

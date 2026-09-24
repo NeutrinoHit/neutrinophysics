@@ -1,45 +1,9 @@
-\usepackage{fontspec}
-\usepackage{polyglossia}
-\usepackage{unicode-math}
-\usepackage{amsmath}
-\usepackage{mathtools}
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{booktabs}
-\usepackage{longtable}
-\usepackage{array}
-\usepackage{microtype}
-\usepackage{hyperref}
-\usepackage{tikz}
-\usepackage{marginnote}
-\usepackage[most]{tcolorbox}
-\usepackage{caption}
-\usepackage{ragged2e}
-\usepackage{etoc}
-\usepackage[automark]{scrlayer-scrpage}
+% Subject adaptation of the shared NeutrinoHit book layout.
 
-\defaultfontfeatures{Ligatures=TeX, Scale=MatchLowercase}
-\setmainfont{Libertinus Serif}
-\setsansfont{Libertinus Sans}
-\setmonofont{Libertinus Mono}[Scale=0.9]
-\setmathfont{Libertinus Math}
-
-\definecolor{bookInk}{HTML}{18262F}
-\definecolor{bookMuted}{HTML}{687984}
-\definecolor{bookTeal}{HTML}{0F6972}
 \definecolor{bookCyan}{HTML}{4AD4DF}
-\definecolor{bookTealSoft}{HTML}{E8F1F2}
-\definecolor{bookBlue}{HTML}{2F6F9F}
-\definecolor{bookBlueSoft}{HTML}{EDF3FA}
-\definecolor{bookCoral}{HTML}{C7472F}
-\definecolor{bookCoralSoft}{HTML}{FAEEEB}
-\definecolor{bookMargin}{HTML}{F1F3F4}
-\definecolor{bookBiography}{HTML}{465B8C}
-\definecolor{bookBiographySoft}{HTML}{F0F2F8}
 
-% The palette belongs to topics, not individual lectures.  Both the lecture
-% opener and the page navigator read the current part counter, so rearranging
-% lectures inside a topic requires no style edits.
+% The palette belongs to topics, not individual lectures. Rearranging lectures
+% inside a topic therefore requires no layout edits.
 \definecolor{bookTopicOne}{HTML}{0F6972}
 \definecolor{bookTopicTwo}{HTML}{9A6B17}
 \definecolor{bookTopicThree}{HTML}{75558C}
@@ -51,17 +15,18 @@
 \definecolor{bookTopicNine}{HTML}{8B3F4A}
 \definecolor{bookTopicTen}{HTML}{6D712C}
 
-\newcommand{\bookchaptercolor}{%
-  \ifcase\value{part}bookInk%
+\renewcommand{\bookchaptercolor}{%
+  \ifcase\value{part}BookInk%
   \or bookTopicOne\or bookTopicTwo\or bookTopicThree\or bookTopicFour%
   \or bookTopicFive\or bookTopicSix\or bookTopicSeven\or bookTopicEight%
   \or bookTopicNine\or bookTopicTen%
-  \else bookInk\fi
+  \else BookInk\fi
 }
-\newcommand{\bookpartcolor}{\bookchaptercolor}
 
-% Reduced wavelength. Keep a named command, parallel to \hbar, throughout
-% the source instead of constructing the symbol ad hoc in every formula.
+\renewcommand{\BookChapterLabel}{Лекция}
+\renewcommand{\BookPartLabel}{РАЗДЕЛ КУРСА}
+\renewcommand{\BookPartContentsLabel}{Лекции}
+\renewcommand{\BookTocChapterLabel}{Лекция}
 \newcommand{\lambdabar}{\mathord{\overline{\lambda}}}
 
 \setmainlanguage{russian}
@@ -76,11 +41,7 @@
   indentfirst=true
 }
 
-\setlength{\emergencystretch}{3em}
 \setlength{\marginparpush}{8pt}
-% Do not stretch paragraph and display-math glue to force every page to the
-% same bottom baseline. Short pages should leave a quiet blank area below the
-% text instead of opening huge holes between formulas and paragraphs.
 \raggedbottom
 \captionsetup{
   font=small,
@@ -89,215 +50,25 @@
   singlelinecheck=false
 }
 
-\newtcolorbox{semanticpdfbox}[1][]{
-  enhanced,
-  breakable,
-  sharp corners,
-  colback=bookTealSoft,
-  colframe=bookTeal,
-  boxrule=0pt,
-  borderline west={1.2mm}{0pt}{bookTeal},
-  left=4mm,
-  right=3mm,
-  top=2mm,
-  bottom=2mm,
-  #1
-}
-
 \AtBeginDocument{%
   \tcolorboxenvironment{definition}{
-    enhanced,breakable,sharp corners,colback=bookTealSoft,colframe=bookTeal,
-    boxrule=0pt,borderline west={1.2mm}{0pt}{bookTeal},left=4mm,right=3mm
+    enhanced,breakable,sharp corners,colback=BookTealSoft,colframe=BookTeal,
+    boxrule=0pt,borderline west={1.2mm}{0pt}{BookTeal},left=4mm,right=3mm
   }%
   \tcolorboxenvironment{example}{
-    enhanced,breakable,sharp corners,colback=bookTealSoft,colframe=bookTeal,
-    boxrule=0pt,borderline west={1.2mm}{0pt}{bookTeal},left=4mm,right=3mm
+    enhanced,breakable,sharp corners,colback=BookTealSoft,colframe=BookTeal,
+    boxrule=0pt,borderline west={1.2mm}{0pt}{BookTeal},left=4mm,right=3mm
   }%
   \tcolorboxenvironment{exercise}{
-    enhanced,breakable,sharp corners,colback=bookCoralSoft,colframe=bookCoral,
-    boxrule=0pt,borderline west={1.2mm}{0pt}{bookCoral},left=4mm,right=3mm
+    enhanced,breakable,sharp corners,colback=BookCoralSoft,colframe=BookCoral,
+    boxrule=0pt,borderline west={1.2mm}{0pt}{BookCoral},left=4mm,right=3mm
   }%
 }
-
-\clearpairofpagestyles
-\ihead{\headmark}
-\newcommand{\bookheaderpage}{\ifnum\value{chapter}=0\pagemark\fi}
-\ohead{\bookheaderpage}
-\setkomafont{pageheadfoot}{\small\sffamily\color{bookMuted}}
-\setkomafont{pagehead}{\small\sffamily\color{bookInk}}
-\KOMAoptions{headsepline=0.35pt}
-\addtokomafont{chapter}{\sffamily\color{bookInk}}
-\addtokomafont{section}{\sffamily\color{bookInk}}
-\addtokomafont{subsection}{\sffamily\color{bookInk}}
-
-% A numbered lecture opens on a dedicated page.  The local table of contents
-% is read from the main .toc file, so it stays in sync with section headings.
-\renewcommand*{\chapterformat}{}
-\renewcommand*{\chapterlinesformat}[3]{%
-  \ifnum\value{chapter}>0\relax
-    \parbox[t]{\linewidth}{%
-      {\sffamily\bfseries\color{\bookchaptercolor}%
-       \fontsize{15}{18}\selectfont Лекция~\thechapter\par}%
-      \vspace{7mm}%
-      {\sffamily\bfseries\color{bookInk}%
-       \fontsize{34}{38}\selectfont #3\par}%
-      \vspace{9mm}%
-      {\color{\bookchaptercolor}\rule{\linewidth}{1.3mm}}%
-    }%
-  \else
-    \parbox[t]{\linewidth}{#3}%
-  \fi
-}
-\RedeclareSectionCommand[
-  beforeskip=10mm,
-  afterskip=0pt
-]{chapter}
-
-% Topic openers use the same colour token as their lectures.  The topic name
-% is supplied by the Quarto part title and therefore appears identically in
-% the PDF contents and in the HTML navigation.
-\renewcommand*{\partformat}{}
-\renewcommand*{\partlineswithprefixformat}[3]{%
-  \parbox[t]{\linewidth}{%
-    {\sffamily\bfseries\color{\bookpartcolor}%
-     \fontsize{13}{16}\selectfont РАЗДЕЛ КУРСА\par}%
-    \vspace{9mm}%
-    {\sffamily\bfseries\color{bookInk}%
-     \fontsize{32}{37}\selectfont #3\par}%
-    \vspace{11mm}%
-    {\color{\bookpartcolor}\rule{\linewidth}{1.5mm}}\par
-    \vspace{13mm}%
-    {\sffamily\bfseries\color{bookInk}%
-     \fontsize{18}{22}\selectfont Лекции\par}%
-    \vspace{3mm}%
-    {\color{\bookpartcolor}\rule{18mm}{0.8mm}}\par
-    \vspace{5mm}%
-    \begingroup
-      \normalfont
-      \setlength{\parindent}{0pt}%
-      \etocsettocstyle{}{}%
-      \etocsetnexttocdepth{chapter}%
-      \localtableofcontents
-    \endgroup
-  }%
-}
-\RedeclareSectionCommand[
-  beforeskip=20mm,
-  afterskip=0pt
-]{part}
-
-% The word "ТЕМА" and its number already belong to the part title.  Suppress
-% KOMA's additional Roman part number in the main contents, and identify book
-% chapters there as lectures.
-\newcommand{\bookhidepartnumber}[1]{}
-\newcommand{\booklecturetocnumber}[1]{Лекция~#1}
-\DeclareTOCStyleEntry[
-  numwidth=0pt,
-  entrynumberformat=\bookhidepartnumber
-]{tocline}{part}
-\DeclareTOCStyleEntry[
-  numwidth=5.6em,
-  entrynumberformat=\booklecturetocnumber
-]{tocline}{chapter}
-
-\newcommand{\bookchapteropeningcontents}{%
-  \vspace{14mm}%
-  \noindent
-  {\sffamily\bfseries\color{bookInk}\fontsize{18}{22}\selectfont
-   Содержание\par}%
-  \vspace{3mm}%
-  {\color{\bookchaptercolor}\rule{18mm}{0.8mm}}%
-  \vspace{5mm}%
-  \begingroup
-    \setlength{\parindent}{0pt}%
-    \etocsettocstyle{}{}%
-    \etocsetnexttocdepth{section}%
-    \localtableofcontents
-  \endgroup
-  \vfill
-  \clearpage
-}
-
-% Automatic page-navigator component.  These tokens are its public style
-% interface: dimensions and colours can be changed here without touching the
-% drawing code or individual pages.  The 48 mm rail inside a 50 mm outer
-% margin leaves the required 2 mm white gutter next to the text block.
-\newif\ifbookpagenavigator
-\bookpagenavigatortrue
-\newlength{\bookpagerailwidth}
-\newlength{\bookpagerailcenter}
-\newlength{\bookpagetabheight}
-\newlength{\bookpagetabcenter}
-\newlength{\bookpagenumberdiameter}
-\setlength{\bookpagerailwidth}{48mm}
-\setlength{\bookpagerailcenter}{24mm}
-\setlength{\bookpagetabheight}{28mm}
-\setlength{\bookpagetabcenter}{14mm}
-\setlength{\bookpagenumberdiameter}{17mm}
-\newcommand{\bookpagerailcolor}{bookMargin}
-\newcommand{\bookpagetabcolor}{\bookchaptercolor}
-\newcommand{\bookpagenumberfill}{white}
-\newcommand{\bookpagenumbercolor}{\bookchaptercolor}
-
-\tikzset{
-  book page rail/.style={fill=\bookpagerailcolor,draw=none},
-  book page tab/.style={fill=\bookpagetabcolor,draw=none},
-  book page number/.style={
-    circle,
-    fill=\bookpagenumberfill,
-    draw=none,
-    minimum size=\bookpagenumberdiameter,
-    inner sep=0pt,
-    font=\sffamily\bfseries\fontsize{22}{22}\selectfont,
-    text=\bookpagenumbercolor
-  }
-}
-
-\newcommand{\bookpagenavigatorleft}{%
-  \path[book page rail]
-    (current page.north west) rectangle
-    ([xshift=\bookpagerailwidth]current page.south west);
-  \path[book page tab]
-    (current page.north west) rectangle
-    ([xshift=\bookpagerailwidth,yshift=-\bookpagetabheight]current page.north west);
-  \node[book page number]
-    at ([xshift=\bookpagerailcenter,yshift=-\bookpagetabcenter]current page.north west)
-    {\thepage};
-}
-
-\newcommand{\bookpagenavigatorright}{%
-  \path[book page rail]
-    ([xshift=-\bookpagerailwidth]current page.north east) rectangle
-    (current page.south east);
-  \path[book page tab]
-    ([xshift=-\bookpagerailwidth]current page.north east) rectangle
-    ([yshift=-\bookpagetabheight]current page.north east);
-  \node[book page number]
-    at ([xshift=-\bookpagerailcenter,yshift=-\bookpagetabcenter]current page.north east)
-    {\thepage};
-}
-
-\newcommand{\bookrenderpagenavigator}{%
-  \ifbookpagenavigator
-    \ifnum\value{chapter}>0\relax
-      \begin{tikzpicture}[remember picture,overlay]
-        \ifodd\value{page}
-          \bookpagenavigatorright
-        \else
-          \bookpagenavigatorleft
-        \fi
-      \end{tikzpicture}%
-    \fi
-  \fi
-}
-
-% One automatic hook renders the component on every numbered book page.
-\AddToHook{shipout/background}{\bookrenderpagenavigator}
 
 \hypersetup{
   pdfborder={0 0 0},
   colorlinks=true,
-  linkcolor=bookInk,
-  citecolor=bookInk,
-  urlcolor=bookTeal
+  linkcolor=BookInk,
+  citecolor=BookInk,
+  urlcolor=BookTeal
 }
