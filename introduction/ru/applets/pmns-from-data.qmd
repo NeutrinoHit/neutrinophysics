@@ -1,0 +1,35 @@
+---
+title: "Соберите матрицу PMNS"
+description: "Солнечные, атмосферные и реакторные данные заполняют матрицу смешивания шаг за шагом"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Нажимайте «Следующий шаг». Сначала используйте приближение
+$U_{e3}=0$: солнечный дефицит и атмосферное исчезновение зададут первые
+клетки. Унитарность заполнит остальные. Затем возьмём квадратные корни
+и выберем знаки из ортогональности столбцов. Последний шаг покажет
+реакторную поправку и современный пример матрицы.
+
+```{=html}
+<link rel="stylesheet" href="../slides/assets/05_vacuum_oscillations/pmns_from_data.css">
+```
+
+::: {.applet-stage .applet-stage--large .applet-stage--pmns}
+{{< include ../slides/assets/05_vacuum_oscillations/_pmns_from_data.qmd >}}
+:::
+
+```{=html}
+<script src="../slides/assets/05_vacuum_oscillations/pmns_from_data.js"></script>
+```
+
+::: {.applet-note}
+На шаге выбора знаков построено вещественное приближение. Атмосферный
+канал ограничивает $|U_{\mu3}|^2$, а солнечный при высокой энергии —
+$|U_{e2}|^2$ при использованных допущениях. Числа последнего шага
+вычислены по лучшей точке [NuFIT 6.1](https://www.nu-fit.org/?q=node/309)
+при нормальном порядке масс и наборе IC24 + SK-atm.
+
+[Объяснение в лекции 10](../slides/10_vacuum_pmns.html) ·
+[Исходный код](https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/slides/assets/05_vacuum_oscillations/pmns_from_data.js).
+:::

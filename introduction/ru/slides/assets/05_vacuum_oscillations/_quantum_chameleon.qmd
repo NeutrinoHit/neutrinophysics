@@ -205,7 +205,7 @@
      data-quantum-chameleon
      role="img"
      tabindex="0"
-     aria-label="Метафорическая анимация: хамелеон идёт по ветке и меняет окраску. Она иллюстрирует разные наблюдаемые проявления одного объекта, но не периодичность нейтринных осцилляций. Нажмите, чтобы запустить сначала.">
+     aria-label="Метафора: хамелеон идёт по ветке и меняет окраску. В опыте меняются вероятности флэйворных исходов. Нажмите, чтобы запустить сначала.">
   <svg viewBox="0 0 1200 620" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
     <defs>
       <linearGradient id="qc-sky" x1="0" y1="0" x2="0" y2="1">
@@ -496,7 +496,7 @@
   </svg>
   <span class="qc-metaphor-note" aria-hidden="true">
     <strong>Метафора:</strong> один объект — разные проявления.
-    <strong>Не буквально:</strong> у нейтрино осциллируют вероятности, а не цвет.
+    <strong>В опыте:</strong> меняются вероятности флэйворных исходов.
   </span>
   <span class="qc-replay-hint" aria-hidden="true"><span>↻</span> повторить 30 с</span>
 </div>

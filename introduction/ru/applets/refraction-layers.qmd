@@ -1,0 +1,32 @@
+---
+title: "Тонкий слой и показатель преломления"
+description: "Частота света сохраняется, а фаза накапливается при прохождении вещества"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Меняйте показатель преломления и толщину пластинки. При малой толщине
+сдвиг фазы едва заметен. Длинный однородный слой накапливает сдвиг
+$\Delta\varphi=2\pi(n-1)L/\lambda_0$.
+
+~~~{=html}
+<link rel="stylesheet" href="../slides/assets/06_matter_oscillations/refraction_labs.css">
+~~~
+
+::: {.applet-stage .applet-stage--large}
+{{< include ../slides/assets/06_matter_oscillations/_refraction_layers.qmd >}}
+:::
+
+~~~{=html}
+<script src="../slides/assets/06_matter_oscillations/refraction_labs.js"></script>
+~~~
+
+::: {.applet-note}
+На рисунке показано значение монохроматического поля в один момент времени.
+Пунктир — тот же свет без пластинки. Вещество не меняет частоту;
+после выхода две волны имеют одинаковую длину волны, но разные фазы.
+Отражение на границах в этой схеме не показано.
+
+[Объяснение в лекции 11](../slides/11_matter_refraction.html#/refraction-layers) ·
+[Исходный код](https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/slides/assets/06_matter_oscillations/refraction_labs.js).
+:::

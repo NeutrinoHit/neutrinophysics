@@ -1,0 +1,210 @@
+```{=html}
+<div class="pmns-from-data" data-pmns-from-data tabindex="0"
+     aria-label="Пошаговое восстановление лептонной матрицы смешивания из солнечных, атмосферных и реакторных измерений">
+  <div class="pmns-from-data__top">
+    <span data-step-counter aria-live="polite">Шаг 0 из 10</span>
+    <div class="pmns-from-data__buttons">
+      <button type="button" data-step-back aria-label="Предыдущий шаг">← Назад</button>
+      <button type="button" data-step-next>Следующий шаг →</button>
+    </div>
+  </div>
+
+  <div class="pmns-from-data__body">
+    <div class="pmns-from-data__evidence">
+      <div data-step-content="0">
+        <h3>Начинаем с пустой матрицы</h3>
+        <p>Строки отвечают флэйворам рождения и регистрации; столбцы —
+        массовым состояниям. Начнём с измеряемых долей
+        <span class="math inline">\(|U_{\alpha i}|^2\)</span>.</p>
+        <p>Пока оставим <span class="math inline">\(|U_{e3}|^2=0\)</span>.
+        Так виден каркас задачи; реакторный результат внесём в конце.</p>
+      </div>
+
+      <div data-step-content="1" hidden>
+        <h3>Солнечные нейтрино</h3>
+        <p>Для высокоэнергетических солнечных нейтрино
+        <span class="math inline">\(P_{ee}\simeq1/3\)</span>. В адиабатическом
+        приближении и при <span class="math inline">\(U_{e3}=0\)</span>:</p>
+        <p class="pmns-from-data__formula">\(P_{ee}\simeq |U_{e2}|^2\simeq\frac13.\)</p>
+        <p class="pmns-from-data__fine">Почему Солнце выделяет второй массовый
+        столбец, будет разобрано в лекции об эффекте MSW.</p>
+      </div>
+
+      <div data-step-content="2" hidden>
+        <h3>Электронная строка</h3>
+        <p>Её нормировка заполняет оставшуюся клетку:</p>
+        <p class="pmns-from-data__formula">\(
+          |U_{e1}|^2+|U_{e2}|^2+|U_{e3}|^2=1
+          \quad\Longrightarrow\quad |U_{e1}|^2=\frac23.
+        \)</p>
+        <p>Первая строка теперь равна
+        <span class="math inline">\((2/3,\,1/3,\,0)\)</span>.</p>
+      </div>
+
+      <div data-step-content="3" hidden>
+        <h3>Атмосферные и ускорительные нейтрино</h3>
+        <p>Почти максимальное исчезновение
+        <span class="math inline">\(\nu_\mu\)</span> показывает, что мюонный
+        флэйвор примерно поровну распределён относительно третьей моды:</p>
+        <p class="pmns-from-data__formula">\(
+          4|U_{\mu3}|^2(1-|U_{\mu3}|^2)\simeq1
+          \quad\Longrightarrow\quad |U_{\mu3}|^2\simeq\frac12.
+        \)</p>
+        <p class="pmns-from-data__fine">Здесь удерживаем ведущий атмосферный
+        масштаб и пока полагаем <span class="math inline">\(U_{e3}=0\)</span>.</p>
+      </div>
+
+      <div data-step-content="4" hidden>
+        <h3>Третий столбец</h3>
+        <p>Три доли одного массового состояния суммируются в единицу:</p>
+        <p class="pmns-from-data__formula">\(
+          |U_{e3}|^2+|U_{\mu3}|^2+|U_{\tau3}|^2=1
+          \quad\Longrightarrow\quad |U_{\tau3}|^2=\frac12.
+        \)</p>
+        <p>В этом приближении
+        <span class="math inline">\(\nu_3\)</span> поровну связан с
+        <span class="math inline">\(\nu_\mu\)</span> и
+        <span class="math inline">\(\nu_\tau\)</span>.</p>
+      </div>
+
+      <div data-step-content="5" hidden>
+        <h3>Второй столбец</h3>
+        <p>Из столбца 3 уже знаем
+        <span class="math inline">\(|U_{\mu3}|=|U_{\tau3}|\)</span>.
+        Его ортогональность столбцу 2 даёт</p>
+        <p class="pmns-from-data__formula">\(
+          U_{\mu2}^*U_{\mu3}+U_{\tau2}^*U_{\tau3}=0.
+        \)</p>
+        <p>Следовательно,
+        <span class="math inline">\(|U_{\mu2}|^2=|U_{\tau2}|^2\)</span>.
+        Нормируем второй столбец:</p>
+        <p class="pmns-from-data__formula">\(
+          \frac13+|U_{\mu2}|^2+|U_{\tau2}|^2=1.
+        \)</p>
+        <p class="pmns-from-data__formula">\(
+          |U_{\mu2}|^2=|U_{\tau2}|^2=\frac13.
+        \)</p>
+      </div>
+
+      <div data-step-content="6" hidden>
+        <h3>Осталась первая колонка</h3>
+        <p>Нормируем мюонную и тау-строки:</p>
+        <p class="pmns-from-data__formula">\(
+          |U_{\mu1}|^2=1-\frac13-\frac12=\frac16,
+          \qquad
+          |U_{\tau1}|^2=\frac16.
+        \)</p>
+        <p>Все строки и столбцы матрицы квадратов теперь дают единицу.</p>
+      </div>
+
+      <div data-step-content="7" hidden>
+        <h3>От долей к модулям амплитуд</h3>
+        <p>Каждая клетка справа пока содержит вероятность
+        <span class="math inline">\(|U_{\alpha i}|^2\)</span>. Извлекаем корень:</p>
+        <p class="pmns-from-data__formula">\(
+          |U_{\alpha i}|=\sqrt{|U_{\alpha i}|^2},
+          \qquad |U_{e1}|=\sqrt{\frac23},\quad
+          |U_{\mu1}|=\sqrt{\frac16}.
+        \)</p>
+        <p>Матрица неотрицательных модулей ещё не есть
+        <span class="math inline">\(U\)</span>: её столбцы не ортогональны.
+        Не хватает относительных знаков.</p>
+      </div>
+
+      <div data-step-content="8" hidden>
+        <h3>Знаки во втором и третьем столбцах</h3>
+        <p>Обозначим столбцы через
+        <span class="math inline">\(c_1,c_2,c_3\)</span>.
+        Для вещественного представителя выберем положительными
+        <span class="math inline">\(U_{e2},U_{\mu2},U_{\mu3},U_{\tau3}\)</span>.
+        Из ортогональности столбцов 2 и 3 следует</p>
+        <p class="pmns-from-data__formula">\(
+          c_2\!\cdot c_3=
+          U_{\mu2}U_{\mu3}+U_{\tau2}U_{\tau3}=0.
+        \)</p>
+        <p class="pmns-from-data__formula">\(
+          U_{\tau2}=-U_{\mu2}=-\sqrt{\frac13}.
+        \)</p>
+        <p>Первый столбец пока показан по модулю: его знаки найдём
+        следующим условием.</p>
+      </div>
+
+      <div data-step-content="9" hidden>
+        <h3>Знаки первого столбца</h3>
+        <p>Выберем <span class="math inline">\(U_{e1}>0\)</span>.
+        Ортогональность с третьим столбцом даёт
+        <span class="math inline">\(U_{\mu1}=-U_{\tau1}\)</span>.
+        Со вторым:</p>
+        <p class="pmns-from-data__formula">\(
+          c_1\!\cdot c_2=
+          \sqrt{\frac13}
+          (U_{e1}+U_{\mu1}-U_{\tau1})=0.
+        \)</p>
+        <p class="pmns-from-data__formula">\(
+          U_{\mu1}=-\sqrt{\frac16},\qquad
+          U_{\tau1}=+\sqrt{\frac16}.
+        \)</p>
+        <p>Получили <span class="math inline">\(U_0^{\mathsf T}U_0=I\)</span>:
+        нормы столбцов равны единице, попарные скалярные произведения — нулю.</p>
+        <p class="pmns-from-data__fine">Знаки этого представителя зависят
+        от выбора фаз состояний. При <span class="math inline">\(U_{e3}=0\)</span>
+        фаза <span class="math inline">\(\delta_{\rm CP}\)</span>
+        в осцилляциях не наблюдается.</p>
+      </div>
+
+      <div data-step-content="10" hidden>
+        <h3>Реакторная поправка</h3>
+        <p>Измерение на ближнем и дальнем детекторах даёт
+        <span class="math inline">\(|U_{e3}|^2=\sin^2\theta_{13}\simeq0.0225\)</span>.
+        В матрице справа — пример
+        <span class="math inline">\(|U|^2\)</span>, рассчитанный по лучшей
+        точке NuFIT 6.1.</p>
+        <p>Каналы появления и античастицы дают информацию о
+        <span class="math inline">\(\delta_{\rm CP}\)</span>.
+        Одни квадраты модулей не определяют все комплексные фазы
+        <span class="math inline">\(U\)</span>.</p>
+        <p class="pmns-from-data__fine">Числа справа рассчитаны в унитарной
+        модели. Для независимого теста унитарности это условие снимают при
+        анализе данных.</p>
+      </div>
+    </div>
+
+    <div class="pmns-from-data__matrix-panel">
+      <div class="pmns-from-data__matrix-title">
+        <span data-matrix-title="squares">\(\bigl|U_{\alpha i}\bigr|^2\)</span>
+        <span data-matrix-title="roots" hidden>\(\bigl|U_{0,\alpha i}\bigr|\)</span>
+        <span data-matrix-title="partial" hidden>\(\bigl|U_0\bigr|\;\longrightarrow\;U_0\)</span>
+        <span data-matrix-title="signed" hidden>\(U_{0,\alpha i}\)</span>
+      </div>
+      <table class="pmns-from-data__matrix" aria-label="Пошаговое восстановление матрицы смешивания">
+        <thead><tr>
+          <th></th><th>\(\nu_1\)</th><th>\(\nu_2\)</th><th>\(\nu_3\)</th>
+        </tr></thead>
+        <tbody>
+          <tr><th>\(e\)</th>
+            <td data-cell="e1" data-first="2"><span class="pmns-from-data__toy">\(\tfrac23\)</span><span class="pmns-from-data__roots">\(\sqrt{\tfrac23}\)</span><span class="pmns-from-data__partial">\(\pm\sqrt{\tfrac23}\)</span><span class="pmns-from-data__signed">\(+\sqrt{\tfrac23}\)</span><span class="pmns-from-data__modern">\(0.676\)</span></td>
+            <td data-cell="e2" data-first="1"><span class="pmns-from-data__toy">\(\tfrac13\)</span><span class="pmns-from-data__roots">\(\sqrt{\tfrac13}\)</span><span class="pmns-from-data__partial">\(+\sqrt{\tfrac13}\)</span><span class="pmns-from-data__signed">\(+\sqrt{\tfrac13}\)</span><span class="pmns-from-data__modern">\(0.302\)</span></td>
+            <td data-cell="e3" data-first="2"><span class="pmns-from-data__toy">\(0\)</span><span class="pmns-from-data__roots">\(0\)</span><span class="pmns-from-data__partial">\(0\)</span><span class="pmns-from-data__signed">\(0\)</span><span class="pmns-from-data__modern">\(0.022\)</span></td>
+          </tr>
+          <tr><th>\(\mu\)</th>
+            <td data-cell="mu1" data-first="6"><span class="pmns-from-data__toy">\(\tfrac16\)</span><span class="pmns-from-data__roots">\(\sqrt{\tfrac16}\)</span><span class="pmns-from-data__partial">\(\pm\sqrt{\tfrac16}\)</span><span class="pmns-from-data__signed">\(-\sqrt{\tfrac16}\)</span><span class="pmns-from-data__modern">\(0.112\)</span></td>
+            <td data-cell="mu2" data-first="5"><span class="pmns-from-data__toy">\(\tfrac13\)</span><span class="pmns-from-data__roots">\(\sqrt{\tfrac13}\)</span><span class="pmns-from-data__partial">\(+\sqrt{\tfrac13}\)</span><span class="pmns-from-data__signed">\(+\sqrt{\tfrac13}\)</span><span class="pmns-from-data__modern">\(0.428\)</span></td>
+            <td data-cell="mu3" data-first="3"><span class="pmns-from-data__toy">\(\tfrac12\)</span><span class="pmns-from-data__roots">\(\sqrt{\tfrac12}\)</span><span class="pmns-from-data__partial">\(+\sqrt{\tfrac12}\)</span><span class="pmns-from-data__signed">\(+\sqrt{\tfrac12}\)</span><span class="pmns-from-data__modern">\(0.459\)</span></td>
+          </tr>
+          <tr><th>\(\tau\)</th>
+            <td data-cell="tau1" data-first="6"><span class="pmns-from-data__toy">\(\tfrac16\)</span><span class="pmns-from-data__roots">\(\sqrt{\tfrac16}\)</span><span class="pmns-from-data__partial">\(\pm\sqrt{\tfrac16}\)</span><span class="pmns-from-data__signed">\(+\sqrt{\tfrac16}\)</span><span class="pmns-from-data__modern">\(0.212\)</span></td>
+            <td data-cell="tau2" data-first="5"><span class="pmns-from-data__toy">\(\tfrac13\)</span><span class="pmns-from-data__roots">\(\sqrt{\tfrac13}\)</span><span class="pmns-from-data__partial">\(-\sqrt{\tfrac13}\)</span><span class="pmns-from-data__signed">\(-\sqrt{\tfrac13}\)</span><span class="pmns-from-data__modern">\(0.270\)</span></td>
+            <td data-cell="tau3" data-first="4"><span class="pmns-from-data__toy">\(\tfrac12\)</span><span class="pmns-from-data__roots">\(\sqrt{\tfrac12}\)</span><span class="pmns-from-data__partial">\(+\sqrt{\tfrac12}\)</span><span class="pmns-from-data__signed">\(+\sqrt{\tfrac12}\)</span><span class="pmns-from-data__modern">\(0.518\)</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pmns-from-data__check" data-step-check aria-live="polite"></div>
+    </div>
+  </div>
+
+  <div class="pmns-from-data__foot">Первые десять шагов:
+    <span class="math inline">\(U_{e3}=0\)</span>.
+    Последний шаг: NuFIT 6.1, NO, IC24 + SK-atm (2025).
+  </div>
+</div>
+```

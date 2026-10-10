@@ -118,8 +118,36 @@ description: "Интерактивные модели к курсу «Введе
   <article class="applet-card">
     <span class="applet-card-kicker">Лекция 10</span>
     <h2><a href="flavor-triangle.html">Треугольник флэйворов</a></h2>
-    <p>Трёхфлэйворные осцилляции, энергия, база и CP-фаза.</p>
+    <p>Три вероятности в одном треугольнике: углы, CP-фаза, порядок масс и длинная траектория по L/E.</p>
     <a class="applet-card-action" href="flavor-triangle.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 10</span>
+    <h2><a href="pmns-from-data.html">Соберите матрицу PMNS</a></h2>
+    <p>Солнечный дефицит, атмосферное исчезновение, реакторная поправка и унитарность заполняют матрицу по шагам.</p>
+    <a class="applet-card-action" href="pmns-from-data.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 10 · калькулятор</span>
+    <h2><a href="three-flavor-probabilities.html">Вероятности трёх нейтрино</a></h2>
+    <p>Нейтрино и антинейтрино в вакууме как функции энергии и длины. Все параметры, порядок масс, сравнение кривых и карта на плоскости (L, E). Та же программа есть на Python.</p>
+    <a class="applet-card-action" href="three-flavor-probabilities.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 11</span>
+    <h2><a href="refraction-layers.html">Тонкий слой и преломление</a></h2>
+    <p>Один слой почти не меняет волну. В однородной среде малые сдвиги фазы накапливаются.</p>
+    <a class="applet-card-action" href="refraction-layers.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 11</span>
+    <h2><a href="refraction-two-modes.html">Две волны в веществе</a></h2>
+    <p>Как разность показателей преломления превращается в разность фаз и меняет вероятность флэйвора.</p>
+    <a class="applet-card-action" href="refraction-two-modes.html">Открыть →</a>
   </article>
 
   <article class="applet-card">
