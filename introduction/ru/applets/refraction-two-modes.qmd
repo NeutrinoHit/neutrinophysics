@@ -1,0 +1,32 @@
+---
+title: "Две волны в веществе"
+description: "Относительная фаза нормальных волн меняет вероятность регистрации флэйвора"
+---
+
+{{< include _applet-nav.qmd >}}
+
+В этой модели угол собственных волн вещества и разность их фаз задаются
+независимо. Она показывает, что следует из их интерференции. В лекции 12
+мы найдём обе величины из взаимодействия нейтрино со средой.
+
+~~~{=html}
+<link rel="stylesheet" href="../slides/assets/06_matter_oscillations/refraction_labs.css">
+~~~
+
+::: {.applet-stage .applet-stage--large}
+{{< include ../slides/assets/06_matter_oscillations/_refraction_two_modes.qmd >}}
+:::
+
+~~~{=html}
+<script src="../slides/assets/06_matter_oscillations/refraction_labs.js"></script>
+~~~
+
+::: {.applet-note}
+При $\Delta\varphi=0$ собственные волны приходят с одинаковой фазой:
+перехода нет. При $\theta_m=0$ электронный флэйвор сам является
+собственной волной вещества. При ненулевых угле и разности фаз
+$P_{e\to x}=\sin^22\theta_m\sin^2(\Delta\varphi/2)$.
+
+[Объяснение в лекции 11](../slides/11_matter_refraction.html#/refraction-two-modes) ·
+[Исходный код](https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/slides/assets/06_matter_oscillations/refraction_labs.js).
+:::

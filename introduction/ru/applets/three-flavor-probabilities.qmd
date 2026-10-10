@@ -1,0 +1,42 @@
+---
+title: "Вероятности осцилляций трёх нейтрино"
+description: "Нейтрино и антинейтрино в вакууме как функции энергии и длины, порядок масс и сравнение кривых"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Выберите каналы $\nu_\alpha\to\nu_\beta$, нейтрино или антинейтрино, и меняйте
+любой из шести параметров. По умолчанию стоят лучшие точки глобального анализа
+для выбранного порядка масс. Кнопка «Закрепить текущие» оставляет кривую на
+графике, пока вы двигаете параметры, а кнопки «+ IO» и «+ NO» добавляют
+то же самое при другом порядке масс. Можно построить $P(E)$ при заданной длине,
+$P(L)$ при заданной энергии или карту на плоскости $(L,E)$, в том числе разность
+нейтрино и антинейтрино или разность двух порядков масс.
+
+```{=html}
+<link rel="stylesheet" href="../slides/assets/05_vacuum_oscillations/three_flavor_probabilities.css">
+```
+
+::: {.applet-stage .applet-stage--large .applet-stage--tfp}
+{{< include ../slides/assets/05_vacuum_oscillations/_three_flavor_probabilities.qmd >}}
+:::
+
+```{=html}
+<script src="../slides/assets/05_vacuum_oscillations/three_flavor_probabilities.js"></script>
+```
+
+::: {.applet-note}
+Расчёт ведётся для вакуума: вещество Земли, существенное для установок
+NOvA и DUNE, появится в лекциях 11–15. Порядок масс задаёт знак
+$\Delta m^2_{3\ell}$: для нормального порядка это $\Delta m^2_{31}>0$, для
+обратного $\Delta m^2_{32}<0$, а $\Delta m^2_{31}=\Delta m^2_{32}+\Delta m^2_{21}$.
+Значения по умолчанию взяты из [NuFIT 6.1](https://www.nu-fit.org/?q=node/309)
+(набор IC24 + SK-atm).
+
+Тот же расчёт на Python: [three_flavor_oscillations.py](../slides/assets/05_vacuum_oscillations/three_flavor_oscillations.py)
+(нужен только numpy; для графиков ещё matplotlib). Команда для текущих
+настроек собирается под графиком, в разделе «Повторить в Python».
+
+[Объяснение в лекции 10](../slides/10_vacuum_pmns.html) ·
+[Исходный код апплета](https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/slides/assets/05_vacuum_oscillations/three_flavor_probabilities.js).
+:::

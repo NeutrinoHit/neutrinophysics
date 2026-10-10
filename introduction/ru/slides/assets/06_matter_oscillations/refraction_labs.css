@@ -1,0 +1,141 @@
+.refraction-layers-lab,
+.refraction-modes-lab {
+  box-sizing: border-box;
+  width: min(1760px, 100%);
+  margin: 0.2rem auto;
+  padding: 0.55rem 0.7rem 0.35rem;
+  border: 1px solid rgba(126, 189, 224, 0.36);
+  border-radius: 0.35rem;
+  background: #08131e;
+  color: #edf6fc;
+  font: 25px/1.25 system-ui, sans-serif;
+}
+
+.refraction-layers-lab *,
+.refraction-modes-lab * {
+  box-sizing: border-box;
+}
+
+.refraction-layers-lab__controls,
+.refraction-modes-lab__controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.4rem;
+  padding: 0.25rem 0.25rem 0.65rem;
+}
+
+.refraction-layers-lab__controls label,
+.refraction-modes-lab__controls label {
+  display: block;
+  color: #dcecf6;
+}
+
+.refraction-layers-lab__controls label > span,
+.refraction-modes-lab__controls label > span {
+  float: right;
+  color: #ffd386;
+  font-variant-numeric: tabular-nums;
+}
+
+.refraction-layers-lab input,
+.refraction-modes-lab input {
+  display: block;
+  width: 100%;
+  margin: 0.45rem 0 0;
+  accent-color: #73d6eb;
+}
+
+.refraction-layers-lab svg,
+.refraction-modes-lab svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  font: 27px/1.2 system-ui, sans-serif;
+}
+
+.refraction-layers-lab svg text,
+.refraction-modes-lab svg text {
+  fill: #e5eff7;
+}
+
+.refraction-layers-lab__medium {
+  fill: rgba(255, 203, 114, 0.11);
+}
+
+.refraction-layers-lab__boundary,
+.refraction-layers-lab__axis,
+.refraction-modes-lab__axis {
+  stroke: rgba(221, 237, 248, 0.46);
+  stroke-width: 2;
+}
+
+.refraction-layers-lab__vacuum,
+.refraction-layers-lab__key-vacuum {
+  fill: none;
+  stroke: #94aabd;
+  stroke-width: 3;
+  stroke-dasharray: 10 8;
+}
+
+.refraction-layers-lab__wave,
+.refraction-layers-lab__key-medium {
+  fill: none;
+  stroke: #6ee0ec;
+  stroke-width: 5;
+}
+
+.refraction-modes-lab__circle {
+  fill: none;
+  stroke: rgba(221, 237, 248, 0.38);
+  stroke-width: 2;
+}
+
+.refraction-modes-lab__first,
+.refraction-modes-lab__first-dot {
+  fill: #6ee0ec;
+  stroke: #6ee0ec;
+  stroke-width: 6;
+}
+
+.refraction-modes-lab__second,
+.refraction-modes-lab__second-dot {
+  fill: #ffd386;
+  stroke: #ffd386;
+  stroke-width: 6;
+}
+
+.refraction-modes-lab__curve {
+  fill: none;
+  stroke: #6ee0ec;
+  stroke-width: 5;
+}
+
+.refraction-modes-lab__marker {
+  fill: #ffd386;
+}
+
+.refraction-layers-lab__readout,
+.refraction-modes-lab__readout {
+  margin: 0.15rem 0 0;
+  padding: 0.45rem 0.6rem;
+  color: #e7f1f8;
+  text-align: center;
+}
+
+.refraction-layers-lab__readout span,
+.refraction-modes-lab__readout span {
+  color: #ffd386;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 900px) {
+  .refraction-layers-lab,
+  .refraction-modes-lab {
+    font-size: 17px;
+  }
+  .refraction-layers-lab__controls,
+  .refraction-modes-lab__controls {
+    grid-template-columns: 1fr;
+  }
+}

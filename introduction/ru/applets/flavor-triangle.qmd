@@ -5,16 +5,29 @@ description: "Трёхфлэйворные осцилляции в вакуум�
 
 {{< include _applet-nav.qmd >}}
 
-Выберите начальный флэйвор, энергию, длину пути и CP-фазу. Точка внутри треугольника показывает сразу три вероятности, сумма которых всегда равна единице.
+Выберите начальный флэйвор, порядок масс, углы смешивания и CP-фазу.
+Меняйте путь в единицах $L_{\rm osc}^{21}$. Точка внутри треугольника
+показывает три вероятности; траектория охватывает до трёх солнечных периодов.
 
 ```{=html}
 <link rel="stylesheet" href="../slides/assets/05_vacuum_oscillations/three_flavor_triangle.css">
 ```
 
 ::: {.applet-stage .applet-stage--large}
-{{< include ../slides/assets/05_vacuum_oscillations/three_flavor_triangle_widget.qmd >}}
+{{< include ../slides/assets/05_vacuum_oscillations/_three_flavor_triangle_widget.qmd >}}
 :::
 
 ```{=html}
 <script src="../slides/assets/05_vacuum_oscillations/three_flavor_triangle.js"></script>
 ```
+
+::: {.applet-note}
+Модель использует вакуумную трёхфлэйворную эволюцию и два независимых
+расщепления из [NuFIT 6.1](https://www.nu-fit.org/?q=node/309).
+Начальные углы и фаза соответствуют лучшей точке NO с IC24 + SK-atm.
+Нормировка вероятностей вычисляется из унитарной матрицы PMNS; в коде
+она не навязывается делением на сумму.
+
+[Объяснение в лекции 10](../slides/10_vacuum_pmns.qmd) ·
+[Анимация в dvnanima](https://github.com/NeutrinoHit/dvnanima/tree/main/neutrino_oscillations).
+:::

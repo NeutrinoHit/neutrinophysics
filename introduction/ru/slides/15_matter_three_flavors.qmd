@@ -583,5 +583,4 @@ $$
 ## Модуль завершён
 
 [К началу модуля: откуда берётся преломление](11_matter_refraction.html) ·
-[Предыдущая лекция: интерференция и маятники](14_matter_interference_pendulums.html) ·
-[Следующая тема курса: парадоксы осцилляций](16_oscillation_paradoxes.html)
+[Предыдущая лекция: интерференция и маятники](14_matter_interference_pendulums.html)

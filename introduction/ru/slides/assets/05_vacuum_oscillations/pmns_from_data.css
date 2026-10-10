@@ -1,0 +1,184 @@
+.pmns-from-data {
+  box-sizing: border-box;
+  width: min(1840px, 100%);
+  margin: 0.15rem auto 0;
+  padding: 18px 24px 14px;
+  border: 1px solid rgba(124, 199, 255, 0.36);
+  border-radius: 14px;
+  background: #08121d;
+  color: #f1f6fb;
+  font: 25px/1.3 system-ui, sans-serif;
+}
+
+main.content > .applet-stage--pmns {
+  width: min(1860px, calc(100% - 2rem));
+  max-width: none;
+}
+
+.pmns-from-data * { box-sizing: border-box; }
+.pmns-from-data [hidden] { display: none !important; }
+
+.pmns-from-data__top,
+.pmns-from-data__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.pmns-from-data__top {
+  padding-bottom: 13px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  color: #b7c7d3;
+  font-size: 0.82em;
+}
+
+.pmns-from-data button {
+  min-width: 155px;
+  min-height: 42px;
+  padding: 6px 12px;
+  border: 1px solid #7cc7ff;
+  border-radius: 8px;
+  background: rgba(124, 199, 255, 0.11);
+  color: #ecf8ff;
+  font: 650 0.92em/1 system-ui, sans-serif;
+  cursor: pointer;
+}
+
+.pmns-from-data button:hover,
+.pmns-from-data button:focus-visible {
+  background: rgba(124, 199, 255, 0.25);
+}
+
+.pmns-from-data button:disabled {
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #8394a1;
+  cursor: default;
+}
+
+.pmns-from-data__body {
+  display: grid;
+  grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
+  gap: 30px;
+  min-height: 660px;
+  padding-top: 20px;
+}
+
+.pmns-from-data__evidence {
+  min-width: 0;
+  padding: 8px 12px 0 4px;
+}
+
+.pmns-from-data__evidence h3 {
+  margin: 0 0 15px;
+  color: #7cc7ff;
+  font-size: 1.24em;
+  font-weight: 700;
+}
+
+.pmns-from-data__evidence p {
+  margin: 0 0 15px;
+}
+
+.pmns-from-data__formula {
+  padding: 9px 11px;
+  border-left: 3px solid #ffcc8a;
+  background: rgba(255, 204, 138, 0.08);
+  font-size: 1.03em;
+}
+
+.pmns-from-data__fine,
+.pmns-from-data__foot {
+  color: #bacbd7;
+  font-size: 0.78em;
+}
+
+.pmns-from-data__matrix-panel {
+  min-width: 0;
+  padding: 10px 14px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.pmns-from-data__matrix-title {
+  margin: 0 0 8px;
+  color: #f8d491;
+  text-align: center;
+  font-size: 1.26em;
+}
+
+.pmns-from-data__matrix {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 8px;
+  table-layout: fixed;
+  font-size: 1.38em;
+  text-align: center;
+}
+
+.pmns-from-data__matrix th {
+  color: #adc5d7;
+  font-weight: 700;
+  text-align: center;
+}
+
+.pmns-from-data__matrix th:first-child { width: 18%; }
+
+.pmns-from-data__matrix td {
+  height: 106px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #eaf5fc;
+  vertical-align: middle;
+}
+
+.pmns-from-data__matrix td:not(.is-filled)::before {
+  content: "?";
+  color: #6b8292;
+}
+
+.pmns-from-data__matrix td:not(.is-filled) span { display: none; }
+
+.pmns-from-data__matrix td.is-new {
+  border-color: #ffcc8a;
+  background: rgba(255, 204, 138, 0.15);
+  color: #fff5db;
+}
+
+.pmns-from-data__roots,
+.pmns-from-data__partial,
+.pmns-from-data__signed,
+.pmns-from-data__modern { display: none; }
+.pmns-from-data.is-roots .pmns-from-data__toy,
+.pmns-from-data.is-partial .pmns-from-data__toy,
+.pmns-from-data.is-signed .pmns-from-data__toy,
+.pmns-from-data.is-modern .pmns-from-data__toy { display: none; }
+.pmns-from-data.is-roots .pmns-from-data__roots,
+.pmns-from-data.is-partial .pmns-from-data__partial,
+.pmns-from-data.is-signed .pmns-from-data__signed,
+.pmns-from-data.is-modern .pmns-from-data__modern { display: inline; }
+
+.pmns-from-data__check {
+  min-height: 57px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 7px;
+  background: rgba(124, 199, 255, 0.09);
+  color: #e1f0f9;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.pmns-from-data__foot {
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 900px) {
+  .pmns-from-data { font-size: 16px; }
+  .pmns-from-data__body { grid-template-columns: 1fr; min-height: 0; }
+  .pmns-from-data__matrix td { height: 60px; }
+  .pmns-from-data button { min-width: 105px; }
+}

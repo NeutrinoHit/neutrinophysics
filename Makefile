@@ -1,4 +1,6 @@
-.PHONY: site render ci-setup book book-html book-pdf book-epub preview preview-paths preview-solar preview-solar-lecture preview-solar-session1 preview-solar-session2 preview-solar-defense
+.PHONY: site render ci-setup book book-html book-pdf book-epub prune-unpublished publish-lecture preview preview-paths preview-solar preview-solar-lecture preview-solar-session1 preview-solar-session2 preview-solar-defense
+
+PYTHON ?= $(shell pyenv which python 2>/dev/null || command -v python3)
 
 BOOK_DIR := introduction/ru/book
 BOOK_RENDER_FLAGS :=
@@ -26,9 +28,10 @@ ci-setup:
 	  quarto install tinytex --no-prompt; \
 	fi
 
-site:
+site: prune-unpublished
 	quarto render
 	$(MAKE) book
+	$(MAKE) prune-unpublished
 	rm -rf _site/introduction/slides _site/introduction/ru/book/_book
 	rm -f \
 		_site/assets/2601.00248v1.pdf \
@@ -40,6 +43,13 @@ site:
 	rm -f _site/introduction/ru/slides/assets/13_solar_neutrinos/generate_photon_diffusion_assets.py
 
 render: site
+
+prune-unpublished:
+	$(PYTHON) scripts/manage_introduction_lectures.py prune
+
+publish-lecture:
+	@test -n "$(LECTURE)" || { echo 'Use make publish-lecture LECTURE=16 [MAP_ROOT=/path/to/neutrinohit-map]' >&2; exit 1; }
+	$(PYTHON) scripts/manage_introduction_lectures.py publish $(LECTURE) $(if $(MAP_ROOT),--map-root "$(MAP_ROOT)",)
 
 book:
 	quarto render $(BOOK_DIR) $(BOOK_RENDER_FLAGS)

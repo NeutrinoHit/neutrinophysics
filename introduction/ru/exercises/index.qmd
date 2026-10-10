@@ -49,7 +49,3 @@ format:
 ---
 
 {{< include ../../_includes/exercises/10_vacuum_pmns-ru.qmd >}}
-
----
-
-{{< include ../../_includes/exercises/22_solar_neutrinos-ru.qmd >}}
