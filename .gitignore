@@ -36,3 +36,7 @@ solar-neutrino-masterclass/data/masterclass2/blind_pseudo_data_sk.csv
 solar-neutrino-masterclass/data/project/*.csv
 !solar-neutrino-masterclass/data/project/README.md
 !solar-neutrino-masterclass/data/project/solar_neutrino_project_data.zip
+
+# Project working files and slow caches
+/.work/
+/.cache/
