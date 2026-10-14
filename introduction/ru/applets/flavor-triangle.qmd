@@ -28,6 +28,5 @@ description: "Трёхфлэйворные осцилляции в вакуум�
 Нормировка вероятностей вычисляется из унитарной матрицы PMNS; в коде
 она не навязывается делением на сумму.
 
-[Объяснение в лекции 10](../slides/10_vacuum_pmns.qmd) ·
-[Анимация в dvnanima](https://github.com/NeutrinoHit/dvnanima/tree/main/neutrino_oscillations).
+[Объяснение в лекции 10](../slides/10_vacuum_pmns.qmd).
 :::

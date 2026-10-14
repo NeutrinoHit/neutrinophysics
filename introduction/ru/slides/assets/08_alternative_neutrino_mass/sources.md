@@ -59,7 +59,7 @@
 
 Ранее подготовленная анимация project8_cres.mp4 хранится в
 ../04_direct_neutrino_mass/. Её источник —
-[dvnanima/project8_cres](https://github.com/NeutrinoHit/dvnanima/tree/main/project8_cres).
+сцена dvnanima/project8_cres.
 В ней кинетическая энергия обозначена K; подпись на слайде сопоставляет
 её с E, используемой в лекциях.
 

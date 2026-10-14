@@ -378,7 +378,7 @@ $$
 
 ::: {.nh-text tone="muted" size="sm"}
 Схематическая анимация; её обозначение $K$ соответствует кинетической энергии
-$E$ в лекции. [Исходный код: dvnanima/project8_cres](https://github.com/NeutrinoHit/dvnanima/tree/main/project8_cres).
+$E$ в лекции.
 :::
 
 :::::
@@ -1604,7 +1604,6 @@ $$
 
 ### Анимация и апплеты
 
-- [Анимация CRES: dvnanima/project8_cres](https://github.com/NeutrinoHit/dvnanima/tree/main/project8_cres).
 - [Апплет «Боковые частоты CRES»](../applets/cres-sidebands.qmd).
 - [Апплет «Частотный трек электрона»](../applets/cres-frequency-track.qmd).
 - [Обе модели на одной странице](../applets/cres-observables.qmd).
