@@ -135,6 +135,13 @@ $$ {#eq-pmns-angle-reading}
 $\theta_{23}$ распределяет $\nu_3$ между мюонным и тау-флэйворами. Если
 $s_{13}=0$, фаза $\delta$ исчезает из матрицы.
 
+::: {#interactive-pmns-from-data .interactive title="Соберите матрицу PMNS из измерений" embed="../../applets/pmns-from-data.html" poster="../assets/chapters/05_vacuum_oscillations/pmns_from_data.svg" url="https://neutrinohit.github.io/qr/neutrino-physics/0050/" qr="../assets/chapters/05_vacuum_oscillations/qr/pmns_from_data.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/pmns-from-data.qmd" repo-label="код апплета"}
+Солнечный дефицит даёт электронную долю второй моды; атмосферное исчезновение
+фиксирует мюонную долю третьей. Нормировки и ортогональность заполняют
+остальные клетки приближённой матрицы. Последний шаг показывает реакторную
+поправку и границу такого восстановления.
+:::
+
 ### Сколько фаз физически различимы
 
 Унитарная матрица $3\times3$ содержит три угла и шесть фаз. В дираковском
@@ -271,10 +278,11 @@ $$ {#eq-three-flavor-phase-relation}
 Поэтому в трёхфлэйворной картине есть три интерференционных члена, но лишь
 две независимые частоты.
 
-::: {#interactive-three-flavor-triangle .interactive title="Три флэйворные вероятности" embed="../../applets/flavor-triangle.html" poster="../assets/chapters/05_vacuum_oscillations/three_flavor_triangle_frame.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/flavor-triangle.html" qr="../assets/chapters/05_vacuum_oscillations/qr/three_flavor_triangle.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/flavor-triangle.qmd" repo-label="код апплета"}
+::: {#interactive-three-flavor-triangle .interactive title="Три флэйворные вероятности" embed="../../applets/flavor-triangle.html" poster="../assets/chapters/05_vacuum_oscillations/three_flavor_triangle_frame.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0051/" qr="../assets/chapters/05_vacuum_oscillations/qr/three_flavor_triangle.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/flavor-triangle.qmd" repo-label="код апплета"}
 Точка внутри треугольника имеет барицентрические координаты
 $(P_{\alpha e},P_{\alpha\mu},P_{\alpha\tau})$. Интерактив позволяет менять
-начальный флэйвор, $L$, $E$, $\delta_{\mathrm{CP}}$ и переключаться между
+начальный флэйвор, три угла, $\delta_{\mathrm{CP}}$, порядок масс и
+$L/L_{\mathrm{osc}}^{21}$ до трёх солнечных периодов. Можно переключать
 нейтрино и антинейтрино.
 :::
 
