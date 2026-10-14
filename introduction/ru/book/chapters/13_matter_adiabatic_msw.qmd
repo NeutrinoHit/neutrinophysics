@@ -193,6 +193,12 @@ $$ {#eq-msw-landau-zener}
 линейность диагональной разности и постоянство внедиагональной связи. Для
 реального солнечного профиля надёжнее интегрировать исходное уравнение.
 
+::: {#anim-msw-adiabatic-passage .animation title="Адиабатический и неадиабатический проход через резонанс" src="../assets/chapters/06_matter_oscillations/msw_adiabatic_passage.mp4" poster="../assets/chapters/06_matter_oscillations/msw_adiabatic_passage.png" url="https://neutrinohit.github.io/qr/neutrino-physics/0019/" qr="../assets/chapters/06_matter_oscillations/qr/msw_adiabatic_passage.png"}
+При плавном изменении плотности нейтрино следует за мгновенным собственным
+состоянием. При быстром проходе через резонанс состояние отстаёт от
+поворачивающегося собственного вектора, и появляется скачок между ветвями.
+:::
+
 ::: {.biography name="Станислав Михеев" years="1940–2011" source="https://www.ictp.it/news/2011/5/memoriam" source-label="Международный центр теоретической физики"}
 Станислав Михеев работал в Институте ядерных исследований РАН. Вместе с
 Алексеем Смирновым он применил идею Вольфенстайна к среде переменной плотности
@@ -258,7 +264,7 @@ $$ {#eq-msw-high-energy-survival}
 Для солнечного угла это около $0.30$. Сильное изменение вероятности возникло
 без поглощения и без настройки длины Солнца на нечётное число полупериодов.
 
-::: {#anim-msw-solar-bases .animation title="Солнечный выход в трёх базисах" src="../assets/chapters/06_matter_oscillations/msw_solar_exit_bases.mp4" poster="../assets/chapters/06_matter_oscillations/msw_solar_exit_bases.png" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/13_matter_adiabatic_msw.html#/solar-exit-bases"}
+::: {#anim-msw-solar-bases .animation title="Солнечный выход в трёх базисах" src="../assets/chapters/06_matter_oscillations/msw_solar_exit_bases.mp4" poster="../assets/chapters/06_matter_oscillations/msw_solar_exit_bases.png" url="https://neutrinohit.github.io/qr/neutrino-physics/0020/" qr="../assets/chapters/06_matter_oscillations/qr/msw_solar_exit_bases.png"}
 Одно и то же состояние показано во флэйворном, фиксированном вакуумном
 массовом и мгновенном массовом базисах. Заселённость $\nu_{2m}$ почти не
 меняется, хотя проекции на $\nu_e$ и $\nu_2$ меняются сильно.
@@ -316,7 +322,7 @@ $$ {#eq-msw-parke-survival}
 зависит от профиля плотности; для современных параметров солнечного сектора
 основная часть распространения в Солнце очень близка к адиабатической.
 
-::: {#interactive-msw-adiabatic-passage .interactive title="Медленный и быстрый проход через избегаемое пересечение" embed="../../applets/matter-adiabatic.html" poster="../assets/chapters/06_matter_oscillations/msw_adiabatic_passage.png" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/matter-adiabatic.html" qr="../assets/chapters/06_matter_oscillations/qr/matter_adiabatic.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/matter-adiabatic.qmd" repo-label="код апплета"}
+::: {#interactive-msw-adiabatic-passage .interactive title="Медленный и быстрый проход через избегаемое пересечение" embed="../../applets/matter-adiabatic.html" poster="../assets/chapters/06_matter_oscillations/msw_adiabatic_passage.png" url="https://neutrinohit.github.io/qr/neutrino-physics/0055/" qr="../assets/chapters/06_matter_oscillations/qr/matter_adiabatic.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/matter-adiabatic.qmd" repo-label="код апплета"}
 При медленном профиле $P_{2m}$ остаётся близкой к единице. При быстром
 профиле состояние отстаёт от поворачивающегося собственного вектора и
 появляется настоящий переход между мгновенными ветвями.

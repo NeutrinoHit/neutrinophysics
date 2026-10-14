@@ -83,7 +83,7 @@ $$ {#eq-fermi-function-relativistic}
 медленную оболочку спектра, но не заменяют фазовый множитель, в котором
 находится чувствительность к $m_\nu$.
 
-::: {#interactive-fermi-function .interactive title="Кулоновская поправка к β-спектру" embed="../../applets/fermi-function.html" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/fermi-function.html" qr="../assets/chapters/04_direct_neutrino_mass/qr/fermi_function.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/fermi-function.qmd" repo-label="код апплета"}
+::: {#interactive-fermi-function .interactive title="Кулоновская поправка к β-спектру" embed="../../applets/fermi-function.html" url="https://neutrinohit.github.io/qr/neutrino-physics/0036/" qr="../assets/chapters/04_direct_neutrino_mass/qr/fermi_function.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/fermi-function.qmd" repo-label="код апплета"}
 Меняйте заряд дочернего ядра и сравнивайте β⁻- и β⁺-распады. Притяжение
 электрона усиливает спектр при малых энергиях, а отталкивание позитрона
 подавляет его.
@@ -111,7 +111,7 @@ $$ {#eq-endpoint-relative-mass-effect}
 $E_\nu=m_\nu$ она меняет кривизну спектра и обрывает его при
 $E=E_0-m_\nu$.
 
-::: {#anim-beta-endpoint .animation title="Масса нейтрино и конец β-спектра" epub-src="../assets/chapters/04_direct_neutrino_mass/beta_endpoint.mp4" poster="../assets/chapters/04_direct_neutrino_mass/beta_endpoint.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/04_neutrino_mass_kinematics.html#/beta-endpoint-spectrum" qr="../assets/chapters/04_direct_neutrino_mass/qr/beta_endpoint.png"}
+::: {#anim-beta-endpoint .animation title="Масса нейтрино и конец β-спектра" epub-src="../assets/chapters/04_direct_neutrino_mass/beta_endpoint.mp4" poster="../assets/chapters/04_direct_neutrino_mass/beta_endpoint.svg" url="https://neutrinohit.github.io/qr/neutrino-physics/0037/" qr="../assets/chapters/04_direct_neutrino_mass/qr/beta_endpoint.png"}
 При увеличении массы конечная точка сдвигается влево, а последняя часть спектра
 подавляется.
 :::
@@ -143,7 +143,7 @@ $$ {#eq-spectrum-convolution}
 конца в редкую конечную область. Если ширина отклика сравнима с искомой массой,
 форма сигнала существенно искажается.
 
-::: {#interactive-endpoint-resolution .interactive title="Масса нейтрино и энергетическое разрешение" embed="../../applets/beta-endpoint-resolution.html" height="52rem" poster="../assets/chapters/04_direct_neutrino_mass/endpoint_resolution.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/beta-endpoint-resolution.html" qr="../assets/chapters/04_direct_neutrino_mass/qr/endpoint_resolution.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/beta-endpoint-resolution.qmd" repo-label="код апплета"}
+::: {#interactive-endpoint-resolution .interactive title="Масса нейтрино и энергетическое разрешение" embed="../../applets/beta-endpoint-resolution.html" height="52rem" poster="../assets/chapters/04_direct_neutrino_mass/endpoint_resolution.svg" url="https://neutrinohit.github.io/qr/neutrino-physics/0038/" qr="../assets/chapters/04_direct_neutrino_mass/qr/endpoint_resolution.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/beta-endpoint-resolution.qmd" repo-label="код апплета"}
 Интерактивный график сопоставляет истинный спектр со спектром после гауссова
 размытия. Особенно заметно изменение последних нескольких электронвольт.
 :::
@@ -217,7 +217,7 @@ $$ {#eq-effective-beta-mass}
 Это положительно определённая сумма. Майорановские фазы в неё не входят, а
 вклады разных массовых состояний не могут взаимно уничтожиться.
 
-::: {#interactive-resolved-mass-spectrum .interactive title="Один β-спектр и несколько массовых порогов" embed="../../applets/mass-spectrum.html" poster="../assets/chapters/04_direct_neutrino_mass/resolved_mass_spectrum.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/mass-spectrum.html" qr="../assets/chapters/04_direct_neutrino_mass/qr/resolved_mass_spectrum.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/mass-spectrum.qmd" repo-label="код апплета"}
+::: {#interactive-resolved-mass-spectrum .interactive title="Один β-спектр и несколько массовых порогов" embed="../../applets/mass-spectrum.html" poster="../assets/chapters/04_direct_neutrino_mass/resolved_mass_spectrum.svg" url="https://neutrinohit.github.io/qr/neutrino-physics/0039/" qr="../assets/chapters/04_direct_neutrino_mass/qr/resolved_mass_spectrum.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/mass-spectrum.qmd" repo-label="код апплета"}
 При достаточно хорошем разрешении каждому $m_i$ соответствовал бы собственный
 излом с весом $|U_{ei}|^2$. В реальном эксперименте эти пороги сливаются в одну
 деформацию, задаваемую $m_\beta$.
@@ -248,7 +248,7 @@ $$ {#eq-kurie-definition}
 пересекающую ось энергии в $E_0$. Ненулевая масса искривляет последнюю часть
 линии и сдвигает её конец.
 
-::: {#anim-kurie-plot .animation title="График Кури вблизи конечной точки" epub-src="../assets/chapters/04_direct_neutrino_mass/kurie_plot.mp4" poster="../assets/chapters/04_direct_neutrino_mass/kurie_plot.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/04_neutrino_mass_kinematics.html#/kurie-plot" qr="../assets/chapters/04_direct_neutrino_mass/qr/kurie_plot.png"}
+::: {#anim-kurie-plot .animation title="График Кури вблизи конечной точки" epub-src="../assets/chapters/04_direct_neutrino_mass/kurie_plot.mp4" poster="../assets/chapters/04_direct_neutrino_mass/kurie_plot.svg" url="https://neutrinohit.github.io/qr/neutrino-physics/0040/" qr="../assets/chapters/04_direct_neutrino_mass/qr/kurie_plot.png"}
 Безмассовый спектр даёт прямую, а масса искривляет её у конца. В анализе
 данных подгоняют исходный спектр, а не преобразованный график, вместе с полной
 функцией отклика.
