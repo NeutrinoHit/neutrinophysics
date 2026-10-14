@@ -132,7 +132,7 @@ $45^\circ$ и $75^\circ$. Продольная скорость задаёт ш�
 поперечный импульс --- её радиус.
 :::
 
-::: {#interactive-cyclotron-motion .interactive title="Циклотронное движение в двух пространствах" embed="../../applets/cyclotron-motion.html" url="https://neutrinohit.github.io/qr/neutrino-physics/0041/" qr="../assets/chapters/04_direct_neutrino_mass/qr/cyclotron_motion.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/cyclotron-motion.qmd" repo-label="код апплета"}
+::: {#interactive-cyclotron-motion .interactive title="Циклотронное движение в двух пространствах" embed="../../applets/cyclotron-motion.html" poster="../assets/chapters/04_direct_neutrino_mass/cyclotron_motion.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0041/" qr="../assets/chapters/04_direct_neutrino_mass/qr/cyclotron_motion.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/cyclotron-motion.qmd" repo-label="код апплета"}
 Меняйте импульс и магнитное поле. Слева показана орбита электрона, справа ---
 то же движение в плоскости поперечных импульсов.
 :::
@@ -278,7 +278,7 @@ $$ {#eq-action-angle-equations}
 прибавки к $J$ на разных участках цикла почти взаимно сокращаются. В следующей
 главе это утверждение будет проверено прямым вычислением.
 
-::: {#interactive-planar-rotor .interactive title="Плоский ротатор" embed="../../applets/planar-rotor.html" url="https://neutrinohit.github.io/qr/neutrino-physics/0042/" qr="../assets/chapters/04_direct_neutrino_mass/qr/planar_rotor.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/planar-rotor.qmd" repo-label="код апплета"}
+::: {#interactive-planar-rotor .interactive title="Плоский ротатор" embed="../../applets/planar-rotor.html" poster="../assets/chapters/04_direct_neutrino_mass/planar_rotor.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0042/" qr="../assets/chapters/04_direct_neutrino_mass/qr/planar_rotor.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/planar-rotor.qmd" repo-label="код апплета"}
 Остановите движение в произвольной фазе и сравните угол с касательной
 скоростью. Координата возвращается к тому же направлению через $2\pi$.
 :::

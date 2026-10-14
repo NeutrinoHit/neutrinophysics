@@ -132,7 +132,7 @@ $$ {#eq-driven-oscillator-energy-change}
 
 и работа внешнего устройства меняет полную энергию. Эти две задачи похожи формулой для осциллятора, но физически различны.
 
-::: {#interactive-adiabatic-trough .interactive title="Частица в медленно меняющемся желобе" embed="../../applets/adiabatic-trough.html" height="38rem" url="https://neutrinohit.github.io/qr/neutrino-physics/0043/" qr="../assets/chapters/06_mac_e_spectrometer/qr/adiabatic_trough.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/adiabatic-trough.qmd" repo-label="код апплета"}
+::: {#interactive-adiabatic-trough .interactive title="Частица в медленно меняющемся желобе" embed="../../applets/adiabatic-trough.html" height="38rem" poster="../assets/chapters/06_mac_e_spectrometer/adiabatic_trough.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0043/" qr="../assets/chapters/06_mac_e_spectrometer/qr/adiabatic_trough.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/adiabatic-trough.qmd" repo-label="код апплета"}
 Запустите плавное изменение профиля. Апплет одновременно показывает движение
 частицы, фазовую орбиту и обмен между продольной и поперечной энергиями.
 :::
@@ -406,7 +406,7 @@ $$ {#eq-earth-loss-cone-angle}
 
 Теперь зафиксируем модуль скорости. Концы всех возможных векторов скорости лежат на сфере. Направления с углом $\alpha_{\mathrm{loss}}$ образуют на ней окружность вокруг оси $\mathbf B$; меньшие углы заполняют конус. Поскольку частица может двигаться в обе стороны вдоль поля, таких конусов два. Волны и столкновения медленно меняют угол: попав внутрь одного из конусов, частица осаждается в атмосферу, сталкивается с её молекулами и теряет энергию.
 
-::: {#interactive-loss-cone .interactive title="Силовая линия, зеркальная точка и конус потерь" embed="../../applets/radiation-belts.html" height="54rem" url="https://neutrinohit.github.io/qr/neutrino-physics/0044/" qr="../assets/chapters/06_mac_e_spectrometer/qr/radiation_belts.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/radiation-belts.qmd" repo-label="код апплета"}
+::: {#interactive-loss-cone .interactive title="Силовая линия, зеркальная точка и конус потерь" embed="../../applets/radiation-belts.html" height="54rem" poster="../assets/chapters/06_mac_e_spectrometer/radiation_belts.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0044/" qr="../assets/chapters/06_mac_e_spectrometer/qr/radiation_belts.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/radiation-belts.qmd" repo-label="код апплета"}
 Выберите силовую линию $L$ и экваториальный угол. Апплет показывает соответствующую высоту, движение направляющего центра и место, где частица отражается или входит в атмосферу. Быстрая циклотронная спираль не рисуется.
 :::
 
