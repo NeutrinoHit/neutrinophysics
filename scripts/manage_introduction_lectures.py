@@ -16,6 +16,34 @@ EXERCISES = ROOT / "introduction/ru/exercises"
 MANIFEST = PLANNED / "lectures.json"
 COURSE_INDEX = ROOT / "introduction/index.qmd"
 SLIDES_INDEX = SLIDES / "index.qmd"
+# Lecture keys are course numbers with an optional part letter: 16, 29a, 29b.
+KEY = re.compile(r"(\d{1,2})([a-z]?)")
+SOURCE = re.compile(r"\d{2}[a-z]?_.*\.qmd")
+
+
+def lecture_key(value: str) -> str:
+    """Normalise a lecture number: 7 -> 07, 29A -> 29a."""
+    found = KEY.fullmatch(str(value).strip().lower())
+    if found is None:
+        raise argparse.ArgumentTypeError(f"Invalid lecture number: {value!r}")
+    return f"{int(found.group(1)):02d}{found.group(2)}"
+
+
+def sort_key(value: str) -> tuple[int, str]:
+    """Order 29 < 29a < 29b < 29c < 30."""
+    found = KEY.fullmatch(value)
+    return int(found.group(1)), found.group(2)
+
+
+def manifest_key(value: str) -> str:
+    return value.lstrip("0") or "0"
+
+
+def lecture_sources(folder: Path) -> list[Path]:
+    return sorted(
+        (path for path in folder.glob("[0-9][0-9]*_*.qmd") if SOURCE.fullmatch(path.name)),
+        key=lambda path: sort_key(path.name.split("_", 1)[0]),
+    )
 
 
 def rows(text: str, css_class: str) -> list[re.Match[str]]:
@@ -54,7 +82,7 @@ def load_manifest() -> dict:
     return json.loads(MANIFEST.read_text(encoding="utf-8"))
 
 
-def archive(numbers: list[int], map_root: Path | None) -> None:
+def archive(numbers: list[str], map_root: Path | None) -> None:
     if MANIFEST.exists():
         raise ValueError("The planned catalogue already exists; archive has already run.")
     texts = {
@@ -66,7 +94,7 @@ def archive(numbers: list[int], map_root: Path | None) -> None:
     records = {}
     moves = []
     for number in numbers:
-        sources = list(SLIDES.glob(f"{number:02d}_*.qmd"))
+        sources = list(SLIDES.glob(f"{number}_*.qmd"))
         if len(sources) != 1:
             raise ValueError(f"Expected one source for lecture {number}, found {len(sources)}")
         source = sources[0]
@@ -78,10 +106,10 @@ def archive(numbers: list[int], map_root: Path | None) -> None:
             record[key] = row_for(
                 text, "lecture-material" if key == "map_row" else "lecture-row", source.name
             )
-        exercises = list(EXERCISES.glob(f"{number:02d}_*_exercises.qmd"))
+        exercises = list(EXERCISES.glob(f"{number}_*_exercises.qmd"))
         if exercises:
             record["exercises"] = [path.name for path in exercises]
-        records[str(number)] = record
+        records[manifest_key(number)] = record
         moves.append((source, destination, False))
         moves.extend((path, EXERCISES / "planned" / path.name, True) for path in exercises)
 
@@ -102,13 +130,14 @@ def archive(numbers: list[int], map_root: Path | None) -> None:
         if key == "map_row":
             path = map_root / "ru/education.qmd"
         path.write_text(text, encoding="utf-8")
+    records = dict(sorted(records.items(), key=lambda item: sort_key(lecture_key(item[0]))))
     MANIFEST.write_text(
         json.dumps(records, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
     print(f"Moved {len(records)} lectures to {PLANNED.relative_to(ROOT)}.")
 
 
-def insert_row(text: str, row: str, number: int, css_class: str, map_page: bool) -> str:
+def insert_row(text: str, row: str, number: str, css_class: str, map_page: bool) -> str:
     candidates = rows(text, css_class)
     if map_page:
         candidates = [
@@ -118,15 +147,15 @@ def insert_row(text: str, row: str, number: int, css_class: str, map_page: bool)
     if not candidates:
         raise ValueError("Cannot locate the published lecture catalogue.")
     for match in candidates:
-        found = re.search(r'(?:lecture-index">|<summary>)(\d{2})', match.group())
-        if found and int(found.group(1)) > number:
+        found = re.search(r'(?:lecture-index">|<summary>)(\d{2}[a-z]?)(?![\w])', match.group())
+        if found and sort_key(found.group(1)) > sort_key(number):
             return text[:match.start()] + row + text[match.start():]
     last = candidates[-1]
     return text[:last.end()] + row + text[last.end():]
 
 
-def publish(number: int, map_root: Path | None) -> None:
-    record = load_manifest().get(str(number))
+def publish(number: str, map_root: Path | None) -> None:
+    record = load_manifest().get(manifest_key(number))
     if record is None:
         raise ValueError(f"No planned lecture {number}.")
     source = PLANNED / record["filename"]
@@ -143,7 +172,7 @@ def publish(number: int, map_root: Path | None) -> None:
             path.read_text(encoding="utf-8"), record["map_row"], number,
             "lecture-material", True
         )
-        count = len(list(SLIDES.glob("[0-9][0-9]_*.qmd"))) + 1
+        count = len(lecture_sources(SLIDES)) + 1
         text = re.sub(r"Опубликовано \d+ лекций", f"Опубликовано {count} лекций", text)
         edits.append((path, text))
     if record.get("exercises"):
@@ -170,7 +199,7 @@ def publish(number: int, map_root: Path | None) -> None:
         destination.write_text(contents, encoding="utf-8")
     for path, text in edits:
         path.write_text(text, encoding="utf-8")
-    print(f"Lecture {number:02d} returned to slides/ and added to the catalogues.")
+    print(f"Lecture {number} returned to slides/ and added to the catalogues.")
     print("Review, render, then commit and push both repositories.")
 
 
@@ -178,7 +207,7 @@ def prune(dry_run: bool) -> None:
     """Remove only reproducible outputs of sources still stored in planned/."""
     output = ROOT / "_site"
     targets = []
-    for source in sorted(PLANNED.glob("[0-9][0-9]_*.qmd")):
+    for source in lecture_sources(PLANNED):
         targets.extend([
             output / "introduction/ru/slides" / (source.stem + ".html"),
             output / "introduction/ru/slides" / (source.stem + "_files"),
@@ -230,10 +259,10 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="command", required=True)
     draft = commands.add_parser("archive")
-    draft.add_argument("numbers", type=int, nargs="+")
+    draft.add_argument("numbers", type=lecture_key, nargs="+")
     draft.add_argument("--map-root", type=Path)
     ready = commands.add_parser("publish")
-    ready.add_argument("number", type=int)
+    ready.add_argument("number", type=lecture_key)
     ready.add_argument("--map-root", type=Path)
     cleanup = commands.add_parser("prune")
     cleanup.add_argument("--dry-run", action="store_true")
