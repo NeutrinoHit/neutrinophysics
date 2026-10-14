@@ -76,10 +76,63 @@ $$ {#eq-wgts-zero-scattering}
 измерения $\rho d\,\sigma_{\mathrm{inel}}$ и распределения потерь; эти данные
 входят в @eq-mace-response-scattering.
 
+Это число относится к пучку, проходящему весь столб вдоль оси. β-электрон
+рождается внутри источника. Если оставшаяся оптическая толщина $u$ равномерна
+от нуля до $\tau_{\mathrm{full}}$, то при нулевом начальном угле
+
+$$
+\langle P_0\rangle_\beta
+=\frac{1}{\tau_{\mathrm{full}}}
+\int_0^{\tau_{\mathrm{full}}}e^{-u}\,du
+=\frac{1-e^{-\tau_{\mathrm{full}}}}{\tau_{\mathrm{full}}}
+\simeq0.54.
+$$ {#eq-wgts-beta-unscattered}
+
+Наклонные траектории длиннее, поэтому усреднение по углам уменьшает эту долю.
+Переносить измеренную пушкой долю электронов без потерь прямо на β-спектр
+нельзя.
+
 Газовый тритий не должен достигать спектрометров. Секция дифференциальной
 откачки DPS удаляет его турбомолекулярными насосами, а криогенная секция CPS
 сорбирует остаток. Поток трития подавляется более чем на четырнадцать порядков,
 при этом магнитное поле проводит электроны через обе секции.
+
+### Как измеряют потери энергии
+
+Фотоэлектронная пушка посылает через газ электроны с энергией около
+$18.6~\text{кэВ}$. При задерживающем напряжении $U$ введём избыточную энергию
+$E_s=E_{\mathrm{gun}}-e|U|$. После потери $\varepsilon$ электрон пройдёт
+идеальный фильтр, если $\varepsilon<E_s$. Сканирование $E_s$ поэтому
+измеряет интегральное распределение потерь.
+
+Пусть $g_1(\varepsilon)$ --- нормированная плотность потери при одном
+неупругом столкновении. Для $n$ независимых столкновений суммарная потеря
+имеет плотность $g_n=g_1^{*n}$. При оптической толщине $\tau$ полная плотность
+равна
+
+$$
+G(\varepsilon;\tau)
+=e^{-\tau}\delta(\varepsilon)
++\sum_{n=1}^{\infty}e^{-\tau}\frac{\tau^n}{n!}
+g_n(\varepsilon).
+$$ {#eq-katrin-loss-mixture}
+
+Без газа измеряют собственное пропускание пушки и фильтра
+$\mathcal T_{\mathrm{gun}}(E_s)$. С газом ожидаемый нормированный счёт
+
+$$
+r_{\mathrm{gun}}(E_s;\tau)
+=\int_0^\infty
+G(\varepsilon;\tau)\,
+\mathcal T_{\mathrm{gun}}(E_s-\varepsilon)\,d\varepsilon.
+$$ {#eq-katrin-gun-response}
+
+Плато до порога возбуждения молекулы определяет $e^{-\tau}$, а форма
+последующего подъёма --- $g_1$. Измерения при нескольких плотностях разделяют
+эти величины: плотность меняет пуассоновские веса, но не распределение потерь
+в одном столкновении. В измеренной функции $g_1$ возбуждения дают пик около
+$12.8~\text{эВ}$, а ионизация --- хвост выше $15.5~\text{эВ}$. Затем
+@eq-katrin-loss-mixture усредняют по местам рождения и углам β-электронов.
 
 ## Спектрометры и калибровка
 
@@ -100,6 +153,58 @@ $$ {#eq-ch07-003}
 высокого напряжения и мониторный спектрометр. При $|U|\simeq18.6~\text{кВ}$
 дрейф энергетической шкалы должен быть намного меньше одного электронвольта.
 
+### Высокое напряжение и конверсионные линии
+
+Напряжение сосуда главного спектрометра отрицательно. Быстрые колебания
+подавляет пострегулятор и контролирует датчик пульсаций. Постоянную составляющую
+измеряют прецизионным делителем: при коэффициенте $M\simeq1972$ напряжению
+$-18.6~\text{кВ}$ соответствуют примерно $-9.4~\text{В}$ на вольтметре.
+Относительная стабильность $3\cdot10^{-6}$ означает сдвиг электронного порога
+не более $56~\text{мэВ}$.
+
+Внутренняя конверсия в $^{83\mathrm m}\mathrm{Kr}$ даёт электронные линии
+вместо непрерывного спектра. Для оболочки $a$ энергия электрона равна
+
+$$
+E_{\mathrm{конв},a}
+=\Delta E_{\mathrm{яд}}-E_{\mathrm{связи},a}-E_{\mathrm{отдачи}}.
+$$ {#eq-katrin-conversion-energy}
+
+Линия $K$-32 расположена около $17.82~\text{кэВ}$. Её положение проверяет
+энергетическую шкалу, а форма --- уширение и пропускание. Отдельный мониторный
+спектрометр, подключённый к тому же высокому напряжению, следит за положением
+линии стабильного криптонового источника во времени.
+
+β-электрон рождается в газе с собственным электрическим потенциалом. При
+заряде $-e$ сохранение энергии даёт
+
+$$
+E_{\mathrm{после\ источника}}
+=E_{\mathrm{рождения}}-e\Phi_{\mathrm{src}}(z).
+$$ {#eq-katrin-source-potential}
+
+Средний потенциал сдвигает спектр, а его пространственный разброс уширяет
+его. Добавленный в газ $^{83\mathrm m}\mathrm{Kr}$ рождает конверсионные
+электроны внутри того же источника и позволяет оценить оба эффекта.
+
+### Детектор и фон
+
+Кремниевый детектор считает прошедшие фильтр электроны. Его $148$
+чувствительных площадок соответствуют разным участкам магнитной трубки:
+потенциал и поле по сечению немного меняются, поэтому каждой площадке нужна
+своя функция отклика. Энергию с точностью порядка электронвольта задаёт
+спектрометр; амплитуда детекторного импульса помогает отбирать события, но
+сама по себе такой точности не имеет.
+
+Электрон, возникший после анализирующего барьера при потенциале около
+$-|U|$, ускоряется к детектору и может попасть в то же энергетическое окно,
+что полезный электрон. Запертые магнитным полем электроны радиоактивного
+происхождения также рождают вторичные отсчёты. Поэтому фон уменьшают уже в
+спектрометре, а не только отбором импульсов на детекторе. В частности, смещение
+анализирующей области и сжатие магнитной трубки сокращают доступный фону
+объём. При этом край пропускания становится шире; оптимизируют итоговую
+неопределённость $m_\beta^2$.
+
 ## Интегральный счёт
 
 При фиксированном запирающем потенциале измеряется не дифференциальный, а
@@ -118,10 +223,33 @@ $$ {#eq-katrin-integral-rate}
 $f_{\mathrm{resp}}$ объединяет пропускание, потери энергии и геометрию
 источника.
 
-::: {#interactive-katrin-integral .interactive title="Интегральный спектр KATRIN" embed="../../applets/katrin-integral-spectrum.html" poster="../assets/chapters/04_direct_neutrino_mass/katrin_integral_spectrum.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/katrin-integral-spectrum.html" qr="../assets/chapters/04_direct_neutrino_mass/qr/katrin_integral.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/katrin-integral-spectrum.qmd" repo-label="код апплета"}
+::: {#interactive-katrin-integral .interactive title="Интегральный спектр KATRIN" embed="../../applets/katrin-integral-spectrum.html" poster="../assets/chapters/04_direct_neutrino_mass/katrin_integral_spectrum.svg" url="https://neutrinohit.github.io/qr/neutrino-physics/0045/" qr="../assets/chapters/04_direct_neutrino_mass/qr/katrin_integral.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/katrin-integral-spectrum.qmd" repo-label="код апплета"}
 Запирающий потенциал задаёт нижнюю границу интеграла. Точки ближе всего к
 конечной энергии сильнее зависят от массы и содержат меньше событий.
 :::
+
+В идеальной модели с одним конечным состоянием и резким порогом положим
+$w=E_0-e|U|$. Если медленно меняющийся множитель спектра равен $C$, то
+
+$$
+R(w)-b
+=AC\int_{m_\beta}^{w}x\sqrt{x^2-m_\beta^2}\,dx
+=\frac{AC}{3}(w^2-m_\beta^2)^{3/2},
+\qquad w>m_\beta.
+$$ {#eq-katrin-ideal-integral}
+
+При $w\gg m_\beta$ скорость счёта приближённо равна
+
+$$
+R(w)\simeq AC\left(\frac{w^3}{3}-\frac{m_\beta^2w}{2}\right)+b.
+$$ {#eq-katrin-endpoint-expansion}
+
+Нормировка меняет кубический член, масса --- линейный, фон добавляет
+постоянную. Сдвиг $E_0$ меняет $w$ и даёт квадратичную зависимость в первом
+порядке. Это объясняет, почему четыре параметра разделяются сканированием
+порога, но не измерением в одной точке. Вблизи самого конца относительный
+массовый эффект велик, однако полезный счёт падает как $w^3$ и начинает
+преобладать фон.
 
 ## Статистический анализ
 
@@ -247,4 +375,23 @@ $$ {#eq-heavy-neutrino-kink}
 3. KATRIN Collaboration. Direct neutrino-mass measurement based on 259 days of
    KATRIN data. *Science* **388**, 180–185 (2025).
    [doi:10.1126/science.adq9592](https://doi.org/10.1126/science.adq9592).
+4. KATRIN Collaboration. Precision measurement of the electron energy-loss
+   function in tritium and deuterium gas for the KATRIN experiment.
+   *European Physical Journal C* **81**, 579 (2021).
+   [doi:10.1140/epjc/s10052-021-09325-z](https://doi.org/10.1140/epjc/s10052-021-09325-z).
+5. KATRIN Collaboration. The KATRIN experiment: design, construction and
+   commissioning. *Journal of Instrumentation* **16**, T08015 (2021).
+   [arXiv:2103.04755](https://arxiv.org/abs/2103.04755).
+6. KATRIN Collaboration. Focal-plane detector system for the KATRIN experiment.
+   *Nuclear Instruments and Methods A* **778**, 40–60 (2015).
+   [arXiv:1404.2925](https://arxiv.org/abs/1404.2925).
+7. KATRIN Collaboration. Background reduction at the KATRIN experiment by
+   the shifted analysing plane configuration. *European Physical Journal C*
+   **82**, 258 (2022).
+   [doi:10.1140/epjc/s10052-022-10220-4](https://doi.org/10.1140/epjc/s10052-022-10220-4).
+8. KATRIN Collaboration. Measurement of the inhomogeneity of the KATRIN
+   tritium source electric potential by high-resolution spectroscopy of
+   conversion electrons from $^{83\mathrm m}\mathrm{Kr}$.
+   *European Physical Journal C* **85**, 757 (2025).
+   [doi:10.1140/epjc/s10052-025-14354-z](https://doi.org/10.1140/epjc/s10052-025-14354-z).
 :::
