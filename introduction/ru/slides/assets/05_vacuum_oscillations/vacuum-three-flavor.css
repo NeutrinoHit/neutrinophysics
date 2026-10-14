@@ -6,6 +6,27 @@
   font-size: calc(1.6em / 0.86);
 }
 
+.reveal .pmns-phase-count p {
+  margin: 0.35em 0;
+}
+
+.reveal .pmns-phase-count ul {
+  margin-top: 0.2em;
+  margin-bottom: 0.25em;
+}
+
+.reveal .pmns-phase-count li {
+  margin: 0.15em 0;
+}
+
+.reveal .pmns-phase-count mjx-container[display="true"] {
+  margin: 0.45em 0 !important;
+}
+
+.reveal .pmns-phase-count .columns {
+  gap: 1.2em;
+}
+
 .three-flavor-comparison {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -246,18 +246,14 @@ $$
 
 ### Частица Дирака
 
-Произвольная унитарная матрица $3\times3$ содержит три угла и шесть фаз.
-Для дираковских нейтрино можно изменить фазы трёх заряженных лептонов и
-трёх нейтрино. Одна общая замена избыточна:
+::::: {.pmns-phase-count}
 
-$$
-6-(3+3-1)=1.
-$$
+Унитарная матрица $U$ размера $3\times3$ содержит три угла и **шесть фаз**.
 
-В осцилляциях остаётся одна физическая фаза $\delta_{\rm CP}$.
-Нейтрино и антинейтрино в этом случае являются различными частицами.
+:::: {.columns}
+::: {.column width="47.5%"}
 
-В массовом базисе:
+- В массовом базисе:
 
 $$
 \begin{aligned}
@@ -271,56 +267,177 @@ $$
 \end{aligned}
 $$
 
-Для дираковских полей допустимо переопределение
+- Массовые члены сохраняются при замене фаз полей:
 
 $$
-\ell_\alpha\mapsto e^{i\phi_\alpha}\ell_\alpha,\qquad
-\nu_i\mapsto e^{i\psi_i}\nu_i,\qquad
-U_{\alpha i}\mapsto e^{i\phi_\alpha}U_{\alpha i}e^{-i\psi_i}.
+\ell_\alpha\mapsto e^{i\phi_\alpha}\ell_\alpha,
+\qquad
+\nu_i\mapsto e^{i\psi_i}\nu_i.
 $$
 
-Тогда $\bar\ell'_{\alpha L}U'_{\alpha i}\nu'_{iL}
-=\bar\ell_{\alpha L}U_{\alpha i}\nu_{iL}$; массовые члены также
-сохраняются. При
-$\phi_\alpha=\psi_i=\chi$ не меняется и $U$: из шести фаз полей
-независимы пять.
+- Заряженный ток сохраняет вид, если
 
+$$
+\boxed{U_{\alpha i}'=
+e^{i(\phi_\alpha-\psi_i)}U_{\alpha i}}.
+$$
+
+:::
+::: {.column width="47.5%"}
+
+- На $U$ действуют **разности** $\phi_\alpha-\psi_i$.
+  Общий сдвиг всех шести фаз:
+
+$$
+\begin{aligned}
+\phi_\alpha&\mapsto\phi_\alpha+\chi,\\
+\psi_i&\mapsto\psi_i+\chi.
+\end{aligned}
+$$
+
+$$
+(\phi_\alpha+\chi)-(\psi_i+\chi)=\phi_\alpha-\psi_i.
+$$
+
+- Этот сдвиг не меняет $U$. Вычитая $\psi_3$ из всех фаз,
+  получаем пять независимых параметров:
+
+$$
+\begin{gathered}
+\phi_e-\psi_3,\quad\phi_\mu-\psi_3,\quad\phi_\tau-\psi_3,\\
+\psi_1-\psi_3,\quad\psi_2-\psi_3.
+\end{gathered}
+$$
+
+:::
+::::
+
+- Пять независимых перефазировок убирают **пять из шести фаз $U$**:
+  $\boxed{6-5=1}$. Остаётся физическая фаза $\delta_{\rm CP}$.
+
+:::::
 
 ### Частица Майораны
 
-- Массовый член содержит поле дважды, без сопряжения:
+::::: {.pmns-phase-count}
+
+Массы $m_i>0$ выбраны вещественными.
+$\widetilde U$ обозначает полную матрицу смешивания.
+
+:::: {.columns}
+::: {.column width="47.5%"}
+
+- Майорановская масса:
 
 $$
 \mathcal L_{\rm mass}^{(M)}
-=-\frac12\sum_i m_i\,\overline{\nu_{iL}^{\,c}}\nu_{iL}+\mathrm{h.c.},
-\qquad m_i>0 .
+=-\frac12\sum_i m_i\,\overline{\nu_{iL}^{\,c}}\nu_{iL}
++\mathrm{h.c.}
 $$
 
-- При $\nu_{iL}\mapsto e^{i\psi_i}\nu_{iL}$ он умножается на $e^{2i\psi_i}$,
-  поэтому допустимы только $\psi_i=0,\pi$. Непрерывной фазой нейтринные поля
-  переопределить нельзя.
-
-- Остаются три перефазировки заряженных лептонов,
-  $U\mapsto\operatorname{diag}(e^{i\phi_\alpha})\,U$: они убирают фазы строк.
-  Физических фаз $6-3=3$: одна дираковская $\delta$ (не сводится ни к строкам,
-  ни к столбцам) и две относительные фазы столбцов (майорановские):
+- При $\nu_{iL}\mapsto e^{i\psi_i}\nu_{iL}$:
 
 $$
-\widetilde U=U(\delta)\operatorname{diag}
+\overline{\nu_{iL}^{\,c}}\nu_{iL}
+\mapsto e^{2i\psi_i}\overline{\nu_{iL}^{\,c}}\nu_{iL}.
+$$
+
+При фиксированных $m_i$ допустимы только $\psi_i=0,\pi$.
+
+:::
+::: {.column width="47.5%"}
+
+- Заряженные лептоны остаются дираковскими.
+  Их массовые члены $-m_\alpha\bar\ell_\alpha\ell_\alpha$
+  сохраняются при $\ell_\alpha\mapsto e^{i\phi_\alpha}\ell_\alpha$.
+
+$$
+\widetilde U'=D_\ell\widetilde U,\qquad
+D_\ell=\operatorname{diag}(e^{i\phi_e},e^{i\phi_\mu},e^{i\phi_\tau}).
+$$
+
+- Умножение **слева** меняет всю строку $\alpha$:
+
+$$
+\widetilde U_{\alpha i}'=e^{i\phi_\alpha}\widetilde U_{\alpha i}
+\qquad\text{для всех }i.
+$$
+
+Один $\phi_\alpha$ умножает **всю строку $\alpha$** на общий множитель.
+Относительные фазы её элементов сохраняются.
+
+:::
+::::
+
+- Три перефазировки заряженных лептонов убирают три общие фазы строк.
+  Остаются $\boxed{6-3=3}$ физических фазы:
+  $\delta_{\rm CP}$ и две майорановские.
+
+:::::
+
+### Фазы столбцов
+
+::::: {.pmns-phase-count}
+
+После выбора фаз заряженных лептонов полную матрицу можно записать
+как $\widetilde U=U(\delta)D_M$. В $U(\delta)$ три угла и одна фаза
+$\delta_{\rm CP}$.
+
+:::: {.columns}
+::: {.column width="47.5%"}
+
+- Множитель $e^{i\eta_i}$ относится к массовому состоянию $\nu_i$,
+  то есть к **столбцу $i$**:
+
+$$
+\widetilde U_{\alpha i}=U_{\alpha i}(\delta)e^{i\eta_i}.
+$$
+
+Так действует умножение справа на
+
+$$
+D_M=\operatorname{diag}(e^{i\eta_1},e^{i\eta_2},e^{i\eta_3}).
+$$
+
+Диагональный $D_M$ умножает столбцы на фазы.
+Полная $\widetilde U$ смешивает флэйворы и массы.
+
+- Общий множитель $e^{i\eta_1}$ снимается уже учтённой заменой
+  $\ell_\alpha\mapsto e^{-i\eta_1}\ell_\alpha$ для всех $\alpha$.
+  Поэтому физически остаются разности $\eta_2-\eta_1$ и $\eta_3-\eta_1$.
+
+:::
+::: {.column width="47.5%"}
+
+- Обозначим относительные фазы через $\alpha_{21}/2$ и $\alpha_{31}/2$:
+
+$$
+D_M=\operatorname{diag}
 \left(1,e^{i\alpha_{21}/2},e^{i\alpha_{31}/2}\right).
 $$
 
-- В осцилляциях майорановская фаза $\varphi_i$ столбца сокращается между рождением и
-  регистрацией:
+Здесь $\alpha_{21}=2(\eta_2-\eta_1)$,
+$\alpha_{31}=2(\eta_3-\eta_1)$.
+
+- В осцилляциях фаза столбца сокращается:
 
 $$
 \widetilde U_{\beta i}\widetilde U_{\alpha i}^{*}
-=U_{\beta i}U_{\alpha i}^{*}\,e^{i\varphi_i}e^{-i\varphi_i}
-=U_{\beta i}U_{\alpha i}^{*}.
+=U_{\beta i}U_{\alpha i}^{*}
+\underbrace{e^{i\eta_i}e^{-i\eta_i}}_{1}.
 $$
 
-- В $0\nu\beta\beta$ входит $m_{\beta\beta}=\sum_i \widetilde U_{ei}^{2}m_i$:
-  фазы столбцов удваиваются и не сокращаются.
+- В $0\nu\beta\beta$ фазы удваиваются:
+
+$$
+m_{\beta\beta}=\left|\sum_i m_i\widetilde U_{ei}^{2}\right|,
+\qquad \widetilde U_{ei}^{2}=U_{ei}^{2}e^{2i\eta_i}.
+$$
+
+:::
+::::
+
+:::::
 
 ### Поль Дирак
 
