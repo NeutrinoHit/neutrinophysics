@@ -12,7 +12,7 @@ body-classes: lecture-page topic-3
 «вещество» нейтрино, а вероятности результатов измерения.
 :::
 
-::: {#anim-quantum-chameleon .animation title="Нейтрино как квантовый хамелеон" src="../assets/chapters/05_vacuum_oscillations/quantum_chameleon.mp4" poster="../assets/chapters/05_vacuum_oscillations/quantum_chameleon.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/05_vacuum_oscillations/quantum_chameleon.mp4" qr="../assets/chapters/05_vacuum_oscillations/qr/quantum_chameleon.png"}
+::: {#anim-quantum-chameleon .animation title="Нейтрино как квантовый хамелеон" src="../assets/chapters/05_vacuum_oscillations/quantum_chameleon.mp4" poster="../assets/chapters/05_vacuum_oscillations/quantum_chameleon.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0016/" qr="../assets/chapters/05_vacuum_oscillations/qr/quantum_chameleon.png"}
 Цвет условно обозначает флэйвор. Между рождением и регистрацией нейтрино не
 обязано взаимодействовать: изменение флэйворных вероятностей создаётся
 интерференцией свободно распространяющихся массовых компонент.
@@ -100,7 +100,7 @@ $$ {#eq-relative-energy-phase}
 $|c_2|^2$. Осциллировать может вероятность измерения в другом базисе, где в
 одной амплитуде складываются обе энергетические компоненты.
 
-::: {#anim-oscillation-phases .animation title="Массовые фазы и флэйворные вероятности" src="../assets/chapters/05_vacuum_oscillations/neutrino_oscillation_phases.mp4" poster="../assets/chapters/05_vacuum_oscillations/neutrino_oscillation_phases.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/05_vacuum_oscillations/neutrino_oscillation_phases.mp4" qr="../assets/chapters/05_vacuum_oscillations/qr/oscillation_phases.png" repo="https://github.com/NeutrinoHit/dvnanima/tree/main/neutrino_oscillations_phases" repo-label="dvnanima/neutrino_oscillations_phases"}
+::: {#anim-oscillation-phases .animation title="Массовые фазы и флэйворные вероятности" src="../assets/chapters/05_vacuum_oscillations/neutrino_oscillation_phases.mp4" poster="../assets/chapters/05_vacuum_oscillations/neutrino_oscillation_phases.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0017/" qr="../assets/chapters/05_vacuum_oscillations/qr/oscillation_phases.png"}
 Доли массовых состояний постоянны. Меняется разность их фаз, а вместе с ней
 результат интерференции при проекции на флэйворный базис.
 :::
@@ -344,7 +344,7 @@ $$
 L_{\mathrm{osc}}=\frac{4\pi E}{|\Delta m^2|}.
 $$ {#eq-vacuum-oscillation-length}
 
-::: {#interactive-two-flavor-lab .interactive title="Лаборатория двухфлэйворных осцилляций" embed="../../applets/two-flavor-oscillations.html" poster="../assets/chapters/05_vacuum_oscillations/two_flavor_probabilities.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/two-flavor-oscillations.html" qr="../assets/chapters/05_vacuum_oscillations/qr/two_flavor_lab.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/two-flavor-oscillations.qmd" repo-label="код апплета"}
+::: {#interactive-two-flavor-lab .interactive title="Лаборатория двухфлэйворных осцилляций" embed="../../applets/two-flavor-oscillations.html" poster="../assets/chapters/05_vacuum_oscillations/two_flavor_probabilities.svg" url="https://neutrinohit.github.io/qr/neutrino-physics/0048/" qr="../assets/chapters/05_vacuum_oscillations/qr/two_flavor_lab.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/two-flavor-oscillations.qmd" repo-label="код апплета"}
 Интерактив позволяет независимо менять угол смешивания и путь в единицах
 $L_{\mathrm{osc}}$. Первый управляет амплитудой, второй --- фазой. В каждой
 точке выполняется $P_{\alpha\to\alpha}+P_{\alpha\to\beta}=1$.
@@ -411,7 +411,7 @@ $m_2$ могут различаться. Локальные координаты
 маятников, нормальные координаты --- собственные моды всей системы. Это та же
 структура двух базисов, которая возникла для флэйворных и массовых состояний.
 
-::: {#interactive-coupled-pendula .interactive title="Связанные маятники разных масс" embed="../../applets/coupled-pendula.html" poster="../assets/chapters/05_vacuum_oscillations/coupled_pendula.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/coupled-pendula.html" qr="../assets/chapters/05_vacuum_oscillations/qr/coupled_pendula.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/coupled-pendula.qmd" repo-label="код апплета"}
+::: {#interactive-coupled-pendula .interactive title="Связанные маятники разных масс" embed="../../applets/coupled-pendula.html" poster="../assets/chapters/05_vacuum_oscillations/coupled_pendula.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0049/" qr="../assets/chapters/05_vacuum_oscillations/qr/coupled_pendula.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/coupled-pendula.qmd" repo-label="код апплета"}
 Отношение масс задаёт угол смешивания, жёсткость пружины --- разность
 собственных частот. График показывает точные нормированные величины
 $P_i=|a_i|^2/(|a_1|^2+|a_2|^2)$, а не приближённое распределение энергии.

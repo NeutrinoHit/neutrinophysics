@@ -54,7 +54,7 @@ $P\simeq1.2\cdot10^{-15}~\text{Вт}$. На втором этапе излуче
 ячейки-волновода. Сигнал проходил через криогенный усилитель, преобразователь частоты
 и аналого-цифровой преобразователь; преобразование Фурье давало спектрограмму.
 
-::: {#anim-project8-cres .animation title="Циклотронное излучение одного электрона" src="../assets/chapters/04_direct_neutrino_mass/project8_cres.mp4" poster="../assets/chapters/04_direct_neutrino_mass/project8_cres.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/04_direct_neutrino_mass/project8_cres.mp4" qr="../assets/chapters/04_direct_neutrino_mass/qr/project8_cres.png" repo="https://github.com/NeutrinoHit/dvnanima/tree/main/project8_cres" repo-label="dvnanima/project8_cres"}
+::: {#anim-project8-cres .animation title="Циклотронное излучение одного электрона" src="../assets/chapters/04_direct_neutrino_mass/project8_cres.mp4" poster="../assets/chapters/04_direct_neutrino_mass/project8_cres.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0015/" qr="../assets/chapters/04_direct_neutrino_mass/qr/project8_cres.png"}
 Электрон движется в магнитной ловушке и излучает микроволновый сигнал.
 Частота задаёт энергию, а продолжительность трека --- время наблюдения до
 рассеяния или выхода из ловушки.
@@ -125,7 +125,7 @@ $$
 \simeq\frac{0.886}{T_{\mathrm{obs}}}.
 $$ {#eq-cres-finite-track-width}
 
-::: {#interactive-cres-observables .interactive title="Спектр излучения и частотный трек CRES" embed="../../applets/cres-observables.html" height="50rem" poster="../assets/chapters/04_direct_neutrino_mass/cres_frequency_track.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/cres-observables.html" qr="../assets/chapters/04_direct_neutrino_mass/qr/cres_frequency_track.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/cres-observables.qmd" repo-label="код апплета"}
+::: {#interactive-cres-observables .interactive title="Спектр излучения и частотный трек CRES" embed="../../applets/cres-observables.html" height="50rem" poster="../assets/chapters/04_direct_neutrino_mass/cres_frequency_track.svg" url="https://neutrinohit.github.io/qr/neutrino-physics/0046/" qr="../assets/chapters/04_direct_neutrino_mass/qr/cres_frequency_track.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/cres-observables.qmd" repo-label="код апплета"}
 Наклон линии возникает из-за радиационных потерь. Резкие скачки соответствуют
 столкновениям с остаточным газом, после которых начинается новый сегмент трека.
 :::
@@ -283,7 +283,7 @@ $$ {#eq-neutrino-time-delay}
 Поэтому такой предел содержит астрофизические предположения, отсутствующие в
 лабораторном анализе β-спектра.
 
-::: {#interactive-sn-mass-likelihood .interactive title="Масса нейтрино по временам прилёта" embed="../../applets/sn-mass-likelihood.html" height="50rem" poster="../assets/chapters/08_alternative_neutrino_mass/flight-delay.svg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/sn-mass-likelihood.html" qr="../assets/chapters/08_alternative_neutrino_mass/qr/sn_mass_likelihood.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/sn-mass-likelihood.qmd" repo-label="код апплета"}
+::: {#interactive-sn-mass-likelihood .interactive title="Масса нейтрино по временам прилёта" embed="../../applets/sn-mass-likelihood.html" height="50rem" poster="../assets/chapters/08_alternative_neutrino_mass/flight-delay.svg" url="https://neutrinohit.github.io/qr/neutrino-physics/0047/" qr="../assets/chapters/08_alternative_neutrino_mass/qr/sn_mass_likelihood.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/sn-mass-likelihood.qmd" repo-label="код апплета"}
 Меняйте массу, число зарегистрированных нейтрино и разброс времени рождения.
 Наклон зависимости времени прилёта от $1/E^2$ определяет $m^2$, а свободный
 член поглощает неизвестный момент вспышки.

@@ -444,7 +444,7 @@ $$ {#eq-matter-oscillation-length}
 На резонансе при малом вакуумном угле амплитуда велика, но период длинен:
 $L_m=L_{\mathrm{vac}}/\sin2\theta$.
 
-::: {#interactive-matter-constant .interactive title="Осцилляции при постоянной плотности" embed="../../applets/matter-constant.html" poster="../assets/chapters/06_matter_oscillations/msw_constant_matter.png" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/matter-constant.html" qr="../assets/chapters/06_matter_oscillations/qr/matter_constant.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/matter-constant.qmd" repo-label="код апплета"}
+::: {#interactive-matter-constant .interactive title="Осцилляции при постоянной плотности" embed="../../applets/matter-constant.html" poster="../assets/chapters/06_matter_oscillations/msw_constant_matter.png" url="https://neutrinohit.github.io/qr/neutrino-physics/0054/" qr="../assets/chapters/06_matter_oscillations/qr/matter_constant.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/matter-constant.qmd" repo-label="код апплета"}
 Сравните вакуум, резонанс и область высокой плотности. Вещество меняет две
 разные величины: высоту огибающей $\sin^22\theta_m$ и длину осцилляций
 $L_m$. Далеко за резонансом электронный флэйвор становится почти собственной
@@ -464,7 +464,7 @@ $$ {#eq-matter-layer-noncommutativity}
 При подходящих фазах повторы $S_2S_1$ накапливают амплитуду. Это называется
 параметрическим усилением.
 
-::: {#anim-matter-parametric .animation title="Параметрическое усиление в чередующихся слоях" src="../assets/chapters/06_matter_oscillations/msw_parametric.mp4" poster="../assets/chapters/06_matter_oscillations/msw_parametric.png" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/12_matter_constant_density.html#/periodic-density"}
+::: {#anim-matter-parametric .animation title="Параметрическое усиление в чередующихся слоях" src="../assets/chapters/06_matter_oscillations/msw_parametric.mp4" poster="../assets/chapters/06_matter_oscillations/msw_parametric.png" url="https://neutrinohit.github.io/qr/neutrino-physics/0018/" qr="../assets/chapters/06_matter_oscillations/qr/msw_parametric.png"}
 Усреднение плотности теряет относительные фазы слоёв. Поэтому чередование двух
 слабо конвертирующих слоёв способно дать почти полный переход.
 :::

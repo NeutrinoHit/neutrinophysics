@@ -137,7 +137,7 @@ $$ {#eq-interference-cancellation-condition}
 Две ненулевые амплитуды гасят друг друга. Это не потеря вероятности, а
 деструктивная интерференция в выбранном конечном канале.
 
-::: {#anim-msw-mode-cancellation .animation title="Исчезновение проекции на фиксированную моду" src="../assets/chapters/06_matter_oscillations/msw_mode_cancellation.mp4" poster="../assets/chapters/06_matter_oscillations/msw_mode_cancellation.png" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/14_matter_interference_pendulums.html#/mode-cancellation"}
+::: {#anim-msw-mode-cancellation .animation title="Исчезновение проекции на фиксированную моду" src="../assets/chapters/06_matter_oscillations/msw_mode_cancellation.mp4" poster="../assets/chapters/06_matter_oscillations/msw_mode_cancellation.png" url="https://neutrinohit.github.io/qr/neutrino-physics/0024/" qr="../assets/chapters/06_matter_oscillations/qr/msw_mode_cancellation.png"}
 Анимация показывает модули и фазы двух полных вкладов $d$ и $f$. На выходе
 они остаются ненулевыми, но их векторная сумма почти исчезает.
 :::
@@ -238,7 +238,7 @@ $$ {#eq-interference-layer-probabilities}
 Один унитарный слой уменьшает одну проекцию ровно настолько, насколько
 увеличивает другую. Знак обмена задаёт входная фаза $\varepsilon$.
 
-::: {#anim-msw-thin-layer .animation title="Волны и фазоры в тонком резонансном слое" src="../assets/chapters/06_matter_oscillations/msw_thin_layer_interference.mp4" poster="../assets/chapters/06_matter_oscillations/msw_thin_layer_interference.png" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/14_matter_interference_pendulums.html#/thin-layer"}
+::: {#anim-msw-thin-layer .animation title="Волны и фазоры в тонком резонансном слое" src="../assets/chapters/06_matter_oscillations/msw_thin_layer_interference.mp4" poster="../assets/chapters/06_matter_oscillations/msw_thin_layer_interference.png" url="https://neutrinohit.github.io/qr/neutrino-physics/0023/" qr="../assets/chapters/06_matter_oscillations/qr/msw_thin_layer_interference.png"}
 Слева показаны две волны, справа — те же комплексные амплитуды как стрелки.
 Слой добавляет повёрнутую на $90^\circ$ конверсионную амплитуду; входная фаза
 решает, будет интерференция конструктивной или деструктивной.
@@ -279,7 +279,7 @@ $$ {#eq-interference-qft-meaning}
 маятника медленно провести через резонанс, система может остаться в одной
 мгновенной нормальной моде, хотя рисунок движения этой моды изменится.
 
-::: {#anim-msw-pendulum-regimes .animation title="Вакуум, резонанс и подавление в модели маятников" src="../assets/chapters/06_matter_oscillations/msw_constant_matter.mp4" poster="../assets/chapters/06_matter_oscillations/msw_constant_matter.png" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/14_matter_interference_pendulums.html#/pendulum-regimes"}
+::: {#anim-msw-pendulum-regimes .animation title="Вакуум, резонанс и подавление в модели маятников" src="../assets/chapters/06_matter_oscillations/msw_constant_matter.mp4" poster="../assets/chapters/06_matter_oscillations/msw_constant_matter.png" url="https://neutrinohit.github.io/qr/neutrino-physics/0021/" qr="../assets/chapters/06_matter_oscillations/qr/msw_constant_matter.png"}
 При близких частотах энергия периодически переходит между маятниками. Большая
 расстройка делает локальное колебание почти нормальной модой и подавляет
 обмен.
@@ -356,7 +356,7 @@ $$
 a(t)\simeq g\left[\frac{L}{\ell(t)}-1\right].
 $$ {#eq-interference-control-slow-limit}
 
-::: {#anim-msw-control-equivalence .animation title="Два способа управлять частотой маятника" src="../assets/chapters/06_matter_oscillations/msw_control_equivalence.mp4" poster="../assets/chapters/06_matter_oscillations/msw_control_equivalence.png" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/14_matter_interference_pendulums.html#/control-equivalence"}
+::: {#anim-msw-control-equivalence .animation title="Два способа управлять частотой маятника" src="../assets/chapters/06_matter_oscillations/msw_control_equivalence.mp4" poster="../assets/chapters/06_matter_oscillations/msw_control_equivalence.png" url="https://neutrinohit.github.io/qr/neutrino-physics/0022/" qr="../assets/chapters/06_matter_oscillations/qr/msw_control_equivalence.png"}
 Изменение длины и вертикальное ускорение опоры дают одну динамическую матрицу,
 если выполнено уравнение [-@eq-interference-control-equivalence]. Привод может
 совершать работу, поэтому механическая энергия подсистемы не обязана
