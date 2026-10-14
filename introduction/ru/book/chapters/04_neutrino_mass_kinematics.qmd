@@ -83,7 +83,7 @@ $$ {#eq-fermi-function-relativistic}
 медленную оболочку спектра, но не заменяют фазовый множитель, в котором
 находится чувствительность к $m_\nu$.
 
-::: {#interactive-fermi-function .interactive title="Кулоновская поправка к β-спектру" embed="../../applets/fermi-function.html" url="https://neutrinohit.github.io/qr/neutrino-physics/0036/" qr="../assets/chapters/04_direct_neutrino_mass/qr/fermi_function.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/fermi-function.qmd" repo-label="код апплета"}
+::: {#interactive-fermi-function .interactive title="Кулоновская поправка к β-спектру" embed="../../applets/fermi-function.html" poster="../assets/chapters/04_direct_neutrino_mass/fermi_function.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0036/" qr="../assets/chapters/04_direct_neutrino_mass/qr/fermi_function.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/fermi-function.qmd" repo-label="код апплета"}
 Меняйте заряд дочернего ядра и сравнивайте β⁻- и β⁺-распады. Притяжение
 электрона усиливает спектр при малых энергиях, а отталкивание позитрона
 подавляет его.

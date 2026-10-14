@@ -127,7 +127,7 @@ $$ {#eq-ch01-004}
 
 где $f$ --- электрон, кварк или другая допустимая мишень.
 
-::: {#anim-interaction-gallery .animation title="Три обменных взаимодействия" epub-src="../assets/chapters/01_neutrino_101/interaction_gallery.mp4" poster="../assets/chapters/01_neutrino_101/interaction_gallery_frame.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/01_neutrino_101/interaction_gallery.mp4" qr="../assets/chapters/01_neutrino_101/qr/interaction_gallery.png"}
+::: {#anim-interaction-gallery .animation title="Три обменных взаимодействия" epub-src="../assets/chapters/01_neutrino_101/interaction_gallery.mp4" poster="../assets/chapters/01_neutrino_101/interaction_gallery_frame.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0056/" qr="../assets/chapters/01_neutrino_101/qr/interaction_gallery.png"}
 Слева направо показаны заряженный слабый ток с обменом $W$-бозоном,
 электромагнитное рассеяние с обменом фотоном и сильное рассеяние с обменом
 глюоном.
