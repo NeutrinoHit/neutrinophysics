@@ -50,7 +50,7 @@ $$ {#eq-ch01-002}
 энергию, импульс и квантовые числа. Электрон является возбуждением электронного
 поля, фотон --- электромагнитного, а нейтрино --- нейтринного поля.
 
-::: {#anim-coupled-fields .animation title="Связанные осцилляторы как модель поля" src="../assets/chapters/01_neutrino_101/coupled_oscillators_baikal.mp4" poster="../assets/chapters/01_neutrino_101/coupled_oscillators_baikal.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/01_neutrino_101/coupled_oscillators_baikal.mp4" qr="../assets/chapters/01_neutrino_101/qr/coupled_oscillators.png" repo="https://github.com/NeutrinoHit/dvnanima/tree/main/fields/coupled_oscillators_3d" repo-label="dvnanima/fields/coupled_oscillators_3d"}
+::: {#anim-coupled-fields .animation title="Связанные осцилляторы как модель поля" src="../assets/chapters/01_neutrino_101/coupled_oscillators_baikal.mp4" poster="../assets/chapters/01_neutrino_101/coupled_oscillators_baikal.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0001/" qr="../assets/chapters/01_neutrino_101/qr/coupled_oscillators.png"}
 Возмущение распространяется по цепочке маятников. Нормальные колебания всей
 системы играют ту же математическую роль, что массовые состояния при описании
 нейтринных осцилляций.
@@ -95,7 +95,7 @@ $\nu_e$, $\nu_\mu$ и $\nu_\tau$.
 ![Вклад лёгких активных нейтрино в невидимую ширину
 $Z$-бозона.](../assets/chapters/01_neutrino_101/z_width_neutrinos.png){#fig-z-width width="70%"}
 
-::: {#anim-neutrino-spin .animation title="Спин нейтрино" src="../assets/chapters/01_neutrino_101/spin.mp4" poster="../assets/chapters/01_neutrino_101/spin.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/01_neutrino_101/spin.mp4" qr="../assets/chapters/01_neutrino_101/qr/spin.png"}
+::: {#anim-neutrino-spin .animation title="Спин нейтрино" src="../assets/chapters/01_neutrino_101/spin.mp4" poster="../assets/chapters/01_neutrino_101/spin.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0003/" qr="../assets/chapters/01_neutrino_101/qr/spin.png"}
 Анимация показывает движение частицы со спином $1/2$. Направление спина
 относительно импульса определяет спиральность. Слабый заряженный ток рождает
 ультрарелятивистские нейтрино почти исключительно с отрицательной
@@ -127,7 +127,7 @@ $$ {#eq-ch01-004}
 
 где $f$ --- электрон, кварк или другая допустимая мишень.
 
-::: {#anim-interaction-gallery .animation title="Три обменных взаимодействия" epub-src="../assets/chapters/01_neutrino_101/interaction_gallery.mp4" poster="../assets/chapters/01_neutrino_101/interaction_gallery_frame.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/01_neutrino_101/interaction_gallery.mp4" qr="../assets/chapters/01_neutrino_101/qr/interaction_gallery.png" repo="https://github.com/NeutrinoHit/dvnanima/tree/main/feynman_scattering" repo-label="dvnanima/feynman_scattering"}
+::: {#anim-interaction-gallery .animation title="Три обменных взаимодействия" epub-src="../assets/chapters/01_neutrino_101/interaction_gallery.mp4" poster="../assets/chapters/01_neutrino_101/interaction_gallery_frame.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/01_neutrino_101/interaction_gallery.mp4" qr="../assets/chapters/01_neutrino_101/qr/interaction_gallery.png"}
 Слева направо показаны заряженный слабый ток с обменом $W$-бозоном,
 электромагнитное рассеяние с обменом фотоном и сильное рассеяние с обменом
 глюоном.
@@ -307,7 +307,7 @@ $$ {#eq-oscillation-phase}
 $L/E$ --- разностью квадратов масс $\Delta m^2$. Если $\Delta m^2=0$ или
 $\theta=0$, осцилляции исчезают.
 
-::: {#anim-oscillation-chameleon .animation title="Нейтрино как квантовый хамелеон" src="../assets/chapters/01_neutrino_101/oscillation_chameleon.mp4" poster="../assets/chapters/01_neutrino_101/oscillation_chameleon.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/01_neutrino_101/oscillation_chameleon.mp4" qr="../assets/chapters/01_neutrino_101/qr/oscillation_chameleon.png" repo="https://github.com/NeutrinoHit/dvnanima/tree/main/neutrino_oscillations_phases" repo-label="dvnanima/neutrino_oscillations_phases"}
+::: {#anim-oscillation-chameleon .animation title="Нейтрино как квантовый хамелеон" src="../assets/chapters/01_neutrino_101/oscillation_chameleon.mp4" poster="../assets/chapters/01_neutrino_101/oscillation_chameleon.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0004/" qr="../assets/chapters/01_neutrino_101/qr/oscillation_chameleon.png"}
 Цвет условно обозначает флэйвор. Нейтрино не обязано взаимодействовать в
 промежуточной точке, чтобы «переключиться»: изменение вероятности обнаружить
 тот или иной флэйвор является результатом когерентного фазового движения
@@ -351,6 +351,22 @@ $$ {#eq-solar-flux}
 Большой солнечный поток позволяет регистрировать события при малом сечении
 взаимодействия отдельного нейтрино.
 
+На орбите Земли солнечный поток энергии
+$F_\odot=L_\odot/(4\pi d^2)\simeq1.361~\text{кВт}\,\text{м}^{-2}$.
+Поэтому @eq-solar-flux даёт
+
+$$
+\Phi_\nu(d)\simeq\frac{2F_\odot}{Q}
+\simeq6.4\cdot10^{10}~\text{см}^{-2}\,\text{с}^{-1}.
+$$ {#eq-solar-flux-at-earth}
+
+Для этой оценки не нужны температура ядра Солнца, сечения отдельных
+термоядерных реакций или доли ветвей протон-протонной цепочки. Она остаётся
+приближённой: небольшую долю энерговыделения уносят сами нейтрино, а
+наблюдаемая светимость отражает установившееся производство энергии.
+Исторический дефицит относился к электронному флэйвору, а не к суммарному
+числу нейтрино всех флэйворов.
+
 ![Внутренний объём водного черенковского детектора Super-Kamiokande. Вместе с
 радиохимическим экспериментом Homestake и тяжеловодной обсерваторией SNO такие
 детекторы установили превращение солнечных электронных нейтрино в другие
@@ -378,12 +394,12 @@ $$ {#eq-ch01-014}
 Длины пути $L$ лежат в диапазоне от десятков до примерно $12\,800$ км, а
 распределение по энергии позволяет исследовать зависимость от $L/E$.
 
-::: {#anim-air-shower .animation title="Атмосферный каскад" src="../assets/chapters/01_neutrino_101/air_shower.mp4" poster="../assets/chapters/01_neutrino_101/air_shower.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/01_neutrino_101/air_shower.mp4" qr="../assets/chapters/01_neutrino_101/qr/air_shower.png" repo="https://github.com/NeutrinoHit/dvnanima/tree/main/airshower" repo-label="dvnanima/airshower"}
+::: {#anim-air-shower .animation title="Атмосферный каскад" src="../assets/chapters/01_neutrino_101/air_shower_cascade.mp4" poster="../assets/chapters/01_neutrino_101/air_shower_cascade.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0009/" qr="../assets/chapters/01_neutrino_101/qr/air_shower.png"}
 Первичная частица космического излучения сталкивается с ядром воздуха и рождает
 каскад. Распады пионов и мюонов внутри каскада создают атмосферные нейтрино.
 :::
 
-::: {#anim-atmospheric-ratio .animation title="Отношение потоков атмосферных нейтрино" epub-src="../assets/chapters/01_neutrino_101/atmospheric_neutrino_paths.mp4" poster="../assets/chapters/01_neutrino_101/atmospheric_neutrino_paths_frame.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/01_neutrino_first_contact.html#/atmospheric-neutrino-ratio" qr="../assets/chapters/01_neutrino_101/qr/atmospheric_ratio.png"}
+::: {#anim-atmospheric-ratio .animation title="Отношение потоков атмосферных нейтрино" epub-src="../assets/chapters/01_neutrino_101/atmospheric_neutrino_paths.mp4" poster="../assets/chapters/01_neutrino_101/atmospheric_neutrino_paths_frame.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0028/" qr="../assets/chapters/01_neutrino_101/qr/atmospheric_ratio.png"}
 Источник атмосферных нейтрино один, а длина пути до детектора меняется от
 десятков до примерно $12\,800$ км. Интерактивная схема сопоставляет этот путь с
 отношением
@@ -415,7 +431,7 @@ $$
 \text{обратный порядок:}\quad m_3<m_1<m_2.
 $$ {#eq-ch01-016}
 
-::: {#anim-mass-ordering .animation title="Нормальный и обратный порядок масс" src="../assets/chapters/01_neutrino_101/mass_ordering.mp4" poster="../assets/chapters/01_neutrino_101/mass_ordering.jpg" url="https://neutrinohit.github.io/neutrinophysics/introduction/ru/slides/assets/01_neutrino_101/mass_ordering.mp4" qr="../assets/chapters/01_neutrino_101/qr/mass_ordering.png" repo="https://github.com/NeutrinoHit/dvnanima/tree/main/mass_hierarchy" repo-label="dvnanima/mass_hierarchy"}
+::: {#anim-mass-ordering .animation title="Нормальный и обратный порядок масс" src="../assets/chapters/01_neutrino_101/mass_ordering.mp4" poster="../assets/chapters/01_neutrino_101/mass_ordering.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0002/" qr="../assets/chapters/01_neutrino_101/qr/mass_ordering.png"}
 Цветные доли показывают флэйворный состав массовых состояний. Анимация меняет
 взаимное расположение уровней, не меняя уже измеренных малой и большой разностей
 квадратов масс.
