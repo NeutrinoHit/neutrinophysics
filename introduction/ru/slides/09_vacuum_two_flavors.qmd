@@ -77,7 +77,6 @@ $$
 ::: {.media-caption}
 Две компоненты набирают разные фазы. Их сумма при регистрации определяет
 вероятности флэйворных исходов.
-[Исходный код анимации](https://github.com/NeutrinoHit/dvnanima/tree/main/neutrino_oscillations_phases).
 :::
 
 # Два базиса
