@@ -16,7 +16,7 @@ lecture
 ## Installation
 
 ```bash
-cd /Users/dmitrijnaumov/Documents/NeutrinoHit/neutrinophysics/solar-neutrino-masterclass
+cd neutrinophysics/solar-neutrino-masterclass
 
 python -m venv .venv
 source .venv/bin/activate
@@ -113,7 +113,7 @@ Chrome will show it as a file unless a notebook server renders it.
 For interactive local work in Chrome:
 
 ```bash
-cd /Users/dmitrijnaumov/Documents/NeutrinoHit/neutrinophysics/solar-neutrino-masterclass
+cd neutrinophysics/solar-neutrino-masterclass
 jupyter lab
 ```
 

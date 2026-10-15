@@ -22,7 +22,7 @@ datasets:
 	python scripts/generate_student_datasets.py
 
 peanuts-spectrum:
-	../.venv-peanuts-py312/bin/python scripts/generate_peanuts_solar_spectrum.py
+	python scripts/generate_peanuts_solar_spectrum.py
 
 qrcode:
 	python scripts/generate_site_qrcode.py

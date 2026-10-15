@@ -1,10 +1,12 @@
 ## Перед началом
 
 Все вычислительные задачи выполняются в корне репозитория `neutrinophysics`.
-Используйте локальное окружение и исходный код PEANUTS:
+Нужны Python 3 с пакетами NumPy, SciPy, pandas, Numba, mpmath и PyYAML и
+исходный код PEANUTS в каталоге `.external/PEANUTS`:
 
 ```bash
-source .venv-peanuts-py312/bin/activate
+git clone https://github.com/michelelucente/PEANUTS .external/PEANUTS
+python -m pip install numpy scipy pandas numba mpmath pyyaml matplotlib
 python introduction/ru/exercises/assets/22_solar_neutrinos/peanuts_starter.py
 ```
 
