@@ -20,11 +20,26 @@ REPO_ROOT = find_repo_root()
 PEANUTS_ROOT = REPO_ROOT / ".external" / "PEANUTS"
 sys.path.insert(0, str(PEANUTS_ROOT))
 
-# Compatibility with PEANUTS versions importing scipy.integrate.trapz.
+# PEANUTS was written for NumPy < 2 and pandas < 3: restore np.trapz,
+# scipy.integrate.trapz and read_csv(delim_whitespace=True).
+import pandas as pd
 import scipy.integrate as scipy_integrate
 
+_trapezoid = getattr(np, "trapezoid", None) or np.trapz
+if not hasattr(np, "trapz"):
+    np.trapz = _trapezoid
 if not hasattr(scipy_integrate, "trapz"):
-    scipy_integrate.trapz = np.trapz
+    scipy_integrate.trapz = _trapezoid
+if not getattr(pd.read_csv, "peanuts_compat", False):
+    _read_csv = pd.read_csv
+
+    def _read_csv_compat(*args, delim_whitespace=False, **kwargs):
+        if delim_whitespace:
+            kwargs.setdefault("sep", r"\s+")
+        return _read_csv(*args, **kwargs)
+
+    _read_csv_compat.peanuts_compat = True
+    pd.read_csv = _read_csv_compat
 
 with warnings.catch_warnings():
     warnings.filterwarnings("ignore", category=FutureWarning)

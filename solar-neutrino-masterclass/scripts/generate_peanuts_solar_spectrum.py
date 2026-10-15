@@ -69,11 +69,25 @@ def prepare_environment() -> None:
 
     sys.path.insert(0, str(PEANUTS_ROOT))
 
-    # PEANUTS currently imports scipy.integrate.trapz, removed in newer SciPy.
+    # PEANUTS was written for NumPy < 2 and pandas < 3: restore np.trapz,
+    # scipy.integrate.trapz and read_csv(delim_whitespace=True).
     import scipy.integrate as scipy_integrate
 
+    trapezoid = getattr(np, "trapezoid", None) or np.trapz
+    if not hasattr(np, "trapz"):
+        np.trapz = trapezoid
     if not hasattr(scipy_integrate, "trapz"):
-        scipy_integrate.trapz = np.trapz
+        scipy_integrate.trapz = trapezoid
+    if not getattr(pd.read_csv, "peanuts_compat", False):
+        read_csv = pd.read_csv
+
+        def read_csv_compat(*args, delim_whitespace=False, **kwargs):
+            if delim_whitespace:
+                kwargs.setdefault("sep", r"\s+")
+            return read_csv(*args, **kwargs)
+
+        read_csv_compat.peanuts_compat = True
+        pd.read_csv = read_csv_compat
 
     MPLCONFIG.mkdir(parents=True, exist_ok=True)
     os.environ.setdefault("MPLCONFIGDIR", str(MPLCONFIG))
