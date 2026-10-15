@@ -1,0 +1,51 @@
+.earth-explorer {
+  display: grid;
+  grid-template-columns: 330px 380px minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  width: min(1780px, 100%);
+  margin: 0.2rem auto 0;
+  color: #f2f5f8;
+  font: 20px/1.25 system-ui, sans-serif;
+}
+.earth-explorer > * {
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  background: rgba(7, 11, 17, 0.94);
+}
+.ee-controls { padding: 14px 16px; display: flex; flex-direction: column; gap: 12px; }
+.ee-controls label { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 8px; }
+.ee-controls label > span { color: #ffd166; font-variant-numeric: tabular-nums; }
+.ee-controls input[type="range"] { width: 100%; accent-color: #73c7ff; }
+.ee-controls select {
+  width: 100%; font: inherit; color: #f2f5f8; background: #101822;
+  border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 8px; padding: 3px 6px;
+}
+.ee-controls .ee-inline select { width: auto; }
+.ee-check { justify-content: flex-start !important; align-items: center; }
+.ee-check input { width: 20px; height: 20px; accent-color: #ff8a5c; }
+.ee-readout { display: flex; justify-content: space-between; color: #b9c4cf; }
+.ee-readout b { color: #73c7ff; font-weight: 600; }
+.ee-presets { display: flex; gap: 6px; flex-wrap: wrap; }
+.ee-presets button {
+  font: 17px system-ui, sans-serif; color: #f2f5f8; background: #142233; cursor: pointer;
+  border: 1px solid rgba(115, 199, 255, 0.45); border-radius: 8px; padding: 4px 9px;
+}
+.ee-presets button:hover { background: #1d3550; }
+.ee-earth, .ee-prob { width: 100%; height: auto; display: block; }
+.ee-mantle { fill: #2a3d55; }
+.ee-outer { fill: #7a4a2a; }
+.ee-inner { fill: #c98a3a; }
+.ee-label { fill: #f2f5f8; font: 17px system-ui, sans-serif; text-anchor: middle; }
+.ee-det-label { fill: #ffd166; text-anchor: start; }
+.ee-chord { stroke: #73c7ff; stroke-width: 4; stroke-linecap: round; }
+.ee-src { fill: #73c7ff; }
+.ee-det { fill: #ffd166; }
+.ee-grid { stroke: #344250; stroke-width: 1; }
+.ee-tick { fill: #d8dee5; font: 18px system-ui, sans-serif; text-anchor: middle; }
+.ee-tick-y { text-anchor: end; }
+.ee-axis { fill: #f2f5f8; font: 20px system-ui, sans-serif; text-anchor: middle; }
+.ee-cur { fill: none; stroke: #73c7ff; stroke-width: 3; }
+.ee-ref { fill: none; stroke: #ffd166; stroke-width: 2.2; stroke-dasharray: 8 6; }
+.ee-legend { fill: #ffd166; font: 18px system-ui, sans-serif; text-anchor: end; }

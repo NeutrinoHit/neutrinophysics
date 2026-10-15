@@ -1,0 +1,99 @@
+```{=html}
+<link rel="stylesheet" href="assets/widgets/three_flavor_triangle.css">
+<div class="three-flavor-triangle" data-three-flavor-triangle>
+  <div class="three-flavor-triangle__controls">
+    <div class="three-flavor-triangle__control">
+      <span class="three-flavor-triangle__label">Initial flavor</span>
+      <div class="three-flavor-triangle__buttons" role="group" aria-label="Initial flavor">
+        <button type="button" data-source="0">\( \nu_e \)</button>
+        <button type="button" data-source="1" class="is-active">\( \nu_\mu \)</button>
+        <button type="button" data-source="2">\( \nu_\tau \)</button>
+      </div>
+    </div>
+    <div class="three-flavor-triangle__control">
+      <span class="three-flavor-triangle__label">Particle</span>
+      <div class="three-flavor-triangle__buttons" role="group" aria-label="Neutrino or antineutrino">
+        <button type="button" data-antineutrino="false" class="is-active">\( \nu \)</button>
+        <button type="button" data-antineutrino="true">\( \bar\nu \)</button>
+      </div>
+    </div>
+    <div class="three-flavor-triangle__control">
+      <span class="three-flavor-triangle__label">Mass ordering</span>
+      <div class="three-flavor-triangle__buttons" role="group" aria-label="Mass ordering">
+        <button type="button" data-ordering="NO" class="is-active">NO</button>
+        <button type="button" data-ordering="IO">IO</button>
+      </div>
+    </div>
+    <div class="three-flavor-triangle__control">
+      <label><span>\(x=L/L_{\rm osc}^{21}\)</span><output data-x-output>0.30</output></label>
+      <input type="range" min="0" max="3" step="0.005" value="0.30"
+             data-x-input aria-label="Path in units of the solar oscillation length">
+    </div>
+    <div class="three-flavor-triangle__control">
+      <label><span>\(\theta_{12}\)</span><output data-theta12-output>33.76°</output></label>
+      <input type="range" min="0" max="45" step="0.01" value="33.76"
+             data-theta12-input aria-label="Angle theta 12 in degrees">
+    </div>
+    <div class="three-flavor-triangle__control">
+      <label><span>\(\theta_{13}\)</span><output data-theta13-output>8.62°</output></label>
+      <input type="range" min="0" max="25" step="0.01" value="8.62"
+             data-theta13-input aria-label="Angle theta 13 in degrees">
+    </div>
+    <div class="three-flavor-triangle__control">
+      <label><span>\(\theta_{23}\)</span><output data-theta23-output>43.29°</output></label>
+      <input type="range" min="0" max="90" step="0.01" value="43.29"
+             data-theta23-input aria-label="Angle theta 23 in degrees">
+    </div>
+    <div class="three-flavor-triangle__control">
+      <label><span>\(\delta_{\rm CP}\)</span><output data-delta-output>212°</output></label>
+      <input type="range" min="0" max="360" step="1" value="212"
+             data-delta-input aria-label="CP phase in degrees">
+    </div>
+    <div class="three-flavor-triangle__readout">
+      <span>\(L/E\)</span>
+      <strong data-ratio-output>9,900</strong>
+      <span>\(\mathrm{km/GeV}\)</span>
+    </div>
+    <div class="three-flavor-triangle__transport">
+      <button type="button" data-play>▶ Play</button>
+      <button type="button" data-reset>↺ Reset</button>
+    </div>
+  </div>
+
+  <div class="three-flavor-triangle__visual">
+    <div class="three-flavor-triangle__plot">
+      <svg viewBox="0 0 760 330" role="img"
+           aria-label="Trajectory of the electron, muon and tau flavor probabilities inside the triangle">
+        <g class="three-flavor-triangle__grid" aria-hidden="true">
+          <path d="M380 42 L100 288 L660 288 Z"></path>
+          <path d="M310 103.5 L450 103.5"></path>
+          <path d="M240 165 L520 165"></path>
+          <path d="M170 226.5 L590 226.5"></path>
+          <path d="M310 103.5 L520 288"></path>
+          <path d="M240 165 L380 288"></path>
+          <path d="M170 226.5 L240 288"></path>
+          <path d="M450 103.5 L240 288"></path>
+          <path d="M520 165 L380 288"></path>
+          <path d="M590 226.5 L520 288"></path>
+        </g>
+        <path class="three-flavor-triangle__trail" data-trail></path>
+        <circle class="three-flavor-triangle__halo" data-halo r="18"></circle>
+        <circle class="three-flavor-triangle__point" data-point r="8"></circle>
+      </svg>
+      <span class="three-flavor-triangle__vertex three-flavor-triangle__vertex--e">\(P_{\alpha\to e}=1\)</span>
+      <span class="three-flavor-triangle__vertex three-flavor-triangle__vertex--mu">\(P_{\alpha\to\mu}=1\)</span>
+      <span class="three-flavor-triangle__vertex three-flavor-triangle__vertex--tau">\(P_{\alpha\to\tau}=1\)</span>
+    </div>
+    <div class="three-flavor-triangle__probabilities">
+      <div><span>\(P_{\alpha\to e}\)</span><div class="three-flavor-triangle__bar-bg"><div data-bar="0"></div></div><strong data-probability="0">0.000</strong></div>
+      <div><span>\(P_{\alpha\to\mu}\)</span><div class="three-flavor-triangle__bar-bg"><div data-bar="1"></div></div><strong data-probability="1">1.000</strong></div>
+      <div><span>\(P_{\alpha\to\tau}\)</span><div class="three-flavor-triangle__bar-bg"><div data-bar="2"></div></div><strong data-probability="2">0.000</strong></div>
+    </div>
+    <div class="three-flavor-triangle__status">
+      \(\sum_{\beta=e,\mu,\tau}P_{\alpha\to\beta}=\)
+      <strong data-total-output>1.000</strong>
+    </div>
+  </div>
+</div>
+<script defer src="assets/widgets/three_flavor_triangle.js"></script>
+```

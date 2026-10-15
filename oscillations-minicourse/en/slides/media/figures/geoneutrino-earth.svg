@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 700 690" role="img" aria-labelledby="earth-title earth-desc">
+  <title id="earth-title">Geoneutrinos from the crust and mantle</title>
+  <desc id="earth-desc">A schematic cross-section of Earth with a thin crust, mantle,
+    liquid outer core, and solid inner core. Uranium and thorium sources in the crust
+    and mantle send electron antineutrinos along straight paths to a surface detector.
+    The crust is exaggerated for visibility.</desc>
+  <defs>
+    <radialGradient id="mantle" cx="48%" cy="45%" r="62%">
+      <stop offset="0" stop-color="#e9a679"/>
+      <stop offset="0.63" stop-color="#c67656"/>
+      <stop offset="1" stop-color="#a94f43"/>
+    </radialGradient>
+    <radialGradient id="outer-core" cx="48%" cy="42%" r="65%">
+      <stop offset="0" stop-color="#f4d98b"/>
+      <stop offset="1" stop-color="#d79a3d"/>
+    </radialGradient>
+    <radialGradient id="inner-core" cx="42%" cy="38%" r="75%">
+      <stop offset="0" stop-color="#fff5ce"/>
+      <stop offset="1" stop-color="#f1d17c"/>
+    </radialGradient>
+    <radialGradient id="source-halo">
+      <stop offset="0" stop-color="#fff2ba" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#fff2ba" stop-opacity="0"/>
+    </radialGradient>
+    <marker id="neutrino-tip" markerWidth="11" markerHeight="11" refX="9"
+            refY="5.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1 L9 5.5 L1 10" fill="none" stroke="#9be9ef"
+            stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- Earth layers. Core radii follow their approximate relative sizes; the crust is widened. -->
+  <circle cx="350" cy="367" r="258" fill="url(#mantle)"
+          stroke="#4b3130" stroke-width="2"/>
+  <circle cx="350" cy="367" r="140" fill="url(#outer-core)"
+          stroke="#8f5f2b" stroke-width="3"/>
+  <circle cx="350" cy="367" r="49" fill="url(#inner-core)"
+          stroke="#b5863e" stroke-width="2"/>
+  <circle cx="350" cy="367" r="253" fill="none"
+          stroke="#609da1" stroke-width="10"/>
+  <circle cx="350" cy="367" r="258" fill="none"
+          stroke="#9bd1ce" stroke-width="2"/>
+
+  <!-- A small, explicit detector symbol above the local surface. -->
+  <text x="350" y="38" text-anchor="middle" fill="#e8f8f7"
+        font-family="Source Sans Pro, Arial, sans-serif" font-size="25" font-weight="600">Detector</text>
+  <path d="M316 78 L325 61 H375 L384 78 V104 H316 Z" fill="#153941"
+        stroke="#9be9ef" stroke-width="3" stroke-linejoin="round"/>
+  <circle cx="335" cy="80" r="5" fill="#9be9ef"/>
+  <circle cx="350" cy="80" r="5" fill="#9be9ef"/>
+  <circle cx="365" cy="80" r="5" fill="#9be9ef"/>
+
+  <!-- Straight paths are schematic and do not imply directional reconstruction. -->
+  <path d="M173 250 L343 108" fill="none" stroke="#9be9ef" stroke-width="3.5"
+        stroke-dasharray="7 9" marker-end="url(#neutrino-tip)"/>
+  <path d="M468 143 L359 108" fill="none" stroke="#9be9ef" stroke-width="3.5"
+        stroke-dasharray="7 9" marker-end="url(#neutrino-tip)"/>
+
+  <!-- U/Th markers occur only in the crust and mantle. -->
+  <circle cx="173" cy="250" r="24" fill="url(#source-halo)"/>
+  <circle cx="173" cy="250" r="8" fill="#ffdd87" stroke="#fff0c8" stroke-width="2"/>
+  <circle cx="468" cy="143" r="23" fill="url(#source-halo)"/>
+  <circle cx="468" cy="143" r="8" fill="#ffdd87" stroke="#fff0c8" stroke-width="2"/>
+
+  <!-- Text is integrated in the vector to remain sharp at projector resolution. -->
+  <g font-family="Source Sans Pro, Arial, sans-serif">
+    <text x="75" y="132" fill="#e8f8f7" font-size="28" font-weight="600">Crust</text>
+    <path d="M162 128 L220 150" fill="none" stroke="#9bd1ce" stroke-width="2"/>
+    <text x="278" y="554" fill="#fff6e8" font-size="31" font-weight="600">Mantle</text>
+    <text x="350" y="438" text-anchor="middle" fill="#432c19"
+          font-size="25" font-weight="600">Outer core</text>
+    <text x="350" y="373" text-anchor="middle" fill="#49371e"
+          font-size="19" font-weight="600">Inner</text>
+    <text x="350" y="394" text-anchor="middle" fill="#49371e"
+          font-size="19" font-weight="600">core</text>
+    <text x="121" y="289" fill="#fff1cd" font-size="21" font-weight="600">U / Th</text>
+    <text x="492" y="149" fill="#fff1cd" font-size="21" font-weight="600">U / Th</text>
+  </g>
+
+  <g font-family="Source Sans Pro, Arial, sans-serif" font-size="19" fill="#cddbdc">
+    <circle cx="112" cy="657" r="6" fill="#ffdd87"/>
+    <text x="129" y="663">U/Th source</text>
+    <path d="M364 657 H417" fill="none" stroke="#9be9ef" stroke-width="3"
+          stroke-dasharray="7 7" marker-end="url(#neutrino-tip)"/>
+    <text x="433" y="663">electron antineutrino</text>
+  </g>
+</svg>

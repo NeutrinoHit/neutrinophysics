@@ -1,0 +1,42 @@
+lang: en-US
+author: "Dmitry V. Naumov"
+institute: "Joint Institute for Nuclear Research, Dubna"
+format:
+  revealjs:
+    theme: [black, ../../../shared/styles/neutrinohit-reveal.scss]
+    css:
+      - assets/school.css
+      - assets/earth-explorer/earth_explorer.css
+      - assets/earth-explorer/earth_widgets.css
+      - assets/widgets/matter_oscillations.css
+    logo: ../../../shared/reveal/dvnlogo.png
+    # The installed Reveal/Pandoc template initializes the MathJax 2 plugin.
+    html-math-method:
+      method: mathjax
+      url: https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js
+    include-after-body:
+      - ../../../analytics/cloudflare-web-analytics.html
+      - text: |
+          <script data-external="1" data-context-home="https://neutrinohit.github.io/en/education.html#neutrino-introduction" data-context-home-label="Neutrino physics on NeutrinoHit" src="../../../shared/reveal/neutrinohit-reveal-footer.js"></script>
+          <script data-external="1" src="assets/neutrinohit-video-seek.js"></script>
+          <script data-external="1" src="assets/earth-explorer/earth_explorer.js"></script>
+          <script data-external="1" src="assets/earth-explorer/earth_widgets.js"></script>
+          <script data-external="1" defer src="assets/widgets/matter_oscillations.js"></script>
+    embed-resources: false
+    width: 1600
+    height: 900
+    margin: 0.04
+    slide-number: c/t
+    slide-level: 2
+    toc: false
+    center: false
+    transition: fade
+    incremental: false
+    preview-links: false
+    chalkboard: false
+    navigation-mode: linear
+    menu: true
+execute:
+  echo: false
+  warning: false
+  message: false

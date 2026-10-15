@@ -47,6 +47,23 @@ toc: false
 
     <details class="course-row">
       <summary>
+        <span class="course-row-kind">Mini-course</span>
+        <span>Neutrino Oscillations: from Vacuum to the Earth's Core</span>
+      </summary>
+      <div class="course-row-body">
+        <p>
+          Three English lectures for students of particle physics and
+          geophysics: vacuum oscillations, matter and the Sun, and neutrino
+          probes of the Earth's interior, with applets and animations.
+        </p>
+        <div class="course-links">
+          <a href="oscillations-minicourse/index.html">Open mini-course</a>
+        </div>
+      </div>
+    </details>
+
+    <details class="course-row">
+      <summary>
         <span class="course-row-kind">Masterclass</span>
         <span>Solar Neutrinos</span>
       </summary>
