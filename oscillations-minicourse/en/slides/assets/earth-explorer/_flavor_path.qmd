@@ -1,0 +1,22 @@
+```{=html}
+<div class="ew-box fp-lab" data-flavor-path aria-label="Animation of the flavor content of a neutrino crossing the Earth">
+  <div class="ew-controls">
+    <label>Direction, cos θ
+      <span><output data-out="cosz">−0.95</output></span>
+      <input data-control="cosz" type="range" min="-1" max="-0.1" step="0.005" value="-0.95">
+    </label>
+    <label>Energy
+      <span><output data-out="E">4.0 GeV</output></span>
+      <input data-control="logE" type="range" min="0" max="1.301" step="0.005" value="0.602">
+    </label>
+    <label class="ew-inline">Born as
+      <select data-control="start"><option value="mu" selected>ν<sub>μ</sub></option><option value="e">ν<sub>e</sub></option></select>
+    </label>
+    <div class="ew-readout"><span>path length</span><b data-out="L">—</b></div>
+    <button type="button" class="ew-play" data-action="play">▶ play</button>
+    <p class="ew-note">Normal ordering, NuFIT 6.1; PREM Earth.</p>
+  </div>
+  <svg class="fp-earth" data-plot="earth" viewBox="0 0 400 480" role="img" aria-label="Earth cross-section with the moving neutrino and its flavor composition"></svg>
+  <svg class="ew-plot" data-plot="profile" viewBox="0 0 820 480" role="img" aria-label="Electron density and flavor probabilities along the path"></svg>
+</div>
+```

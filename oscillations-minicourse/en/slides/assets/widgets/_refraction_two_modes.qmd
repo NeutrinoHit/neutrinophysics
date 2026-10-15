@@ -1,0 +1,45 @@
+~~~{=html}
+<link rel="stylesheet" href="assets/widgets/refraction_labs.css">
+<div class="refraction-modes-lab" data-refraction-modes
+     role="group" aria-label="Two normal modes and the transition between flavors">
+  <div class="refraction-modes-lab__controls">
+    <label>Normal-mode rotation, \(\theta_m\)
+      <span data-angle-value>30°</span>
+      <input type="range" data-angle min="0" max="45" step="1" value="30">
+    </label>
+    <label>Phase difference, \(\Delta\varphi=(k_{2m}-k_{1m})L\)
+      <span data-difference-value>3.14 rad</span>
+      <input type="range" data-difference min="0" max="6.283185307" step="0.02" value="3.14">
+    </label>
+  </div>
+  <svg viewBox="0 0 1200 435" role="img"
+       aria-label="Phasors of the two normal modes and the transition probability">
+    <circle class="refraction-modes-lab__circle" cx="255" cy="218" r="137"></circle>
+    <line class="refraction-modes-lab__axis" x1="105" y1="218" x2="405" y2="218"></line>
+    <line class="refraction-modes-lab__axis" x1="255" y1="68" x2="255" y2="368"></line>
+    <line class="refraction-modes-lab__first" x1="255" y1="218" x2="392" y2="218"></line>
+    <line class="refraction-modes-lab__second" data-second-mode x1="255" y1="218" x2="118" y2="218"></line>
+    <circle class="refraction-modes-lab__first-dot" cx="392" cy="218" r="7"></circle>
+    <circle class="refraction-modes-lab__second-dot" data-second-dot cx="118" cy="218" r="7"></circle>
+    <text x="147" y="45">normal-mode phases</text>
+    <text x="401" y="211">1</text>
+    <text data-second-label x="106" y="203">2</text>
+    <line class="refraction-modes-lab__axis" x1="605" y1="345" x2="1110" y2="345"></line>
+    <line class="refraction-modes-lab__axis" x1="605" y1="75" x2="605" y2="345"></line>
+    <path class="refraction-modes-lab__curve" data-probability-curve></path>
+    <circle class="refraction-modes-lab__marker" data-probability-marker r="9"></circle>
+    <text x="705" y="45">probability P(e → x)</text>
+    <text x="587" y="354">0</text>
+    <text x="575" y="87">1</text>
+    <text x="602" y="385">0</text>
+    <text x="838" y="385">π</text>
+    <text x="1066" y="385">2π</text>
+    <text x="850" y="422">phase difference</text>
+  </svg>
+  <p class="refraction-modes-lab__readout" aria-live="polite">
+    Transition probability: <span data-probability-value>0.750</span>.
+    Equal phases give no transition.
+  </p>
+</div>
+<script defer src="assets/widgets/refraction_labs.js"></script>
+~~~

@@ -1,0 +1,29 @@
+/* Local additions for the school lectures; the shared Reveal theme provides the rest. */
+.reveal .big-number {
+  font-size: 2.1em;
+  line-height: 1.1;
+  color: #ffd166;
+  text-align: center;
+  margin: 0.25em 0 0.1em;
+}
+.reveal .big-number-caption {
+  text-align: center;
+  font-size: 0.9em;
+  color: #c9d3dd;
+}
+.reveal .card {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 14px;
+  background: rgba(10, 16, 24, 0.85);
+  padding: 0.45em 0.7em;
+  height: 100%;
+  box-sizing: border-box;
+}
+.reveal .card .card-title { display: block; margin: 0.15em 0 0.25em; color: #73c7ff; font-weight: 600; font-size: 0.95em; }
+.reveal .card p:has(> .card-title) { margin-bottom: 0.1em; }
+.reveal .card p, .reveal .card li { font-size: 0.82em; }
+.reveal table.school-table, .reveal .school-table table { font-size: 0.86em; margin: 0.3em auto; }
+.reveal .school-table th { color: #73c7ff; }
+.reveal .school-table td, .reveal .school-table th { padding: 0.22em 0.6em; }
+.reveal .lecture-map { font-size: 0.86em; }
+.reveal .lecture-map li { margin: 0.25em 0; }

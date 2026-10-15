@@ -1,0 +1,37 @@
+```{=html}
+<div class="earth-explorer" data-earth-explorer aria-label="Oscillation probability for a neutrino crossing the Earth along a chosen path">
+  <div class="ee-controls">
+    <label>Direction, cos θ
+      <span><output data-out="cosz">−0.95</output></span>
+      <input data-control="cosz" type="range" min="-1" max="-0.05" step="0.005" value="-0.95">
+    </label>
+    <div class="ee-readout"><span>path length</span><b data-out="L">—</b></div>
+    <div class="ee-readout"><span>deepest layer</span><b data-out="core">—</b></div>
+    <label>Core Yₑ
+      <span><output data-out="ye">0.466</output></span>
+      <input data-control="ye" type="range" min="0.44" max="0.52" step="0.001" value="0.466">
+    </label>
+    <div class="ee-presets" role="group" aria-label="Core composition presets">
+      <button type="button" data-preset="ye:0.466">pure Fe</button>
+      <button type="button" data-preset="ye:0.471">Fe + 1 % H</button>
+      <button type="button" data-preset="ye:0.4975">rock-like</button>
+    </div>
+    <label>Channel
+      <select data-control="channel">
+        <option value="mu-e" selected>ν<sub>μ</sub> → ν<sub>e</sub></option>
+        <option value="mu-mu">ν<sub>μ</sub> → ν<sub>μ</sub></option>
+        <option value="e-e">ν<sub>e</sub> → ν<sub>e</sub></option>
+      </select>
+    </label>
+    <label class="ee-inline">Mass ordering
+      <select data-control="ordering">
+        <option value="NO" selected>normal</option>
+        <option value="IO">inverted</option>
+      </select>
+    </label>
+    <label class="ee-check"><input data-control="anti" type="checkbox"> antineutrinos</label>
+  </div>
+  <svg class="ee-earth" data-plot="earth" viewBox="0 0 420 440" role="img" aria-label="Earth cross-section with the neutrino path"></svg>
+  <svg class="ee-prob" data-plot="prob" viewBox="0 0 820 440" role="img" aria-label="Oscillation probability against energy"></svg>
+</div>
+```

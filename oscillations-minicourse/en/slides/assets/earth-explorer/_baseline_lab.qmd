@@ -1,0 +1,29 @@
+```{=html}
+<div class="ew-box bl-lab" data-baseline-lab aria-label="Muon to electron neutrino appearance along a straight path through the Earth">
+  <div class="ew-controls">
+    <label>Baseline L
+      <span><output data-out="L">1 300 km</output></span>
+      <input data-control="L" type="range" min="200" max="8000" step="5" value="1300">
+    </label>
+    <div class="ew-presets" role="group" aria-label="Experiments">
+      <button type="button" data-preset="295">T2K 295</button>
+      <button type="button" data-preset="810">NOvA 810</button>
+      <button type="button" data-preset="1300">DUNE 1300</button>
+      <button type="button" data-preset="7000">7000 km</button>
+    </div>
+    <label>CP phase δ
+      <span><output data-out="delta">212°</output></span>
+      <input data-control="delta" type="range" min="0" max="360" step="1" value="212">
+    </label>
+    <label class="ew-inline">Mass ordering
+      <select data-control="ordering"><option value="NO" selected>normal</option><option value="IO">inverted</option></select>
+    </label>
+    <label class="ew-check"><input data-control="matter" type="checkbox" checked> Earth's matter on</label>
+    <div class="ew-readout"><span>deepest point</span><b data-out="depth">—</b></div>
+    <div class="ew-readout"><span>mean Yₑρ on the path</span><b data-out="rho">—</b></div>
+    <div class="ew-readout"><span>first maximum E₁</span><b data-out="E1">—</b></div>
+    <div class="ew-readout"><span>A = 2EV/Δm² at E₁</span><b data-out="A">—</b></div>
+  </div>
+  <svg class="ew-plot" data-plot="baseline" viewBox="0 0 900 470" role="img" aria-label="Appearance probability against energy for neutrinos and antineutrinos"></svg>
+</div>
+```

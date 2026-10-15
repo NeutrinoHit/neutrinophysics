@@ -1,0 +1,27 @@
+```{=html}
+<div class="ew-box ol-lab" data-oscillogram-lab aria-label="Oscillogram of a modified Earth and its difference from the standard Earth">
+  <div class="ew-controls">
+    <label>Core Yₑ
+      <span><output data-out="ye">0.466</output></span>
+      <input data-control="ye" type="range" min="0.44" max="0.52" step="0.001" value="0.466">
+    </label>
+    <label>Core density × <span><output data-out="scale">1.00</output></span>
+      <input data-control="scale" type="range" min="0.85" max="1.15" step="0.01" value="1.00">
+    </label>
+    <label class="ew-check"><input data-control="nocore" type="checkbox"> no core (rock instead)</label>
+    <div class="ew-presets" role="group" aria-label="Earth models">
+      <button type="button" data-preset="ye:0.471">Fe + 1 % H</button>
+      <button type="button" data-preset="ye:0.4975">rock-like Yₑ</button>
+      <button type="button" data-preset="nocore:1">no core</button>
+    </div>
+    <label class="ew-inline">Channel
+      <select data-control="channel"><option value="mu-e" selected>ν<sub>μ</sub> → ν<sub>e</sub></option><option value="mu-mu">ν<sub>μ</sub> → ν<sub>μ</sub></option></select>
+    </label>
+    <button type="button" class="ew-play" data-action="compute">compute</button>
+    <div class="ew-readout"><span>status</span><b data-out="status">—</b></div>
+    <div class="ew-readout"><span>largest |ΔP|</span><b data-out="dmax">—</b></div>
+  </div>
+  <canvas class="ol-canvas" data-plot="map" width="640" height="520"></canvas>
+  <canvas class="ol-canvas" data-plot="diff" width="640" height="520"></canvas>
+</div>
+```

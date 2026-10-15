@@ -1,0 +1,60 @@
+.ew-box {
+  display: grid;
+  gap: 16px;
+  align-items: stretch;
+  width: 100%;
+  margin: 0.15rem auto 0;
+  color: #f2f5f8;
+  font: 19px/1.25 system-ui, sans-serif;
+}
+.bl-lab { grid-template-columns: 330px minmax(0, 1fr); }
+.fp-lab { grid-template-columns: 300px 300px minmax(0, 1fr); }
+.ol-lab { grid-template-columns: 300px minmax(0, 1fr) minmax(0, 1fr); }
+.ew-box > * {
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  background: rgba(7, 11, 17, 0.94);
+}
+.ew-controls { padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
+.ew-controls label { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 8px; }
+.ew-controls label span { color: #ffd166; font-variant-numeric: tabular-nums; }
+.ew-controls input[type="range"] { width: 100%; accent-color: #73c7ff; }
+.ew-controls select {
+  font: inherit; color: #f2f5f8; background: #101822;
+  border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 8px; padding: 2px 6px;
+}
+.ew-check { justify-content: flex-start !important; align-items: center; }
+.ew-check input { width: 20px; height: 20px; accent-color: #ff8a5c; }
+.ew-readout { display: flex; justify-content: space-between; color: #b9c4cf; font-size: 0.92em; }
+.ew-readout b { color: #73c7ff; font-weight: 600; }
+.ew-presets { display: flex; gap: 6px; flex-wrap: wrap; }
+.ew-presets button, .ew-play {
+  font: 16px system-ui, sans-serif; color: #f2f5f8; background: #142233; cursor: pointer;
+  border: 1px solid rgba(115, 199, 255, 0.45); border-radius: 8px; padding: 4px 9px;
+}
+.ew-play { font-size: 19px; padding: 6px 10px; }
+.ew-presets button:hover, .ew-play:hover { background: #1d3550; }
+.ew-play:disabled { opacity: 0.5; cursor: wait; }
+.ew-note { margin: 0; color: #9fb0c0; font-size: 0.8em; }
+.ew-plot, .fp-earth { width: 100%; height: auto; display: block; }
+.ol-canvas { width: 100%; height: auto; display: block; }
+.ew-grid { stroke: #344250; stroke-width: 1; }
+.ew-tick { fill: #d8dee5; font: 18px system-ui, sans-serif; text-anchor: middle; }
+.ew-tick-y { text-anchor: end; }
+.ew-axis { fill: #f2f5f8; font: 20px system-ui, sans-serif; text-anchor: middle; }
+.bl-nu { fill: none; stroke: #73c7ff; stroke-width: 3; }
+.bl-antinu { fill: none; stroke: #ff8a5c; stroke-width: 3; stroke-dasharray: 10 7; }
+.bl-vac { fill: none; stroke: #73c7ff; stroke-width: 1.6; stroke-dasharray: 2 5; opacity: 0.8; }
+.bl-vac.bl-anti { stroke: #ff8a5c; }
+.bl-marker { stroke: #ffd166; stroke-width: 1.5; stroke-dasharray: 4 5; }
+.bl-leg { font: 19px system-ui, sans-serif; }
+.bl-leg-nu { fill: #73c7ff; } .bl-leg-anti { fill: #ff8a5c; } .bl-leg-vac { fill: #b9c4cf; }
+.fp-chord { stroke: rgba(255, 255, 255, 0.35); stroke-width: 3; stroke-dasharray: 6 6; }
+.fp-done { stroke: #ffd166; stroke-width: 4; stroke-linecap: round; }
+.fp-dot { fill: #ffd166; stroke: #000; stroke-width: 2; }
+.fp-bar-label { font: 20px system-ui, sans-serif; }
+.fp-density { fill: none; stroke: #ffd166; stroke-width: 2.4; }
+.fp-prob { fill: none; stroke-width: 2.6; }
+.fp-cursor { stroke: rgba(255, 209, 102, 0.6); stroke-width: 1.5; }
+.fp-panel { fill: #b9c4cf; font: 17px system-ui, sans-serif; }

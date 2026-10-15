@@ -1,0 +1,7 @@
+```{=html}
+<link rel="stylesheet" href="assets/widgets/three_flavor_probabilities.css">
+<div class="tfp" data-tfp aria-label="Three-flavor vacuum oscillation probabilities as functions of energy and baseline">
+  <noscript>This interactive plot requires JavaScript.</noscript>
+</div>
+<script defer src="assets/widgets/three_flavor_probabilities.js"></script>
+```
