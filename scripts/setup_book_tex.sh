@@ -1,5 +1,8 @@
 #!/bin/sh
 # Prepare Quarto's Linux TinyTeX, not an unrelated system TeX installation.
+# Canonical copy: neutrinohit-map/assets/books/setup_book_tex.sh; book courses
+# receive it as scripts/setup_book_tex.sh through scripts/sync_book_assets.py.
+# The package list covers the shared preamble neutrinohit-book.tex.
 set -eu
 
 if [ "${GITHUB_ACTIONS:-}" != true ]; then
