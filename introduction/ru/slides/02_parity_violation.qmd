@@ -11,7 +11,6 @@ format:
     theme: [black, ../../../shared/styles/neutrinohit-reveal.scss]
     css: assets/02_parity/parity.css
     logo: ../../../shared/reveal/dvnlogo.png
-    html-math-method: mathjax
     include-after-body:
       - assets/02_parity/parity-runtime.html
       - text: |

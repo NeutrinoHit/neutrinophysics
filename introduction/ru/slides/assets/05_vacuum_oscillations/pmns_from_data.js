@@ -57,8 +57,12 @@
       previous.disabled = step === 0;
       next.disabled = step === 10;
 
+      const panel = root.querySelector(".pmns-from-data__matrix-panel");
       if (window.MathJax?.typesetPromise) {
-        window.MathJax.typesetPromise([active, root.querySelector(".pmns-from-data__matrix-panel")]).catch(() => {});
+        window.MathJax.typesetPromise([active, panel]).catch(() => {});
+      } else if (window.MathJax?.Hub) {
+        const hub = window.MathJax.Hub;
+        hub.Queue(["Typeset", hub, active], ["Typeset", hub, panel]);
       }
     }
 

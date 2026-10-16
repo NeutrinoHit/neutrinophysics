@@ -11,7 +11,6 @@ format:
     theme: [black, ../../../shared/styles/neutrinohit-reveal.scss]
     css: assets/03_helicity/helicity.css
     logo: ../../../shared/reveal/dvnlogo.png
-    html-math-method: mathjax
     include-after-body:
       - assets/03_helicity/helicity-runtime.html
       - text: |
