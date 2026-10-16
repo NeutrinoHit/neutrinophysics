@@ -267,6 +267,8 @@
     try {
       if (mathJax?.typesetPromise) {
         mathJax.typesetPromise([element]).catch(() => {});
+      } else if (mathJax?.Hub) {
+        mathJax.Hub.Queue(["Typeset", mathJax.Hub, element]);
       } else {
         mathJax?.typeset?.([element]);
       }

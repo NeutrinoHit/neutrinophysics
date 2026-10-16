@@ -10,7 +10,6 @@ format:
   revealjs:
     theme: [black, ../../../shared/styles/neutrinohit-reveal.scss]
     logo: ../../../shared/reveal/dvnlogo.png
-    html-math-method: mathjax
     include-after-body:
       - text: |
           <script data-external="1" data-context-home="https://neutrinohit.github.io/neutrinophysics/introduction/" data-context-home-label="Страница курса" src="../../../shared/reveal/neutrinohit-reveal-footer.js"></script>
