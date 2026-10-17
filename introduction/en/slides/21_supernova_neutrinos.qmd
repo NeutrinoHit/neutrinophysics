@@ -11,7 +11,7 @@ format:
     logo: ../../../shared/reveal/dvnlogo.png
     include-after-body:
       - text: |
-          <script data-external="1" data-context-home="https://neutrinohit.github.io/neutrinophysics/introduction/" data-context-home-label="Course home" src="../../../shared/reveal/neutrinohit-reveal-footer.js"></script>
+          <script data-external="1" data-context-home="https://neutrinohit.github.io/en/courses/neutrino-introduction.html" data-context-home-label="Course page" src="../../../shared/reveal/neutrinohit-reveal-footer.js"></script>
       - ../../../analytics/cloudflare-web-analytics.html
     embed-resources: false
     slide-number: true
