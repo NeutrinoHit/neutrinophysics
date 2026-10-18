@@ -1,0 +1,219 @@
+/* Lecture 14: local additions to matter_oscillations.css. */
+
+/* Dictionary of the pendulum model */
+.reveal .lecture14-table table {
+  margin: 0.3em 0 0.4em;
+  font-size: 0.9em;
+  border-collapse: collapse;
+}
+
+.reveal .lecture14-table th,
+.reveal .lecture14-table td {
+  padding: 0.18em 0.8em;
+  border-bottom: 1px solid rgba(180, 208, 235, 0.22);
+  vertical-align: middle;
+}
+
+.reveal .lecture14-table thead th {
+  color: var(--matter-gold, #ffc857);
+  border-bottom: 1px solid rgba(180, 208, 235, 0.5);
+}
+
+/* Films of the lecture: the caption stays close to the video */
+.reveal .slides section video.slide-video + .media-caption,
+.reveal .slides section .media-caption {
+  max-width: 92%;
+  margin: 0.35em auto 0;
+}
+
+/* ------------------------------------------- the lab "coupled pendulums in matter" */
+
+#pendulum-matter-lab mjx-container {
+  margin: 0 !important;
+  color: inherit;
+}
+
+#pendulum-matter-lab .matter-lab-controls label,
+#pendulum-matter-lab .matter-lab-readouts span,
+#pendulum-matter-lab figcaption,
+#pendulum-matter-lab .l14-note {
+  color: #b8c7d8;
+}
+
+#pendulum-matter-lab .matter-lab-controls label .l14-name {
+  color: #b8c7d8;
+  font-variant-numeric: normal;
+}
+
+#pendulum-matter-lab .matter-lab-controls label.is-off {
+  opacity: 0.45;
+}
+
+#pendulum-matter-lab .l14-note {
+  margin: -0.25rem 0 0;
+  font-size: 0.78em;
+  font-variant-numeric: tabular-nums;
+}
+
+#pendulum-matter-lab .l14-note output {
+  color: var(--matter-ink);
+}
+
+#pendulum-matter-lab .matter-presets button[aria-pressed="true"] {
+  border-color: var(--matter-gold);
+  background: rgba(255, 200, 87, 0.16);
+  color: var(--matter-gold);
+}
+
+#pendulum-matter-lab svg text {
+  fill: #b8c7d8;
+  font-size: 17px;
+}
+
+#pendulum-matter-lab svg[data-plot="pendulums"] text,
+#pendulum-matter-lab svg[data-plot="phasor"] text {
+  font-size: 18px;
+}
+
+/* Pendulums on the left over both rows; branches and phasors on top; the time traces below. */
+#pendulum-matter-lab .l14-plots {
+  display: grid;
+  grid-template-columns: 0.72fr 1fr 0.78fr;
+  grid-template-rows: minmax(0, 1.75fr) minmax(0, 1fr);
+  gap: 0.6rem;
+  min-height: 0;
+}
+
+#pendulum-matter-lab .l14-pend {
+  grid-row: 1 / 3;
+}
+
+#pendulum-matter-lab .l14-traces {
+  grid-column: 2 / 4;
+}
+
+#pendulum-matter-lab figcaption {
+  margin: 0.1rem 0 0.1rem;
+}
+
+.l14-key,
+.l14-dot {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0.25em 0 0.7em;
+}
+
+.l14-key {
+  width: 1.5em;
+  height: 0;
+  border-top: 3px solid var(--key);
+}
+
+.l14-key--dash {
+  border-top-style: dashed;
+  border-top-width: 2px;
+}
+
+.l14-dot {
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  background: var(--key);
+}
+
+/* On the slide (1600 x 1000) */
+.reveal .matter-lab-slide #pendulum-matter-lab {
+  grid-template-columns: 21rem 1fr;
+  height: 51rem;
+  font-size: 20px;
+}
+
+.reveal .matter-lab-slide #pendulum-matter-lab .matter-lab-controls label {
+  font-size: 0.95em;
+}
+
+.reveal .matter-lab-slide #pendulum-matter-lab .matter-presets button {
+  min-height: 2.6rem;
+  font-size: 0.85em;
+}
+
+.reveal .matter-lab-slide #pendulum-matter-lab .matter-lab-readouts > div {
+  min-height: 4.2rem;
+}
+
+/* Only the label span gets the smaller size. Spans inside it belong to MathJax: they inherit,
+   and MathJax sets its own sizes inline (otherwise each nesting level would shrink again). */
+.reveal .matter-lab-slide #pendulum-matter-lab .matter-lab-readouts > div > span {
+  font-size: 0.82em;
+}
+
+.reveal .matter-lab-slide #pendulum-matter-lab .matter-lab-readouts > div > span span {
+  font-size: inherit;
+}
+
+.reveal .matter-lab-slide #pendulum-matter-lab .matter-lab-readouts b {
+  font-size: 1.15em;
+}
+
+.reveal .matter-lab-slide #pendulum-matter-lab figcaption {
+  font-size: 0.8em;
+}
+
+/* On the applet page */
+.applet-stage #pendulum-matter-lab.matter-lab {
+  height: auto;
+}
+
+/* The page is narrower than the slide: two columns, the time traces across the bottom. */
+.applet-stage #pendulum-matter-lab .l14-plots {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+}
+
+.applet-stage #pendulum-matter-lab .l14-traces {
+  grid-column: 1 / 3;
+}
+
+.applet-stage #pendulum-matter-lab svg {
+  flex: none;
+  height: auto;
+}
+
+/* Narrow screens (the applet on a phone); the slide itself is scaled by Reveal and keeps its layout. */
+@media (max-width: 760px) {
+  .applet-stage #pendulum-matter-lab.matter-lab {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    font-size: 14px;
+  }
+
+  .applet-stage #pendulum-matter-lab .matter-lab-controls {
+    grid-row: auto;
+  }
+
+  .applet-stage #pendulum-matter-lab .matter-presets {
+    margin-top: 0.3rem;
+  }
+
+  .applet-stage #pendulum-matter-lab .matter-lab-readouts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .applet-stage #pendulum-matter-lab .matter-lab-readouts > div {
+    min-height: 3rem;
+  }
+
+  .applet-stage #pendulum-matter-lab .l14-plots {
+    grid-template-columns: 1fr;
+  }
+
+  .applet-stage #pendulum-matter-lab .l14-pend,
+  .applet-stage #pendulum-matter-lab .l14-traces {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .applet-stage #pendulum-matter-lab svg text {
+    font-size: 19px;
+  }
+}

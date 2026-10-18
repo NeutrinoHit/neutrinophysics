@@ -1,0 +1,58 @@
+```{=html}
+<div id="pendulum-matter-lab" class="matter-lab pendulum-matter-lab">
+  <div class="matter-lab-controls">
+    <label><span class="l14-name">Длина \(\ell_1\) в начале, м</span>
+      <span><output data-out="l1">0,40</output></span>
+      <input data-control="l1" type="range" min="0.3" max="2.4" step="0.01" value="0.40">
+    </label>
+    <p class="l14-note">\(u=g/\ell_1-g/\ell_1^{\rm vac}=\) <output data-out="u">19,48</output> с\(^{-2}\)</p>
+    <label><span class="l14-name">Связь \(\kappa=k/m\), с\(^{-2}\)</span>
+      <span><output data-out="kappa">2,0</output></span>
+      <input data-control="kappa" type="range" min="0.5" max="4" step="0.1" value="2">
+    </label>
+    <label><span class="l14-name">Время подъёма опоры \(T\), с</span>
+      <span><output data-out="T">70</output></span>
+      <input data-control="T" type="range" min="1" max="120" step="1" value="70">
+    </label>
+    <p class="l14-note">\(\ell_2=1\) м, \(\ell_1^{\rm vac}=1{,}95\) м</p>
+    <div class="matter-presets" role="group" aria-label="Режим">
+      <button type="button" data-mode="constant" aria-pressed="false">постоянная длина</button>
+      <button type="button" data-mode="passage" aria-pressed="true">проход</button>
+      <button type="button" data-action="play">▶ дальше</button>
+    </div>
+  </div>
+  <div class="matter-lab-readouts">
+    <div><span>\(\theta_m\)</span><b data-val="thm">—</b></div>
+    <div><span>доля маятника 2, \(P_2\)</span><b data-val="p2">—</b></div>
+    <div><span>верхняя мода</span><b data-val="up">—</b></div>
+    <div class="prob"><span>\(|c_1|^2\)</span><b data-val="c1">—</b></div>
+    <div><span>\(\arg(f/d)\)</span><b data-val="arg">—</b></div>
+  </div>
+  <div class="l14-plots">
+    <figure class="l14-pend">
+      <svg data-plot="pendulums" role="img" aria-label="Два маятника на пружине; опора маятника 1 движется по вертикальной направляющей"></svg>
+    </figure>
+    <figure class="l14-branches">
+      <svg data-plot="branches" role="img" aria-label="Частоты нормальных мод в зависимости от длины маятника 1 и заселённость ветвей"></svg>
+      <figcaption>\(\Omega_\pm(\ell_1)\):
+        <span class="l14-dot" style="--key: var(--matter-gold)"></span>верхняя
+        <span class="l14-dot" style="--key: var(--matter-purple)"></span>нижняя
+        <span class="l14-key l14-key--dash" style="--key: rgba(200,214,228,.6)"></span>без связи</figcaption>
+    </figure>
+    <figure class="l14-phasor">
+      <svg data-plot="phasor" role="img" aria-label="Амплитуды d, f и c1 вакуумной моды 1 на комплексной плоскости"></svg>
+      <figcaption>вакуумная мода 1:
+        <span class="l14-key" style="--key: #5fdc9e"></span>\(d\)
+        <span class="l14-key" style="--key: var(--matter-purple)"></span>\(f\)
+        <span class="l14-key" style="--key: var(--matter-gold)"></span>\(c_1=d+f\)</figcaption>
+    </figure>
+    <figure class="l14-traces">
+      <svg data-plot="traces" role="img" aria-label="Доля маятника 2, заселённость вакуумной моды 1 и верхней мгновенной моды во времени"></svg>
+      <figcaption>
+        <span class="l14-key" style="--key: var(--matter-blue)"></span>\(P_2\)
+        <span class="l14-key" style="--key: var(--matter-gold)"></span>\(|c_1|^2\)
+        <span class="l14-key l14-key--dash" style="--key: var(--matter-ink)"></span>верхняя мгновенная мода</figcaption>
+    </figure>
+  </div>
+</div>
+```

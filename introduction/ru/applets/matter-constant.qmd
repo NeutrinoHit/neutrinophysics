@@ -5,13 +5,29 @@ description: "Амплитуда, период и MSW-резонанс в одн
 
 {{< include _applet-nav.qmd >}}
 
-Меняйте потенциал вещества. Сравните вакуум, резонанс и плотную среду и проследите, как перестраиваются смешивание и уровни энергии.
+Меняйте потенциал вещества $A=2EV/\Delta m^2$. Сравните вакуум, резонанс
+$A=\cos2\theta$ и плотную среду. Вещество меняет высоту огибающей
+$\sin^22\theta_m$ и длину осцилляций $L_m=L_{\rm vac}/R$, где
+$R=\sqrt{(\cos2\theta-A)^2+\sin^22\theta}$.
 
-```{=html}
+~~~{=html}
 <link rel="stylesheet" href="../slides/assets/06_matter_oscillations/matter_oscillations.css">
-<script defer src="../slides/assets/06_matter_oscillations/matter_oscillations.js"></script>
-```
+<link rel="stylesheet" href="../slides/assets/06_matter_oscillations/lecture12.css">
+~~~
 
 ::: {.applet-stage .applet-stage--large}
 {{< include ../slides/assets/06_matter_oscillations/matter_constant_lab.qmd >}}
+:::
+
+~~~{=html}
+<script src="../slides/assets/06_matter_oscillations/lecture12.js"></script>
+~~~
+
+::: {.applet-note}
+График уровней: собственные значения $\pm\Delta_m/2$ в единицах $\Delta=\Delta m^2/2E$ и доля
+$\nu_e$ в верхней собственной волне, $\sin^2\theta_m$. Пунктир — уровни без
+смешивания. Отрицательные $A$ соответствуют антинейтрино.
+
+[Объяснение в лекции 12](../slides/12_matter_constant_density.html#/matter-constant-lab-slide) ·
+[Исходный код](https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/slides/assets/06_matter_oscillations/lecture12.js).
 :::

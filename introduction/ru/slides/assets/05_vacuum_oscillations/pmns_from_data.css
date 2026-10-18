@@ -81,6 +81,7 @@ main.content > .applet-stage--pmns {
 }
 
 .pmns-from-data__formula {
+  overflow-x: auto;
   padding: 9px 11px;
   border-left: 3px solid #ffcc8a;
   background: rgba(255, 204, 138, 0.08);
@@ -115,6 +116,20 @@ main.content > .applet-stage--pmns {
   table-layout: fixed;
   font-size: 1.38em;
   text-align: center;
+}
+
+/* На странице Quarto таблица получает класс Bootstrap .table со светлым фоном. */
+.pmns-from-data .pmns-from-data__matrix.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: inherit;
+  margin: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.pmns-from-data .pmns-from-data__matrix.table > :not(caption) > * > * {
+  padding: 0.25rem;
+  box-shadow: none;
 }
 
 .pmns-from-data__matrix th {
@@ -176,9 +191,19 @@ main.content > .applet-stage--pmns {
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+/* Узкий экран отдельной страницы; слайд reveal.js масштабируется целиком. */
 @media (max-width: 900px) {
-  .pmns-from-data { font-size: 16px; }
-  .pmns-from-data__body { grid-template-columns: 1fr; min-height: 0; }
-  .pmns-from-data__matrix td { height: 60px; }
-  .pmns-from-data button { min-width: 105px; }
+  body:not(.reveal-viewport) .pmns-from-data { font-size: 16px; }
+  body:not(.reveal-viewport) .pmns-from-data__body { grid-template-columns: 1fr; min-height: 0; }
+  body:not(.reveal-viewport) .pmns-from-data__matrix td { height: 60px; }
+  body:not(.reveal-viewport) .pmns-from-data button { min-width: 105px; }
+}
+
+@media (max-width: 640px) {
+  body:not(.reveal-viewport) .pmns-from-data { padding: 12px 10px 10px; }
+  body:not(.reveal-viewport) .pmns-from-data__matrix-panel { padding: 8px 4px; }
+  body:not(.reveal-viewport) .pmns-from-data__matrix { border-spacing: 3px; font-size: 1em; }
+  body:not(.reveal-viewport) .pmns-from-data__matrix th:first-child { width: 12%; }
+  body:not(.reveal-viewport) .pmns-from-data__matrix td { height: 52px; }
+  body:not(.reveal-viewport) .pmns-from-data button { min-width: 0; }
 }

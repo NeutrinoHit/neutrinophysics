@@ -9,9 +9,29 @@ description: "Осцилляции нейтрино в меняющемся пр
 
 ```{=html}
 <link rel="stylesheet" href="../slides/assets/06_matter_oscillations/matter_oscillations.css">
+<link rel="stylesheet" href="../slides/assets/06_matter_oscillations/lecture13.css">
 <script defer src="../slides/assets/06_matter_oscillations/matter_oscillations.js"></script>
+<script defer src="../slides/assets/06_matter_oscillations/lecture13.js"></script>
 ```
 
 ::: {.applet-stage .applet-stage--large}
 {{< include ../slides/assets/06_matter_oscillations/matter_adiabatic_lab.qmd >}}
 :::
+
+## Что смотреть
+
+- **адиабатично**: $P_{2m}\simeq1$ на всём пути, а $P_2$ растёт до 1. Переходов между модами нет, поворачивается сама мода.
+- **быстро**: при $\eta_{\max}\sim1$ состояние частично перескакивает на нижнюю ветвь, и $P_{2m}$ на выходе меньше единицы.
+- **малый $\theta$**: минимальный зазор $\Delta_{m,\min}=\Delta\sin2\theta$ сужается, и для следования нужен более длинный профиль.
+
+Кривые $P_e$, $P_2$ и $P_{2m}$ показывают одно и то же состояние в трёх базисах: флэйворном, вакуумном массовом и мгновенном. Пунктир показывает $P_2$ при идеальном следовании, $\cos^2(\theta_m-\theta)$.
+
+## Как считается
+
+Энергии измеряются в единицах $\Delta=\Delta m^2/2E$, длины в единицах $1/\Delta$. Профиль потенциала гладко спадает до нуля:
+
+$$
+A(s)=A_0\left(1-3s^2+2s^3\right),\qquad x=Xs,\qquad 0\le s\le1.
+$$
+
+В начале нейтрино находится точно в верхней моде $\nu_{2m}$. На каждом малом шаге состояние умножается на точную экспоненту гамильтониана постоянного слоя с потенциалом в середине шага, поэтому норма сохраняется. Параметр $\eta=|\theta_m'|/\Delta_m$ вычисляется по той же формуле, что и в лекции.

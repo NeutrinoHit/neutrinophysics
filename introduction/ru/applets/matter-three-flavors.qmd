@@ -1,0 +1,42 @@
+---
+title: "Три флэйвора в веществе"
+description: "Появление электронных нейтрино и антинейтрино в веществе Земли, порядок масс и фаза CP"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Выберите базу опыта или задайте длину пути и плотность. Левый график
+показывает $P(\nu_\mu\to\nu_e)$ и $P(\bar\nu_\mu\to\bar\nu_e)$ как функции
+энергии, пунктир показывает то же в вакууме. Правый график строит точку
+$(P,\bar P)$ при выбранной энергии и обводит её по всем значениям
+$\delta_{\rm CP}$ от $0$ до $360^\circ$ для обоих порядков масс. Без вещества
+эллипсы совпадают. Вещество разводит их в разные стороны от диагонали
+$P=\bar P$.
+
+```{=html}
+<link rel="stylesheet" href="../slides/assets/06_matter_oscillations/lecture15.css">
+<script defer src="../slides/assets/06_matter_oscillations/lecture15.js"></script>
+```
+
+::: {.applet-stage .applet-stage--large}
+```{=html}
+<div class="m3-lab" data-m3-lab></div>
+```
+:::
+
+::: {.applet-note}
+Расчёт точный для слоя постоянной плотности. Гамильтониан
+$H=UMU^\dagger/2E+\mathrm{diag}(V,0,0)$, где
+$M=\mathrm{diag}(0,\Delta m^2_{21},\Delta m^2_{31})$ и
+$V=7.63\cdot10^{-14}$ эВ $\times\,\rho Y_e$ при $\rho$ в г/см³, $Y_e=0.5$.
+Для антинейтрино $U\to U^*$ и $V\to-V$. Углы и $|\Delta m^2_{3\ell}|$
+взяты из лучшей точки [NuFIT 6.1](https://www.nu-fit.org/?q=node/309) для
+нормального порядка. Обратный порядок отличается только знаком
+$\Delta m^2_{3\ell}$, чтобы эллипсы отличались одним вкладом вещества.
+Плотность коры около $2.8$ г/см³, мантии $4.4$ г/см³ в среднем по хорде
+$8000$ км.
+
+[Объяснение в лекции 15](../slides/15_matter_three_flavors.html) ·
+[Вакуумные вероятности трёх нейтрино](three-flavor-probabilities.qmd) ·
+[Исходный код апплета](https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/slides/assets/06_matter_oscillations/lecture15.js).
+:::

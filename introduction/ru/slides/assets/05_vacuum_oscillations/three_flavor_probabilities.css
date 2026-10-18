@@ -227,11 +227,22 @@ main.content > .applet-stage--tfp {
 .tfp__table th:first-child, .tfp__table td:first-child { text-align: left; }
 .tfp__table th { position: sticky; top: 0; background: #0b1622; color: #e3ecf3; }
 
+/* Узкий экран отдельной страницы; слайд reveal.js масштабируется целиком. */
 @media (max-width: 1100px) {
-  .tfp { font-size: 15px; }
-  .tfp__body { grid-template-columns: 1fr; }
-  .tfp__param { grid-template-columns: 130px minmax(0, 1fr) 84px; }
-  .tfp__details-row { grid-template-columns: 1fr; }
+  body:not(.reveal-viewport) .tfp { font-size: 15px; }
+  body:not(.reveal-viewport) .tfp__body { grid-template-columns: 1fr; }
+  body:not(.reveal-viewport) .tfp__param { grid-template-columns: 130px minmax(0, 1fr) 84px; }
+  body:not(.reveal-viewport) .tfp__details-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  body:not(.reveal-viewport) .tfp { padding: 8px; }
+  body:not(.reveal-viewport) .tfp__param { grid-template-columns: minmax(0, 1fr) 6em; row-gap: 0; }
+  body:not(.reveal-viewport) .tfp__param > span { grid-column: 1 / -1; }
+  body:not(.reveal-viewport) .tfp__channels { grid-template-columns: 2.4em repeat(3, minmax(0, 1fr)); }
+  body:not(.reveal-viewport) .tfp__chan { gap: 3px; padding: 3px 2px; }
+  body:not(.reveal-viewport) .tfp__chan i { width: 10px; }
+  body:not(.reveal-viewport) .tfp__axes label input { width: 72px; }
 }
 
 /* Внутри слайдов reveal.js: перебиваем стили заголовков, таблиц и кода. */

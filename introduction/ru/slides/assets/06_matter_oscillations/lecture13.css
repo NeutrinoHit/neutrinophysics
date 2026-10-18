@@ -1,0 +1,190 @@
+/* Lecture 13 and the applet "matter-adiabatic": local additions to matter_oscillations.css. */
+
+/* Table of survival probabilities */
+.reveal .lecture13-table table {
+  margin: 0.2em 0 0;
+  font-size: 1em;
+  border-collapse: collapse;
+}
+
+.reveal .lecture13-table th,
+.reveal .lecture13-table td {
+  padding: 0.2em 0.75em;
+  border-bottom: 1px solid rgba(180, 208, 235, 0.22);
+}
+
+.reveal .lecture13-table thead th {
+  color: var(--matter-gold, #ffc857);
+  border-bottom: 1px solid rgba(180, 208, 235, 0.5);
+}
+
+/* ---------------------------------------------------------------- the lab */
+
+/* The progress bar is a grid row of its own instead of an absolute strip. */
+#matter-adiabatic-lab.matter-lab {
+  grid-template-rows: auto 0.2rem 1fr;
+}
+
+#matter-adiabatic-lab .matter-lab-controls {
+  grid-row: 1 / 4;
+}
+
+#matter-adiabatic-lab .adiabatic-progress {
+  position: static;
+  grid-column: 2;
+}
+
+/* Formulas inside labels, readouts and captions */
+#matter-adiabatic-lab mjx-container {
+  margin: 0 !important;
+  color: inherit;
+}
+
+#matter-adiabatic-lab .matter-lab-controls label,
+#matter-adiabatic-lab .matter-lab-readouts span,
+#matter-adiabatic-lab figcaption {
+  color: #b8c7d8;
+}
+
+#matter-adiabatic-lab svg text {
+  fill: #b8c7d8;
+}
+
+/* Legends live in the captions; the legends drawn inside the plots overlap the curves. */
+#matter-adiabatic-lab svg[data-plot="profile"] line:not([class]),
+#matter-adiabatic-lab svg[data-plot="profile"] .legend-label,
+#matter-adiabatic-lab svg[data-plot="branches"] text[x="70"] {
+  display: none;
+}
+
+#matter-adiabatic-lab figcaption {
+  margin: 0.15rem 0 0.1rem;
+}
+
+.l13-key,
+.l13-dot {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0.25em 0 0.7em;
+}
+
+.l13-key {
+  width: 1.5em;
+  height: 0;
+  border-top: 3px solid var(--key);
+}
+
+.l13-key--dash {
+  border-top-style: dashed;
+  border-top-width: 2px;
+}
+
+.l13-key--wide {
+  border-top-width: 6px;
+}
+
+.l13-dot {
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  background: var(--key);
+}
+
+/* ------------------------------------------------- the lab on the slide (1600 x 1000) */
+
+.reveal .matter-lab-slide #matter-adiabatic-lab {
+  grid-template-columns: 21rem 1fr;
+  height: 41rem;
+  font-size: 20px;
+}
+
+.reveal .matter-lab-slide #matter-adiabatic-lab .matter-lab-controls label {
+  font-size: 0.95em;
+}
+
+.reveal .matter-lab-slide #matter-adiabatic-lab .matter-presets button {
+  min-height: 2.6rem;
+  font-size: 0.85em;
+}
+
+.reveal .matter-lab-slide #matter-adiabatic-lab .matter-lab-readouts > div {
+  min-height: 4.4rem;
+}
+
+/* Only the label span gets the smaller size. Spans inside it belong to MathJax: they inherit,
+   and MathJax sets its own sizes inline (otherwise each nesting level would shrink again). */
+.reveal .matter-lab-slide #matter-adiabatic-lab .matter-lab-readouts > div > span {
+  font-size: 0.82em;
+}
+
+.reveal .matter-lab-slide #matter-adiabatic-lab .matter-lab-readouts > div > span span {
+  font-size: inherit;
+}
+
+.reveal .matter-lab-slide #matter-adiabatic-lab .matter-lab-readouts b {
+  font-size: 1.15em;
+}
+
+.reveal .matter-lab-slide #matter-adiabatic-lab figcaption {
+  font-size: 0.85em;
+}
+
+.reveal .matter-lab-slide .nh-text {
+  margin-top: 0.4em;
+}
+
+/* ------------------------------------------------------- the lab on the applet page */
+
+.applet-stage #matter-adiabatic-lab.matter-lab {
+  height: auto;
+}
+
+.applet-stage #matter-adiabatic-lab svg {
+  flex: none;
+  height: auto;
+}
+
+/* ----------------------------------------------- narrow screens (the applet on a phone) */
+
+@media (max-width: 760px) {
+  #matter-adiabatic-lab.matter-lab {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    height: auto;
+    font-size: 14px;
+  }
+
+  #matter-adiabatic-lab .matter-lab-controls {
+    grid-row: auto;
+  }
+
+  #matter-adiabatic-lab .matter-presets {
+    margin-top: 0.3rem;
+  }
+
+  #matter-adiabatic-lab .matter-lab-readouts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #matter-adiabatic-lab .matter-lab-readouts > div {
+    min-height: 3rem;
+  }
+
+  #matter-adiabatic-lab .adiabatic-progress {
+    grid-column: auto;
+    height: 0.2rem;
+  }
+
+  #matter-adiabatic-lab .matter-lab-plots {
+    grid-template-columns: 1fr;
+  }
+
+  #matter-adiabatic-lab svg {
+    flex: none;
+    height: auto;
+  }
+
+  #matter-adiabatic-lab svg text {
+    font-size: 19px;
+  }
+}

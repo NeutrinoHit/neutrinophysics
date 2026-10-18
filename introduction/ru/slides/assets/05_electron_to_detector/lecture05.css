@@ -1,0 +1,17 @@
+/* Lecture 05: local layout for the 1600×1000 slide frame. */
+
+/* Text column that leaves the right margin to a note (.marginnote at left ≈ 1240). */
+.reveal .l05-main {
+  width: 77%;
+}
+
+/* Formula-heavy tabs: tighter vertical gaps around display formulas
+   (final CommonHTML output and the fast preview shown while typesetting). */
+.reveal .l05-tight .MJXc-display,
+.reveal .l05-tight .MJXp-display {
+  margin: 0.45em 0;
+}
+
+.reveal .l05-tight p {
+  margin: 0.25em 0;
+}

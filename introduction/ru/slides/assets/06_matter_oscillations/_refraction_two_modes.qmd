@@ -1,8 +1,8 @@
 ~~~{=html}
 <div class="refraction-modes-lab" data-refraction-modes
-     role="group" aria-label="Две нормальные волны и переход между флэйворами">
+     role="group" aria-label="Две собственные волны вещества и переход между флэйворами">
   <div class="refraction-modes-lab__controls">
-    <label>Поворот нормальных мод, \(\theta_m\)
+    <label>Угол смешивания в веществе, \(\theta_m\)
       <span data-angle-value>30°</span>
       <input type="range" data-angle min="0" max="45" step="1" value="30">
     </label>
@@ -12,7 +12,7 @@
     </label>
   </div>
   <svg viewBox="0 0 1200 435" role="img"
-       aria-label="Два фазора нормальных волн и вероятность перехода">
+       aria-label="Фазы двух собственных волн и вероятность перехода">
     <circle class="refraction-modes-lab__circle" cx="255" cy="218" r="137"></circle>
     <line class="refraction-modes-lab__axis" x1="105" y1="218" x2="405" y2="218"></line>
     <line class="refraction-modes-lab__axis" x1="255" y1="68" x2="255" y2="368"></line>
@@ -20,24 +20,24 @@
     <line class="refraction-modes-lab__second" data-second-mode x1="255" y1="218" x2="118" y2="218"></line>
     <circle class="refraction-modes-lab__first-dot" cx="392" cy="218" r="7"></circle>
     <circle class="refraction-modes-lab__second-dot" data-second-dot cx="118" cy="218" r="7"></circle>
-    <text x="147" y="45">фазы нормальных волн</text>
+    <text x="255" y="45" text-anchor="middle">фазы собственных волн</text>
     <text x="401" y="211">1</text>
     <text data-second-label x="106" y="203">2</text>
     <line class="refraction-modes-lab__axis" x1="605" y1="345" x2="1110" y2="345"></line>
     <line class="refraction-modes-lab__axis" x1="605" y1="75" x2="605" y2="345"></line>
     <path class="refraction-modes-lab__curve" data-probability-curve></path>
     <circle class="refraction-modes-lab__marker" data-probability-marker r="9"></circle>
-    <text x="705" y="45">вероятность P(e → x)</text>
-    <text x="587" y="354">0</text>
-    <text x="575" y="87">1</text>
-    <text x="602" y="385">0</text>
-    <text x="838" y="385">π</text>
-    <text x="1066" y="385">2π</text>
-    <text x="850" y="422">разность фаз</text>
+    <text x="857" y="45" text-anchor="middle">вероятность P(e → x)</text>
+    <text x="590" y="352" text-anchor="end">0</text>
+    <text x="590" y="82" text-anchor="end">1</text>
+    <text x="605" y="380" text-anchor="middle">0</text>
+    <text x="857" y="380" text-anchor="middle">π</text>
+    <text x="1110" y="380" text-anchor="middle">2π</text>
+    <text x="857" y="420" text-anchor="middle">разность фаз</text>
   </svg>
   <p class="refraction-modes-lab__readout" aria-live="polite">
     Вероятность перехода: <span data-probability-value>0.750</span>.
-    При совпадении фаз перехода нет.
+    При равных фазах вклады двух волн в амплитуду перехода сокращаются.
   </p>
 </div>
 ~~~
