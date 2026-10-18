@@ -7,27 +7,33 @@
       <input type="range" data-angle min="0" max="45" step="1" value="30">
     </label>
     <label>Разность фаз, \(\Delta\varphi=(k_{2m}-k_{1m})L\)
-      <span data-difference-value>3.14 рад</span>
-      <input type="range" data-difference min="0" max="6.283185307" step="0.02" value="3.14">
+      <span data-difference-value>2.20 рад</span>
+      <input type="range" data-difference min="0" max="6.283185307" step="0.02" value="2.2">
     </label>
   </div>
   <svg viewBox="0 0 1200 435" role="img"
-       aria-label="Фазы двух собственных волн и вероятность перехода">
-    <circle class="refraction-modes-lab__circle" cx="255" cy="218" r="137"></circle>
-    <line class="refraction-modes-lab__axis" x1="105" y1="218" x2="405" y2="218"></line>
-    <line class="refraction-modes-lab__axis" x1="255" y1="68" x2="255" y2="368"></line>
-    <line class="refraction-modes-lab__first" x1="255" y1="218" x2="392" y2="218"></line>
-    <line class="refraction-modes-lab__second" data-second-mode x1="255" y1="218" x2="118" y2="218"></line>
-    <circle class="refraction-modes-lab__first-dot" cx="392" cy="218" r="7"></circle>
-    <circle class="refraction-modes-lab__second-dot" data-second-dot cx="118" cy="218" r="7"></circle>
-    <text x="255" y="45" text-anchor="middle">фазы собственных волн</text>
-    <text x="401" y="211">1</text>
-    <text data-second-label x="106" y="203">2</text>
+       aria-label="Вклады двух собственных волн в амплитуду перехода и вероятность перехода">
+    <line class="refraction-modes-lab__axis" x1="105" y1="218" x2="505" y2="218"></line>
+    <line class="refraction-modes-lab__axis" x1="450" y1="68" x2="450" y2="368"></line>
+    <text x="505" y="250" text-anchor="end">Re</text>
+    <text x="464" y="84">Im</text>
+    <circle class="refraction-modes-lab__locus" data-locus cx="320" cy="218" r="130"></circle>
+    <line class="refraction-modes-lab__sum" data-sum x1="450" y1="218" x2="450" y2="218"></line>
+    <polygon class="refraction-modes-lab__sum-head" data-sum-head points=""></polygon>
+    <line class="refraction-modes-lab__first" data-first x1="450" y1="218" x2="320" y2="218"></line>
+    <polygon class="refraction-modes-lab__first-head" data-first-head points=""></polygon>
+    <line class="refraction-modes-lab__second" data-second x1="320" y1="218" x2="190" y2="218"></line>
+    <polygon class="refraction-modes-lab__second-head" data-second-head points=""></polygon>
+    <circle class="refraction-modes-lab__origin" cx="450" cy="218" r="6"></circle>
+    <text class="refraction-modes-lab__first-label" data-first-label x="385" y="250" text-anchor="middle">1</text>
+    <text class="refraction-modes-lab__second-label" data-second-label x="255" y="250" text-anchor="middle">2</text>
+    <text class="refraction-modes-lab__sum-label" data-sum-label x="320" y="190" text-anchor="middle">A</text>
+    <text x="300" y="45" text-anchor="middle">амплитуда A(e → x)</text>
     <line class="refraction-modes-lab__axis" x1="605" y1="345" x2="1110" y2="345"></line>
     <line class="refraction-modes-lab__axis" x1="605" y1="75" x2="605" y2="345"></line>
     <path class="refraction-modes-lab__curve" data-probability-curve></path>
     <circle class="refraction-modes-lab__marker" data-probability-marker r="9"></circle>
-    <text x="857" y="45" text-anchor="middle">вероятность P(e → x)</text>
+    <text x="857" y="45" text-anchor="middle">вероятность P = |A|²</text>
     <text x="590" y="352" text-anchor="end">0</text>
     <text x="590" y="82" text-anchor="end">1</text>
     <text x="605" y="380" text-anchor="middle">0</text>
@@ -36,8 +42,11 @@
     <text x="857" y="420" text-anchor="middle">разность фаз</text>
   </svg>
   <p class="refraction-modes-lab__readout" aria-live="polite">
-    Вероятность перехода: <span data-probability-value>0.750</span>.
-    При равных фазах вклады двух волн в амплитуду перехода сокращаются.
+    Вклады волн: \(-\sin\theta_m\cos\theta_m\) (1) и \(\sin\theta_m\cos\theta_m\,e^{i\Delta\varphi}\) (2);
+    <span class="refraction-modes-lab__nowrap">длина стрелок
+    <span data-weight-value>0.433</span>,</span>
+    <span class="refraction-modes-lab__nowrap">вероятность \(|A|^2=\)
+    <span data-probability-value>0.596</span>.</span>
   </p>
 </div>
 ~~~
