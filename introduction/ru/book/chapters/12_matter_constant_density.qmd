@@ -464,9 +464,11 @@ $$ {#eq-matter-layer-noncommutativity}
 При подходящих фазах повторы $S_2S_1$ накапливают амплитуду. Это называется
 параметрическим усилением.
 
-::: {#anim-matter-parametric .animation title="Параметрическое усиление в чередующихся слоях" src="../assets/chapters/06_matter_oscillations/msw_parametric.mp4" poster="../assets/chapters/06_matter_oscillations/msw_parametric.png" url="https://neutrinohit.github.io/qr/neutrino-physics/0018/" qr="../assets/chapters/06_matter_oscillations/qr/msw_parametric.png"}
-Усреднение плотности теряет относительные фазы слоёв. Поэтому чередование двух
-слабо конвертирующих слоёв способно дать почти полный переход.
+::: {#anim-matter-parametric .animation title="Параметрическое усиление в чередующихся слоях" src="../assets/chapters/06_matter_oscillations/msw_parametric_layers.mp4" poster="../assets/chapters/06_matter_oscillations/msw_parametric_layers.png" url="https://neutrinohit.github.io/qr/neutrino-physics/0018/" qr="../assets/chapters/06_matter_oscillations/qr/msw_parametric.png"}
+Усреднение плотности теряет относительные фазы слоёв. Две среды выше резонанса
+($\theta=8^\circ$, $A_1=1{,}6$, $A_2=4{,}0$) по отдельности дают
+$P_{e\to x}\le0{,}16$ и $P_{e\to x}\le0{,}01$, а их чередование полупериодными
+слоями за пять пар полностью переводит $\nu_e$ в $\nu_x$.
 :::
 
 ## Итоги главы

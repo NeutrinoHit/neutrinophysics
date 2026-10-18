@@ -8,6 +8,15 @@
   const DM31_NO = 2.511e-3;
   const DM32_IO = -2.483e-3;
   const SAMPLE_COUNT = 3000;
+  // Best-fit points of the same fit, angles in degrees: sin²θ12 = 0.3088;
+  // NO: sin²θ13 = 0.02248, sin²θ23 = 0.470, δ = 212°;
+  // IO: sin²θ13 = 0.02262, sin²θ23 = 0.550, δ = 274°.
+  // The ordering button sets the angles and phase of its own point;
+  // the NO values equal the initial ones in the markup.
+  const BEST_FIT = {
+    NO: {theta12: "33.76", theta13: "8.62", theta23: "43.29", delta: "212"},
+    IO: {theta12: "33.76", theta13: "8.65", theta23: "47.87", delta: "274"}
+  };
   const VERTICES = [
     {x: 380, y: 42},
     {x: 100, y: 288},
@@ -245,6 +254,9 @@
       button.addEventListener("click", () => {
         ordering = button.dataset.ordering;
         selectButton(orderingButtons, button);
+        Object.entries(BEST_FIT[ordering]).forEach(([name, value]) => {
+          inputs[name].value = value;
+        });
         draw();
       });
     });

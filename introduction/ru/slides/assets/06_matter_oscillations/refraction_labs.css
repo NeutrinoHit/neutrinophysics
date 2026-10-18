@@ -106,24 +106,66 @@
   stroke-width: 5;
 }
 
-.refraction-modes-lab__circle {
+.refraction-modes-lab__locus {
   fill: none;
-  stroke: rgba(221, 237, 248, 0.38);
+  stroke: rgba(255, 211, 134, 0.42);
   stroke-width: 2;
+  stroke-dasharray: 7 7;
 }
 
 .refraction-modes-lab__first,
-.refraction-modes-lab__first-dot {
-  fill: #6ee0ec;
-  stroke: #6ee0ec;
+.refraction-modes-lab__second,
+.refraction-modes-lab__sum {
   stroke-width: 6;
+  stroke-linecap: round;
 }
 
-.refraction-modes-lab__second,
-.refraction-modes-lab__second-dot {
-  fill: #ffd386;
+.refraction-modes-lab__first {
+  stroke: #6ee0ec;
+}
+
+.refraction-modes-lab__first-head {
+  fill: #6ee0ec;
+}
+
+.refraction-modes-lab__second {
   stroke: #ffd386;
-  stroke-width: 6;
+}
+
+.refraction-modes-lab__second-head {
+  fill: #ffd386;
+}
+
+.refraction-modes-lab__sum {
+  stroke: #ff8f7a;
+  stroke-width: 9;
+  opacity: 0.85;
+}
+
+.refraction-modes-lab__sum-head {
+  fill: #ff8f7a;
+}
+
+.refraction-modes-lab svg .refraction-modes-lab__first-label,
+.refraction-modes-lab svg .refraction-modes-lab__second-label,
+.refraction-modes-lab svg .refraction-modes-lab__sum-label {
+  font-weight: 700;
+}
+
+.refraction-modes-lab svg .refraction-modes-lab__first-label {
+  fill: #6ee0ec;
+}
+
+.refraction-modes-lab svg .refraction-modes-lab__second-label {
+  fill: #ffd386;
+}
+
+.refraction-modes-lab svg .refraction-modes-lab__sum-label {
+  fill: #ff8f7a;
+}
+
+.refraction-modes-lab__origin {
+  fill: #e5eff7;
 }
 
 .refraction-modes-lab__curve {
@@ -145,9 +187,14 @@
 }
 
 .refraction-layers-lab__readout span,
-.refraction-modes-lab__readout span {
+.refraction-modes-lab__readout [data-weight-value],
+.refraction-modes-lab__readout [data-probability-value] {
   color: #ffd386;
   font-variant-numeric: tabular-nums;
+}
+
+.refraction-modes-lab__nowrap {
+  white-space: nowrap;
 }
 
 /* Narrow screens: applet pages only; a Reveal slide is scaled as a whole. */

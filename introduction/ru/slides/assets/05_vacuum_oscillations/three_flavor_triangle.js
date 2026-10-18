@@ -6,6 +6,15 @@
   const DM31_NO = 2.511e-3;
   const DM32_IO = -2.483e-3;
   const SAMPLE_COUNT = 3000;
+  // Лучшие точки того же фита, углы в градусах: sin²θ12 = 0.3088;
+  // NO: sin²θ13 = 0.02248, sin²θ23 = 0.470, δ = 212°;
+  // IO: sin²θ13 = 0.02262, sin²θ23 = 0.550, δ = 274°.
+  // Кнопка порядка масс ставит углы и фазу своей точки;
+  // значения NO совпадают с начальными в разметке.
+  const BEST_FIT = {
+    NO: {theta12: "33.76", theta13: "8.62", theta23: "43.29", delta: "212"},
+    IO: {theta12: "33.76", theta13: "8.65", theta23: "47.87", delta: "274"}
+  };
   const VERTICES = [
     {x: 380, y: 42},
     {x: 100, y: 288},
@@ -243,6 +252,9 @@
       button.addEventListener("click", () => {
         ordering = button.dataset.ordering;
         selectButton(orderingButtons, button);
+        Object.entries(BEST_FIT[ordering]).forEach(([name, value]) => {
+          inputs[name].value = value;
+        });
         draw();
       });
     });

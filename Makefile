@@ -4,10 +4,6 @@ PYTHON ?= $(shell pyenv which python 2>/dev/null || command -v python3)
 
 BOOK_DIR := introduction/ru/book
 BOOK_RENDER_FLAGS :=
-ifeq ($(GITHUB_ACTIONS),true)
-# CI prepares TeX packages before rendering; report actual LaTeX errors directly.
-BOOK_RENDER_FLAGS += -M latex-auto-install:false
-endif
 
 ci-setup:
 	@if command -v rsvg-convert >/dev/null 2>&1; then \
@@ -19,14 +15,6 @@ ci-setup:
 	  exit 1; \
 	fi
 	@rsvg-convert --version
-	@if [ "$(GITHUB_ACTIONS)" = true ]; then \
-	  quarto install tinytex --no-prompt && \
-	  sh scripts/setup_book_tex.sh; \
-	elif command -v lualatex >/dev/null 2>&1; then \
-	  echo 'LuaLaTeX already installed.'; \
-	else \
-	  quarto install tinytex --no-prompt; \
-	fi
 
 site: prune-unpublished
 	quarto render

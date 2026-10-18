@@ -165,6 +165,20 @@ description: "Интерактивные модели к курсу «Введе
   </article>
 
   <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 14</span>
+    <h2><a href="pendulums-matter.html">Связанные маятники в веществе</a></h2>
+    <p>Механическая модель MSW: укороченный маятник, медленный и быстрый проход через резонанс, гашение вакуумной моды.</p>
+    <a class="applet-card-action" href="pendulums-matter.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 15</span>
+    <h2><a href="matter-three-flavors.html">Три флэйвора в веществе</a></h2>
+    <p>Появление электронных нейтрино и антинейтрино в веществе Земли: порядок масс, фаза CP и диаграмма (P, P̄).</p>
+    <a class="applet-card-action" href="matter-three-flavors.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
     <span class="applet-card-kicker">Солнечные нейтрино</span>
     <h2><a href="gamow-window.html">Окно Гамова</a></h2>
     <p>Тепловой хвост, кулоновское туннелирование и узкий интервал энергий, где горят звёзды.</p>
