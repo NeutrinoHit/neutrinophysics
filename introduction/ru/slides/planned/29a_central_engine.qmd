@@ -1,8 +1,8 @@
 ---
-title: "Космические нейтрино. Сверхвысокие энергии"
-lecture-id: "29"
-lecture-number: 29
-subtitle: "Введение в физику нейтрино · Лекция 29"
+title: "Нейтрино сверхвысоких энергий. Центральная машина"
+lecture-id: "29a"
+lecture-number: "29a"
+subtitle: "Введение в физику нейтрино · Лекция 29a"
 author: "Дмитрий В. Наумов"
 institute: "ОИЯИ"
 date: "готовится"
@@ -12,7 +12,7 @@ format:
     logo: ../../../../shared/reveal/dvnlogo.png
     include-after-body:
       - text: |
-          <script data-external="1" data-context-home="https://neutrinohit.github.io/neutrinophysics/introduction/" data-context-home-label="Страница курса" src="../../../../shared/reveal/neutrinohit-reveal-footer.js"></script>
+          <script data-external="1" data-context-home="https://neutrinohit.github.io/ru/courses/neutrino-introduction.html" data-context-home-label="Страница курса" src="../../../../shared/reveal/neutrinohit-reveal-footer.js"></script>
       - ../../../../analytics/cloudflare-web-analytics.html
     embed-resources: false
     slide-number: true
