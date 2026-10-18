@@ -176,7 +176,7 @@ $$
 
 ## Проекция на другой флэйвор
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .nh-story-tabs}
 
 ### Детектор
 

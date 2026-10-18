@@ -38,7 +38,7 @@ execute:
 
 ## Как сделать порог почти независимым от угла? {#mac-e-filter}
 
-:::: {.panel-tabset .story-tabs .l06-tight}
+:::: {.panel-tabset .nh-story-tabs .l06-tight}
 
 ### Проблема
 ::: {.marginnote .note-right .absolute top=275 left=1245 width=315 style="--note-font-size: 0.62em; --note-math-font-size: 1em;"}
@@ -246,7 +246,7 @@ $$
 
 ## Электрон в неоднородном магнитном поле: что сохраняется?
 
-:::: {.panel-tabset .story-tabs .l06-tight}
+:::: {.panel-tabset .nh-story-tabs .l06-tight}
 
 ### Постановка
 
@@ -628,7 +628,7 @@ $$
 
 ## Направляющий центр в эффективном потенциале
 
-:::: {.panel-tabset .story-tabs .l06-tight}
+:::: {.panel-tabset .nh-story-tabs .l06-tight}
 
 ### Редукция
 
@@ -851,7 +851,7 @@ $$
 
 ## MAC-E-фильтр: от полей к порогу {#magnetic-collimation}
 
-:::: {.panel-tabset .story-tabs .l06-tight}
+:::: {.panel-tabset .nh-story-tabs .l06-tight}
 
 ### Схема
 
@@ -1180,7 +1180,7 @@ $$
 
 ## Пояса Ван Аллена: магнитная ловушка Земли
 
-:::: {.panel-tabset .story-tabs .l06-tight}
+:::: {.panel-tabset .nh-story-tabs .l06-tight}
 
 ### Открытие
 
@@ -1406,7 +1406,7 @@ $$
 
 ## Ещё примеры магнитных зеркал
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .nh-story-tabs}
 
 ### Солнечная корона
 

@@ -10,6 +10,7 @@ format:
   revealjs:
     theme: [black, ../../../shared/styles/neutrinohit-reveal.scss]
     css:
+      - assets/course-widgets.css
       - assets/08_alternative_neutrino_mass/lecture08.css
     logo: ../../../shared/reveal/dvnlogo.png
     include-after-body:
@@ -74,7 +75,7 @@ $$
 
 ## Циклотронная частота зависит от энергии {#cres-energy}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Релятивистская поправка
 
@@ -138,7 +139,7 @@ $E$ — кинетическая энергия электрона.
 
 ## Что приходит на вход приёмника?
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Излучаемая мощность
 
@@ -224,7 +225,7 @@ $$
 
 ## Как устроена приёмная цепочка {#cres-receiver}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Вся цепочка
 
@@ -312,7 +313,7 @@ $$
 
 ## Один электрон оставляет частотный трек {#project8-cres}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Как читать трек
 
@@ -386,7 +387,7 @@ $E$ в лекции.
 
 ## Магнитное зеркало продлевает наблюдение
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Слабая ловушка
 
@@ -464,7 +465,7 @@ $$
 
 ## Почему один электрон даёт несколько линий? {#cres-sidebands-origin}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Что слышит приёмник
 
@@ -565,7 +566,7 @@ $$
 
 ## Длина записи задаёт разрешение по энергии {#cres-linewidth}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Зачем нам ширина линии
 
@@ -628,7 +629,7 @@ $$
 
 ## Какой точности требуют частота и поле?
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Перевод ошибки частоты
 
@@ -690,7 +691,7 @@ $$
 
 ## От отдельных треков к спектру Project 8
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Ячейка
 
@@ -752,7 +753,7 @@ $$
 
 ## Project 8: первое измерение и следующие шаги
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Опубликованное измерение
 
@@ -879,7 +880,7 @@ $$
 
 ## Электронный захват в гольмии-163
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Что захватывается?
 
@@ -946,7 +947,7 @@ $$
 
 ## Почему калориметрический спектр содержит пики?
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Конечные состояния
 
@@ -1017,7 +1018,7 @@ $$
 
 ## Как измерить нагрев от одного распада?
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Теплоёмкость
 
@@ -1078,7 +1079,7 @@ $$
 
 ## Два способа превратить температуру в сигнал
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Магнитный термометр
 
@@ -1137,7 +1138,7 @@ $$
 
 ## Два распада могут выглядеть как один
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Наложение импульсов
 
@@ -1241,7 +1242,7 @@ $$
 
 ## Почему не любой низкоэнергетический распад удобен?
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Пример: рений-187
 
@@ -1293,7 +1294,7 @@ $$
 
 ## Недостающий импульс: пион и тау {#missing-mass}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Пион в покое
 
@@ -1387,7 +1388,7 @@ $$
 
 ## Способ четвёртый: засечь время прилёта {#sn-delay}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Скорость и масса
 
@@ -1488,7 +1489,7 @@ $$
 
 ## Зачем добиваться десятков миллиэлектронвольт?
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Два порядка масс
 
@@ -1582,7 +1583,7 @@ $$
 
 ## Литература и материалы
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### CRES
 

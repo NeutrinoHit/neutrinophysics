@@ -315,6 +315,48 @@ $code-block-font-size: 0.58em;
   background: transparent;
 }
 
+.reveal img.image-uncover.fragment {
+  --uncover-amount: 50%;
+  --uncover-width: 100%;
+  --uncover-max-width: 100%;
+  --uncover-max-height: 72vh;
+  --uncover-duration: 0.35s;
+
+  display: block;
+  width: var(--uncover-width) !important;
+  max-width: var(--uncover-max-width);
+  max-height: var(--uncover-max-height);
+  height: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border: none;
+  box-shadow: none;
+  object-fit: contain;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: clip-path var(--uncover-duration) ease;
+}
+
+.reveal img.image-uncover.fragment.from-left {
+  clip-path: inset(0 calc(100% - var(--uncover-amount)) 0 0);
+}
+
+.reveal img.image-uncover.fragment.from-right {
+  clip-path: inset(0 0 0 calc(100% - var(--uncover-amount)));
+}
+
+.reveal img.image-uncover.fragment.from-top {
+  clip-path: inset(0 0 calc(100% - var(--uncover-amount)) 0);
+}
+
+.reveal img.image-uncover.fragment.from-bottom {
+  clip-path: inset(calc(100% - var(--uncover-amount)) 0 0 0);
+}
+
+.reveal img.image-uncover.fragment.visible {
+  clip-path: inset(0 0 0 0);
+}
+
 .reveal .slide-media,
 .reveal video.slide-video {
   --media-width: 100%;
@@ -366,199 +408,6 @@ $code-block-font-size: 0.58em;
   --media-width: 100%;
 }
 
-.spectrum-widget input[type="range"] {
-  width: 280px !important;
-  border: none !important;
-  background: transparent !important;
-  accent-color: #ffb347;
-}
-
-.spectrum-widget input:not([type="range"]) {
-  color: #111111 !important;
-  background: #f2f2f2 !important;
-  border: 1px solid #999999 !important;
-}
-
-.spectrum-widget input[type="number"] {
-  margin-left: 0.55rem !important;
-}
-
-.spectrum-widget label,
-.spectrum-widget .observablehq,
-.spectrum-widget .observablehq--inspect {
-  color: #ffffff !important;
-}
-
-.spectrum-widget label {
-  column-gap: 0.45rem !important;
-}
-
-.katrin-integral-widget form,
-.cres-frequency-widget form {
-  column-gap: 0.85rem !important;
-}
-
-.spectrum-widget .spectrum-slider-label {
-  display: inline-flex;
-  padding-right: 0.55rem;
-}
-
-.spectrum-widget .observablehq--inspect {
-  display: none !important;
-}
-
-.spectrum-widget .observablehq {
-  width: 100%;
-  margin: 0.1rem 0;
-}
-
-.resolved-spectrum-widget .resolved-mass-controls {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-  align-items: center;
-  width: 100%;
-}
-
-.resolved-spectrum-widget .resolved-mass-controls label {
-  display: grid;
-  grid-template-columns: auto 3.2rem 1fr;
-  gap: 0.4rem;
-  align-items: center;
-  margin: 0;
-}
-
-.resolved-spectrum-widget .resolved-mass-controls output {
-  box-sizing: border-box;
-  min-width: 3.2rem;
-  padding: 0.18rem 0.28rem;
-  color: #111111;
-  text-align: left;
-  background: #f2f2f2;
-  border: 1px solid #999999;
-}
-
-.resolved-spectrum-widget .resolved-mass-controls input[type="range"] {
-  width: 180px !important;
-}
-
-.spectrum-widget .spectrum-panel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.2rem;
-  width: 100%;
-}
-
-.spectrum-widget .spectrum-legend {
-  display: flex;
-  justify-content: center;
-  gap: 1.4rem;
-  font-size: 0.78em;
-  font-weight: 600;
-}
-
-.spectrum-widget .spectrum-legend > span {
-  display: inline-flex;
-  gap: 0.35rem;
-  align-items: center;
-}
-
-.spectrum-widget .spectrum-swatch {
-  display: inline-block;
-  width: 1.2rem;
-  height: 0.22rem;
-}
-
-.spectrum-widget .spectrum-swatch-massless {
-  background: #4ea1ff;
-}
-
-.spectrum-widget .spectrum-swatch-massive {
-  background: #ffb347;
-}
-
-.spectrum-widget .spectrum-plot-row {
-  display: grid;
-  grid-template-columns: 3.6rem minmax(0, 1fr);
-  align-items: center;
-  width: 100%;
-}
-
-.spectrum-widget .spectrum-y-label {
-  justify-self: center;
-  font-size: 0.68em;
-  white-space: nowrap;
-  transform: rotate(-90deg);
-}
-
-.spectrum-widget .spectrum-plot-host {
-  position: relative;
-  width: 100%;
-  line-height: 1;
-  background: #ffffff !important;
-}
-
-.spectrum-widget .spectrum-plot-host svg {
-  display: block;
-  width: 100% !important;
-  max-width: none !important;
-  height: auto !important;
-  color: #111111 !important;
-  background: #ffffff !important;
-}
-
-.spectrum-widget .solar-gamow-widget,
-.spectrum-widget .solar-gamow-widget svg {
-  width: 100% !important;
-  max-width: none !important;
-}
-
-.spectrum-widget .solar-gamow-widget svg {
-  display: block;
-  height: auto !important;
-  max-height: none !important;
-}
-
-.spectrum-widget .spectrum-plot-host svg text {
-  fill: #111111;
-}
-
-.spectrum-widget .spectrum-x-label {
-  margin-top: -0.12rem;
-  font-size: 0.68em;
-}
-
-.spectrum-widget .spectrum-summary {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  color: #f2f2f2;
-  font-size: 0.58em;
-}
-
-.spectrum-widget .spectrum-integral-overlay {
-  position: absolute;
-  top: 1.35rem;
-  right: 3.5rem;
-  display: flex;
-  width: 19rem;
-  flex-direction: row;
-  gap: 0.35rem;
-  align-items: center;
-  justify-content: center;
-  color: #111111 !important;
-  font-size: 0.56em;
-  line-height: 1.05;
-  white-space: nowrap;
-  pointer-events: none;
-}
-
-.spectrum-widget .spectrum-integral-overlay mjx-container {
-  color: #111111 !important;
-}
-
-/* Sticky margin notes, shared with neutrinohit-map. */
 .reveal .marginnote {
   --note-width: 13.5rem;
   --note-padding: 0.82rem 0.92rem;
@@ -656,7 +505,15 @@ $code-block-font-size: 0.58em;
   --note-font-size: 0.78em;
 }
 
-.reveal .panel-tabset.story-tabs,
-.reveal .panel-tabset.story-tabs > .tab-content.story-tabs {
+/*
+ * Tabset with story content. Quarto copies the tabset classes onto the inner
+ * .tab-content, so a font-size set on the class would be applied twice. This
+ * keeps both levels at the inherited size; size the text through the slide or
+ * a wrapper instead.
+ *
+ *   ::: {.panel-tabset .nh-story-tabs}
+ */
+.reveal .panel-tabset.nh-story-tabs,
+.reveal .panel-tabset.nh-story-tabs > .tab-content.nh-story-tabs {
   font-size: 1em;
 }

@@ -9,7 +9,9 @@ institute: "ОИЯИ"
 format:
   revealjs:
     theme: [black, ../../../../shared/styles/neutrinohit-reveal.scss]
-    css: ../assets/13_solar_neutrinos/solar-neutrinos.css
+    css:
+      - ../assets/course-widgets.css
+      - ../assets/13_solar_neutrinos/solar-neutrinos.css
     logo: ../../../../shared/reveal/dvnlogo.png
     include-after-body:
       - text: |
@@ -69,7 +71,7 @@ $$
 
 ## От уравнения переноса к $D(r)$
 
-:::: {.panel-tabset .story-tabs .photon-diffusion-tabs .photon-theory-tabs}
+:::: {.panel-tabset .nh-story-tabs .photon-diffusion-tabs .photon-theory-tabs}
 
 ### 1 · Полное уравнение
 
@@ -235,7 +237,7 @@ $$
 
 ## Среднее время выхода лучистой энергии
 
-:::: {.panel-tabset .story-tabs .photon-diffusion-tabs}
+:::: {.panel-tabset .nh-story-tabs .photon-diffusion-tabs}
 
 ### 1 · Что диффундирует
 
@@ -376,7 +378,7 @@ $r_{\rm cz}$, 24% — на внешние слои. Последние 9.8 ты�
 
 ## Почему говорят «около 100 тысяч лет»?
 
-:::: {.panel-tabset .story-tabs .photon-diffusion-tabs .photon-history-tabs}
+:::: {.panel-tabset .nh-story-tabs .photon-diffusion-tabs .photon-history-tabs}
 
 ### Грубая оценка
 
@@ -681,7 +683,7 @@ $$
 
 ## Уравнения структуры
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .nh-story-tabs}
 
 ### Масса
 
@@ -860,7 +862,7 @@ $$
 
 ## Ветви pp-цепочки
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .nh-story-tabs}
 
 ### pp и pep
 
@@ -1220,7 +1222,7 @@ $$
 
 ## Основные каналы
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .nh-story-tabs}
 
 ### Радиохимия
 
@@ -1322,7 +1324,7 @@ $$
 
 ## От первого дефицита к доказательству
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .nh-story-tabs}
 
 ### Homestake
 
@@ -1526,7 +1528,7 @@ $$
 
 ## Что измеряет форма
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .nh-story-tabs}
 
 ### Нормировка
 
@@ -1584,7 +1586,7 @@ $$
 
 ## Что проверить численно
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .nh-story-tabs}
 
 ### Солнце
 

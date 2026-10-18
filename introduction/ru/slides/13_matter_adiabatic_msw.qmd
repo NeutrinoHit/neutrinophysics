@@ -73,7 +73,7 @@ $\theta_m(x)$. Успевает ли нейтрино оставаться в о
 
 ## Уравнение в мгновенном базисе
 
-:::: {.panel-tabset .story-tabs .nh-story-tabs}
+:::: {.panel-tabset .nh-story-tabs}
 
 ### Подстановка
 

@@ -113,7 +113,7 @@ $$
 
 ## Движение в однородном постоянном магнитном поле {#uniform-b-motion}
 
-:::::: {.panel-tabset .story-tabs .l05-tight}
+:::::: {.panel-tabset .nh-story-tabs .l05-tight}
 
 ### Главное
 
@@ -442,7 +442,7 @@ $$
 
 ## Три языка
 
-::::: {.panel-tabset .story-tabs .l05-tight}
+::::: {.panel-tabset .nh-story-tabs .l05-tight}
 
 ### Ньютон
 
@@ -517,7 +517,7 @@ $$
 
 ## Фазовая траектория
 
-:::: {.panel-tabset .story-tabs .l05-tight}
+:::: {.panel-tabset .nh-story-tabs .l05-tight}
 
 ### Постоянная энергия
 
@@ -664,7 +664,7 @@ $$
 
 ## Канонические переменные
 
-::::: {.panel-tabset .story-tabs .l05-tight}
+::::: {.panel-tabset .nh-story-tabs .l05-tight}
 
 ### Замена переменных
 
@@ -716,7 +716,7 @@ $$
 
 ## Циклотронная орбита в переменных $(\theta,J)$
 
-:::: {.panel-tabset .story-tabs .l05-tight}
+:::: {.panel-tabset .nh-story-tabs .l05-tight}
 
 ### $(Q,P)$
 
@@ -937,7 +937,7 @@ $$
 
 ## Многоликое действие $J$
 
-::::: {.panel-tabset .story-tabs .l05-tight}
+::::: {.panel-tabset .nh-story-tabs .l05-tight}
 
 ### Циклотронная орбита
 

@@ -1,4 +1,4 @@
-:::: {.panel-tabset .story-tabs .helicity-story-tabs .photon-tag-tabs}
+:::: {.panel-tabset .nh-story-tabs .helicity-story-tabs .photon-tag-tabs}
 
 ### $\gamma$-переход
 

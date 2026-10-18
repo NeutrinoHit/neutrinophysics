@@ -10,6 +10,7 @@ format:
   revealjs:
     theme: [black, ../../../shared/styles/neutrinohit-reveal.scss]
     css:
+      - assets/course-widgets.css
       - assets/07_katrin/lecture07.css
     logo: ../../../shared/reveal/dvnlogo.png
     include-after-body:
@@ -91,7 +92,7 @@ $$
 
 ## Безоконный источник: газ должен течь {#katrin-source}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Источник
 
@@ -167,7 +168,7 @@ $$
 
 ## Электроны пропустить, тритий остановить
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Изогнутая труба
 
@@ -217,7 +218,7 @@ DPS и CPS на технических схемах — секции диффе�
 
 ## Чем опасен газ на пути электрона?
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Плюс и минус
 
@@ -287,7 +288,7 @@ $$
 
 ## Сколько столкновений испытает электрон?
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Путь в газе
 
@@ -407,7 +408,7 @@ $$
 
 ## Электронная пушка: что измеряем? {#electron-gun}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Задача
 
@@ -498,7 +499,7 @@ $$
 
 ## Как измеряют потери энергии? {#electron-gun-measurement}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Заряжаем пушку!
 
@@ -643,7 +644,7 @@ $$
 
 ## Восстанавливаем функцию потерь {#electron-gun-fit}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Модель отклика
 
@@ -758,7 +759,7 @@ $r_{\mathrm{gun}}$ — нормированный сигнал пушки; фо�
 
 ## Как измерить 18 600 вольт с точностью до сотых?
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Что делает каждый прибор
 
@@ -826,7 +827,7 @@ $$
 
 ## Как удерживают точность делителя? {#katrin-divider-stability}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Резисторы и среда
 
@@ -880,7 +881,7 @@ $$
 
 ## Криптон даёт линии известной энергии {#krypton-calibration}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Внутренняя конверсия
 
@@ -984,7 +985,7 @@ $$
 
 ## У электрона есть ещё и начальный потенциал
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Плазма в источнике
 
@@ -1030,7 +1031,7 @@ $$
 
 ## Что регистрирует кремниевый детектор?
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### От электрона к импульсу
 
@@ -1082,7 +1083,7 @@ $$
 
 ## Фон меняет устройство эксперимента
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Запертые электроны
 
@@ -1176,7 +1177,7 @@ $$
 
 ## Одна настройка напряжения — одна скорость счёта {#katrin-integral-spectrum}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Наблюдаемая величина
 
@@ -1215,7 +1216,7 @@ $$
 
 ## Где в интегральном спектре находится масса? {#katrin-mass-shape}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Интеграл можно взять
 
@@ -1272,7 +1273,7 @@ $$
 
 ## Как распределить время измерения?
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Близко к концу
 
@@ -1329,7 +1330,7 @@ $$
 
 ## Как калибровки входят в определение массы?
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Сравнение модели и данных
 
@@ -1376,7 +1377,7 @@ $$
 
 ## Почему минимум может оказаться при $m_\beta^2<0$?
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Флуктуация около нуля
 
@@ -1431,7 +1432,7 @@ $$
 
 ## Результат KATRIN {#katrin-result}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Результат
 
@@ -1495,7 +1496,7 @@ $$
 
 ## Что можно измерить следующим?
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Излом от тяжёлого состояния
 
@@ -1554,7 +1555,7 @@ KATRIN извлекает массу нейтрино из формы спект
 
 ## Литература и материалы
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Установка и результат
 
