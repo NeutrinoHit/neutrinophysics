@@ -155,7 +155,18 @@ def save_tables(spectrum: pd.DataFrame, lines: pd.DataFrame) -> None:
     spectrum.to_csv(SPECTRUM_CSV, index=False)
     lines.to_csv(LINE_CSV, index=False)
     spectrum.to_csv(STUDENT_SPECTRUM_CSV, index=False)
-    lines.to_csv(STUDENT_LINE_CSV, index=False)
+    student_lines(lines).to_csv(STUDENT_LINE_CSV, index=False)
+
+
+def student_lines(lines: pd.DataFrame) -> pd.DataFrame:
+    """Line sources for students: plain-text uncertainty, no plot labels."""
+    out = lines.copy()
+    out["uncertainty"] = out["uncertainty"].str.replace(
+        r"^\$\\pm\s*(.*?)\\%\$$", r"\1%", regex=True
+    )
+    return out[
+        ["source", "E_MeV", "flux_fraction", "uncertainty", "total_source_flux_cm2_s", "line_flux_cm2_s"]
+    ]
 
 
 def update_student_archive() -> None:
