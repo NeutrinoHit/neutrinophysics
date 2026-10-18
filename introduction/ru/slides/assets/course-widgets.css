@@ -1,0 +1,196 @@
+/* Виджеты спектров курса «Введение»: β-спектр у границы, график Кюри,
+ * энергетическое разрешение, спектр с тремя массами, интегральный спектр
+ * KATRIN, CRES, правдоподобие по сверхновой, окно Гамова. Общие для лекций
+ * 04, 07, 08 и 22; подключаются после общего scss и до CSS лекции. */
+
+.spectrum-widget input[type="range"] {
+  width: 280px !important;
+  border: none !important;
+  background: transparent !important;
+  accent-color: #ffb347;
+}
+
+.spectrum-widget input:not([type="range"]) {
+  color: #111111 !important;
+  background: #f2f2f2 !important;
+  border: 1px solid #999999 !important;
+}
+
+.spectrum-widget input[type="number"] {
+  margin-left: 0.55rem !important;
+}
+
+.spectrum-widget label,
+.spectrum-widget .observablehq,
+.spectrum-widget .observablehq--inspect {
+  color: #ffffff !important;
+}
+
+.spectrum-widget label {
+  column-gap: 0.45rem !important;
+}
+
+.katrin-integral-widget form,
+.cres-frequency-widget form {
+  column-gap: 0.85rem !important;
+}
+
+.spectrum-widget .spectrum-slider-label {
+  display: inline-flex;
+  padding-right: 0.55rem;
+}
+
+.spectrum-widget .observablehq--inspect {
+  display: none !important;
+}
+
+.spectrum-widget .observablehq {
+  width: 100%;
+  margin: 0.1rem 0;
+}
+
+.resolved-spectrum-widget .resolved-mass-controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+}
+
+.resolved-spectrum-widget .resolved-mass-controls label {
+  display: grid;
+  grid-template-columns: auto 3.2rem 1fr;
+  gap: 0.4rem;
+  align-items: center;
+  margin: 0;
+}
+
+.resolved-spectrum-widget .resolved-mass-controls output {
+  box-sizing: border-box;
+  min-width: 3.2rem;
+  padding: 0.18rem 0.28rem;
+  color: #111111;
+  text-align: left;
+  background: #f2f2f2;
+  border: 1px solid #999999;
+}
+
+.resolved-spectrum-widget .resolved-mass-controls input[type="range"] {
+  width: 180px !important;
+}
+
+.spectrum-widget .spectrum-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  width: 100%;
+}
+
+.spectrum-widget .spectrum-legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.4rem;
+  font-size: 0.78em;
+  font-weight: 600;
+}
+
+.spectrum-widget .spectrum-legend > span {
+  display: inline-flex;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.spectrum-widget .spectrum-swatch {
+  display: inline-block;
+  width: 1.2rem;
+  height: 0.22rem;
+}
+
+.spectrum-widget .spectrum-swatch-massless {
+  background: #4ea1ff;
+}
+
+.spectrum-widget .spectrum-swatch-massive {
+  background: #ffb347;
+}
+
+.spectrum-widget .spectrum-plot-row {
+  display: grid;
+  grid-template-columns: 3.6rem minmax(0, 1fr);
+  align-items: center;
+  width: 100%;
+}
+
+.spectrum-widget .spectrum-y-label {
+  justify-self: center;
+  font-size: 0.68em;
+  white-space: nowrap;
+  transform: rotate(-90deg);
+}
+
+.spectrum-widget .spectrum-plot-host {
+  position: relative;
+  width: 100%;
+  line-height: 1;
+  background: #ffffff !important;
+}
+
+.spectrum-widget .spectrum-plot-host svg {
+  display: block;
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+  color: #111111 !important;
+  background: #ffffff !important;
+}
+
+.spectrum-widget .solar-gamow-widget,
+.spectrum-widget .solar-gamow-widget svg {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.spectrum-widget .solar-gamow-widget svg {
+  display: block;
+  height: auto !important;
+  max-height: none !important;
+}
+
+.spectrum-widget .spectrum-plot-host svg text {
+  fill: #111111;
+}
+
+.spectrum-widget .spectrum-x-label {
+  margin-top: -0.12rem;
+  font-size: 0.68em;
+}
+
+.spectrum-widget .spectrum-summary {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  color: #f2f2f2;
+  font-size: 0.58em;
+}
+
+.spectrum-widget .spectrum-integral-overlay {
+  position: absolute;
+  top: 1.35rem;
+  right: 3.5rem;
+  display: flex;
+  width: 19rem;
+  flex-direction: row;
+  gap: 0.35rem;
+  align-items: center;
+  justify-content: center;
+  color: #111111 !important;
+  font-size: 0.56em;
+  line-height: 1.05;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.spectrum-widget .spectrum-integral-overlay mjx-container {
+  color: #111111 !important;
+}

@@ -12,11 +12,11 @@
   --matter-line: rgba(180, 208, 235, 0.25);
 }
 
-.reveal .story-tabs .tab-content {
+.reveal .nh-story-tabs .tab-content {
   font-size: 0.91em;
 }
 
-.reveal .story-tabs .tab-pane > :first-child {
+.reveal .nh-story-tabs .tab-pane > :first-child {
   margin-top: 0.25em;
 }
 

@@ -105,7 +105,7 @@ $$
 
 ## Безмассовую частицу не обогнать
 
-:::: {.panel-tabset .story-tabs .helicity-story-tabs}
+:::: {.panel-tabset .nh-story-tabs .helicity-story-tabs}
 
 ### Массивная частица
 
@@ -161,7 +161,7 @@ $$
 
 ## Нейтрино почти безмассовы
 
-:::: {.panel-tabset .story-tabs .helicity-story-tabs}
+:::: {.panel-tabset .nh-story-tabs .helicity-story-tabs}
 
 ### Релятивистский предел
 
@@ -231,7 +231,7 @@ $$
 
 ## Спиральность и киральность — не одно и то же
 
-:::: {.panel-tabset .story-tabs .chirality-tabs}
+:::: {.panel-tabset .nh-story-tabs .chirality-tabs}
 
 ### Два понятия
 
@@ -615,7 +615,7 @@ $$
 
 ## Первый переход: электронный захват
 
-:::: {.panel-tabset .story-tabs .helicity-story-tabs}
+:::: {.panel-tabset .nh-story-tabs .helicity-story-tabs}
 
 ### Реакция
 
@@ -747,7 +747,7 @@ $m_{B^*}=0$ остаются две возможности.
 только фотоны нужной энергии. Сначала проверим, совпадают ли энергии
 испускания и поглощения для покоящихся ядер.
 
-:::: {.panel-tabset .story-tabs .helicity-story-tabs}
+:::: {.panel-tabset .nh-story-tabs .helicity-story-tabs}
 
 ### Вопросы
 1. Ядро $B^*$ испускает фотон в переходе $B^*\to B+\gamma$.
@@ -810,7 +810,7 @@ $$
 
 ## Фильтр выбирает геометрию
 
-:::: {.panel-tabset .story-tabs .helicity-story-tabs .resonance-geometry-tabs}
+:::: {.panel-tabset .nh-story-tabs .helicity-story-tabs .resonance-geometry-tabs}
 
 ### Захват электрона
 
@@ -993,7 +993,7 @@ $\mathbf p_{B^*}$ и $\mathbf p_\gamma$.
 
 ## Почему ядро успевает излучить
 
-:::: {.panel-tabset .story-tabs .helicity-story-tabs}
+:::: {.panel-tabset .nh-story-tabs .helicity-story-tabs}
 
 ### Термализация или излучение?
 
@@ -1176,7 +1176,7 @@ ${}^{152}\mathrm{Sm}$: источник создаёт фотоны, а поко
 
 ## Что фактически сравнивают
 
-:::: {.panel-tabset .story-tabs .helicity-story-tabs}
+:::: {.panel-tabset .nh-story-tabs .helicity-story-tabs}
 
 ### Два счёта
 

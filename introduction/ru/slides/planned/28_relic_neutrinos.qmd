@@ -52,7 +52,7 @@ execute:
 
 ## Когда нейтрино перестали сталкиваться с веществом {#cnb-decoupling}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Скорость взаимодействий против расширения
 
@@ -115,7 +115,7 @@ $$
 
 ## Реликтовый фон чуть холоднее, чем кажется {#cnb-temperature}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Кто нагрел фотоны
 
@@ -158,7 +158,7 @@ $$
 
 ## Сколько нейтрино в чашке чая {#cnb-density}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Формула плотности
 
@@ -195,7 +195,7 @@ $$
 
 ## При такой температуре нейтрино почти не движутся {#cnb-nonrelativistic}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Средний импульс
 
@@ -234,7 +234,7 @@ $$
 
 ## Почему нельзя просто рассеять реликтовый нейтрино {#cnb-scattering-hopeless}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Оценка сечения
 
@@ -275,7 +275,7 @@ $$
 
 ## Ядро, которое и так готово распасться, поглотит нейтрино даром {#cnb-capture}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Три родственные реакции
 
@@ -316,7 +316,7 @@ $$
 
 ## Где на спектре электрона искать сигнал {#cnb-spectrum-line}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Кинематика захвата
 
@@ -360,7 +360,7 @@ $$
 
 ## Сколько событий может дать 100 граммов трития {#cnb-rate}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Сечение захвата
 
@@ -423,7 +423,7 @@ $$
 
 ## Почему нужно разрешение лучше десятков миллиэлектронвольт {#cnb-resolution}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Масштаб задачи
 
@@ -454,7 +454,7 @@ $$
 
 ## PTOLEMY: тритий на атомарно тонкой подложке {#ptolemy-concept}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Зачем графен
 
@@ -491,7 +491,7 @@ $$
 
 ## PTOLEMY: где проект находится сейчас {#ptolemy-status}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Тринадцать лет разработки
 
@@ -534,7 +534,7 @@ $$
 
 ## QTNM: другой путь к атомарному тритию {#qtnm}
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### От CRES к реликтовым нейтрино
 
@@ -596,7 +596,7 @@ $$
 
 ## Литература и материалы
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .nh-story-tabs}
 
 ### Космология реликтовых нейтрино
 

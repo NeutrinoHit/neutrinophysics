@@ -39,7 +39,7 @@ execute:
 
 ## Два базиса
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .nh-story-tabs}
 
 ### Флэйворный
 
@@ -242,7 +242,7 @@ $$
 
 ## Дирак и Майорана: сколько фаз?
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .nh-story-tabs}
 
 ### Частица Дирака
 
@@ -432,7 +432,7 @@ $$
 
 ## Поль Дирак и Этторе Майорана
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .nh-story-tabs}
 
 ### Поль Дирак
 
@@ -478,7 +478,7 @@ $1/2$ и привело к предсказанию античастицы эл�
 
 ## Амплитуда перехода
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .nh-story-tabs}
 
 ### Источник
 
@@ -575,7 +575,7 @@ $$
 
 ## Выживание и появление
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .nh-story-tabs}
 
 ### Выживание
 
@@ -704,7 +704,7 @@ $$
 
 ## Сесилия Ярлског
 
-:::::: {.panel-tabset .story-tabs}
+:::::: {.panel-tabset .nh-story-tabs}
 
 ### Инвариант
 

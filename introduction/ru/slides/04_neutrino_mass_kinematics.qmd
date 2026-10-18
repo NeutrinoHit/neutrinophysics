@@ -11,6 +11,7 @@ format:
     theme: [black, ../../../shared/styles/neutrinohit-reveal.scss]
     logo: ../../../shared/reveal/dvnlogo.png
     css:
+      - assets/course-widgets.css
       - assets/04_direct_neutrino_mass/lecture04.css
     include-after-body:
       - text: |
@@ -72,7 +73,7 @@ $$
 
 ## Функция Ферми $F(Z,E;A)$ {#fermi-function}
 
-:::: {.panel-tabset .story-tabs .fermi-function-tabs}
+:::: {.panel-tabset .nh-story-tabs .fermi-function-tabs}
 
 ### Конечное состояние
 
@@ -244,7 +245,7 @@ $$
 
 ## Масса, флэйвор и конечное состояние
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .nh-story-tabs}
 
 ### Состояния
 
@@ -429,7 +430,7 @@ $$
 
 ## Почему выбран тритий?
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .nh-story-tabs}
 
 ### Распад
 
@@ -494,7 +495,7 @@ $$
 
 ## Что изменили эксперименты 1980-х?
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .nh-story-tabs}
 
 ### ИТЭФ
 
