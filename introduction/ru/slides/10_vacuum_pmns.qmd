@@ -709,7 +709,7 @@ $$
 
 ## Сесилия Ярлског
 
-:::::: {.panel-tabset .nh-story-tabs}
+:::::: {.panel-tabset .nh-story-tabs .jarlskog-tabs}
 
 ### Инвариант
 
@@ -758,53 +758,190 @@ $J_{\rm CP}\ne0$, только если все три угла отличны о
 
 ::::
 
-### Почему эти элементы
+### Четвёрка
 
-::: {.jarlskog-why}
+::: {.marginnote .note-right .absolute top=250 left=1260 width=340 style="--note-font-size: 0.66em; --note-math-font-size: 1em;"}
+<span class="note-title">Напоминание</span>
 
-:::: {.columns}
+Перефазировка полей
+$\ell_\alpha\to e^{i\varphi_\alpha}\ell_\alpha$,
+$\nu_i\to e^{i\psi_i}\nu_i$ не меняет физику
+(вкладка «Частица Дирака»).
+:::
 
-::: {.column width="53%"}
+::: {.jarlskog-main}
 
-**Почему четыре множителя.** Фазы полей можно переопределить:
-$U_{\alpha i}\to e^{i(\varphi_\alpha-\psi_i)}U_{\alpha i}$. Наблюдаемая
-величина от этого меняться не должна, поэтому каждый индекс строки и столбца
-входит в произведение дважды: один раз в $U$, другой в $U^*$. Один элемент
-даёт вещественное $|U_{\alpha i}|^2$. Самое короткое произведение, в котором
-может остаться фаза, занимает две строки и два столбца.
-
-**Почему $e,\mu$ и $1,2$.** Выбор удобен, но не обязателен. Из унитарности
+- Фазы полей произвольны:
+  $U_{\alpha i}\to e^{i(\varphi_\alpha-\psi_i)}U_{\alpha i}$.
+- Один элемент меняет фазу, поэтому его фаза ненаблюдаема.
+- Из двух элементов инвариантна только пара
+  $U_{\alpha i}U_{\alpha i}^*=|U_{\alpha i}|^2$, а она вещественна.
+- Строки $\alpha\ne\beta$ и столбцы $i\ne j$ дают четвёрку
 
 $$
-\operatorname{Im}\!\left(U_{\alpha i}U_{\beta j}U_{\alpha j}^*U_{\beta i}^*\right)
-=J_{\rm CP}\sum_{\gamma,k}\varepsilon_{\alpha\beta\gamma}\,\varepsilon_{ijk}.
+Q_{\alpha\beta}^{ij}=U_{\alpha i}U_{\beta j}U_{\alpha j}^*U_{\beta i}^*.
 $$
 
-Все девять подматриц $2\times2$ дают $\pm J_{\rm CP}$; перестановка двух
-строк или двух столбцов меняет знак.
+- Каждый индекс входит один раз в $U$ и один раз в $U^*$: фазы
+  сокращаются, а $Q$ может быть комплексным.
+- Для антинейтрино $U\to U^*$, поэтому
+  $\operatorname{Im}Q\to-\operatorname{Im}Q$: это CP-нечётная величина.
 
 :::
 
+### Утверждение
+
+::: {.marginnote .note-right .absolute top=250 left=1260 width=340 style="--note-font-size: 0.66em; --note-math-font-size: 1em;"}
+<span class="note-title">Символ Леви-Чивиты</span>
+
+$\varepsilon_{e\mu\tau}=\varepsilon_{123}=1$.
+
+Перестановка двух индексов меняет знак; если два индекса совпадают,
+$\varepsilon=0$.
+:::
+
+::: {.jarlskog-main}
+
+- Пару строк $\{\alpha,\beta\}$ можно выбрать тремя способами, пару
+  столбцов $\{i,j\}$ тоже тремя.
+- Получается $3\cdot3=9$ подматриц $2\times2$ и девять четвёрок $Q$.
+
+**Утверждение.** При трёх флэйворах их мнимые части совпадают с точностью
+до знака:
+
+$$
+\boxed{
+\operatorname{Im}Q_{\alpha\beta}^{ij}
+=J_{\rm CP}\sum_{\gamma,k}\varepsilon_{\alpha\beta\gamma}\,\varepsilon_{ijk}
+},
+\qquad
+J_{\rm CP}=\operatorname{Im}Q_{e\mu}^{12}.
+$$
+
+- Знак задаёт произведение $\varepsilon_{\alpha\beta\gamma}\varepsilon_{ijk}$.
+- Значит, у трёх флэйворов один CP-нечётный инвариант смешивания.
+
+:::
+
+### Доказательство
+
+::: {.marginnote .note-right .absolute top=250 left=1260 width=340 style="--note-font-size: 0.66em; --note-math-font-size: 1em;"}
+<span class="note-title">Нужно</span>
+
+Ортогональность строк:
+$\sum_iU_{\alpha i}U_{\beta i}^*=0$ при $\alpha\ne\beta$.
+
+$\operatorname{Im}|z|^2=0$,
+$\operatorname{Im}(w z^*)=-\operatorname{Im}(z w^*)$.
+:::
+
+::: {.jarlskog-main}
+
+1. Для строк $\alpha\ne\beta$ положим $z_i=U_{\alpha i}U_{\beta i}^*$.
+   Ортогональность: $z_1+z_2+z_3=0$.
+2. Произведение двух слагаемых даёт четвёрку:
+   $z_1z_2^*=Q_{\alpha\beta}^{12}$.
+3. Подставим $z_3=-(z_1+z_2)$:
+
+$$
+z_2z_3^*=-z_2z_1^*-|z_2|^2
+\;\Rightarrow\;
+\operatorname{Im}(z_2z_3^*)=\operatorname{Im}(z_1z_2^*).
+$$
+
+4. Так же $\operatorname{Im}(z_3z_1^*)=\operatorname{Im}(z_1z_2^*)$, а
+   перестановка столбцов меняет знак.
+5. Ортогональность столбцов повторяет шаги 1–4 для пар строк. $\square$
+
+:::
+
+### Площадь
+
+:::: {.columns}
+
 ::: {.column width="44%"}
 
-**Что ещё он описывает.** Для трёх флэйворов это единственный инвариант
-такого рода. В вакууме все разности
-$P(\nu_\alpha\to\nu_\beta)-P(\bar\nu_\alpha\to\bar\nu_\beta)$
-пропорциональны $J_{\rm CP}$, и при различных массах CP в осцилляциях
-сохраняется тогда и только тогда, когда $J_{\rm CP}=0$. От параметризации он
-не зависит.
+![](assets/05_vacuum_oscillations/jarlskog_triangle.svg){width="100%" fig-alt="Векторы z1, z2, z3 замыкают треугольник унитарности; пунктиром достроен параллелограмм на z1 и z2"}
 
-Майорановские фазы в $J_{\rm CP}$ не входят: в осцилляциях они сокращаются.
-При четырёх флэйворах и более независимых фаз больше, и одного $J_{\rm CP}$
-уже не хватает.
+:::
 
-Теоретический максимум $1/(6\sqrt3)\approx0.096$. Для лептонов при
-$|\sin\delta_{\rm CP}|=1$ получается около $0.034$; у кварков измерено
-всего $3\cdot10^{-5}$.
+::: {.column width="54%"}
+
+- $z_1+z_2+z_3=0$: три вектора замыкают **треугольник унитарности**.
+- Треугольник — половина параллелограмма на $z_1$ и $z_2$:
+
+$$
+\boxed{
+S=\frac12\left|z_1\times z_2\right|
+=\frac12\left|\operatorname{Im}(z_1^*z_2)\right|
+=\frac12|J_{\rm CP}|
+}.
+$$
+
+- Площадь одна у всех шести треугольников: трёх по строкам и трёх по
+  столбцам.
+- $J_{\rm CP}=0$: треугольник вырождается в отрезок.
 
 :::
 
 ::::
+
+### Следствия
+
+::: {.marginnote .note-right .absolute top=250 left=1260 width=340 style="--note-font-size: 0.66em; --note-math-font-size: 1em;"}
+<span class="note-title">Напоминание</span>
+
+$X_{\alpha\beta}^{ij}=U_{\alpha i}^*U_{\beta i}U_{\alpha j}U_{\beta j}^*$
+входит в вероятность с $\sin2\Delta_{ij}$ (слайд «Квадрат амплитуды»).
+:::
+
+::: {.jarlskog-main}
+
+- **Два флэйвора:** $z_1+z_2=0$, треугольник вырожден, CP сохраняется.
+- **Осцилляции:** $X^{ij}_{\alpha\beta}$ тоже четвёрка,
+  $\operatorname{Im}X^{ij}_{\alpha\beta}=\pm J_{\rm CP}$. Поэтому
+  $P(\nu_\alpha\to\nu_\beta)-P(\bar\nu_\alpha\to\bar\nu_\beta)\propto
+  J_{\rm CP}$ (следующий слайд).
+- **Нужны три различные массы:** при $\Delta m^2_{ij}=0$ разность исчезает.
+- **Выживание:** $\varepsilon_{\alpha\alpha\gamma}=0$, асимметрии нет.
+- **Майорановские фазы** столбцов в каждой четвёрке сокращаются.
+- **$N$ флэйворов:** $(N-1)(N-2)/2$ дираковских фаз; при $N\ge4$ одного
+  $J_{\rm CP}$ не хватает.
+
+:::
+
+### Величина
+
+::: {.marginnote .note-right .absolute top=250 left=1260 width=340 style="--note-font-size: 0.66em; --note-math-font-size: 1em;"}
+<span class="note-title">Ярлског, 1985</span>
+
+Для кварков
+
+$$
+\det[H_u,H_d]\propto iJ\,D_uD_d,
+$$
+
+где $H=MM^\dagger$, а $D_q$ — произведение разностей квадратов масс.
+Нужны и фаза, и невырожденные массы.
+:::
+
+::: {.jarlskog-main}
+
+$$
+J_{\rm CP}=\frac18\sin2\theta_{12}\sin2\theta_{23}
+\sin2\theta_{13}\cos\theta_{13}\sin\delta_{\rm CP}.
+$$
+
+- **Максимум:** $\theta_{12}=\theta_{23}=45^\circ$, $|\sin\delta_{\rm CP}|=1$,
+  а $c_{13}^2s_{13}=(1-x)\sqrt x$ максимален при $x=\sin^2\theta_{13}=1/3$:
+
+$$
+|J_{\rm CP}|\le\frac1{6\sqrt3}\approx0.096,\qquad |U_{\alpha i}|^2=\frac13.
+$$
+
+- **Лептоны (NuFIT 6.1):** $J_{\rm CP}\approx0.034\sin\delta_{\rm CP}$;
+  в лучшей точке NO $J_{\rm CP}\approx-0.018$.
+- **Кварки:** $J\approx3\cdot10^{-5}$.
 
 :::
 
