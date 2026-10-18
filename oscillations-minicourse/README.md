@@ -29,8 +29,10 @@ English renders from the animation project (`earth_shield`, `cherenkov_radiation
 
 Registered in the repository `_quarto.yml` (render and resources) and on the repository home page.
 Deck options (1600×900, MathJax 2, widget CSS/JS) are in `en/slides/_metadata.yml`. The slide footer
-points to the registered map card `en/education.html#neutrino-introduction`; a course-home target
-for this mini-course is not yet registered in `neutrinohit-map/scripts/reveal_context_targets.json`.
+points to the course page `en/courses/oscillations-minicourse.html` on the site; the course home
+`neutrinophysics/oscillations-minicourse/` links back to the map card `en/education.html#oscillations-minicourse`.
+The targets are registered in
+`neutrinohit-map/scripts/reveal_context_targets.json`.
 
 ## Files
 

@@ -3,9 +3,10 @@
   if (window.ThreeFlavorTriangleLoaded) return; // already loaded by another include
   window.ThreeFlavorTriangleLoaded = true;
 
+  // NuFIT 6.1, IC24 + SK-atm: Δm²_3ℓ = Δm²_31 > 0 for NO, Δm²_32 < 0 for IO
   const DM21 = 7.537e-5;
   const DM31_NO = 2.511e-3;
-  const DM31_IO_ABS = 2.483e-3;
+  const DM32_IO = -2.483e-3;
   const SAMPLE_COUNT = 3000;
   const VERTICES = [
     {x: 380, y: 42},
@@ -156,7 +157,7 @@
       }
       cachedCoefficients = coefficients(mixing, source);
       cachedMassRatio =
-        (ordering === "NO" ? DM31_NO : -DM31_IO_ABS) / DM21;
+        (ordering === "NO" ? DM31_NO : DM32_IO + DM21) / DM21;
 
       trailPieces = [];
       for (let index = 0; index <= SAMPLE_COUNT; index += 1) {

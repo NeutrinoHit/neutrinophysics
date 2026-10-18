@@ -24,7 +24,8 @@
   const YE_MANTLE = (2 * AW.Mg[0] + AW.Si[0] + 4 * AW.O[0]) / (2 * AW.Mg[1] + AW.Si[1] + 4 * AW.O[1]);
   const NUFIT61 = {
     NO: { s12sq: 0.3088, s13sq: 0.02248, s23sq: 0.470, delta: 212.0, dm21: 7.537e-5, dm31: 2.511e-3 },
-    IO: { s12sq: 0.3088, s13sq: 0.02262, s23sq: 0.550, delta: 274.0, dm21: 7.537e-5, dm31: -2.483e-3 },
+    // NuFIT quotes Δm²_32 = -2.483e-3 eV² for IO; Δm²_31 = Δm²_32 + Δm²_21
+    IO: { s12sq: 0.3088, s13sq: 0.02262, s23sq: 0.550, delta: 274.0, dm21: 7.537e-5, dm31: -2.483e-3 + 7.537e-5 },
   };
 
   function density(r) {
