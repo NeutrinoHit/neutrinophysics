@@ -45,10 +45,11 @@ class Params:
     dm31: float     # eV^2 (negative for inverted ordering)
 
 
-# NuFIT 6.1, IC24 + SK-atm, best fit.
+# NuFIT 6.1, IC24 + SK-atm, best fit. NuFIT quotes Δm²_3ℓ: Δm²_31 for NO and
+# Δm²_32 = -2.483e-3 eV² for IO, so that Δm²_31 = Δm²_32 + Δm²_21 for IO.
 NUFIT61 = {
     "NO": Params(0.3088, 0.02248, 0.470, 212.0, 7.537e-5, +2.511e-3),
-    "IO": Params(0.3088, 0.02262, 0.550, 274.0, 7.537e-5, -2.483e-3),
+    "IO": Params(0.3088, 0.02262, 0.550, 274.0, 7.537e-5, -2.483e-3 + 7.537e-5),
 }
 FLAVORS = {"e": 0, "mu": 1, "tau": 2}
 
