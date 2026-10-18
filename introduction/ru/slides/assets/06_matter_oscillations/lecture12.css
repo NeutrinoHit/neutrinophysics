@@ -1,0 +1,213 @@
+/* Лекция 12 и апплет matter-constant: дополнения к matter_oscillations.css. */
+
+/* Таблица режимов */
+.reveal .lecture12-regimes table {
+  margin-top: 0.4em;
+  font-size: 0.9em;
+}
+
+.reveal .lecture12-regimes th,
+.reveal .lecture12-regimes td {
+  padding: 0.3em 0.55em;
+  line-height: 1.2;
+}
+
+.reveal .lecture12-regimes td:first-child {
+  color: #d8e4ee;
+}
+
+/* Лаборатория одного слоя */
+.lecture12-lab svg text {
+  font-size: 13px;
+}
+
+.lecture12-lab svg .axis-label,
+.lecture12-lab svg .branch-label {
+  fill: var(--matter-ink);
+  font-size: 14px;
+}
+
+.lecture12-lab svg .sym {
+  font-style: italic;
+}
+
+.lecture12-lab svg .sub {
+  font-size: 0.78em;
+}
+
+.lecture12-lab svg .resonance-line {
+  stroke: var(--matter-gold);
+  stroke-width: 1;
+  stroke-opacity: 0.55;
+  stroke-dasharray: 2 4;
+}
+
+.lecture12-lab svg .resonance-label {
+  fill: var(--matter-gold);
+  font-size: 12px;
+}
+
+.lecture12-lab svg .electron-frame {
+  fill: rgba(190, 214, 236, 0.1);
+  stroke: rgba(190, 214, 236, 0.4);
+}
+
+.lecture12-lab .matter-lab-controls label .lab-name {
+  color: #c3d0dd;
+  font-variant-numeric: normal;
+}
+
+.lecture12-lab .matter-lab-readouts span {
+  color: #c3d0dd;
+}
+
+.lecture12-lab mjx-container {
+  color: inherit;
+}
+
+.lecture12-lab .matter-lab-controls mjx-container,
+.lecture12-lab .matter-lab-readouts mjx-container,
+.lecture12-lab .matter-presets mjx-container,
+.lecture12-lab .lecture12-legend mjx-container {
+  margin: 0 !important;
+  font-size: 105% !important;
+}
+
+.lecture12-lab figcaption.lecture12-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.2rem 1.1rem;
+  margin: 0.15rem 0 0.1rem;
+  color: #c3d0dd;
+  font-size: 0.78rem;
+}
+
+.lecture12-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+
+.lecture12-legend i {
+  display: inline-block;
+  width: 1.7rem;
+  height: 0;
+  border-top: 3px solid var(--matter-blue);
+}
+
+.lecture12-legend i.key-vacuum {
+  border-top: 2px dashed rgba(200, 214, 228, 0.7);
+}
+
+.lecture12-legend i.key-envelope {
+  border-top: 2px dashed var(--matter-red);
+}
+
+.lecture12-legend i.key-electron {
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 1.5px solid var(--matter-red);
+  border-radius: 2px;
+  background: var(--matter-red-soft);
+}
+
+/* На слайде 1600×1000: крупнее текст, лаборатория занимает высоту слайда.
+   Reveal масштабирует слайд целиком, поэтому раскладка не зависит от ширины окна. */
+.reveal .lecture12-lab {
+  grid-template-columns: 24rem 1fr;
+  height: 47rem;
+  margin-top: 0.3rem;
+  font-size: 20px;
+}
+
+.reveal .lecture12-lab .matter-lab-controls label {
+  font-size: 1.05rem;
+}
+
+.reveal .lecture12-lab .matter-presets button {
+  min-height: 2.6rem;
+  font-size: 1rem;
+}
+
+.reveal .lecture12-lab .matter-lab-readouts > div {
+  min-height: 4.4rem;
+}
+
+.reveal .lecture12-lab .matter-lab-readouts span {
+  font-size: 1.1rem;
+}
+
+.reveal .lecture12-lab .matter-lab-readouts b {
+  font-size: 1.4rem;
+}
+
+.reveal .lecture12-lab figcaption.lecture12-legend {
+  font-size: 0.95rem;
+}
+
+.reveal .lecture12-lab svg text {
+  font-size: 14px;
+}
+
+.reveal .lecture12-lab svg .axis-label,
+.reveal .lecture12-lab svg .branch-label {
+  font-size: 15px;
+}
+
+.reveal .matter-lab-slide .nh-text {
+  margin-top: 0.45em;
+}
+
+@media (max-width: 900px) {
+  .reveal .lecture12-lab {
+    grid-template-columns: 24rem 1fr;
+    font-size: 20px;
+  }
+
+  .reveal .lecture12-lab .matter-lab-plots {
+    grid-template-columns: 1.38fr 1fr;
+  }
+}
+
+/* Апплет на узком экране: элементы друг под другом */
+@media (max-width: 760px) {
+  .applet-stage .lecture12-lab {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    height: auto;
+    font-size: 15px;
+  }
+
+  .applet-stage .lecture12-lab .matter-lab-controls {
+    grid-row: auto;
+  }
+
+  .applet-stage .lecture12-lab .matter-presets {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 0.3rem;
+  }
+
+  .applet-stage .lecture12-lab .matter-lab-readouts {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .applet-stage .lecture12-lab .matter-lab-plots {
+    grid-template-columns: 1fr;
+  }
+
+  .applet-stage .lecture12-lab svg {
+    flex: none;
+    height: auto;
+  }
+}
+
+.lecture12-lab.is-compact svg text {
+  font-size: 15px;
+}
+
+.lecture12-lab.is-compact svg .axis-label,
+.lecture12-lab.is-compact svg .branch-label {
+  font-size: 16px;
+}

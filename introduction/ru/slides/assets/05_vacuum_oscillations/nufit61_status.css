@@ -143,38 +143,53 @@
 
 .reveal .nufit-large-table th { color: #7cc7ff; }
 
+/* Три горизонтальные полосы одного рисунка NuFIT (1870 × 2757 px).
+   Границы взяты по белым промежуткам между рядами панелей, поэтому подписи
+   осей остаются внутри кадра. Сдвиг margin-top в процентах отсчитывается от
+   ширины, как и пропорции кадра, и масштабируется вместе с ним. */
 .nufit-profile-crop {
-  width: min(1580px, 100%);
-  height: 760px;
   overflow: hidden;
-  margin: 0.2rem auto 0.55rem;
+  margin: 0.2rem auto 0.45rem;
   background: #fff;
 }
 
 .nufit-profile-crop p {
-  height: 100%;
   margin: 0;
 }
 
 .reveal .nufit-profile-crop img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   max-width: none;
   max-height: none;
   margin: 0;
-  object-fit: cover;
 }
 
-.nufit-profile-crop--top img { object-position: center top; }
-.nufit-profile-crop--middle img { object-position: center center; }
-.nufit-profile-crop--bottom img { object-position: center bottom; }
+.nufit-profile-crop--top {
+  width: min(1340px, 100%);
+  aspect-ratio: 1870 / 972;
+}
+
+.nufit-profile-crop--middle {
+  width: min(1540px, 100%);
+  aspect-ratio: 1870 / 853;
+}
+
+.reveal .nufit-profile-crop--middle img { margin-top: calc(-100% * 1012 / 1870); }
+
+.nufit-profile-crop--bottom {
+  width: min(1560px, 100%);
+  aspect-ratio: 1870 / 853;
+}
+
+.reveal .nufit-profile-crop--bottom img { margin-top: calc(-100% * 1904 / 1870); }
 
 .reveal .nufit-unitarity-figure img {
   display: block;
   width: auto;
   max-width: 100%;
-  max-height: 650px;
+  max-height: 560px;
   margin: 0 auto;
   object-fit: contain;
 }

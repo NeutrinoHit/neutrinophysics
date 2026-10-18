@@ -1,0 +1,40 @@
+/* Лекция 08: вёрстка под кадр 1600×1000. */
+
+/* Выключные формулы: поля 0.55em вместо 1em, чтобы вкладки с несколькими
+   формулами помещались в кадр без уменьшения шрифта. */
+.reveal .slides .mjx-chtml.MJXc-display {
+  margin: 0.55em 0;
+}
+
+/* Интерактив боковых линий CRES: панель уже кадра, чтобы ссылки под ней
+   не заходили под кнопки футера. */
+#cres-linewidth .spectrum-widget .spectrum-panel {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+/* Апплет «Масса по временам прилёта»: ползунки и кнопка в две колонки
+   над графиками, подписи ползунков не налезают на поля ввода. */
+#sn-delay .sn-mass-widget > .cell {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 2%;
+}
+
+#sn-delay .sn-mass-widget > .cell > * {
+  flex: 0 0 100%;
+}
+
+#sn-delay .sn-mass-widget > .cell > .cell-output-display:has(form) {
+  flex: 0 0 49%;
+}
+
+#sn-delay .sn-mass-widget form {
+  --label-width: 250px;
+}
+
+#sn-delay .sn-mass-widget .spectrum-panel svg {
+  width: auto;
+  max-height: 250px;
+}

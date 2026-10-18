@@ -10,6 +10,8 @@ format:
   revealjs:
     theme: [black, ../../../shared/styles/neutrinohit-reveal.scss]
     logo: ../../../shared/reveal/dvnlogo.png
+    css:
+      - assets/06_mac_e_spectrometer/lecture06.css
     include-after-body:
       - text: |
           <script data-external="1" data-context-home="https://neutrinohit.github.io/ru/courses/neutrino-introduction.html" data-context-home-label="Страница курса" src="../../../shared/reveal/neutrinohit-reveal-footer.js"></script>
@@ -36,10 +38,10 @@ execute:
 
 ## Как сделать порог почти независимым от угла? {#mac-e-filter}
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .story-tabs .l06-tight}
 
 ### Проблема
-::: {.marginnote .note-right .absolute top=215 left=1475 width=350 style="--note-font-size: 0.62em; --note-math-font-size: 1em;"}
+::: {.marginnote .note-right .absolute top=275 left=1245 width=315 style="--note-font-size: 0.62em; --note-math-font-size: 1em;"}
 <span class="note-title">Обозначения</span>
 
 - $\mathrm{src}$ — область источника (от англ. *source*),
@@ -49,6 +51,8 @@ execute:
 - $U$ — задерживающее напряжение; $e>0$ — модуль заряда электрона.
 
 :::
+
+::: {.l06-main style="font-size: 0.92em;"}
 
 - Масса нейтрино изменяет форму $\beta$-спектра.
 - Электростатический барьер чувствителен к продольной энергии электрона.
@@ -73,6 +77,8 @@ $$
 
 - Это условие должно выполняться для большого телесного угла, а не только для
   электронов, летящих вдоль оси.
+
+:::
 
 ### $B=\text{const}$
 
@@ -194,11 +200,11 @@ $$
 
 ### Анимация
 
-<video class="slide-video" style="--media-max-height: 750px;" controls preload="metadata" playsinline src="assets/04_direct_neutrino_mass/katrin_mac_e_electric.mp4"></video>
+<video class="slide-video" style="--media-max-height: 600px;" controls preload="metadata" playsinline src="assets/04_direct_neutrino_mass/katrin_mac_e_electric.mp4"></video>
 
 ::::
 
-::: {.absolute bottom=10 left=50 width=1450 style="font-size: 0.42em;"}
+::: {.absolute bottom=30 left=50 width=1150 style="font-size: 0.42em;"}
 [Kruit, Read, 1983](https://doi.org/10.1088/0022-3735/16/4/016) ·
 [Лобашёв, Спивак, 1985](https://doi.org/10.1016/0168-9002(85)90640-0) ·
 [KATRIN Design Report, §5](https://www.katrin.kit.edu/publikationen/DesignReport2004-12Jan2005.pdf)
@@ -240,7 +246,7 @@ $$
 
 ## Электрон в неоднородном магнитном поле: что сохраняется?
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .story-tabs .l06-tight}
 
 ### Постановка
 
@@ -278,7 +284,11 @@ $$
 
 ### Условия
 
-::: {style="width: 74%; font-size: 0.92em;"}
+::: {style="width: 75%; font-size: 0.92em;"}
+
+:::: {.columns}
+
+::: {.column width="48%"}
 
 - Два размера одного витка:
 
@@ -288,6 +298,10 @@ $$
 h=v_\parallel T_c.
 $$
 
+:::
+
+::: {.column width="48%"}
+
 - Масштабы изменения поля
 
 $$
@@ -295,6 +309,10 @@ L_\perp\equiv\frac{B}{|\nabla_\perp B|},
 \qquad
 L_\parallel\equiv\frac{B}{|\partial B/\partial s|}.
 $$
+
+:::
+
+::::
 
 - Потребуем, чтобы за один оборот поле изменялось мало поперёк орбиты и вдоль пройденного
 шага:
@@ -318,7 +336,7 @@ T_c=\frac{2\pi}{\omega_c},
 $$
 :::
 
-::: {.marginnote .note-right .absolute top=250 left=1475 width=350 style="--note-font-size: 0.62em; --note-math-font-size: 1em;"}
+::: {.marginnote .note-right .absolute top=265 left=1245 width=315 style="--note-font-size: 0.62em; --note-math-font-size: 1em;"}
 <span class="note-title">Координата вдоль поля</span>
 
 $s$ — длина дуги вдоль силовой линии:
@@ -381,6 +399,8 @@ $$
 
 ### Энергия
 
+::: {.l06-main}
+
 - Согласно уравнениям Гамильтона для поперечной пары
 
 $$
@@ -408,7 +428,9 @@ $$
 }
 $$
 
-::: {.marginnote .note-right .absolute top=615 left=175 width=350 style="--note-font-size: 0.62em; --note-math-font-size: 1em;"}
+:::
+
+::: {.marginnote .note-right .absolute top=730 left=60 width=330 style="--note-font-size: 0.62em; --note-math-font-size: 1em;"}
 <span class="note-title">Цепное правило</span>
 
 $$
@@ -416,7 +438,7 @@ $$
 $$
 :::
 
-::: {.marginnote .note-right .absolute top=215 left=1475 width=350 style="--note-font-size: 0.62em; --note-math-font-size: 1em;"}
+::: {.marginnote .note-right .absolute top=240 left=1245 width=315 style="--note-font-size: 0.62em; --note-math-font-size: 1em;"}
 <span class="note-title">Движение вдоль поля</span>
 
 $$
@@ -452,6 +474,8 @@ $$
 
 ### Среднее
 
+::: {.l06-main}
+
 - За один оборот $E_\perp$ и $\omega_c$ почти не меняются, поэтому
 
 $$
@@ -477,8 +501,9 @@ $$
 =\frac{E_\perp\dot\omega_c}{\omega_c}.
 $$
 
+:::
 
-::: {.marginnote .note-right .absolute top=225 left=1415 width=300 style="--note-font-size: 0.62em; --note-math-font-size: 1em;"}
+::: {.marginnote .note-right .absolute top=260 left=1260 width=300 style="--note-font-size: 0.62em; --note-math-font-size: 1em;"}
 <span class="note-title">Среднее за период</span>
 
 $$
@@ -495,7 +520,7 @@ $$
 
 ### Инвариант J
 
-::: {.marginnote .note-right .absolute top=225 left=1415 width=300 style="--note-font-size: 0.62em; --note-math-font-size: 1em;"}
+::: {.marginnote .note-right .absolute top=260 left=1260 width=300 style="--note-font-size: 0.62em; --note-math-font-size: 1em;"}
 <span class="note-title">На предыдущей вкладке</span>
 
 $$
@@ -506,6 +531,8 @@ $$
 
 :::
 
+
+::: {.l06-main}
 
 - Применим правило производной частного:
 
@@ -534,8 +561,9 @@ $$
 
 - Фазовый эллипс медленно меняет форму, но сохраняет площадь $2\pi J$.
 
+:::
 
-::: {.marginnote .note-right .absolute top=615 left=1490 width=330 style="--note-font-size: 0.60em; --note-math-font-size: 0.95em;"}
+::: {.marginnote .note-right .absolute top=560 left=1260 width=300 style="--note-font-size: 0.60em; --note-math-font-size: 0.95em;"}
 <span class="note-title">Фазовый смысл</span>
 
 $$
@@ -600,7 +628,7 @@ $$
 
 ## Направляющий центр в эффективном потенциале
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .story-tabs .l06-tight}
 
 ### Редукция
 
@@ -640,7 +668,7 @@ $$
 
 - Энергия быстрого вращения стала эффективным потенциалом $\mu B(s)$.
 
-::: {.marginnote .note-right .absolute top=615 left=1490 width=330 style="--note-font-size: 0.60em; --note-math-font-size: 0.95em;"}
+::: {.marginnote .note-right .absolute top=600 left=1265 width=300 style="--note-font-size: 0.60em; --note-math-font-size: 0.95em;"}
 <span class="note-title">Обратите внимание!</span>
 
 - Это нерелятивистская запись.
@@ -717,7 +745,7 @@ $$
 \rho_L=\frac{p_\perp}{|q|B}\propto B^{-1/2}:
 $$
 
-::: {.marginnote .note-right .absolute top=615 left=1490 width=330 style="--note-font-size: 0.60em; --note-math-font-size: 0.95em;"}
+::: {.marginnote .note-right .absolute top=600 left=1265 width=300 style="--note-font-size: 0.60em; --note-math-font-size: 0.95em;"}
 <span class="note-title">Обратите внимание!</span>
 
 Поперечный импульс уменьшается, хотя радиус отдельной орбиты растёт.
@@ -748,7 +776,7 @@ $$
 
 ### Зеркало
 
-::: {.marginnote .note-right .absolute top=615 left=1490 width=330 style="--note-font-size: 0.60em; --note-math-font-size: 0.95em;"}
+::: {.marginnote .note-right .absolute top=300 left=1265 width=300 style="--note-font-size: 0.60em; --note-math-font-size: 0.95em;"}
 <span class="note-title">Напомним:</span>
 
 $$
@@ -823,7 +851,7 @@ $$
 
 ## MAC-E-фильтр: от полей к порогу {#magnetic-collimation}
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .story-tabs .l06-tight}
 
 ### Схема
 
@@ -945,7 +973,7 @@ $E$ с порогом $e|U|$.
 
 ### Анимация
 
-<video class="slide-video" style="--media-max-height: 750px;" controls preload="metadata" playsinline src="assets/04_direct_neutrino_mass/katrin_mac_e_electric.mp4"></video>
+<video class="slide-video" style="--media-max-height: 560px;" controls preload="metadata" playsinline src="assets/04_direct_neutrino_mass/katrin_mac_e_electric.mp4"></video>
 
 <p class="media-caption">
   В магнитном поле KATRIN при входе в главный спектрометр $p_\perp$
@@ -956,9 +984,9 @@ $E$ с порогом $e|U|$.
 
 ### Разрешение
 
-:::: {.columns style="width: 74%; font-size: 0.75em; line-height: 1.10;"}
+:::: {.columns style="font-size: 0.95em; line-height: 1.15;"}
 
-::: {.column width="49%"}
+::: {.column width="47%"}
 
 **1. Акцептанс магнитного зеркала**
 
@@ -972,6 +1000,10 @@ $$
 \frac{p_{\perp,\mathrm{src}}^2}{p^2}
 \leq\frac{B_{\mathrm{src}}}{B_{\max}}.
 $$
+
+:::
+
+::: {.column width="49%"}
 
 **2. Адиабатическая коллимация**
 
@@ -1003,7 +1035,15 @@ $$
 
 :::
 
-::: {.column width="47%"}
+::::
+
+### Порог
+
+::: {.l06-main}
+
+:::: {.columns style="font-size: 0.96em; line-height: 1.15;"}
+
+::: {.column width="50%"}
 
 **3. Что задаёт ширину порога?**
 
@@ -1026,6 +1066,10 @@ E_{\perp,\mathrm A}^{\max}
 =\frac{p^2}{2m_e}\frac{B_{\mathrm A}}{B_{\max}}.
 $$
 
+:::
+
+::: {.column width="46%"}
+
 $$
 \frac{p^2}{2m_e}
 =E\left(1+\frac{E}{2m_e}\right)
@@ -1047,7 +1091,9 @@ $$
 
 ::::
 
-::: {.marginnote .note-right .absolute top=100 left=1650 width=280 style="--note-font-size: 0.56em; --note-math-font-size: 0.90em;"}
+:::
+
+::: {.marginnote .note-right .absolute top=250 left=1260 width=300 style="--note-font-size: 0.56em; --note-math-font-size: 0.90em;"}
 <span class="note-title">$E$ — кинетическая энергия электрона</span>
 
 $$
@@ -1124,7 +1170,7 @@ $$
 
 ::::
 
-::: {.absolute bottom=10 left=50 width=1500 style="font-size: 0.42em;"}
+::: {.absolute bottom=30 left=50 width=1150 style="font-size: 0.42em;"}
 [Магнитная система KATRIN](https://arxiv.org/abs/1806.08312) ·
 [KATRIN: функция отклика и ширина фильтра](https://doi.org/10.1140/epjc/s10052-019-6686-7) ·
 [Принцип MAC-E и главный спектрометр](https://www.katrin.kit.edu/deutsch/893.php)
@@ -1134,7 +1180,7 @@ $$
 
 ## Пояса Ван Аллена: магнитная ловушка Земли
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .story-tabs .l06-tight}
 
 ### Открытие
 
@@ -1242,12 +1288,12 @@ $$
 
 :::: {.columns}
 
-::: {.column width="70%"}
+::: {.column width="66%"}
 
 <video autoplay loop muted controls playsinline preload="metadata"
        poster="assets/06_mac_e_spectrometer/nasa_radiation_belts_particles.jpg"
        src="assets/06_mac_e_spectrometer/nasa_radiation_belts_plasmapause_particles.mov"
-       style="display:block; width:100%; max-height:545px; margin:0 auto 0.2rem; object-fit:contain;">
+       style="display:block; width:100%; max-height:500px; margin:0 auto 0.2rem; object-fit:contain;">
 </video>
 
 <p class="media-caption" style="font-size:0.46em; line-height:1.22;">
@@ -1257,7 +1303,9 @@ $$
 
 :::
 
-::: {.column width="26%"}
+::: {.column width="30%"}
+
+::: {style="font-size: 0.92em;"}
 
 - Частица вращается вокруг силовой линии.
 
@@ -1270,6 +1318,9 @@ $$
 ::: {.nh-box tone="warning" size="sm"}
 Спираль искусственно увеличена: в масштабе всей магнитосферы отдельные витки
 не были бы видны.
+:::
+
+
 :::
 
 :::
@@ -1290,6 +1341,8 @@ $$
 ```
 
 ### Конус потерь
+
+::: {.l06-main style="width: 75%; font-size: 0.92em;"}
 
 - Рассмотрим силовую линию диполя. $R_\oplus$ — радиус Земли, а
   $r_{\mathrm{eq}}$ и $h_{\mathrm{eq}}$ — расстояние от центра и высота над
@@ -1319,7 +1372,7 @@ $$
 }.
 $$
 
-::: {.marginnote .note-right .absolute top=270 left=1520 width=400 style="--note-font-size: 0.60em; --note-math-font-size: 0.95em;"}
+::: {.marginnote .note-right .absolute top=190 left=1235 width=335 style="--note-font-size: 0.56em; --note-math-font-size: 0.95em;"}
 <span class="note-title">Конус потерь:</span>
 
 - При $\alpha_{\mathrm{eq}}<\alpha_{\mathrm{loss}}(L)$ частица достигает атмосферы раньше
@@ -1344,6 +1397,8 @@ $$
 ::: {.nh-box tone="info" size="sm"}
 Поле на экваторе входит в формулу потому, что там задаются начальный угол и
 магнитный момент частицы. Сравниваются две точки **одной и той же** линии $L$.
+:::
+
 :::
 
 
@@ -1470,12 +1525,12 @@ $$
 
 :::: {.columns style="font-size: 0.84em; line-height: 1.16;"}
 
-::: {.column width="61%"}
+::: {.column width="52%"}
 
 <video autoplay loop muted controls playsinline preload="metadata"
        poster="assets/06_mac_e_spectrometer/nasa_fermi_shock_acceleration_poster.jpg"
        src="assets/06_mac_e_spectrometer/nasa_fermi_shock_acceleration.mp4"
-       style="display:block; width:100%; max-height:455px; margin:0 auto 0.2rem; object-fit:contain;">
+       style="display:block; width:100%; max-height:420px; margin:0 auto 0.2rem; object-fit:contain;">
 </video>
 
 <p class="media-caption" style="font-size:0.46em; line-height:1.22;">
@@ -1486,7 +1541,7 @@ $$
 
 :::
 
-::: {.column width="35%"}
+::: {.column width="44%"}
 
 - В хорошо проводящей плазме магнитное поле приблизительно вморожено в
   вещество. Движущееся намагниченное облако переносит с собой и магнитную
@@ -1517,7 +1572,7 @@ $$
 
 ::::
 
-::: {.absolute bottom=10 left=50 width=1740 style="font-size: 0.36em;"}
+::: {.absolute bottom=32 left=50 width=1160 style="font-size: 0.36em;"}
 [NASA/SDO: солнечные магнитные петли](https://svs.gsfc.nasa.gov/11755/) ·
 [NASA/NTRS: удержание в корональных петлях](https://ntrs.nasa.gov/citations/19930072101) ·
 [PPPL: движение частиц в токамаке](https://suli.pppl.gov/2026/course/SULI_SingleParticleMotion_06-02-26.pdf) ·

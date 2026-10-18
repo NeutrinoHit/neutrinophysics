@@ -1,0 +1,305 @@
+/* Лекция 15 и апплет «Три флэйвора в веществе». */
+
+.m3-lab {
+  --m3-ink: #e8f0f7;
+  --m3-muted: #a9bccb;
+  --m3-line: rgba(180, 208, 235, 0.2);
+  --m3-panel: rgba(255, 255, 255, 0.035);
+  --m3-nu: #54a8ff;
+  --m3-nubar: #ffad5a;
+  --m3-no: #5ee6d2;
+  --m3-io: #ff7897;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(15rem, 19rem) 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 0.55rem 0.75rem;
+  padding: 0.55rem;
+  border: 1px solid var(--m3-line);
+  border-radius: 0.7rem;
+  background: rgba(10, 18, 29, 0.94);
+  color: var(--m3-ink);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.22;
+  text-align: left;
+}
+
+.m3-lab * {
+  box-sizing: border-box;
+}
+
+.m3-controls {
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.6rem;
+  border: 1px solid var(--m3-line);
+  border-radius: 0.55rem;
+  background: var(--m3-panel);
+}
+
+.m3-group-title {
+  color: var(--m3-muted);
+  font-size: 0.8em;
+}
+
+.m3-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.3rem;
+}
+
+.m3-buttons button {
+  min-height: 2em;
+  padding: 0.2em 0.35em;
+  border: 1px solid rgba(84, 168, 255, 0.48);
+  border-radius: 0.35em;
+  background: rgba(84, 168, 255, 0.1);
+  color: var(--m3-ink);
+  font: inherit;
+  font-size: 0.82em;
+  cursor: pointer;
+}
+
+.m3-buttons button:hover,
+.m3-buttons button:focus-visible {
+  background: rgba(84, 168, 255, 0.26);
+  outline: none;
+}
+
+.m3-buttons button[aria-pressed="true"] {
+  border-color: var(--m3-nu);
+  background: rgba(84, 168, 255, 0.36);
+}
+
+.m3-order button[data-ordering="NO"][aria-pressed="true"] {
+  border-color: var(--m3-no);
+  background: rgba(94, 230, 210, 0.24);
+}
+
+.m3-order button[data-ordering="IO"][aria-pressed="true"] {
+  border-color: var(--m3-io);
+  background: rgba(255, 120, 151, 0.24);
+}
+
+.m3-controls label {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.15rem 0.5rem;
+  margin: 0;
+  font-size: 0.88em;
+}
+
+.m3-name {
+  color: var(--m3-muted);
+}
+
+.m3-value {
+  color: var(--m3-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.m3-controls input[type="range"] {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 0;
+  accent-color: var(--m3-nu);
+}
+
+.m3-note {
+  margin: auto 0 0;
+  color: var(--m3-muted);
+  font-size: 0.74em;
+}
+
+.m3-readouts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.4rem;
+}
+
+.m3-readouts > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.3em 0.5em;
+  border: 1px solid var(--m3-line);
+  border-radius: 0.4rem;
+  background: var(--m3-panel);
+}
+
+.m3-readouts span {
+  color: var(--m3-muted);
+  font-size: 0.78em;
+}
+
+.m3-readouts b {
+  margin-top: 0.1em;
+  color: var(--m3-ink);
+  font-size: 1.1em;
+  font-variant-numeric: tabular-nums;
+}
+
+.m3-readouts .nu b {
+  color: var(--m3-nu);
+}
+
+.m3-readouts .nubar b {
+  color: var(--m3-nubar);
+}
+
+.m3-plots {
+  display: grid;
+  grid-template-columns: 1.52fr 1fr;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+.m3-lab figure {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+  padding: 0.25rem;
+  border: 1px solid var(--m3-line);
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.m3-lab svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.m3-lab figcaption {
+  margin-top: 0.15em;
+  color: var(--m3-muted);
+  font-size: 0.74em;
+  text-align: center;
+}
+
+.m3-c-nu { color: var(--m3-nu); }
+.m3-c-nubar { color: var(--m3-nubar); }
+.m3-c-no { color: var(--m3-no); }
+.m3-c-io { color: var(--m3-io); }
+
+.m3-lab .m3-frame {
+  fill: none;
+  stroke: rgba(180, 208, 235, 0.35);
+  stroke-width: 1;
+}
+
+.m3-lab .m3-grid {
+  stroke: rgba(180, 208, 235, 0.1);
+  stroke-width: 1;
+}
+
+.m3-lab .m3-tick {
+  fill: var(--m3-muted);
+  font-size: 15px;
+}
+
+.m3-lab .m3-axis {
+  fill: var(--m3-ink);
+  font-size: 17px;
+}
+
+.m3-lab .m3-line {
+  fill: none;
+  stroke-width: 2.6;
+  stroke-linejoin: round;
+}
+
+.m3-lab .m3-nu { stroke: var(--m3-nu); }
+.m3-lab .m3-nubar { stroke: var(--m3-nubar); }
+
+.m3-lab .m3-vac {
+  stroke-width: 1.6;
+  stroke-dasharray: 6 5;
+  opacity: 0.7;
+}
+
+.m3-lab .m3-marker {
+  stroke: rgba(232, 240, 247, 0.55);
+  stroke-width: 1.4;
+  stroke-dasharray: 3 4;
+}
+
+.m3-lab .m3-diag {
+  stroke: rgba(232, 240, 247, 0.35);
+  stroke-width: 1.2;
+  stroke-dasharray: 4 5;
+}
+
+.m3-lab .m3-ell.m3-no { stroke: var(--m3-no); }
+.m3-lab .m3-ell.m3-io { stroke: var(--m3-io); }
+.m3-lab .m3-tickdot.m3-no { fill: var(--m3-no); }
+.m3-lab .m3-tickdot.m3-io { fill: var(--m3-io); }
+
+.m3-lab .m3-current {
+  fill: #fff;
+  stroke-width: 3;
+}
+
+.m3-lab .m3-current.m3-no { stroke: var(--m3-no); }
+.m3-lab .m3-current.m3-io { stroke: var(--m3-io); }
+
+.m3-lab .m3-dlabel {
+  fill: var(--m3-ink);
+  font-size: 14px;
+}
+
+/* На слайде 1600×1000 */
+.reveal .slides table {
+  width: auto;
+  margin: 0.45em auto;
+}
+
+.reveal .slides table th,
+.reveal .slides table td {
+  padding: 0.18em 0.7em;
+}
+
+.reveal .m3-lab {
+  height: 760px;
+  font-size: 21px;
+}
+
+.reveal .m3-lab-slide h2 {
+  margin-bottom: 0.18em;
+}
+
+.reveal .m3-lab-slide .nh-text {
+  margin-top: 0.4em;
+}
+
+@media (max-width: 760px) {
+  .m3-lab {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .m3-controls {
+    grid-row: auto;
+  }
+
+  .m3-readouts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .m3-plots {
+    grid-template-columns: 1fr;
+  }
+
+  .m3-lab .m3-tick,
+  .m3-lab .m3-dlabel {
+    font-size: 24px;
+  }
+
+  .m3-lab .m3-axis {
+    font-size: 26px;
+  }
+}

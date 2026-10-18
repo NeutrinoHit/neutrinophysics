@@ -8,7 +8,16 @@
   border-radius: 0.35rem;
   background: #08131e;
   color: #edf6fc;
-  font: 25px/1.25 system-ui, sans-serif;
+  font: 29px/1.25 system-ui, sans-serif;
+  container-type: inline-size;
+}
+
+/* Text follows the lab width, as the SVG labels do: 29px on a slide. */
+.refraction-layers-lab__controls,
+.refraction-modes-lab__controls,
+.refraction-layers-lab__readout,
+.refraction-modes-lab__readout {
+  font-size: clamp(14px, 1.7cqi, 29px);
 }
 
 .refraction-layers-lab *,
@@ -37,6 +46,18 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* On a slide MathJax puts its spans straight into the label: keep the formula
+   inline with the label text, and float only the value. */
+.reveal .refraction-layers-lab__controls label > .MathJax_Preview,
+.reveal .refraction-modes-lab__controls label > .MathJax_Preview,
+.reveal .refraction-layers-lab__controls label > .mjx-chtml,
+.reveal .refraction-modes-lab__controls label > .mjx-chtml {
+  display: inline-block;
+  float: none;
+  color: inherit;
+  font-variant-numeric: normal;
+}
+
 .refraction-layers-lab input,
 .refraction-modes-lab input {
   display: block;
@@ -51,7 +72,7 @@
   width: 100%;
   height: auto;
   overflow: visible;
-  font: 27px/1.2 system-ui, sans-serif;
+  font: 20px/1.2 system-ui, sans-serif;
 }
 
 .refraction-layers-lab svg text,
@@ -129,13 +150,26 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Narrow screens: applet pages only; a Reveal slide is scaled as a whole. */
 @media (max-width: 900px) {
-  .refraction-layers-lab,
-  .refraction-modes-lab {
-    font-size: 17px;
-  }
-  .refraction-layers-lab__controls,
-  .refraction-modes-lab__controls {
+  body:not(.reveal-viewport) .refraction-layers-lab__controls,
+  body:not(.reveal-viewport) .refraction-modes-lab__controls {
     grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+  body:not(.reveal-viewport) .refraction-layers-lab svg,
+  body:not(.reveal-viewport) .refraction-modes-lab svg {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 560px) {
+  body:not(.reveal-viewport) .refraction-layers-lab,
+  body:not(.reveal-viewport) .refraction-modes-lab {
+    padding: 0.4rem 0.35rem 0.25rem;
+  }
+  body:not(.reveal-viewport) .refraction-layers-lab svg,
+  body:not(.reveal-viewport) .refraction-modes-lab svg {
+    font-size: 46px;
   }
 }

@@ -9,6 +9,8 @@ institute: "ОИЯИ"
 format:
   revealjs:
     theme: [black, ../../../shared/styles/neutrinohit-reveal.scss]
+    css:
+      - assets/08_alternative_neutrino_mass/lecture08.css
     logo: ../../../shared/reveal/dvnlogo.png
     include-after-body:
       - text: |
@@ -34,7 +36,7 @@ execute:
 
 ## Энергию можно превратить в частоту или тепло
 
-![](assets/08_alternative_neutrino_mass/energy-readout.svg){width="86%" fig-alt="KATRIN сравнивает энергию с порогом, CRES измеряет частоту, калориметр регистрирует нагрев"}
+![](assets/08_alternative_neutrino_mass/energy-readout.svg){.nostretch width="64%" fig-alt="KATRIN сравнивает энергию с порогом, CRES измеряет частоту, калориметр регистрирует нагрев"}
 
 - В лекции 07 мы измеряли несколько интегралов от $\beta$-спектра,
   меняя задерживающее напряжение.
@@ -320,6 +322,12 @@ $$
 
 ![](assets/08_alternative_neutrino_mass/cres-track.svg){width="100%" fig-alt="Излучение плавно повышает частоту, а столкновение с потерей энергии создаёт скачок частотного трека"}
 
+::: {.nh-text tone="muted" size="sm"}
+- Схематический трек при постоянном среднем поле.
+- Потеря в одном столкновении выбрана равной $12.6$ эВ;
+- боковые линии показаны условно.
+:::
+
 :::
 
 ::: {.column width="43%"}
@@ -341,12 +349,6 @@ $$
 :::
 
 ::::
-
-::: {.nh-text tone="muted" size="sm"}
-- Схематический трек при постоянном среднем поле.
-- Потеря в одном столкновении выбрана равной $12.6$ эВ;
-- боковые линии показаны условно.
-:::
 
 ### Энергия излучения
 
@@ -370,7 +372,7 @@ $$
 
 ### Анимация
 
-<video class="slide-video" style="--media-max-height:650px;" controls muted loop playsinline preload="metadata" poster="assets/04_direct_neutrino_mass/project8_cres.jpg" src="assets/04_direct_neutrino_mass/project8_cres.mp4"></video>
+<video class="slide-video" style="--media-max-height:560px;" controls muted loop playsinline preload="metadata" poster="assets/04_direct_neutrino_mass/project8_cres.jpg" src="assets/04_direct_neutrino_mass/project8_cres.mp4"></video>
 
 - Электрон удерживается в ловушке; излучение даёт восходящий трек.
   Столкновение меняет его частоту.
@@ -468,7 +470,7 @@ $$
 
 :::: {.columns}
 
-::: {.column width="57%"}
+::: {.column width="50%"}
 
 ![](assets/08_alternative_neutrino_mass/sidebands-origin.svg){width="100%" fig-alt="Мгновенная частота качается с периодом продольного движения, и спектр распадается на гребёнку линий"}
 
@@ -481,7 +483,7 @@ $\Phi_{\mathrm{пр}}(t)=\int_0^t2\pi f_c\,dt'+\Phi_{\mathrm{распр}}[z(t)]$
 
 :::
 
-::: {.column width="40%"}
+::: {.column width="47%"}
 
 - Электрон качается между зеркалами с частотой $f_z$ и дважды за период
   заходит в сильное поле. Циклотронная частота качается вместе с ним.
@@ -523,7 +525,7 @@ $$
 - При малом $h$ сигнал почти гармонический.
   При большом $h$ боковые линии несут заметную долю мощности.
 
-### Сколько мощности в каждой линии
+### Мощность линий
 
 - Тождество Якоби—Ангера даёт
 
@@ -692,7 +694,7 @@ $$
 
 ### Ячейка
 
-![](assets/08_alternative_neutrino_mass/project8-paper-fig01.png){.slide-image-center .nostretch width="62%" fig-alt="Разрез криогенной ячейки CRES: окна для радиосигнала, катушки ловушки, ввод газа, соленоид сдвига поля, поглотитель радиоволн"}
+![](assets/08_alternative_neutrino_mass/project8-paper-fig01.png){.slide-image-center .nostretch width="56%" fig-alt="Разрез криогенной ячейки CRES: окна для радиосигнала, катушки ловушки, ввод газа, соленоид сдвига поля, поглотитель радиоволн"}
 
 - Электрон рождается в распаде прямо внутри волновода и остаётся там,
   запертый катушками ловушки.
@@ -746,17 +748,27 @@ $$
   только после потери энергии. Это искажает реконструированный спектр.
 - Калибровки и модель эффективности здесь нужны так же, как в KATRIN.
 
+:::::
+
+## Project 8: первое измерение и следующие шаги
+
+::::: {.panel-tabset .story-tabs}
+
 ### Опубликованное измерение
 
 :::: {.columns}
 
-::: {.column width="50%"}
+::: {.column width="45%"}
 
 ![](assets/08_alternative_neutrino_mass/project8-paper-fig05.png){.slide-image-center .nostretch width="100%" fig-alt="Измеренный тритиевый спектр у конца с байесовской и частотной подгонками, во вставке контуры по массе и концу спектра"}
 
+::: {.nh-text tone="muted" size="sm"}
+Рисунок 5 и результат: [Project 8, Phys. Rev. Lett. 131, 102502 (2023)](https://arxiv.org/abs/2212.05048).
 :::
 
-::: {.column width="47%"}
+:::
+
+::: {.column width="52%"}
 
 - В 2023 году Project 8 опубликовал первый тритиевый спектр,
   измеренный по циклотронному излучению.
@@ -779,10 +791,6 @@ $$
 :::
 
 ::::
-
-::: {.nh-text tone="muted" size="sm"}
-Рисунок 5 и результат: [Project 8, Phys. Rev. Lett. 131, 102502 (2023)](https://arxiv.org/abs/2212.05048).
-:::
 
 ### Это ещё демонстрация
 
@@ -839,7 +847,7 @@ $$
 
 ## Калориметр: общая картина {#calorimeter-overview}
 
-![](assets/08_alternative_neutrino_mass/calorimeter-overview.svg){width="92%" fig-alt="Захват электрона в гольмии, каскад перестроек оболочки, нагрев поглотителя, импульс термометра"}
+![](assets/08_alternative_neutrino_mass/calorimeter-overview.svg){.nostretch width="66%" fig-alt="Захват электрона в гольмии, каскад перестроек оболочки, нагрев поглотителя, импульс термометра"}
 
 :::: {.columns}
 
@@ -1118,7 +1126,7 @@ $$
 
 ### Характеристики датчиков
 
-![](assets/08_alternative_neutrino_mass/thermometers.svg){height="570" fig-alt="Намагниченность парамагнитного датчика убывает при нагреве, сопротивление TES резко растёт в области сверхпроводящего перехода"}
+![](assets/08_alternative_neutrino_mass/thermometers.svg){height="470" fig-alt="Намагниченность парамагнитного датчика убывает при нагреве, сопротивление TES резко растёт в области сверхпроводящего перехода"}
 
 - Тепловой сигнал один и тот же. Различаются физические величины,
   которыми измеряют температуру.
@@ -1133,7 +1141,7 @@ $$
 
 ### Наложение импульсов
 
-![](assets/08_alternative_neutrino_mass/pulse-overlap.svg){height="540" fig-alt="Далёкие по времени тепловые импульсы различимы, близкие складываются в один повышенный сигнал"}
+![](assets/08_alternative_neutrino_mass/pulse-overlap.svg){height="470" fig-alt="Далёкие по времени тепловые импульсы различимы, близкие складываются в один повышенный сигнал"}
 
 - Если два события произошли слишком близко по времени,
   электроника может восстановить одно событие с энергией $E_1+E_2$.
@@ -1335,6 +1343,10 @@ $$
 
 ![](assets/08_alternative_neutrino_mass/tau-boundary.svg){width="100%" fig-alt="Ненулевая масса нейтрино сужает доступную область по массе и энергии адронной системы"}
 
+::: {.nh-text tone="muted" size="sm"}
+[ALEPH, анализ трёх- и пятитрековых распадов, 1998](https://cds.cern.ch/record/337738).
+:::
+
 :::
 
 ::: {.column width="45%"}
@@ -1355,10 +1367,6 @@ $$
 :::
 
 ::::
-
-::: {.nh-text tone="muted" size="sm"}
-[ALEPH, анализ трёх- и пятитрековых распадов, 1998](https://cds.cern.ch/record/337738).
-:::
 
 ### Почему эти пределы слабые
 

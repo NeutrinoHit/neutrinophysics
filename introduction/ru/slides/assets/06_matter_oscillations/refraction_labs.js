@@ -22,20 +22,31 @@
     const phaseValue = root.querySelector("[data-phase-value]");
     const vacuumWave = root.querySelector("[data-vacuum-wave]");
     const mediumWave = root.querySelector("[data-medium-wave]");
+    const medium = root.querySelector("[data-medium]");
+    const entry = root.querySelector("[data-entry]");
+    const exit = root.querySelector("[data-exit]");
+    // One scale along z everywhere: 210 SVG units per vacuum wavelength.
+    const unit = 210;
+    const centre = 600;
 
     function draw() {
       const n = Number(index.value);
       const layerLength = Number(length.value);
-      const coordinate = x => {
-        if (x <= 285) return (x - 285) / 210;
-        if (x <= 915) return layerLength * (x - 285) / 630;
-        return layerLength + (x - 915) / 210;
-      };
+      const x0 = centre - unit * layerLength / 2;
+      const x1 = centre + unit * layerLength / 2;
+      medium.setAttribute("x", x0.toFixed(2));
+      medium.setAttribute("width", (x1 - x0).toFixed(2));
+      [entry, exit].forEach((line, i) => {
+        const x = (i === 0 ? x0 : x1).toFixed(2);
+        line.setAttribute("x1", x);
+        line.setAttribute("x2", x);
+      });
+      const coordinate = x => (x - x0) / unit;
       const vacuumY = x => 165 - 70 * Math.sin(twoPi * coordinate(x));
       const mediumY = x => {
         const z = coordinate(x);
-        const phase = x <= 285 ? twoPi * z :
-          x <= 915 ? twoPi * n * z :
+        const phase = x <= x0 ? twoPi * z :
+          x <= x1 ? twoPi * n * z :
             twoPi * (z + (n - 1) * layerLength);
         return 165 - 70 * Math.sin(phase);
       };

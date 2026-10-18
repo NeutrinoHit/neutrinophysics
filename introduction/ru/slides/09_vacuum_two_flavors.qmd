@@ -151,7 +151,7 @@ $$
 
 ## Фазы двух собственных волн
 
-::: {.marginnote .absolute top=350 left=1515 width=285 style="--note-font-size: 0.62em;"}
+::: {.marginnote .absolute top=540 left=1250 width=300 style="--note-font-size: 0.62em;"}
 $\hbar=c=1$. Свободный гамильтониан не зависит от времени.
 :::
 
@@ -380,8 +380,7 @@ $$
 
 Здесь $P_i$ — нормированные квадраты модулей комплексных амплитуд локальных
 маятников. При слабой связи они приближённо равны долям усреднённой энергии.
-Точный вывод — в [главе книги](../book/chapters/09_vacuum_two_flavors.qmd)
-и [задаче 9.6](../exercises/09_vacuum_oscillations_exercises.qmd).
+Точный вывод — в [задаче 9.6](../exercises/09_vacuum_oscillations_exercises.qmd).
 
 # Два флэйвора
 

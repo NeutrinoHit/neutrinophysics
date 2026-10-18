@@ -10,6 +10,8 @@ format:
   revealjs:
     theme: [black, ../../../shared/styles/neutrinohit-reveal.scss]
     logo: ../../../shared/reveal/dvnlogo.png
+    css:
+      - assets/05_electron_to_detector/lecture05.css
     include-after-body:
       - text: |
           <script data-external="1" data-context-home="https://neutrinohit.github.io/ru/courses/neutrino-introduction.html" data-context-home-label="Страница курса" src="../../../shared/reveal/neutrinohit-reveal-footer.js"></script>
@@ -34,7 +36,7 @@ execute:
 
 # Задача $\beta$-спектрометра
 
-## Интегральное измерение энергии
+## Интегральное измерение энергии {.l05-tight}
 
 - Масса нейтрино меняет форму $\beta$-спектра у его конца. Событий там мало, а электроны неполяризованного источника вылетают изотропно:
 
@@ -68,7 +70,7 @@ $$
 Задача прибора: собрать как можно больше $\beta$-электронов и сравнить их энергию с управляемым электростатическим порогом.
 :::
 
-## Продольное и поперечное движение
+## Продольное и поперечное движение {.l05-tight}
 
 - Одномерное условие $E>e|U|$ предполагает, что электрон летит вдоль оси спектрометра. В реальности его импульс образует с осью угол $\alpha$:
 
@@ -101,7 +103,7 @@ $$
 
 # К чему мы придём
 
-<video class="slide-video" style="--media-max-height: 850px;"  controls preload="metadata" playsinline  src="assets/04_direct_neutrino_mass/katrin_mac_e_electric.mp4"></video>
+<video class="slide-video" style="--media-max-height: 760px;"  controls preload="metadata" playsinline  src="assets/04_direct_neutrino_mass/katrin_mac_e_electric.mp4"></video>
 
 <p class="media-caption">
   MAC-E: электроны выше порога проходят, ниже порога — отражаются.
@@ -111,7 +113,7 @@ $$
 
 ## Движение в однородном постоянном магнитном поле {#uniform-b-motion}
 
-:::::: {.panel-tabset .story-tabs}
+:::::: {.panel-tabset .story-tabs .l05-tight}
 
 ### Главное
 
@@ -426,7 +428,7 @@ $$
 
 ### Анимация
 
-<video class="slide-video" style="--media-max-height: 750px;" controls preload="metadata" playsinline poster="assets/04_direct_neutrino_mass/uniform_b_ensemble.jpg" src="assets/04_direct_neutrino_mass/uniform_b_ensemble.mp4"></video>
+<video class="slide-video" style="--media-max-height: 620px;" controls preload="metadata" playsinline poster="assets/04_direct_neutrino_mass/uniform_b_ensemble.jpg" src="assets/04_direct_neutrino_mass/uniform_b_ensemble.mp4"></video>
 
 <p class="media-caption">
   Три электрона показаны в один и тот же момент времени. Их скорости равны
@@ -440,7 +442,7 @@ $$
 
 ## Три языка
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .story-tabs .l05-tight}
 
 ### Ньютон
 
@@ -515,7 +517,7 @@ $$
 
 ## Фазовая траектория
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .story-tabs .l05-tight}
 
 ### Постоянная энергия
 
@@ -542,6 +544,8 @@ $$
 
 ### Осциллятор
 
+::: {.l05-main style="font-size: 0.95em;"}
+
 Для гармонического осциллятора
 
 $$
@@ -567,7 +571,9 @@ $$
 - Изменение $E$ выбирает другой эллипс. Изменение параметров $m$ или $\omega$
 перестраивает весь фазовый портрет.
 
-::: {.marginnote .note-right .absolute top=225 left=1460 width=320 style="--note-font-size: 0.62em; --note-math-font-size: 1em; --note-padding: 0.7rem 0.8rem;"}
+:::
+
+::: {.marginnote .note-right .absolute top=225 left=1255 width=300 style="--note-font-size: 0.62em; --note-math-font-size: 1em; --note-padding: 0.7rem 0.8rem;"}
 <span class="note-title">Площадь эллипса</span>
 <img src="assets/04_direct_neutrino_mass/ellipse-area.svg" alt="Эллипс с полуосями a и b на плоскости x, y" style="display:block; width:100%; margin:0.05rem auto 0.15rem;">
 
@@ -605,6 +611,8 @@ $$
 
 ### $J$ и $(\omega, T)$
 
+::: {.l05-main}
+
 - Красивая формула связывает действие $J$ с периодом $T$ и частотой $\omega = \frac{2\pi}{T}$:
 $$
 \boxed{\frac{dJ}{dE}=\frac{T}{2\pi} = \frac{1}{\omega}}.
@@ -622,7 +630,7 @@ $$
 \end{aligned}
 $$
 
-::: {.marginnote .note-right .absolute top=225 left=1460 width=320 style="--note-font-size: 0.62em; --note-math-font-size: 1em; --note-padding: 0.7rem 0.8rem;"}
+::: {.marginnote .note-right .absolute top=225 left=1255 width=300 style="--note-font-size: 0.62em; --note-math-font-size: 1em; --note-padding: 0.7rem 0.8rem;"}
 <span class="note-title">Четыре строчки</span>
 
 $$
@@ -642,6 +650,8 @@ $$
 J=\frac{1}{2\pi}\pi q_{\max}p_{\max}=\frac{E}{\omega}, \qquad\frac{dJ}{dE} = \frac{1}{\omega}.
 $$
 
+:::
+
 ### $J$ и интегралы движения
 
 - $J$ -  интеграл движения.
@@ -654,7 +664,7 @@ $$
 
 ## Канонические переменные
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .story-tabs .l05-tight}
 
 ### Замена переменных
 
@@ -706,11 +716,11 @@ $$
 
 ## Циклотронная орбита в переменных $(\theta,J)$
 
-:::: {.panel-tabset .story-tabs}
+:::: {.panel-tabset .story-tabs .l05-tight}
 
 ### $(Q,P)$
 
-::: {.marginnote .note-right .absolute top=525 left=1660 width=320 style="--note-font-size: 0.62em; --note-math-font-size: 1em; --note-padding: 0.7rem 0.8rem;"}
+::: {.marginnote .note-right .absolute top=470 left=1255 width=300 style="--note-font-size: 0.62em; --note-math-font-size: 1em; --note-padding: 0.7rem 0.8rem;"}
 <span class="note-title">Уравнения Гамильтона</span>
 
 $$
@@ -720,6 +730,8 @@ $$
 $$
 :::
 
+
+::: {.l05-main}
 
 - Отделим движение относительно направляющего центра. При
 $\Omega=qB/m$ и $\omega_c=|\Omega|$ введём
@@ -750,6 +762,8 @@ $$
 
 Таким образом, $(Q,P)$ — каноническая пара для одной периодической степени
 свободы.
+
+:::
 
 ###  $J$
 
@@ -872,6 +886,8 @@ $J$ остаётся постоянным, а фазовая точка равн
 
 ### От $(\mathbf r,\mathbf p)$ к $(J,\theta)$
 
+::: {style="font-size: 0.94em;"}
+
 - Полное состояние частицы в трёхмерном пространстве задаётся шестью числами
 $(\mathbf r,\mathbf p)$:
 
@@ -909,6 +925,8 @@ $$
 
 - $J$ выбирает орбиту. Сопряжённая ему координата $\theta$ задаёт положение частицы на этой орбите.
 
+:::
+
 ### Портрет
 
 
@@ -919,11 +937,11 @@ $$
 
 ## Многоликое действие $J$
 
-::::: {.panel-tabset .story-tabs}
+::::: {.panel-tabset .story-tabs .l05-tight}
 
 ### Циклотронная орбита
 
-::: {.marginnote .note-right .absolute top=225 left=1660 width=320 style="--note-font-size: 0.62em; --note-math-font-size: 1em; --note-padding: 0.7rem 0.8rem;"}
+::: {.marginnote .note-right .absolute top=225 left=1255 width=300 style="--note-font-size: 0.62em; --note-math-font-size: 1em; --note-padding: 0.7rem 0.8rem;"}
 <span class="note-title">Напомним</span>
 
 $$
@@ -931,13 +949,15 @@ $$
 $$
 :::
 
-::: {.marginnote .note-right .absolute top=625 left=1660 width=320 style="--note-font-size: 0.62em; --note-math-font-size: 1em; --note-padding: 0.7rem 0.8rem;"}
+::: {.marginnote .note-right .absolute top=560 left=1255 width=300 style="--note-font-size: 0.62em; --note-math-font-size: 1em; --note-padding: 0.7rem 0.8rem;"}
 <span class="note-title">Напомним</span>
 
 $$
 \rho_L=\frac{p_\perp}{|q|B}
 $$
 :::
+
+::: {.l05-main style="font-size: 0.94em;"}
 
 - Для циклотронного движения действие:
 
@@ -964,11 +984,13 @@ $$
   J=\frac{|q|}{2\pi}\Phi
   $$
 
+:::
+
 ### Плоский ротатор
 
-:::: {.columns}
+:::: {.columns style="font-size: 0.92em;"}
 
-::: {.column width="56%"}
+::: {.column width="57%"}
 
 - Шарик массы $m$ закреплён на конце невесомого жёсткого стержня длины $R$.
 
@@ -1011,10 +1033,6 @@ $$
 
 ### Действие ротатора
 
-:::: {.columns}
-
-::: {.column width="49%"}
-
 - Рассмотрим  вращение в выбранном направлении, например
 $p_\varphi>0$. На этой ветви $p_\varphi$ постоянно, а за один оборот
 $\varphi$ увеличивается на $2\pi$:
@@ -1035,9 +1053,7 @@ $$
 \boxed{J=|p_\varphi|=|L_z|}.
 $$
 
-:::
-
-::: {.column width="49%"}
+### Угол $\theta$
 
 - Для ветви $p_\varphi>0$ сопряжённым углом служит сама координата
 $\theta=\varphi$. Действительно,
@@ -1063,10 +1079,6 @@ $$
 
 У ротатора действие совпало с модулем момента импульса. Это частный
 результат; общим остаётся определение $J=(2\pi)^{-1}\oint p\,dq$.
-
-:::
-
-::::
 
 ### Маятник
 
@@ -1101,9 +1113,9 @@ $$
 
 :::::
 
-## Итоги
+## Итоги {.l05-tight}
 
-:::: {.columns}
+:::: {.columns style="font-size: 0.94em;"}
 
 ::: {.column width="49%"}
 

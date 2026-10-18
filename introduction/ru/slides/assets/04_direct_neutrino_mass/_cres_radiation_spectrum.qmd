@@ -113,7 +113,7 @@ cresSpectrumPlot = Plot.plot({
       stroke: "#4ea1ff",
       strokeWidth: 3
     }),
-    Plot.ruleX(cresNormalizedLines, {
+    Plot.ruleX(cresNormalizedLines.filter(line => Math.abs(line.frequency) <= 150), {
       x: "frequency",
       y1: 0,
       y2: "power",

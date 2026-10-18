@@ -810,7 +810,7 @@ $$
 
 ## Фильтр выбирает геометрию
 
-:::: {.panel-tabset .story-tabs .helicity-story-tabs}
+:::: {.panel-tabset .story-tabs .helicity-story-tabs .resonance-geometry-tabs}
 
 ### Захват электрона
 
@@ -1043,7 +1043,7 @@ $E_R\gg\langle K\rangle_{\rm th}$: ядро неизбежно будет тор
 
 ### Сравнение времён
 
-::::: {.columns}
+::::: {.columns .time-compare-tab}
 
 :::: {.column width="53%"}
 

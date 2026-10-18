@@ -1,0 +1,8 @@
+/* Lecture 04: local layout for the 1600×1000 slide frame. */
+
+/* Endpoint-spectrum widget on the slide «Суть метода»: a narrower panel keeps
+   the plot, its axis label and the summary line inside the frame. */
+.reveal .l04-spectrum-narrow .spectrum-panel {
+  width: 84%;
+  margin: 0 auto;
+}

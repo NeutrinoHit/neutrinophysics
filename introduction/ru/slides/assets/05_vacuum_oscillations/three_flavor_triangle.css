@@ -140,7 +140,7 @@
 
 .three-flavor-triangle__vertex {
   position: absolute;
-  font-size: 17px;
+  font-size: 1.0625em;
   font-weight: 750;
   white-space: nowrap;
 }
@@ -172,11 +172,11 @@
 
 .three-flavor-triangle__probabilities > div {
   display: grid;
-  grid-template-columns: 155px minmax(0, 1fr) 58px;
+  grid-template-columns: 9.1em minmax(0, 1fr) 3.4em;
   align-items: center;
   gap: 10px;
   color: #e7eef4;
-  font-size: 17px;
+  font-size: 1.0625em;
 }
 
 .three-flavor-triangle__probabilities > div:nth-child(1) > span { color: #58b8ff; }
@@ -210,24 +210,49 @@
   border-radius: 6px;
   background: rgba(126, 226, 174, 0.09);
   color: #d5eee1;
-  font-size: 16px;
   text-align: center;
 }
 
 .three-flavor-triangle__status strong { color: #fff; }
 
+/* На слайде 1920×1200 виджет крупнее и занимает всю ширину. */
+.reveal .three-flavor-triangle {
+  grid-template-columns: 430px minmax(0, 1fr);
+  gap: 22px;
+  width: 100%;
+  font-size: 22px;
+}
+
+.reveal .three-flavor-triangle__plot {
+  width: min(100%, 1200px);
+  height: auto;
+  aspect-ratio: 760 / 330;
+}
+
+/* Узкий экран отдельной страницы. В reveal.js слайд масштабируется целиком,
+   поэтому эти правила к нему не применяются. */
 @media (max-width: 900px) {
-  .three-flavor-triangle {
+  body:not(.reveal-viewport) .three-flavor-triangle {
     grid-template-columns: 270px minmax(0, 1fr);
     gap: 9px;
     font-size: 13px;
   }
-  .three-flavor-triangle__controls,
-  .three-flavor-triangle__visual { padding: 8px; }
-  .three-flavor-triangle__plot { height: auto; aspect-ratio: 760 / 330; }
-  .three-flavor-triangle__vertex { font-size: 13px; }
-  .three-flavor-triangle__probabilities > div {
-    grid-template-columns: 110px minmax(0, 1fr) 48px;
-    font-size: 13px;
+  body:not(.reveal-viewport) .three-flavor-triangle__controls,
+  body:not(.reveal-viewport) .three-flavor-triangle__visual { padding: 8px; }
+  body:not(.reveal-viewport) .three-flavor-triangle__plot { height: auto; aspect-ratio: 760 / 330; }
+  body:not(.reveal-viewport) .three-flavor-triangle__probabilities > div {
+    grid-template-columns: 8.5em minmax(0, 1fr) 3.7em;
+    font-size: 1em;
   }
+}
+
+@media (max-width: 640px) {
+  body:not(.reveal-viewport) .three-flavor-triangle { grid-template-columns: minmax(0, 1fr); }
+  body:not(.reveal-viewport) .three-flavor-triangle__probabilities { padding: 8px 0 0; }
+  body:not(.reveal-viewport) .three-flavor-triangle__probabilities > div {
+    grid-template-columns: 5.5em minmax(0, 1fr) 3.4em;
+  }
+  body:not(.reveal-viewport) .three-flavor-triangle__vertex { font-size: 0.85em; }
+  body:not(.reveal-viewport) .three-flavor-triangle__vertex--mu { left: 4%; }
+  body:not(.reveal-viewport) .three-flavor-triangle__vertex--tau { right: 4%; }
 }

@@ -2,7 +2,7 @@
 <div class="refraction-layers-lab" data-refraction-layers
      role="group" aria-label="Фаза световой волны в прозрачном слое">
   <div class="refraction-layers-lab__controls">
-    <label>Показатель преломления
+    <label>Показатель преломления, \(n\)
       <span data-index-value>1.08</span>
       <input type="range" data-index min="1" max="1.2" step="0.005" value="1.08">
     </label>
@@ -13,19 +13,19 @@
   </div>
   <svg viewBox="0 0 1200 395" role="img"
        aria-label="Сравнение волны, прошедшей через слой, с волной в вакууме">
-    <rect class="refraction-layers-lab__medium" x="285" y="35" width="630" height="260"></rect>
+    <rect class="refraction-layers-lab__medium" data-medium x="442.5" y="35" width="315" height="260"></rect>
     <line class="refraction-layers-lab__axis" x1="70" y1="165" x2="1130" y2="165"></line>
     <path class="refraction-layers-lab__vacuum" data-vacuum-wave></path>
     <path class="refraction-layers-lab__wave" data-medium-wave></path>
-    <line class="refraction-layers-lab__boundary" x1="285" y1="35" x2="285" y2="295"></line>
-    <line class="refraction-layers-lab__boundary" x1="915" y1="35" x2="915" y2="295"></line>
-    <text x="125" y="335">вакуум</text>
-    <text x="515" y="335">вещество</text>
-    <text x="962" y="335">вакуум</text>
-    <line class="refraction-layers-lab__key-vacuum" x1="360" y1="370" x2="410" y2="370"></line>
-    <text x="424" y="377">без слоя</text>
-    <line class="refraction-layers-lab__key-medium" x1="680" y1="370" x2="730" y2="370"></line>
-    <text x="744" y="377">со слоем</text>
+    <line class="refraction-layers-lab__boundary" data-entry x1="442.5" y1="35" x2="442.5" y2="295"></line>
+    <line class="refraction-layers-lab__boundary" data-exit x1="757.5" y1="35" x2="757.5" y2="295"></line>
+    <text x="177" y="335" text-anchor="middle">вакуум</text>
+    <text x="600" y="335" text-anchor="middle">вещество</text>
+    <text x="1023" y="335" text-anchor="middle">вакуум</text>
+    <line class="refraction-layers-lab__key-vacuum" x1="330" y1="374" x2="380" y2="374"></line>
+    <text x="394" y="381">без слоя</text>
+    <line class="refraction-layers-lab__key-medium" x1="650" y1="374" x2="700" y2="374"></line>
+    <text x="714" y="381">со слоем</text>
   </svg>
   <p class="refraction-layers-lab__readout" aria-live="polite">
     Добавочная фаза на выходе:

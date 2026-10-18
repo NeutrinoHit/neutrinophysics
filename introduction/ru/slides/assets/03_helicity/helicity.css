@@ -53,7 +53,7 @@
 
 .reveal .helicity-card {
   position: relative;
-  min-height: 390px;
+  min-height: 340px;
   padding: 0.8rem;
   overflow: hidden;
   border: 1px solid var(--hel-border);
@@ -102,7 +102,7 @@
   border-style: solid;
 }
 
-.reveal .helicity-arrow span {
+.reveal .helicity-arrow > span {
   position: absolute;
   top: -48px;
   color: inherit;
@@ -126,7 +126,7 @@
   border-color: transparent transparent transparent var(--hel-cyan);
 }
 
-.reveal .helicity-spin-arrow span {
+.reveal .helicity-spin-arrow > span {
   left: 43px;
 }
 
@@ -152,7 +152,7 @@
   right: -3px;
 }
 
-.reveal .helicity-card-right .helicity-momentum-arrow span {
+.reveal .helicity-card-right .helicity-momentum-arrow > span {
   right: 42px;
 }
 
@@ -165,7 +165,7 @@
   transform: translateY(-50%) rotate(180deg);
 }
 
-.reveal .helicity-card-left .helicity-momentum-arrow span {
+.reveal .helicity-card-left .helicity-momentum-arrow > span {
   left: 42px;
 }
 
@@ -923,7 +923,7 @@
   top: 72px;
 }
 
-.reveal .photon-problem-arrow span {
+.reveal .photon-problem-arrow > span {
   position: absolute;
   top: -0.62rem;
   left: 50%;
@@ -1076,7 +1076,7 @@
   text-align: left;
 }
 
-.reveal .chirality-calc-title span {
+.reveal .chirality-calc-title > span {
   margin-left: 0.45rem;
   color: var(--hel-muted);
   font-size: 0.82em;
@@ -1202,7 +1202,7 @@
   text-align: center;
 }
 
-.reveal .frame-title span {
+.reveal .frame-title > span {
   position: absolute;
   top: 15px;
   right: 0;
@@ -1267,7 +1267,7 @@
 .reveal .frame-observer::before { left: 12px; }
 .reveal .frame-observer::after { right: 12px; }
 
-.reveal .frame-observer span {
+.reveal .frame-observer > span {
   position: absolute;
   top: 48px;
   left: -18px;
@@ -1294,8 +1294,8 @@
   border-style: solid;
 }
 
-.reveal .frame-vector span,
-.reveal .res-vector span {
+.reveal .frame-vector > span,
+.reveal .res-vector > span {
   position: absolute;
   font-size: 0.56em;
   white-space: nowrap;
@@ -1318,7 +1318,7 @@
   border-color: transparent transparent transparent var(--hel-cyan);
 }
 
-.reveal .frame-spin span { top: -52px; left: 43px; }
+.reveal .frame-spin > span { top: -52px; left: 43px; }
 
 .reveal .frame-momentum-right,
 .reveal .frame-momentum-left {
@@ -1347,8 +1347,8 @@
   border-color: transparent transparent transparent var(--hel-orange);
 }
 
-.reveal .frame-momentum-right span { top: 10px; right: 48px; }
-.reveal .frame-momentum-left span { top: 10px; left: 48px; }
+.reveal .frame-momentum-right > span { top: 10px; right: 48px; }
+.reveal .frame-momentum-left > span { top: 10px; left: 48px; }
 
 .reveal .frame-helicity {
   position: relative;
@@ -1359,7 +1359,7 @@
   text-align: center;
 }
 
-.reveal .frame-helicity span {
+.reveal .frame-helicity > span {
   position: absolute;
   top: 14px;
   right: 0;
@@ -1421,7 +1421,7 @@
   border-color: transparent transparent transparent rgb(102 204 255 / 45%);
 }
 
-.reveal .light-front span {
+.reveal .light-front > span {
   position: absolute;
   top: -34px;
   left: 28px;
@@ -1457,7 +1457,7 @@
 .reveal .light-observer::before { left: 12px; }
 .reveal .light-observer::after { right: 12px; }
 
-.reveal .light-observer span {
+.reveal .light-observer > span {
   position: absolute;
   top: 48px;
   left: -18px;
@@ -1594,7 +1594,7 @@
   border-color: transparent transparent transparent #a7b9c4;
 }
 
-.reveal .tag-axis span {
+.reveal .tag-axis > span {
   position: absolute;
   top: 10px;
   right: 0;
@@ -1696,7 +1696,7 @@
   border-style: solid;
 }
 
-.reveal .tag-vector span { position: absolute; font-size: 0.5em; white-space: nowrap; }
+.reveal .tag-vector > span { position: absolute; font-size: 0.5em; white-space: nowrap; }
 
 .reveal .tag-recoil,
 .reveal .tag-gamma-momentum {
@@ -1715,8 +1715,8 @@
   border-color: transparent transparent transparent var(--hel-orange);
 }
 
-.reveal .tag-recoil span,
-.reveal .tag-gamma-momentum span { top: 12px; left: 35px; }
+.reveal .tag-recoil > span,
+.reveal .tag-gamma-momentum > span { top: 12px; left: 35px; }
 
 .reveal .tag-nu-momentum {
   top: 309px;
@@ -1732,7 +1732,7 @@
   border-color: transparent transparent transparent var(--hel-orange);
 }
 
-.reveal .tag-nu-momentum span { top: 12px; right: 75px; }
+.reveal .tag-nu-momentum > span { top: 12px; right: 75px; }
 
 .reveal .tag-nu-spin,
 .reveal .tag-gamma-spin {
@@ -1751,8 +1751,8 @@
   border-color: transparent transparent transparent var(--hel-cyan);
 }
 
-.reveal .tag-nu-spin span,
-.reveal .tag-gamma-spin span { top: -48px; left: 22px; }
+.reveal .tag-nu-spin > span,
+.reveal .tag-gamma-spin > span { top: -48px; left: 22px; }
 
 .reveal .tag-gamma-spin { right: auto; left: 9%; }
 
@@ -1767,7 +1767,7 @@
   text-align: center;
 }
 
-.reveal .tag-equation span { position: absolute; right: 0; bottom: 0; left: 0; opacity: 0; }
+.reveal .tag-equation > span { position: absolute; right: 0; bottom: 0; left: 0; opacity: 0; }
 
 .reveal .spin-tagging.is-active .tag-electron { animation: tag-electron-in 7.5s ease-in-out infinite; }
 .reveal .spin-tagging.is-active .tag-source { animation: tag-source-out 7.5s ease-in-out infinite; }
@@ -2071,7 +2071,7 @@
   border-color: transparent transparent transparent var(--hel-green);
 }
 
-.reveal .tag-electron-spin-arrow span {
+.reveal .tag-electron-spin-arrow > span {
   position: absolute;
   top: -36px;
   left: 4px;
@@ -2164,7 +2164,7 @@
   border-color: transparent transparent transparent var(--hel-cyan);
 }
 
-.reveal .tag-b-spin-arrow span {
+.reveal .tag-b-spin-arrow > span {
   position: absolute;
   top: -40px;
   left: 8px;
@@ -2196,7 +2196,7 @@
   border-color: transparent var(--hel-orange) transparent transparent;
 }
 
-.reveal .tag-b-recoil-arrow span {
+.reveal .tag-b-recoil-arrow > span {
   position: absolute;
   top: 13px;
   right: 28px;
@@ -2256,7 +2256,7 @@
   border-color: transparent var(--hel-green) transparent transparent;
 }
 
-.reveal .tag-neutrino-spin-arrow span {
+.reveal .tag-neutrino-spin-arrow > span {
   position: absolute;
   top: -36px;
   right: 6px;
@@ -2287,7 +2287,7 @@
   border-color: transparent transparent transparent var(--hel-orange);
 }
 
-.reveal .tag-neutrino-momentum-arrow span {
+.reveal .tag-neutrino-momentum-arrow > span {
   position: absolute;
   top: 13px;
   left: 48px;
@@ -2539,7 +2539,7 @@
   border-left: 22px solid var(--hel-orange);
 }
 
-.reveal .iron-field span {
+.reveal .iron-field > span {
   position: absolute;
   top: -39px;
   left: 72px;
@@ -2636,7 +2636,7 @@
   text-align: center;
 }
 
-.reveal .histogram-axis span {
+.reveal .histogram-axis > span {
   position: absolute;
   top: 58px;
   left: -67px;
@@ -2671,7 +2671,7 @@
   transform: translateX(-50%);
 }
 
-.reveal .count-row span {
+.reveal .count-row > span {
   position: absolute;
   bottom: -34px;
   left: 50%;
@@ -2698,7 +2698,7 @@
   animation: analyzer-field 12s ease-in-out 1 both;
 }
 
-.reveal .photon-analyzer.is-active .iron-field span {
+.reveal .photon-analyzer.is-active .iron-field > span {
   animation: analyzer-field-label 12s ease-in-out 1 both;
 }
 
@@ -2892,7 +2892,7 @@
   font-size: 1.08em;
 }
 
-.reveal .analyzer-spin-meaning span {
+.reveal .analyzer-spin-meaning > span {
   font-size: 1.12em;
 }
 
@@ -2966,7 +2966,7 @@
   cursor: pointer;
 }
 
-.reveal .animation-control span {
+.reveal .animation-control > span {
   color: var(--hel-cyan);
   font-size: 0.95em;
 }
@@ -2976,7 +2976,7 @@
   background: rgb(255 173 90 / 10%);
 }
 
-.reveal .animation-pause span {
+.reveal .animation-pause > span {
   color: var(--hel-orange);
 }
 
@@ -3033,7 +3033,7 @@
   height: 9px;
 }
 
-.reveal .analyzer-compact .iron-field span {
+.reveal .analyzer-compact .iron-field > span {
   top: -37px;
   left: 86px;
 }
@@ -3168,8 +3168,8 @@
   text-align: center;
 }
 
-.reveal .resonance-slider-scale span:first-child { text-align: left; }
-.reveal .resonance-slider-scale span:last-child { text-align: right; }
+.reveal .resonance-slider-scale > span:first-child { text-align: left; }
+.reveal .resonance-slider-scale > span:last-child { text-align: right; }
 
 .reveal .resonance-stage {
   position: relative;
@@ -3363,7 +3363,7 @@
   font-weight: 700;
 }
 
-.reveal .resonance-direction-note span {
+.reveal .resonance-direction-note > span {
   margin-left: 10px;
   color: #ffd84f;
   font-size: 1.5em;
@@ -3382,7 +3382,7 @@
 
 .reveal .resonance-energy-heading strong { font-size: 0.82em; }
 
-.reveal .resonance-energy-heading span {
+.reveal .resonance-energy-heading > span {
   color: var(--hel-cyan);
   font-size: 0.68em;
   font-weight: 750;
@@ -3409,7 +3409,7 @@
   background: rgb(117 221 184 / 18%);
 }
 
-.reveal .resonance-energy-window span {
+.reveal .resonance-energy-window > span {
   position: absolute;
   top: -31px;
   left: 50%;
@@ -3435,7 +3435,7 @@
   transition: left 120ms linear, background 120ms linear;
 }
 
-.reveal .resonance-energy-marker span {
+.reveal .resonance-energy-marker > span {
   position: absolute;
   top: 31px;
   left: 50%;
@@ -3451,7 +3451,7 @@
   box-shadow: 0 0 22px rgb(117 221 184 / 80%);
 }
 
-.reveal .resonance-explorer.is-resonant .resonance-energy-marker span {
+.reveal .resonance-explorer.is-resonant .resonance-energy-marker > span {
   opacity: 0;
 }
 
@@ -3468,8 +3468,8 @@
   text-align: center;
 }
 
-.reveal .resonance-energy-labels span:first-child { text-align: left; }
-.reveal .resonance-energy-labels span:last-child { text-align: right; }
+.reveal .resonance-energy-labels > span:first-child { text-align: left; }
+.reveal .resonance-energy-labels > span:last-child { text-align: right; }
 
 .reveal .resonance-outcome {
   display: flex;
@@ -3892,7 +3892,7 @@
   text-align: center;
 }
 
-.reveal .experiment-lead-shield span {
+.reveal .experiment-lead-shield > span {
   margin-left: 70px;
 }
 
@@ -3915,7 +3915,7 @@
   clip-path: polygon(0 18%, 100% 0, 100% 100%, 0 82%);
 }
 
-.reveal .experiment-scintillator span {
+.reveal .experiment-scintillator > span {
   position: absolute;
   z-index: 2;
   inset: 0;
@@ -4378,7 +4378,7 @@
   font: 820 0.78em/1.05 system-ui, sans-serif;
 }
 
-.reveal .experiment-field-phase-caption span {
+.reveal .experiment-field-phase-caption > span {
   color: var(--hel-cyan);
   font: 730 0.54em/1.1 system-ui, sans-serif;
 }
@@ -5461,4 +5461,21 @@
     animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
   }
+}
+
+/* Кадр 1600 × 1000: плотные вкладки «Фильтр выбирает геометрию» и
+   «Сравнение времён» без лишних полей вокруг выключных формул. */
+.reveal .resonance-geometry-tabs .MJXc-display,
+.reveal .time-compare-tab .MJXc-display {
+  margin: 0.35em 0;
+}
+
+.reveal .resonance-geometry-tabs .math.display {
+  margin: 0.5rem 0;
+  font-size: 1.12em;
+}
+
+.reveal .helicity-story-tabs .time-compare-tab .math.display {
+  margin: 0.45rem 0;
+  font-size: 1em;
 }

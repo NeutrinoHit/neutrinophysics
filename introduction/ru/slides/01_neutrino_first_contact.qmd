@@ -246,7 +246,7 @@ $$
 
 ::: {.column width="55%"}
 
-<video class="slide-video media-height-md" data-autoplay muted loop controls preload="metadata" playsinline poster="assets/01_neutrino_101/spin.jpg" src="assets/01_neutrino_101/spin.mp4"></video>
+<video class="slide-video media-height-md" style="--media-width: 98%;" data-autoplay muted loop controls preload="metadata" playsinline poster="assets/01_neutrino_101/spin.jpg" src="assets/01_neutrino_101/spin.mp4"></video>
 
 :::
 
