@@ -200,7 +200,7 @@ $$
 
 ### Анимация
 
-<video class="slide-video" style="--media-max-height: 600px;" controls preload="metadata" playsinline src="assets/04_direct_neutrino_mass/katrin_mac_e_electric.mp4"></video>
+{{< nh-video mac-e-filter variant="film-katrin-electric" class="slide-video" style="--media-max-height: 600px;" controls=true preload="metadata" playsinline=true >}}
 
 ::::
 
@@ -973,7 +973,7 @@ $E$ с порогом $e|U|$.
 
 ### Анимация
 
-<video class="slide-video" style="--media-max-height: 560px;" controls preload="metadata" playsinline src="assets/04_direct_neutrino_mass/katrin_mac_e_electric.mp4"></video>
+{{< nh-video mac-e-filter variant="film-katrin-electric" class="slide-video" style="--media-max-height: 560px;" controls=true preload="metadata" playsinline=true >}}
 
 <p class="media-caption">
   В магнитном поле KATRIN при входе в главный спектрометр $p_\perp$

@@ -499,13 +499,7 @@ $$
 
 ## Параметрическое усиление {#parametric-layers}
 
-<video
-  class="slide-video media-width-full"
-  style="--media-width: 96%; --media-max-height: 700px;"
-  data-autoplay autoplay loop muted playsinline controls preload="metadata"
-  aria-label="Чередование двух слоёв вещества переводит электронное нейтрино в мюонное"
-  src="assets/06_matter_oscillations/msw_parametric_layers.mp4">
-</video>
+{{< nh-video msw-parametric variant="film-layers" class="slide-video media-width-full" style="--media-width: 96%; --media-max-height: 700px;" data-autoplay=true autoplay=true loop=true muted=true playsinline=true controls=true preload="metadata" aria-label="Чередование двух слоёв вещества переводит электронное нейтрино в мюонное" >}}
 
 ::: {.nh-text tone="muted" size="sm"}
 $\theta=8^\circ$, $A_1=1.6$, $A_2=4.0$, обе среды выше резонанса. По отдельности

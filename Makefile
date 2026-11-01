@@ -20,9 +20,7 @@ site: prune-unpublished
 	quarto render
 	$(MAKE) prune-unpublished
 	rm -rf _site/introduction/slides _site/introduction/ru/book
-	rm -f \
-		_site/assets/2601.00248v1.pdf \
-		_site/introduction/ru/slides/assets/01_neutrino_101/coupled_oscillators.mp4
+	rm -f _site/assets/2601.00248v1.pdf
 	find _site -type f -name '*.pdfp' -delete
 	find _site -type f -name '*.qmd' -delete
 	find _site/solar-neutrino-masterclass/data/project -type f -name '*.csv' -delete

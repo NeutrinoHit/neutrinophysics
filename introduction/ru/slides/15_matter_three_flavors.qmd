@@ -129,13 +129,7 @@ $Y_e=0.495$ и $0.47$. A. M. Dziewonski, D. L. Anderson,
 
 ## Три уровня в веществе {#three-levels}
 
-<video
-  class="slide-video media-width-full"
-  style="--media-width: 92%; --media-max-height: 760px;"
-  data-autoplay autoplay muted playsinline controls preload="metadata"
-  aria-label="Три собственных значения гамильтониана вещества как функции плотности и адиабатический выход электронного нейтрино"
-  src="assets/06_matter_oscillations/msw_three_levels.mp4">
-</video>
+{{< nh-video msw-three-levels variant="film-ru" class="slide-video media-width-full" style="--media-width: 92%; --media-max-height: 760px;" data-autoplay=true autoplay=true muted=true playsinline=true controls=true preload="metadata" aria-label="Три собственных значения гамильтониана вещества как функции плотности и адиабатический выход электронного нейтрино" >}}
 
 ::: {.media-caption}
 Собственные значения $2EH$ при убывающей плотности. Электронное нейтрино,

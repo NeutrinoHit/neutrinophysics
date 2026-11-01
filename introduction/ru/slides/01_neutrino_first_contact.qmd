@@ -176,7 +176,7 @@ $$
 
 ## Аналогия: связанные осцилляторы
 
-<video class="slide-video media-height-lg" data-autoplay muted loop controls preload="metadata" playsinline poster="assets/01_neutrino_101/coupled_oscillators_baikal.jpg" src="assets/01_neutrino_101/coupled_oscillators_baikal.mp4"></video>
+{{< nh-video coupled-oscillators variant="film-baikal" class="slide-video media-height-lg" data-autoplay=true muted=true loop=true controls=true preload="metadata" playsinline=true poster="assets/01_neutrino_101/coupled_oscillators_baikal.jpg" >}}
 
 # 5. Что мы знаем о нейтрино
 
@@ -246,7 +246,7 @@ $$
 
 ::: {.column width="55%"}
 
-<video class="slide-video media-height-md" style="--media-width: 98%;" data-autoplay muted loop controls preload="metadata" playsinline poster="assets/01_neutrino_101/spin.jpg" src="assets/01_neutrino_101/spin.mp4"></video>
+{{< nh-video spin variant="film-sphere" class="slide-video media-height-md" style="--media-width: 98%;" data-autoplay=true muted=true loop=true controls=true preload="metadata" playsinline=true poster="assets/01_neutrino_101/spin.jpg" >}}
 
 :::
 
@@ -526,7 +526,7 @@ $$
 
 ## Нейтрино как квантовый хамелеон
 
-<video class="slide-video media-height-lg" data-autoplay muted loop controls preload="metadata" playsinline poster="assets/01_neutrino_101/oscillation_chameleon.jpg" src="assets/01_neutrino_101/oscillation_chameleon.mp4"></video>
+{{< nh-video neutrino-oscillation-phases variant="film-phases" class="slide-video media-height-lg" data-autoplay=true muted=true loop=true controls=true preload="metadata" playsinline=true poster="assets/01_neutrino_101/oscillation_chameleon.jpg" >}}
 
 ## Экспериментальные свидетельства
 
@@ -771,7 +771,7 @@ $$
 
 ::::
 
-<video class="slide-video" style="--media-max-height: 500px;" data-autoplay muted loop controls preload="metadata" playsinline poster="assets/01_neutrino_101/mass_ordering.jpg" src="assets/01_neutrino_101/mass_ordering.mp4"></video>
+{{< nh-video mass-hierarchy variant="film-ordering" class="slide-video" style="--media-max-height: 500px;" data-autoplay=true muted=true loop=true controls=true preload="metadata" playsinline=true poster="assets/01_neutrino_101/mass_ordering.jpg" >}}
 
 ## Дираковское или майорановское?
 

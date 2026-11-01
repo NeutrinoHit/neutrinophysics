@@ -1,28 +1,32 @@
 project:
   type: website
   output-dir: _site
+  post-render:
+    - _extensions/neutrinohit-media/prune.py
+  # A leading "/" anchors a pattern at the project root; without it Quarto also
+  # matches the same folders inside .work/ (for example a release candidate).
   resources:
-    - "assets/**"
-    - "shared/reveal/**"
-    - "introduction/Helicity/**"
-    - "introduction/Introduction/**"
-    - "introduction/Parity/**"
-    - "introduction/_includes/*.html"
-    - "introduction/**/assets/**"
+    - "/assets/**"
+    - "/shared/reveal/**"
+    - "/introduction/Helicity/**"
+    - "/introduction/Introduction/**"
+    - "/introduction/Parity/**"
+    - "/introduction/_includes/*.html"
+    - "/introduction/**/assets/**"
     - "!introduction/ru/slides/planned/**"
     - "!introduction/ru/exercises/planned/**"
-    - "introduction/slides/**"
-    - "oscillations-minicourse/en/slides/assets/**"
+    - "/introduction/slides/**"
+    - "/oscillations-minicourse/en/slides/assets/**"
     - "!oscillations-minicourse/en/slides/assets/oscillations/**"
     - "!oscillations-minicourse/en/slides/assets/earth-explorer/*.py"
     - "!oscillations-minicourse/en/slides/assets/earth-explorer/*.mjs"
-    - "oscillations-minicourse/en/slides/media/**"
-    - "solar-neutrino-masterclass/assets/**"
-    - "solar-neutrino-masterclass/data/b8_spectrum.csv"
-    - "solar-neutrino-masterclass/data/masterclass1/**"
-    - "solar-neutrino-masterclass/data/masterclass2/**"
-    - "solar-neutrino-masterclass/data/project/**"
-    - "solar-neutrino-masterclass/data/student/**"
+    - "/oscillations-minicourse/en/slides/media/**"
+    - "/solar-neutrino-masterclass/assets/**"
+    - "/solar-neutrino-masterclass/data/b8_spectrum.csv"
+    - "/solar-neutrino-masterclass/data/masterclass1/**"
+    - "/solar-neutrino-masterclass/data/masterclass2/**"
+    - "/solar-neutrino-masterclass/data/project/**"
+    - "/solar-neutrino-masterclass/data/student/**"
   render:
     - "*.qmd"
     - "introduction/index.qmd"

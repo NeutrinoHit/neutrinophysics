@@ -103,13 +103,7 @@ $$
 
 ## Вакуум, резонанс, плотная среда
 
-<video
-  class="slide-video media-width-full"
-  style="--media-width: 96%; --media-max-height: 700px;"
-  data-autoplay autoplay loop muted playsinline controls preload="metadata"
-  aria-label="Три пары связанных маятников: вакуум, резонанс и плотная среда"
-  src="assets/06_matter_oscillations/l14_pendulums_beats.mp4">
-</video>
+{{< nh-video msw-pendulums variant="film-beats" class="slide-video media-width-full" style="--media-width: 96%; --media-max-height: 700px;" data-autoplay=true autoplay=true loop=true muted=true playsinline=true controls=true preload="metadata" aria-label="Три пары связанных маятников: вакуум, резонанс и плотная среда" >}}
 
 ::: {.media-caption}
 При $\ell_1=\ell_2$ частоты равны, и энергия переходит целиком. Короткий
@@ -320,13 +314,7 @@ $$
 
 ## Медленный и быстрый проход
 
-<video
-  class="slide-video media-width-full"
-  style="--media-width: 96%; --media-max-height: 700px;"
-  data-autoplay autoplay loop muted playsinline controls preload="metadata"
-  aria-label="Медленный и быстрый проход связанных маятников через резонанс"
-  src="assets/06_matter_oscillations/l14_pendulums_passage.mp4">
-</video>
+{{< nh-video msw-pendulums variant="film-passage" class="slide-video media-width-full" style="--media-width: 96%; --media-max-height: 700px;" data-autoplay=true autoplay=true loop=true muted=true playsinline=true controls=true preload="metadata" aria-label="Медленный и быстрый проход связанных маятников через резонанс" >}}
 
 ::: {.media-caption}
 Опора маятника 1 поднимается за 70 с или за 3 с. При медленном проходе
@@ -337,13 +325,7 @@ $$
 
 ## Где гасится вакуумная мода 1
 
-<video
-  class="slide-video media-width-full"
-  style="--media-width: 96%; --media-max-height: 700px;"
-  data-autoplay autoplay loop muted playsinline controls preload="metadata"
-  aria-label="Амплитуда вакуумной моды 1 как сумма двух путей d и f при медленном проходе"
-  src="assets/06_matter_oscillations/l14_pendulums_modes.mp4">
-</video>
+{{< nh-video msw-pendulums variant="film-modes" class="slide-video media-width-full" style="--media-width: 96%; --media-max-height: 700px;" data-autoplay=true autoplay=true loop=true muted=true playsinline=true controls=true preload="metadata" aria-label="Амплитуда вакуумной моды 1 как сумма двух путей d и f при медленном проходе" >}}
 
 ::: {.media-caption}
 Тот же медленный проход в фиксированных модах вакуума. В начале $|c_1|^2=\sin^2\alpha_0=0{,}79$.

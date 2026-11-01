@@ -57,8 +57,9 @@
 - [ALEPH, τ-распады](https://cds.cern.ch/record/337738), 1998.
 - [NuFIT 6.0](https://arxiv.org/abs/2410.05380), 2024.
 
-Ранее подготовленная анимация project8_cres.mp4 хранится в
-../04_direct_neutrino_mass/. Её источник —
+Ранее подготовленная анимация project8_cres.mp4 с 1 ноября 2026 года
+берётся из общей медиатеки: /media-neutrino/project8-cres/film-cres-event-v1.mp4
+(закреплена в media.lock.json, вставка nh-video). Её источник —
 сцена dvnanima/project8_cres.
 В ней кинетическая энергия обозначена K; подпись на слайде сопоставляет
 её с E, используемой в лекциях.

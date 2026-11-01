@@ -103,7 +103,7 @@ $$
 
 # К чему мы придём
 
-<video class="slide-video" style="--media-max-height: 760px;"  controls preload="metadata" playsinline  src="assets/04_direct_neutrino_mass/katrin_mac_e_electric.mp4"></video>
+{{< nh-video mac-e-filter variant="film-katrin-electric" class="slide-video" style="--media-max-height: 760px;" controls=true preload="metadata" playsinline=true >}}
 
 <p class="media-caption">
   MAC-E: электроны выше порога проходят, ниже порога — отражаются.
@@ -428,7 +428,7 @@ $$
 
 ### Анимация
 
-<video class="slide-video" style="--media-max-height: 620px;" controls preload="metadata" playsinline poster="assets/04_direct_neutrino_mass/uniform_b_ensemble.jpg" src="assets/04_direct_neutrino_mass/uniform_b_ensemble.mp4"></video>
+{{< nh-video mac-e-filter variant="film-uniform-field" class="slide-video" style="--media-max-height: 620px;" controls=true preload="metadata" playsinline=true poster="assets/04_direct_neutrino_mass/uniform_b_ensemble.jpg" >}}
 
 <p class="media-caption">
   Три электрона показаны в один и тот же момент времени. Их скорости равны

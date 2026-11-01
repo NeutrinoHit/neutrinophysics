@@ -1,11 +1,11 @@
 ```{=html}
 <div class="weak-interaction-grid" aria-label="Слабые взаимодействия нейтрино">
   <div class="interaction-card">
-    <video data-autoplay muted loop playsinline preload="metadata" poster="assets/01_neutrino_101/numu_e_to_nue_mu.jpg" src="assets/01_neutrino_101/numu_e_to_nue_mu.mp4"></video>
+    {{< nh-video feynman-scattering variant="film-nu-mu-electron" data-autoplay=true muted=true loop=true playsinline=true preload="metadata" poster="assets/01_neutrino_101/numu_e_to_nue_mu.jpg" >}}
     <div class="interaction-label">заряженный ток: обмен W</div>
   </div>
   <div class="interaction-card">
-    <video data-autoplay muted loop playsinline preload="metadata" src="assets/01_neutrino_101/numu_mu_via_z.mp4"></video>
+    {{< nh-video feynman-scattering variant="film-nu-mu-z" data-autoplay=true muted=true loop=true playsinline=true preload="metadata" >}}
     <div class="interaction-label">нейтральный ток: обмен Z</div>
   </div>
 </div>

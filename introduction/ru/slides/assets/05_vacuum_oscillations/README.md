@@ -11,9 +11,10 @@ Planned groups:
 - `_quantum_chameleon.qmd` and `quantum_chameleon.js`: 30-second opening
   vector animation. The moving chameleon is masked with a counter-translated
   copy of the scenery, so its skin samples the exact background beneath it;
-- `neutrino_oscillation_phases.mp4`: opening 16:9 animation copied from
-  `dvnanima/neutrino_oscillations_phases`; retained as a source animation and
-  available for reuse after the two-level derivation;
+- opening 16:9 animation of `dvnanima/neutrino_oscillations_phases`: since
+  1 November 2026 served by the shared media library as
+  `/media-neutrino/neutrino-oscillation-phases/film-phases-v1.mp4` (pinned in
+  `media.lock.json`, inserted with `nh-video`); the MP4 is no longer kept here;
 - `two_flavor_probabilities.svg`: static two-flavor probability plot;
 - `_two_flavor_lab.qmd`: interactive two-flavor calculator in the variables
   $\theta$ and $L/L_{\rm osc}$;

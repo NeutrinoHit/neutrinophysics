@@ -144,7 +144,7 @@ Far away, part of the $\nu_\mu$ produce electrons or taus, or nothing visible.
 
 ::: {.column width="58%"}
 
-<video class="slide-video" style="--media-max-height: 470px;" width="1920" height="1080" muted controls preload="metadata" playsinline poster="media/video/cherenkov_radiation_poster.jpg" src="media/video/cherenkov_radiation_en.mp4"></video>
+{{< nh-video cherenkov-radiation variant="web-huygens-en" class="slide-video" style="--media-max-height: 470px;" width="1920" height="1080" muted=true controls=true preload="metadata" playsinline=true poster="media/video/cherenkov_radiation_poster.jpg" >}}
 
 :::
 
@@ -241,7 +241,7 @@ Like polarized light behind a rotated polarizer: what is created along one axis 
 
 ## Two phases, one probability {#phases-film}
 
-<video class="slide-video" style="--media-max-height: 620px;" width="1920" height="1080" data-autoplay muted loop controls preload="metadata" playsinline src="media/video/neutrino_oscillation_phases.mp4"></video>
+{{< nh-video neutrino-oscillation-phases variant="web-phases" class="slide-video" style="--media-max-height: 620px;" width="1920" height="1080" data-autoplay=true muted=true loop=true controls=true preload="metadata" playsinline=true >}}
 
 ::: {.media-caption}
 Two mass components acquire different phases. Their sum at detection sets the probabilities of the flavor outcomes.
@@ -442,7 +442,7 @@ $$
 :::
 :::
 ::: {.column width="54%"}
-<video class="slide-video" style="--media-max-height: 470px;" width="1280" height="720" data-autoplay muted loop controls preload="metadata" playsinline poster="media/video/mass_ordering.jpg" src="media/video/NeutrinoHierarchyScales.mp4"></video>
+{{< nh-video mass-hierarchy variant="web-scales" class="slide-video" style="--media-max-height: 470px;" width="1280" height="720" data-autoplay=true muted=true loop=true controls=true preload="metadata" playsinline=true poster="media/video/mass_ordering.jpg" >}}
 
 Is $\nu_3$ the heaviest or the lightest? The **mass ordering** is not yet established; normal ordering is preferred at about 2–3σ.
 

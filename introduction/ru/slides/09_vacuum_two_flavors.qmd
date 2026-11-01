@@ -65,13 +65,7 @@ $$
 
 ## Периодичность — в вероятностях {#oscillation-phases}
 
-<video
-  class="slide-video media-width-full"
-  style="--media-width: 96%; --media-max-height: 650px;"
-  data-autoplay autoplay loop muted playsinline controls preload="metadata"
-  aria-label="Две массовые фазы нейтрино и возникающие вероятности осцилляций"
-  src="assets/05_vacuum_oscillations/neutrino_oscillation_phases.mp4">
-</video>
+{{< nh-video neutrino-oscillation-phases variant="film-phases" class="slide-video media-width-full" style="--media-width: 96%; --media-max-height: 650px;" data-autoplay=true autoplay=true loop=true muted=true playsinline=true controls=true preload="metadata" aria-label="Две массовые фазы нейтрино и возникающие вероятности осцилляций" >}}
 
 ::: {.media-caption}
 Две компоненты набирают разные фазы. Их сумма при регистрации определяет

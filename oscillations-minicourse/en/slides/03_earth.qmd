@@ -145,7 +145,7 @@ Three energy ranges, three physical quantities — all through the same weak int
 
 ## The Earth as a shield {#earth-shield}
 
-<video class="slide-video" style="--media-max-height: 640px;" width="1920" height="1080" muted controls preload="metadata" playsinline poster="media/video/earth_shield_poster.jpg" src="media/video/earth_shield_en.mp4"></video>
+{{< nh-video earth-shield variant="film-en" class="slide-video" style="--media-max-height: 640px;" width="1920" height="1080" muted=true controls=true preload="metadata" playsinline=true poster="media/video/earth_shield_poster.jpg" >}}
 
 ::: {.media-caption}
 PREM Earth, CSMS cross sections; probability of no interaction along the path. Muon ranges from PDG tables of standard rock.

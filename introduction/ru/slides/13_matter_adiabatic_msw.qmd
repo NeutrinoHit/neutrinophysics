@@ -34,7 +34,6 @@ format:
 resources:
   - assets/06_matter_oscillations/matter_oscillations.js
   - assets/06_matter_oscillations/lecture13.js
-  - assets/06_matter_oscillations/msw_rotating_basis_ru.mp4
 
 execute:
   echo: false
@@ -278,13 +277,7 @@ $\theta_m^0\simeq75^\circ$. Примесь $\nu_{1m}$ с весом $\cos^2\thet
 
 ## Поворот мгновенного базиса
 
-<video
-  class="slide-video media-width-full"
-  style="--media-width: 96%; --media-max-height: 640px;"
-  data-autoplay autoplay loop muted playsinline controls preload="metadata"
-  aria-label="Мгновенный базис поворачивается при выходе из Солнца, состояние следует за модой ν2m; при быстром профиле появляется перескок"
-  src="assets/06_matter_oscillations/msw_rotating_basis_ru.mp4">
-</video>
+{{< nh-video msw-rotating-basis variant="film-ru" class="slide-video media-width-full" style="--media-width: 96%; --media-max-height: 640px;" data-autoplay=true autoplay=true loop=true muted=true playsinline=true controls=true preload="metadata" aria-label="Мгновенный базис поворачивается при выходе из Солнца, состояние следует за модой ν2m; при быстром профиле появляется перескок" >}}
 
 ## Вероятность выживания $\nu_e$
 

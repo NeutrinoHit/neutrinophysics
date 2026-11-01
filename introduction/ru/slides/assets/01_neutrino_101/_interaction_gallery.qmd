@@ -1,15 +1,15 @@
 ```{=html}
 <div class="interaction-grid" aria-label="Примеры взаимодействий частиц">
   <div class="interaction-card">
-    <video data-autoplay muted loop playsinline preload="metadata" poster="assets/01_neutrino_101/numu_e_to_nue_mu.jpg" src="assets/01_neutrino_101/numu_e_to_nue_mu.mp4"></video>
+    {{< nh-video feynman-scattering variant="film-nu-mu-electron" data-autoplay=true muted=true loop=true playsinline=true preload="metadata" poster="assets/01_neutrino_101/numu_e_to_nue_mu.jpg" >}}
     <div class="interaction-label">заряженный ток: W</div>
   </div>
   <div class="interaction-card">
-    <video data-autoplay muted loop playsinline preload="metadata" poster="assets/01_neutrino_101/electron_scattering.jpg" src="assets/01_neutrino_101/electron_scattering.mp4"></video>
+    {{< nh-video feynman-scattering variant="film-electron-electron" data-autoplay=true muted=true loop=true playsinline=true preload="metadata" poster="assets/01_neutrino_101/electron_scattering.jpg" >}}
     <div class="interaction-label">электромагнитное: &gamma;</div>
   </div>
   <div class="interaction-card">
-    <video data-autoplay muted loop playsinline preload="metadata" poster="assets/01_neutrino_101/quark_scattering.jpg" src="assets/01_neutrino_101/quark_scattering.mp4"></video>
+    {{< nh-video feynman-scattering variant="film-quark-quark" data-autoplay=true muted=true loop=true playsinline=true preload="metadata" poster="assets/01_neutrino_101/quark_scattering.jpg" >}}
     <div class="interaction-label">сильное: g</div>
   </div>
 </div>

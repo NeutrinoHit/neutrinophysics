@@ -1,0 +1,216 @@
+{
+ "schema": 1,
+ "generated_by": "neutrinohit-map/scripts/nh_media.py lock",
+ "media": [
+  {
+   "id": "cherenkov-radiation",
+   "variant": "web-huygens-en",
+   "version": 1,
+   "url": "/media-neutrino/cherenkov-radiation/web-huygens-en-v1.mp4",
+   "sha256": "12df070e44a3775c2cfb5ceeede5d4764eef786f484d9150907b88eefe669d33",
+   "bytes": 1391444,
+   "status": "published",
+   "fallback": "oscillations-minicourse/en/slides/media/video/cherenkov_radiation_en.mp4"
+  },
+  {
+   "id": "coupled-oscillators",
+   "variant": "film-baikal",
+   "version": 1,
+   "url": "/media-neutrino/coupled-oscillators/film-baikal-v1.mp4",
+   "sha256": "f27e9a02d48bc6b4619082c832f4afcb4aef4ed76b3a9cd5d2c471c57c4cbed5",
+   "bytes": 20127015,
+   "status": "published",
+   "fallback": "introduction/ru/slides/assets/01_neutrino_101/coupled_oscillators_baikal.mp4"
+  },
+  {
+   "id": "earth-shield",
+   "variant": "film-en",
+   "version": 1,
+   "url": "/media-neutrino/earth-shield/film-en-v1.mp4",
+   "sha256": "71a7ff6591b43e5f4e247b22759a722daf1aba21ddf69ade882ca5f340ef2527",
+   "bytes": 15419844,
+   "status": "published",
+   "fallback": "oscillations-minicourse/en/slides/media/video/earth_shield_en.mp4"
+  },
+  {
+   "id": "feynman-scattering",
+   "variant": "film-electron-electron",
+   "version": 1,
+   "url": "/media-neutrino/feynman-scattering/film-electron-electron-v1.mp4",
+   "sha256": "6f09afa8274a2bc08d44f16c794b03e47df7070301136b87d4074cdd2919134a",
+   "bytes": 286813,
+   "status": "published",
+   "fallback": "introduction/ru/slides/assets/01_neutrino_101/electron_scattering.mp4"
+  },
+  {
+   "id": "feynman-scattering",
+   "variant": "film-nu-mu-electron",
+   "version": 1,
+   "url": "/media-neutrino/feynman-scattering/film-nu-mu-electron-v1.mp4",
+   "sha256": "1523d0b739fb1ae82a88b225a472a7ab3a3f580d84eeb6182e0742394708b103",
+   "bytes": 302668,
+   "status": "published",
+   "fallback": "introduction/ru/slides/assets/01_neutrino_101/numu_e_to_nue_mu.mp4"
+  },
+  {
+   "id": "feynman-scattering",
+   "variant": "film-nu-mu-z",
+   "version": 1,
+   "url": "/media-neutrino/feynman-scattering/film-nu-mu-z-v1.mp4",
+   "sha256": "8647c4861ce5f6b0af2e7b5c73060b250212da3b93dc9e05fa4e54dc55735c74",
+   "bytes": 301653,
+   "status": "published",
+   "fallback": "introduction/ru/slides/assets/01_neutrino_101/numu_mu_via_z.mp4"
+  },
+  {
+   "id": "feynman-scattering",
+   "variant": "film-quark-quark",
+   "version": 1,
+   "url": "/media-neutrino/feynman-scattering/film-quark-quark-v1.mp4",
+   "sha256": "4fedb30f230df60509ed5316ef829e37f823159ae3b4063470c3c88c7245e366",
+   "bytes": 311968,
+   "status": "published",
+   "fallback": "introduction/ru/slides/assets/01_neutrino_101/quark_scattering.mp4"
+  },
+  {
+   "id": "mac-e-filter",
+   "variant": "film-katrin-electric",
+   "version": 1,
+   "url": "/media-neutrino/mac-e-filter/film-katrin-electric-v1.mp4",
+   "sha256": "89cd0e093f8ec1e8d0a3e5858d8cdd2ed9e48844b87cee38e0943c47c9398a0f",
+   "bytes": 422784,
+   "status": "published",
+   "fallback": "introduction/ru/slides/assets/04_direct_neutrino_mass/katrin_mac_e_electric.mp4"
+  },
+  {
+   "id": "mac-e-filter",
+   "variant": "film-uniform-field",
+   "version": 1,
+   "url": "/media-neutrino/mac-e-filter/film-uniform-field-v1.mp4",
+   "sha256": "f68d1691dada8f206912f3c7057c08062f7c78579b1c63d8c2c6688c018e6fed",
+   "bytes": 3700631,
+   "status": "published",
+   "fallback": "introduction/ru/slides/assets/04_direct_neutrino_mass/uniform_b_ensemble.mp4"
+  },
+  {
+   "id": "mass-hierarchy",
+   "variant": "film-ordering",
+   "version": 1,
+   "url": "/media-neutrino/mass-hierarchy/film-ordering-v1.mp4",
+   "sha256": "5a4ec5050059b225099d26167dcb06241227d4b8d46ead405db066350104c39e",
+   "bytes": 562430,
+   "status": "published",
+   "fallback": "introduction/ru/slides/assets/01_neutrino_101/mass_ordering.mp4"
+  },
+  {
+   "id": "mass-hierarchy",
+   "variant": "web-scales",
+   "version": 1,
+   "url": "/media-neutrino/mass-hierarchy/web-scales-v1.mp4",
+   "sha256": "6a5dfef1acd007cf1b9b6d6d71ac8c59486c5fc659f4c388a4efc0167aeb6590",
+   "bytes": 470528,
+   "status": "published",
+   "fallback": "oscillations-minicourse/en/slides/media/video/NeutrinoHierarchyScales.mp4"
+  },
+  {
+   "id": "msw-parametric",
+   "variant": "film-layers",
+   "version": 1,
+   "url": "/media-neutrino/msw-parametric/film-layers-v1.mp4",
+   "sha256": "fd6abb8dffc664f118d15f47a52f6f4f11f2b3def7190ab6d802fdb4fd1631da",
+   "bytes": 1994591,
+   "status": "published",
+   "fallback": "introduction/ru/slides/assets/06_matter_oscillations/msw_parametric_layers.mp4"
+  },
+  {
+   "id": "msw-pendulums",
+   "variant": "film-beats",
+   "version": 1,
+   "url": "/media-neutrino/msw-pendulums/film-beats-v1.mp4",
+   "sha256": "590cd90d7c165a81b79f4c0afdd727a3ac89f294246359357472de4f8015e872",
+   "bytes": 1151839,
+   "status": "published",
+   "fallback": "introduction/ru/slides/assets/06_matter_oscillations/l14_pendulums_beats.mp4"
+  },
+  {
+   "id": "msw-pendulums",
+   "variant": "film-modes",
+   "version": 1,
+   "url": "/media-neutrino/msw-pendulums/film-modes-v1.mp4",
+   "sha256": "3f35fa04cad1791b4261ef362cfd99b72398b1d89f80cc773ce9d1c04a47232d",
+   "bytes": 1825466,
+   "status": "published",
+   "fallback": "introduction/ru/slides/assets/06_matter_oscillations/l14_pendulums_modes.mp4"
+  },
+  {
+   "id": "msw-pendulums",
+   "variant": "film-passage",
+   "version": 1,
+   "url": "/media-neutrino/msw-pendulums/film-passage-v1.mp4",
+   "sha256": "5e0f4d805841611fe09fcb21697c030eec7dfe963d221d35c5a99a0b01f8dbe0",
+   "bytes": 1877910,
+   "status": "published",
+   "fallback": "introduction/ru/slides/assets/06_matter_oscillations/l14_pendulums_passage.mp4"
+  },
+  {
+   "id": "msw-rotating-basis",
+   "variant": "film-ru",
+   "version": 1,
+   "url": "/media-neutrino/msw-rotating-basis/film-ru-v1.mp4",
+   "sha256": "7e1efd1894753d2e62b80c8b1806c0f2f597046be78d5a110c4af3fd1ce0d890",
+   "bytes": 1445757,
+   "status": "published",
+   "fallback": "introduction/ru/slides/assets/06_matter_oscillations/msw_rotating_basis_ru.mp4"
+  },
+  {
+   "id": "msw-three-levels",
+   "variant": "film-ru",
+   "version": 1,
+   "url": "/media-neutrino/msw-three-levels/film-ru-v1.mp4",
+   "sha256": "6d801118255255c5adc5334ea033db3a630a3467aefd9ae43e0c82b37ff8c23c",
+   "bytes": 1050606,
+   "status": "published",
+   "fallback": "introduction/ru/slides/assets/06_matter_oscillations/msw_three_levels.mp4"
+  },
+  {
+   "id": "neutrino-oscillation-phases",
+   "variant": "film-phases",
+   "version": 1,
+   "url": "/media-neutrino/neutrino-oscillation-phases/film-phases-v1.mp4",
+   "sha256": "f04f8367ef4fc7c5dc1dba49c6e9c41a7119c6f04e67d1208c793c620c3fe6e6",
+   "bytes": 313153,
+   "status": "published",
+   "fallback": "introduction/ru/slides/assets/01_neutrino_101/oscillation_chameleon.mp4"
+  },
+  {
+   "id": "neutrino-oscillation-phases",
+   "variant": "web-phases",
+   "version": 1,
+   "url": "/media-neutrino/neutrino-oscillation-phases/web-phases-v1.mp4",
+   "sha256": "3bf39af736402c0b722f8a4d049bfc68ca322b392dd920b635f0c3947a6c5a95",
+   "bytes": 237198,
+   "status": "published",
+   "fallback": "oscillations-minicourse/en/slides/media/video/neutrino_oscillation_phases.mp4"
+  },
+  {
+   "id": "project8-cres",
+   "variant": "film-cres-event",
+   "version": 1,
+   "url": "/media-neutrino/project8-cres/film-cres-event-v1.mp4",
+   "sha256": "0d4803e1b350eb56b4b9c93921af7803f1db469c921f1c69304eca4c160e47c5",
+   "bytes": 706546,
+   "status": "published",
+   "fallback": "introduction/ru/slides/assets/04_direct_neutrino_mass/project8_cres.mp4"
+  },
+  {
+   "id": "spin",
+   "variant": "film-sphere",
+   "version": 1,
+   "url": "/media-neutrino/spin/film-sphere-v1.mp4",
+   "sha256": "749c7aaa0c99d2f556e2f9406b7933026d04f422f3a8ae747b447e3c0f0cebbe",
+   "bytes": 17472348,
+   "status": "published",
+   "fallback": "introduction/ru/slides/assets/01_neutrino_101/spin.mp4"
+  }
+ ]
+}
