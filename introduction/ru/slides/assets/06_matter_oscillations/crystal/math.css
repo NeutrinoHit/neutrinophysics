@@ -1,0 +1,7 @@
+/* STIX Two Text for symbols and indices: ν, ψ, θ, λ₀, νₑ, ν_vac,1. The fonts are bundled (vendor/, SIL OFL 1.1). */
+@font-face{font-family:"STIX Two Text";src:url(vendor/STIXTwoText-Regular.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"STIX Two Text";src:url(vendor/STIXTwoText-Italic.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap}
+.m{font-family:"STIX Two Text",STIXGeneral,"Times New Roman",serif;font-size:1.14em;font-style:normal;font-weight:400;letter-spacing:0;line-height:1;white-space:nowrap}
+.m i{font-style:italic}
+.m sub,.m sup{font-size:.68em;line-height:0;position:relative;vertical-align:baseline;margin-left:.04em}
+.m sub{top:.27em}.m sup{top:-.48em}

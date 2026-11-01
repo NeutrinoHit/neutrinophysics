@@ -1,5 +1,6 @@
 .refraction-layers-lab,
-.refraction-modes-lab {
+.refraction-modes-lab,
+.refraction-boundary-lab {
   box-sizing: border-box;
   width: min(1760px, 100%);
   margin: 0.2rem auto;
@@ -16,17 +17,21 @@
 .refraction-layers-lab__controls,
 .refraction-modes-lab__controls,
 .refraction-layers-lab__readout,
-.refraction-modes-lab__readout {
+.refraction-modes-lab__readout,
+.refraction-boundary-lab__controls,
+.refraction-boundary-lab__readout {
   font-size: clamp(14px, 1.7cqi, 29px);
 }
 
 .refraction-layers-lab *,
-.refraction-modes-lab * {
+.refraction-modes-lab *,
+.refraction-boundary-lab * {
   box-sizing: border-box;
 }
 
 .refraction-layers-lab__controls,
-.refraction-modes-lab__controls {
+.refraction-modes-lab__controls,
+.refraction-boundary-lab__controls {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.4rem;
@@ -34,13 +39,15 @@
 }
 
 .refraction-layers-lab__controls label,
-.refraction-modes-lab__controls label {
+.refraction-modes-lab__controls label,
+.refraction-boundary-lab__controls label {
   display: block;
   color: #dcecf6;
 }
 
 .refraction-layers-lab__controls label > span,
-.refraction-modes-lab__controls label > span {
+.refraction-modes-lab__controls label > span,
+.refraction-boundary-lab__controls label > span {
   float: right;
   color: #ffd386;
   font-variant-numeric: tabular-nums;
@@ -51,7 +58,9 @@
 .reveal .refraction-layers-lab__controls label > .MathJax_Preview,
 .reveal .refraction-modes-lab__controls label > .MathJax_Preview,
 .reveal .refraction-layers-lab__controls label > .mjx-chtml,
-.reveal .refraction-modes-lab__controls label > .mjx-chtml {
+.reveal .refraction-modes-lab__controls label > .mjx-chtml,
+.reveal .refraction-boundary-lab__controls label > .MathJax_Preview,
+.reveal .refraction-boundary-lab__controls label > .mjx-chtml {
   display: inline-block;
   float: none;
   color: inherit;
@@ -59,7 +68,8 @@
 }
 
 .refraction-layers-lab input,
-.refraction-modes-lab input {
+.refraction-modes-lab input,
+.refraction-boundary-lab input {
   display: block;
   width: 100%;
   margin: 0.45rem 0 0;
@@ -67,7 +77,8 @@
 }
 
 .refraction-layers-lab svg,
-.refraction-modes-lab svg {
+.refraction-modes-lab svg,
+.refraction-boundary-lab svg {
   display: block;
   width: 100%;
   height: auto;
@@ -76,7 +87,8 @@
 }
 
 .refraction-layers-lab svg text,
-.refraction-modes-lab svg text {
+.refraction-modes-lab svg text,
+.refraction-boundary-lab svg text {
   fill: #e5eff7;
 }
 
@@ -179,7 +191,8 @@
 }
 
 .refraction-layers-lab__readout,
-.refraction-modes-lab__readout {
+.refraction-modes-lab__readout,
+.refraction-boundary-lab__readout {
   margin: 0.15rem 0 0;
   padding: 0.45rem 0.6rem;
   color: #e7f1f8;
@@ -188,7 +201,8 @@
 
 .refraction-layers-lab__readout span,
 .refraction-modes-lab__readout [data-weight-value],
-.refraction-modes-lab__readout [data-probability-value] {
+.refraction-modes-lab__readout [data-probability-value],
+.refraction-boundary-lab__readout span {
   color: #ffd386;
   font-variant-numeric: tabular-nums;
 }
@@ -197,26 +211,317 @@
   white-space: nowrap;
 }
 
+/* Boundary lab: reflection and refraction of a beam. */
+.refraction-boundary-lab__controls {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  align-items: end;
+}
+
+.refraction-boundary-lab__buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.refraction-boundary-lab button {
+  padding: 0.25em 0.7em;
+  border: 1px solid rgba(126, 189, 224, 0.55);
+  border-radius: 0.3rem;
+  background: #10263a;
+  color: #e7f1f8;
+  font: inherit;
+  cursor: pointer;
+}
+
+.refraction-boundary-lab button[aria-pressed="true"] {
+  background: #1d4561;
+}
+
+.refraction-boundary-lab__glass {
+  fill: rgba(110, 224, 236, 0.1);
+}
+
+.refraction-boundary-lab__interface {
+  stroke: rgba(221, 237, 248, 0.7);
+  stroke-width: 2;
+}
+
+.refraction-boundary-lab__normal {
+  stroke: rgba(221, 237, 248, 0.4);
+  stroke-width: 2;
+  stroke-dasharray: 8 8;
+}
+
+.refraction-boundary-lab__band {
+  fill: #ffd386;
+  fill-opacity: 0.16;
+}
+
+.refraction-boundary-lab__crest {
+  stroke: #ffd386;
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.refraction-boundary-lab__arc {
+  fill: none;
+  stroke: #e5eff7;
+  stroke-width: 2;
+}
+
 /* Narrow screens: applet pages only; a Reveal slide is scaled as a whole. */
 @media (max-width: 900px) {
   body:not(.reveal-viewport) .refraction-layers-lab__controls,
-  body:not(.reveal-viewport) .refraction-modes-lab__controls {
+  body:not(.reveal-viewport) .refraction-modes-lab__controls,
+  body:not(.reveal-viewport) .refraction-boundary-lab__controls {
     grid-template-columns: 1fr;
     gap: 0.7rem;
   }
   body:not(.reveal-viewport) .refraction-layers-lab svg,
-  body:not(.reveal-viewport) .refraction-modes-lab svg {
+  body:not(.reveal-viewport) .refraction-modes-lab svg,
+  body:not(.reveal-viewport) .refraction-boundary-lab svg {
     font-size: 28px;
   }
 }
 
 @media (max-width: 560px) {
   body:not(.reveal-viewport) .refraction-layers-lab,
-  body:not(.reveal-viewport) .refraction-modes-lab {
+  body:not(.reveal-viewport) .refraction-modes-lab,
+  body:not(.reveal-viewport) .refraction-boundary-lab {
     padding: 0.4rem 0.35rem 0.25rem;
   }
   body:not(.reveal-viewport) .refraction-layers-lab svg,
-  body:not(.reveal-viewport) .refraction-modes-lab svg {
+  body:not(.reveal-viewport) .refraction-modes-lab svg,
+  body:not(.reveal-viewport) .refraction-boundary-lab svg {
     font-size: 46px;
   }
+}
+
+/* Fresnel zones of a thin sheet (lecture 11). */
+.fresnel-lab {
+  box-sizing: border-box;
+  width: min(1760px, 100%);
+  margin: 0.2rem auto;
+  padding: 0.55rem 0.7rem 0.35rem;
+  border: 1px solid rgba(126, 189, 224, 0.36);
+  border-radius: 0.35rem;
+  background: #08131e;
+  color: #edf6fc;
+  font: 29px/1.25 system-ui, sans-serif;
+  container-type: inline-size;
+}
+
+.fresnel-lab * {
+  box-sizing: border-box;
+}
+
+.fresnel-lab__controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.4rem;
+  padding: 0.25rem 0.25rem 0.5rem;
+  font-size: clamp(14px, 1.7cqi, 29px);
+}
+
+.fresnel-lab__controls label {
+  display: block;
+  color: #dcecf6;
+}
+
+.fresnel-lab__controls label > span {
+  float: right;
+  color: #ffd386;
+  font-variant-numeric: tabular-nums;
+}
+
+.fresnel-lab input {
+  display: block;
+  width: 100%;
+  margin: 0.45rem 0 0;
+  accent-color: #73d6eb;
+}
+
+.fresnel-lab svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  font: 24px/1.2 system-ui, sans-serif;
+}
+
+.reveal #fresnel-spiral .fresnel-lab svg {
+  max-height: 590px;
+}
+
+.fresnel-lab svg text {
+  fill: #e5eff7;
+}
+
+.fresnel-lab__axis {
+  stroke: rgba(221, 237, 248, 0.46);
+  stroke-width: 2;
+}
+
+.fresnel-lab__axis-dashed,
+.fresnel-lab__ray {
+  stroke: rgba(221, 237, 248, 0.4);
+  stroke-width: 1.6;
+  stroke-dasharray: 8 7;
+}
+
+.fresnel-lab__ray {
+  stroke: rgba(255, 211, 134, 0.7);
+  stroke-dasharray: none;
+}
+
+.fresnel-lab__point {
+  fill: #edf6fc;
+}
+
+.fresnel-lab__zone {
+  stroke-width: 16;
+}
+
+.fresnel-lab__zone--0 {
+  stroke: #6ee0ec;
+}
+
+.fresnel-lab__zone--1 {
+  stroke: #ff9d85;
+}
+
+.fresnel-lab__circle {
+  fill: none;
+  stroke: rgba(221, 237, 248, 0.38);
+  stroke-width: 2;
+  stroke-dasharray: 7 7;
+}
+
+.fresnel-lab__spiral {
+  fill: none;
+  stroke: #ffd386;
+  stroke-width: 3;
+}
+
+.fresnel-lab__sum {
+  stroke: #6ee0ec;
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
+.fresnel-lab__sum-head {
+  fill: #6ee0ec;
+}
+
+.fresnel-lab__limit {
+  fill: #ff9d85;
+}
+
+.fresnel-lab svg .fresnel-lab__limit-label {
+  fill: #ff9d85;
+  paint-order: stroke;
+  stroke: #08131e;
+  stroke-width: 8px;
+  stroke-linejoin: round;
+}
+
+.fresnel-lab svg .fresnel-lab__key {
+  fill: #a9bdca;
+  font-size: 20px;
+}
+
+.fresnel-lab__bottom {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  font-size: clamp(14px, 1.7cqi, 29px);
+}
+
+.fresnel-lab__bottom button {
+  flex: 0 0 auto;
+  font: inherit;
+  padding: 0.15em 0.7em;
+  color: #edf6fc;
+  background: #13324a;
+  border: 1px solid #73d6eb;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+
+.fresnel-lab__readout {
+  margin: 0;
+  color: #dcecf6;
+}
+
+/* One scatterer: field map of a plane wave plus a diverging wave (lecture 11). */
+.scatter-lab {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0.2rem auto;
+  padding: 0.5rem 0.6rem 0.4rem;
+  border: 1px solid rgba(126, 189, 224, 0.36);
+  border-radius: 0.35rem;
+  background: #08131e;
+  color: #edf6fc;
+  font: 29px/1.25 system-ui, sans-serif;
+  container-type: inline-size;
+}
+
+.scatter-lab * {
+  box-sizing: border-box;
+}
+
+.scatter-lab canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.2rem;
+}
+
+.scatter-lab__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0 0.2rem;
+  font-size: clamp(14px, 3.6cqi, 29px);
+}
+
+.scatter-lab button {
+  flex: 1 1 auto;
+  padding: 0.2em 0.6em;
+  border: 1px solid rgba(126, 189, 224, 0.55);
+  border-radius: 0.3rem;
+  background: #10263a;
+  color: #e7f1f8;
+  font: inherit;
+  cursor: pointer;
+}
+
+.scatter-lab button[aria-pressed="true"] {
+  background: #1d4561;
+  border-color: #73d6eb;
+}
+
+.scatter-lab__slider {
+  display: block;
+  padding: 0.2rem 0.2rem 0;
+  color: #dcecf6;
+  font-size: clamp(14px, 3.6cqi, 29px);
+}
+
+.scatter-lab__slider > span {
+  float: right;
+  color: #ffd386;
+  font-variant-numeric: tabular-nums;
+}
+
+.scatter-lab input {
+  display: block;
+  width: 100%;
+  margin: 0.35rem 0 0;
+  accent-color: #73d6eb;
+}
+
+/* Text column that leaves the right margin to a note (.marginnote at left ≈ 1262). */
+.reveal .l11-main {
+  width: 77%;
 }

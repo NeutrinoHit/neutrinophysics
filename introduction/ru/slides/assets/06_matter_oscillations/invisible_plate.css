@@ -1,0 +1,397 @@
+/* "Invisible plate" (lecture 11): same palette as refraction_labs.css. */
+.invisible-plate {
+  box-sizing: border-box;
+  width: min(1760px, 100%);
+  margin: 0.2rem auto;
+  padding: 0.45rem 0.7rem 0.35rem;
+  border: 1px solid rgba(126, 189, 224, 0.36);
+  border-radius: 0.35rem;
+  background: #08131e;
+  color: #edf6fc;
+  font: 29px/1.25 system-ui, sans-serif;
+  container-type: inline-size;
+}
+
+.invisible-plate * {
+  box-sizing: border-box;
+}
+
+.invisible-plate__bar,
+.invisible-plate__controls,
+.invisible-plate__replica,
+.invisible-plate__formulas {
+  font-size: clamp(14px, 1.55cqi, 26px);
+}
+
+.invisible-plate__bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.1rem 0.2rem 0.4rem;
+}
+
+.invisible-plate__steps,
+.invisible-plate__actions,
+.invisible-plate__prep {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.invisible-plate button {
+  padding: 0.2em 0.65em;
+  border: 1px solid rgba(126, 189, 224, 0.55);
+  border-radius: 0.3rem;
+  background: #10263a;
+  color: #e7f1f8;
+  font: inherit;
+  cursor: pointer;
+}
+
+.invisible-plate button[aria-pressed="true"] {
+  background: #1d4561;
+  border-color: #73d6eb;
+}
+
+.invisible-plate__controls {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem 1.4rem;
+  padding: 0 0.25rem 0.35rem;
+}
+
+.invisible-plate__controls label {
+  position: relative;
+  display: block;
+  color: #dcecf6;
+}
+
+.invisible-plate__controls label > span:not(.invisible-plate__name):not(.invisible-plate__ticks) {
+  float: right;
+  color: #ffd386;
+  font-variant-numeric: tabular-nums;
+}
+
+.invisible-plate input[type="range"] {
+  display: block;
+  width: 100%;
+  margin: 0.3rem 0 0;
+  accent-color: #73d6eb;
+}
+
+.invisible-plate__ticks {
+  position: relative;
+  display: block;
+  height: 1.2em;
+  font-size: 0.7em;
+  color: #a9bdca;
+}
+
+.invisible-plate__ticks span {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.invisible-plate__ticks span:first-child,
+.invisible-plate__ticks span.is-start {
+  transform: none;
+}
+
+.invisible-plate__prep {
+  align-items: center;
+}
+
+.invisible-plate svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  font: 20px/1.2 system-ui, sans-serif;
+}
+
+.invisible-plate svg text {
+  fill: #e5eff7;
+}
+
+.invisible-plate svg .invisible-plate__muted,
+.invisible-plate svg .invisible-plate__note {
+  fill: #a9bdca;
+}
+
+.invisible-plate svg .invisible-plate__note {
+  font-size: 17px;
+}
+
+.invisible-plate svg .invisible-plate__big {
+  font-size: 30px;
+  font-weight: 700;
+  fill: #ffd386;
+}
+
+.invisible-plate svg [data-layer],
+.invisible-plate svg [data-inset],
+.invisible-plate svg [data-dials],
+.invisible-plate svg [data-sum],
+.invisible-plate svg [data-bars],
+.invisible-plate svg [data-brightness],
+.invisible-plate svg [data-vac-axes] {
+  transition: opacity 0.6s ease;
+}
+
+.invisible-plate.is-static svg * {
+  transition: none !important;
+}
+
+.invisible-plate .is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.invisible-plate label.is-hidden,
+.invisible-plate div.is-hidden,
+.invisible-plate button.is-hidden {
+  display: none;
+}
+
+.invisible-plate svg .is-lit {
+  filter: drop-shadow(0 0 6px #ffd386);
+}
+
+.invisible-plate__device {
+  fill: #0d2232;
+  stroke: rgba(221, 237, 248, 0.6);
+  stroke-width: 2.5;
+}
+
+.invisible-plate svg .invisible-plate__device-label {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.invisible-plate__pol-h,
+.invisible-plate__pol-v {
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.invisible-plate__pol-h {
+  stroke: #6ee0ec;
+}
+
+.invisible-plate__pol-v {
+  stroke: #b8a2ff;
+}
+
+.invisible-plate__beam {
+  stroke: rgba(221, 237, 248, 0.55);
+  stroke-width: 3;
+}
+
+.invisible-plate__plate {
+  fill: rgba(110, 224, 236, 0.16);
+  stroke: rgba(110, 224, 236, 0.75);
+  stroke-width: 2;
+}
+
+.invisible-plate__screen {
+  stroke: #4e606d;
+  stroke-width: 2;
+}
+
+.invisible-plate__medium {
+  fill: #ffcb72;
+  transition: opacity 0.4s ease;
+}
+
+.invisible-plate__axis {
+  stroke: rgba(221, 237, 248, 0.46);
+  stroke-width: 2;
+}
+
+.invisible-plate__vac-axis {
+  stroke: #b8a2ff;
+  stroke-width: 1.6;
+  stroke-dasharray: 3 5;
+  opacity: 0.7;
+}
+
+.invisible-plate__eigen {
+  stroke-width: 2;
+  stroke-dasharray: 9 6;
+}
+
+.invisible-plate__eigen--1 {
+  stroke: #6ee0ec;
+}
+
+.invisible-plate__eigen--2 {
+  stroke: #ffd386;
+}
+
+.invisible-plate svg .invisible-plate__eigen-label--1 {
+  fill: #6ee0ec;
+}
+
+.invisible-plate svg .invisible-plate__eigen-label--2 {
+  fill: #ffd386;
+}
+
+.invisible-plate__state {
+  stroke: #e5eff7;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.invisible-plate__state-head {
+  fill: #e5eff7;
+}
+
+.invisible-plate__comp--1,
+.invisible-plate__comp--2 {
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.invisible-plate__comp--1 {
+  stroke: #6ee0ec;
+}
+
+.invisible-plate__comp-head--1 {
+  fill: #6ee0ec;
+}
+
+.invisible-plate__comp--2 {
+  stroke: #ffd386;
+}
+
+.invisible-plate__comp-head--2 {
+  fill: #ffd386;
+}
+
+.invisible-plate__dotted {
+  stroke: #a9bdca;
+  stroke-width: 1.4;
+  stroke-dasharray: 3 4;
+}
+
+.invisible-plate__ellipse {
+  fill: none;
+  stroke: #ffd386;
+  stroke-width: 2.5;
+  opacity: 0.7;
+}
+
+.invisible-plate__dial {
+  fill: none;
+  stroke: rgba(221, 237, 248, 0.35);
+  stroke-width: 2;
+}
+
+.invisible-plate__locus {
+  fill: none;
+  stroke: rgba(255, 211, 134, 0.42);
+  stroke-width: 2;
+  stroke-dasharray: 7 7;
+}
+
+.invisible-plate__sum {
+  stroke: #ff8f7a;
+  stroke-width: 8;
+  stroke-linecap: round;
+  opacity: 0.85;
+}
+
+.invisible-plate__sum-head {
+  fill: #ff8f7a;
+}
+
+.invisible-plate svg .invisible-plate__sum-label {
+  fill: #ff8f7a;
+  font-weight: 700;
+}
+
+.invisible-plate__bar-e {
+  fill: #6ee0ec;
+}
+
+.invisible-plate__bar-x {
+  fill: #ffd386;
+}
+
+.invisible-plate__curve {
+  fill: none;
+  stroke: #6ee0ec;
+  stroke-width: 3;
+}
+
+.invisible-plate__marker {
+  fill: #ffd386;
+}
+
+.invisible-plate__text {
+  position: relative;
+  min-height: 2.6em;
+}
+
+.invisible-plate.is-formula .invisible-plate__replica {
+  visibility: hidden;
+}
+
+.invisible-plate__replica {
+  margin: 0.1rem 0 0;
+  padding: 0.2rem 0.5rem;
+  color: #e7f1f8;
+  text-align: center;
+}
+
+.invisible-plate__formulas {
+  position: absolute;
+  inset: 0;
+  text-align: center;
+}
+
+.invisible-plate__formulas > div {
+  position: absolute;
+  inset: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  visibility: hidden;
+}
+
+.invisible-plate__formulas > div.is-active {
+  visibility: visible;
+}
+
+.invisible-plate__hint {
+  display: none;
+  margin: 0 0 0.2rem;
+  color: #a9bdca;
+  font-size: 14px;
+}
+
+/* Applet pages on narrow screens: the scheme keeps a readable size and
+   scrolls sideways inside the lab; the page itself does not scroll. */
+@media (max-width: 900px) {
+  body:not(.reveal-viewport) .invisible-plate__controls {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  body:not(.reveal-viewport) .invisible-plate {
+    padding: 0.4rem 0.35rem 0.25rem;
+  }
+  body:not(.reveal-viewport) .invisible-plate__hint {
+    display: block;
+  }
+  body:not(.reveal-viewport) .invisible-plate__scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  body:not(.reveal-viewport) .invisible-plate__scroll svg {
+    min-width: 860px;
+  }
+}

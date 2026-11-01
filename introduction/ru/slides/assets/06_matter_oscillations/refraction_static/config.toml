@@ -1,0 +1,19 @@
+[physics]
+# Same oscillator response and sheet strength as the existing step 4.
+frequency_ratio = 0.6
+damping_ratio = 0.01
+surface_strength = 0.1
+spacing_lambda0 = 0.0625
+sheets = 20
+snapshot_phase = 1.0
+
+[figure]
+width_inches = 15.2
+height_inches = 7.0
+dpi = 150
+background = "#000000"
+text = "#edf6fc"
+muted = "#a9bdca"
+incident = "#6ee0ec"
+secondary = "#ff9d85"
+total = "#ffd386"

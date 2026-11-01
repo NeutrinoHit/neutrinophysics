@@ -1,0 +1,36 @@
+---
+title: "Луч на границе двух сред"
+description: "Отражение, преломление и замедление света на границе воздуха и стекла"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Меняйте угол падения и показатель преломления стекла. Часть света
+отражается, часть проходит и меняет направление по закону
+$n_1\sin\theta_1=n_2\sin\theta_2$. Из стекла в воздух при большом угле
+свет полностью отражается.
+
+~~~{=html}
+<link rel="stylesheet" href="../slides/assets/06_matter_oscillations/refraction_labs.css">
+~~~
+
+::: {.applet-stage .applet-stage--large}
+{{< include ../slides/assets/06_matter_oscillations/_refraction_boundary.qmd >}}
+:::
+
+~~~{=html}
+<script src="../slides/assets/06_matter_oscillations/refraction_labs.js"></script>
+~~~
+
+::: {.applet-note}
+Поперечные отрезки — гребни волны. Частота по обе стороны границы
+одна и та же, а в стекле гребни движутся в $n$ раз медленнее и стоят
+в $n$ раз теснее: длина волны $\lambda_0/n$, фазовая скорость $c/n$.
+На границе гребни падающей и прошедшей волн сходятся, отсюда закон
+преломления. Доли отражённого и прошедшего света вычислены по формулам
+Френеля для неполяризованного света; яркость пучков передаёт их
+схематично.
+
+[Объяснение в лекции 11](../slides/11_matter_refraction.html#/показатель-преломления-и-оптика) ·
+[Исходный код](https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/slides/assets/06_matter_oscillations/refraction_labs.js).
+:::

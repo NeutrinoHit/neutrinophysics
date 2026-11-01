@@ -1,0 +1,38 @@
+---
+title: "Невидимая пластинка"
+description: "Свету нужна пластинка, а нейтрино достаточно пустоты; вещество меняет собственные волны"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Шесть шагов одного опыта. Сначала свет проходит через двулучепреломляющую
+пластинку между поляризаторами. Затем свет заменён нейтрино, а пластинка
+убрана, но превращения остаются: для нейтрино вакуум уже «кристалл».
+Потом участок заполнен веществом постоянной плотности, и собственные волны
+меняются.
+
+~~~{=html}
+<link rel="stylesheet" href="../slides/assets/06_matter_oscillations/invisible_plate.css">
+~~~
+
+::: {.applet-stage .applet-stage--large}
+{{< include ../slides/assets/06_matter_oscillations/_invisible_plate.qmd >}}
+:::
+
+~~~{=html}
+<script src="../slides/assets/06_matter_oscillations/invisible_plate.js"></script>
+~~~
+
+::: {.applet-note}
+Модель двух состояний: $E=10$ МэВ, $\Delta m^2=7{,}5\cdot10^{-5}$ эВ²,
+$\theta=33{,}7^\circ$. В веществе
+$\tan2\theta_m=\sin2\theta/(\cos2\theta-A)$, а разность импульсов
+собственных волн $k_{\mathrm{mat},1}-k_{\mathrm{mat},2}=R\,\Delta m^2/(2E)$,
+где $R=\sqrt{(\cos2\theta-A)^2+\sin^22\theta}$ и $A=2EV/\Delta m^2$;
+в центре Солнца при 10 МэВ $A\approx2$. Источник и
+детектор находятся внутри однородного слоя; путь нейтрино из центра Солнца
+наружу, где плотность меняется, разобран в лекции 13.
+
+[Объяснение в лекции 11](../slides/11_matter_refraction.html#/invisible-plate) ·
+[Исходный код](https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/slides/assets/06_matter_oscillations/invisible_plate.js).
+:::

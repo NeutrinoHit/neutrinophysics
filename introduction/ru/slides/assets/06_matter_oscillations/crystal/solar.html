@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Свет и нейтрино: две собственные волны</title>
+  <link rel="stylesheet" href="comparison.css"><link rel="stylesheet" href="math.css">
+</head>
+<body data-pair="solar">
+<main>
+  <header><div><h1>Две собственные волны</h1><p>Свет в кристалле и нейтрино в вакууме — один принцип распространения.</p></div>
+  <button id="play" type="button" aria-pressed="true">Пауза</button></header>
+  <div class="comparison">
+    <section class="system" id="light-view" aria-label="Свет в двулучепреломляющем кристалле">
+      <div class="system-title"><h2>Свет в кристалле</h2><span id="light-length">L = 1,00 λ₀</span></div>
+      <div class="legend"><span class="one">Поляризация 1</span><span class="two">Поляризация 2</span><span>Сумма E</span></div>
+      <div class="scene" data-id="scene">
+        <canvas data-id="crystal" aria-label="3D-кристалл: две собственные поляризации и сумма"></canvas>
+        <span class="scene-label" data-id="entry-label">Вход</span><span class="scene-label" data-id="exit-label">Выход</span>
+        <span class="axis-label one" data-id="axis-one">ось 1</span><span class="axis-label two" data-id="axis-two">ось 2</span>
+        <p data-id="error" hidden role="alert"></p>
+      </div>
+      <div class="result light-result">
+        <div><p class="muted" id="light-input">На входе: β = 0°</p><h3 id="light-kind">Круговая поляризация</h3><p class="detail">На выходе — сумма двух поляризаций.</p></div>
+        <canvas id="light-output" aria-label="Поляризация света на выходе, вид вдоль луча"></canvas>
+      </div>
+    </section>
+    <section class="system" id="neutrino-view" aria-label="Электронное нейтрино в вакууме">
+      <div class="system-title"><h2>Нейтрино в вакууме</h2><span id="neutrino-length">L = 82,7 км</span></div>
+      <div class="legend"><span class="one">ν₁</span><span class="two">ν₂</span><span>Сумма ψ</span></div>
+      <div class="scene" data-id="scene">
+        <canvas data-id="crystal" aria-label="Геометрия амплитуд нейтрино: две массовые собственные волны и сумма"></canvas>
+        <span class="scene-label" data-id="entry-label">Вход: νₑ</span><span class="scene-label" data-id="exit-label">Измерение</span>
+        <span class="axis-label one" data-id="axis-one">ν₁</span><span class="axis-label two" data-id="axis-two">ν₂</span>
+        <p data-id="error" hidden role="alert"></p>
+      </div>
+      <div class="result neutrino-result">
+        <div><p class="muted">На входе: νₑ · θ = 33,7°</p><h3>Вероятности на выходе</h3>
+          <div class="probabilities" aria-live="polite">
+            <div class="probability"><div><span>Pₑ</span><output id="pe-value">0,574</output></div><div class="track"><span id="pe-bar"></span></div></div>
+            <div class="probability"><div><span>Pₓ</span><output id="px-value">0,426</output></div><div class="track"><span id="px-bar"></span></div></div>
+          </div>
+        </div>
+        <p class="norm">Pₑ + Pₓ = 1</p>
+      </div>
+    </section>
+  </div>
+  <div class="scene-notes"><span>Реальные направления поляризации света</span><span>Пространство состояний · общая фаза изображения условна</span></div>
+  <section class="controls" aria-label="Общие управления сравнением">
+    <label for="input-angle"><span>Свет: входная поляризация <i>β</i><output id="input-value">0°</output></span><input id="input-angle" type="range" min="0" max="180" step="1" value="0"><span class="ticks"><span>0°</span><span>90°</span><span>180°</span></span></label>
+    <label for="axes-angle"><span>Свет: поворот осей <i>α</i><output id="axes-value">45°</output></span><input id="axes-angle" type="range" min="0" max="180" step="1" value="45"><span class="ticks"><span>0°</span><span>90°</span><span>180°</span></span></label>
+    <label for="length"><span>Толщина / путь<output id="phase-value">|Δφ| = π/2</output></span><input id="length" type="range" min="0" max="4" step="0.01" value="1"><span class="ticks"><span>0</span><span>|Δφ| = π</span><span>2π</span></span></label>
+  </section>
+  <p class="hint" id="explanation">Двигайте общий ползунок: он задаёт одинаковую величину разности фаз в двух опытах.</p>
+  <footer><span>Свет: n₁ = 1,35, n₂ = 1,60, без отражений · Нейтрино: E = 10 МэВ, Δm² = 7,5·10⁻⁵ эВ², два состояния; νₓ — комбинация νμ и ντ</span><span>© neutrinohit.github.io</span></footer>
+</main>
+<script type="module" src="comparison.mjs"></script>
+<script defer src="https://neutrinohit.github.io/assets/analytics/cloudflare-web-analytics.js"></script>
+</body></html>

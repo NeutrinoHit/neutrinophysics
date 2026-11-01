@@ -1,0 +1,43 @@
+~~~{=html}
+<div class="fresnel-lab" data-fresnel-zones
+     role="group" aria-label="Сумма вкладов зон Френеля тонкого слоя в точке наблюдения">
+  <div class="fresnel-lab__controls">
+    <label>Учтённые зоны Френеля, m
+      <span data-zones-value>16</span>
+      <input type="range" data-zones min="0" max="16" step="0.05" value="16">
+    </label>
+    <label>Обрезание дальних колец, ε/k
+      <span data-cutoff-value>нет</span>
+      <input type="range" data-cutoff min="0" max="0.3" step="0.01" value="0">
+    </label>
+  </div>
+  <svg viewBox="0 0 1500 620" role="img"
+       aria-label="Слева слой и зоны Френеля, справа сумма их вкладов на комплексной плоскости">
+    <g data-zone-bands></g>
+    <line class="fresnel-lab__ray" data-ray-top x1="110" y1="310" x2="600" y2="310"></line>
+    <line class="fresnel-lab__ray" data-ray-bottom x1="110" y1="310" x2="600" y2="310"></line>
+    <line class="fresnel-lab__axis-dashed" x1="110" y1="310" x2="600" y2="310"></line>
+    <circle class="fresnel-lab__point" cx="600" cy="310" r="8"></circle>
+    <text x="616" y="318">P</text>
+    <text x="70" y="26">слой</text>
+    <text x="330" y="298" text-anchor="middle">z ≫ λ</text>
+    <text data-path-label x="330" y="600" text-anchor="middle">r = z + m·λ/2</text>
+
+    <line class="fresnel-lab__axis" x1="770" y1="540" x2="1300" y2="540"></line>
+    <line class="fresnel-lab__axis" x1="1020" y1="590" x2="1020" y2="50"></line>
+    <text x="1300" y="575" text-anchor="end">в фазе с падающей волной</text>
+    <text x="1032" y="62">90° = множитель i</text>
+    <circle class="fresnel-lab__circle" cx="1020" cy="310" r="230"></circle>
+    <path class="fresnel-lab__spiral" data-spiral></path>
+    <line class="fresnel-lab__sum" data-sum x1="1020" y1="540" x2="1020" y2="540"></line>
+    <polygon class="fresnel-lab__sum-head" data-sum-head points=""></polygon>
+    <circle class="fresnel-lab__limit" data-limit r="9" cx="1020" cy="310"></circle>
+    <text class="fresnel-lab__limit-label" data-limit-label x="1040" y="300">предел ≈ i</text>
+    <text x="1480" y="90" text-anchor="end" class="fresnel-lab__key">пунктир: без обрезания</text>
+  </svg>
+  <div class="fresnel-lab__bottom">
+    <button type="button" data-play>Собрать слой</button>
+    <p class="fresnel-lab__readout" data-readout aria-live="polite"></p>
+  </div>
+</div>
+~~~

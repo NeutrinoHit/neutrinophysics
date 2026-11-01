@@ -1,0 +1,45 @@
+~~~{=html}
+<div class="refraction-boundary-lab" data-refraction-boundary
+     role="group" aria-label="Отражение и преломление света на границе двух сред">
+  <div class="refraction-boundary-lab__controls">
+    <label>Угол падения, \(\theta_1\)
+      <span data-angle-value>40°</span>
+      <input type="range" data-angle min="0" max="89" step="1" value="40">
+    </label>
+    <label>Показатель преломления стекла, \(n\)
+      <span data-index-value>1.50</span>
+      <input type="range" data-index min="1" max="2.5" step="0.01" value="1.5">
+    </label>
+    <div class="refraction-boundary-lab__buttons">
+      <button type="button" data-direction aria-pressed="false">Из стекла в воздух</button>
+      <button type="button" data-play>Пауза</button>
+    </div>
+  </div>
+  <svg viewBox="0 0 1200 440" role="img"
+       aria-label="Падающий, отражённый и преломлённый пучки и фронты волн">
+    <defs>
+      <clipPath data-clip-upper><rect x="0" y="0" width="1200" height="220"></rect></clipPath>
+      <clipPath data-clip-lower><rect x="0" y="220" width="1200" height="220"></rect></clipPath>
+    </defs>
+    <rect class="refraction-boundary-lab__glass" data-glass x="0" y="220" width="1200" height="220"></rect>
+    <line class="refraction-boundary-lab__normal" x1="600" y1="12" x2="600" y2="428"></line>
+    <line class="refraction-boundary-lab__interface" x1="0" y1="220" x2="1200" y2="220"></line>
+    <g data-beam-incident></g>
+    <g data-beam-reflected></g>
+    <g data-beam-transmitted></g>
+    <path class="refraction-boundary-lab__arc" data-arc-incident></path>
+    <path class="refraction-boundary-lab__arc" data-arc-transmitted></path>
+    <text data-label-incident text-anchor="middle">θ₁</text>
+    <text data-label-reflected text-anchor="middle">θ₁</text>
+    <text data-label-transmitted text-anchor="middle">θ₂</text>
+    <text data-upper-name x="24" y="40">воздух, n = 1</text>
+    <text data-lower-name x="24" y="422">стекло, n = 1.50</text>
+    <text data-tir x="900" y="330" text-anchor="middle" visibility="hidden">полное внутреннее отражение</text>
+  </svg>
+  <p class="refraction-boundary-lab__readout" aria-live="polite">
+    Угол преломления <span data-refracted-value>25.4°</span>.
+    Отражается <span data-reflected-value>4.6&nbsp;%</span>, проходит <span data-transmitted-value>95.4&nbsp;%</span>.
+    В стекле длина волны и фазовая скорость в <span data-ratio-value>1.50</span> раза меньше.
+  </p>
+</div>
+~~~

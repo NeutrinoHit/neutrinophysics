@@ -1,0 +1,26 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>От света к нейтрино</title><link rel="stylesheet" href="bridge.css"><link rel="stylesheet" href="math.css"></head><body>
+<main>
+ <header><div><h1 class="swap" id="title">Свет в кристалле</h1><p class="swap" id="context">На входе <span class="m"><i>H</i></span>. Две собственные поляризации набирают разные фазы.</p></div><button id="switch" type="button" aria-pressed="false">Свет → нейтрино</button></header>
+ <div class="legend swap" id="legend"><span class="one" id="legend-one">Поляризация 1</span><span class="two" id="legend-two">Поляризация 2</span><span id="legend-sum">Сумма <span class="m"><i>E</i></span></span></div>
+ <div class="stage">
+  <div class="views" id="stage">
+   <div class="view" id="light-view"><div data-id="scene" class="scene"><canvas data-id="crystal" aria-label="Свет: две поляризации и сумма"></canvas><span data-id="entry-label" class="label">Вход: <span class="m"><i>H</i></span></span><span data-id="exit-label" class="label">Выход</span><span data-id="axis-one" class="label one">ось 1</span><span data-id="axis-two" class="label two">ось 2</span><p data-id="error" hidden></p></div></div>
+   <div class="view" id="neutrino-view"><div data-id="scene" class="scene"><canvas data-id="crystal" aria-label="Нейтрино в вакууме: две массовые волны и сумма амплитуд"></canvas><span data-id="entry-label" class="label">Вход: <span class="m"><i>ν</i><sub><i>e</i></sub></span></span><span data-id="exit-label" class="label">Измерение</span><span data-id="axis-one" class="label one"><span class="m"><i>ν</i><sub>vac,1</sub></span></span><span data-id="axis-two" class="label two"><span class="m"><i>ν</i><sub>vac,2</sub></span></span><p data-id="error" hidden></p></div></div>
+  </div>
+  <aside class="panel" aria-label="Состояние на выходе">
+   <h2>Состояние на выходе</h2>
+   <canvas id="ellipse" aria-label="Поляризация на выходе в осях H и V"></canvas>
+   <p class="kind swap" id="kind">Линейная поляризация</p>
+   <p class="note swap" id="note"><span class="m"><i>H</i></span> повёрнута на <span class="m">2<i>α</i></span>, а не на ось пластинки</p>
+   <div class="bars" aria-live="polite">
+    <div class="bar"><div><span class="swap" id="first-label"><span class="m"><i>I</i><sub><i>H</i></sub></span></span><output id="first-value">0,148</output></div><div class="track"><span id="first-bar"></span></div></div>
+    <div class="bar"><div><span class="swap" id="second-label"><span class="m"><i>I</i><sub><i>V</i></sub></span></span><output id="second-value">0,852</output></div><div class="track"><span id="second-bar"></span></div></div>
+   </div>
+   <canvas id="chart" aria-label="Доля V в зависимости от толщины пластинки"></canvas>
+  </aside>
+ </div>
+ <div class="result"><p class="swap" id="parameters"><span class="m"><i>α</i></span> = 33,7° · <span class="m"><i>L</i></span> = 2 <span class="m"><i>λ</i><sub>0</sub></span></p><p class="mapping">Поляризации света → массовые состояния · доли интенсивности → вероятности</p></div>
+ <p class="caption swap" id="caption">Нажмите «Свет → нейтрино»: меняется физический смысл той же конструкции.</p>
+ <footer>Идеальная пластинка без отражений · нейтрино: два состояния, <span class="m"><i>E</i></span> = 10 МэВ, <span class="m"><i>θ</i></span> = 33,7° · © neutrinohit.github.io</footer>
+</main>
+<script type="module" src="bridge.mjs"></script><script defer src="https://neutrinohit.github.io/assets/analytics/cloudflare-web-analytics.js"></script></body></html>

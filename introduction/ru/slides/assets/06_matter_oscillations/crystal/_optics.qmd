@@ -1,0 +1,11 @@
+::: {.content-visible when-format="html"}
+<iframe class="nh-crystal-frame" data-src="assets/06_matter_oscillations/crystal/index.html?embed=1" title="Свет в двулучепреломляющем кристалле" loading="lazy" allow="fullscreen"></iframe>
+
+::: {.nh-text tone="muted" size="sm"}
+Входная поляризация, поворот собственных осей и толщина пластинки. [Открыть отдельно](assets/06_matter_oscillations/crystal/index.html){target="_blank"}.
+:::
+:::
+
+::: {.content-visible when-format="pdf"}
+![](assets/06_matter_oscillations/crystal/optics-poster.png){fig-alt="Свет в двулучепреломляющем кристалле"}
+:::

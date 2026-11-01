@@ -1,0 +1,11 @@
+::: {.content-visible when-format="html"}
+<iframe class="nh-crystal-frame" data-src="assets/06_matter_oscillations/crystal/solar.html?embed=1" title="Нейтрино в вакууме и однородном солнечном веществе" loading="lazy" allow="fullscreen"></iframe>
+
+::: {.nh-text tone="muted" size="sm"}
+Одинаковый путь,  $\nu_e$ на входе. Плотность центра Солнца постоянна на всём участке; $E=10$ МэВ. [Открыть отдельно](assets/06_matter_oscillations/crystal/solar.html){target="_blank"} · [Видеоверсия]({{< nh-url neutrino-crystal variant="film-ru" >}}){target="_blank"}.
+:::
+:::
+
+::: {.content-visible when-format="pdf"}
+![](assets/06_matter_oscillations/crystal/solar-poster.png){fig-alt="Нейтрино в вакууме и однородном солнечном веществе"}
+:::

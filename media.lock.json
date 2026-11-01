@@ -223,6 +223,16 @@
    "fallback": "introduction/ru/slides/assets/06_matter_oscillations/msw_three_levels.mp4"
   },
   {
+   "id": "neutrino-crystal",
+   "variant": "film-ru",
+   "version": 1,
+   "url": "/media-neutrino/neutrino-crystal/film-ru-v1.mp4",
+   "sha256": "e6b1225aaedf9687c7813bbfd687924b7925482edd340e49a6b29bcb7976c6b9",
+   "bytes": 10025714,
+   "status": "prepared",
+   "fallback": "introduction/ru/slides/assets/06_matter_oscillations/crystal/neutrino_crystal_ru.mp4"
+  },
+  {
    "id": "neutrino-oscillation-phases",
    "variant": "film-phases",
    "version": 1,
@@ -241,6 +251,16 @@
    "bytes": 237198,
    "status": "published",
    "fallback": "oscillations-minicourse/en/slides/media/video/neutrino_oscillation_phases.mp4"
+  },
+  {
+   "id": "optics-to-neutrino",
+   "variant": "film-ru",
+   "version": 1,
+   "url": "/media-neutrino/optics-to-neutrino/film-ru-v1.mp4",
+   "sha256": "225ff6e1c5e29705fe73f230bb3ad93c44711a8e6441a60779ec1c3b34862570",
+   "bytes": 8578666,
+   "status": "prepared",
+   "fallback": "introduction/ru/slides/assets/06_matter_oscillations/crystal/optics_to_neutrino_v2_ru.mp4"
   },
   {
    "id": "project8-cres",

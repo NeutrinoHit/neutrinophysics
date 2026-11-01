@@ -1,0 +1,11 @@
+::: {.content-visible when-format="html"}
+<iframe class="nh-crystal-frame" data-src="assets/06_matter_oscillations/crystal/bridge.html?embed=1" title="Короткий переход от оптики к нейтрино" loading="lazy" allow="fullscreen"></iframe>
+
+::: {.nh-text tone="muted" size="sm"}
+Поляризации → массовые состояния $\nu_{\mathrm{vac},i}\equiv\nu_i$; доли интенсивности → вероятности. [Открыть отдельно](assets/06_matter_oscillations/crystal/bridge.html){target="_blank"} · [Анимация]({{< nh-url optics-to-neutrino variant="film-ru" >}}){target="_blank"}.
+:::
+:::
+
+::: {.content-visible when-format="pdf"}
+![](assets/06_matter_oscillations/crystal/optics_to_neutrino_v2_ru.jpg){fig-alt="От поляризаций света к массовым состояниям нейтрино: кадр анимации со словарём и состоянием на выходе"}
+:::

@@ -1,0 +1,156 @@
+~~~{=html}
+<div class="invisible-plate" data-invisible-plate data-first-step="1" data-last-step="6"
+     role="group" aria-label="Невидимая пластинка: свет в кристалле и нейтрино в вакууме и веществе">
+  <div class="invisible-plate__bar">
+    <div class="invisible-plate__steps" data-steps></div>
+    <div class="invisible-plate__actions">
+      <button type="button" data-play aria-pressed="false">▶ путь</button>
+      <button type="button" data-assemble>Собрать сигнал</button>
+      <button type="button" data-formula-toggle aria-pressed="false">Формула</button>
+    </div>
+  </div>
+  <div class="invisible-plate__controls">
+    <label data-control="angle">Угол пластинки α
+      <span data-angle-value>45°</span>
+      <input type="range" data-angle min="0" max="90" step="0.5" value="45">
+    </label>
+    <label data-control="path"><span class="invisible-plate__name" data-path-name>Толщина пластинки</span>
+      <span data-path-value></span>
+      <input type="range" data-path min="0" max="1" step="0.002" value="0.25">
+    </label>
+    <label data-control="density">Плотность вещества
+      <span data-density-value></span>
+      <input type="range" data-density min="0" max="3" step="0.01" value="0">
+      <span class="invisible-plate__ticks" data-ticks></span>
+    </label>
+    <div class="invisible-plate__prep" data-control="prep" role="group" aria-label="Что готовит источник">
+      <button type="button" data-prep="light" aria-pressed="true">Свет: поляризатор по оси</button>
+      <button type="button" data-prep="nue" aria-pressed="false">Источник ν<sub>e</sub></button>
+      <button type="button" data-prep="mat1" aria-pressed="false">Мысленно: ν<sub>mat,1</sub></button>
+    </div>
+  </div>
+  <p class="invisible-plate__hint">Схему можно листать вбок.</p>
+  <div class="invisible-plate__scroll">
+  <svg viewBox="0 0 1200 500" role="img" data-scene
+       aria-label="Источник, участок распространения и измерение; ниже пространство состояний, фазы двух волн и вероятности">
+    <!-- scene: source, path, measurement -->
+    <g data-layer="optics">
+      <text x="110" y="34" text-anchor="middle">поляризатор H</text>
+      <circle class="invisible-plate__device" cx="110" cy="110" r="44"></circle>
+      <line class="invisible-plate__pol-h" x1="76" y1="110" x2="144" y2="110"></line>
+      <line class="invisible-plate__beam" x1="156" y1="110" x2="852" y2="110"></line>
+      <rect class="invisible-plate__plate" data-plate x="440" y="52" width="140" height="116" rx="6"></rect>
+      <text data-plate-label x="510" y="34" text-anchor="middle">пластинка</text>
+      <text x="900" y="34" text-anchor="middle">анализатор V</text>
+      <circle class="invisible-plate__device" cx="900" cy="110" r="44"></circle>
+      <line class="invisible-plate__pol-v" x1="900" y1="76" x2="900" y2="144"></line>
+      <line class="invisible-plate__beam" x1="946" y1="110" x2="1002" y2="110"></line>
+      <rect class="invisible-plate__screen" data-screen x="1010" y="66" width="88" height="88"></rect>
+      <text x="1054" y="34" text-anchor="middle">экран</text>
+    </g>
+    <g data-layer="neutrino">
+      <rect class="invisible-plate__medium" data-medium x="156" y="58" width="600" height="104" rx="8"></rect>
+      <text data-path-caption x="560" y="196" text-anchor="middle">вакуум</text>
+      <text x="110" y="34" text-anchor="middle">источник</text>
+      <circle class="invisible-plate__device" cx="110" cy="110" r="44"></circle>
+      <text class="invisible-plate__device-label" data-source-label x="110" y="120" text-anchor="middle">ν<tspan baseline-shift="sub" font-size="65%">e</tspan></text>
+      <line class="invisible-plate__beam" data-nu-beam x1="156" y1="110" x2="700" y2="110"></line>
+      <g data-detector>
+        <rect class="invisible-plate__device" x="-46" y="64" width="92" height="92" rx="10"></rect>
+        <text class="invisible-plate__device-label" x="0" y="118" text-anchor="middle">ν<tspan baseline-shift="sub" font-size="65%">e</tspan>/ν<tspan baseline-shift="sub" font-size="65%">x</tspan></text>
+        <text x="0" y="34" text-anchor="middle">измерение</text>
+      </g>
+      <text class="invisible-plate__big" data-question x="560" y="232" text-anchor="middle"></text>
+    </g>
+
+    <!-- state space -->
+    <g data-inset>
+      <line class="invisible-plate__axis" x1="60" y1="365" x2="330" y2="365"></line>
+      <line class="invisible-plate__axis" x1="195" y1="485" x2="195" y2="250"></line>
+      <text class="invisible-plate__muted" data-axis-h x="338" y="372"></text>
+      <text class="invisible-plate__muted" data-axis-v x="205" y="258"></text>
+      <g data-vac-axes>
+        <line class="invisible-plate__vac-axis" data-vac-axis="1"></line>
+        <line class="invisible-plate__vac-axis" data-vac-axis="2"></line>
+      </g>
+      <line class="invisible-plate__eigen invisible-plate__eigen--1" data-eigen-axis="1"></line>
+      <line class="invisible-plate__eigen invisible-plate__eigen--2" data-eigen-axis="2"></line>
+      <text class="invisible-plate__eigen-label--1" data-eigen-label="1"></text>
+      <text class="invisible-plate__eigen-label--2" data-eigen-label="2"></text>
+      <path class="invisible-plate__ellipse" data-ellipse></path>
+      <line class="invisible-plate__state" data-state></line>
+      <polygon class="invisible-plate__state-head" data-state-head></polygon>
+      <line class="invisible-plate__comp--1" data-comp="1"></line>
+      <polygon class="invisible-plate__comp-head--1" data-comp-head="1"></polygon>
+      <line class="invisible-plate__comp--2" data-comp="2"></line>
+      <polygon class="invisible-plate__comp-head--2" data-comp-head="2"></polygon>
+      <line class="invisible-plate__dotted" data-drop="1"></line>
+      <line class="invisible-plate__dotted" data-drop="2"></line>
+      <text class="invisible-plate__note" data-inset-note x="195" y="498" text-anchor="middle"></text>
+    </g>
+
+    <!-- phases of the two eigenwaves -->
+    <g data-dials>
+      <text x="600" y="258" text-anchor="middle">фазы двух собственных волн</text>
+      <circle class="invisible-plate__dial" cx="530" cy="300" r="38"></circle>
+      <circle class="invisible-plate__dial" cx="670" cy="300" r="38"></circle>
+      <line class="invisible-plate__comp--1" data-pointer="1"></line>
+      <polygon class="invisible-plate__comp-head--1" data-pointer-head="1"></polygon>
+      <line class="invisible-plate__comp--2" data-pointer="2"></line>
+      <polygon class="invisible-plate__comp-head--2" data-pointer-head="2"></polygon>
+      <text class="invisible-plate__muted" x="530" y="356" text-anchor="middle">волна 1</text>
+      <text class="invisible-plate__muted" x="670" y="356" text-anchor="middle">волна 2</text>
+      <text data-dphi x="600" y="380" text-anchor="middle"></text>
+    </g>
+    <g data-sum>
+      <line class="invisible-plate__axis" x1="455" y1="438" x2="745" y2="438"></line>
+      <circle class="invisible-plate__locus" data-locus cy="438"></circle>
+      <line class="invisible-plate__sum" data-sum-line></line>
+      <polygon class="invisible-plate__sum-head" data-sum-head></polygon>
+      <line class="invisible-plate__comp--1" data-arrow="1"></line>
+      <polygon class="invisible-plate__comp-head--1" data-arrow-head="1"></polygon>
+      <line class="invisible-plate__comp--2" data-arrow="2"></line>
+      <polygon class="invisible-plate__comp-head--2" data-arrow-head="2"></polygon>
+      <text class="invisible-plate__muted" x="752" y="444">Re</text>
+      <text class="invisible-plate__sum-label" data-sum-label text-anchor="middle">A</text>
+    </g>
+
+    <!-- measurement -->
+    <g data-bars>
+      <line class="invisible-plate__axis" x1="840" y1="430" x2="990" y2="430"></line>
+      <rect class="invisible-plate__bar-e" data-bar="e" x="860" width="44"></rect>
+      <rect class="invisible-plate__bar-x" data-bar="x" x="930" width="44"></rect>
+      <text data-bar-value="e" x="882" text-anchor="middle"></text>
+      <text data-bar-value="x" x="952" text-anchor="middle"></text>
+      <text x="882" y="458" text-anchor="middle">P<tspan baseline-shift="sub" font-size="65%">e</tspan></text>
+      <text x="952" y="458" text-anchor="middle">P<tspan baseline-shift="sub" font-size="65%">x</tspan></text>
+      <text class="invisible-plate__muted" x="917" y="490" text-anchor="middle">P<tspan baseline-shift="sub" font-size="65%">e</tspan> + P<tspan baseline-shift="sub" font-size="65%">x</tspan> = 1</text>
+    </g>
+    <g data-brightness>
+      <rect class="invisible-plate__screen" data-screen-big x="868" y="290" width="100" height="100"></rect>
+      <text data-brightness-value x="917" y="430" text-anchor="middle"></text>
+    </g>
+    <g data-curve-box>
+      <line class="invisible-plate__axis" x1="1012" y1="430" x2="1172" y2="430"></line>
+      <line class="invisible-plate__axis" x1="1012" y1="430" x2="1012" y2="290"></line>
+      <path class="invisible-plate__curve" data-curve></path>
+      <circle class="invisible-plate__marker" data-marker r="7"></circle>
+      <text class="invisible-plate__muted" data-curve-x x="1092" y="458" text-anchor="middle"></text>
+      <text class="invisible-plate__muted" data-curve-y x="1012" y="276" text-anchor="middle"></text>
+      <text class="invisible-plate__muted" data-depth x="1092" y="490" text-anchor="middle"></text>
+    </g>
+  </svg>
+  </div>
+  <div class="invisible-plate__text">
+  <p class="invisible-plate__replica" data-replica aria-live="polite"></p>
+  <div class="invisible-plate__formulas" data-formulas>
+    <div data-formula="1">\(P_V=\sin^2 2\alpha\,\sin^2\dfrac{\delta}{2},\qquad \delta=(n_1-n_2)kL\)</div>
+    <div data-formula="2">\(P_e+P_x=1\): нейтрино не исчезает, меняется только флэйвор</div>
+    <div data-formula="3">\(|\nu_e\rangle=\cos\theta\,|\nu_{\mathrm{vac},1}\rangle+\sin\theta\,|\nu_{\mathrm{vac},2}\rangle,\qquad k_{\mathrm{vac},1}-k_{\mathrm{vac},2}=\dfrac{\Delta m^2}{2E}\)</div>
+    <div data-formula="4">\(\hat K=\hat K_{\mathrm{vac}}+\delta\hat K,\qquad A=\dfrac{2EV}{\Delta m^2}\)</div>
+    <div data-formula="5">\(A_{e\to x}=\sum_i\langle\nu_x|\nu_{\mathrm{mat},i}\rangle\,e^{ik_{\mathrm{mat},i}L}\,\langle\nu_{\mathrm{mat},i}|\nu_e\rangle\)</div>
+    <div data-formula="6">\(|\psi(0)\rangle=|\nu_{\mathrm{mat},1}\rangle:\quad P_e=\cos^2\theta_m,\quad P_x=\sin^2\theta_m\)</div>
+  </div>
+  </div>
+</div>
+~~~

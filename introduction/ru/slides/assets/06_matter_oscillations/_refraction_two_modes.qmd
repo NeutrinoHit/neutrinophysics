@@ -4,9 +4,9 @@
   <div class="refraction-modes-lab__controls">
     <label>Угол смешивания в веществе, \(\theta_m\)
       <span data-angle-value>30°</span>
-      <input type="range" data-angle min="0" max="45" step="1" value="30">
+      <input type="range" data-angle min="0" max="90" step="1" value="30">
     </label>
-    <label>Разность фаз, \(\Delta\varphi=(k_{2m}-k_{1m})L\)
+    <label>Разность фаз, \(\Delta\varphi=(k_{\mathrm{mat},2}-k_{\mathrm{mat},1})L\)
       <span data-difference-value>2.20 рад</span>
       <input type="range" data-difference min="0" max="6.283185307" step="0.02" value="2.2">
     </label>

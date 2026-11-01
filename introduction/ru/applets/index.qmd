@@ -138,6 +138,20 @@ description: "Интерактивные модели к курсу «Введе
 
   <article class="applet-card">
     <span class="applet-card-kicker">Лекция 11</span>
+    <h2><a href="refraction-boundary.html">Луч на границе двух сред</a></h2>
+    <p>Часть света отражается, часть проходит, преломляется и идёт медленнее. Полное внутреннее отражение из стекла в воздух.</p>
+    <a class="applet-card-action" href="refraction-boundary.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 11 · пять шагов</span>
+    <h2><a href="refraction-origin.html">Откуда берётся показатель преломления</a></h2>
+    <p>Заряд на пружинке, поле слоя со сдвигом на 90°, волна за слоем, стопка слоёв и численное решение уравнений Максвелла.</p>
+    <a class="applet-card-action" href="refraction-origin.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 11</span>
     <h2><a href="refraction-layers.html">Тонкий слой и преломление</a></h2>
     <p>Один слой почти не меняет волну. В однородной среде малые сдвиги фазы накапливаются.</p>
     <a class="applet-card-action" href="refraction-layers.html">Открыть →</a>
@@ -148,6 +162,13 @@ description: "Интерактивные модели к курсу «Введе
     <h2><a href="refraction-two-modes.html">Две волны в веществе</a></h2>
     <p>Как разность показателей преломления превращается в разность фаз и меняет вероятность флэйвора.</p>
     <a class="applet-card-action" href="refraction-two-modes.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 11 · шесть шагов</span>
+    <h2><a href="invisible-plate.html">Невидимая пластинка</a></h2>
+    <p>Свету нужна пластинка, а нейтрино достаточно пустоты. Вакуум и вещество как «кристалл»: собственные волны, их фазы и сигнал на детекторе.</p>
+    <a class="applet-card-action" href="invisible-plate.html">Открыть →</a>
   </article>
 
   <article class="applet-card">

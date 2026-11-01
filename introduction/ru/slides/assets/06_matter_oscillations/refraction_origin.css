@@ -1,0 +1,591 @@
+/* Step-by-step lab "Where the refractive index comes from" (lecture 11).
+   Same look and type scale as refraction_labs.css: 29px on a slide. */
+
+.origin-lab {
+  box-sizing: border-box;
+  width: min(1760px, 100%);
+  margin: 0.2rem auto;
+  padding: 0.5rem 0.7rem 0.3rem;
+  border: 1px solid rgba(126, 189, 224, 0.36);
+  border-radius: 0.35rem;
+  background: #08131e;
+  color: #edf6fc;
+  font: 29px/1.25 system-ui, sans-serif;
+  container-type: inline-size;
+}
+
+.origin-lab * {
+  box-sizing: border-box;
+}
+
+.origin-lab__nav,
+.origin-lab__text,
+.origin-lab__controls,
+.origin-lab__readout {
+  font-size: clamp(14px, 1.7cqi, 29px);
+}
+
+.origin-lab__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.1rem 0.2rem 0.5rem;
+  border-bottom: 1px solid rgba(126, 189, 224, 0.25);
+}
+
+.origin-lab__step-title {
+  flex: 1;
+  text-align: center;
+  color: #ffd386;
+  font-weight: 650;
+}
+
+.origin-lab__text {
+  margin: 0.35rem 0.2rem 0.4rem;
+  color: #dcecf6;
+}
+
+.origin-lab__controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14em, 1fr));
+  gap: 0.4rem 1.4rem;
+  align-items: end;
+  padding: 0.1rem 0.2rem 0.4rem;
+}
+
+.origin-lab__controls--buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.origin-lab__controls label {
+  display: block;
+  color: #dcecf6;
+}
+
+.origin-lab__controls label > span {
+  float: right;
+  color: #ffd386;
+  font-variant-numeric: tabular-nums;
+}
+
+.reveal .origin-lab__controls label > .MathJax_Preview,
+.reveal .origin-lab__controls label > .mjx-chtml {
+  display: inline-block;
+  float: none;
+  color: inherit;
+  font-variant-numeric: normal;
+}
+
+.origin-lab input[type="range"] {
+  display: block;
+  width: 100%;
+  margin: 0.35rem 0 0;
+  accent-color: #73d6eb;
+}
+
+.origin-lab button {
+  padding: 0.2em 0.7em;
+  border: 1px solid rgba(126, 189, 224, 0.55);
+  border-radius: 0.3rem;
+  background: #10263a;
+  color: #e7f1f8;
+  font: inherit;
+  cursor: pointer;
+}
+
+.origin-lab button[aria-pressed="true"] {
+  background: #1d4561;
+}
+
+.origin-lab button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.origin-lab svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  font: 22px/1.2 system-ui, sans-serif;
+}
+
+.origin-lab svg text {
+  fill: #e5eff7;
+}
+
+.origin-lab__readout {
+  margin: 0.1rem 0 0;
+  padding: 0.35rem 0.6rem;
+  color: #e7f1f8;
+  text-align: center;
+}
+
+.origin-lab__readout span {
+  color: #ffd386;
+  font-variant-numeric: tabular-nums;
+}
+
+.origin-lab__axis {
+  stroke: rgba(221, 237, 248, 0.45);
+  stroke-width: 2;
+}
+
+.origin-lab__cursor {
+  stroke: rgba(221, 237, 248, 0.55);
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+}
+
+.origin-lab__wall {
+  stroke: #9fb3c3;
+  stroke-width: 8;
+}
+
+.origin-lab__spring {
+  fill: none;
+  stroke: #9fb3c3;
+  stroke-width: 3;
+}
+
+.origin-lab__spring--thin {
+  stroke-width: 2;
+  opacity: 0.7;
+}
+
+.origin-lab__charge {
+  fill: #ffd386;
+}
+
+.origin-lab__field-arrow line,
+.origin-lab__phasor-incident line {
+  stroke: #6ee0ec;
+  stroke-width: 6;
+}
+
+.origin-lab__field-arrow polygon,
+.origin-lab__phasor-incident polygon {
+  fill: #6ee0ec;
+}
+
+.origin-lab__x-arrow line,
+.origin-lab__phasor-charge line {
+  stroke: #ffd386;
+  stroke-width: 6;
+}
+
+.origin-lab__x-arrow polygon,
+.origin-lab__phasor-charge polygon {
+  fill: #ffd386;
+}
+
+.origin-lab__sum-arrow line,
+.origin-lab__phasor-sum line {
+  stroke: #ffffff;
+  stroke-width: 6;
+}
+
+.origin-lab__sum-arrow polygon,
+.origin-lab__phasor-sum polygon {
+  fill: #ffffff;
+}
+
+.origin-lab__trace-incident,
+.origin-lab__trace-charge,
+.origin-lab__trace-velocity,
+.origin-lab__trace-sum,
+.origin-lab__trace-vacuum {
+  fill: none;
+  stroke-width: 4;
+}
+
+.origin-lab__trace-incident {
+  stroke: #6ee0ec;
+}
+
+.origin-lab__trace-charge {
+  stroke: #ffd386;
+}
+
+.origin-lab__trace-velocity {
+  stroke: #ffd386;
+  stroke-dasharray: 10 8;
+  opacity: 0.75;
+}
+
+.origin-lab__trace-sum {
+  stroke: #ffffff;
+}
+
+.origin-lab__trace-vacuum {
+  stroke: #6ee0ec;
+  stroke-dasharray: 10 8;
+  opacity: 0.8;
+}
+
+.origin-lab__angle {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+.origin-lab__zone {
+  stroke-width: 10;
+  stroke-linecap: butt;
+  opacity: 0.25;
+}
+
+.origin-lab__zone.is-on {
+  opacity: 1;
+}
+
+.origin-lab__zone--0,
+.origin-lab__spiral--0 {
+  stroke: #ffd386;
+}
+
+.origin-lab__zone--1,
+.origin-lab__spiral--1 {
+  stroke: #ff8f7a;
+}
+
+.origin-lab__spiral {
+  fill: none;
+  stroke-width: 4;
+}
+
+.origin-lab__ray {
+  stroke: rgba(221, 237, 248, 0.5);
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+}
+
+.origin-lab__ray--axis {
+  stroke-dasharray: none;
+}
+
+.origin-lab__point {
+  fill: #ffffff;
+}
+
+.origin-lab__limit {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 3;
+}
+
+.origin-lab__medium {
+  fill: rgba(110, 224, 236, 0.1);
+}
+
+.origin-lab__front {
+  stroke: #ff8f7a;
+  stroke-width: 3;
+  stroke-dasharray: 8 6;
+}
+
+.origin-lab svg .origin-lab__front-label {
+  fill: #ff8f7a;
+}
+
+/* Narrow screens: applet pages only; a Reveal slide is scaled as a whole. */
+@media (max-width: 900px) {
+  body:not(.reveal-viewport) .origin-lab svg {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 560px) {
+  body:not(.reveal-viewport) .origin-lab {
+    padding: 0.4rem 0.35rem 0.25rem;
+  }
+  body:not(.reveal-viewport) .origin-lab svg {
+    font-size: 34px;
+  }
+}
+
+.origin-lab__circle {
+  fill: none;
+  stroke: rgba(221, 237, 248, 0.25);
+  stroke-width: 2;
+}
+
+.origin-lab__projection {
+  stroke: #ffffff;
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+  opacity: 0.8;
+}
+
+.origin-lab__projection-dot {
+  fill: #ffffff;
+}
+
+.origin-lab svg .origin-lab__label-incident {
+  fill: #6ee0ec;
+  font-weight: 700;
+}
+
+.origin-lab svg .origin-lab__label-charge {
+  fill: #ffd386;
+  font-weight: 700;
+}
+
+.origin-lab svg .origin-lab__label-sum {
+  fill: #ffffff;
+  font-weight: 700;
+}
+
+.origin-lab svg .origin-lab__cursor-label,
+.origin-lab svg .origin-lab__ray-label {
+  fill: rgba(221, 237, 248, 0.7);
+  font-size: 0.85em;
+}
+
+.origin-lab__ring-arrow line {
+  stroke: #ffffff;
+  stroke-width: 4;
+}
+
+.origin-lab__ring-arrow polygon {
+  fill: #ffffff;
+}
+
+.origin-lab__speed {
+  flex: 1 1 14em;
+  min-width: 12em;
+}
+
+/* On a slide the drawing gives way to the explanation above it. */
+.reveal .origin-lab svg {
+  max-height: 450px;
+}
+
+.origin-lab__exact {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2.5;
+  stroke-dasharray: 7 7;
+  opacity: 0.8;
+}
+
+.origin-lab__exact-dot {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 2.5;
+}
+
+/* Shared lesson layout: one idea per tab, large equations, separate experiment. */
+.origin-lab__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em;
+  padding: 0.1em 0.2em 0.25em;
+  font-size: clamp(14px, 1.7cqi, 29px);
+}
+
+.origin-lab__tabs button[aria-selected="true"] {
+  background: #1d4561;
+  border-color: #73d6eb;
+  color: #fff;
+}
+
+.origin-lab button:focus-visible {
+  outline: 2px solid #ffd386;
+  outline-offset: 3px;
+}
+
+.origin-lab__theory {
+  min-height: 8em;
+  padding: 0.1em 0.4em 0.2em;
+  border-bottom: 1px solid rgba(126, 189, 224, 0.25);
+  font-size: clamp(14px, 1.7cqi, 29px);
+}
+
+.origin-lab__theory [hidden] {
+  display: none !important;
+}
+
+.origin-lab__experiment {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.origin-lab__lesson--interactive .origin-lab__theory {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+}
+
+.reveal .origin-lab[data-step="1"][data-single],
+.reveal .origin-lab[data-step="2"][data-single] {
+  height: 840px;
+}
+
+.reveal .origin-lab__lesson {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.reveal .origin-lab__lesson .origin-lab__theory {
+  flex: 1;
+  min-height: 0;
+}
+
+.reveal .origin-lab__experiment {
+  height: 100%;
+  min-height: 0;
+}
+
+.origin-lab__lesson-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5em;
+  min-height: 100%;
+  padding: 0.4em 0.55em;
+}
+
+.origin-lab__lesson-copy .origin-lab__lead,
+.origin-lab__lesson-copy .origin-lab__takeaway {
+  font-size: clamp(20px, 2.65cqi, 42px);
+  line-height: 1.3;
+}
+
+.origin-lab__lesson-copy .origin-lab__formula {
+  font-size: clamp(24px, 3.65cqi, 58px);
+  line-height: 1.25;
+}
+
+.origin-lab__lesson-copy .origin-lab__takeaway {
+  padding: 0.2em 0 0.2em 0.5em;
+  border-left: 4px solid #ffd386;
+  color: #ffd386;
+}
+
+.origin-lab__lesson-copy .origin-lab__definition {
+  font-size: clamp(17px, 2.1cqi, 34px);
+  line-height: 1.3;
+  color: #bdd0df;
+}
+
+.origin-lab__theory p,
+.reveal .origin-lab__theory p {
+  margin: 0.15em 0;
+}
+
+.origin-lab__theory .MathJax_Display,
+.reveal .origin-lab__theory .MathJax_Display,
+.origin-lab__theory .MJXc-display,
+.origin-lab__theory mjx-container[display="true"] {
+  margin: 0.3em 0 !important;
+}
+
+.origin-lab__fine {
+  color: #b9cedd;
+  font-size: 0.9em;
+}
+
+.origin-lab__zones-controls {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.4em 1em;
+  padding-top: 0.4em;
+}
+
+.origin-lab__zones-figures,
+.origin-lab__lesson-figures {
+  display: grid;
+  grid-template-columns: 0.96fr 1.04fr;
+  align-items: center;
+}
+
+.reveal .origin-lab__zones-figures,
+.reveal .origin-lab__lesson-figures {
+  flex: 1;
+  min-height: 0;
+  align-items: stretch;
+}
+
+.reveal .origin-lab__zones-figures svg,
+.reveal .origin-lab__lesson-figures svg {
+  height: 100%;
+  max-height: none;
+  min-height: 0;
+}
+
+main.content > .applet-stage--origin {
+  width: min(1560px, 100%);
+}
+
+.origin-lab__zones-bottom {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  font-size: clamp(14px, 1.7cqi, 29px);
+}
+
+.origin-lab__zones-bottom > button {
+  flex: 0 0 auto;
+}
+
+.origin-lab__zones-bottom .origin-lab__readout {
+  flex: 1;
+  text-align: left;
+  padding: 0.15em 0.2em;
+}
+
+.origin-lab__zone--quiet {
+  stroke: #657482;
+}
+
+@media (max-width: 900px) {
+  .applet-stage--origin {
+    padding: 0.4rem;
+  }
+  body:not(.reveal-viewport) .origin-lab__zones-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  body:not(.reveal-viewport) .origin-lab__zones-figures {
+    grid-template-columns: 1fr;
+  }
+  body:not(.reveal-viewport) .origin-lab__lesson-figures {
+    grid-template-columns: 1fr;
+  }
+  body:not(.reveal-viewport) .origin-lab__zones-figures svg,
+  body:not(.reveal-viewport) .origin-lab__lesson-figures svg {
+    font-size: 22px;
+  }
+  body:not(.reveal-viewport) .origin-lab__theory {
+    min-height: 0;
+  }
+  body:not(.reveal-viewport) .origin-lab__zones-bottom {
+    flex-wrap: wrap;
+  }
+  body:not(.reveal-viewport) .origin-lab__zones-bottom .origin-lab__readout {
+    flex-basis: 100%;
+  }
+  body:not(.reveal-viewport) .origin-lab__theory [role="tabpanel"] {
+    overflow-x: auto;
+  }
+  body:not(.reveal-viewport) .origin-lab__lesson-copy {
+    min-height: 0;
+    padding: 0.4em 0;
+    gap: 0.5em;
+  }
+  body:not(.reveal-viewport) .origin-lab__formula {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.15em 0;
+  }
+  body:not(.reveal-viewport) .origin-lab__formula .MathJax_Display,
+  body:not(.reveal-viewport) .origin-lab__formula mjx-container[display="true"] {
+    width: max-content;
+    min-width: 100%;
+    text-align: left !important;
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "single_t": [
+    0.9748120407949888,
+    0.15207824425667
+  ],
+  "single_reflection": 0.023762225665104688,
+  "single_phase_rad": 0.1547602676615083,
+  "single_delay_periods": 0.024630861592553843,
+  "index_phase": 1.3431576407451846,
+  "index_imag": 0.0028357871017417684,
+  "stack_reflection": 0.06962629941822461,
+  "stack_transmission": 0.8876124609199243,
+  "stack_absorption": 0.04276123966185208,
+  "continuity_error": 2.482534153247273e-16,
+  "jump_error": 1.7798229048217483e-15,
+  "energy_balance_error": 9.992007221626409e-16,
+  "single_plot": {
+    "peak_in_periods": 0.25,
+    "peak_total_periods": 0.27463086159255384
+  },
+  "bulk_plot": {
+    "interior_peaks": [
+      0.11725429363193278,
+      0.8574726026708952
+    ],
+    "peak_wavelength": 0.7402183090389625,
+    "bloch_wavelength": 0.7445142473709933,
+    "thickness": 1.25,
+    "outgoing_crest": 1.7276041671039262,
+    "vacuum_crest": 2.1591549430918953,
+    "phase_delay_rad": 2.711513494989556
+  }
+}

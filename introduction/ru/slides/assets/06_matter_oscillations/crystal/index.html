@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Свет в двулучепреломляющем кристалле</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="math.css">
+</head>
+<body>
+<main>
+  <header>
+    <div><h1>Свет в двулучепреломляющем кристалле</h1>
+    <p class="subtitle">Две собственные поляризации набирают разные фазы. Их сумма меняет форму.</p></div>
+    <button id="play" type="button" aria-pressed="true">Пауза</button>
+  </header>
+  <div class="legend" aria-label="Обозначения волн">
+    <span class="one">Поляризация 1</span><span class="two">Поляризация 2</span><span class="total">Сумма <span class="m"><i>E</i></span></span>
+  </div>
+  <section class="experiment" aria-label="Оптический опыт">
+    <div class="scene" id="scene">
+      <canvas id="crystal" aria-label="Трёхмерный кристалл, две собственные поляризации и суммарная волна"></canvas>
+      <span class="scene-label" id="entry-label">Вход</span>
+      <span class="scene-label" id="exit-label">Выход</span>
+      <span class="axis-label one" id="axis-one">ось 1</span>
+      <span class="axis-label two" id="axis-two">ось 2</span>
+      <p class="scene-note">Одна частота · разные длины волн</p>
+      <p id="error" hidden role="alert"></p>
+    </div>
+    <aside class="sections" aria-label="Вид вдоль луча">
+      <div class="cross-section"><h2>На входе</h2><canvas id="input-section" aria-label="Входная линейная поляризация, вид вдоль луча"></canvas></div>
+      <div class="cross-section"><h2>На выходе</h2><canvas id="output-section" aria-label="Две составляющие и поляризационный эллипс на выходе"></canvas>
+      <p id="output-kind" aria-live="polite">Круговая поляризация</p></div>
+    </aside>
+  </section>
+  <section class="controls" aria-label="Параметры опыта">
+    <label for="input-angle"><span>Входная поляризация <span class="m"><i>β</i></span><output id="input-value" for="input-angle">0°</output></span>
+      <input id="input-angle" type="range" min="0" max="180" step="1" value="0">
+      <span class="ticks"><span>0°</span><span>90°</span><span>180°</span></span></label>
+    <label for="axes-angle"><span>Поворот осей <span class="m"><i>α</i></span><output id="axes-value" for="axes-angle">45°</output></span>
+      <input id="axes-angle" type="range" min="0" max="180" step="1" value="45">
+      <span class="ticks"><span>0°</span><span>90°</span><span>180°</span></span></label>
+    <label for="length"><span>Толщина <span class="m"><i>L</i></span><output id="length-value" for="length">1,00 <span class="m"><i>λ</i><sub>0</sub></span></output></span>
+      <input id="length" type="range" min="0" max="4" step="0.01" value="1">
+      <span class="ticks"><span>0</span><span>2 <span class="m"><i>λ</i><sub>0</sub></span></span><span>4 <span class="m"><i>λ</i><sub>0</sub></span></span></span></label>
+  </section>
+  <div class="readout"><p id="explanation">Две равные составляющие со сдвигом π/2 дают круговую поляризацию.</p><p class="phase" id="phase"><span class="m">Δ<i>φ</i> = π/2</span></p></div>
+  <footer><span>Идеальная прозрачная пластинка · <span class="m"><i>n</i><sub>1</sub></span> = 1,35, <span class="m"><i>n</i><sub>2</sub></span> = 1,60 · отражения не учитываются</span><span>© neutrinohit.github.io</span></footer>
+</main>
+<script type="module" src="viewer.mjs"></script>
+<script defer src="https://neutrinohit.github.io/assets/analytics/cloudflare-web-analytics.js"></script>
+</body>
+</html>

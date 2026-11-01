@@ -70,8 +70,8 @@ toc: false
       <div class="lecture-row-body"><p>Матрица PMNS, полная вероятность, CP-нарушение и параметры NuFIT.</p><div class="lecture-links"><a href="ru/slides/10_vacuum_pmns.html">Открыть лекцию</a><a href="ru/exercises/10_vacuum_pmns_exercises.html">Задачи</a><a href="ru/applets/three-flavor-probabilities.html">Вероятности трёх нейтрино</a><a href="ru/applets/flavor-triangle.html">Треугольник флэйворов</a><a href="ru/applets/pmns-from-data.html">Соберите матрицу</a></div></div>
     </details>
     <details class="lecture-row">
-      <summary><span class="lecture-index">11</span><span>Осцилляции в веществе. Откуда берётся преломление</span></summary>
-      <div class="lecture-row-body"><p>От тонкого слоя света к показателю преломления и фазам нейтрино в веществе.</p><div class="lecture-links"><a href="ru/slides/11_matter_refraction.html">Открыть лекцию</a><a href="ru/applets/refraction-layers.html">Свет в слое</a><a href="ru/applets/refraction-two-modes.html">Две волны</a></div></div>
+      <summary><span class="lecture-index">11</span><span>Осцилляции нейтрино в веществе. Показатель преломления</span></summary>
+      <div class="lecture-row-body"><p>От тонкого слоя света к показателю преломления и фазам нейтрино в веществе.</p><div class="lecture-links"><a href="ru/slides/11_matter_refraction.html">Открыть лекцию</a><a href="ru/applets/refraction-boundary.html">Луч на границе</a><a href="ru/applets/refraction-origin.html">Откуда берётся n</a><a href="ru/applets/refraction-layers.html">Свет в слое</a><a href="ru/applets/refraction-two-modes.html">Две волны</a></div></div>
     </details>
     <details class="lecture-row">
       <summary><span class="lecture-index">12</span><span>Осцилляции в веществе. Постоянная плотность</span></summary>
