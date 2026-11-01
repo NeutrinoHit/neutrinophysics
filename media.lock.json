@@ -226,10 +226,10 @@
    "id": "neutrino-crystal",
    "variant": "film-ru",
    "version": 1,
-   "url": "/media-neutrino/neutrino-crystal/film-ru-v1.mp4",
+   "url": "/media-neutrinophysics/neutrino-crystal/film-ru-v1.mp4",
    "sha256": "e6b1225aaedf9687c7813bbfd687924b7925482edd340e49a6b29bcb7976c6b9",
    "bytes": 10025714,
-   "status": "prepared",
+   "status": "published",
    "fallback": "introduction/ru/slides/assets/06_matter_oscillations/crystal/neutrino_crystal_ru.mp4"
   },
   {
