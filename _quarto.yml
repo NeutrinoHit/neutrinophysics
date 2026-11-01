@@ -9,7 +9,6 @@ project:
     - "/assets/**"
     - "/shared/reveal/**"
     - "/introduction/Helicity/**"
-    - "/introduction/Introduction/**"
     - "/introduction/Parity/**"
     - "/introduction/_includes/*.html"
     - "/introduction/**/assets/**"
