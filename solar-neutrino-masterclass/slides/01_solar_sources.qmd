@@ -87,9 +87,9 @@ solar-neutrino-masterclass/
 Tables used today:
 
 ```text
-data/masterclass1/solar_fluxes.csv
-data/masterclass1/energy_spectra.csv
-data/masterclass1/nu_electron_recoil_cross_sections.csv
+solar_fluxes.csv
+energy_spectra.csv
+nu_electron_recoil_cross_sections.csv
 ```
 
 :::
@@ -104,14 +104,14 @@ From the web page:
 import numpy as np
 import pandas as pd
 
-BASE = "https://neutrinohit.github.io/neutrinophysics/solar-neutrino-masterclass"
+MEDIA = "https://neutrinohit.github.io/media-neutrinophysics"
 
-fluxes = pd.read_csv(f"{BASE}/data/masterclass1/solar_fluxes.csv")
-spectra = pd.read_csv(f"{BASE}/data/masterclass1/energy_spectra.csv")
-xs = pd.read_csv(f"{BASE}/data/masterclass1/nu_electron_recoil_cross_sections.csv")
+fluxes = pd.read_csv(f"{MEDIA}/masterclass1/solar-fluxes-v1.csv")
+spectra = pd.read_csv(f"{MEDIA}/masterclass1/energy-spectra-v1.csv")
+xs = pd.read_csv(f"{MEDIA}/masterclass1/nu-electron-recoil-cross-sections-v1.csv")
 ```
 
-For a local notebook, replace `BASE` by the local project directory.
+Offline: unpack [masterclass1_data.zip]({{< nh-url masterclass1 variant="masterclass1-data" >}}) and read the same tables by their file names.
 
 ## Select $^8\mathrm{B}$
 

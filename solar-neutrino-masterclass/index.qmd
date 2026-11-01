@@ -56,7 +56,7 @@ toc: false
         </p>
         <div class="course-links">
           <a href="slides/01_solar_sources.html">Open masterclass</a>
-          <a href="data/masterclass1/masterclass1_data.zip" download>Download data (.zip)</a>
+          <a href="{{< nh-url masterclass1 variant="masterclass1-data" >}}" download>Download data (.zip)</a>
         </div>
       </div>
     </details>
@@ -76,7 +76,7 @@ toc: false
         </p>
         <div class="course-links">
           <a href="slides/02_msw_detector_statistics.html">Open masterclass</a>
-          <a href="data/masterclass2/masterclass2_data.zip" download>Download data (.zip)</a>
+          <a href="{{< nh-url masterclass2 variant="masterclass2-data" >}}" download>Download data (.zip)</a>
         </div>
       </div>
     </details>
@@ -95,7 +95,7 @@ toc: false
         </p>
         <div class="course-links">
           <a href="assignments/sk_integrated_project.html">Open project</a>
-          <a href="data/project/solar_neutrino_project_data.zip" download>Download project data (.zip)</a>
+          <a href="{{< nh-url masterclass-project variant="solar-neutrino-project-data" >}}" download>Download project data (.zip)</a>
         </div>
       </div>
     </details>

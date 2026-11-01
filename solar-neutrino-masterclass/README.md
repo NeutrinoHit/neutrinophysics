@@ -41,8 +41,12 @@ data/student/
 The complete student dataset archive is:
 
 ```text
-data/student/solar_neutrino_student_data.zip
+https://neutrinohit.github.io/media-neutrinophysics/masterclass-student/solar-neutrino-student-data-v1.zip
 ```
+
+The tables and archives are published in the shared media library
+(`media-neutrinophysics`) and are not kept in git; `data/README.md` lists the
+addresses and how a regenerated file is published.
 
 Regenerate the teaching tables:
 
@@ -128,7 +132,7 @@ Then open the notebook from the Jupyter page in the browser.
 - `slides/03_student_defense.qmd`: defense format.
 - `assignments/sk_integrated_project.qmd`: common SK-like project.
 - `assignments/fit_recipes.qmd`: short fit recipes.
-- `data/student/`: student tables.
+- `data/`: dataset notes and generated tables (published in `media-neutrinophysics`).
 
 ## Integrated Project
 

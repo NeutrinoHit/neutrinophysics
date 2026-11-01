@@ -38,7 +38,7 @@ The true values are hidden until the defense.
 
 Download:
 
-[data/project/solar_neutrino_project_data.zip](../data/project/solar_neutrino_project_data.zip)
+[solar_neutrino_project_data.zip]({{< nh-url masterclass-project variant="solar-neutrino-project-data" >}})
 
 The archive contains:
 

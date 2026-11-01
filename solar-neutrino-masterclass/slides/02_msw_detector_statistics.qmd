@@ -89,12 +89,12 @@ solar-neutrino-masterclass/
 Tables used today:
 
 ```text
-data/masterclass2/solar_fluxes.csv
-data/masterclass2/energy_spectra.csv
-data/masterclass2/nu_electron_recoil_cross_sections.csv
-data/masterclass2/oscillation_probabilities_grid.csv
-data/masterclass2/earth_regeneration_grid.csv
-data/masterclass2/earth_regeneration_parameter_scan.csv
+solar_fluxes.csv
+energy_spectra.csv
+nu_electron_recoil_cross_sections.csv
+oscillation_probabilities_grid.csv
+earth_regeneration_grid.csv
+earth_regeneration_parameter_scan.csv
 ```
 
 :::
@@ -107,21 +107,18 @@ data/masterclass2/earth_regeneration_parameter_scan.csv
 import numpy as np
 import pandas as pd
 
-BASE = "https://neutrinohit.github.io/neutrinophysics/solar-neutrino-masterclass"
+MEDIA = "https://neutrinohit.github.io/media-neutrinophysics"
 
-fluxes = pd.read_csv(f"{BASE}/data/masterclass2/solar_fluxes.csv")
-spectra = pd.read_csv(f"{BASE}/data/masterclass2/energy_spectra.csv")
-xs = pd.read_csv(f"{BASE}/data/masterclass2/nu_electron_recoil_cross_sections.csv")
-osc = pd.read_csv(f"{BASE}/data/masterclass2/oscillation_probabilities_grid.csv")
-earth = pd.read_csv(f"{BASE}/data/masterclass2/earth_regeneration_grid.csv")
-earth_scan = pd.read_csv(f"{BASE}/data/masterclass2/earth_regeneration_parameter_scan.csv")
+fluxes = pd.read_csv(f"{MEDIA}/masterclass1/solar-fluxes-v1.csv")
+spectra = pd.read_csv(f"{MEDIA}/masterclass1/energy-spectra-v1.csv")
+xs = pd.read_csv(f"{MEDIA}/masterclass1/nu-electron-recoil-cross-sections-v1.csv")
+osc = pd.read_csv(f"{MEDIA}/masterclass2/oscillation-probabilities-grid-v1.csv")
+earth = pd.read_csv(f"{MEDIA}/masterclass2/earth-regeneration-grid-v1.csv")
+earth_scan = pd.read_csv(f"{MEDIA}/masterclass2/earth-regeneration-parameter-scan-v1.csv")
 ```
 
-The same archive is also available as:
-
-```text
-data/masterclass2/masterclass2_data.zip
-```
+The same tables in one archive:
+[masterclass2_data.zip]({{< nh-url masterclass2 variant="masterclass2-data" >}})
 
 ## PEANUTS Grids
 
@@ -542,7 +539,7 @@ Use $\Delta q_{\rm prof}=1$ for the usual one-parameter interval.
 If time permits, inspect:
 
 ```text
-data/masterclass2/earth_regeneration_grid.csv
+earth_regeneration_grid.csv
 ```
 
 It contains PEANUTS values of
@@ -587,7 +584,7 @@ It does not answer parameter sensitivity.
 For parameter sensitivity use:
 
 ```text
-data/masterclass2/earth_regeneration_parameter_scan.csv
+earth_regeneration_parameter_scan.csv
 ```
 
 This table scans

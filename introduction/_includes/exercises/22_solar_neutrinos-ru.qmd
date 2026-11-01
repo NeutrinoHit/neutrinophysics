@@ -212,7 +212,8 @@ $$
 
 Используйте $^8$B-спектр и поток, непосредственно полученные из PEANUTS, а
 табличные сечения из
-`solar-neutrino-masterclass/data/student/nu_electron_recoil_cross_sections.csv`.
+[nu_electron_recoil_cross_sections.csv](https://neutrinohit.github.io/media-neutrinophysics/masterclass1/nu-electron-recoil-cross-sections-v1.csv)
+солнечного мастер-класса.
 
 Ожидание в бине $j$ равно
 
@@ -324,7 +325,8 @@ $\Delta m_{21}^2$, чем $\sin^2\theta_{12}$?
 
 Используйте PEANUTS с распространением через Землю либо подготовленную им
 таблицу
-`solar-neutrino-masterclass/data/project/earth_regeneration_parameter_scan.csv`.
+[earth_regeneration_parameter_scan.csv](https://neutrinohit.github.io/media-neutrinophysics/masterclass2/earth-regeneration-parameter-scan-v1.csv)
+солнечного мастер-класса.
 
 1. Постройте
 

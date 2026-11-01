@@ -21,11 +21,6 @@ project:
     - "!oscillations-minicourse/en/slides/assets/earth-explorer/*.mjs"
     - "/oscillations-minicourse/en/slides/media/**"
     - "/solar-neutrino-masterclass/assets/**"
-    - "/solar-neutrino-masterclass/data/b8_spectrum.csv"
-    - "/solar-neutrino-masterclass/data/masterclass1/**"
-    - "/solar-neutrino-masterclass/data/masterclass2/**"
-    - "/solar-neutrino-masterclass/data/project/**"
-    - "/solar-neutrino-masterclass/data/student/**"
   render:
     - "*.qmd"
     - "introduction/index.qmd"

@@ -23,7 +23,6 @@ site: prune-unpublished
 	rm -f _site/assets/2601.00248v1.pdf
 	find _site -type f -name '*.pdfp' -delete
 	find _site -type f -name '*.qmd' -delete
-	find _site/solar-neutrino-masterclass/data/project -type f -name '*.csv' -delete
 	rm -f _site/introduction/ru/slides/assets/13_solar_neutrinos/generate_photon_diffusion_assets.py
 
 render: site

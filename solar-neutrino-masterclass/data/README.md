@@ -2,6 +2,48 @@
 
 Analytic formulas in the teaching material use natural units, $\hbar=c=1$. CSV files keep practical units in their column names and descriptions.
 
+## Where the Files Are Published
+
+The CSV tables and ZIP archives of this folder are not kept in git. They are
+published in the shared NeutrinoHit media library, media project
+`media-neutrinophysics`:
+
+```text
+https://neutrinohit.github.io/media-neutrinophysics/<id>/<variant>-v<version>.<ext>
+```
+
+| Folder | Library id | Example |
+|---|---|---|
+| `data/` (root tables) | `masterclass-data` | `masterclass-data/b8-spectrum-v1.csv` |
+| `data/masterclass1/` | `masterclass1` | `masterclass1/masterclass1-data-v1.zip` |
+| `data/masterclass2/` | `masterclass2` | `masterclass2/oscillation-probabilities-grid-v1.csv` |
+| `data/project/` | `masterclass-project` | `masterclass-project/solar-neutrino-project-data-v1.zip` |
+| `data/student/` | `masterclass-student` | `masterclass-student/solar-neutrino-student-data-v1.zip` |
+
+The variant is the file name with `-` in place of `_`. Identical files are
+published once: `solar_fluxes.csv`, `energy_spectra.csv` and
+`nu_electron_recoil_cross_sections.csv` of `masterclass2/` and `student/` are
+served from `masterclass1/`. Every record and the paths it replaces are listed
+in `neutrinohit-map/media.catalog.json` (`home: media-neutrinophysics`).
+
+Pages link to these files with `{{< nh-url <id> variant="<variant>" >}}`;
+the versions are pinned in `media.lock.json` at the repository root. The
+Python examples on the masterclass slides read the same addresses directly.
+
+Published bytes never change. The scripts below still write into `data/`;
+a regenerated file stays local (git ignores it) and is registered in the
+library as a new version, then published and pinned:
+
+```bash
+python3 neutrinohit-map/scripts/nh_media.py prepare <file> --id <id> --variant <variant> \
+    --version <n> --home media-neutrinophysics \
+    --replaces neutrinophysics:solar-neutrino-masterclass/data/<path>
+```
+
+The publication steps are in `neutrinohit-map/docs/media-library.md`. The
+pages keep the version pinned in `media.lock.json` until that entry is changed
+deliberately; `nh_media.py lock neutrinophysics` reports a newer version.
+
 The main student dataset is in:
 
 ```text

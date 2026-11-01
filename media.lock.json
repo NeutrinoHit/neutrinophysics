@@ -113,6 +113,56 @@
    "fallback": "oscillations-minicourse/en/slides/media/video/NeutrinoHierarchyScales.mp4"
   },
   {
+   "id": "masterclass-data",
+   "variant": "b8-spectrum",
+   "version": 1,
+   "url": "/media-neutrinophysics/masterclass-data/b8-spectrum-v1.csv",
+   "sha256": "1e385801ca4d835a4a1e99b2d2c89e9dd378b1b3c7e79fa936ccc8f7e4674a06",
+   "bytes": 9962,
+   "status": "published",
+   "fallback": "solar-neutrino-masterclass/data/b8_spectrum.csv"
+  },
+  {
+   "id": "masterclass-project",
+   "variant": "solar-neutrino-project-data",
+   "version": 1,
+   "url": "/media-neutrinophysics/masterclass-project/solar-neutrino-project-data-v1.zip",
+   "sha256": "e657f811965b11ad9d65632357821e07b0bc558e5cd90bd1be027cb9cc3e018b",
+   "bytes": 15095937,
+   "status": "published",
+   "fallback": "solar-neutrino-masterclass/data/project/solar_neutrino_project_data.zip"
+  },
+  {
+   "id": "masterclass1",
+   "variant": "masterclass1-data",
+   "version": 1,
+   "url": "/media-neutrinophysics/masterclass1/masterclass1-data-v1.zip",
+   "sha256": "1d4d5b4d79e7ec6858f09e4097f298ef851480d5604adc9097d849b8e97e7fc1",
+   "bytes": 508124,
+   "status": "published",
+   "fallback": "solar-neutrino-masterclass/data/masterclass1/masterclass1_data.zip"
+  },
+  {
+   "id": "masterclass1",
+   "variant": "nu-electron-recoil-cross-sections",
+   "version": 1,
+   "url": "/media-neutrinophysics/masterclass1/nu-electron-recoil-cross-sections-v1.csv",
+   "sha256": "45d8c4cb1c19f7e39eb5f2b352d89d9fd8bbee39e0e614f139cff995fc363136",
+   "bytes": 2485734,
+   "status": "published",
+   "fallback": "solar-neutrino-masterclass/data/masterclass1/nu_electron_recoil_cross_sections.csv"
+  },
+  {
+   "id": "masterclass2",
+   "variant": "masterclass2-data",
+   "version": 1,
+   "url": "/media-neutrinophysics/masterclass2/masterclass2-data-v1.zip",
+   "sha256": "95a004b0a5022c88e15e44660ed0abf8c97d588f796394711b41d5e8cccbb0c1",
+   "bytes": 15095686,
+   "status": "published",
+   "fallback": "solar-neutrino-masterclass/data/masterclass2/masterclass2_data.zip"
+  },
+  {
    "id": "msw-parametric",
    "variant": "film-layers",
    "version": 1,

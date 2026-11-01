@@ -1226,6 +1226,12 @@ $$
 ## Interactive Fit: Solar Parameters
 
 ::: {.solar-fit-widget}
+```{=html}
+<span id="solar-fit-tables" hidden
+  data-b8="{{< nh-url masterclass-data variant="b8-spectrum" >}}"
+  data-cross-sections="{{< nh-url masterclass1 variant="nu-electron-recoil-cross-sections" >}}"></span>
+```
+
 ```{ojs}
 //| echo: false
 
@@ -1243,8 +1249,10 @@ solarFitNBins = Generators.input(solarFitNBinsInput)
 solarFitThreshold = Generators.input(solarFitThresholdInput)
 solarFitRegenerate = Generators.input(solarFitRegenerateInput)
 
-solarFitB8Rows = FileAttachment("../data/b8_spectrum.csv").csv({typed: true})
-solarFitCrossRows = FileAttachment("../data/masterclass1/nu_electron_recoil_cross_sections.csv").csv({typed: true})
+// Published data tables (media-neutrinophysics); addresses come from media.lock.json
+solarFitTables = document.getElementById("solar-fit-tables").dataset
+solarFitB8Rows = d3.csv(solarFitTables.b8, d3.autoType)
+solarFitCrossRows = d3.csv(solarFitTables.crossSections, d3.autoType)
 
 solarFitB8Table = solarFitB8Rows
   .map(row => ({E: Number(row.E_MeV), shape: Number(row.shape)}))
