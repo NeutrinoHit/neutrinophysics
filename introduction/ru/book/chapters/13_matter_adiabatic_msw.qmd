@@ -193,7 +193,7 @@ $$ {#eq-msw-landau-zener}
 линейность диагональной разности и постоянство внедиагональной связи. Для
 реального солнечного профиля надёжнее интегрировать исходное уравнение.
 
-::: {#anim-msw-adiabatic-passage .animation title="Адиабатический и неадиабатический проход через резонанс" src="../assets/chapters/06_matter_oscillations/msw_adiabatic_passage.mp4" poster="../assets/chapters/06_matter_oscillations/msw_adiabatic_passage.png" url="https://neutrinohit.github.io/qr/neutrino-physics/0019/" qr="../assets/chapters/06_matter_oscillations/qr/msw_adiabatic_passage.png"}
+::: {#anim-msw-adiabatic-passage .animation title="Адиабатический и неадиабатический проход через резонанс" src="nh:pendulum-msw/adiabatic-passage" poster="../assets/chapters/06_matter_oscillations/msw_adiabatic_passage.png" url="https://neutrinohit.github.io/qr/neutrino-physics/0019/" qr="../assets/chapters/06_matter_oscillations/qr/msw_adiabatic_passage.png"}
 При плавном изменении плотности нейтрино следует за мгновенным собственным
 состоянием. При быстром проходе через резонанс состояние отстаёт от
 поворачивающегося собственного вектора, и появляется скачок между ветвями.
@@ -264,7 +264,7 @@ $$ {#eq-msw-high-energy-survival}
 Для солнечного угла это около $0.30$. Сильное изменение вероятности возникло
 без поглощения и без настройки длины Солнца на нечётное число полупериодов.
 
-::: {#anim-msw-solar-bases .animation title="Солнечный выход в трёх базисах" src="../assets/chapters/06_matter_oscillations/msw_solar_exit_bases.mp4" poster="../assets/chapters/06_matter_oscillations/msw_solar_exit_bases.png" url="https://neutrinohit.github.io/qr/neutrino-physics/0020/" qr="../assets/chapters/06_matter_oscillations/qr/msw_solar_exit_bases.png"}
+::: {#anim-msw-solar-bases .animation title="Солнечный выход в трёх базисах" src="nh:pendulum-msw/solar-exit-bases" poster="../assets/chapters/06_matter_oscillations/msw_solar_exit_bases.png" url="https://neutrinohit.github.io/qr/neutrino-physics/0020/" qr="../assets/chapters/06_matter_oscillations/qr/msw_solar_exit_bases.png"}
 Одно и то же состояние показано во флэйворном, фиксированном вакуумном
 массовом и мгновенном массовом базисах. Заселённость $\nu_{2m}$ почти не
 меняется, хотя проекции на $\nu_e$ и $\nu_2$ меняются сильно.

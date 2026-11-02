@@ -54,7 +54,7 @@ $P\simeq1.2\cdot10^{-15}~\text{Вт}$. На втором этапе излуче
 ячейки-волновода. Сигнал проходил через криогенный усилитель, преобразователь частоты
 и аналого-цифровой преобразователь; преобразование Фурье давало спектрограмму.
 
-::: {#anim-project8-cres .animation title="Циклотронное излучение одного электрона" src="../assets/chapters/04_direct_neutrino_mass/project8_cres.mp4" poster="../assets/chapters/04_direct_neutrino_mass/project8_cres.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0015/" qr="../assets/chapters/04_direct_neutrino_mass/qr/project8_cres.png"}
+::: {#anim-project8-cres .animation title="Циклотронное излучение одного электрона" src="nh:project8-cres/film-cres-event" poster="../assets/chapters/04_direct_neutrino_mass/project8_cres.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0015/" qr="../assets/chapters/04_direct_neutrino_mass/qr/project8_cres.png"}
 Электрон движется в магнитной ловушке и излучает микроволновый сигнал.
 Частота задаёт энергию, а продолжительность трека --- время наблюдения до
 рассеяния или выхода из ловушки.

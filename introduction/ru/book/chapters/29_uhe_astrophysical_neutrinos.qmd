@@ -51,7 +51,7 @@ $dE/dt=q\,\mathbf v\cdot\mathbf E$. Энергию частица получае
 дыра закручивает его в спираль, поток Пойнтинга выносит энергию, а плазма
 разгоняется вдоль поля (так запускался джет Swift J1644+57).
 
-::: {#anim-jet-launch .animation title="От звезды к джету: откуда берётся мощность" src="../assets/chapters/29_astrophysical/jet_launch.mp4" poster="../assets/chapters/29_astrophysical/jet_launch.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0027/" qr="../assets/chapters/29_astrophysical/qr/jet_launch.png"}
+::: {#anim-jet-launch .animation title="От звезды к джету: откуда берётся мощность" src="nh:jet-launch/web-ru" poster="../assets/chapters/29_astrophysical/jet_launch.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0027/" qr="../assets/chapters/29_astrophysical/qr/jet_launch.png"}
 Чёрная дыра в миллион масс Солнца: горизонт событий, эргосфера и диск, внутренний
 край которого --- последняя устойчивая орбита. Звезда, похожая на Солнце, падает
 на дыру и разрывается приливными силами; около половины вещества возвращается к
@@ -67,7 +67,7 @@ $dE/dt=q\,\mathbf v\cdot\mathbf E$. Энергию частица получае
 звезда с ветром: перед ней возникает ударная волна, а сорванное вещество образует
 плотное облако.
 
-::: {#anim-star-in-jet .animation title="Звезда в джете: один из способов родить нейтрино" src="../assets/chapters/29_astrophysical/star_in_jet.mp4" poster="../assets/chapters/29_astrophysical/star_in_jet.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0026/" qr="../assets/chapters/29_astrophysical/qr/star_in_jet.png"}
+::: {#anim-star-in-jet .animation title="Звезда в джете: один из способов родить нейтрино" src="nh:star-in-jet/web-ru" poster="../assets/chapters/29_astrophysical/star_in_jet.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0026/" qr="../assets/chapters/29_astrophysical/qr/star_in_jet.png"}
 Чёрная дыра с аккреционным диском запускает джет, и в него попадает звезда с
 ветром. Газ джета обтекает звезду; перед ней возникает ударная волна, другая
 бежит внутрь, и неустойчивости рвут звезду на плотное облако (собственный

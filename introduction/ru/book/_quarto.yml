@@ -109,7 +109,10 @@ book-pdf-title-lines:
     - "Смешивание"
     - "и CP-нарушение"
 
+# neutrinohit-media resolves src="nh:<id>/<variant>" of animation blocks to the
+# shared film (media.lock.json) before the book filter builds the video.
 filters:
+  - neutrinohit-media
   - assets/filters/hide-book-index.lua
   - assets/filters/neutrinohit-book.lua
   - assets/filters/book-media.lua

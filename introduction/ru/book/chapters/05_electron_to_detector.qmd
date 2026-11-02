@@ -126,7 +126,7 @@ $$ {#eq-relativistic-cyclotron-motion}
 $3.6~\text{Тл}$ максимальный ларморовский радиус составляет примерно
 $0.13~\text{мм}$.
 
-::: {#anim-uniform-b-motion .animation title="Движение ансамбля электронов в однородном магнитном поле" src="../assets/chapters/04_direct_neutrino_mass/uniform_b_ensemble.mp4" poster="../assets/chapters/04_direct_neutrino_mass/uniform_b_ensemble.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0012/" qr="../assets/chapters/04_direct_neutrino_mass/qr/uniform_b_motion.png"}
+::: {#anim-uniform-b-motion .animation title="Движение ансамбля электронов в однородном магнитном поле" src="nh:electrons-in-magnetic-field/qr-neutrino-physics" poster="../assets/chapters/04_direct_neutrino_mass/uniform_b_ensemble.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0012/" qr="../assets/chapters/04_direct_neutrino_mass/qr/uniform_b_motion.png"}
 Показаны электроны одинаковой энергии с начальными углами $15^\circ$,
 $45^\circ$ и $75^\circ$. Продольная скорость задаёт шаг винтовой линии,
 поперечный импульс --- её радиус.

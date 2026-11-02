@@ -111,7 +111,7 @@ $$ {#eq-endpoint-relative-mass-effect}
 $E_\nu=m_\nu$ она меняет кривизну спектра и обрывает его при
 $E=E_0-m_\nu$.
 
-::: {#anim-beta-endpoint .animation title="Масса нейтрино и конец β-спектра" epub-src="../assets/chapters/04_direct_neutrino_mass/beta_endpoint.mp4" poster="../assets/chapters/04_direct_neutrino_mass/beta_endpoint.svg" url="https://neutrinohit.github.io/qr/neutrino-physics/0037/" qr="../assets/chapters/04_direct_neutrino_mass/qr/beta_endpoint.png"}
+::: {#anim-beta-endpoint .animation title="Масса нейтрино и конец β-спектра" src="nh:beta-endpoint/book-loop-ru" poster="../assets/chapters/04_direct_neutrino_mass/beta_endpoint.svg" url="https://neutrinohit.github.io/qr/neutrino-physics/0037/" qr="../assets/chapters/04_direct_neutrino_mass/qr/beta_endpoint.png"}
 При увеличении массы конечная точка сдвигается влево, а последняя часть спектра
 подавляется.
 :::
@@ -248,7 +248,7 @@ $$ {#eq-kurie-definition}
 пересекающую ось энергии в $E_0$. Ненулевая масса искривляет последнюю часть
 линии и сдвигает её конец.
 
-::: {#anim-kurie-plot .animation title="График Кури вблизи конечной точки" epub-src="../assets/chapters/04_direct_neutrino_mass/kurie_plot.mp4" poster="../assets/chapters/04_direct_neutrino_mass/kurie_plot.svg" url="https://neutrinohit.github.io/qr/neutrino-physics/0040/" qr="../assets/chapters/04_direct_neutrino_mass/qr/kurie_plot.png"}
+::: {#anim-kurie-plot .animation title="График Кури вблизи конечной точки" src="nh:kurie-plot/book-loop-ru" poster="../assets/chapters/04_direct_neutrino_mass/kurie_plot.svg" url="https://neutrinohit.github.io/qr/neutrino-physics/0040/" qr="../assets/chapters/04_direct_neutrino_mass/qr/kurie_plot.png"}
 Безмассовый спектр даёт прямую, а масса искривляет её у конца. В анализе
 данных подгоняют исходный спектр, а не преобразованный график, вместе с полной
 функцией отклика.

@@ -211,7 +211,7 @@ $$ {#eq-katrin-collimation-factor}
 
 Поперечный импульс уменьшается примерно в сто раз. Поскольку магнитная система стационарна, полная кинетическая энергия не меняется: освободившаяся поперечная энергия переходит в продольную.
 
-::: {#anim-magnetic-collimation .animation title="Адиабатическая магнитная коллимация" src="../assets/chapters/04_direct_neutrino_mass/katrin_magnetic_collimation.mp4" poster="../assets/chapters/04_direct_neutrino_mass/katrin_magnetic_collimation.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0013/" qr="../assets/chapters/04_direct_neutrino_mass/qr/magnetic_collimation.png"}
+::: {#anim-magnetic-collimation .animation title="Адиабатическая магнитная коллимация" src="nh:mac-e-filter/web-katrin-collimation" poster="../assets/chapters/04_direct_neutrino_mass/katrin_magnetic_collimation.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0013/" qr="../assets/chapters/04_direct_neutrino_mass/qr/magnetic_collimation.png"}
 При входе в главный спектрометр $p_\perp$ уменьшается, после анализирующей плоскости снова растёт. Электрическое поле здесь отключено, чтобы было видно действие одной магнитной коллимации.
 :::
 
@@ -235,7 +235,7 @@ $$ {#eq-mace-transmission-condition}
 
 Магнитная часть делает $E_{\perp,\mathrm A}$ малой, поэтому электрический барьер сравнивает с $e|U|$ почти всю кинетическую энергию электрона.
 
-::: {#anim-mac-e-filter .animation title="Электростатическая фильтрация в MAC-E-спектрометре" src="../assets/chapters/04_direct_neutrino_mass/katrin_mac_e_electric.mp4" poster="../assets/chapters/04_direct_neutrino_mass/katrin_mac_e_electric.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0014/" qr="../assets/chapters/04_direct_neutrino_mass/qr/mac_e_filter.png"}
+::: {#anim-mac-e-filter .animation title="Электростатическая фильтрация в MAC-E-спектрометре" src="nh:mac-e-filter/film-katrin-electric" poster="../assets/chapters/04_direct_neutrino_mass/katrin_mac_e_electric.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0014/" qr="../assets/chapters/04_direct_neutrino_mass/qr/mac_e_filter.png"}
 Электроны с энергией выше задерживающего порога проходят к детектору, а остальные отражаются. Изменяя потенциал, измеряют интегральный спектр.
 :::
 
@@ -335,7 +335,7 @@ $$ {#eq-mace-response-scattering}
 
 Поле Земли в первом приближении является дипольным. Поэтому оно слабее у экватора данной силовой линии и усиливается по мере приближения к полярным областям. Частица, для которой выполняется адиабатическое приближение, вращается вокруг линии, движется между северной и южной зеркальными точками и медленно дрейфует вокруг Земли.
 
-::: {#anim-radiation-belts .animation title="Частицы в радиационных поясах Земли" src="../assets/chapters/06_mac_e_spectrometer/nasa_radiation_belts_plasmapause_particles.mp4" poster="../assets/chapters/06_mac_e_spectrometer/nasa_radiation_belts_particles.jpg" url="https://svs.gsfc.nasa.gov/4241/"}
+::: {#anim-radiation-belts .animation title="Частицы в радиационных поясах Земли" src="nh:nasa-radiation-belts/film" poster="../assets/chapters/06_mac_e_spectrometer/nasa_radiation_belts_particles.jpg" url="https://svs.gsfc.nasa.gov/4241/"}
 Жёлтым показаны электроны, синим --- положительные ионы, голубовато-зелёная поверхность отмечает плазмопаузу. Радиусы частиц и шаг спирали сильно увеличены: в масштабе магнитосферы отдельные витки не были бы видны. Визуализация NASA/GSFC Scientific Visualization Studio.
 :::
 
@@ -440,7 +440,7 @@ $$ {#eq-tokamak-toroidal-field}
 
 ### Ускорение Ферми
 
-::: {#anim-fermi-acceleration .animation title="Ускорение частицы на ударном фронте" src="../assets/chapters/06_mac_e_spectrometer/nasa_fermi_shock_acceleration.mp4" poster="../assets/chapters/06_mac_e_spectrometer/nasa_fermi_shock_acceleration_poster.jpg" url="https://svs.gsfc.nasa.gov/10975/"}
+::: {#anim-fermi-acceleration .animation title="Ускорение частицы на ударном фронте" src="nh:nasa-fermi-acceleration/film" poster="../assets/chapters/06_mac_e_spectrometer/nasa_fermi_shock_acceleration_poster.jpg" url="https://svs.gsfc.nasa.gov/10975/"}
 Частица многократно пересекает движущийся ударный фронт остатка сверхновой и набирает энергию. Визуализация NASA/GSFC.
 :::
 

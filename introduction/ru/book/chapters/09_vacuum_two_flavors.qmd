@@ -12,7 +12,7 @@ body-classes: lecture-page topic-3
 «вещество» нейтрино, а вероятности результатов измерения.
 :::
 
-::: {#anim-quantum-chameleon .animation title="Нейтрино как квантовый хамелеон" src="../assets/chapters/05_vacuum_oscillations/quantum_chameleon.mp4" poster="../assets/chapters/05_vacuum_oscillations/quantum_chameleon.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0016/" qr="../assets/chapters/05_vacuum_oscillations/qr/quantum_chameleon.png"}
+::: {#anim-quantum-chameleon .animation title="Нейтрино как квантовый хамелеон" src="nh:quantum-chameleon/qr-neutrino-physics" poster="../assets/chapters/05_vacuum_oscillations/quantum_chameleon.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0016/" qr="../assets/chapters/05_vacuum_oscillations/qr/quantum_chameleon.png"}
 Цвет условно обозначает флэйвор. Между рождением и регистрацией нейтрино не
 обязано взаимодействовать: изменение флэйворных вероятностей создаётся
 интерференцией свободно распространяющихся массовых компонент.
@@ -100,7 +100,7 @@ $$ {#eq-relative-energy-phase}
 $|c_2|^2$. Осциллировать может вероятность измерения в другом базисе, где в
 одной амплитуде складываются обе энергетические компоненты.
 
-::: {#anim-oscillation-phases .animation title="Массовые фазы и флэйворные вероятности" src="../assets/chapters/05_vacuum_oscillations/neutrino_oscillation_phases.mp4" poster="../assets/chapters/05_vacuum_oscillations/neutrino_oscillation_phases.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0017/" qr="../assets/chapters/05_vacuum_oscillations/qr/oscillation_phases.png"}
+::: {#anim-oscillation-phases .animation title="Массовые фазы и флэйворные вероятности" src="nh:neutrino-oscillation-phases/film-phases" poster="../assets/chapters/05_vacuum_oscillations/neutrino_oscillation_phases.jpg" url="https://neutrinohit.github.io/qr/neutrino-physics/0017/" qr="../assets/chapters/05_vacuum_oscillations/qr/oscillation_phases.png"}
 Доли массовых состояний постоянны. Меняется разность их фаз, а вместе с ней
 результат интерференции при проекции на флэйворный базис.
 :::
