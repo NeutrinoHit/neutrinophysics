@@ -1,0 +1,36 @@
+---
+title: "Постройте свою материю"
+description: "Профиль плотности из слоёв и вероятность перехода вдоль пути"
+---
+
+{{< include _applet-nav.qmd >}}
+
+Соберите профиль плотности из слоёв постоянной плотности и следите, как
+меняется вероятность $P_{e\to x}$. В каждом слое нейтрино описывается
+гамильтонианом с потенциалом $A=2EV/\Delta m^2$, а пропагатор всей среды равен
+произведению пропагаторов слоёв.
+
+~~~{=html}
+<link rel="stylesheet" href="../slides/assets/06_matter_oscillations/matter_oscillations.css">
+<link rel="stylesheet" href="../slides/assets/06_matter_oscillations/lecture12.css">
+~~~
+
+::: {.applet-stage .applet-stage--large}
+{{< include ../slides/assets/06_matter_oscillations/_matter_layers_lab.qmd >}}
+:::
+
+~~~{=html}
+<script src="../slides/assets/06_matter_oscillations/l12_tex.js"></script>
+<script src="../slides/assets/06_matter_oscillations/matter_layers.js"></script>
+~~~
+
+::: {.applet-note}
+Потяните верх слоя, чтобы изменить $A$, и границу между слоями, чтобы
+перераспределить длину. Золотая пунктирная линия на редакторе показывает
+резонансное значение $A=\cos2\theta$. Флажок «антинейтрино» меняет знак
+потенциала. «Параметрическое усиление» — профиль из лекции 12: два слоя выше
+резонанса, каждый длиной в полупериод своей осцилляции.
+
+[Объяснение в лекции 12](../slides/12_matter_constant_density.html#/matter-layers-lab-slide) ·
+[Исходный код](https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/slides/assets/06_matter_oscillations/matter_layers.js).
+:::

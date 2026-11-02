@@ -1,0 +1,54 @@
+~~~{=html}
+<div class="matter-lab layers-lab lecture12-lab" data-matter-layers-lab
+     role="group" aria-label="Слои вещества разной плотности">
+  <div class="matter-lab-controls">
+    <label><span class="lab-name">Вакуумный угол \(\theta\)</span>
+      <span><output data-out="theta">33.8</output>°</span>
+      <input data-control="theta" type="range" min="2" max="44" step="0.1" value="33.8">
+    </label>
+    <label><span class="lab-name">Полная длина \(L/L_{\rm vac}\)</span>
+      <span><output data-out="total">3.00</output></span>
+      <input data-control="total" type="range" min="0.5" max="12" step="0.01" value="3">
+    </label>
+    <label class="lab-check"><input data-control="anti" type="checkbox"><span class="lab-name">антинейтрино, \(A\to-A\)</span></label>
+    <div class="layer-buttons" role="group" aria-label="Число слоёв">
+      <button type="button" data-action="remove">− слой</button>
+      <button type="button" data-action="add">+ слой</button>
+    </div>
+    <div class="lab-formulas">
+      \[S_{\rm total}=S_N\cdots S_2S_1\]
+      \[P_{e\to x}=\bigl|(S_{\rm total})_{21}\bigr|^2\]
+    </div>
+    <div class="matter-presets" role="group" aria-label="Готовые профили">
+      <button type="button" data-preset="single">один слой</button>
+      <button type="button" data-preset="plate">резонансная плита</button>
+      <button type="button" data-preset="parametric">параметрическое усиление</button>
+      <button type="button" data-preset="earth">мантия, ядро, мантия</button>
+      <button type="button" data-preset="sun">плавный спад</button>
+      <button type="button" data-preset="random">случайный профиль</button>
+    </div>
+  </div>
+  <div class="matter-lab-readouts layers-readouts" aria-live="polite">
+    <div class="prob"><span>\(P_{e\to x}(L)\)</span><b data-val="final">—</b></div>
+    <div><span>\(P_{\max}\) вдоль пути</span><b data-val="max">—</b></div>
+    <div><span>слоёв \(N\)</span><b data-val="n">—</b></div>
+    <div><span>\(L/L_{\rm vac}\)</span><b data-val="L">—</b></div>
+  </div>
+  <div class="matter-lab-plots layers-plots">
+    <figure>
+      <svg data-plot="editor" viewBox="0 0 1140 280" role="img" aria-label="Профиль потенциала: перетащите верх столбца или границу слоёв"></svg>
+      <figcaption class="lecture12-legend">
+        <span>перетащите верх слоя: потенциал \(A\)</span>
+        <span>перетащите границу: длины слоёв</span>
+      </figcaption>
+    </figure>
+    <figure>
+      <svg data-plot="probability" viewBox="0 0 1140 350" role="img" aria-label="Вероятность перехода вдоль пути"></svg>
+      <figcaption class="lecture12-legend">
+        <span><i class="key-matter"></i>в этой среде</span>
+        <span><i class="key-vacuum"></i>вакуум</span>
+      </figcaption>
+    </figure>
+  </div>
+</div>
+~~~

@@ -1,5 +1,57 @@
 /* Лекция 12 и апплет matter-constant: дополнения к matter_oscillations.css. */
 
+/* Выкладки во вкладках: пошаговая запись «как на доске» под рамку 1600×1000.
+   Размер задаётся на .tab-pane, потому что Quarto копирует классы набора
+   вкладок и на .tab-content. */
+.reveal .l12-board .tab-pane {
+  font-size: 0.86em;
+}
+
+.reveal .l12-board .MJXc-display,
+.reveal .l12-board .MJXp-display {
+  margin: 0.4em 0;
+}
+
+.reveal .l12-board p {
+  margin: 0.3em 0;
+}
+
+.reveal .l12-board ul,
+.reveal .l12-board ol {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+.reveal .l12-board li {
+  margin: 0.1em 0;
+}
+
+/* Шаги выкладки нумеруются как в книге: (i), (ii), (iii). */
+.reveal .l12-board ol[type="i"] {
+  list-style: none;
+  counter-reset: l12-step;
+  margin: 0.3em 0;
+  padding: 0;
+}
+
+.reveal .l12-board ol[type="i"] > li {
+  counter-increment: l12-step;
+  position: relative;
+  margin: 0.55em 0;
+  padding-left: 2.6em;
+}
+
+.reveal .l12-board ol[type="i"] > li::before {
+  content: "(" counter(l12-step, lower-roman) ")";
+  position: absolute;
+  left: 0;
+  color: var(--matter-gold, #e0b84a);
+}
+
+.reveal .l12-board li > p {
+  margin: 0.15em 0;
+}
+
 /* Таблица режимов */
 .reveal .lecture12-regimes table {
   margin-top: 0.4em;
@@ -83,7 +135,8 @@
   font-size: 0.78rem;
 }
 
-.lecture12-legend span {
+/* Только прямые потомки: MathJax 2 набирает формулу вложенными span, и gap разносил бы буквы. */
+.lecture12-legend > span {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -210,4 +263,598 @@
 .lecture12-lab.is-compact svg .axis-label,
 .lecture12-lab.is-compact svg .branch-label {
   font-size: 16px;
+}
+
+/* Подписи осей в TeX (foreignObject) */
+.l12-tex {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--matter-ink);
+  font-size: 17px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.l12-tex.is-muted {
+  color: var(--matter-muted);
+}
+
+.l12-tex.is-gold {
+  color: var(--matter-gold);
+}
+
+.l12-tex.is-blue {
+  color: var(--matter-blue);
+}
+
+.l12-tex.is-red {
+  color: var(--matter-red);
+}
+
+.l12-tex.is-cyan {
+  color: var(--matter-cyan);
+}
+
+.lecture12-lab .lab-formulas {
+  margin: auto 0 0.2rem;
+  padding: 0.2rem 0.3rem;
+  border-top: 1px solid rgba(180, 208, 235, 0.18);
+  font-size: 0.86rem;
+}
+
+.lecture12-lab .lab-formulas .MathJax_Display {
+  margin: 0.35em 0 !important;
+}
+
+.lecture12-lab .lab-formulas + .matter-presets {
+  margin-top: 0.3rem;
+}
+
+/* Конструктор слоёв */
+.reveal .layers-lab .layers-plots {
+  grid-template-columns: 1fr;
+  grid-template-rows: 5fr 6fr;
+}
+
+.reveal .layers-lab .layers-readouts {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.layers-lab svg {
+  touch-action: none;
+}
+
+.layers-lab svg .hit {
+  fill: transparent;
+  cursor: ns-resize;
+}
+
+.layers-lab svg .hit[data-kind="edge"] {
+  cursor: ew-resize;
+}
+
+.layers-lab svg .layer-bar {
+  fill: rgba(255, 200, 87, 0.16);
+}
+
+.layers-lab svg .layer-top {
+  stroke: var(--matter-gold);
+  stroke-width: 3;
+}
+
+.layers-lab svg .layer-num {
+  fill: var(--matter-muted);
+  font-size: 13px;
+}
+
+.layers-lab svg .layer-edge {
+  stroke: rgba(190, 214, 236, 0.5);
+  stroke-width: 1.2;
+  stroke-dasharray: 3 4;
+}
+
+.layers-lab svg .layer-edge.faint {
+  stroke: rgba(190, 214, 236, 0.22);
+}
+
+.layers-lab svg .edge-grip {
+  fill: var(--matter-cyan);
+}
+
+.layers-lab .layer-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem;
+}
+
+.layers-lab .layer-buttons button {
+  min-height: 2.4rem;
+  border: 1px solid rgba(94, 230, 210, 0.55);
+  border-radius: 0.35rem;
+  background: rgba(94, 230, 210, 0.1);
+  color: var(--matter-cyan);
+  font: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.layers-lab .lab-check {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.layers-lab .lab-check input {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--matter-blue);
+}
+
+.reveal .layers-lab .matter-presets {
+  grid-template-columns: 1fr;
+}
+
+.layers-lab .matter-presets button[data-preset="parametric"] {
+  border-color: rgba(255, 200, 87, 0.6);
+  background: rgba(255, 200, 87, 0.1);
+}
+
+/* Иллюстрации: общие стили графиков вне лаборатории */
+.l12-fig {
+  --fig-ink: var(--matter-ink, #e9f1fb);
+  display: grid;
+  gap: 0.5rem 0.8rem;
+  font-size: 18px;
+  color: var(--matter-ink, #e9f1fb);
+}
+
+.l12-fig * {
+  box-sizing: border-box;
+}
+
+.l12-fig figure {
+  margin: 0;
+  padding: 0.25rem;
+  border: 1px solid rgba(180, 208, 235, 0.17);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.l12-fig svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.l12-fig svg text {
+  fill: var(--matter-muted, #9fb0c3);
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.l12-fig svg .axis {
+  stroke: rgba(190, 214, 236, 0.42);
+  stroke-width: 1;
+}
+
+.l12-fig svg .grid {
+  stroke: rgba(190, 214, 236, 0.12);
+  stroke-width: 1;
+}
+
+.l12-fig svg .matter-line {
+  fill: none;
+  stroke: var(--matter-blue, #54a8ff);
+  stroke-width: 3;
+}
+
+.l12-fig svg .vacuum-line {
+  fill: none;
+  stroke: rgba(200, 214, 228, 0.5);
+  stroke-width: 2;
+  stroke-dasharray: 6 5;
+}
+
+.l12-fig svg .envelope-line {
+  fill: none;
+  stroke: var(--matter-red, #ff715b);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 4;
+}
+
+.l12-fig svg .bare-branch {
+  fill: none;
+  stroke: rgba(200, 214, 228, 0.46);
+  stroke-width: 1.5;
+  stroke-dasharray: 5 4;
+}
+
+.l12-fig svg .resonance-line {
+  stroke: var(--matter-gold, #ffc857);
+  stroke-width: 1;
+  stroke-opacity: 0.55;
+  stroke-dasharray: 2 4;
+}
+
+.l12-fig svg .level-line {
+  stroke: rgba(255, 200, 87, 0.5);
+  stroke-width: 1;
+  stroke-dasharray: 2 4;
+}
+
+.l12-fig svg .anti-band {
+  fill: rgba(183, 156, 255, 0.08);
+}
+
+.l12-fig svg .state-dot {
+  fill: var(--matter-gold, #ffc857);
+  stroke: #fff;
+  stroke-width: 1.4;
+}
+
+.l12-fig svg .resonance-label {
+  fill: var(--matter-gold, #ffc857);
+  font-size: 14px;
+}
+
+.l12-fig svg .band-note {
+  fill: var(--matter-purple, #b79cff);
+  font-size: 14px;
+}
+
+.l12-fig svg .point-note {
+  font-size: 14px;
+}
+
+.l12-fig svg .ax {
+  stroke-width: 3;
+  fill: none;
+}
+
+.l12-fig svg .ax.head {
+  stroke-width: 1;
+}
+
+.l12-fig svg .flavor {
+  stroke: var(--matter-red, #ff715b);
+  fill: var(--matter-red, #ff715b);
+}
+
+.l12-fig svg .vacuum {
+  stroke: var(--matter-blue, #54a8ff);
+  fill: var(--matter-blue, #54a8ff);
+}
+
+.l12-fig svg .matter {
+  stroke: var(--matter-gold, #ffc857);
+  fill: var(--matter-gold, #ffc857);
+}
+
+.l12-fig svg .arc {
+  fill: none;
+  stroke-width: 2;
+}
+
+.l12-fig svg .arc.diff {
+  stroke: var(--matter-cyan, #5ee6d2);
+  stroke-width: 3;
+}
+
+.l12-fig svg .fermion {
+  stroke: var(--matter-ink, #e9f1fb);
+  stroke-width: 2.5;
+  fill: none;
+}
+
+.l12-fig svg .fermion.head {
+  fill: var(--matter-ink, #e9f1fb);
+  stroke-width: 1;
+}
+
+.l12-fig svg .boson {
+  stroke: var(--matter-gold, #ffc857);
+  stroke-width: 2.5;
+  fill: none;
+}
+
+.l12-fig svg .vertex {
+  fill: var(--matter-gold, #ffc857);
+}
+
+.l12-fig-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 1.2rem;
+  color: var(--matter-muted, #9fb0c3);
+}
+
+.l12-fig-controls label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.l12-fig-controls output {
+  min-width: 3.2em;
+  color: var(--matter-ink, #e9f1fb);
+  font-variant-numeric: tabular-nums;
+}
+
+.l12-fig-controls input[type="range"] {
+  width: 14rem;
+  accent-color: var(--matter-blue, #54a8ff);
+}
+
+.l12-fig-controls button {
+  padding: 0.25rem 0.7rem;
+  border: 1px solid rgba(84, 168, 255, 0.48);
+  border-radius: 0.35rem;
+  background: rgba(84, 168, 255, 0.1);
+  color: var(--matter-ink, #e9f1fb);
+  font: inherit;
+  cursor: pointer;
+}
+
+.l12-fig-controls button:hover,
+.l12-fig-controls button:focus-visible {
+  background: rgba(84, 168, 255, 0.26);
+  outline: none;
+}
+
+.l12-fig .l12-tex {
+  font-size: 20px;
+}
+
+/* Углы и расщепление: две панели друг под другом */
+.reveal .l12-mixing {
+  grid-template-columns: 1fr;
+}
+
+/* Три базиса: диаграмма слева, записи справа */
+.reveal .l12-bases {
+  grid-template-columns: 640px 1fr;
+  align-items: start;
+  gap: 1rem 2rem;
+  font-size: 26px;
+}
+
+.l12-bases .l12-tex {
+  font-size: 24px;
+}
+
+.l12-bases .l12-fig-controls input[type="range"] {
+  width: 11rem;
+}
+
+.l12-keys {
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
+  padding: 0.2rem 0 0.1rem;
+  font-size: 0.8em;
+}
+
+.l12-keys .k-flavor { color: var(--matter-red, #ff715b); }
+.l12-keys .k-vacuum { color: var(--matter-blue, #54a8ff); }
+.l12-keys .k-matter { color: var(--matter-gold, #ffc857); }
+
+.l12-bases-side {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.l12-eq {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.15rem 0.35rem;
+  padding: 0.3rem 0.6rem;
+  border-left: 4px solid var(--matter-blue, #54a8ff);
+  background: rgba(255, 255, 255, 0.03);
+  font-size: 1em;
+}
+
+.l12-eq.matter {
+  border-left-color: var(--matter-gold, #ffc857);
+}
+
+.l12-eq.link {
+  border-left-color: var(--matter-cyan, #5ee6d2);
+}
+
+.l12-eq b {
+  min-width: 2.8em;
+  color: var(--matter-ink, #e9f1fb);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.l12-eq .tag {
+  min-width: 6.5em;
+  color: var(--matter-muted, #9fb0c3);
+  font-size: 0.85em;
+}
+
+.l12-eq mjx-container,
+.l12-eq .MathJax {
+  margin: 0 !important;
+}
+
+/* Четыре режима */
+.reveal .l12-regimes-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.reveal .l12-regimes-grid {
+  font-size: 22px;
+}
+
+.l12-regimes-grid .cell-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0 0.3rem 0.2rem;
+  color: var(--matter-ink, #e9f1fb);
+}
+
+.l12-regimes-grid .cell-note {
+  padding: 0.1rem 0.4rem 0.2rem;
+  color: var(--matter-muted, #9fb0c3);
+  font-size: 0.8em;
+}
+
+.l12-regimes-grid .cell-note b {
+  color: var(--matter-blue, #54a8ff);
+  font-weight: 600;
+}
+
+/* Диаграммы обмена бозоном */
+.reveal .l12-feynman {
+  grid-template-columns: 1fr;
+  margin-top: 0.6rem;
+}
+
+.l12-feynman figure {
+  padding: 0.1rem;
+}
+
+/* История: три карточки */
+.reveal .l12-people {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 0.6rem;
+}
+
+.l12-person {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--matter-line, rgba(180, 208, 235, 0.25));
+  border-top: 0.25rem solid var(--matter-gold, #ffc857);
+  border-radius: 0.6rem;
+  background: var(--matter-panel, rgba(18, 28, 42, 0.88));
+  font-size: 0.7em;
+  line-height: 1.3;
+}
+
+.l12-person .portrait {
+  position: relative;
+  align-self: center;
+  width: 9.5em;
+  height: 11.5em;
+  overflow: hidden;
+  border-radius: 0.5em;
+  background: linear-gradient(145deg, rgba(84, 168, 255, 0.25), rgba(255, 200, 87, 0.2));
+}
+
+.l12-person .portrait .monogram {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--matter-ink, #e9f1fb);
+  font-size: 2.6em;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.l12-person .portrait img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 0;
+  object-fit: cover;
+  background: #101826;
+}
+
+.l12-person h3 {
+  margin: 0;
+  color: var(--matter-gold, #ffc857);
+  font-size: 1.15em;
+  text-align: center;
+}
+
+.l12-person .years {
+  color: var(--matter-muted, #9fb0c3);
+  text-align: center;
+}
+
+.l12-person ul {
+  margin: 0.2em 0 0;
+  padding-left: 1.1em;
+}
+
+.l12-person li {
+  margin: 0.25em 0;
+}
+
+.l12-regimes-grid .l12-fig-controls {
+  grid-column: 1 / -1;
+}
+
+.reveal .l12-summary {
+  font-size: 0.86em;
+}
+
+.reveal .l12-summary .l12-fig {
+  font-size: 18px;
+}
+
+.reveal .layers-lab svg text {
+  font-size: 18px;
+}
+
+.reveal .layers-lab .l12-tex {
+  font-size: 20px;
+}
+
+/* Конструктор слоёв вне слайда (апплет): графики друг под другом */
+.layers-lab .layers-plots {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+}
+
+.layers-lab .layers-readouts {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.applet-stage .layers-lab {
+  grid-template-columns: 19rem 1fr;
+  height: auto;
+}
+
+.applet-stage .layers-lab svg {
+  flex: none;
+  height: auto;
+}
+
+.applet-stage .layers-lab .lab-formulas {
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 760px) {
+  .applet-stage .layers-lab {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    font-size: 15px;
+  }
+
+  .applet-stage .layers-lab .matter-lab-controls {
+    grid-row: auto;
+  }
+
+  .applet-stage .layers-lab .layers-readouts {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

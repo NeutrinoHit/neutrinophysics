@@ -20,6 +20,7 @@ $R=\sqrt{(\cos2\theta-A)^2+\sin^22\theta}$.
 :::
 
 ~~~{=html}
+<script src="../slides/assets/06_matter_oscillations/l12_tex.js"></script>
 <script src="../slides/assets/06_matter_oscillations/lecture12.js"></script>
 ~~~
 

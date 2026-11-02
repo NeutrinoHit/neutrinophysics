@@ -179,6 +179,13 @@ description: "Интерактивные модели к курсу «Введе
   </article>
 
   <article class="applet-card">
+    <span class="applet-card-kicker">Лекция 12</span>
+    <h2><a href="matter-layers.html">Постройте свою материю</a></h2>
+    <p>Профиль плотности из слоёв: перетащите потенциал и границы, смотрите вероятность перехода вдоль пути.</p>
+    <a class="applet-card-action" href="matter-layers.html">Открыть →</a>
+  </article>
+
+  <article class="applet-card">
     <span class="applet-card-kicker">Лекция 13</span>
     <h2><a href="matter-adiabatic.html">Адиабатический MSW-переход</a></h2>
     <p>Медленный и быстрый профили плотности на избегаемом пересечении.</p>

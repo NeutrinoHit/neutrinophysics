@@ -14,12 +14,16 @@
       <span><output data-out="x">0.65</output></span>
       <input data-control="x" type="range" min="0" max="5" step="0.005" value="0.65">
     </label>
+    <div class="lab-formulas">
+      \[R=\sqrt{(\cos2\theta-A)^2+\sin^22\theta}\]
+      \[\sin^22\theta_m=\frac{\sin^22\theta}{R^2}\]
+      \[P_{e\to x}=\sin^22\theta_m\,\sin^2\!\Bigl(\pi R\,\frac{L}{L_{\rm vac}}\Bigr)\]
+    </div>
     <div class="matter-presets" role="group" aria-label="Режимы плотности">
       <button type="button" data-preset="vacuum">вакуум</button>
       <button type="button" data-preset="resonance">резонанс</button>
       <button type="button" data-preset="dense">\(A\gg1\)</button>
       <button type="button" data-preset="antinu">антинейтрино</button>
-      <button type="button" data-action="play" aria-pressed="false">▶ движение</button>
     </div>
   </div>
   <div class="matter-lab-readouts" aria-live="polite">
