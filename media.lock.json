@@ -255,12 +255,11 @@
   {
    "id": "optics-to-neutrino",
    "variant": "film-ru",
-   "version": 1,
-   "url": "/media-neutrino/optics-to-neutrino/film-ru-v1.mp4",
-   "sha256": "225ff6e1c5e29705fe73f230bb3ad93c44711a8e6441a60779ec1c3b34862570",
-   "bytes": 8578666,
-   "status": "prepared",
-   "fallback": "introduction/ru/slides/assets/06_matter_oscillations/crystal/optics_to_neutrino_v2_ru.mp4"
+   "version": 2,
+   "url": "/media-neutrinophysics/optics-to-neutrino/film-ru-v2.mp4",
+   "sha256": "23faa263b463b6b25438e9ae4b5b9549c5346f94b04c993496c189dec8b98612",
+   "bytes": 8624056,
+   "status": "published"
   },
   {
    "id": "project8-cres",
