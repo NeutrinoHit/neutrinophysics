@@ -138,6 +138,84 @@
   if (typeof document === "undefined") return;
   window.ThreeFlavorProbabilities = core;
 
+  // ---------------------------------------------------------- тексты (ru / en)
+  const T = {
+    ru: {
+      km: "км", eV2: "эВ²", kmPerGeV: "км/ГэВ", MeV: "МэВ", GeV: "ГэВ",
+      plotType: "Что построить",
+      tabE: "P(E) при заданном L", tabL: "P(L) при заданной E", tabMap: "Карта P(L, E)",
+      presets: "Установки:",
+      orderingTitle: "Порядок масс", normal: "Нормальный", inverted: "Обратный",
+      resetBest: "Вернуть лучшую точку ",
+      valueSuffix: ", число",
+      channelsAria: "Каналы α → β", corner: "из ↓  в →", survival: "выж.", appearance: "появл.",
+      particleAria: "Нейтрино или антинейтрино", neutrino: " нейтрино", antineutrino: " антинейтрино",
+      quantityAria: "Величина",
+      pinCurrent: "Закрепить текущие", clearPinned: "Убрать закреплённые", compare: "Сравнить кривые",
+      parameters: "Параметры", channels: "Каналы",
+      eFrom: "E от", to: "до", lFromKm: "L от, км", toKm: "до, км",
+      energyUnits: "Единицы энергии", scaleAria: "Шкала оси", lin: "лин.", log: "лог.",
+      yAria: "Ось вероятности", auto: "авто",
+      scaleLabel: "шкала", yAxis: "ось y", colorLabel: "цвет", quantityLabel: "величина",
+      plotAria: "График вероятностей осцилляций",
+      copy: "Скопировать", copied: "Скопировано",
+      pythonSummary: "Повторить в Python",
+      pythonText: "Тот же расчёт в файле three_flavor_oscillations.py (numpy, matplotlib). Команда для текущих настроек:",
+      tableSummary: "Таблица значений",
+      probability: "Вероятность",
+      pinOtherSame: other => `+ ${other}, те же параметры`,
+      pinOtherBest: other => `+ ${other}, лучшая точка`,
+      currentParams: "текущие параметры", sameAsCurrent: "как текущие",
+      pinnedTag: (n, tag) => `закреплено ${n}. ${tag}`,
+      removePinned: n => `Убрать закреплённый набор ${n}`,
+      pinShort: n => `закр. ${n}`,
+      mapNote: "карта строится для текущих параметров",
+      unresolved: "быстрые осцилляции не разрешены сеткой: сузьте диапазон",
+      footNote: label => "Вакуум, вещество не учтено. Параметры по умолчанию: " + label + ".",
+      emptyNote: "Выберите хотя бы один канал и тип частицы",
+      mapNoTable: "Для карты таблица не строится: используйте режимы P(E) и P(L).",
+      presetLabel: (name, L) => `${name} · ${L} км`
+    },
+    en: {
+      km: "km", eV2: "eV²", kmPerGeV: "km/GeV", MeV: "MeV", GeV: "GeV",
+      plotType: "Plot type",
+      tabE: "P(E) at fixed L", tabL: "P(L) at fixed E", tabMap: "Map P(L, E)",
+      presets: "Experiments:",
+      orderingTitle: "Mass ordering", normal: "Normal", inverted: "Inverted",
+      resetBest: "Reset to best fit ",
+      valueSuffix: ", value",
+      channelsAria: "Channels α → β", corner: "from ↓  to →", survival: "surv.", appearance: "app.",
+      particleAria: "Neutrino or antineutrino", neutrino: " neutrino", antineutrino: " antineutrino",
+      quantityAria: "Quantity",
+      pinCurrent: "Pin current", clearPinned: "Clear pinned", compare: "Compare curves",
+      parameters: "Parameters", channels: "Channels",
+      eFrom: "E from", to: "to", lFromKm: "L from, km", toKm: "to, km",
+      energyUnits: "Energy units", scaleAria: "Axis scale", lin: "lin", log: "log",
+      yAria: "Probability axis", auto: "auto",
+      scaleLabel: "scale", yAxis: "y axis", colorLabel: "color", quantityLabel: "quantity",
+      plotAria: "Oscillation probability plot",
+      copy: "Copy", copied: "Copied",
+      pythonSummary: "Reproduce in Python",
+      pythonText: "The same calculation in three_flavor_oscillations.py (numpy, matplotlib). Command for the current settings:",
+      tableSummary: "Table of values",
+      probability: "Probability",
+      pinOtherSame: other => `+ ${other}, same parameters`,
+      pinOtherBest: other => `+ ${other}, best fit`,
+      currentParams: "current parameters", sameAsCurrent: "same as current",
+      pinnedTag: (n, tag) => `pinned ${n}. ${tag}`,
+      removePinned: n => `Remove pinned set ${n}`,
+      pinShort: n => `pin ${n}`,
+      mapNote: "map uses the current parameters",
+      unresolved: "fast oscillations not resolved by the grid: narrow the range",
+      footNote: label => "Vacuum; matter effects not included. Default parameters: " + label + ".",
+      emptyNote: "Select at least one channel and particle type",
+      mapNoTable: "No table for the map: use the P(E) and P(L) views.",
+      presetLabel: (name, L) => `${name} · ${L} km`
+    }
+  };
+  // Язык: ближайший элемент с lang; значение, начинающееся с "en", даёт английский.
+  const langOf = root => (/^en/i.test((root.closest("[lang]") || document.documentElement).lang || "") ? "en" : "ru");
+
   // -------------------------------------------------------------------- UI
   const FLAVORS = ["e", "μ", "τ"];
   // Цвет закреплён за каналом, а не за порядком выбора. Первые восемь слотов —
@@ -153,22 +231,22 @@
     {nu: "16 5 3 5", nubar: "6 5"},
     {nu: "22 6", nubar: "3 11"}
   ];
-  const PARAM_ROWS = [
+  const paramRows = t => [
     {key: "s12", label: "sin²θ₁₂", min: 0.2, max: 0.45, step: 0.0005, digits: 4, unit: 1},
     {key: "s13", label: "sin²θ₁₃", min: 0, max: 0.06, step: 0.0001, digits: 5, unit: 1},
     {key: "s23", label: "sin²θ₂₃", min: 0.3, max: 0.7, step: 0.001, digits: 3, unit: 1},
     {key: "delta", label: "δ_CP, °", min: 0, max: 360, step: 1, digits: 0, unit: 1},
-    {key: "dm21", label: "Δm²₂₁, 10⁻⁵ эВ²", min: 5, max: 10, step: 0.01, digits: 3, unit: 1e-5},
-    {key: "dm3l", label: "|Δm²₃ℓ|, 10⁻³ эВ²", min: 1.5, max: 3.5, step: 0.001, digits: 3, unit: 1e-3}
+    {key: "dm21", label: `Δm²₂₁, 10⁻⁵ ${t.eV2}`, min: 5, max: 10, step: 0.01, digits: 3, unit: 1e-5},
+    {key: "dm3l", label: `|Δm²₃ℓ|, 10⁻³ ${t.eV2}`, min: 1.5, max: 3.5, step: 0.001, digits: 3, unit: 1e-3}
   ];
-  const PRESETS = [
-    {id: "juno", label: "JUNO · 52.5 км", view: "E", L: 52.5, Emin: 0.001, Emax: 0.010, unit: "MeV",
+  const presetList = t => [
+    {id: "juno", label: t.presetLabel("JUNO", 52.5), view: "E", L: 52.5, Emin: 0.001, Emax: 0.010, unit: "MeV",
      scale: "lin", channels: ["0-0"], particles: {nu: false, nubar: true}, quantity: "P", yMode: "01"},
-    {id: "t2k", label: "T2K · 295 км", view: "E", L: 295, Emin: 0.2, Emax: 2, unit: "GeV",
+    {id: "t2k", label: t.presetLabel("T2K", 295), view: "E", L: 295, Emin: 0.2, Emax: 2, unit: "GeV",
      scale: "lin", channels: ["1-0"], particles: {nu: true, nubar: true}, quantity: "P", yMode: "auto"},
-    {id: "nova", label: "NOvA · 810 км", view: "E", L: 810, Emin: 0.5, Emax: 4, unit: "GeV",
+    {id: "nova", label: t.presetLabel("NOvA", 810), view: "E", L: 810, Emin: 0.5, Emax: 4, unit: "GeV",
      scale: "lin", channels: ["1-0"], particles: {nu: true, nubar: true}, quantity: "P", yMode: "auto"},
-    {id: "dune", label: "DUNE · 1300 км", view: "E", L: 1300, Emin: 0.5, Emax: 6, unit: "GeV",
+    {id: "dune", label: t.presetLabel("DUNE", 1300), view: "E", L: 1300, Emin: 0.5, Emax: 6, unit: "GeV",
      scale: "lin", channels: ["1-0"], particles: {nu: true, nubar: true}, quantity: "P", yMode: "auto"}
   ];
   const VIEW_W = 1290, VIEW_H = 560;
@@ -267,6 +345,9 @@
     if (root.dataset.tfpReady === "true") return;
     root.dataset.tfpReady = "true";
     root.textContent = "";
+    const t = T[langOf(root)];
+    const PARAM_ROWS = paramRows(t);
+    const PRESETS = presetList(t);
 
     // ---------------------------------------------------------- состояние
     const state = {
@@ -293,33 +374,33 @@
     const unitFactor = () => (state.unit === "MeV" ? 1000 : 1);
 
     // --------------------------------------------------------- построение DOM
-    const tabs = el("div", {class: "tfp__tabs", role: "group", "aria-label": "Что построить"});
-    [["E", "P(E) при заданном L"], ["L", "P(L) при заданной E"], ["map", "Карта P(L, E)"]].forEach(([id, text]) => {
+    const tabs = el("div", {class: "tfp__tabs", role: "group", "aria-label": t.plotType});
+    [["E", t.tabE], ["L", t.tabL], ["map", t.tabMap]].forEach(([id, text]) => {
       tabs.append(el("button", {type: "button", "data-view": id, text}));
     });
-    const presets = el("div", {class: "tfp__presets"}, [el("span", {text: "Установки:"})]);
+    const presets = el("div", {class: "tfp__presets"}, [el("span", {text: t.presets})]);
     PRESETS.forEach(preset => presets.append(el("button", {type: "button", "data-preset": preset.id, text: preset.label})));
     const bar = el("div", {class: "tfp__bar"}, [tabs, presets]);
 
     // --- левая панель
-    const orderingButtons = el("div", {class: "tfp__seg", role: "group", "aria-label": "Порядок масс"}, [
-      el("button", {type: "button", "data-ordering": "NO", text: "Нормальный"}),
-      el("button", {type: "button", "data-ordering": "IO", text: "Обратный"})
+    const orderingButtons = el("div", {class: "tfp__seg", role: "group", "aria-label": t.orderingTitle}, [
+      el("button", {type: "button", "data-ordering": "NO", text: t.normal}),
+      el("button", {type: "button", "data-ordering": "IO", text: t.inverted})
     ]);
-    const bestFitButton = el("button", {type: "button", class: "tfp__link", text: "Вернуть лучшую точку " + BEST_FIT.short, title: BEST_FIT.label});
+    const bestFitButton = el("button", {type: "button", class: "tfp__link", text: t.resetBest + BEST_FIT.short, title: BEST_FIT.label});
     const orderingNote = el("div", {class: "tfp__small", "data-ordering-note": ""});
 
     const paramInputs = {};
     const paramBox = el("div", {class: "tfp__params"});
     PARAM_ROWS.forEach(row => {
       const slider = el("input", {type: "range", min: row.min, max: row.max, step: row.step, "aria-label": row.label});
-      const number = el("input", {type: "number", step: "any", class: "tfp__number", "aria-label": row.label + ", число"});
+      const number = el("input", {type: "number", step: "any", class: "tfp__number", "aria-label": row.label + t.valueSuffix});
       paramInputs[row.key] = {slider, number, row};
       paramBox.append(el("label", {class: "tfp__param"}, [el("span", {text: row.label}), slider, number]));
     });
 
-    const channelGrid = el("div", {class: "tfp__channels", role: "group", "aria-label": "Каналы α → β"});
-    channelGrid.append(el("span", {class: "tfp__corner", text: "из ↓  в →"}));
+    const channelGrid = el("div", {class: "tfp__channels", role: "group", "aria-label": t.channelsAria});
+    channelGrid.append(el("span", {class: "tfp__corner", text: t.corner}));
     FLAVORS.forEach(f => channelGrid.append(el("span", {class: "tfp__colhead"}, [nuLabel(false, f)])));
     for (let a = 0; a < 3; a += 1) {
       channelGrid.append(el("span", {class: "tfp__rowhead"}, [nuLabel(false, FLAVORS[a])]));
@@ -327,75 +408,75 @@
         const key = `${a}-${b}`;
         const button = el("button", {type: "button", "data-channel": key, class: "tfp__chan"});
         button.style.setProperty("--chan", CHANNEL_COLORS[key]);
-        button.append(el("i"), a === b ? "выж." : "появл.");
+        button.append(el("i"), a === b ? t.survival : t.appearance);
         button.setAttribute("aria-label", `P(${FLAVORS[a]} → ${FLAVORS[b]})`);
         channelGrid.append(button);
       }
     }
-    const particleButtons = el("div", {class: "tfp__seg", role: "group", "aria-label": "Нейтрино или антинейтрино"}, [
-      el("button", {type: "button", "data-particle": "nu"}, [nuLabel(false), " нейтрино"]),
-      el("button", {type: "button", "data-particle": "nubar"}, [nuLabel(true), " антинейтрино"])
+    const particleButtons = el("div", {class: "tfp__seg", role: "group", "aria-label": t.particleAria}, [
+      el("button", {type: "button", "data-particle": "nu"}, [nuLabel(false), t.neutrino]),
+      el("button", {type: "button", "data-particle": "nubar"}, [nuLabel(true), t.antineutrino])
     ]);
-    const quantityButtons = el("div", {class: "tfp__seg tfp__seg--three", role: "group", "aria-label": "Величина"}, [
+    const quantityButtons = el("div", {class: "tfp__seg tfp__seg--three", role: "group", "aria-label": t.quantityAria}, [
       el("button", {type: "button", "data-quantity": "P", text: "P"}),
       el("button", {type: "button", "data-quantity": "CP", text: "ν − ν̄"}),
       el("button", {type: "button", "data-quantity": "ORD", text: "NO − IO"})
     ]);
 
-    const pinButton = el("button", {type: "button", "data-pin": "same", text: "Закрепить текущие"});
+    const pinButton = el("button", {type: "button", "data-pin": "same", text: t.pinCurrent});
     const pinOtherSame = el("button", {type: "button", "data-pin": "other-same"});
     const pinOtherBest = el("button", {type: "button", "data-pin": "other-best"});
-    const clearButton = el("button", {type: "button", "data-pin": "clear", text: "Убрать закреплённые"});
+    const clearButton = el("button", {type: "button", "data-pin": "clear", text: t.clearPinned});
 
-    const compareSection = el("div", {class: "tfp__sect"}, [el("h4", {text: "Сравнить кривые"}), pinButton, pinOtherSame, pinOtherBest, clearButton]);
+    const compareSection = el("div", {class: "tfp__sect"}, [el("h4", {text: t.compare}), pinButton, pinOtherSame, pinOtherBest, clearButton]);
     const controls = el("div", {class: "tfp__controls"}, [
-      el("div", {class: "tfp__sect"}, [el("h4", {text: "Порядок масс"}), orderingButtons, orderingNote, bestFitButton]),
-      el("div", {class: "tfp__sect"}, [el("h4", {text: "Параметры"}), paramBox]),
-      el("div", {class: "tfp__sect"}, [el("h4", {text: "Каналы"}), channelGrid, particleButtons]),
+      el("div", {class: "tfp__sect"}, [el("h4", {text: t.orderingTitle}), orderingButtons, orderingNote, bestFitButton]),
+      el("div", {class: "tfp__sect"}, [el("h4", {text: t.parameters}), paramBox]),
+      el("div", {class: "tfp__sect"}, [el("h4", {text: t.channels}), channelGrid, particleButtons]),
       compareSection
     ]);
 
     // --- правая панель
-    const fieldL = el("label", {}, [el("span", {text: "L, км"}), el("input", {type: "number", step: "any", "data-field": "L"})]);
+    const fieldL = el("label", {}, [el("span", {text: `L, ${t.km}`}), el("input", {type: "number", step: "any", "data-field": "L"})]);
     const fieldE = el("label", {}, [el("span", {text: "E"}), el("input", {type: "number", step: "any", "data-field": "E"})]);
-    const fieldEmin = el("label", {}, [el("span", {text: "E от"}), el("input", {type: "number", step: "any", "data-field": "Emin"})]);
-    const fieldEmax = el("label", {}, [el("span", {text: "до"}), el("input", {type: "number", step: "any", "data-field": "Emax"})]);
-    const fieldLmin = el("label", {}, [el("span", {text: "L от, км"}), el("input", {type: "number", step: "any", "data-field": "Lmin"})]);
-    const fieldLmax = el("label", {}, [el("span", {text: "до, км"}), el("input", {type: "number", step: "any", "data-field": "Lmax"})]);
-    const unitSeg = el("div", {class: "tfp__seg tfp__seg--compact", role: "group", "aria-label": "Единицы энергии"}, [
-      el("button", {type: "button", "data-unit": "MeV", text: "МэВ"}),
-      el("button", {type: "button", "data-unit": "GeV", text: "ГэВ"})
+    const fieldEmin = el("label", {}, [el("span", {text: t.eFrom}), el("input", {type: "number", step: "any", "data-field": "Emin"})]);
+    const fieldEmax = el("label", {}, [el("span", {text: t.to}), el("input", {type: "number", step: "any", "data-field": "Emax"})]);
+    const fieldLmin = el("label", {}, [el("span", {text: t.lFromKm}), el("input", {type: "number", step: "any", "data-field": "Lmin"})]);
+    const fieldLmax = el("label", {}, [el("span", {text: t.toKm}), el("input", {type: "number", step: "any", "data-field": "Lmax"})]);
+    const unitSeg = el("div", {class: "tfp__seg tfp__seg--compact", role: "group", "aria-label": t.energyUnits}, [
+      el("button", {type: "button", "data-unit": "MeV", text: t.MeV}),
+      el("button", {type: "button", "data-unit": "GeV", text: t.GeV})
     ]);
-    const scaleSeg = el("div", {class: "tfp__seg tfp__seg--compact", role: "group", "aria-label": "Шкала оси"}, [
-      el("button", {type: "button", "data-scale": "lin", text: "лин."}),
-      el("button", {type: "button", "data-scale": "log", text: "лог."})
+    const scaleSeg = el("div", {class: "tfp__seg tfp__seg--compact", role: "group", "aria-label": t.scaleAria}, [
+      el("button", {type: "button", "data-scale": "lin", text: t.lin}),
+      el("button", {type: "button", "data-scale": "log", text: t.log})
     ]);
-    const ySeg = el("div", {class: "tfp__seg tfp__seg--compact", role: "group", "aria-label": "Ось вероятности"}, [
+    const ySeg = el("div", {class: "tfp__seg tfp__seg--compact", role: "group", "aria-label": t.yAria}, [
       el("button", {type: "button", "data-ymode": "01", text: "0–1"}),
-      el("button", {type: "button", "data-ymode": "auto", text: "авто"})
+      el("button", {type: "button", "data-ymode": "auto", text: t.auto})
     ]);
     const axesRow = el("div", {class: "tfp__axes"}, [
       fieldL, fieldE, fieldEmin, fieldEmax, fieldLmin, fieldLmax,
-      unitSeg, el("span", {class: "tfp__axes-label", text: "шкала"}), scaleSeg,
-      el("span", {class: "tfp__axes-label", "data-yaxis-label": "", text: "ось y"}), ySeg,
-      el("span", {class: "tfp__axes-label", text: "величина"}), quantityButtons
+      unitSeg, el("span", {class: "tfp__axes-label", text: t.scaleLabel}), scaleSeg,
+      el("span", {class: "tfp__axes-label", "data-yaxis-label": "", text: t.yAxis}), ySeg,
+      el("span", {class: "tfp__axes-label", text: t.quantityLabel}), quantityButtons
     ]);
 
     const svg = svgEl("svg", {viewBox: `0 0 ${VIEW_W} ${VIEW_H}`, class: "tfp__svg", role: "img", tabindex: "0",
-      "aria-label": "График вероятностей осцилляций"});
+      "aria-label": t.plotAria});
     const canvas = el("canvas", {class: "tfp__canvas", width: 360, height: 190});
     const tooltip = el("div", {class: "tfp__tooltip", hidden: ""});
     const stage = el("div", {class: "tfp__stage"}, [canvas, svg, tooltip]);
     const legend = el("div", {class: "tfp__legend"});
     const foot = el("div", {class: "tfp__foot"});
     const pythonCode = el("code", {class: "tfp__code"});
-    const copyButton = el("button", {type: "button", class: "tfp__link", text: "Скопировать"});
+    const copyButton = el("button", {type: "button", class: "tfp__link", text: t.copy});
     const pythonBox = el("details", {class: "tfp__details"}, [
-      el("summary", {text: "Повторить в Python"}),
-      el("p", {class: "tfp__small", text: "Тот же расчёт в файле three_flavor_oscillations.py (numpy, matplotlib). Команда для текущих настроек:"}),
+      el("summary", {text: t.pythonSummary}),
+      el("p", {class: "tfp__small", text: t.pythonText}),
       pythonCode, copyButton
     ]);
-    const tableBox = el("details", {class: "tfp__details"}, [el("summary", {text: "Таблица значений"})]);
+    const tableBox = el("details", {class: "tfp__details"}, [el("summary", {text: t.tableSummary})]);
     const tableHost = el("div", {class: "tfp__table-host"});
     tableBox.append(tableHost);
     const main = el("div", {class: "tfp__main"}, [axesRow, stage, legend, foot, el("div", {class: "tfp__details-row"}, [pythonBox, tableBox])]);
@@ -506,9 +587,9 @@
     }
 
     // ------------------------------------------------------------ подписи
-    function unitText() { return state.unit === "MeV" ? "МэВ" : "ГэВ"; }
+    function unitText() { return state.unit === "MeV" ? t.MeV : t.GeV; }
     function quantityLabel() {
-      return {P: "Вероятность", CP: "P(ν) − P(ν̄)", ORD: "P(NO) − P(IO)"}[state.quantity];
+      return {P: t.probability, CP: "P(ν) − P(ν̄)", ORD: "P(NO) − P(IO)"}[state.quantity];
     }
 
     // ---------------------------------------------------------- обновление панелей
@@ -531,14 +612,14 @@
         b.disabled = state.quantity !== "P";
       });
       const other = ordOther(state.ordering);
-      pinOtherSame.textContent = `+ ${other}, те же параметры`;
-      pinOtherBest.textContent = `+ ${other}, лучшая точка`;
+      pinOtherSame.textContent = t.pinOtherSame(other);
+      pinOtherBest.textContent = t.pinOtherBest(other);
       pinButton.disabled = state.pinned.length >= MAX_PINNED;
       pinOtherSame.disabled = state.pinned.length >= MAX_PINNED;
       pinOtherBest.disabled = state.pinned.length >= MAX_PINNED;
       clearButton.disabled = state.pinned.length === 0;
       compareSection.hidden = isMap();
-      root.querySelector("[data-yaxis-label]").textContent = isMap() ? "цвет" : "ось y";
+      root.querySelector("[data-yaxis-label]").textContent = isMap() ? t.colorLabel : t.yAxis;
 
       const showE = state.view === "E", showL = state.view === "L", map = isMap();
       fieldL.hidden = !showE;
@@ -548,8 +629,8 @@
       fieldLmin.hidden = !(showL);
       fieldLmax.hidden = !(showL || map);
       fieldE.querySelector("span").textContent = `E, ${unitText()}`;
-      fieldEmin.querySelector("span").textContent = `E от, ${unitText()}`;
-      fieldEmax.querySelector("span").textContent = `до, ${unitText()}`;
+      fieldEmin.querySelector("span").textContent = `${t.eFrom}, ${unitText()}`;
+      fieldEmax.querySelector("span").textContent = `${t.to}, ${unitText()}`;
       const f = unitFactor();
       const setField = (name, value) => {
         const input = root.querySelector(`[data-field="${name}"]`);
@@ -571,8 +652,8 @@
       const p = state.live;
       const m2 = massSquared(p, state.ordering);
       orderingNote.textContent = state.ordering === "NO"
-        ? `m₁ < m₂ < m₃: Δm²₃₁ = +${formatNumber(m2[2] * 1e3, 4)}·10⁻³ эВ²`
-        : `m₃ < m₁ < m₂: Δm²₃₂ = −${formatNumber(p.dm3l * 1e3, 4)}·10⁻³, Δm²₃₁ = −${formatNumber(-m2[2] * 1e3, 4)}·10⁻³ эВ²`;
+        ? `m₁ < m₂ < m₃: Δm²₃₁ = +${formatNumber(m2[2] * 1e3, 4)}·10⁻³ ${t.eV2}`
+        : `m₃ < m₁ < m₂: Δm²₃₂ = −${formatNumber(p.dm3l * 1e3, 4)}·10⁻³, Δm²₃₁ = −${formatNumber(-m2[2] * 1e3, 4)}·10⁻³ ${t.eV2}`;
     }
 
     function differences(set) {
@@ -625,10 +706,10 @@
           swatch.append(line);
           item.append(swatch, el("span", {class: "tfp__key-text", text}));
         });
-        const tag = set.live ? `${set.ord}, текущие параметры` : `${set.ord}${differences(set).length ? ": " + differences(set).join(", ") : ", как текущие"}`;
-        item.append(el("span", {class: "tfp__key-set", text: set.live ? tag : `закреплено ${set.pin.number}. ${tag}`}));
+        const tag = set.live ? `${set.ord}, ${t.currentParams}` : `${set.ord}${differences(set).length ? ": " + differences(set).join(", ") : ", " + t.sameAsCurrent}`;
+        item.append(el("span", {class: "tfp__key-set", text: set.live ? tag : t.pinnedTag(set.pin.number, tag)}));
         if (!set.live) {
-          const remove = el("button", {type: "button", class: "tfp__x", "aria-label": `Убрать закреплённый набор ${set.pin.number}`, text: "×"});
+          const remove = el("button", {type: "button", class: "tfp__x", "aria-label": t.removePinned(set.pin.number), text: "×"});
           remove.addEventListener("click", () => {
             state.pinned = state.pinned.filter(p => p.id !== set.id);
             render();
@@ -645,11 +726,11 @@
       const p = state.live;
       const parts = [
         `J_CP = ${formatNumber(jarlskog(p), 3).replace("-", "−")}`,
-        isMap() ? "карта строится для текущих параметров" : null,
-        state.unresolved ? "быстрые осцилляции не разрешены сеткой: сузьте диапазон" : null
+        isMap() ? t.mapNote : null,
+        state.unresolved ? t.unresolved : null
       ].filter(Boolean);
       foot.append(el("span", {text: parts.join(" · ")}));
-      foot.append(el("span", {class: "tfp__small", text: "Вакуум, вещество не учтено. Параметры по умолчанию: " + BEST_FIT.label + "."}));
+      foot.append(el("span", {class: "tfp__small", text: t.footNote(BEST_FIT.label)}));
     }
 
     function updatePythonCommand() {
@@ -751,7 +832,7 @@
           yLo = -m; yHi = m;
         }
       }
-      const xLabel = state.view === "E" ? `E, ${unitText()}  (L = ${formatNumber(state.L, 4)} км)` : `L, км  (E = ${formatNumber(state.E * unitFactor(), 4)} ${unitText()})`;
+      const xLabel = state.view === "E" ? `E, ${unitText()}  (L = ${formatNumber(state.L, 4)} ${t.km})` : `L, ${t.km}  (E = ${formatNumber(state.E * unitFactor(), 4)} ${unitText()})`;
       const yLabel = quantityLabel();
       const {fx, fy} = drawAxes(xLo, xHi, log, yLo, yHi, yLabel, xLabel, yTicks);
 
@@ -791,7 +872,7 @@
       current = {kind: "lines", reqs, sets, xLo, xHi, log, fx, fy, yLo, yHi, cursor, dots, grid};
       if (state.hoverFraction !== null) showLineHover(state.hoverFraction, false);
       updateTable(reqs, sets, xLo, xHi, log);
-      if (!R) drawEmptyNote("Выберите хотя бы один канал и тип частицы");
+      if (!R) drawEmptyNote(t.emptyNote);
     }
 
     function drawEmptyNote(text) {
@@ -836,11 +917,11 @@
       // подсказка
       tooltip.textContent = "";
       const head = state.view === "E"
-        ? `E = ${formatNumber(x * unitFactor(), 4)} ${unitText()}, L = ${formatNumber(state.L, 4)} км`
-        : `L = ${formatNumber(x, 4)} км, E = ${formatNumber(state.E * unitFactor(), 4)} ${unitText()}`;
+        ? `E = ${formatNumber(x * unitFactor(), 4)} ${unitText()}, L = ${formatNumber(state.L, 4)} ${t.km}`
+        : `L = ${formatNumber(x, 4)} ${t.km}, E = ${formatNumber(state.E * unitFactor(), 4)} ${unitText()}`;
       tooltip.append(el("div", {class: "tfp__tip-head", text: head}));
-      if (state.view === "E" && x > 0) tooltip.append(el("div", {class: "tfp__tip-sub", text: `L/E = ${formatNumber(state.L / x, 4)} км/ГэВ`}));
-      if (state.view === "L") tooltip.append(el("div", {class: "tfp__tip-sub", text: `L/E = ${formatNumber(x / state.E, 4)} км/ГэВ`}));
+      if (state.view === "E" && x > 0) tooltip.append(el("div", {class: "tfp__tip-sub", text: `L/E = ${formatNumber(state.L / x, 4)} ${t.kmPerGeV}`}));
+      if (state.view === "L") tooltip.append(el("div", {class: "tfp__tip-sub", text: `L/E = ${formatNumber(x / state.E, 4)} ${t.kmPerGeV}`}));
       rows.forEach(({s, q, value}) => {
         const dash = SET_DASHES[s % SET_DASHES.length];
         const row = el("div", {class: "tfp__tip-row"});
@@ -855,7 +936,7 @@
         const name = el("span", {class: "tfp__tip-name"});
         if (state.quantity === "P") name.append(channelLabel(q.a, q.b, anti));
         else name.append(`${FLAVORS[q.a]}→${FLAVORS[q.b]}${q.kind === "ord_nubar" ? " (ν̄)" : ""}`);
-        name.append(` · ${sets[s].live ? sets[s].ord : "закр. " + sets[s].pin.number + ", " + sets[s].ord}`);
+        name.append(` · ${sets[s].live ? sets[s].ord : t.pinShort(sets[s].pin.number) + ", " + sets[s].ord}`);
         row.append(name);
         tooltip.append(row);
       });
@@ -948,7 +1029,7 @@
       });
       g.append(svgEl("rect", {x: left, y: top, width: plotW, height: plotH, class: "tfp__frame"}));
       const xl = svgEl("text", {x: left + plotW / 2, y: VIEW_H - 10, class: "tfp__axis-label", "text-anchor": "middle"});
-      xl.textContent = "L, км";
+      xl.textContent = `L, ${t.km}`;
       g.append(xl);
       const yl = svgEl("text", {x: 20, y: top + plotH / 2, class: "tfp__axis-label", "text-anchor": "middle", transform: `rotate(-90 20 ${top + plotH / 2})`});
       yl.textContent = `E, ${unitText()}`;
@@ -982,7 +1063,7 @@
       const mapMark = svgEl("circle", {r: 6, class: "tfp__map-mark", visibility: "hidden"});
       svg.append(mapMark);
       current = {kind: "map", a, b, anti, Elo, Ehi, Lhi, Llo, mapMark, evaluateCell, logFrac};
-      tableHost.textContent = "Для карты таблица не строится: используйте режимы P(E) и P(L).";
+      tableHost.textContent = t.mapNoTable;
     }
 
     function showMapHover(px, py) {
@@ -997,8 +1078,8 @@
       mapMark.setAttribute("cy", py);
       mapMark.setAttribute("visibility", "visible");
       tooltip.textContent = "";
-      tooltip.append(el("div", {class: "tfp__tip-head", text: `L = ${formatNumber(L, 4)} км, E = ${formatNumber(E * unitFactor(), 4)} ${unitText()}`}));
-      tooltip.append(el("div", {class: "tfp__tip-sub", text: `L/E = ${formatNumber(L / E, 4)} км/ГэВ`}));
+      tooltip.append(el("div", {class: "tfp__tip-head", text: `L = ${formatNumber(L, 4)} ${t.km}, E = ${formatNumber(E * unitFactor(), 4)} ${unitText()}`}));
+      tooltip.append(el("div", {class: "tfp__tip-sub", text: `L/E = ${formatNumber(L / E, 4)} ${t.kmPerGeV}`}));
       const row = el("div", {class: "tfp__tip-row"});
       row.append(el("strong", {text: formatNumber(v, 4).replace("-", "−")}));
       const label = el("span", {class: "tfp__tip-name"});
@@ -1015,10 +1096,10 @@
       tableHost.textContent = "";
       if (!reqs.length) return;
       const table = el("table", {class: "tfp__table"});
-      const head = el("tr", {}, [el("th", {text: state.view === "E" ? `E, ${unitText()}` : "L, км"})]);
+      const head = el("tr", {}, [el("th", {text: state.view === "E" ? `E, ${unitText()}` : `L, ${t.km}`})]);
       sets.forEach((set, s) => reqs.forEach(q => {
         const th = el("th");
-        th.append(state.quantity === "P" ? channelLabel(q.a, q.b, q.kind.endsWith("nubar")) : `${FLAVORS[q.a]}→${FLAVORS[q.b]}`, ` · ${set.live ? set.ord : "закр. " + set.pin.number}`);
+        th.append(state.quantity === "P" ? channelLabel(q.a, q.b, q.kind.endsWith("nubar")) : `${FLAVORS[q.a]}→${FLAVORS[q.b]}`, ` · ${set.live ? set.ord : t.pinShort(set.pin.number)}`);
         head.append(th);
       }));
       table.append(head);
@@ -1115,7 +1196,7 @@
 
     copyButton.addEventListener("click", () => {
       const text = pythonCode.textContent;
-      const done = () => { copyButton.textContent = "Скопировано"; setTimeout(() => { copyButton.textContent = "Скопировать"; }, 1400); };
+      const done = () => { copyButton.textContent = t.copied; setTimeout(() => { copyButton.textContent = t.copy; }, 1400); };
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, () => {});
       else {
         const area = el("textarea", {}); area.value = text; document.body.append(area); area.select();

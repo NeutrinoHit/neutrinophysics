@@ -1,0 +1,9 @@
+```{=html}
+<div class="detector-grid" aria-label="Solar neutrino experiments">
+  <figure class="detector-card"><img src="../../ru/slides/assets/01_neutrino_101/homestake.png" alt="Homestake underground laboratory"><figcaption><strong>Homestake<br>USA</strong></figcaption></figure>
+  <figure class="detector-card"><img src="../../ru/slides/assets/01_neutrino_101/sage.png" alt="Layout of the SAGE experiment"><figcaption><strong>SAGE<br>USSR / Russia</strong></figcaption></figure>
+  <figure class="detector-card"><img src="../../ru/slides/assets/01_neutrino_101/super_kamiokande.png" alt="Interior of Super-Kamiokande"><figcaption><strong>Super-Kamiokande<br>Japan</strong></figcaption></figure>
+  <figure class="detector-card"><img src="../../ru/slides/assets/01_neutrino_101/sno.png" alt="SNO detector"><figcaption><strong>SNO<br>Canada</strong></figcaption></figure>
+  <figure class="detector-card"><img src="../../ru/slides/assets/01_neutrino_101/borexino.png" alt="Borexino underground facility"><figcaption><strong>Borexino<br>Italy</strong></figcaption></figure>
+</div>
+```

@@ -30,6 +30,46 @@ S=tomllib.loads((HERE/'config.toml').read_text())['figure']
 INC,SEC,TOT,TXT,MUT=S['incident'],S['secondary'],S['total'],S['text'],S['muted']
 VIO='#b8a2ff';GRID='#4e606d'
 
+# Words of the figures. Russian is the default; `--lang en` writes the English
+# versions next to them as <name>-en.svg / <name>-en.png and leaves the Russian files alone.
+LANG='ru'
+SUFFIX={'ru':'','en':'-en'}
+T={
+ 'ru':{
+  'before':'волна до слоя','contribution':'вклад слоя','factor':'множитель $i$: 90°','after':'волна за слоем',
+  'phasor_note':'Стрелка — амплитуда и фаза колебания.\nВклад слоя нарисован увеличенным.',
+  'devices':['поляризатор H','пластинка, оси 45°','анализатор V','экран'],
+  'brightness':'яркость $=\\sin^2\\frac{\\Delta\\varphi}{2}$',
+  'levels':['темно','половина','светло','половина','темно'],
+  'plate_output':'на выходе\nиз пластинки','thickness':'толщина L растёт →',
+  'depth':'глубина $z$','phase':'фаза','medium':'вещество: $k_{\\rm med}z=nkz$','vacuum':'вакуум: $kz$',
+  'incident':'падающая\nволна','layer':'слой',
+  'charged':'Заряженный ток','neutral':'Нейтральный ток',
+ },
+ 'en':{
+  'before':'wave before the layer','contribution':'layer contribution','factor':'factor $i$: 90°','after':'wave after the layer',
+  'phasor_note':'The arrow shows the amplitude and phase of the oscillation.\nThe layer contribution is drawn enlarged.',
+  'devices':['polarizer H','plate, axes at 45°','analyzer V','screen'],
+  'brightness':'brightness $=\\sin^2\\frac{\\Delta\\varphi}{2}$',
+  'levels':['dark','half','bright','half','dark'],
+  'plate_output':'at the output\nof the plate','thickness':'thickness L increases →',
+  'depth':'depth $z$','phase':'phase','medium':'medium: $k_{\\rm med}z=nkz$','vacuum':'vacuum: $kz$',
+  'incident':'incident\nwave','layer':'layer',
+  'charged':'Charged current','neutral':'Neutral current',
+ },
+}
+
+
+def set_lang(lang):
+    global LANG
+    assert lang in T,lang
+    LANG=lang
+
+
+def tr(key):
+    return T[LANG][key]
+
+
 
 def style():
     plt.rcParams.update({'font.family':'DejaVu Sans','font.size':20,'text.color':TXT,
@@ -43,6 +83,7 @@ def arrow(ax,p0,p1,color,lw=4,ms=22,style='-|>',**kw):
 
 
 def save(fig,name):
+    name+=SUFFIX[LANG]
     fig.savefig(HERE/f'{name}.svg',metadata={'Creator':'DN'})
     fig.savefig(HERE/f'{name}.png',dpi=S['dpi'],metadata={'Software':'NeutrinoHit'})
     plt.close(fig)
@@ -57,11 +98,11 @@ def layer_phasor():
     ax.plot([L,L-.07,L-.07],[.07,.07,0],color=MUT,lw=1.5)
     ax.add_patch(Arc((0,0),2.0,2.0,theta1=0,theta2=np.degrees(delta),color=MUT,lw=2))
     ax.text(1.05,.065,'dφ',fontsize=24,color=TXT,va='bottom')
-    ax.text(L/2,-.09,'волна до слоя',color=INC,fontsize=23,ha='center',va='top')
-    ax.text(L+.07,h/2+.02,'вклад слоя',color=SEC,fontsize=23,va='center')
-    ax.text(L+.07,h/2-.11,'множитель $i$: 90°',color=SEC,fontsize=19,va='center')
-    ax.text(L/2-.05,h/2+.11,'волна за слоем',color=TOT,fontsize=22,ha='center',va='bottom',rotation=np.degrees(delta))
-    ax.text(1.2,-.45,'Стрелка — амплитуда и фаза колебания.\nВклад слоя нарисован увеличенным.',color=MUT,fontsize=16,ha='center',va='center')
+    ax.text(L/2,-.09,tr('before'),color=INC,fontsize=23,ha='center',va='top')
+    ax.text(L+.07,h/2+.02,tr('contribution'),color=SEC,fontsize=23,va='center')
+    ax.text(L+.07,h/2-.11,tr('factor'),color=SEC,fontsize=19,va='center')
+    ax.text(L/2-.05,h/2+.11,tr('after'),color=TOT,fontsize=22,ha='center',va='bottom',rotation=np.degrees(delta))
+    ax.text(1.2,-.45,tr('phasor_note'),color=MUT,fontsize=16,ha='center',va='center')
     save(fig,'layer-phasor')
 
 
@@ -83,12 +124,12 @@ def plate_experiment():
     arrow(ax,(xs[2],y0-.45),(xs[2],y0+.45),VIO,lw=3,ms=16,style='<|-|>')
     ax.add_patch(plt.Rectangle((xs[3]-.45,y0-.45),.9,.9,facecolor='#d9d9d9',edgecolor=GRID,lw=1.5))
     for i in range(3):arrow(ax,(xs[i]+.75,y0),(xs[i+1]-.75,y0),MUT,lw=2,ms=14)
-    for x,lab in zip(xs,['поляризатор H','пластинка, оси 45°','анализатор V','экран']):
+    for x,lab in zip(xs,tr('devices')):
         ax.text(x,y0+.72,lab,ha='center',fontsize=18)
-    ax.text(12.0,y0+.05,'яркость $=\\sin^2\\frac{\\Delta\\varphi}{2}$',fontsize=21,va='center')
+    ax.text(12.0,y0+.05,tr('brightness'),fontsize=21,va='center')
     # five thicknesses
     phis=[0,np.pi/2,np.pi,3*np.pi/2,2*np.pi];labels=['0','π/2','π','3π/2','2π']
-    words=['темно','половина','светло','половина','темно']
+    words=tr('levels')
     t=np.linspace(0,2*np.pi,300)
     for j,(phi,lab,w) in enumerate(zip(phis,labels,words)):
         cx=1.55+3.1*j;cy=2.55;R=.8
@@ -100,8 +141,8 @@ def plate_experiment():
         b=np.sin(phi/2)**2;g=0.08+0.84*b
         ax.add_patch(plt.Rectangle((cx-.45,.45),.9,.6,facecolor=(g,g,g),edgecolor=GRID,lw=1.5))
         ax.text(cx,.18,w,ha='center',va='center',fontsize=17,color=MUT)
-    ax.text(.15,2.55,'на выходе\nиз пластинки',fontsize=15,color=MUT,va='center',ha='left',rotation=90)
-    ax.text(15.35,4.2,'толщина L растёт →',fontsize=17,color=MUT,ha='right')
+    ax.text(.15,2.55,tr('plate_output'),fontsize=15,color=MUT,va='center',ha='left',rotation=90)
+    ax.text(15.35,4.2,tr('thickness'),fontsize=17,color=MUT,ha='right')
     save(fig,'plate-experiment')
 
 
@@ -118,9 +159,9 @@ def phase_depth():
     for e in ['top','right']:ax.spines[e].set_visible(False)
     for e in ['left','bottom']:ax.spines[e].set_color(GRID)
     ax.set_xticks([]);ax.set_yticks([]);ax.set(xlim=(0,M*a+1.5),ylim=(0,M*(kd+d)*1.05))
-    ax.set_xlabel('глубина $z$',fontsize=20,labelpad=6,loc='center');ax.set_ylabel('фаза',fontsize=20,labelpad=6)
-    ax.text(.15,M*(kd+d)*.95,'вещество: $k_{\\rm med}z=nkz$',color=TOT,fontsize=19,va='top')
-    ax.text(M*a-.1,M*kd*.55,'вакуум: $kz$',color=INC,fontsize=19,ha='right')
+    ax.set_xlabel(tr('depth'),fontsize=20,labelpad=6,loc='center');ax.set_ylabel(tr('phase'),fontsize=20,labelpad=6)
+    ax.text(.15,M*(kd+d)*.95,tr('medium'),color=TOT,fontsize=19,va='top')
+    ax.text(M*a-.1,M*kd*.55,tr('vacuum'),color=INC,fontsize=19,ha='right')
     zx=M*a+.15
     ax.plot([M*a,zx],[(kd+d)*M*a]*2,color=TOT,lw=1,ls=':');ax.plot([M*a,zx],[kd*M*a]*2,color=INC,lw=1,ls=':')
     ax.annotate('',(zx,(kd+d)*M*a),(zx,kd*M*a),arrowprops={'arrowstyle':'<->','color':TXT,'lw':1.8,'shrinkA':0,'shrinkB':0})
@@ -221,8 +262,8 @@ def fresnel_rings():
         c=P(0,-r,0);ax.text(c[0],c[1],str(m),fontsize=17,color=TXT,ha='center',va='center')
     for y in (-3.6,0.0,3.6):                # incident wave
         arrow(ax,tuple(P(0,y,-7.0)),tuple(P(0,y,-1.6)),INC,lw=3,ms=20)
-    ax.text(*(P(0,5.2,-6.6)),'падающая\nволна',color=INC,fontsize=19,ha='center',va='bottom')
-    ax.text(-6.4,-6.6,'слой',fontsize=22,color=TXT,ha='center')
+    ax.text(*(P(0,5.2,-6.6)),tr('incident'),color=INC,fontsize=19,ha='center',va='bottom')
+    ax.text(-6.4,-6.6,tr('layer'),fontsize=22,color=TXT,ha='center')
     O=P(0,0,0);Pp=P(0,0,L)
     ax.plot([O[0],Pp[0]],[O[1],Pp[1]],color=MUT,lw=1.6,ls=(0,(6,4)))
     ax.plot(*Pp,'o',color=TOT,ms=11)
@@ -240,4 +281,13 @@ def fresnel_rings():
 
 
 if __name__=='__main__':
-    style();layer_phasor();plate_experiment();phase_depth();eigen_axes();state_plane();anisotropy_arrows();fresnel_rings()
+    import argparse
+    parser=argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument('--lang',choices=sorted(T),default='ru',
+                        help='ru: all figures; en: the figures with words, written as <name>-en.svg/png')
+    args=parser.parse_args()
+    set_lang(args.lang);style()
+    if args.lang=='en':
+        layer_phasor();plate_experiment();phase_depth();fresnel_rings()
+    else:
+        layer_phasor();plate_experiment();phase_depth();eigen_axes();state_plane();anisotropy_arrows();fresnel_rings()

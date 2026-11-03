@@ -1,0 +1,16 @@
+```{=html}
+<div class="interaction-grid" aria-label="Examples of particle interactions">
+  <div class="interaction-card">
+    {{< nh-video feynman-scattering variant="film-nu-mu-electron" data-autoplay=true muted=true loop=true playsinline=true preload="metadata" poster="../../ru/slides/assets/01_neutrino_101/numu_e_to_nue_mu.jpg" >}}
+    <div class="interaction-label">charged current: W</div>
+  </div>
+  <div class="interaction-card">
+    {{< nh-video feynman-scattering variant="film-electron-electron" data-autoplay=true muted=true loop=true playsinline=true preload="metadata" poster="../../ru/slides/assets/01_neutrino_101/electron_scattering.jpg" >}}
+    <div class="interaction-label">electromagnetic: &gamma;</div>
+  </div>
+  <div class="interaction-card">
+    {{< nh-video feynman-scattering variant="film-quark-quark" data-autoplay=true muted=true loop=true playsinline=true preload="metadata" poster="../../ru/slides/assets/01_neutrino_101/quark_scattering.jpg" >}}
+    <div class="interaction-label">strong: g</div>
+  </div>
+</div>
+```

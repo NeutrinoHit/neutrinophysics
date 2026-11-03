@@ -1,0 +1,88 @@
+```{=html}
+<div class="resonance-explorer" data-resonance-explorer aria-label="Interactive demonstration of Doppler tuning of a nuclear resonance">
+  <div class="resonance-controls">
+    <div class="resonance-control-heading">
+      <strong>Angle between the \(B^*\) recoil and the photon</strong>
+      <output data-resonance-angle>\(\theta=90^\circ\) — the photon is emitted perpendicular to the recoil</output>
+    </div>
+
+    <div class="resonance-slider-row">
+      <span>along the recoil</span>
+      <input
+        type="range"
+        min="0"
+        max="180"
+        value="90"
+        step="1"
+        data-resonance-slider
+        aria-label="Angle between the momentum of the excited nucleus and the photon momentum"
+      >
+      <span>against the recoil</span>
+      <button type="button" class="resonance-fire-button" data-resonance-fire>
+        <span aria-hidden="true">▶</span> Emit a photon
+      </button>
+    </div>
+
+    <div class="resonance-slider-scale" aria-hidden="true">
+      <span>\(0^\circ\)</span>
+      <span>\(90^\circ\)</span>
+      <span>\(180^\circ\)</span>
+    </div>
+  </div>
+
+  <div class="resonance-stage" data-resonance-stage>
+    <div class="resonance-flight-line"></div>
+
+    <div class="resonance-absorber" data-resonance-absorber>
+      <span class="resonance-nucleus-label resonance-ground-label">\(B\)</span>
+      <span class="resonance-nucleus-label resonance-excited-label">\(B^*\)</span>
+      <small>absorber at rest</small>
+    </div>
+
+    <div class="resonance-source" data-resonance-source>
+      <span class="resonance-nucleus-label resonance-ground-label">\(B\)</span>
+      <span class="resonance-nucleus-label resonance-excited-label">\(B^*\)</span>
+      <small>source</small>
+    </div>
+
+    <div class="resonance-source-momentum" data-resonance-vector>
+      <i></i>
+    </div>
+    <div class="resonance-momentum-label">\(\mathbf p_{B^*}\): the direction varies, the magnitude is fixed by the neutrino</div>
+
+    <div class="resonance-test-photon" data-resonance-photon>\(\gamma\)</div>
+    <div class="resonance-absorption-flash"></div>
+
+    <div class="resonance-direction-note">
+      \(\mathbf p_\gamma\) always points to the left, toward the absorber
+      <span aria-hidden="true">←</span>
+    </div>
+  </div>
+
+  <div class="resonance-readout">
+    <div class="resonance-energy-heading">
+      <strong>Photon energy in the absorber rest frame</strong>
+      <span data-resonance-energy-text>\(E_\gamma<E_{\rm res}\) — not enough energy</span>
+    </div>
+
+    <div class="resonance-energy-scale">
+      <div class="resonance-energy-window">
+        <span>nominal window: \(\lvert E_\gamma-E_\gamma^{\rm abs}\rvert&lt;0.10\,\mathrm{eV}\)</span>
+      </div>
+      <div class="resonance-energy-marker" data-resonance-energy-marker>
+        <span>\(E_\gamma\)</span>
+      </div>
+    </div>
+
+    <div class="resonance-energy-labels">
+      <span>below</span>
+      <span>\(E_\gamma^{\rm abs}\)</span>
+      <span>above</span>
+    </div>
+  </div>
+
+  <div class="resonance-outcome" data-resonance-outcome>
+    At \(\theta=90^\circ\) the photon passes through the absorber.
+  </div>
+</div>
+```

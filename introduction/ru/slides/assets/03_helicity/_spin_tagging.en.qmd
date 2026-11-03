@@ -1,0 +1,82 @@
+```{=html}
+<div class="spin-tagging" aria-label="Two slow scenes of electron capture: an orbital electron is captured by the nucleus, after which its angular momentum is shared between the excited nucleus and the neutrino">
+  <div class="tag-scene-steps">
+    <div class="tag-scene-step tag-step-capture">
+      <b>1</b>
+      <span>Electron capture</span>
+    </div>
+    <div class="tag-scene-step tag-step-excited">
+      <b>2</b>
+      <span>Nucleus in an excited state</span>
+    </div>
+    <button class="tag-play-button" type="button" aria-label="Start the electron capture animation">
+      <span class="tag-play-icon" aria-hidden="true">▶</span>
+      <span class="tag-play-label">Start</span>
+    </button>
+  </div>
+
+  <div class="tag-scene-window">
+    <div class="tag-scene tag-capture-scene">
+      <div class="tag-scene-kicker">Before the weak transition</div>
+      <div class="tag-capture-layout">
+        <div class="tag-atom-model">
+          <div class="tag-orbit-ring"></div>
+          <div class="tag-a-core">
+            <span>\(A\)</span>
+            <small>\(J=0\)</small>
+          </div>
+          <div class="tag-orbit-rotor">
+            <div class="tag-orbit-arm">
+              <div class="tag-orbit-electron">
+                <span>\(e^-\)</span>
+                <small>shell electron</small>
+                <div class="tag-electron-spin-arrow">
+                  <span>\(\mathbf s_e,\ m_e=+\tfrac12\)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tag-capture-flash"></div>
+        </div>
+
+        <div class="tag-scene-card">
+          <div class="tag-scene-formula">\(A(0)+e^-\)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tag-scene tag-excited-scene">
+      <div class="tag-scene-kicker">Immediately after the weak transition</div>
+      <div class="tag-excited-layout">
+        <div class="tag-excited-model">
+          <div class="tag-b-star-core">
+            <span>\(B^*\)</span>
+            <small>excited nucleus<br>\(J=1\)</small>
+          </div>
+          <div class="tag-b-spin-arrow">
+            <span>\(\mathbf S_{B^*},\ m_{B^*}=+1\)</span>
+          </div>
+          <div class="tag-b-recoil-arrow">
+            <span>\(\mathbf p_{B^*}\)</span>
+          </div>
+        </div>
+
+        <div class="tag-excited-info">
+          <div class="tag-scene-formula">\(A(0)+e^-\longrightarrow B^*(1)+\nu_e\)</div>
+          <div class="tag-neutrino-state">
+            <div class="tag-static-neutrino">\(\nu_e\)</div>
+            <div class="tag-neutrino-spin-arrow">
+              <span>\(\mathbf s_\nu,\ m_\nu=-\tfrac12\)</span>
+            </div>
+            <div class="tag-neutrino-momentum-arrow">
+              <span>\(\mathbf p_\nu\)</span>
+            </div>
+          </div>
+          <p class="tag-spin-balance"><strong>Conservation of the projection:</strong>
+            \(+\tfrac12=+1-\tfrac12\).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+```

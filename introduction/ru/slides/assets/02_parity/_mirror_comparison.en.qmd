@@ -1,0 +1,25 @@
+```{=html}
+<div class="mirror-comparison">
+  <div class="mirror-world current-world">
+    <strong>Our world</strong>
+    <div class="mirror-vectors">
+      <span class="spin-vector">\(\mathbf I\)</span>
+      <span class="electron-dot">\(e^-\)</span>
+      <span class="momentum-vector left">\(\mathbf p_e\)</span>
+    </div>
+    <p>The electrons are emitted predominantly opposite to the nuclear spin.</p>
+  </div>
+
+  <div class="mirror-plane" aria-label="mirror"></div>
+
+  <div class="mirror-world reflected-world">
+    <strong>Mirror world</strong>
+    <div class="mirror-vectors">
+      <span class="spin-vector">\(\mathbf I\)</span>
+      <span class="electron-dot">\(e^-\)</span>
+      <span class="momentum-vector right">\(\mathbf p_e\)</span>
+    </div>
+    <p>The mirrored process predicts the opposite asymmetry.</p>
+  </div>
+</div>
+```

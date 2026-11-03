@@ -1,0 +1,24 @@
+```{=html}
+<div class="classification-grid">
+  <section class="particle-family">
+    <h3>Fermions</h3>
+    <p>Half-integer spin: \(1/2, 3/2, \ldots\)</p>
+    <p>They make up matter.</p>
+    <div class="particle-tags">
+      <span class="particle-tag">leptons</span>
+      <span class="particle-tag quark">quarks</span>
+    </div>
+  </section>
+  <section class="particle-family">
+    <h3>Bosons</h3>
+    <p>Integer spin: \(0, 1, \ldots\)</p>
+    <p>They carry interactions; the Higgs field has spin 0.</p>
+    <div class="particle-tags">
+      <span class="particle-tag boson">&gamma;</span>
+      <span class="particle-tag boson">W<sup>&plusmn;</sup>, Z</span>
+      <span class="particle-tag boson">g</span>
+      <span class="particle-tag boson">H</span>
+    </div>
+  </section>
+</div>
+```

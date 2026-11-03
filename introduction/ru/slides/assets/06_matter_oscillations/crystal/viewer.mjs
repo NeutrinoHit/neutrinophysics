@@ -3,6 +3,37 @@ import {field, coefficients, eigenbasis, polarization, TAU, N1, N2, sampleFrame}
 import {mathHTML, rich, fontsReady} from './typeset.mjs';
 
 const $ = id => document.getElementById(id);
+// Words of the page, by <html lang>: anything not starting with "en" is Russian.
+const T = {
+  ru: {
+    comma: true,
+    webgl: 'Для объёмной сцены нужен браузер с WebGL 2.',
+    kinds: {linear: 'Линейная поляризация', circular: 'Круговая поляризация', elliptical: 'Эллиптическая поляризация'},
+    single: n => 'Вход вдоль оси ' + n + ': возбуждена одна собственная волна. Поляризация сохраняется.',
+    zero: 'Толщина равна нулю: на выходе та же линейная поляризация, что на входе.',
+    circular: shift => 'Две равные составляющие со сдвигом ' + shift + ' дают круговую поляризацию.',
+    restored: 'Относительная фаза набежала на полный период: входная поляризация восстановилась.',
+    turned: 'Сумма снова линейно поляризована; направление на выходе изменилось.',
+    elliptical: 'Две составляющие колеблются с разными фазами. Конец суммарного вектора описывает эллипс.',
+    aria: (kind, shift) => kind + ' на выходе; разность фаз ' + shift,
+    pause: 'Пауза',
+    resume: 'Продолжить'
+  },
+  en: {
+    comma: false,
+    webgl: 'The 3D scene needs a browser with WebGL 2.',
+    kinds: {linear: 'Linear polarization', circular: 'Circular polarization', elliptical: 'Elliptical polarization'},
+    single: n => 'Input along axis ' + n + ': a single eigenwave is excited. The polarization is preserved.',
+    zero: 'The thickness is zero: the output has the same linear polarization as the input.',
+    circular: shift => 'Two equal components shifted in phase by ' + shift + ' give circular polarization.',
+    restored: 'The relative phase has advanced by a full period: the input polarization is restored.',
+    turned: 'The sum is linearly polarized again; its direction at the output has changed.',
+    elliptical: 'The two components oscillate with different phases. The tip of the total vector traces an ellipse.',
+    aria: (kind, shift) => kind + ' at the output; phase difference ' + shift,
+    pause: 'Pause',
+    resume: 'Resume'
+  }
+}[/^en/i.test(document.documentElement.lang || '') ? 'en' : 'ru'];
 const query = new URLSearchParams(location.search);
 if(query.has('embed'))document.body.classList.add('embed');
 const numeric = (key, fallback, min, max) => {
@@ -23,7 +54,7 @@ try {
   renderer = new THREE.WebGLRenderer({canvas: $('crystal'), antialias: true, alpha: false, preserveDrawingBuffer: true});
 } catch (error) {
   $('error').hidden = false;
-  $('error').textContent = 'Для объёмной сцены нужен браузер с WebGL 2.';
+  $('error').textContent = T.webgl;
   throw error;
 }
 renderer.setClearColor(colors.bg);
@@ -218,7 +249,7 @@ function drawSection(id,z,isOutput) {
   arrow2d(ctx,cx,cy,r*f.total[0],-r*f.total[1],colors.sum,2.8);
 }
 
-const fmt=(n,d=0)=>n.toFixed(d).replace('.',',');
+const fmt=(n,d=0)=>T.comma?n.toFixed(d).replace('.',','):n.toFixed(d);
 function phaseLabel(delta) {
   const x=delta/Math.PI;
   for(const [v,text] of [[0,'0'],[.5,'π/2'],[1,'π'],[1.5,'3π/2'],[2,'2π']])if(Math.abs(x-v)<.006)return text;
@@ -229,23 +260,22 @@ function updateReadouts() {
   $('length-value').innerHTML=mathHTML(fmt(state.length,2)+' $λ_0$');
   const p=polarization(state),c=coefficients(state.input,state.axes);
   $('phase').innerHTML=mathHTML('$Δφ$ = $'+phaseLabel(p.delta)+'$');
-  const kind={linear:'Линейная поляризация',circular:'Круговая поляризация',elliptical:'Эллиптическая поляризация'}[p.kind];
+  const kind=T.kinds[p.kind];
   $('output-kind').textContent=kind;
   if(Math.min(Math.abs(c[0]),Math.abs(c[1]))<.015) {
     const n=Math.abs(c[0])>Math.abs(c[1])?1:2;
-    $('explanation').textContent='Вход вдоль оси '+n+': возбуждена одна собственная волна. Поляризация сохраняется.';
+    $('explanation').textContent=T.single(n);
   } else if(state.length<.006) {
-    $('explanation').textContent='Толщина равна нулю: на выходе та же линейная поляризация, что на входе.';
+    $('explanation').textContent=T.zero;
   } else if(p.kind==='circular') {
-    $('explanation').textContent='Две равные составляющие со сдвигом '+phaseLabel(p.delta)+' дают круговую поляризацию.';
+    $('explanation').textContent=T.circular(phaseLabel(p.delta));
   } else if(p.kind==='linear') {
     const diff=Math.abs(((p.tilt-state.input+270)%180)-90);
-    $('explanation').textContent=diff<1?'Относительная фаза набежала на полный период: входная поляризация восстановилась.':
-      'Сумма снова линейно поляризована; направление на выходе изменилось.';
+    $('explanation').textContent=diff<1?T.restored:T.turned;
   } else {
-    $('explanation').textContent='Две составляющие колеблются с разными фазами. Конец суммарного вектора описывает эллипс.';
+    $('explanation').textContent=T.elliptical;
   }
-  $('output-section').setAttribute('aria-label',kind+' на выходе; разность фаз '+phaseLabel(p.delta));
+  $('output-section').setAttribute('aria-label',T.aria(kind,phaseLabel(p.delta)));
 }
 
 function draw() {draw3d();drawSection('input-section',0,false);drawSection('output-section',state.length,true);}
@@ -258,7 +288,7 @@ function resize() {
 for(const [id,key] of [['input-angle','input'],['axes-angle','axes'],['length','length']]) {
   $(id).value=state[key];$(id).addEventListener('input',event=>{state[key]=Number(event.target.value);updateReadouts();draw();});
 }
-function updatePlay() {$('play').textContent=playing?'Пауза':'Продолжить';$('play').setAttribute('aria-pressed',String(playing));}
+function updatePlay() {$('play').textContent=playing?T.pause:T.resume;$('play').setAttribute('aria-pressed',String(playing));}
 $('play').addEventListener('click',()=>{playing=!playing;last=null;updatePlay();});
 new ResizeObserver(resize).observe($('scene'));
 let last=null;

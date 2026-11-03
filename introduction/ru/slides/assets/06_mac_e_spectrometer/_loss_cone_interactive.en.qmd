@@ -1,0 +1,174 @@
+```{=html}
+<div id="loss-cone-lab" class="loss-cone-lab">
+  <ul class="loss-cone-lab-intro">
+    <li>To a first approximation, the Earth's field is a dipole: it is weaker at the equator and grows stronger toward the poles.</li>
+    <li>The particle starts at the equator with a given velocity; the motion of the guiding center is shown, without the cyclotron spiral.</li>
+  </ul>
+
+  <div class="loss-cone-lab-layout">
+    <div class="loss-cone-lab-stage">
+      <svg viewBox="0 0 1280 620" role="img"
+           aria-labelledby="loss-cone-lab-title loss-cone-lab-desc">
+        <title id="loss-cone-lab-title">Motion of a particle along a dipole field line of the Earth</title>
+        <desc id="loss-cone-lab-desc">The interactive shows whether the particle will be reflected by the magnetic mirror or enter the atmosphere, depending on the field line L and the angle between the velocity and the field at the equator.</desc>
+
+        <defs>
+          <radialGradient id="loss-cone-earth-gradient" cx="68%" cy="42%" r="72%">
+            <stop offset="0" stop-color="#2d86bd"/>
+            <stop offset="0.62" stop-color="#15517d"/>
+            <stop offset="1" stop-color="#092d4a"/>
+          </radialGradient>
+          <linearGradient id="loss-cone-atmosphere-gradient" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#68d8ff" stop-opacity="0.08"/>
+            <stop offset="1" stop-color="#68d8ff" stop-opacity="0.62"/>
+          </linearGradient>
+          <filter id="loss-cone-particle-glow" x="-150%" y="-150%" width="400%" height="400%">
+            <feGaussianBlur stdDeviation="5" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+          <filter id="loss-cone-impact-glow" x="-180%" y="-180%" width="460%" height="460%">
+            <feGaussianBlur stdDeviation="12"/>
+          </filter>
+          <marker id="loss-cone-arrow" viewBox="0 0 10 10" refX="8" refY="5"
+                  markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
+          </marker>
+        </defs>
+
+        <g class="loss-cone-scene">
+          <line x1="94" y1="220" x2="1195" y2="220" class="loss-cone-equator"/>
+          <text x="1130" y="208" class="loss-cone-svg-muted">magnetic equator</text>
+
+          <circle cx="94" cy="220" r="158" class="loss-cone-earth"/>
+          <circle cx="94" cy="220" r="160.48" class="loss-cone-atmosphere"/>
+          <text x="32" y="224" class="loss-cone-earth-label">Earth</text>
+          <text x="18" y="28" class="loss-cone-atmosphere-label">nominal boundary of the atmosphere: 100 km</text>
+
+          <path data-role="field-line" class="loss-cone-field-line"/>
+          <path data-role="travelled-path" class="loss-cone-travelled-path"/>
+
+          <g data-role="mirror-points" class="loss-cone-mirror-points">
+            <circle data-role="mirror-north" r="8"/>
+            <circle data-role="mirror-south" r="8"/>
+          </g>
+
+          <circle data-role="impact-glow" r="27" class="loss-cone-impact-glow"/>
+          <g data-role="particle" class="loss-cone-particle" filter="url(#loss-cone-particle-glow)">
+            <circle r="9"/>
+            <circle r="18" class="loss-cone-particle-halo"/>
+          </g>
+
+          <g data-role="field-labels">
+            <text data-role="weak-field-label" class="loss-cone-svg-label">equator: weaker field</text>
+            <text data-role="strong-field-label" class="loss-cone-svg-label">stronger field toward the poles</text>
+            <text data-role="line-label" class="loss-cone-line-label"></text>
+          </g>
+
+        </g>
+
+        <line x1="30" y1="448" x2="1250" y2="448" class="loss-cone-separator"/>
+
+        <g class="loss-cone-field-plot">
+          <text x="50" y="477" class="loss-cone-plot-title">Field along the chosen line</text>
+          <line x1="58" y1="598" x2="790" y2="598" class="loss-cone-plot-axis"/>
+          <line x1="58" y1="492" x2="58" y2="598" class="loss-cone-plot-axis"/>
+          <text x="42" y="501" class="loss-cone-plot-tick">1</text>
+          <text x="32" y="553" class="loss-cone-plot-tick">0,5</text>
+          <text x="46" y="603" class="loss-cone-plot-tick">0</text>
+          <text x="18" y="548" class="loss-cone-axis-title">B/B<tspan baseline-shift="sub">atm</tspan></text>
+          <text x="339" y="616" class="loss-cone-plot-tick">south ← s → north</text>
+          <line x1="58" y1="545" x2="790" y2="545" class="loss-cone-plot-grid"/>
+          <path data-role="field-plot-path" class="loss-cone-field-plot-path"/>
+          <line data-role="mirror-level" class="loss-cone-mirror-level"/>
+          <text data-role="mirror-level-label" class="loss-cone-mirror-level-label"></text>
+          <line data-role="plot-mirror-south" class="loss-cone-plot-mirror"/>
+          <line data-role="plot-mirror-north" class="loss-cone-plot-mirror"/>
+          <circle data-role="plot-particle" r="7" class="loss-cone-plot-particle"/>
+          <text x="620" y="477" class="loss-cone-plot-note">mirror: B = B<tspan baseline-shift="sub">m</tspan></text>
+        </g>
+
+        <g class="loss-cone-velocity" data-role="velocity-panel">
+          <text x="866" y="477" class="loss-cone-plot-title">Cross section of velocity space</text>
+          <circle cx="1050" cy="552" r="72" class="loss-cone-velocity-circle"/>
+          <line x1="953" y1="552" x2="1147" y2="552" class="loss-cone-velocity-axis"/>
+          <line x1="1050" y1="462" x2="1050" y2="612" class="loss-cone-velocity-axis"/>
+          <text x="1151" y="557" class="loss-cone-plot-tick">v∥</text>
+          <text x="1057" y="471" class="loss-cone-plot-tick">v⊥</text>
+          <path data-role="loss-sector-right" class="loss-cone-loss-sector"/>
+          <path data-role="loss-sector-left" class="loss-cone-loss-sector"/>
+          <line data-role="velocity-arrow" x1="1050" y1="552"
+                class="loss-cone-velocity-arrow" marker-end="url(#loss-cone-arrow)"/>
+          <circle data-role="velocity-handle" r="9" class="loss-cone-velocity-handle"/>
+          <circle data-role="velocity-hit" cx="1050" cy="552" r="90" class="loss-cone-velocity-hit"/>
+          <text x="944" y="612" class="loss-cone-plot-tick">red regions are the two loss cones</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="loss-cone-lab-controls" role="group" aria-label="Particle motion parameters">
+      <div class="loss-cone-setup">
+        <h3>Problem statement</h3>
+        <ul>
+          <li>We choose the continuous parameter of the field line <em>L</em>.</li>
+          <li>At the equator we set the angle α between the velocity and the field.</li>
+          <li>We check which comes first for the particle: the mirror point or the atmosphere.</li>
+        </ul>
+        <p class="loss-cone-index-note">Indices: <em>eq</em> — equator, <em>atm</em> — boundary of the atmosphere.</p>
+      </div>
+
+      <label class="loss-cone-control-label" for="loss-cone-l-slider">
+        Field line: <strong>L = <output data-role="l-value">4,0</output></strong>
+      </label>
+      <input id="loss-cone-l-slider" data-role="l-slider" type="range"
+             min="1.2" max="6" step="0.1" value="4" aria-label="Field line parameter L">
+      <div class="loss-cone-control-detail">
+        equatorial altitude <strong>h<sub>eq</sub> = <output data-role="height-value"></output></strong>
+      </div>
+
+      <label class="loss-cone-control-label" for="loss-cone-alpha-slider">
+        Angle between velocity and field: <strong>α<sub>eq</sub> = <output data-role="alpha-value">8,0°</output></strong>
+      </label>
+      <input id="loss-cone-alpha-slider" data-role="alpha-slider" type="range"
+             min="1" max="89" step="0.5" value="8" aria-label="Angle between the velocity and the magnetic field at the equator">
+      <div class="loss-cone-control-detail">the angle can also be changed with the arrow on the velocity circle</div>
+
+      <div data-role="prediction" class="loss-cone-prediction" aria-live="polite"></div>
+
+      <dl class="loss-cone-values">
+        <div><dt>Cone boundary</dt><dd>α<sub>loss</sub> = <output data-role="loss-angle"></output></dd></div>
+        <div><dt>Mirror field</dt><dd>B<sub>m</sub>/B<sub>atm</sub> = <output data-role="mirror-ratio"></output></dd></div>
+      </dl>
+
+      <div class="loss-cone-energy" aria-label="Decomposition of the particle energy">
+        <div class="loss-cone-energy-row">
+          <span>E<sub>∥</sub></span>
+          <div class="loss-cone-energy-track"><span data-role="energy-parallel" class="parallel"></span></div>
+          <output data-role="energy-parallel-value">98%</output>
+        </div>
+        <div class="loss-cone-energy-row">
+          <span>E<sub>⊥</sub></span>
+          <div class="loss-cone-energy-track"><span data-role="energy-perp" class="perp"></span></div>
+          <output data-role="energy-perp-value">2%</output>
+        </div>
+        <div class="loss-cone-energy-row total">
+          <span>E</span>
+          <div class="loss-cone-energy-track"><span data-role="energy-total" class="total"></span></div>
+          <output data-role="energy-total-value">100%</output>
+        </div>
+      </div>
+
+      <div class="loss-cone-buttons">
+        <button type="button" data-role="play">Start</button>
+        <button type="button" data-role="pause">Pause</button>
+        <button type="button" data-role="reset">Restart</button>
+      </div>
+
+      <p data-role="state-explanation" class="loss-cone-state-explanation"></p>
+    </div>
+  </div>
+</div>
+
+```

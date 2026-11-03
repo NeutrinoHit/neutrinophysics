@@ -1,0 +1,33 @@
+```{=html}
+<div class="frame-change helicity-animated" aria-label="Helicity flip when switching to a reference frame that overtakes a massive particle">
+  <div class="frame-main">
+    <div class="frame-title">
+      <span class="frame-title-lab">Laboratory frame</span>
+      <span class="frame-title-fast">The observer has overtaken the particle</span>
+    </div>
+    <div class="frame-track">
+      <div class="frame-observer"><span>observer</span></div>
+      <div class="frame-neutrino">ν</div>
+      <div class="frame-vector frame-spin"><span>\(\mathbf S\)</span></div>
+      <div class="frame-vector frame-momentum-right"><span>\(\mathbf p\)</span></div>
+      <div class="frame-vector frame-momentum-left"><span>\(\mathbf p'\)</span></div>
+    </div>
+    <div class="frame-helicity">
+      <span class="frame-h-plus">\(h=+1\)</span>
+      <span class="frame-h-minus">\(h'=-1\)</span>
+    </div>
+  </div>
+  <div class="frame-massless">
+    <div class="massless-label">massless particle</div>
+    <div class="massless-track">
+      <div class="light-observer">
+        <span>observer</span>
+        <b>\(v_{\rm obs}&lt;1\)</b>
+      </div>
+      <div class="light-particle">ν</div>
+      <div class="light-front"><span>\(v_\nu=1\)</span></div>
+    </div>
+    <div class="massless-note">the momentum does not change sign: \(h\) is conserved</div>
+  </div>
+</div>
+```

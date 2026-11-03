@@ -1,0 +1,86 @@
+The spin projection onto a fixed axis $z$ is not yet the helicity: one needs to know
+in which direction the particle was flying. Let us compare two photon emission directions.
+
+```{=html}
+<div class="photon-story-axis"><b>thick arrow — spin</b><span>\(+z\)</span><i></i></div>
+<div class="photon-story-cases" aria-label="One neutrino helicity allows two photon helicities for different directions of its emission">
+  <div class="photon-story-case story-forward">
+    <span class="photon-story-number">1</span>
+    <div class="photon-story-node">
+      <span class="photon-story-momentum left"><i></i><b>\(\mathbf p_\nu\)</b></span>
+      <span class="photon-story-ball neutrino">\(\nu\)</span>
+      <span class="photon-story-spin neutrino right"><i></i></span>
+    </div>
+    <span class="photon-story-space"></span>
+    <div class="photon-story-node source">
+      <span class="photon-story-ball nucleus">\(A\)</span>
+      <span class="photon-story-caption">\(A+e^-\)</span>
+    </div>
+    <span class="photon-story-space"></span>
+    <div class="photon-story-node">
+      <span class="photon-story-ball nucleus excited">\(B^*\)</span>
+      <span class="photon-story-spin nucleus left"><i></i></span>
+      <span class="photon-story-momentum right"><i></i><b>\(\mathbf p_{B^*}\)</b></span>
+    </div>
+    <div class="photon-story-products aligned-products">
+      <div class="photon-story-product photon">
+        <div class="photon-story-node">
+          <span class="photon-story-ball photon">\(\gamma\)</span>
+          <span class="photon-story-spin photon left"><i></i></span>
+          <span class="photon-story-momentum right"><i></i><b>\(\mathbf p_\gamma\)</b></span>
+        </div>
+      </div>
+      <div class="photon-story-product">
+        <div class="photon-story-node">
+          <span class="photon-story-ball nucleus ground">\(B\)</span>
+          <span class="photon-story-momentum right"><i></i><b>\(\mathbf p_B\)</b></span>
+        </div>
+      </div>
+    </div>
+    <div class="photon-story-result">\(h_\nu=-1\)<br>\(h_\gamma=-1\)</div>
+  </div>
+
+  <div class="photon-story-case story-reverse">
+    <span class="photon-story-number">2</span>
+    <div class="photon-story-node">
+      <span class="photon-story-ball nucleus excited">\(B^*\)</span>
+      <span class="photon-story-spin nucleus right"><i></i></span>
+      <span class="photon-story-momentum left"><i></i><b>\(\mathbf p_{B^*}\)</b></span>
+    </div>
+    <div class="photon-story-products aligned-products">
+      <div class="photon-story-product photon">
+        <div class="photon-story-node">
+          <span class="photon-story-ball photon">\(\gamma\)</span>
+          <span class="photon-story-spin photon right"><i></i></span>
+          <span class="photon-story-momentum right separate-from-spin"><i></i><b>\(\mathbf p_\gamma\)</b></span>
+        </div>
+      </div>
+      <div class="photon-story-product">
+        <div class="photon-story-node">
+          <span class="photon-story-ball nucleus ground">\(B\)</span>
+          <span class="photon-story-momentum left"><i></i><b>\(\mathbf p_B\)</b></span>
+        </div>
+      </div>
+    </div>
+    <span class="photon-story-space"></span>
+    <div class="photon-story-node source">
+      <span class="photon-story-ball nucleus">\(A\)</span>
+      <span class="photon-story-caption">\(A+e^-\)</span>
+    </div>
+    <span class="photon-story-space"></span>
+    <div class="photon-story-node">
+      <span class="photon-story-ball neutrino">\(\nu\)</span>
+      <span class="photon-story-spin neutrino left"><i></i></span>
+      <span class="photon-story-momentum right"><i></i><b>\(\mathbf p_\nu\)</b></span>
+    </div>
+    <div class="photon-story-result">\(h_\nu=-1\)<br>\(h_\gamma=+1\)</div>
+  </div>
+</div>
+```
+
+::: {.nh-box tone="warning" size="md" align="center" weight="bold"}
+
+The same neutrino helicity allows both photon helicities.
+One needs to select photons by their direction relative to the recoil $B^*$.
+
+:::

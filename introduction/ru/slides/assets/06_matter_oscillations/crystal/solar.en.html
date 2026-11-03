@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Light and neutrino: two eigenwaves</title>
+  <link rel="stylesheet" href="comparison.css"><link rel="stylesheet" href="math.css">
+</head>
+<body data-pair="solar">
+<main>
+  <header><div><h1>Two eigenwaves</h1><p>Light in a crystal and a neutrino in vacuum: one principle of propagation.</p></div>
+  <button id="play" type="button" aria-pressed="true">Pause</button></header>
+  <div class="comparison">
+    <section class="system" id="light-view" aria-label="Light in a birefringent crystal">
+      <div class="system-title"><h2>Light in a crystal</h2><span id="light-length">L = 1.00 λ₀</span></div>
+      <div class="legend"><span class="one">Polarization 1</span><span class="two">Polarization 2</span><span>Sum E</span></div>
+      <div class="scene" data-id="scene">
+        <canvas data-id="crystal" aria-label="3D crystal: two eigenpolarizations and the sum"></canvas>
+        <span class="scene-label" data-id="entry-label">Input</span><span class="scene-label" data-id="exit-label">Output</span>
+        <span class="axis-label one" data-id="axis-one">axis 1</span><span class="axis-label two" data-id="axis-two">axis 2</span>
+        <p data-id="error" hidden role="alert"></p>
+      </div>
+      <div class="result light-result">
+        <div><p class="muted" id="light-input">Input: β = 0°</p><h3 id="light-kind">Circular polarization</h3><p class="detail">The output is the sum of the two polarizations.</p></div>
+        <canvas id="light-output" aria-label="Output polarization of the light, view along the beam"></canvas>
+      </div>
+    </section>
+    <section class="system" id="neutrino-view" aria-label="Electron neutrino in vacuum">
+      <div class="system-title"><h2>Neutrino in vacuum</h2><span id="neutrino-length">L = 82.7 km</span></div>
+      <div class="legend"><span class="one">ν₁</span><span class="two">ν₂</span><span>Sum ψ</span></div>
+      <div class="scene" data-id="scene">
+        <canvas data-id="crystal" aria-label="Neutrino amplitude geometry: two mass eigenwaves and the sum"></canvas>
+        <span class="scene-label" data-id="entry-label">Input: νₑ</span><span class="scene-label" data-id="exit-label">Measurement</span>
+        <span class="axis-label one" data-id="axis-one">ν₁</span><span class="axis-label two" data-id="axis-two">ν₂</span>
+        <p data-id="error" hidden role="alert"></p>
+      </div>
+      <div class="result neutrino-result">
+        <div><p class="muted">Input: νₑ · θ = 33.7°</p><h3>Probabilities at the output</h3>
+          <div class="probabilities" aria-live="polite">
+            <div class="probability"><div><span>Pₑ</span><output id="pe-value">0.574</output></div><div class="track"><span id="pe-bar"></span></div></div>
+            <div class="probability"><div><span>Pₓ</span><output id="px-value">0.426</output></div><div class="track"><span id="px-bar"></span></div></div>
+          </div>
+        </div>
+        <p class="norm">Pₑ + Pₓ = 1</p>
+      </div>
+    </section>
+  </div>
+  <div class="scene-notes"><span>Actual polarization directions of the light</span><span>State space · the overall phase of the picture is conventional</span></div>
+  <section class="controls" aria-label="Shared controls of the comparison">
+    <label for="input-angle"><span>Light: input polarization <i>β</i><output id="input-value">0°</output></span><input id="input-angle" type="range" min="0" max="180" step="1" value="0"><span class="ticks"><span>0°</span><span>90°</span><span>180°</span></span></label>
+    <label for="axes-angle"><span>Light: axes rotation <i>α</i><output id="axes-value">45°</output></span><input id="axes-angle" type="range" min="0" max="180" step="1" value="45"><span class="ticks"><span>0°</span><span>90°</span><span>180°</span></span></label>
+    <label for="length"><span>Thickness / distance<output id="phase-value">|Δφ| = π/2</output></span><input id="length" type="range" min="0" max="4" step="0.01" value="1"><span class="ticks"><span>0</span><span>|Δφ| = π</span><span>2π</span></span></label>
+  </section>
+  <p class="hint" id="explanation">Move the shared slider: it sets the same phase difference in the two experiments.</p>
+  <footer><span>Light: n₁ = 1.35, n₂ = 1.60, no reflections · Neutrino: E = 10 MeV, Δm² = 7.5×10⁻⁵ eV², two states; νₓ is a combination of νμ and ντ</span><span>© neutrinohit.github.io</span></footer>
+</main>
+<script type="module" src="comparison.mjs"></script>
+<script defer src="https://neutrinohit.github.io/assets/analytics/cloudflare-web-analytics.js"></script>
+</body></html>

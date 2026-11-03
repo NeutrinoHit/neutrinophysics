@@ -1,23 +1,47 @@
 (() => {
   "use strict";
 
-  const checks = [
-    "Сначала заполним измеренные доли, затем используем унитарность.",
-    "Солнце задаёт одну клетку электронной строки.",
-    "Строка e: 2/3 + 1/3 + 0 = 1.",
-    "Атмосферные данные выделяют клетку μ3.",
-    "Столбец 3: 0 + 1/2 + 1/2 = 1.",
-    "Столбец 2: 1/3 + 1/3 + 1/3 = 1; ортогональность связала модули.",
-    "Каждая строка и каждый столбец даёт единицу.",
-    "Квадратный корень даёт модуль амплитуды, но ещё не её знак.",
-    "Столбцы 2 и 3 ортогональны: c₂ · c₃ = 0.",
-    "Теперь c₁ · c₂ = c₁ · c₃ = 0 и U₀ᵀU₀ = I.",
-    "Современные значения рассчитаны внутри унитарной модели; округление даёт суммы около 1."
-  ];
+  const T = {
+    ru: {
+      step: step => `Шаг ${step} из 10`,
+      checks: [
+        "Сначала заполним измеренные доли, затем используем унитарность.",
+        "Солнце задаёт одну клетку электронной строки.",
+        "Строка e: 2/3 + 1/3 + 0 = 1.",
+        "Атмосферные данные выделяют клетку μ3.",
+        "Столбец 3: 0 + 1/2 + 1/2 = 1.",
+        "Столбец 2: 1/3 + 1/3 + 1/3 = 1; ортогональность связала модули.",
+        "Каждая строка и каждый столбец даёт единицу.",
+        "Квадратный корень даёт модуль амплитуды, но ещё не её знак.",
+        "Столбцы 2 и 3 ортогональны: c₂ · c₃ = 0.",
+        "Теперь c₁ · c₂ = c₁ · c₃ = 0 и U₀ᵀU₀ = I.",
+        "Современные значения рассчитаны внутри унитарной модели; округление даёт суммы около 1."
+      ]
+    },
+    en: {
+      step: step => `Step ${step} of 10`,
+      checks: [
+        "First fill in the measured fractions, then use unitarity.",
+        "The Sun fixes one cell of the electron row.",
+        "Row e: 2/3 + 1/3 + 0 = 1.",
+        "Atmospheric data fix the μ3 cell.",
+        "Column 3: 0 + 1/2 + 1/2 = 1.",
+        "Column 2: 1/3 + 1/3 + 1/3 = 1; orthogonality has tied the moduli together.",
+        "Every row and every column sums to one.",
+        "The square root gives the modulus of the amplitude, but not yet its sign.",
+        "Columns 2 and 3 are orthogonal: c₂ · c₃ = 0.",
+        "Now c₁ · c₂ = c₁ · c₃ = 0 and U₀ᵀU₀ = I.",
+        "The modern values are computed within the unitary model; rounding gives sums close to 1."
+      ]
+    }
+  };
+  // Язык: ближайший элемент с lang; значение, начинающееся с "en", даёт английский.
+  const langOf = root => (/^en/i.test((root.closest("[lang]") || document.documentElement).lang || "") ? "en" : "ru");
 
   function initialize(root) {
     if (root.dataset.pmnsReady === "true") return;
     root.dataset.pmnsReady = "true";
+    const t = T[langOf(root)];
 
     const contents = [...root.querySelectorAll("[data-step-content]")];
     const cells = [...root.querySelectorAll("[data-cell]")];
@@ -52,8 +76,8 @@
         title.hidden = kind !== (step === 7 ? "roots" :
           step === 8 ? "partial" : step === 9 ? "signed" : "squares");
       });
-      counter.textContent = `Шаг ${step} из 10`;
-      check.textContent = checks[step];
+      counter.textContent = t.step(step);
+      check.textContent = t.checks[step];
       previous.disabled = step === 0;
       next.disabled = step === 10;
 

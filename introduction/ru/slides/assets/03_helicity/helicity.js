@@ -1,4 +1,47 @@
 (() => {
+  const T = {
+    ru: {
+      start: "Запустить", restart: "Сначала", repeat: "Повторить", resume: "Продолжить",
+      running: "Выполняется…", measurePolarization: "Измерить поляризацию", nextScene: "Следующая сцена",
+      emitPhoton: "Испустить фотон", preparing: "Подготовка…", underway: "Опыт идёт…", repeatExperiment: "Повторить опыт",
+      scenes: ["Сборка детектора", "Резонансный фотон", "Нерезонансный фотон", "Измерение при +B", "Измерение при −B"],
+      sceneLabel: (step, total, title) => `Сцена ${step}/${total} · ${title}`,
+      nextPolarization: "Далее: измерение поляризации",
+      nextSceneLabel: (step, total, title) => `Далее: сцена ${step}/${total} · ${title}`,
+      shown: "Резонанс и измерение показаны",
+      decimal: "{,}", eV: "эВ",
+      alongRecoil: "фотон летит вдоль отдачи", againstRecoil: "фотон летит против отдачи",
+      resonance: width => String.raw`Резонанс: \(\lvert E_\gamma-E_\gamma^{\rm abs}\rvert\le ${width}\,\mathrm{эВ}\).`,
+      above: "Выше резонанса: фотон проходит сквозь поглотитель.",
+      below: "Ниже резонанса: фотон проходит сквозь поглотитель.",
+      restored: "Исходные состояния восстановлены.",
+      emitted: String.raw`Источник испустил фотон: \(B^*\) превратилось в \(B\). Фотон летит к покоящемуся поглотителю.`,
+      absorbed: String.raw`Резонанс: \(B+\gamma\to B^*\).`,
+      passed: "Вне резонанса: фотон проходит сквозь поглотитель и уходит за экран."
+    },
+    en: {
+      start: "Start", restart: "Restart", repeat: "Repeat", resume: "Resume",
+      running: "Running…", measurePolarization: "Measure polarization", nextScene: "Next scene",
+      emitPhoton: "Emit photon", preparing: "Preparing…", underway: "Experiment running…", repeatExperiment: "Repeat experiment",
+      scenes: ["Detector assembly", "Resonant photon", "Nonresonant photon", "Measurement at +B", "Measurement at −B"],
+      sceneLabel: (step, total, title) => `Scene ${step}/${total} · ${title}`,
+      nextPolarization: "Next: polarization measurement",
+      nextSceneLabel: (step, total, title) => `Next: scene ${step}/${total} · ${title}`,
+      shown: "Resonance and measurement shown",
+      decimal: ".", eV: "eV",
+      alongRecoil: "the photon travels along the recoil", againstRecoil: "the photon travels against the recoil",
+      resonance: width => String.raw`Resonance: \(\lvert E_\gamma-E_\gamma^{\rm abs}\rvert\le ${width}\,\mathrm{eV}\).`,
+      above: "Above resonance: the photon passes through the absorber.",
+      below: "Below resonance: the photon passes through the absorber.",
+      restored: "Initial states restored.",
+      emitted: String.raw`The source emitted a photon: \(B^*\) turned into \(B\). The photon travels toward the absorber at rest.`,
+      absorbed: String.raw`Resonance: \(B+\gamma\to B^*\).`,
+      passed: "Off resonance: the photon passes through the absorber and leaves the screen."
+    }
+  };
+  // Язык: ближайший к виджету элемент с lang; значение, начинающееся с "en", даёт английский.
+  const textFor = (root) => T[/^en/i.test((root.closest("[lang]") || document.documentElement).lang || "") ? "en" : "ru"];
+
   const setSpinTaggingButton = (root, icon, label) => {
     const button = root.querySelector(".tag-play-button");
     if (!button) return;
@@ -8,14 +51,14 @@
 
   const resetSpinTagging = (root) => {
     root.classList.remove("is-playing");
-    setSpinTaggingButton(root, "▶", "Запустить");
+    setSpinTaggingButton(root, "▶", textFor(root).start);
   };
 
   const playSpinTagging = (root) => {
     root.classList.remove("is-playing");
     void root.offsetWidth;
     root.classList.add("is-playing");
-    setSpinTaggingButton(root, "↻", "Сначала");
+    setSpinTaggingButton(root, "↻", textFor(root).restart);
   };
 
   const initializeSpinTagging = () => {
@@ -31,7 +74,7 @@
 
       root.addEventListener("animationend", (event) => {
         if (event.animationName === "tag-slow-excited-scene") {
-          setSpinTaggingButton(root, "↻", "Повторить");
+          setSpinTaggingButton(root, "↻", textFor(root).repeat);
         }
       });
 
@@ -44,16 +87,17 @@
     const pause = root.querySelector('[data-animation-action="pause"]');
     if (!play || !pause) return;
 
+    const t = textFor(root);
     const running = state === "running";
     const paused = state === "paused";
     const complete = state === "complete";
     play.disabled = running;
     pause.disabled = !running;
     play.innerHTML = paused
-      ? '<span aria-hidden="true">▶</span> Продолжить'
+      ? `<span aria-hidden="true">▶</span> ${t.resume}`
       : complete
-        ? '<span aria-hidden="true">↻</span> Повторить'
-        : '<span aria-hidden="true">▶</span> Запустить';
+        ? `<span aria-hidden="true">↻</span> ${t.repeat}`
+        : `<span aria-hidden="true">▶</span> ${t.start}`;
   };
 
   const resetManualAnimation = (root) => {
@@ -109,11 +153,11 @@
   };
 
   const experimentScenes = Object.freeze([
-    { className: "scene-assembly", title: "Сборка детектора", endAnimation: "experiment-assembly-finish" },
-    { className: "scene-one", title: "Резонансный фотон", endAnimation: "experiment-scene-one-finish" },
-    { className: "scene-two", title: "Нерезонансный фотон", endAnimation: "experiment-scene-two-finish" },
-    { className: "scene-field-plus", title: "Измерение при +B", endAnimation: "experiment-scene-field-plus-finish" },
-    { className: "scene-field-minus", title: "Измерение при −B", endAnimation: "experiment-scene-field-minus-finish" }
+    { className: "scene-assembly", endAnimation: "experiment-assembly-finish" },
+    { className: "scene-one", endAnimation: "experiment-scene-one-finish" },
+    { className: "scene-two", endAnimation: "experiment-scene-two-finish" },
+    { className: "scene-field-plus", endAnimation: "experiment-scene-field-plus-finish" },
+    { className: "scene-field-minus", endAnimation: "experiment-scene-field-minus-finish" }
   ]);
 
   const setExperimentSceneButton = (root, icon, label, disabled = false) => {
@@ -137,8 +181,8 @@
     root.classList.remove("is-scene-running");
     root.dataset.experimentScene = "0";
     root.dataset.experimentSceneRunning = "false";
-    root.querySelector("[data-experiment-scene-label]").textContent = `Сцена 1/${experimentScenes.length} · Сборка детектора`;
-    setExperimentSceneButton(root, "▶", "Запустить");
+    root.querySelector("[data-experiment-scene-label]").textContent = textFor(root).sceneLabel(1, experimentScenes.length, textFor(root).scenes[0]);
+    setExperimentSceneButton(root, "▶", textFor(root).start);
     updateExperimentSceneDots(root, 0, false);
   };
 
@@ -153,11 +197,12 @@
 
     const step = Number(root.dataset.experimentScene || "0") + 1;
     const scene = experimentScenes[step - 1];
+    const t = textFor(root);
     root.dataset.experimentScene = String(step);
     root.dataset.experimentSceneRunning = "true";
     root.classList.add("is-scene-running");
-    root.querySelector("[data-experiment-scene-label]").textContent = `Сцена ${step}/${experimentScenes.length} · ${scene.title}`;
-    setExperimentSceneButton(root, "●", "Выполняется…", true);
+    root.querySelector("[data-experiment-scene-label]").textContent = t.sceneLabel(step, experimentScenes.length, t.scenes[step - 1]);
+    setExperimentSceneButton(root, "●", t.running, true);
     updateExperimentSceneDots(root, step, true);
     void root.offsetWidth;
     root.classList.add(scene.className);
@@ -169,18 +214,18 @@
     root.classList.remove("is-scene-running");
     updateExperimentSceneDots(root, step, false);
 
+    const t = textFor(root);
     if (step < experimentScenes.length) {
-      const nextScene = experimentScenes[step];
       if (step === 3) {
-        root.querySelector("[data-experiment-scene-label]").textContent = "Далее: измерение поляризации";
-        setExperimentSceneButton(root, "▶", "Измерить поляризацию");
+        root.querySelector("[data-experiment-scene-label]").textContent = t.nextPolarization;
+        setExperimentSceneButton(root, "▶", t.measurePolarization);
       } else {
-        root.querySelector("[data-experiment-scene-label]").textContent = `Далее: сцена ${step + 1}/${experimentScenes.length} · ${nextScene.title}`;
-        setExperimentSceneButton(root, "▶", "Следующая сцена");
+        root.querySelector("[data-experiment-scene-label]").textContent = t.nextSceneLabel(step + 1, experimentScenes.length, t.scenes[step]);
+        setExperimentSceneButton(root, "▶", t.nextScene);
       }
     } else {
-      root.querySelector("[data-experiment-scene-label]").textContent = "Резонанс и измерение показаны";
-      setExperimentSceneButton(root, "↻", "Сначала");
+      root.querySelector("[data-experiment-scene-label]").textContent = t.shown;
+      setExperimentSceneButton(root, "↻", t.restart);
     }
   };
 
@@ -245,7 +290,7 @@
     const button = root.querySelector("[data-resonance-fire]");
     if (button) {
       button.disabled = false;
-      button.innerHTML = '<span aria-hidden="true">▶</span> Испустить фотон';
+      button.innerHTML = `<span aria-hidden="true">▶</span> ${textFor(root).emitPhoton}`;
     }
   };
 
@@ -281,6 +326,7 @@
 
     cancelResonanceFlight(root);
 
+    const t = textFor(root);
     const angle = Number(slider.value);
     const angleRadians = angle * Math.PI / 180;
     const photonEnergyMeV = resonanceKinematics.emissionEnergyMeV
@@ -307,24 +353,24 @@
     setDynamicMath(
       angleOutput,
       angle === 0
-        ? String.raw`\(\theta=0^\circ\) — фотон летит вдоль отдачи`
+        ? String.raw`\(\theta=0^\circ\) — ${t.alongRecoil}`
         : angle === 180
-          ? String.raw`\(\theta=180^\circ\) — фотон летит против отдачи`
+          ? String.raw`\(\theta=180^\circ\) — ${t.againstRecoil}`
           : String.raw`\(\theta=${angle}^\circ\)`
     );
 
-    const signedDetuning = `${detuningEv >= 0 ? "+" : "-"}${Math.abs(detuningEv).toFixed(3).replace(".", "{,}")}`;
+    const signedDetuning = `${detuningEv >= 0 ? "+" : "-"}${Math.abs(detuningEv).toFixed(3).replace(".", t.decimal)}`;
     setDynamicMath(
       energyOutput,
-      String.raw`\(E_\gamma-E_\gamma^{\rm abs}=${signedDetuning}\,\mathrm{эВ}\)`
+      String.raw`\(E_\gamma-E_\gamma^{\rm abs}=${signedDetuning}\,\mathrm{${t.eV}}\)`
     );
 
     if (state === "resonant") {
-      setDynamicMath(outcome, String.raw`Резонанс: \(\lvert E_\gamma-E_\gamma^{\rm abs}\rvert\le 0{,}10\,\mathrm{эВ}\).`);
+      setDynamicMath(outcome, t.resonance(`0${t.decimal}10`));
     } else if (state === "high") {
-      setDynamicMath(outcome, "Выше резонанса: фотон проходит сквозь поглотитель.");
+      setDynamicMath(outcome, t.above);
     } else {
-      setDynamicMath(outcome, "Ниже резонанса: фотон проходит сквозь поглотитель.");
+      setDynamicMath(outcome, t.below);
     }
   };
 
@@ -338,6 +384,7 @@
 
     cancelResonanceFlight(root);
 
+    const t = textFor(root);
     const resonant = root.classList.contains("is-resonant");
     // offsetLeft/offsetWidth are measured in the slide's own coordinate system.
     // getBoundingClientRect() is already scaled by Reveal and therefore yields a
@@ -348,14 +395,14 @@
     const exitDistance = -(photon.offsetLeft + photon.offsetWidth + 90);
 
     button.disabled = true;
-    button.textContent = "Подготовка…";
-    setDynamicMath(outcome, "Исходные состояния восстановлены.");
+    button.textContent = t.preparing;
+    setDynamicMath(outcome, t.restored);
 
     root._resonanceLaunchTimer = window.setTimeout(() => {
       root._resonanceLaunchTimer = null;
       root.classList.add("source-decayed");
-      button.textContent = "Опыт идёт…";
-      setDynamicMath(outcome, String.raw`Источник испустил фотон: \(B^*\) превратилось в \(B\). Фотон летит к покоящемуся поглотителю.`);
+      button.textContent = t.underway;
+      setDynamicMath(outcome, t.emitted);
 
       const distance = resonant ? hitDistance : exitDistance;
       root._resonancePhotonAnimation = photon.animate(
@@ -380,13 +427,13 @@
             ],
             { duration: 900, easing: "ease-out", fill: "forwards" }
           );
-          setDynamicMath(outcome, String.raw`Резонанс: \(B+\gamma\to B^*\).`);
+          setDynamicMath(outcome, t.absorbed);
         } else {
-          setDynamicMath(outcome, "Вне резонанса: фотон проходит сквозь поглотитель и уходит за экран.");
+          setDynamicMath(outcome, t.passed);
         }
 
         button.disabled = false;
-        button.innerHTML = '<span aria-hidden="true">↻</span> Повторить опыт';
+        button.innerHTML = `<span aria-hidden="true">↻</span> ${t.repeatExperiment}`;
       }).catch(() => {});
     }, 420);
   };

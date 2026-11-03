@@ -1,0 +1,209 @@
+```{=html}
+<div class="pmns-from-data" data-pmns-from-data tabindex="0"
+     aria-label="Step-by-step reconstruction of the lepton mixing matrix from solar, atmospheric and reactor measurements">
+  <div class="pmns-from-data__top">
+    <span data-step-counter aria-live="polite">Step 0 of 10</span>
+    <div class="pmns-from-data__buttons">
+      <button type="button" data-step-back aria-label="Previous step">← Back</button>
+      <button type="button" data-step-next>Next step →</button>
+    </div>
+  </div>
+
+  <div class="pmns-from-data__body">
+    <div class="pmns-from-data__evidence">
+      <div data-step-content="0">
+        <h3>We start with an empty matrix</h3>
+        <p>The rows correspond to the flavors of production and detection; the columns, to the mass states. We begin with the measurable fractions
+        <span class="math inline">\(|U_{\alpha i}|^2\)</span>.</p>
+        <p>For now we leave <span class="math inline">\(|U_{e3}|^2=0\)</span>.
+        This reveals the framework of the problem; the reactor result will be included at the end.</p>
+      </div>
+
+      <div data-step-content="1" hidden>
+        <h3>Solar neutrinos</h3>
+        <p>For high-energy solar neutrinos
+        <span class="math inline">\(P_{ee}\simeq1/3\)</span>. In the adiabatic
+        approximation and for <span class="math inline">\(U_{e3}=0\)</span>:</p>
+        <p class="pmns-from-data__formula">\(P_{ee}\simeq |U_{e2}|^2\simeq\frac13.\)</p>
+        <p class="pmns-from-data__fine">Why the Sun singles out the second mass
+        column will be explained in the lecture on the MSW effect.</p>
+      </div>
+
+      <div data-step-content="2" hidden>
+        <h3>Electron row</h3>
+        <p>Its normalization fills the remaining cell:</p>
+        <p class="pmns-from-data__formula">\(
+          |U_{e1}|^2+|U_{e2}|^2+|U_{e3}|^2=1
+          \quad\Longrightarrow\quad |U_{e1}|^2=\frac23.
+        \)</p>
+        <p>The first row is now equal to
+        <span class="math inline">\((2/3,\,1/3,\,0)\)</span>.</p>
+      </div>
+
+      <div data-step-content="3" hidden>
+        <h3>Atmospheric and accelerator neutrinos</h3>
+        <p>The nearly maximal disappearance
+        <span class="math inline">\(\nu_\mu\)</span> shows that the muon
+        flavor is distributed roughly equally with respect to the third mode:</p>
+        <p class="pmns-from-data__formula">\(
+          4|U_{\mu3}|^2(1-|U_{\mu3}|^2)\simeq1
+          \quad\Longrightarrow\quad |U_{\mu3}|^2\simeq\frac12.
+        \)</p>
+        <p class="pmns-from-data__fine">Here we keep the leading atmospheric
+        scale and for now set <span class="math inline">\(U_{e3}=0\)</span>.</p>
+      </div>
+
+      <div data-step-content="4" hidden>
+        <h3>Third column</h3>
+        <p>The three fractions of a single mass state sum to one:</p>
+        <p class="pmns-from-data__formula">\(
+          |U_{e3}|^2+|U_{\mu3}|^2+|U_{\tau3}|^2=1
+          \quad\Longrightarrow\quad |U_{\tau3}|^2=\frac12.
+        \)</p>
+        <p>In this approximation
+        <span class="math inline">\(\nu_3\)</span> is equally coupled to
+        <span class="math inline">\(\nu_\mu\)</span> and
+        <span class="math inline">\(\nu_\tau\)</span>.</p>
+      </div>
+
+      <div data-step-content="5" hidden>
+        <h3>Second column</h3>
+        <p>From column 3 we already know
+        <span class="math inline">\(|U_{\mu3}|=|U_{\tau3}|\)</span>.
+        Its orthogonality to column 2 gives</p>
+        <p class="pmns-from-data__formula">\(
+          U_{\mu2}^*U_{\mu3}+U_{\tau2}^*U_{\tau3}=0.
+        \)</p>
+        <p>Therefore,
+        <span class="math inline">\(|U_{\mu2}|^2=|U_{\tau2}|^2\)</span>.
+        We normalize the second column:</p>
+        <p class="pmns-from-data__formula">\(
+          \frac13+|U_{\mu2}|^2+|U_{\tau2}|^2=1.
+        \)</p>
+        <p class="pmns-from-data__formula">\(
+          |U_{\mu2}|^2=|U_{\tau2}|^2=\frac13.
+        \)</p>
+      </div>
+
+      <div data-step-content="6" hidden>
+        <h3>The first column remains</h3>
+        <p>We normalize the muon and tau rows:</p>
+        <p class="pmns-from-data__formula">\(
+          |U_{\mu1}|^2=1-\frac13-\frac12=\frac16,
+          \qquad
+          |U_{\tau1}|^2=\frac16.
+        \)</p>
+        <p>All rows and columns of the matrix of squares now sum to one.</p>
+      </div>
+
+      <div data-step-content="7" hidden>
+        <h3>From fractions to amplitude moduli</h3>
+        <p>Each cell on the right so far contains the probability
+        <span class="math inline">\(|U_{\alpha i}|^2\)</span>. We take the square root:</p>
+        <p class="pmns-from-data__formula">\(
+          |U_{\alpha i}|=\sqrt{|U_{\alpha i}|^2},
+          \qquad |U_{e1}|=\sqrt{\frac23},\quad
+          |U_{\mu1}|=\sqrt{\frac16}.
+        \)</p>
+        <p>The matrix of non-negative moduli is not yet
+        <span class="math inline">\(U\)</span>: its columns are not orthogonal.
+        The relative signs are missing.</p>
+      </div>
+
+      <div data-step-content="8" hidden>
+        <h3>Signs in the second and third columns</h3>
+        <p>Denote the columns by
+        <span class="math inline">\(c_1,c_2,c_3\)</span>.
+        For a real representative we choose as positive
+        <span class="math inline">\(U_{e2},U_{\mu2},U_{\mu3},U_{\tau3}\)</span>.
+        From the orthogonality of columns 2 and 3 it follows that</p>
+        <p class="pmns-from-data__formula">\(
+          c_2\!\cdot c_3=
+          U_{\mu2}U_{\mu3}+U_{\tau2}U_{\tau3}=0.
+        \)</p>
+        <p class="pmns-from-data__formula">\(
+          U_{\tau2}=-U_{\mu2}=-\sqrt{\frac13}.
+        \)</p>
+        <p>The first column is so far shown in absolute value: we will find its signs
+        from the next condition.</p>
+      </div>
+
+      <div data-step-content="9" hidden>
+        <h3>Signs of the first column</h3>
+        <p>Choose <span class="math inline">\(U_{e1}>0\)</span>.
+        Orthogonality with the third column gives
+        <span class="math inline">\(U_{\mu1}=-U_{\tau1}\)</span>.
+        With the second:</p>
+        <p class="pmns-from-data__formula">\(
+          c_1\!\cdot c_2=
+          \sqrt{\frac13}
+          (U_{e1}+U_{\mu1}-U_{\tau1})=0.
+        \)</p>
+        <p class="pmns-from-data__formula">\(
+          U_{\mu1}=-\sqrt{\frac16},\qquad
+          U_{\tau1}=+\sqrt{\frac16}.
+        \)</p>
+        <p>We obtained <span class="math inline">\(U_0^{\mathsf T}U_0=I\)</span>:
+        the column norms are equal to one, and the pairwise scalar products are zero.</p>
+        <p class="pmns-from-data__fine">The signs of this representative depend
+        on the choice of the state phases. For <span class="math inline">\(U_{e3}=0\)</span>
+        the phase <span class="math inline">\(\delta_{\rm CP}\)</span>
+        is not observed in oscillations.</p>
+      </div>
+
+      <div data-step-content="10" hidden>
+        <h3>Reactor correction</h3>
+        <p>A measurement at the near and far detectors gives
+        <span class="math inline">\(|U_{e3}|^2=\sin^2\theta_{13}\simeq0.0225\)</span>.
+        The matrix on the right is an example
+        <span class="math inline">\(|U|^2\)</span>, calculated from the best-fit
+        point of NuFIT 6.1.</p>
+        <p>Appearance channels and antiparticles provide information about
+        <span class="math inline">\(\delta_{\rm CP}\)</span>.
+        The squared moduli alone do not determine all the complex phases
+        <span class="math inline">\(U\)</span>.</p>
+        <p class="pmns-from-data__fine">The numbers on the right are calculated in the unitary
+        model. For an independent test of unitarity, this condition is lifted in
+        the data analysis.</p>
+      </div>
+    </div>
+
+    <div class="pmns-from-data__matrix-panel">
+      <div class="pmns-from-data__matrix-title">
+        <span data-matrix-title="squares">\(\bigl|U_{\alpha i}\bigr|^2\)</span>
+        <span data-matrix-title="roots" hidden>\(\bigl|U_{0,\alpha i}\bigr|\)</span>
+        <span data-matrix-title="partial" hidden>\(\bigl|U_0\bigr|\;\longrightarrow\;U_0\)</span>
+        <span data-matrix-title="signed" hidden>\(U_{0,\alpha i}\)</span>
+      </div>
+      <table class="pmns-from-data__matrix" aria-label="Step-by-step reconstruction of the mixing matrix">
+        <thead><tr>
+          <th></th><th>\(\nu_1\)</th><th>\(\nu_2\)</th><th>\(\nu_3\)</th>
+        </tr></thead>
+        <tbody>
+          <tr><th>\(e\)</th>
+            <td data-cell="e1" data-first="2"><span class="pmns-from-data__toy">\(\tfrac23\)</span><span class="pmns-from-data__roots">\(\sqrt{\tfrac23}\)</span><span class="pmns-from-data__partial">\(\pm\sqrt{\tfrac23}\)</span><span class="pmns-from-data__signed">\(+\sqrt{\tfrac23}\)</span><span class="pmns-from-data__modern">\(0.676\)</span></td>
+            <td data-cell="e2" data-first="1"><span class="pmns-from-data__toy">\(\tfrac13\)</span><span class="pmns-from-data__roots">\(\sqrt{\tfrac13}\)</span><span class="pmns-from-data__partial">\(+\sqrt{\tfrac13}\)</span><span class="pmns-from-data__signed">\(+\sqrt{\tfrac13}\)</span><span class="pmns-from-data__modern">\(0.302\)</span></td>
+            <td data-cell="e3" data-first="2"><span class="pmns-from-data__toy">\(0\)</span><span class="pmns-from-data__roots">\(0\)</span><span class="pmns-from-data__partial">\(0\)</span><span class="pmns-from-data__signed">\(0\)</span><span class="pmns-from-data__modern">\(0.022\)</span></td>
+          </tr>
+          <tr><th>\(\mu\)</th>
+            <td data-cell="mu1" data-first="6"><span class="pmns-from-data__toy">\(\tfrac16\)</span><span class="pmns-from-data__roots">\(\sqrt{\tfrac16}\)</span><span class="pmns-from-data__partial">\(\pm\sqrt{\tfrac16}\)</span><span class="pmns-from-data__signed">\(-\sqrt{\tfrac16}\)</span><span class="pmns-from-data__modern">\(0.112\)</span></td>
+            <td data-cell="mu2" data-first="5"><span class="pmns-from-data__toy">\(\tfrac13\)</span><span class="pmns-from-data__roots">\(\sqrt{\tfrac13}\)</span><span class="pmns-from-data__partial">\(+\sqrt{\tfrac13}\)</span><span class="pmns-from-data__signed">\(+\sqrt{\tfrac13}\)</span><span class="pmns-from-data__modern">\(0.428\)</span></td>
+            <td data-cell="mu3" data-first="3"><span class="pmns-from-data__toy">\(\tfrac12\)</span><span class="pmns-from-data__roots">\(\sqrt{\tfrac12}\)</span><span class="pmns-from-data__partial">\(+\sqrt{\tfrac12}\)</span><span class="pmns-from-data__signed">\(+\sqrt{\tfrac12}\)</span><span class="pmns-from-data__modern">\(0.459\)</span></td>
+          </tr>
+          <tr><th>\(\tau\)</th>
+            <td data-cell="tau1" data-first="6"><span class="pmns-from-data__toy">\(\tfrac16\)</span><span class="pmns-from-data__roots">\(\sqrt{\tfrac16}\)</span><span class="pmns-from-data__partial">\(\pm\sqrt{\tfrac16}\)</span><span class="pmns-from-data__signed">\(+\sqrt{\tfrac16}\)</span><span class="pmns-from-data__modern">\(0.212\)</span></td>
+            <td data-cell="tau2" data-first="5"><span class="pmns-from-data__toy">\(\tfrac13\)</span><span class="pmns-from-data__roots">\(\sqrt{\tfrac13}\)</span><span class="pmns-from-data__partial">\(-\sqrt{\tfrac13}\)</span><span class="pmns-from-data__signed">\(-\sqrt{\tfrac13}\)</span><span class="pmns-from-data__modern">\(0.270\)</span></td>
+            <td data-cell="tau3" data-first="4"><span class="pmns-from-data__toy">\(\tfrac12\)</span><span class="pmns-from-data__roots">\(\sqrt{\tfrac12}\)</span><span class="pmns-from-data__partial">\(+\sqrt{\tfrac12}\)</span><span class="pmns-from-data__signed">\(+\sqrt{\tfrac12}\)</span><span class="pmns-from-data__modern">\(0.518\)</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pmns-from-data__check" data-step-check aria-live="polite"></div>
+    </div>
+  </div>
+
+  <div class="pmns-from-data__foot">The first ten steps:
+    <span class="math inline">\(U_{e3}=0\)</span>.
+    The last step: NuFIT 6.1, NO, IC24 + SK-atm (2025).
+  </div>
+</div>
+```

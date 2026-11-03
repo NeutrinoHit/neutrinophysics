@@ -1,0 +1,16 @@
+```{=html}
+<div class="matter-layout">
+  <div class="matter-scale" aria-label="Scales of ordinary matter">
+    <div class="matter-level"><span class="scale">~10<sup>-8</sup> cm</span><strong>atom</strong></div>
+    <div class="matter-level"><span class="scale">~10<sup>-13</sup> cm</span><strong>nucleus</strong></div>
+    <div class="matter-level"><span class="scale">~10<sup>-13</sup> cm</span><strong>proton and neutron</strong></div>
+    <div class="matter-level"><span class="scale">&lt;10<sup>-16</sup> cm</span><strong>quarks</strong></div>
+  </div>
+  <div class="matter-summary">
+    <p>Ordinary matter needs only two types of fundamental particles:</p>
+    <p class="equation">quarks + electrons</p>
+    <p>Both quarks and electrons are <strong>fermions</strong> with spin \(1/2\).</p>
+    <p class="muted small">Composite protons and neutrons are also fermions.</p>
+  </div>
+</div>
+```

@@ -1,0 +1,11 @@
+::: {.content-visible when-format="html"}
+<iframe class="nh-crystal-frame" data-src="../../ru/slides/assets/06_matter_oscillations/crystal/solar.en.html?embed=1" title="Neutrinos in vacuum and in uniform solar matter" loading="lazy" allow="fullscreen"></iframe>
+
+::: {.nh-text tone="muted" size="sm"}
+Same path, $\nu_e$ at the entrance. The density at the center of the Sun is constant over the whole segment; $E=10$ MeV. [Open separately](../../ru/slides/assets/06_matter_oscillations/crystal/solar.en.html){target="_blank"} · [Video version]({{< nh-url neutrino-crystal variant="film-ru" >}}){target="_blank"}.
+:::
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../ru/slides/assets/06_matter_oscillations/crystal/solar-poster.png){fig-alt="Neutrinos in vacuum and in uniform solar matter"}
+:::

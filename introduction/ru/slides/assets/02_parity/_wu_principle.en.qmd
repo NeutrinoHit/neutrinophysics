@@ -1,0 +1,39 @@
+It looks like the fragment contains only the placeholder token and no Russian text to translate. Here it is, unchanged:
+
+```{=html}
+<div class="wu-principle">
+  <div class="wu-step">
+    <span class="wu-step-number">1</span>
+    <div class="wu-nucleus">
+      <span class="wu-spin-arrow">\(\mathbf I\)</span>
+      <span>\({}^{60}\mathrm{Co}\)</span>
+    </div>
+    <p>Polarize the nuclei: align their spins along the magnetic field.</p>
+  </div>
+
+  <div class="wu-step">
+    <span class="wu-step-number">2</span>
+    <div class="wu-emission wu-emission-symmetric">
+      <span class="wu-center-dot"></span>
+      <span class="ray r1"></span><span class="ray r2"></span>
+      <span class="ray r3"></span><span class="ray r4"></span>
+      <span class="ray r5"></span><span class="ray r6"></span>
+    </div>
+    <p>Measure the distribution of electrons relative to the spin direction.</p>
+  </div>
+
+  <div class="wu-step">
+    <span class="wu-step-number">3</span>
+    <div class="wu-mini-chart" aria-hidden="true">
+      <span class="wu-chart-axis x"></span>
+      <span class="wu-chart-axis y"></span>
+      <svg viewBox="0 0 210 112" preserveAspectRatio="none">
+        <path d="M8,14 C66,20 132,70 202,96" />
+      </svg>
+    </div>
+    <p>Any asymmetry between \(\theta\) and \(\pi-\theta\) means parity violation (\(P\) violation).</p>
+  </div>
+</div>
+```
+
+If you meant to send more of the slide, please paste the full fragment and I'll translate it.

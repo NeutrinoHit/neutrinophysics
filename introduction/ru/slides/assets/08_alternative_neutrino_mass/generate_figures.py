@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 """Reproducible teaching diagrams for lecture 08; no experimental data are drawn.
 Drawing primitives and palette are shared with the lecture-07 figure generator.
+
+``--lang en`` writes the same figures with English labels as "<name>-en.svg";
+``--out DIR`` writes to another folder. Russian strings are the keys of the EN table.
 """
+import argparse
 from pathlib import Path
 import importlib.util
 import math
@@ -21,10 +25,141 @@ common=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(common)
 common.OUT=OUT
 D, save=common.Diagram, common.save
+tr, num=common.tr, common.num
 BLUE,GOLD,GREEN,RED,INK,MUTED,PANEL=common.BLUE,common.GOLD,common.GREEN,common.RED,common.INK,common.MUTED,common.PANEL
 REST=m_e*c*c/e
 F0=e/(2*np.pi*m_e)
 frequency=lambda energy: F0/(1+energy/REST)
+
+common.EN.update({
+    # diagrams()
+    "Три способа преобразовать энергию в наблюдаемый сигнал": "Three ways to turn energy into an observable signal",
+    "Калориметр": "Calorimeter",
+    "Электростатический порог": "Electrostatic threshold",
+    "Циклотронная частота": "Cyclotron frequency",
+    "Нагрев поглотителя": "Heating of the absorber",
+    "Число прошедших электронов": "Number of transmitted electrons",
+    "Радиосигнал одного электрона": "Radio signal of a single electron",
+    "Тепловой импульс": "Thermal pulse",
+    "Приём и измерение циклотронного радиосигнала": "Reception and measurement of the cyclotron radio signal",
+    "Электрон": "Electron", "в ловушке": "in the trap",
+    "Волновод": "Waveguide", "или резонатор": "or cavity",
+    "Малошумящий": "Low-noise", "усилитель": "amplifier",
+    "Смешение с опорной частотой": "Mixing with a reference",
+    "и оцифровка": "frequency and digitization",
+    "Сигнал сохраняет частоту и фазу циклотронного движения.": "The signal keeps the frequency and phase of the cyclotron motion.",
+    "Доля фемтоватта": "A fraction of a femtowatt",
+    "в приёмной системе": "in the receiving system",
+    "Анализ коротких временных участков": "Analysis of short time segments",
+    "→ спектрограмма: мощность (t, f)": "→ spectrogram: power (t, f)",
+    "Электронный захват внутри калориметра": "Electron capture inside a calorimeter",
+    "Поглотитель": "Absorber",
+    "Атом ¹⁶³Ho": "¹⁶³Ho atom",
+    "Атом ¹⁶³Dy": "¹⁶³Dy atom", "с вакансией": "with a vacancy",
+    "νₑ уходит": "νₑ escapes",
+    "Рентген, оже-электроны, отдача → тепло": "X-rays, Auger electrons, recoil → heat",
+    "Измерено: Eс = Q − Eν": "Measured: E_{c} = Q − Eν",
+    "Тепловая модель микрокалориметра": "Thermal model of a microcalorimeter",
+    "Eс": "E_{c}",
+    "Поглотитель с ¹⁶³Ho": "Absorber with ¹⁶³Ho",
+    "теплоёмкость C": "heat capacity C",
+    "температура T₀ + ΔT": "temperature T₀ + ΔT",
+    "Термометр": "Thermometer", "электрический сигнал": "electrical signal",
+    "Тепловая связь G": "Thermal link G", "мощность G · ΔT": "power G · ΔT",
+    "Термостат: постоянная температура T₀": "Thermal bath: constant temperature T₀",
+    "Распад покоящегося пиона": "Decay of a pion at rest",
+    "Пион": "Pion", "покоится": "at rest",
+    "Нейтрино": "Neutrino", "Мюон": "Muon",
+    "Импульсы равны по модулю и противоположны.": "The momenta are equal in magnitude and opposite.",
+    "Измеряем импульс мюона — остальное даёт кинематика.": "We measure the muon momentum; kinematics gives the rest.",
+    "Установка Project 8: ячейка, магнит, приёмник": "Project 8 apparatus: cell, magnet, receiver",
+    "Сверхпроводящий магнит, 0,959 Тл": "Superconducting magnet, 0.959 T",
+    "Волновод-ячейка с тритием": "Waveguide cell with tritium",
+    "круглая труба ⌀10 мм, ~1 см³": "round tube ⌀10 mm, ~1 cm³",
+    "Катушки ловушки удерживают электрон": "Trap coils hold the electron",
+    "Охлаждаемый усилитель": "Cooled amplifier",
+    "T шума = 132 К": "noise T = 132 K",
+    "Смеситель": "Mixer", "и АЦП": "and ADC",
+    "Спектро-": "Spectro-", "грамма": "gram",
+    "Сигнал у конца спектра трития: 26 ГГц": "Signal near the tritium endpoint: 26 GHz",
+    "Электроны рождаются, удерживаются и слушаются в одном объёме.": "Electrons are born, trapped and listened to in one volume.",
+    "От захвата электрона до спектра": "From electron capture to the spectrum",
+    "внутри поглотителя": "inside the absorber",
+    "Каскад: рентген,": "Cascade: X-rays,", "оже-электроны, отдача": "Auger electrons, recoil",
+    "Нагрев поглотителя": "Heating of the absorber",
+    "ΔT = Eс / C": "ΔT = E_{c} / C",
+    "Термометр:": "Thermometer:", "импульс высотой Eс": "pulse of height E_{c}",
+    "нейтрино уносит Eν": "neutrino carries away Eν",
+    "Спектр таких импульсов и несёт массу нейтрино.": "The spectrum of these pulses carries information about the neutrino mass.",
+    # figures()
+    "18,6 кэВ → 27,01 ГГц": "18.6 keV → 27.01 GHz",
+    "Кинетическая энергия E, кэВ": "Kinetic energy E, keV",
+    "Циклотронная частота, ГГц": "Cyclotron frequency, GHz",
+    "Однородное поле B = 1 Тл": "Uniform field B = 1 T",
+    "Основная линия": "Main line",
+    "Столкновение": "Collision",
+    "Излучение: частота растёт": "Radiation: the frequency rises",
+    "Время, мкс": "Time, μs",
+    "f − fнач, кГц": r"f − $f_\mathrm{init}$, kHz",
+    "Движение между\nзеркальными точками": "Motion between\nthe mirror points",
+    "Координата вдоль ловушки z / ℓ": "Coordinate along the trap z / ℓ",
+    "Слабая ловушка: α₀ = 88,5°": "Shallow trap: α₀ = 88.5°",
+    "Eс, эВ": r"$E_\mathrm{c}$, eV",
+    "Спектр, отн. ед.": "Spectrum, arb. units",
+    "Атомные линии и их хвосты": "Atomic lines and their tails",
+    "m = {m} эВ": "m = {m} eV",
+    "Недостающая энергия Q − Eс, эВ": r"Missing energy Q − $E_\mathrm{c}$, eV",
+    "У самой границы": "Right at the endpoint",
+    "Температура T / T₀": "Temperature T / T₀",
+    "Намагниченность M / M₀": "Magnetization M / M₀",
+    "Магнитный термометр": "Magnetic thermometer",
+    "Нагрев: M уменьшается": "Heating: M decreases",
+    "Температура T / Tс": r"Temperature T / $T_\mathrm{c}$",
+    "Сопротивление R / Rн": r"Resistance R / $R_\mathrm{n}$",
+    "Сверхпроводящий термометр": "Superconducting thermometer",
+    "Рабочая точка": "Operating point",
+    "Разделённые события": "Separated events",
+    "Неразрешённое наложение": "Unresolved pile-up",
+    "Первое": "First", "Второе": "Second", "Сумма": "Sum",
+    "Время, мс": "Time, ms",
+    "Сигнал, отн. ед.": "Signal, arb. units",
+    "mν = {mass} МэВ": "mν = {mass} MeV",
+    "Границы для фиксированной энергии τ": "Bounds for a fixed τ energy",
+    "m = {mass} эВ": "m = {mass} eV",
+    "Энергия нейтрино, МэВ": "Neutrino energy, MeV",
+    "Задержка относительно света, мс": "Delay relative to light, ms",
+    "Одинаковое время рождения, расстояние 10 кпк": "Same production time, distance 10 kpc",
+    "Нормальный порядок": "Normal ordering",
+    "Обратный порядок": "Inverted ordering",
+    "Цель 40 мэВ": "Target: 40 meV",
+    "Самая лёгкая масса, мэВ": "Lightest mass, meV",
+    "mβ, мэВ": "mβ, meV",
+    "Вт": "W",
+    "Телевизионный передатчик": "TV transmitter",
+    "Микроволновая печь": "Microwave oven",
+    "Телефон: передача": "Phone: transmitting",
+    "Приём от базовой станции": "Reception from a base station",
+    "Электрон в CRES": "Electron in CRES",
+    "Сигнал GPS на антенне": "GPS signal at the antenna",
+    "Шум приёмника в одной линии": "Receiver noise in one line",
+    "Мощность, Вт": "Power, W",
+    "волна идёт вдоль трубы": "the wave travels along the tube",
+    "Поле обращается в нуль на стенках: поперёк укладывается\nполуволна, поэтому проходит только f > c/2d":
+        "The field vanishes at the walls: half a wave fits across,\nso only f > c/2d propagates",
+    "мода 3": "mode 3", "мода 4": "mode 4",
+    "Волна отражается от стенок и складывается сама с собой": "The wave reflects from the walls and adds up with itself",
+    "Добротность Q = f / Δf показывает,\nсколько периодов поле живёт в полости":
+        "The quality factor Q = f / Δf shows\nhow many periods the field lives in the cavity",
+    "Резонатор": "Cavity",
+    "мгновенная частота": "instantaneous frequency",
+    "частота в среднем поле": "frequency in the mean field",
+    "f − fc, отн. ед.": r"f − $f_\mathrm{c}$, arb. units",
+    "Частота качается вместе с электроном": "The frequency swings with the electron",
+    "f − fc, кГц": r"f − $f_\mathrm{c}$, kHz",
+    "Мощность линии, отн. ед.": "Line power, arb. units",
+    "h = 1,2": "h = 1.2",
+    "Гребёнка линий, шаг fz = 25 кГц": r"Comb of lines, spacing $f_\mathrm{z}$ = 25 kHz",
+})
 
 # Приёмник Project 8 Phase II: шум системы и ширина одной фурье-линии.
 K_B=1.380649e-23
@@ -130,9 +265,9 @@ def figures():
     fig,ax=plt.subplots(figsize=(11,5.4))
     ax.plot(energy,frequency(energy*1e3)/1e9,color=BLUE,lw=3)
     ax.plot(18.6,frequency(18600)/1e9,"o",color=GOLD)
-    ax.annotate("18,6 кэВ → 27,01 ГГц",(18.6,frequency(18600)/1e9),
+    ax.annotate(tr("18,6 кэВ → 27,01 ГГц"),(18.6,frequency(18600)/1e9),
                 xytext=(7,27.65),color=GOLD,arrowprops={"arrowstyle":"->","color":GOLD})
-    ax.set(xlabel="Кинетическая энергия E, кэВ",ylabel="Циклотронная частота, ГГц",title="Однородное поле B = 1 Тл")
+    ax.set(xlabel=tr("Кинетическая энергия E, кэВ"),ylabel=tr("Циклотронная частота, ГГц"),title=tr("Однородное поле B = 1 Тл"))
     ax.grid(alpha=.15)
     save(fig,"frequency-energy.svg")
 
@@ -146,13 +281,13 @@ def figures():
     for offset in [-100,100]:
         ax.plot(t[~collision],freq[~collision]+offset,color=BLUE,lw=1.6,alpha=.65)
         ax.plot(t[collision],freq[collision]+offset,color=BLUE,lw=1.6,alpha=.65)
-    ax.plot(t[~collision],freq[~collision],color=GOLD,lw=4,label="Основная линия")
+    ax.plot(t[~collision],freq[~collision],color=GOLD,lw=4,label=tr("Основная линия"))
     ax.plot(t[collision],freq[collision],color=GOLD,lw=4)
     ax.axvline(240,color=RED,ls=":",lw=2)
-    ax.text(245,430,"Столкновение",color=RED,fontsize=17)
-    ax.annotate("Излучение: частота растёт",(140,freq[280]),
+    ax.text(245,430,tr("Столкновение"),color=RED,fontsize=17)
+    ax.annotate(tr("Излучение: частота растёт"),(140,freq[280]),
                 xytext=(15,360),color=GOLD,arrowprops={"arrowstyle":"->","color":GOLD})
-    ax.set(xlabel="Время, мкс",ylabel="f − fнач, кГц",ylim=(-160,950))
+    ax.set(xlabel=tr("Время, мкс"),ylabel=tr("f − fнач, кГц"),ylim=(-160,950))
     ax.grid(alpha=.12)
     save(fig,"cres-track.svg")
 
@@ -165,9 +300,9 @@ def figures():
     ax.axhline((mirror-1)*1e3,color=GOLD,ls="--")
     ax.fill_between(z,0,(mirror-1)*1e3,where=abs(z)<=zm,color=GOLD,alpha=.12)
     ax.plot([-zm,zm],[(mirror-1)*1e3]*2,"o",color=GOLD)
-    ax.text(0,.36,"Движение между\nзеркальными точками",ha="center",color=GOLD,fontsize=16)
-    ax.set(xlabel="Координата вдоль ловушки z / ℓ",ylabel="(B / B₀ − 1) · 10³",
-           title="Слабая ловушка: α₀ = 88,5°",ylim=(0,2.25))
+    ax.text(0,.36,tr("Движение между\nзеркальными точками"),ha="center",color=GOLD,fontsize=16)
+    ax.set(xlabel=tr("Координата вдоль ловушки z / ℓ"),ylabel="(B / B₀ − 1) · 10³",
+           title=tr("Слабая ловушка: α₀ = 88,5°"),ylim=(0,2.25))
     ax.grid(alpha=.15)
     save(fig,"shallow-trap.svg")
 
@@ -183,16 +318,16 @@ def figures():
     fig,axes=plt.subplots(1,2,figsize=(15,5.6))
     norm=np.max(spectrum(x))
     axes[0].semilogy(x,spectrum(x)/norm,color=BLUE,lw=2.5)
-    axes[0].set(xlabel="Eс, эВ",ylabel="Спектр, отн. ед.",ylim=(1e-10,2),
-                title="Атомные линии и их хвосты")
+    axes[0].set(xlabel=tr("Eс, эВ"),ylabel=tr("Спектр, отн. ед."),ylim=(1e-10,2),
+                title=tr("Атомные линии и их хвосты"))
     axes[0].axvline(Q,color=GOLD,ls=":")
     axes[0].text(Q-20, .04,"Q",color=GOLD,ha="right")
     endpoint=np.linspace(Q-50,Q,600)
     normend=spectrum(endpoint[0])
     for m,col in [(0,BLUE),(10,GOLD)]:
-        axes[1].plot(Q-endpoint,spectrum(endpoint,m)/normend,color=col,lw=3,label=f"m = {m} эВ")
-    axes[1].set(xlabel="Недостающая энергия Q − Eс, эВ",
-                ylabel="Спектр, отн. ед.",title="У самой границы")
+        axes[1].plot(Q-endpoint,spectrum(endpoint,m)/normend,color=col,lw=3,label=tr("m = {m} эВ").format(m=m))
+    axes[1].set(xlabel=tr("Недостающая энергия Q − Eс, эВ"),
+                ylabel=tr("Спектр, отн. ед."),title=tr("У самой границы"))
     axes[1].legend(facecolor=PANEL,labelcolor=INK,fontsize=14)
     for ax in axes:ax.grid(alpha=.13)
     fig.tight_layout()
@@ -201,14 +336,14 @@ def figures():
     temp=np.linspace(.7,1.3,500)
     fig,axes=plt.subplots(1,2,figsize=(14,5.2))
     axes[0].plot(temp,1/temp,color=GREEN,lw=3)
-    axes[0].set(xlabel="Температура T / T₀",ylabel="Намагниченность M / M₀",
-                title="Магнитный термометр")
-    axes[0].annotate("Нагрев: M уменьшается",(1.1,1/1.1),
+    axes[0].set(xlabel=tr("Температура T / T₀"),ylabel=tr("Намагниченность M / M₀"),
+                title=tr("Магнитный термометр"))
+    axes[0].annotate(tr("Нагрев: M уменьшается"),(1.1,1/1.1),
                     xytext=(.73,.83),fontsize=16,color=GREEN,arrowprops={"arrowstyle":"->","color":GREEN})
     axes[1].plot(temp,1/(1+np.exp(-(temp-1)/.025)),color=GOLD,lw=3)
-    axes[1].set(xlabel="Температура T / Tс",ylabel="Сопротивление R / Rн",
-                title="Сверхпроводящий термометр")
-    axes[1].annotate("Рабочая точка",(1,.5),xytext=(.74,.75),fontsize=16,
+    axes[1].set(xlabel=tr("Температура T / Tс"),ylabel=tr("Сопротивление R / Rн"),
+                title=tr("Сверхпроводящий термометр"))
+    axes[1].annotate(tr("Рабочая точка"),(1,.5),xytext=(.74,.75),fontsize=16,
                     color=GOLD,arrowprops={"arrowstyle":"->","color":GOLD})
     for ax in axes:ax.grid(alpha=.13)
     fig.tight_layout()
@@ -219,12 +354,12 @@ def figures():
         t=np.maximum(dt,0)
         return (np.exp(-t/.6)-np.exp(-t/.06))*(dt>=0)
     fig,axes=plt.subplots(1,2,figsize=(14,5.2))
-    for ax,dt,title in zip(axes,[1.,.03],["Разделённые события","Неразрешённое наложение"]):
+    for ax,dt,title in zip(axes,[1.,.03],[tr("Разделённые события"),tr("Неразрешённое наложение")]):
         first=pulse(time);second=.7*pulse(time-dt)
-        ax.plot(time,first,color=BLUE,ls="--",lw=2,label="Первое")
-        ax.plot(time,second,color=GREEN,ls="--",lw=2,label="Второе")
-        ax.plot(time,first+second,color=GOLD,lw=3,label="Сумма")
-        ax.set(xlabel="Время, мс",ylabel="Сигнал, отн. ед.",title=title,ylim=(0,1.5))
+        ax.plot(time,first,color=BLUE,ls="--",lw=2,label=tr("Первое"))
+        ax.plot(time,second,color=GREEN,ls="--",lw=2,label=tr("Второе"))
+        ax.plot(time,first+second,color=GOLD,lw=3,label=tr("Сумма"))
+        ax.set(xlabel=tr("Время, мс"),ylabel=tr("Сигнал, отн. ед."),title=title,ylim=(0,1.5))
         ax.grid(alpha=.13)
     axes[1].legend(fontsize=12,facecolor=PANEL,labelcolor=INK)
     fig.tight_layout()
@@ -238,9 +373,9 @@ def figures():
         pp=np.sqrt(np.maximum(est*est-xx*xx,0))
         low=(est-beta*pp)/M;high=(est+beta*pp)/M
         ax.fill_between(xx/M,low,high,color=color,alpha=.09)
-        ax.plot(xx/M,low,color=color,lw=2,label=f"mν = {mass} МэВ")
+        ax.plot(xx/M,low,color=color,lw=2,label=tr("mν = {mass} МэВ").format(mass=mass))
         ax.plot(xx/M,high,color=color,lw=2)
-    ax.set(xlabel="mX / mτ",ylabel="EX / Eτ",title="Границы для фиксированной энергии τ")
+    ax.set(xlabel="mX / mτ",ylabel="EX / Eτ",title=tr("Границы для фиксированной энергии τ"))
     ax.legend(facecolor=PANEL,labelcolor=INK,fontsize=14,loc="lower right")
     ax.grid(alpha=.15)
     save(fig,"tau-boundary.svg")
@@ -249,9 +384,9 @@ def figures():
     fig,ax=plt.subplots(figsize=(10.5,5.4))
     for mass,col in [(1,BLUE),(3,GOLD)]:
         delay=(1e4*parsec)/(2*c)*(mass/(en*1e6))**2*1000
-        ax.plot(en,delay,color=col,lw=3,label=f"m = {mass} эВ")
-    ax.set(xlabel="Энергия нейтрино, МэВ",ylabel="Задержка относительно света, мс",
-           title="Одинаковое время рождения, расстояние 10 кпк")
+        ax.plot(en,delay,color=col,lw=3,label=tr("m = {mass} эВ").format(mass=mass))
+    ax.set(xlabel=tr("Энергия нейтрино, МэВ"),ylabel=tr("Задержка относительно света, мс"),
+           title=tr("Одинаковое время рождения, расстояние 10 кпк"))
     ax.legend(facecolor=PANEL,labelcolor=INK)
     ax.grid(alpha=.15)
     save(fig,"flight-delay.svg")
@@ -262,10 +397,10 @@ def figures():
     no=np.sqrt(ml*ml+v2[1]*dm21+v2[2]*dm31)
     io=np.sqrt(ml*ml+(v2[0]+v2[1])*dm31+v2[1]*dm21)
     fig,ax=plt.subplots(figsize=(11,5.5))
-    ax.plot(ml*1e3,no*1e3,color=BLUE,lw=3,label="Нормальный порядок")
-    ax.plot(ml*1e3,io*1e3,color=GOLD,lw=3,label="Обратный порядок")
-    ax.axhline(40,color=GREEN,ls="--",lw=2,label="Цель 40 мэВ")
-    ax.set(xlabel="Самая лёгкая масса, мэВ",ylabel="mβ, мэВ",ylim=(0,140))
+    ax.plot(ml*1e3,no*1e3,color=BLUE,lw=3,label=tr("Нормальный порядок"))
+    ax.plot(ml*1e3,io*1e3,color=GOLD,lw=3,label=tr("Обратный порядок"))
+    ax.axhline(40,color=GREEN,ls="--",lw=2,label=tr("Цель 40 мэВ"))
+    ax.set(xlabel=tr("Самая лёгкая масса, мэВ"),ylabel=tr("mβ, мэВ"),ylim=(0,140))
     ax.legend(fontsize=14,facecolor=PANEL,labelcolor=INK)
     ax.grid(alpha=.15)
     save(fig,"mass-ordering.svg")
@@ -273,16 +408,17 @@ def figures():
     # Шкала мощностей: бытовые источники, принимаемые сигналы, шум приёмника.
     def sci(value):
         exponent=int(math.floor(math.log10(value)))
-        mantissa=f"{value/10**exponent:.1f}".rstrip("0").rstrip(".").replace(".","{,}")
+        mantissa=f"{value/10**exponent:.1f}".rstrip("0").rstrip(".")
+        if common.LANG=="ru": mantissa=mantissa.replace(".","{,}")
         head="" if mantissa=="1" else mantissa+r"\cdot"
-        return rf"${head}10^{{{exponent}}}$ Вт"
-    rows=[(1e5,"Телевизионный передатчик",MUTED),
-          (8e2,"Микроволновая печь",MUTED),
-          (2e-1,"Телефон: передача",MUTED),
-          (1e-10,"Приём от базовой станции",BLUE),
-          (1.2e-15,"Электрон в CRES",GOLD),
-          (1.4e-16,"Сигнал GPS на антенне",BLUE),
-          (NOISE_BIN,"Шум приёмника в одной линии",RED)]
+        return rf"${head}10^{{{exponent}}}$ "+tr("Вт")
+    rows=[(1e5,tr("Телевизионный передатчик"),MUTED),
+          (8e2,tr("Микроволновая печь"),MUTED),
+          (2e-1,tr("Телефон: передача"),MUTED),
+          (1e-10,tr("Приём от базовой станции"),BLUE),
+          (1.2e-15,tr("Электрон в CRES"),GOLD),
+          (1.4e-16,tr("Сигнал GPS на антенне"),BLUE),
+          (NOISE_BIN,tr("Шум приёмника в одной линии"),RED)]
     fig,ax=plt.subplots(figsize=(12,5.6))
     ypos=np.arange(len(rows))[::-1]
     ax.barh(ypos,[r[0] for r in rows],left=1e-19,height=.55,
@@ -292,7 +428,7 @@ def figures():
     ax.set_yticks(ypos,[r[1] for r in rows],fontsize=16)
     ax.set_xscale("log")
     ax.set_xlim(1e-19,1e10)
-    ax.set_xlabel("Мощность, Вт")
+    ax.set_xlabel(tr("Мощность, Вт"))
     ax.grid(alpha=.15,axis="x",which="both")
     save(fig,"power-ladder.svg")
 
@@ -308,10 +444,10 @@ def figures():
     ax.annotate("",(0,-1),(0,1),arrowprops={"arrowstyle":"<->","color":GREEN,"lw":2})
     ax.text(.3,0,"d",color=GREEN,fontsize=20,va="center")
     ax.arrow(1.2,1.5,7.2,0,color=GOLD,width=.015,head_width=.16,length_includes_head=True)
-    ax.text(4.8,1.68,"волна идёт вдоль трубы",color=GOLD,fontsize=15,ha="center")
-    ax.text(5,-1.55,"Поле обращается в нуль на стенках: поперёк укладывается\nполуволна, поэтому проходит только f > c/2d",
+    ax.text(4.8,1.68,tr("волна идёт вдоль трубы"),color=GOLD,fontsize=15,ha="center")
+    ax.text(5,-1.55,tr("Поле обращается в нуль на стенках: поперёк укладывается\nполуволна, поэтому проходит только f > c/2d"),
             color=MUTED,fontsize=15,ha="center",va="top")
-    ax.set(xlim=(-.6,11.4),ylim=(-2.5,2.1),title="Волновод")
+    ax.set(xlim=(-.6,11.4),ylim=(-2.5,2.1),title=tr("Волновод"))
     ax=axes[1]
     xs=np.linspace(0,10,600)
     for wall in (0,10):
@@ -319,13 +455,13 @@ def figures():
     ax.plot(xs,np.sin(3*np.pi*xs/10),color=GOLD,lw=3)
     ax.plot(xs,.55*np.sin(4*np.pi*xs/10),color=BLUE,lw=2.5,alpha=.55)
     ax.axhline(0,color=MUTED,lw=.8)
-    ax.text(10.6,1.0,"мода 3",color=GOLD,fontsize=14,ha="right")
-    ax.text(10.6,-1.0,"мода 4",color=BLUE,fontsize=14,ha="right",alpha=.85)
-    ax.text(5,1.75,"Волна отражается от стенок и складывается сама с собой",
+    ax.text(10.6,1.0,tr("мода 3"),color=GOLD,fontsize=14,ha="right")
+    ax.text(10.6,-1.0,tr("мода 4"),color=BLUE,fontsize=14,ha="right",alpha=.85)
+    ax.text(5,1.75,tr("Волна отражается от стенок и складывается сама с собой"),
             color=INK,fontsize=15,ha="center")
-    ax.text(5,-1.55,"Добротность Q = f / Δf показывает,\nсколько периодов поле живёт в полости",
+    ax.text(5,-1.55,tr("Добротность Q = f / Δf показывает,\nсколько периодов поле живёт в полости"),
             color=MUTED,fontsize=15,ha="center",va="top")
-    ax.set(xlim=(-.8,11.2),ylim=(-2.5,2.1),title="Резонатор")
+    ax.set(xlim=(-.8,11.2),ylim=(-2.5,2.1),title=tr("Резонатор"))
     for ax in axes:
         ax.set_xticks([]);ax.set_yticks([])
         for side in ax.spines.values():side.set_visible(False)
@@ -338,10 +474,10 @@ def figures():
     fig,axes=plt.subplots(1,2,figsize=(15,5.2))
     ax=axes[0]
     inst=.45*np.cos(2*np.pi*2*fz*t)+.18*np.cos(2*np.pi*fz*t)
-    ax.plot(t*1e3,inst,color=GOLD,lw=3,label="мгновенная частота")
-    ax.axhline(0,color=BLUE,ls="--",lw=2,label="частота в среднем поле")
-    ax.set(xlabel="Время, мкс",ylabel="f − fc, отн. ед.",
-           title="Частота качается вместе с электроном",ylim=(-.95,.95))
+    ax.plot(t*1e3,inst,color=GOLD,lw=3,label=tr("мгновенная частота"))
+    ax.axhline(0,color=BLUE,ls="--",lw=2,label=tr("частота в среднем поле"))
+    ax.set(xlabel=tr("Время, мкс"),ylabel=tr("f − fc, отн. ед."),
+           title=tr("Частота качается вместе с электроном"),ylim=(-.95,.95))
     ax.legend(fontsize=13,facecolor=PANEL,labelcolor=INK,loc="lower right")
     ax.grid(alpha=.13)
     ax=axes[1]
@@ -354,9 +490,9 @@ def figures():
     power=np.array([bessel(n,h)**2 for n in orders])
     ax.vlines(orders*fz,0,power/power.max(),color=GOLD,lw=4)
     ax.plot(orders*fz,power/power.max(),"o",color=GOLD,ms=7)
-    ax.set(xlabel="f − fc, кГц",ylabel="Мощность линии, отн. ед.",
-           title="Гребёнка линий, шаг fz = 25 кГц",ylim=(0,1.15))
-    ax.text(0,1.05,"h = 1,2",color=INK,fontsize=16,ha="center")
+    ax.set(xlabel=tr("f − fc, кГц"),ylabel=tr("Мощность линии, отн. ед."),
+           title=tr("Гребёнка линий, шаг fz = 25 кГц"),ylim=(0,1.15))
+    ax.text(0,1.05,tr("h = 1,2"),color=INK,fontsize=16,ha="center")
     ax.grid(alpha=.13)
     fig.tight_layout()
     save(fig,"sidebands-origin.svg")
@@ -384,7 +520,13 @@ def verify():
           f"waveguide cutoff(simple)={CUTOFF_SIMPLE/1e9:.1f} GHz.")
 
 if __name__=="__main__":
+    parser=argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--lang",choices=("ru","en"),default="ru")
+    parser.add_argument("--out",help="output folder (default: next to this script)")
+    args=parser.parse_args()
+    common.set_lang(args.lang,args.out)
     verify()
     diagrams()
     figures()
+    common.check_clean()
 

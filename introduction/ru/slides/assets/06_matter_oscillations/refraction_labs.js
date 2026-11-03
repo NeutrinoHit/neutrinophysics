@@ -3,6 +3,55 @@
 
   const twoPi = 2 * Math.PI;
 
+  // Words of the widgets, one dictionary per language. The language is read
+  // from the nearest [lang] ancestor; anything not starting with "en" is Russian.
+  const T = {
+    ru: {
+      rad: " рад",
+      glass: "стекло, n = ",
+      air: "воздух, n = 1",
+      pause: "Пауза",
+      play: "Пуск",
+      build: "Собрать слой",
+      none: "нет",
+      sumZero: "Сумма вернулась к нулю: соседние зоны гасят друг друга. ",
+      sumIsZero: "Сумма равна нулю. ",
+      sumPhase: "Фаза суммы ",
+      noLimit: "Без обрезания предела нет: конец стрелки бежит по окружности.",
+      toLimit: "До предела осталось ",
+      limit: " %. Предел ",
+      limitEnd: "°, при ε/k → 0 — 90°, то есть i.",
+      scatterer: "рассеиватель",
+      incident: "падающая волна",
+      percent: "\u00a0%",
+      comma: true
+    },
+    en: {
+      rad: " rad",
+      glass: "glass, n = ",
+      air: "air, n = 1",
+      pause: "Pause",
+      play: "Play",
+      build: "Build the layer",
+      none: "none",
+      sumZero: "The sum has returned to zero: neighboring zones cancel each other. ",
+      sumIsZero: "The sum is zero. ",
+      sumPhase: "Sum phase ",
+      noLimit: "Without the cutoff there is no limit: the tip of the arrow runs around the circle.",
+      toLimit: "Remaining to the limit: ",
+      limit: "%. The limit is ",
+      limitEnd: "°; as ε/k → 0 it tends to 90°, that is, to i.",
+      scatterer: "scatterer",
+      incident: "incident wave",
+      percent: "%",
+      comma: false
+    }
+  };
+  const wordsFor = root => {
+    const holder = root.closest("[lang]") || document.documentElement;
+    return /^en/i.test(holder.lang || "") ? T.en : T.ru;
+  };
+
   function pathFrom(fn, x0, x1, samples) {
     const points = [];
     for (let i = 0; i <= samples; i += 1) {
@@ -89,6 +138,7 @@
   function initializeModes(root) {
     if (root.dataset.ready === "true") return;
     root.dataset.ready = "true";
+    const words = wordsFor(root);
     const angle = root.querySelector("[data-angle]");
     const difference = root.querySelector("[data-difference]");
     const angleValue = root.querySelector("[data-angle-value]");
@@ -160,7 +210,7 @@
       marker.setAttribute("cx", (605 + 505 * phase / twoPi).toFixed(2));
       marker.setAttribute("cy", (345 - 270 * probability(phase)).toFixed(2));
       angleValue.textContent = degrees + "°";
-      differenceValue.textContent = phase.toFixed(2) + " рад";
+      differenceValue.textContent = phase.toFixed(2) + words.rad;
       weightValue.textContent = weight.toFixed(3);
       probabilityValue.textContent = probability(phase).toFixed(3);
     }
@@ -176,6 +226,7 @@
   function initializeBoundary(root) {
     if (root.dataset.ready === "true") return;
     root.dataset.ready = "true";
+    const words = wordsFor(root);
     const q = selector => root.querySelector(selector);
     const angle = q("[data-angle]");
     const index = q("[data-index]");
@@ -329,15 +380,15 @@
       tir.setAttribute("visibility", total ? "visible" : "hidden");
 
       glass.setAttribute("y", fromGlass ? "0" : "220");
-      const glassName = "стекло, n = " + n.toFixed(2);
-      upperName.textContent = fromGlass ? glassName : "воздух, n = 1";
-      lowerName.textContent = fromGlass ? "воздух, n = 1" : glassName;
+      const glassName = words.glass + n.toFixed(2);
+      upperName.textContent = fromGlass ? glassName : words.air;
+      lowerName.textContent = fromGlass ? words.air : glassName;
 
       angleValue.textContent = Math.round(theta1 * 180 / Math.PI) + "°";
       indexValue.textContent = n.toFixed(2);
       refractedValue.textContent = total ? "—" : (theta2 * 180 / Math.PI).toFixed(1) + "°";
-      reflectedValue.textContent = (100 * reflectance).toFixed(1) + "\u00a0%";
-      transmittedValue.textContent = (100 * transmittance).toFixed(1) + "\u00a0%";
+      reflectedValue.textContent = (100 * reflectance).toFixed(1) + words.percent;
+      transmittedValue.textContent = (100 * transmittance).toFixed(1) + words.percent;
       ratioValue.textContent = n.toFixed(2);
     }
 
@@ -359,7 +410,7 @@
 
     function setPlaying(value) {
       playing = value;
-      play.textContent = playing ? "Пауза" : "Пуск";
+      play.textContent = playing ? words.pause : words.play;
     }
 
     angle.addEventListener("input", draw);
@@ -385,6 +436,7 @@
   function initializeZones(root) {
     if (root.dataset.ready === "true") return;
     root.dataset.ready = "true";
+    const words = wordsFor(root);
     const zones = root.querySelector("[data-zones]");
     const cutoff = root.querySelector("[data-cutoff]");
     const zonesValue = root.querySelector("[data-zones-value]");
@@ -403,7 +455,7 @@
     const svgNS = "http://www.w3.org/2000/svg";
     const sheetX = 110, mid = 310, half = 270, ox = 1020, oy = 540, unit = 230;
     const toX = re => ox + unit * re, toY = im => oy - unit * im;
-    const fmt = (v, d) => v.toFixed(d).replace(".", ",");
+    const fmt = (v, d) => words.comma ? v.toFixed(d).replace(".", ",") : v.toFixed(d);
     // The remainder |S - S(inf)| / |S(inf)| = exp(-pi eta m): offer zones up to 1 %.
     const zonesFor = eta => eta > 0 ? Math.min(160, Math.max(4, Math.ceil(Math.log(100) / (Math.PI * eta)))) : 16;
     let maxZones = 0, segments = [], position = null;
@@ -439,7 +491,7 @@
     function draw() {
       const m = zonesNow(), eta = Number(cutoff.value), s = Math.PI * m;
       zonesValue.textContent = fmt(m, 1);
-      cutoffValue.textContent = eta === 0 ? "нет" : fmt(eta, 2);
+      cutoffValue.textContent = eta === 0 ? words.none : fmt(eta, 2);
       segments.forEach(({m: k, line}) => {
         line.style.opacity = k < m ? String(Math.max(0.12, Math.exp(-eta * Math.PI * (k + 0.5)))) : "0.08";
       });
@@ -467,11 +519,11 @@
       limit.style.display = limitLabel.style.display = eta === 0 ? "none" : "";
       const phase = len > 1 ? Math.atan2(p[1], p[0]) * 180 / Math.PI : NaN;
       const sumText = Number.isNaN(phase) ? (eta === 0 && m > 0 ?
-        "Сумма вернулась к нулю: соседние зоны гасят друг друга. " : "Сумма равна нулю. ") : "Фаза суммы " + fmt(phase, 0) + "°. ";
+        words.sumZero : words.sumIsZero) : words.sumPhase + fmt(phase, 0) + "°. ";
       readout.textContent = sumText + (eta === 0 ?
-        "Без обрезания предела нет: конец стрелки бежит по окружности." :
-        "До предела осталось " + fmt(100 * Math.exp(-Math.PI * eta * m), 0) + " %. Предел " +
-        fmt(Math.atan2(1, eta) * 180 / Math.PI, 1) + "°, при ε/k → 0 — 90°, то есть i.");
+        words.noLimit :
+        words.toLimit + fmt(100 * Math.exp(-Math.PI * eta * m), 0) + words.limit +
+        fmt(Math.atan2(1, eta) * 180 / Math.PI, 1) + words.limitEnd);
     }
 
     function visible() {
@@ -483,7 +535,7 @@
     let playing = false, last = null;
     function setPlaying(value) {
       playing = value;
-      play.textContent = playing ? "Пауза" : "Собрать слой";
+      play.textContent = playing ? words.pause : words.build;
     }
     function frame(now) {
       if (playing && visible() && last !== null) {
@@ -514,6 +566,7 @@
   function initializeScatterer(root) {
     if (root.dataset.ready === "true") return;
     root.dataset.ready = "true";
+    const words = wordsFor(root);
     const canvas = root.querySelector("canvas");
     const modeButtons = root.querySelectorAll("[data-mode]");
     const play = root.querySelector("[data-play]");
@@ -605,7 +658,7 @@
       context.fillStyle = "#e5eff7";
       context.textBaseline = "alphabetic";
       context.textAlign = "left";
-      context.fillText("рассеиватель", px + 18, py - 20);
+      context.fillText(words.scatterer, px + 18, py - 20);
 
       const ax0 = 28;
       const ay = 44;
@@ -618,7 +671,7 @@
       context.lineTo(ax0 + 122, ay);
       context.lineTo(ax0 + 104, ay + 10);
       context.stroke();
-      context.fillText("падающая волна", ax0 + 140, ay + 9);
+      context.fillText(words.incident, ax0 + 140, ay + 9);
 
       const bx0 = w - 28 - lambda * scale;
       const by = h - 30;
@@ -654,7 +707,7 @@
 
     function setPlaying(value) {
       playing = value;
-      play.textContent = playing ? "Пауза" : "Пуск";
+      play.textContent = playing ? words.pause : words.play;
     }
 
     modeButtons.forEach(button => {

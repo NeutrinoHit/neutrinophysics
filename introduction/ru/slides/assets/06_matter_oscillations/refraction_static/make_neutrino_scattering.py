@@ -3,7 +3,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from make_simple import INC, SEC, TOT, TXT, MUT, arrow, save, style
+from make_simple import INC, SEC, TOT, TXT, MUT, arrow, save, set_lang, style, tr
 
 
 def fermion(ax, start, end, color):
@@ -45,7 +45,7 @@ def diagram(charged=False):
     for x, y, label, color in labels:
         ax.text(x, y, label, color=color, fontsize=32, ha='center', va='center')
 
-    ax.text(4, 7.0, 'Заряженный ток' if charged else 'Нейтральный ток',
+    ax.text(4, 7.0, tr('charged') if charged else tr('neutral'),
             color=MUT, fontsize=23, ha='center', va='top')
     ax.text(4, .30,
             r'$\nu_e+e^-\;\longrightarrow\;\nu_e+e^-$' if charged else
@@ -55,6 +55,11 @@ def diagram(charged=False):
 
 
 if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--lang', choices=['ru', 'en'], default='ru',
+                        help='en writes <name>-en.svg/png next to the Russian files')
+    set_lang(parser.parse_args().lang)
     style()
     diagram()
     diagram(charged=True)

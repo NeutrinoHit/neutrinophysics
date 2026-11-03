@@ -1,6 +1,37 @@
 (function () {
   "use strict";
 
+  const T = {
+    ru: {
+      locale: "ru-RU", decimal: ",", km: " км",
+      mirrorTrapped: "Bₘ < Bₐₜₘ: отражение раньше",
+      mirrorLost: "Bₘ > Bₐₜₘ: зеркало лежало бы ниже",
+      trapped: `<strong>Захват:</strong> α<sub>eq</sub> ≥ α<sub>loss</sub>, частица отразится до атмосферы.`,
+      lost: `<strong>Потеря:</strong> α<sub>eq</sub> &lt; α<sub>loss</sub>, частица войдёт в атмосферу.`,
+      ready: "До запуска исход уже известен из сравнения αeq с границей конуса потерь.",
+      atMirror: "У зеркальной точки E∥ обращается в нуль, после чего направляющий центр движется обратно.",
+      trappedMotion: "В стационарном поле E постоянно: при росте B энергия перетекает из E∥ в E⊥.",
+      lostAfter: "После столкновений с атмосферой частица покидает адиабатическую орбиту и теряет энергию.",
+      collision: "В атмосфере столкновения, ионизация и рассеяние нарушают адиабатическое движение; E уменьшается.",
+      lossFlight: "До атмосферы поле статично и E постоянно, но Bm больше доступного Batm: отражения ещё нет."
+    },
+    en: {
+      locale: "en-US", decimal: ".", km: " km",
+      mirrorTrapped: "Bₘ < Bₐₜₘ: reflects earlier",
+      mirrorLost: "Bₘ > Bₐₜₘ: mirror would be lower",
+      trapped: `<strong>Trapped:</strong> α<sub>eq</sub> ≥ α<sub>loss</sub>, the particle is reflected before the atmosphere.`,
+      lost: `<strong>Lost:</strong> α<sub>eq</sub> &lt; α<sub>loss</sub>, the particle enters the atmosphere.`,
+      ready: "Before launch the outcome is already known from comparing αeq with the loss-cone boundary.",
+      atMirror: "At the mirror point E∥ vanishes, and then the guiding center moves back.",
+      trappedMotion: "In a static field E is constant: as B grows, energy flows from E∥ to E⊥.",
+      lostAfter: "After collisions with the atmosphere the particle leaves its adiabatic orbit and loses energy.",
+      collision: "In the atmosphere, collisions, ionization and scattering break the adiabatic motion; E decreases.",
+      lossFlight: "Before the atmosphere the field is static and E is constant, but Bm exceeds the available Batm: there is no reflection yet."
+    }
+  };
+  // Язык: ближайший к виджету элемент с lang; значение, начинающееся с "en", даёт английский.
+  const langOf = (root) => (/^en/i.test((root.closest("[lang]") || document.documentElement).lang || "") ? "en" : "ru");
+
   const ROOT_ID = "loss-cone-lab";
   const EARTH_RADIUS_KM = 6371;
   const ATMOSPHERE_HEIGHT_KM = 100;
@@ -15,6 +46,7 @@
     const root = document.getElementById(ROOT_ID);
     if (!root || root.dataset.initialized === "true") return;
     root.dataset.initialized = "true";
+    const t = T[langOf(root)];
 
     const svg = root.querySelector("svg");
     const get = (role) => root.querySelector(`[data-role="${role}"]`);
@@ -82,7 +114,7 @@
     }
 
     function formatOne(value) {
-      return value.toFixed(1).replace(".", ",");
+      return value.toFixed(1).replace(".", t.decimal);
     }
 
     function formatPercent(value) {
@@ -233,8 +265,8 @@
       elements.mirrorLevelLabel.setAttribute("x", 635);
       elements.mirrorLevelLabel.setAttribute("y", currentModel.trapped ? mirrorY - 7 : PLOT.top + 15);
       elements.mirrorLevelLabel.textContent = currentModel.trapped
-        ? "Bₘ < Bₐₜₘ: отражение раньше"
-        : "Bₘ > Bₐₜₘ: зеркало лежало бы ниже";
+        ? t.mirrorTrapped
+        : t.mirrorLost;
       elements.mirrorLevelLabel.classList.toggle("is-loss", !currentModel.trapped);
 
       if (currentModel.trapped) {
@@ -274,15 +306,15 @@
       elements.velocityHandle.setAttribute("cy", arrowY.toFixed(2));
 
       elements.lValue.textContent = formatOne(state.l);
-      elements.heightValue.textContent = `${Math.round((state.l - 1) * EARTH_RADIUS_KM).toLocaleString("ru-RU")} км`;
+      elements.heightValue.textContent = `${Math.round((state.l - 1) * EARTH_RADIUS_KM).toLocaleString(t.locale)}${t.km}`;
       elements.alphaValue.textContent = `${formatOne(state.alphaDeg)}°`;
       elements.lossAngle.textContent = `${formatOne(currentModel.lossAngleDeg)}°`;
       elements.mirrorRatio.textContent = formatOne(currentModel.mirrorToAtmosphere);
 
       elements.prediction.classList.toggle("is-loss", !currentModel.trapped);
       elements.prediction.innerHTML = currentModel.trapped
-        ? `<strong>Захват:</strong> α<sub>eq</sub> ≥ α<sub>loss</sub>, частица отразится до атмосферы.`
-        : `<strong>Потеря:</strong> α<sub>eq</sub> &lt; α<sub>loss</sub>, частица войдёт в атмосферу.`;
+        ? t.trapped
+        : t.lost;
     }
 
     function motionState(currentModel) {
@@ -347,24 +379,24 @@
       setEnergy(parallelEnergy, perpendicularEnergy, totalEnergy);
 
       if (!state.running && state.elapsed === 0) {
-        announce("ready", "До запуска исход уже известен из сравнения αeq с границей конуса потерь.");
+        announce("ready", t.ready);
       } else if (currentModel.trapped) {
         const nearMirror = Math.abs(motion.lambda) > 0.92 * currentModel.lambdaMirror;
         announce(
           nearMirror ? "mirror" : "trapped-motion",
           nearMirror
-            ? "У зеркальной точки E∥ обращается в нуль, после чего направляющий центр движется обратно."
-            : "В стационарном поле E постоянно: при росте B энергия перетекает из E∥ в E⊥."
+            ? t.atMirror
+            : t.trappedMotion
         );
       } else if (motion.collision > 0) {
         announce(
           motion.finished ? "lost" : "collision",
           motion.finished
-            ? "После столкновений с атмосферой частица покидает адиабатическую орбиту и теряет энергию."
-            : "В атмосфере столкновения, ионизация и рассеяние нарушают адиабатическое движение; E уменьшается."
+            ? t.lostAfter
+            : t.collision
         );
       } else {
-        announce("loss-flight", "До атмосферы поле статично и E постоянно, но Bm больше доступного Batm: отражения ещё нет.");
+        announce("loss-flight", t.lossFlight);
       }
 
       if (motion.finished && state.running) {

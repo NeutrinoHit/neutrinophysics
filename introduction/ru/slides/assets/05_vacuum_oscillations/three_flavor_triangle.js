@@ -15,6 +15,12 @@
     NO: {theta12: "33.76", theta13: "8.62", theta23: "43.29", delta: "212"},
     IO: {theta12: "33.76", theta13: "8.65", theta23: "47.87", delta: "274"}
   };
+  const T = {
+    ru: {locale: "ru-RU", play: "▶ Пустить", pause: "❚❚ Пауза"},
+    en: {locale: "en-US", play: "▶ Play", pause: "❚❚ Pause"}
+  };
+  // Язык: ближайший элемент с lang; значение, начинающееся с "en", даёт английский.
+  const langOf = root => (/^en/i.test((root.closest("[lang]") || document.documentElement).lang || "") ? "en" : "ru");
   const VERTICES = [
     {x: 380, y: 42},
     {x: 100, y: 288},
@@ -92,6 +98,7 @@
   function initialize(root) {
     if (root.dataset.threeFlavorReady === "true") return;
     root.dataset.threeFlavorReady = "true";
+    const t = T[langOf(root)];
 
     const sourceButtons = [...root.querySelectorAll("[data-source]")];
     const particleButtons = [...root.querySelectorAll("[data-antineutrino]")];
@@ -195,7 +202,7 @@
       outputs.theta23.textContent = Number(inputs.theta23.value).toFixed(2) + "°";
       outputs.delta.textContent = Math.round(Number(inputs.delta.value)) + "°";
       outputs.ratio.textContent =
-        Math.round(Math.PI * p.x / (1.267 * DM21)).toLocaleString("ru-RU");
+        Math.round(Math.PI * p.x / (1.267 * DM21)).toLocaleString(t.locale);
       outputs.total.textContent =
         values.reduce((sum, value) => sum + value, 0).toFixed(3);
 
@@ -214,7 +221,7 @@
     function stop() {
       playing = false;
       previousTimestamp = null;
-      playButton.textContent = "▶ Пустить";
+      playButton.textContent = t.play;
       playButton.classList.remove("is-active");
     }
 
@@ -273,7 +280,7 @@
       if (Number(inputs.x.value) >= 3) inputs.x.value = "0";
       animationX = Number(inputs.x.value);
       playing = true;
-      playButton.textContent = "❚❚ Пауза";
+      playButton.textContent = t.pause;
       playButton.classList.add("is-active");
       draw();
       requestAnimationFrame(animate);

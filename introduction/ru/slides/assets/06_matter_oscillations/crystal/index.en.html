@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Light in a birefringent crystal</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="math.css">
+</head>
+<body>
+<main>
+  <header>
+    <div><h1>Light in a birefringent crystal</h1>
+    <p class="subtitle">The two eigenpolarizations acquire different phases. Their sum changes shape.</p></div>
+    <button id="play" type="button" aria-pressed="true">Pause</button>
+  </header>
+  <div class="legend" aria-label="Wave legend">
+    <span class="one">Polarization 1</span><span class="two">Polarization 2</span><span class="total">Sum <span class="m"><i>E</i></span></span>
+  </div>
+  <section class="experiment" aria-label="Optical experiment">
+    <div class="scene" id="scene">
+      <canvas id="crystal" aria-label="Three-dimensional crystal, two eigenpolarizations and the total wave"></canvas>
+      <span class="scene-label" id="entry-label">Input</span>
+      <span class="scene-label" id="exit-label">Output</span>
+      <span class="axis-label one" id="axis-one">axis 1</span>
+      <span class="axis-label two" id="axis-two">axis 2</span>
+      <p class="scene-note">One frequency · different wavelengths</p>
+      <p id="error" hidden role="alert"></p>
+    </div>
+    <aside class="sections" aria-label="View along the beam">
+      <div class="cross-section"><h2>At the input</h2><canvas id="input-section" aria-label="Input linear polarization, view along the beam"></canvas></div>
+      <div class="cross-section"><h2>At the output</h2><canvas id="output-section" aria-label="Two components and the polarization ellipse at the output"></canvas>
+      <p id="output-kind" aria-live="polite">Circular polarization</p></div>
+    </aside>
+  </section>
+  <section class="controls" aria-label="Experiment parameters">
+    <label for="input-angle"><span>Input polarization <span class="m"><i>β</i></span><output id="input-value" for="input-angle">0°</output></span>
+      <input id="input-angle" type="range" min="0" max="180" step="1" value="0">
+      <span class="ticks"><span>0°</span><span>90°</span><span>180°</span></span></label>
+    <label for="axes-angle"><span>Axes rotation <span class="m"><i>α</i></span><output id="axes-value" for="axes-angle">45°</output></span>
+      <input id="axes-angle" type="range" min="0" max="180" step="1" value="45">
+      <span class="ticks"><span>0°</span><span>90°</span><span>180°</span></span></label>
+    <label for="length"><span>Thickness <span class="m"><i>L</i></span><output id="length-value" for="length">1.00 <span class="m"><i>λ</i><sub>0</sub></span></output></span>
+      <input id="length" type="range" min="0" max="4" step="0.01" value="1">
+      <span class="ticks"><span>0</span><span>2 <span class="m"><i>λ</i><sub>0</sub></span></span><span>4 <span class="m"><i>λ</i><sub>0</sub></span></span></span></label>
+  </section>
+  <div class="readout"><p id="explanation">Two equal components shifted in phase by π/2 give circular polarization.</p><p class="phase" id="phase"><span class="m">Δ<i>φ</i> = π/2</span></p></div>
+  <footer><span>Ideal transparent plate · <span class="m"><i>n</i><sub>1</sub></span> = 1.35, <span class="m"><i>n</i><sub>2</sub></span> = 1.60 · reflections are neglected</span><span>© neutrinohit.github.io</span></footer>
+</main>
+<script type="module" src="viewer.mjs"></script>
+<script defer src="https://neutrinohit.github.io/assets/analytics/cloudflare-web-analytics.js"></script>
+</body>
+</html>

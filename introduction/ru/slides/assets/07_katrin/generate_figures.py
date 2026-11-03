@@ -3,7 +3,13 @@
 
 Analytical curves are teaching models, not KATRIN data. Field values reproduce
 the reference example of lecture 06. See sources.md for assumptions and papers.
+
+Language: the default is Russian (files "<name>.svg"). With ``--lang en`` the same
+figures are written with English labels as "<name>-en.svg". ``--out DIR`` writes
+to another folder (for checks). Russian strings are the keys of the EN table.
 """
+import argparse
+import re
 from pathlib import Path
 import math
 from xml.sax.saxutils import escape
@@ -25,6 +31,133 @@ plt.rcParams.update({
     "axes.spines.top": False, "axes.spines.right": False,
     "svg.hashsalt": "katrin-lecture-07",
 })
+LANG = "ru"
+
+# Russian string -> English string (terms follow the course glossary).
+# Other generators add their own entries with EN.update(...).
+EN = {
+    # curves()
+    "Один угол: {angle}°": "Single angle: {angle}°",
+    "Изотропный пучок": "Isotropic beam",
+    "ΔE = {v} эВ": "ΔE = {v} eV",
+    "Избыток энергии  E − e|U|, эВ": "Excess energy  E − e|U|, eV",
+    "Доля прошедших электронов": "Fraction of transmitted electrons",
+    "Пушка: весь столб газа": "Gun: the whole gas column",
+    "β-распад: среднее по месту рождения": "β decay: averaged over the birth position",
+    "Оптическая толщина полного столба  τ": "Optical depth of the full column  τ",
+    "Вероятность пройти без рассеяния": "Probability of no scattering",
+    "Без газа": "No gas",
+    "С газом": "With gas",
+    "В модели каждое столкновение\nотнимает 12,6 эВ.": "In the model, each collision\nremoves 12.6 eV.",
+    "Избыток энергии пушки  Eп − e|U|, эВ": r"Gun excess energy  $E_\mathrm{gun}$ − e|U|, eV",
+    "Нормированная скорость счёта": "Normalized count rate",
+    "Масса: δmβ² = +1 эВ²": "Mass: δmβ² = +1 eV²",
+    "Конец: δE₀ = +0,02 эВ": "Endpoint: δE₀ = +0.02 eV",
+    "Нормировка: δA/A = +0,1 %": "Normalization: δA/A = +0.1%",
+    "Фон: постоянная добавка": "Background: constant offset",
+    "δR, отн. ед.": "δR, arb. units",
+    "w = E₀ − e|U|, эВ": "w = E₀ − e|U|, eV",
+    # loss_example()
+    "одно столкновение: вес {share}": "one collision: weight {share}",
+    "два столкновения: вес {share}": "two collisions: weight {share}",
+    "три столкновения: вес {share}": "three collisions: weight {share}",
+    "Сумма по всем кратностям": "Sum over all multiplicities",
+    "g₁ — гауссиан 12,8 эВ.\nСвёртка сдвигает максимум\nк n·12,8 эВ и уширяет\nраспределение в √n раз.":
+        "g₁ is a Gaussian at 12.8 eV.\nConvolution shifts the maximum\nto n·12.8 eV and broadens\nthe distribution by a factor √n.",
+    "Потеря энергии  ε, эВ": "Energy loss  ε, eV",
+    "Плотность вероятности, эВ⁻¹": "Probability density, eV⁻¹",
+    # diagrams()
+    "Путь электронов и газа в KATRIN": "Path of the electrons and gas in KATRIN",
+    "Газовый": "Gas", "источник": "source",
+    "Откачка": "Pumping", "и транспорт": "and transport",
+    "Пред-": "Pre-", "спектрометр": "spectrometer",
+    "Главный": "Main",
+    "Кремниевый": "Silicon", "детектор": "detector",
+    "β-распад": "β decay",
+    "электроны проходят": "electrons pass",
+    "порог e|U|": "threshold e|U|",
+    "число n": "count n",
+    "газ → очистка → возврат": "gas → purification → return",
+    "Схема не в масштабе; длина установки ≈ 70 м.": "Not to scale; length ≈ 70 m.",
+    "Фотоэлектронная пушка с управляемой энергией и углом": "Photoelectron gun with controllable energy and angle",
+    "Ультрафиолет": "Ultraviolet",
+    "Фото-": "Photo-", "катод": "cathode",
+    "−|Uп|": "−|U_{gun}|",
+    "Ускоряющие": "Accelerating", "электроды": "electrodes",
+    "Eп, α": "E_{gun}, α",
+    "Газ → фильтр": "Gas → filter", "→ детектор": "→ detector",
+    "Свет освобождает электрон.": "Light frees an electron.",
+    "Напряжение задаёт его энергию.": "The voltage sets its energy.",
+    "Внутренняя конверсия перехода 32,15 кэВ в криптоне-83": "Internal conversion of the 32.15 keV transition in krypton-83",
+    "Ядерные уровни": "Nuclear levels",
+    "41,6 кэВ": "41.6 keV", "9,4 кэВ": "9.4 keV",
+    "ΔEяд": "ΔE_{nucl}", "32,15 кэВ": "32.15 keV",
+    "Энергия перехода передаётся": "The transition energy goes",
+    "электрону K-оболочки.": "to a K-shell electron.",
+    "Электрон покидает атом.": "The electron leaves the atom.",
+    "Eэл ≈ 32,15 − 14,33 = 17,82 кэВ": "E_{conv} ≈ 32.15 − 14.33 = 17.82 keV",
+    "Часть энергии тратится на связь электрона.": "Part of the energy is spent on binding.",
+    "Альтернативный канал перехода: γ-квант.": "The alternative channel: γ-ray emission.",
+    "Прецизионный делитель высокого напряжения": "Precision high-voltage divider",
+    "U ≈ −18,6 кВ": "U ≈ −18.6 kV",
+    "Прецизионный вольтметр": "Precision voltmeter",
+    "u ≈ −9,4 В": "u ≈ −9.4 V",
+    "Коэффициент M измеряют для всего делителя": "The factor M is calibrated for the whole divider",
+    "относительно эталона PTB.": "against the PTB standard.",
+    "Главный и мониторный спектрометры связаны электрически": "The main and monitor spectrometers are electrically linked",
+    "Общее высокое напряжение U": "Common high voltage U",
+    "Главный спектрометр": "Main spectrometer",
+    "β-спектр трития": "Tritium β spectrum",
+    "Мониторный спектрометр": "Monitor spectrometer",
+    "Линия ⁸³ᵐKr": "⁸³ᵐKr line",
+    "Измеряет форму конца спектра.": "Measures the shape of the spectrum end.",
+    "Следит за положением линии.": "Tracks the line position.",
+    "Два независимых электронных пучка; общая шкала напряжения.": "Two independent electron beams; a common voltage scale.",
+    "Малый и большой объём после задерживающего барьера": "Small and large volume beyond the retarding barrier",
+    "Симметричная конфигурация": "Symmetric configuration",
+    "Смещённая анализирующая область": "Shifted analyzing region",
+    "барьер": "barrier",
+    "фон": "background",
+}
+
+
+def tr(text):
+    """Label in the current language (Russian is the identity)."""
+    return text if LANG == "ru" else EN.get(text, text)
+
+
+def num(text):
+    """Decimal comma in Russian labels, decimal point in English ones."""
+    return text.replace(".", ",") if LANG == "ru" else text
+
+
+def tl(lines):
+    """Translate a string or a list of lines; an English line may contain \\n."""
+    lines = lines if isinstance(lines, list) else [lines]
+    return [part for s in lines for part in tr(s).split("\n")]
+
+
+def set_lang(lang, out=None):
+    global LANG, OUT
+    LANG = lang
+    if out is not None:
+        OUT = Path(out).resolve()
+        OUT.mkdir(parents=True, exist_ok=True)
+
+
+def fname(name):
+    return name if LANG == "ru" else name.replace(".svg", f"-{LANG}.svg")
+
+
+def check_clean():
+    """English output must not contain Cyrillic letters (also in text-as-path comments)."""
+    if LANG == "ru":
+        return
+    for path in sorted(OUT.glob("*-en.svg")):
+        left = re.findall(r"[А-Яа-яЁё]+", path.read_text(encoding="utf-8"))
+        assert not left, (path.name, left[:5])
+
+
 E, ME = 18600.0, 511000.0
 BS, BA, BM = 3.6, 0.00030, 6.0
 RATIO = BS / BM
@@ -35,7 +168,7 @@ LOSS = 12.6
 
 
 def save(fig, name):
-    fig.savefig(OUT / name, metadata={"Date": None}, bbox_inches="tight", pad_inches=0.22)
+    fig.savefig(OUT / fname(name), metadata={"Date": None}, bbox_inches="tight", pad_inches=0.22)
     plt.close(fig)
 
 
@@ -51,13 +184,13 @@ def curves():
     for angle in [0, 25, 45]:
         edge = E * (1 + E/(2*ME)) * BA / BS * np.sin(np.deg2rad(angle))**2
         ax.step(x, (x > edge).astype(float), where="post", lw=1.5,
-                alpha=.75, label=f"Один угол: {angle}°")
-    ax.plot(x, transmission(x), color=GOLD, lw=4, label="Изотропный пучок")
+                alpha=.75, label=tr("Один угол: {angle}°").format(angle=angle))
+    ax.plot(x, transmission(x), color=GOLD, lw=4, label=tr("Изотропный пучок"))
     ax.axvspan(0, DELTA, color=GOLD, alpha=.07)
     ax.annotate("", (DELTA, .5), (0, .5),
                 arrowprops={"arrowstyle": "<->", "color": GOLD, "lw": 2})
-    ax.text(DELTA/2, .56, f"ΔE = {DELTA:.2f} эВ".replace(".", ","), ha="center", color=GOLD)
-    ax.set(xlabel="Избыток энергии  E − e|U|, эВ", ylabel="Доля прошедших электронов",
+    ax.text(DELTA/2, .56, tr("ΔE = {v} эВ").format(v=num(f"{DELTA:.2f}")), ha="center", color=GOLD)
+    ax.set(xlabel=tr("Избыток энергии  E − e|U|, эВ"), ylabel=tr("Доля прошедших электронов"),
            ylim=(-.03, 1.07))
     ax.legend(loc="lower right", fontsize=13, facecolor=PANEL, labelcolor=INK)
     ax.grid(alpha=.15)
@@ -65,18 +198,18 @@ def curves():
 
     u = np.linspace(0, 4, 301)
     fig, ax = plt.subplots(figsize=(10.5, 5.5))
-    ax.plot(u, np.exp(-u), color=BLUE, lw=3, label="Пушка: весь столб газа")
+    ax.plot(u, np.exp(-u), color=BLUE, lw=3, label=tr("Пушка: весь столб газа"))
     ax.plot(u, -np.expm1(-u) / np.where(u == 0, 1, u), color=GOLD,
-            lw=3, label="β-распад: среднее по месту рождения")
+            lw=3, label=tr("β-распад: среднее по месту рождения"))
     # Correct removable singularity in the second curve.
     ax.lines[-1].set_ydata(np.r_[1., -np.expm1(-u[1:]) / u[1:]])
     ax.axvline(TAU, color=MUTED, ls=":", lw=1.5)
     for val, c, dy in [(np.exp(-TAU), BLUE, -.1),
                        (-np.expm1(-TAU)/TAU, GOLD, .07)]:
         ax.plot(TAU, val, "o", color=c)
-        ax.text(TAU+.12, val+dy, f"{val:.2f}".replace(".", ","), color=c)
-    ax.set(xlabel="Оптическая толщина полного столба  τ",
-           ylabel="Вероятность пройти без рассеяния", ylim=(0, 1.08))
+        ax.text(TAU+.12, val+dy, num(f"{val:.2f}"), color=c)
+    ax.set(xlabel=tr("Оптическая толщина полного столба  τ"),
+           ylabel=tr("Вероятность пройти без рассеяния"), ylim=(0, 1.08))
     ax.legend(fontsize=13, facecolor=PANEL, labelcolor=INK)
     ax.grid(alpha=.15)
     save(fig, "unscattered-fraction.svg")
@@ -88,15 +221,15 @@ def curves():
     edge = lambda v: .5 * (1 + erf(v / (sigma * np.sqrt(2))))
     weights = np.array([math.exp(-TAU)*TAU**n/math.factorial(n) for n in range(12)])
     fig, ax = plt.subplots(figsize=(11, 5.5))
-    ax.plot(x, edge(x), color=BLUE, lw=3, label="Без газа")
+    ax.plot(x, edge(x), color=BLUE, lw=3, label=tr("Без газа"))
     with_gas = sum(p * edge(x - n*LOSS) for n, p in enumerate(weights))
-    ax.plot(x, with_gas, color=GOLD, lw=3, label="С газом")
+    ax.plot(x, with_gas, color=GOLD, lw=3, label=tr("С газом"))
     ax.hlines(weights[0], 0, LOSS, colors=GREEN, linestyles=":")
     ax.text(5.8, weights[0]+.045, "P₀", color=GREEN, fontsize=22)
-    ax.text(19, .22, "В модели каждое столкновение\nотнимает 12,6 эВ.",
+    ax.text(19, .22, tr("В модели каждое столкновение\nотнимает 12,6 эВ."),
             color=MUTED, fontsize=15)
-    ax.set(xlabel="Избыток энергии пушки  Eп − e|U|, эВ",
-           ylabel="Нормированная скорость счёта", ylim=(-.03, 1.06))
+    ax.set(xlabel=tr("Избыток энергии пушки  Eп − e|U|, эВ"),
+           ylabel=tr("Нормированная скорость счёта"), ylim=(-.03, 1.06))
     ax.legend(loc="lower right", fontsize=14, facecolor=PANEL, labelcolor=INK)
     ax.grid(alpha=.15)
     save(fig, "gun-scan.svg")
@@ -105,10 +238,10 @@ def curves():
     fig, axes = plt.subplots(2, 2, figsize=(17, 6.7), sharex=True)
     # First-order perturbations of R = C A w^3 / 3 + b.
     perturbations = [
-        (-w/2, GOLD, "Масса: δmβ² = +1 эВ²", "δR ∝ −w"),
-        (.02*w*w, BLUE, "Конец: δE₀ = +0,02 эВ", "δR ∝ w²"),
-        (.001*w**3/3, GREEN, "Нормировка: δA/A = +0,1 %", "δR ∝ w³"),
-        (np.full_like(w, 2.0), RED, "Фон: постоянная добавка", "δR = const"),
+        (-w/2, GOLD, tr("Масса: δmβ² = +1 эВ²"), "δR ∝ −w"),
+        (.02*w*w, BLUE, tr("Конец: δE₀ = +0,02 эВ"), "δR ∝ w²"),
+        (.001*w**3/3, GREEN, tr("Нормировка: δA/A = +0,1 %"), "δR ∝ w³"),
+        (np.full_like(w, 2.0), RED, tr("Фон: постоянная добавка"), "δR = const"),
     ]
     for ax, (y, color, title, law) in zip(axes.flat, perturbations):
         ax.plot(w, y, color=color, lw=3)
@@ -116,11 +249,11 @@ def curves():
         ax.set_title(title, fontsize=19, color=color, pad=12)
         ax.text(.06, .15 if y[-1] >= 0 else .78, law,
                 transform=ax.transAxes, color=color, fontsize=20)
-        ax.set_ylabel("δR, отн. ед.", fontsize=17)
+        ax.set_ylabel(tr("δR, отн. ед."), fontsize=17)
         ax.tick_params(labelsize=16)
         ax.grid(alpha=.13)
     for ax in axes[-1]:
-        ax.set_xlabel("w = E₀ − e|U|, эВ", fontsize=17)
+        ax.set_xlabel(tr("w = E₀ − e|U|, эВ"), fontsize=17)
     fig.subplots_adjust(hspace=.42, wspace=.30)
     save(fig, "parameter-signatures.svg")
 
@@ -142,22 +275,23 @@ def loss_example():
     assert abs(np.trapezoid(g1, eps) - 1) < 1e-9
     assert abs(np.trapezoid(total, eps) - (1 - weight[0])) < 1e-3
 
-    names = {1: "одно столкновение", 2: "два столкновения", 3: "три столкновения"}
+    names = {1: "одно столкновение: вес {share}", 2: "два столкновения: вес {share}",
+             3: "три столкновения: вес {share}"}
     fig, ax = plt.subplots(figsize=(11.5, 5.8))
     for n, color in zip((1, 2, 3), (BLUE, GOLD, GREEN)):
-        share = ("{:.2f}".format(weight[n])).replace(".", ",")
+        share = num("{:.2f}".format(weight[n]))
         ax.fill_between(eps, weight[n] * gn[n - 1], color=color, alpha=.45,
-                        label=f"{names[n]}: вес {share}")
-    ax.plot(eps, total, color=INK, lw=3, label="Сумма по всем кратностям")
+                        label=tr(names[n]).format(share=share))
+    ax.plot(eps, total, color=INK, lw=3, label=tr("Сумма по всем кратностям"))
     top = total.max() * 1.42
     ax.annotate("", (0, top), (0, 0),
                 arrowprops={"arrowstyle": "->", "color": RED, "lw": 3.5})
-    ax.text(1.4, top * .94, f"P₀·δ(ε):  P₀ = {weight[0]:.2f}".replace(".", ","),
+    ax.text(1.4, top * .94, num(f"P₀·δ(ε):  P₀ = {weight[0]:.2f}"),
             color=RED, fontsize=17)
     ax.text(29, top * .46,
-            "g₁ — гауссиан 12,8 эВ.\nСвёртка сдвигает максимум\nк n·12,8 эВ и уширяет\nраспределение в √n раз.",
+            tr("g₁ — гауссиан 12,8 эВ.\nСвёртка сдвигает максимум\nк n·12,8 эВ и уширяет\nраспределение в √n раз."),
             color=MUTED, fontsize=15)
-    ax.set(xlabel="Потеря энергии  ε, эВ", ylabel="Плотность вероятности, эВ⁻¹",
+    ax.set(xlabel=tr("Потеря энергии  ε, эВ"), ylabel=tr("Плотность вероятности, эВ⁻¹"),
            xlim=(-2, 58), ylim=(0, top * 1.1))
     ax.legend(loc="upper right", fontsize=14, facecolor=PANEL, labelcolor=INK)
     ax.grid(alpha=.15)
@@ -167,23 +301,28 @@ def loss_example():
 class Diagram:
     def __init__(self, w, h, title):
         self.w, self.h = w, h
-        self.items = [f'<title>{escape(title)}</title>',
+        self.items = [f'<title>{escape(tr(title))}</title>',
                      '<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" '
                      'markerWidth="8" markerHeight="8" orient="auto-start-reverse">'
                      '<path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke"/></marker></defs>',
                      f'<rect width="{w}" height="{h}" fill="#000"/>']
 
+    @staticmethod
+    def markup(s):
+        """Escape a label; the English ones may carry subscripts as _{...}."""
+        return re.sub(r"_\{([^}]*)\}", r'<tspan baseline-shift="sub" font-size="70%">\1</tspan>', escape(s))
+
     def text(self, x, y, lines, color=INK, size=28, anchor="middle", weight="normal"):
-        lines = lines if isinstance(lines, list) else [lines]
+        lines = tl(lines)
         text = "".join(f'<tspan x="{x}" dy="{0 if i == 0 else 1.3*size}">'
-                       f'{escape(s)}</tspan>' for i, s in enumerate(lines))
+                       f'{self.markup(s)}</tspan>' for i, s in enumerate(lines))
         self.items.append(f'<text x="{x}" y="{y}" fill="{color}" font-family="DejaVu Sans, sans-serif" '
                           f'font-size="{size}" text-anchor="{anchor}" font-weight="{weight}">{text}</text>')
 
     def box(self, x, y, w, h, lines, color=BLUE, size=27):
         self.items.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="12" '
                           f'fill="{PANEL}" stroke="{color}" stroke-width="2.5"/>')
-        lines = lines if isinstance(lines, list) else [lines]
+        lines = tl(lines)
         self.text(x+w/2, y+h/2-(len(lines)-1)*size*.65+size*.32, lines, color, size)
 
     def arrow(self, x1, y1, x2, y2, color=BLUE, dashed=False):
@@ -195,7 +334,7 @@ class Diagram:
         self.items.append(f'<path d="M{x1},{y1} L{x2},{y2}" stroke="{color}" stroke-width="{width}"/>')
 
     def save(self, name):
-        (OUT/name).write_text(
+        (OUT/fname(name)).write_text(
             f'<svg xmlns="http://www.w3.org/2000/svg" width="{self.w}" height="{self.h}" '
             f'viewBox="0 0 {self.w} {self.h}" role="img">' + "".join(self.items) + "</svg>\n",
             encoding="utf-8")
@@ -298,7 +437,7 @@ def diagrams():
         d.text(shift, y+120, "барьер", GOLD, 24)
         d.box(1100, y-22, 135, 62, "детектор", BLUE, 22)
         d.arrow(1023, y+8, 1090, y+8, BLUE)
-        d.text((shift+1010)/2, y+10, "фон", RED, 27)
+        d.text((shift+1010)/2, y+10, "фон", RED, 27 if LANG == "ru" else 20)
     d.save("background-volume.svg")
 
 
@@ -318,8 +457,18 @@ def verify():
           f"<P0>(axial)={-math.expm1(-TAU)/TAU:.6f}; integral verified.")
 
 
-if __name__ == "__main__":
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
+    parser.add_argument("--lang", choices=("ru", "en"), default="ru")
+    parser.add_argument("--out", help="output folder (default: next to this script)")
+    args = parser.parse_args(argv)
+    set_lang(args.lang, args.out)
     verify()
     curves()
     loss_example()
     diagrams()
+    check_clean()
+
+
+if __name__ == "__main__":
+    main()

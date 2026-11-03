@@ -1,0 +1,88 @@
+```{=html}
+<div class="photon-analyzer-principle" aria-label="Why the interaction of a photon with polarized electrons depends on the relative direction of the spins">
+  <div class="analyzer-spin-cases">
+    <div class="analyzer-spin-case favored">
+      <div class="analyzer-spin-sketch">
+        <span class="analyzer-spin-particle photon">\(\gamma\)<i class="analyzer-spin-arrow left"></i><small>\(m_\gamma=-1\)</small></span>
+        <span class="analyzer-spin-operator">+</span>
+        <span class="analyzer-spin-particle electron">\(e^-\)<i class="analyzer-spin-arrow right"></i><small>\(m_s=+\tfrac12\)</small></span>
+        <span class="analyzer-spin-operator">\(\longrightarrow\)</span>
+        <span class="analyzer-spin-particle electron final">\(e^-\)<i class="analyzer-spin-arrow left"></i><small>\(m_s=-\tfrac12\)</small></span>
+      </div>
+      <div class="analyzer-spin-meaning">
+        <b>Antiparallel spins</b>
+        <span>\(-1+\tfrac12=-\tfrac12\)</span>
+        <strong>stronger interaction</strong>
+      </div>
+    </div>
+    <div class="analyzer-spin-case suppressed">
+      <div class="analyzer-spin-sketch">
+        <span class="analyzer-spin-particle photon">\(\gamma\)<i class="analyzer-spin-arrow right"></i><small>\(m_\gamma=+1\)</small></span>
+        <span class="analyzer-spin-operator">+</span>
+        <span class="analyzer-spin-particle electron">\(e^-\)<i class="analyzer-spin-arrow right"></i><small>\(m_s=+\tfrac12\)</small></span>
+        <span class="analyzer-spin-operator">\(\longrightarrow\)</span>
+        <span class="analyzer-spin-particle electron final muted hypothetical">\(e^-\)<i class="analyzer-spin-arrow right"></i><small>\(m_s=+\tfrac32\)</small></span>
+      </div>
+      <div class="analyzer-spin-meaning">
+        <b>Parallel spins</b>
+        <span>\(1+\tfrac12=\tfrac32\)</span>
+        <strong>the electron has no \(m_s=\tfrac32\)</strong>
+      </div>
+    </div>
+  </div>
+  <div class="analyzer-refinement">
+    <b>Precise statement</b>
+    <p>The naive picture correctly conveys the sign of the effect, but does not give a strict prohibition:</p>
+    <div class="analyzer-cross-section">
+      \[
+      \frac{d\sigma_{\uparrow\downarrow}}{d\Omega}
+      >
+      \frac{d\sigma_{\uparrow\uparrow}}{d\Omega}.
+      \]
+    </div>
+    <strong>The antiparallel configuration attenuates the beam more strongly.</strong>
+  </div>
+</div>
+
+<div class="photon-analyzer analyzer-compact helicity-animated" data-manual-animation aria-label="Measurement of the circular polarization of photons in magnetized iron">
+  <div class="animation-controls" role="group" aria-label="Animation controls">
+    <button class="animation-control animation-play" type="button" data-animation-action="play">
+      <span aria-hidden="true">▶</span> Start
+    </button>
+    <button class="animation-control animation-pause" type="button" data-animation-action="pause" disabled>
+      <span aria-hidden="true">Ⅱ</span> Pause
+    </button>
+  </div>
+  <div class="analyzer-beam">
+    <div class="analyzer-source">\(\gamma\)</div>
+    <div class="analyzer-photon-spin"><i></i><b>\(S_\gamma\)</b></div>
+    <div class="analyzer-wave"></div>
+  </div>
+  <div class="iron-block">
+    <div class="iron-label">magnetized iron</div>
+    <div class="iron-field"><span>\(\mathbf B\)</span></div>
+    <div class="iron-electrons">
+      <i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+  </div>
+  <div class="analyzer-detector">
+    <div class="detector-face"></div>
+    <div class="detector-label">detector</div>
+  </div>
+  <div class="analyzer-histogram">
+    <div class="histogram-title">transmitted photons</div>
+    <div class="histogram-axis"><span>events</span></div>
+    <div class="analyzer-counts">
+      <div class="count-row"><strong>\(N_+\)</strong><div class="count-bar count-plus"></div><span>\(+B\)</span></div>
+      <div class="count-row"><strong>\(N_-\)</strong><div class="count-bar count-minus"></div><span>\(-B\)</span></div>
+    </div>
+  </div>
+</div>
+```
+
+::: {.nh-box tone="accent" size="md" align="center" weight="bold"}
+
+By reversing the magnetic field, we change the direction of the electron spins.
+The difference in transmissions $N_+-N_-$ measures the circular polarization of the photon.
+
+:::

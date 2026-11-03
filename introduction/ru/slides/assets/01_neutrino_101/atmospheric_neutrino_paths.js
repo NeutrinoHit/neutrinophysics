@@ -1,6 +1,13 @@
 (() => {
   const DURATION_MS = 8500;
 
+  const T = {
+    ru: {km: " км", thousandKm: " тыс. км", decimal: ","},
+    en: {km: " km", thousandKm: " thousand km", decimal: "."}
+  };
+  // Язык: ближайший элемент с lang; значение, начинающееся с "en", даёт английский.
+  const langOf = root => (/^en/i.test((root.closest("[lang]") || document.documentElement).lang || "") ? "en" : "ru");
+
   const clamp = (value, minimum = 0, maximum = 1) =>
     Math.min(maximum, Math.max(minimum, value));
 
@@ -12,6 +19,7 @@
   function initialize(root) {
     if (root.dataset.atmoPathReady === "true") return;
     root.dataset.atmoPathReady = "true";
+    const t = T[langOf(root)];
 
     const currentPath = root.querySelector("[data-atmo-current-path]");
     const currentPathShadow = root.querySelector("[data-atmo-current-path-shadow]");
@@ -70,8 +78,8 @@
     }
 
     function formatLength(lengthKm) {
-      if (lengthKm < 1000) return `${Math.round(lengthKm)} км`;
-      return `${(lengthKm / 1000).toFixed(1).replace(".", ",")} тыс. км`;
+      if (lengthKm < 1000) return `${Math.round(lengthKm)}${t.km}`;
+      return `${(lengthKm / 1000).toFixed(1).replace(".", t.decimal)}${t.thousandKm}`;
     }
 
     function drawFrame(elapsed) {
@@ -116,7 +124,7 @@
       graphPoint.setAttribute("cx", graphX.toFixed(2));
       graphPoint.setAttribute("cy", pointY.toFixed(2));
       lengthValue.textContent = formatLength(lengthKm);
-      ratioValue.textContent = ratio.toFixed(2).replace(".", ",");
+      ratioValue.textContent = ratio.toFixed(2).replace(".", t.decimal);
     }
 
     function isPresent() {

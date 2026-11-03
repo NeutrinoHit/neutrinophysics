@@ -1,0 +1,142 @@
+~~~{=html}
+<div class="wu-apparatus" role="img" aria-label="Cycle of the Wu experiment: the sample is cooled by adiabatic demagnetization to one hundredth of a kelvin; two gamma detectors, along and across the axis, independently measure the degree of nuclear polarization from the anisotropy of the gamma radiation; the electron detector records the beta-decay asymmetry when the field is reversed">
+  <div class="wu-cycle-steps" aria-hidden="true">
+    <div class="wu-cycle-step wu-cycle-step-cooling">
+      <b>1</b><span><strong>Cooling</strong><small>1.2 K → 0.01 K</small></span>
+    </div>
+    <div class="wu-cycle-step wu-cycle-step-up">
+      <b>2</b><span><strong>Counting at B ↑</strong><small>detector points along the field</small></span>
+    </div>
+    <div class="wu-cycle-step wu-cycle-step-down">
+      <b>3</b><span><strong>Reverse: B ↓</strong><small>the same detector now points against the field</small></span>
+    </div>
+  </div>
+
+  <div class="wu-cycle-stage">
+    <div class="wu-cooling-link">
+      <div class="wu-panel-kicker">as on the previous slide</div>
+      <h3>Adiabatic<br>demagnetization</h3>
+
+      <div class="wu-cooling-field">
+        <span class="wu-cooling-field-label">B<sub>cool</sub></span>
+        <span class="wu-cooling-field-track"><i></i></span>
+        <small>reduce the field</small>
+      </div>
+
+      <div class="wu-mini-thermometer">
+        <span class="wu-mini-thermometer-tube"><i></i></span>
+        <span class="wu-mini-thermometer-bulb"></span>
+        <span class="wu-temp-value wu-temp-hot">1.2 K</span>
+        <span class="wu-temp-value wu-temp-cold">0.01 K</span>
+      </div>
+
+      <p><strong>The spins take energy from the lattice.</strong><br>The cold sample keeps its polarization.</p>
+      <span class="wu-cooling-connector">cooled → measure</span>
+    </div>
+
+    <div class="wu-rig">
+      <div class="wu-fixed-detector">
+        <span>electron scintillator</span>
+        <small>position does not change</small>
+      </div>
+
+      <div class="wu-dewar">
+        <div class="wu-helium"><span>liquid helium</span></div>
+        <div class="wu-sample">
+          <span class="wu-sample-name"><sup>60</sup>Co</span>
+          <i class="wu-sample-spin wu-sample-spin-one">↑</i>
+          <i class="wu-sample-spin wu-sample-spin-two">↑</i>
+          <i class="wu-sample-spin wu-sample-spin-three">↑</i>
+        </div>
+        <div class="wu-measurement-field">
+          <span class="wu-field-name">B</span>
+          <i></i>
+        </div>
+        <div class="wu-beta-stream">
+          <i class="wu-beta-dot wu-beta-dot-one"></i>
+          <i class="wu-beta-dot wu-beta-dot-two"></i>
+          <i class="wu-beta-dot wu-beta-dot-three"></i>
+          <i class="wu-beta-dot wu-beta-dot-four"></i>
+        </div>
+      </div>
+
+      <svg class="wu-gamma-rays" viewBox="0 0 100 500" preserveAspectRatio="none" aria-hidden="true">
+        <path class="wu-gamma-ray wu-gamma-ray-axial" d="M50 350 L35 105"/>
+        <path class="wu-gamma-ray wu-gamma-ray-transverse" d="M50 350 L86 307"/>
+      </svg>
+
+      <div class="wu-gamma-detector wu-gamma-axial">
+        <i></i><span>γ</span><small>θ ≈ 0</small>
+      </div>
+      <div class="wu-gamma-detector wu-gamma-transverse">
+        <i></i><span>γ</span><small>θ ≈ π/2</small>
+      </div>
+      <div class="wu-gamma-caption">two γ counters<br><small>anisotropy → polarization</small></div>
+
+      <div class="wu-field-state wu-field-state-up">
+        <strong>B ↑</strong><span>detector <b>along the field</b></span>
+      </div>
+      <div class="wu-field-state wu-field-state-down">
+        <strong>B ↓</strong><span>detector <b>against the field</b></span>
+      </div>
+    </div>
+
+    <div class="wu-counts-panel">
+      <div class="wu-panel-kicker">equal measurement time</div>
+      <h3>Electrons in the upper detector</h3>
+
+      <div class="wu-bars" aria-hidden="true">
+        <div class="wu-bar-axis"><span>N(e<sup>−</sup>)</span></div>
+        <div class="wu-bar-column wu-bar-column-up">
+          <div class="wu-bar-ghost"></div>
+          <div class="wu-bar-value"><span>40</span></div>
+          <strong>B ↑</strong>
+          <small>along the field</small>
+        </div>
+        <div class="wu-bar-column wu-bar-column-down">
+          <div class="wu-bar-ghost"></div>
+          <div class="wu-bar-value"><span>80</span></div>
+          <strong>B ↓</strong>
+          <small>against the field</small>
+        </div>
+      </div>
+
+      <div class="wu-count-verdict">
+        <span>N<sub>against</sub> &gt; N<sub>along</sub></span>
+        <strong>more electrons against the field</strong>
+      </div>
+
+      <div class="wu-gamma-counts">
+        <div class="wu-gamma-count-heading">
+          <span>independent check</span>
+          <strong>γ anisotropy</strong>
+        </div>
+
+        <div class="wu-gamma-bars" aria-hidden="true">
+          <div class="wu-gamma-bar-axis"><span>N(γ)</span></div>
+          <div class="wu-gamma-bar-column wu-gamma-bar-axial">
+            <div class="wu-gamma-bar-value"><span>N<sub>γ</sub>(0)</span></div>
+            <strong>θ ≈ 0</strong>
+            <small>along the axis</small>
+          </div>
+          <div class="wu-gamma-bar-column wu-gamma-bar-transverse">
+            <div class="wu-gamma-bar-value"><span>N<sub>γ</sub>(π/2)</span></div>
+            <strong>θ ≈ π/2</strong>
+            <small>across the axis</small>
+          </div>
+        </div>
+
+        <div class="wu-gamma-verdict">
+          <span>N<sub>γ</sub>(0) ≠ N<sub>γ</sub>(π/2)</span>
+          <strong>anisotropy ⇒ 𝒫 ≈ 0.65</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wu-cycle-conclusion">
+    The γ anisotropy independently fixes the nuclear polarization. Then we reverse only the field:
+    the geometry of the electron detector is the same, but the count rate changes — this is the β-decay asymmetry.
+  </div>
+</div>
+~~~

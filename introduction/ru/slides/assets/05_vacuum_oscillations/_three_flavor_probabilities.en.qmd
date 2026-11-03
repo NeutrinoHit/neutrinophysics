@@ -1,0 +1,5 @@
+```{=html}
+<div class="tfp" data-tfp aria-label="Three-neutrino oscillation probabilities in vacuum as functions of energy and baseline">
+  <noscript>JavaScript is required for the interactive plot.</noscript>
+</div>
+```

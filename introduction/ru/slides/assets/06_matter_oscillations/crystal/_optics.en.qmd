@@ -1,0 +1,11 @@
+::: {.content-visible when-format="html"}
+<iframe class="nh-crystal-frame" data-src="../../ru/slides/assets/06_matter_oscillations/crystal/index.en.html?embed=1" title="Light in a birefringent crystal" loading="lazy" allow="fullscreen"></iframe>
+
+::: {.nh-text tone="muted" size="sm"}
+Input polarization, rotation of the eigenaxes, and plate thickness. [Open separately](../../ru/slides/assets/06_matter_oscillations/crystal/index.en.html){target="_blank"}.
+:::
+:::
+
+::: {.content-visible when-format="pdf"}
+![](../../ru/slides/assets/06_matter_oscillations/crystal/optics-poster.png){fig-alt="Light in a birefringent crystal"}
+:::

@@ -1,0 +1,12 @@
+```{=html}
+<div class="weak-interaction-grid" aria-label="Weak interactions of neutrinos">
+  <div class="interaction-card">
+    {{< nh-video feynman-scattering variant="film-nu-mu-electron" data-autoplay=true muted=true loop=true playsinline=true preload="metadata" poster="../../ru/slides/assets/01_neutrino_101/numu_e_to_nue_mu.jpg" >}}
+    <div class="interaction-label">charged current: W exchange</div>
+  </div>
+  <div class="interaction-card">
+    {{< nh-video feynman-scattering variant="film-nu-mu-z" data-autoplay=true muted=true loop=true playsinline=true preload="metadata" >}}
+    <div class="interaction-label">neutral current: Z exchange</div>
+  </div>
+</div>
+```

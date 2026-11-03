@@ -3,21 +3,33 @@ import {bridgeStates,bridgeResults,BRIDGE_LENGTH,BRIDGE_TRANSITION_SECONDS} from
 import {NU_THETA,NU_ENERGY_EV,BEAT_LENGTH,field,eigenbasis,polarization,neutrinoDistance,TAU} from './model.mjs';
 import {setMath,rich,fontsReady} from './typeset.mjs';
 const $=id=>document.getElementById(id),query=new URLSearchParams(location.search);
+// Words of the page, by <html lang>: anything not starting with "en" is Russian.
+const LANG=/^en/i.test(document.documentElement.lang||'')?'en':'ru';
+const WORDS={
+ ru:{comma:true,km:' км',mev:' МэВ',webgl:'Для объёмной сцены нужен браузер с WebGL 2.',
+  kind:{linear:'Линейная поляризация',circular:'Круговая поляризация',elliptical:'Эллиптическая поляризация'}},
+ en:{comma:false,km:' km',mev:' MeV',webgl:'The 3D scene needs a browser with WebGL 2.',
+  kind:{linear:'Linear polarization',circular:'Circular polarization',elliptical:'Elliptical polarization'}}
+}[LANG];
+const makeScene=(root,state,options)=>{
+ try{return createWaveScene(root,state,options);}
+ catch(error){root.querySelector('[data-id="error"]').textContent=WORDS.webgl;throw error;}
+};
 if(query.has('embed'))document.body.classList.add('embed');
 // The plate is turned by −α, as the mass axes are by −θ: both readings draw one figure, not mirror images.
 // The camera looks from the side, so that H (up) and V (toward the viewer) are both visible.
 const camera=[8,2.5,12];
 const states=bridgeStates(),result=bridgeResults();states.light={...states.light,axes:-NU_THETA};
-const light=createWaveScene($('light-view'),states.light,{camera}),neutrino=createWaveScene($('neutrino-view'),states.neutrino,{camera});
+const light=makeScene($('light-view'),states.light,{camera}),neutrino=makeScene($('neutrino-view'),states.neutrino,{camera});
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const fmt=(x,n)=>x.toFixed(n).replace('.',',');
+const fmt=(x,n)=>WORDS.comma?x.toFixed(n).replace('.',','):x.toFixed(n);
 const clamp=x=>Math.max(0,Math.min(1,x)),smooth=x=>{x=clamp(x);return x*x*(3-2*x);};
 const colors={one:'#59e6f2',two:'#ffd659',text:'#e6efff',dim:'#9eb3d1',faint:'#263447',accent:'#ff8f6b'};
 
 // Words of the two readings of one construction. Numbers come from the model.
 const amplitude=bridgeResults(BEAT_LENGTH/2).optical.v,distance=neutrinoDistance(BRIDGE_LENGTH),period=neutrinoDistance(BEAT_LENGTH);
-const KIND={linear:'Линейная поляризация',circular:'Круговая поляризация',elliptical:'Эллиптическая поляризация'};
-const TEXT={
+const KIND=WORDS.kind;
+const TEXT={ru:{
  light:{title:'Свет в кристалле',context:'На входе $H$. Две собственные поляризации набирают разные фазы.',
   legend:['Поляризация 1','Поляризация 2','Сумма $E$'],kind:KIND[polarization(states.light).kind],
   note:'$H$ повёрнута на $2α$, а не на ось пластинки',arc:'2$α$',first:'$I_H$',second:'$I_V$',
@@ -28,11 +40,25 @@ const TEXT={
  neutrino:{title:'Нейтрино в вакууме',context:'На входе $ν_e$. Две массовые волны набирают разные фазы.',
   legend:['$ν_{vac,1}$','$ν_{vac,2}$','Сумма $ψ$'],kind:'Суперпозиция $ν_e$ и $ν_x$',
   note:'$ψ=cos 2θ·ν_e−sin 2θ·ν_x$',arc:'2$θ$',first:'$P_e$',second:'$P_x$',
-  parameters:`$L$ = ${fmt(distance,1)} км · $E$ = ${fmt(NU_ENERGY_EV/1e6,0)} МэВ`,
+  parameters:`$L$ = ${fmt(distance,1)}${WORDS.km} · $E$ = ${fmt(NU_ENERGY_EV/1e6,0)}${WORDS.mev}`,
   caption:'Оси теперь в пространстве состояний. Вещество не требуется для осцилляций.',
-  axes:['$ν_e$','$ν_x$'],chartY:'$P_x$',amplitude:'sin$^2$2$θ$',ticks:[0,distance,period].map((d,i)=>i?fmt(d,1)+(i===2?' км':''):'0'),
-  ellipse:'Состояние нейтрино на выходе в осях νe и νx',chart:'Вероятность Px в зависимости от пути',button:'Нейтрино → свет'}
-};
+  axes:['$ν_e$','$ν_x$'],chartY:'$P_x$',amplitude:'sin$^2$2$θ$',ticks:[0,distance,period].map((d,i)=>i?fmt(d,1)+(i===2?WORDS.km:''):'0'),
+  ellipse:'Состояние нейтрино на выходе в осях νe и νx',chart:'Вероятность Px в зависимости от пути',button:'Нейтрино → свет'}},en:{
+ light:{title:'Light in a crystal',context:'The input is $H$. The two eigenpolarizations acquire different phases.',
+  legend:['Polarization 1','Polarization 2','Sum $E$'],kind:KIND[polarization(states.light).kind],
+  note:'$H$ is rotated by $2α$, not along the plate axis',arc:'2$α$',first:'$I_H$',second:'$I_V$',
+  parameters:`$α$ = ${fmt(NU_THETA,1)}° · $L$ = ${fmt(BRIDGE_LENGTH,0)} $λ_0$`,
+  caption:'Press “Light → neutrino”: the physical meaning of the same construction changes.',
+  axes:['$H$','$V$'],chartY:'$I_V$',amplitude:'sin$^2$2$α$',ticks:[0,BRIDGE_LENGTH,BEAT_LENGTH].map((s,i)=>i?fmt(s,0)+' $λ_0$':'0'),
+  ellipse:'Output polarization in the H and V axes',chart:'Fraction of V versus plate thickness',button:'Light → neutrino'},
+ neutrino:{title:'Neutrino in vacuum',context:'The input is $ν_e$. The two mass waves acquire different phases.',
+  legend:['$ν_{vac,1}$','$ν_{vac,2}$','Sum $ψ$'],kind:'Superposition of $ν_e$ and $ν_x$',
+  note:'$ψ=cos 2θ·ν_e−sin 2θ·ν_x$',arc:'2$θ$',first:'$P_e$',second:'$P_x$',
+  parameters:`$L$ = ${fmt(distance,1)}${WORDS.km} · $E$ = ${fmt(NU_ENERGY_EV/1e6,0)}${WORDS.mev}`,
+  caption:'The axes are now in the state space. Matter is not needed for oscillations.',
+  axes:['$ν_e$','$ν_x$'],chartY:'$P_x$',amplitude:'sin$^2$2$θ$',ticks:[0,distance,period].map((d,i)=>i?fmt(d,1)+(i===2?WORDS.km:''):'0'),
+  ellipse:'Neutrino state at the output in the νe and νx axes',chart:'Probability Px versus distance',button:'Neutrino → light'}
+}}[LANG];
 // The fractions are the same numbers in both readings; only their names change.
 $('first-value').textContent=fmt(result.optical.h,3);$('second-value').textContent=fmt(result.optical.v,3);
 $('first-bar').style.width=100*result.optical.h+'%';$('second-bar').style.width=100*result.optical.v+'%';

@@ -1,0 +1,17 @@
+~~~{=html}
+<div class="scatter-lab" data-single-scatterer
+     role="group" aria-label="Plane wave and the divergent wave from a single scatterer">
+  <canvas width="880" height="660" role="img"
+          aria-label="A plane wave travelling from left to right is incident on a point scatterer at the center, from which circular waves spread out"></canvas>
+  <div class="scatter-lab__buttons" role="group" aria-label="What to show">
+    <button type="button" data-mode="incident" aria-pressed="false">Incident</button>
+    <button type="button" data-mode="scattered" aria-pressed="false">Scattered</button>
+    <button type="button" data-mode="sum" aria-pressed="true">Sum</button>
+    <button type="button" data-play>Pause</button>
+  </div>
+  <label class="scatter-lab__slider">Scattering amplitude, |f|/λ
+    <span data-f-value>1.0</span>
+    <input type="range" data-f min="0.2" max="2" step="0.1" value="1">
+  </label>
+</div>
+~~~

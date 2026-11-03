@@ -1,0 +1,34 @@
+```{=html}
+<div class="wu-result-grid">
+  <div class="wu-result-chart" role="img" aria-label="Electrons are emitted predominantly opposite to the nuclear spin">
+    <div class="result-y-label">\(W(\theta)\)</div>
+    <div class="result-x-label">\(\cos\theta\)</div>
+    <svg viewBox="0 0 560 330" preserveAspectRatio="none">
+      <line class="result-axis" x1="58" y1="22" x2="58" y2="292" />
+      <line class="result-axis" x1="58" y1="292" x2="535" y2="292" />
+      <line class="result-guide" x1="58" y1="157" x2="535" y2="157" />
+      <path class="result-symmetric" d="M58,157 L535,157" />
+      <path class="result-observed" d="M58,70 C200,102 370,218 535,258" />
+      <circle class="result-point" cx="58" cy="70" r="7" />
+      <circle class="result-point" cx="535" cy="258" r="7" />
+      <text x="43" y="315">−1</text>
+      <text x="528" y="315">+1</text>
+      <text class="result-note" x="95" y="54">against the spin</text>
+      <text class="result-note" x="397" y="247">along the spin</text>
+    </svg>
+  </div>
+
+  <div class="wu-result-equations">
+    <p>Measured asymmetry:</p>
+    <div class="display-math">\[
+    \frac{W(0)-W(\pi)}{W(0)+W(\pi)}\simeq-0.25.
+    \]</div>
+    <p>For \(\mathcal P\simeq0.65\), \(v/c\simeq0.6\) and \(f_{\rm bs}\simeq2/3\):</p>
+    <div class="display-math accent">\[A\simeq-1.\]</div>
+  </div>
+</div>
+```
+
+The electrons were emitted predominantly **opposite to the nuclear spin**. The effect disappeared
+after the sample was heated and its polarization was lost — which is exactly how
+a physical asymmetry should behave.
