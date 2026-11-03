@@ -3,6 +3,7 @@ project:
   output-dir: _site
   post-render:
     - _extensions/neutrinohit-media/prune.py
+    - scripts/localize_en_pages.py
   # A leading "/" anchors a pattern at the project root; without it Quarto also
   # matches the same folders inside .work/ (for example a release candidate).
   resources:

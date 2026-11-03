@@ -1,45 +1,54 @@
 ~~~{=html}
-<link rel="stylesheet" href="assets/widgets/refraction_labs.css">
+<link rel="stylesheet" href="../../../introduction/ru/slides/assets/06_matter_oscillations/refraction_labs.css">
 <div class="refraction-modes-lab" data-refraction-modes
-     role="group" aria-label="Two normal modes and the transition between flavors">
+     role="group" aria-label="Two eigenwaves of the medium and the transition between flavors">
   <div class="refraction-modes-lab__controls">
-    <label>Normal-mode rotation, \(\theta_m\)
+    <label>Mixing angle in matter, \(\theta_m\)
       <span data-angle-value>30°</span>
-      <input type="range" data-angle min="0" max="45" step="1" value="30">
+      <input type="range" data-angle min="0" max="90" step="1" value="30">
     </label>
-    <label>Phase difference, \(\Delta\varphi=(k_{2m}-k_{1m})L\)
-      <span data-difference-value>3.14 rad</span>
-      <input type="range" data-difference min="0" max="6.283185307" step="0.02" value="3.14">
+    <label>Phase difference, \(\Delta\varphi=(k_{\mathrm{mat},2}-k_{\mathrm{mat},1})L\)
+      <span data-difference-value>2.20 rad</span>
+      <input type="range" data-difference min="0" max="6.283185307" step="0.02" value="2.2">
     </label>
   </div>
   <svg viewBox="0 0 1200 435" role="img"
-       aria-label="Phasors of the two normal modes and the transition probability">
-    <circle class="refraction-modes-lab__circle" cx="255" cy="218" r="137"></circle>
-    <line class="refraction-modes-lab__axis" x1="105" y1="218" x2="405" y2="218"></line>
-    <line class="refraction-modes-lab__axis" x1="255" y1="68" x2="255" y2="368"></line>
-    <line class="refraction-modes-lab__first" x1="255" y1="218" x2="392" y2="218"></line>
-    <line class="refraction-modes-lab__second" data-second-mode x1="255" y1="218" x2="118" y2="218"></line>
-    <circle class="refraction-modes-lab__first-dot" cx="392" cy="218" r="7"></circle>
-    <circle class="refraction-modes-lab__second-dot" data-second-dot cx="118" cy="218" r="7"></circle>
-    <text x="147" y="45">normal-mode phases</text>
-    <text x="401" y="211">1</text>
-    <text data-second-label x="106" y="203">2</text>
+       aria-label="Contributions of the two eigenwaves to the transition amplitude and the transition probability">
+    <line class="refraction-modes-lab__axis" x1="105" y1="218" x2="505" y2="218"></line>
+    <line class="refraction-modes-lab__axis" x1="450" y1="68" x2="450" y2="368"></line>
+    <text x="505" y="250" text-anchor="end">Re</text>
+    <text x="464" y="84">Im</text>
+    <circle class="refraction-modes-lab__locus" data-locus cx="320" cy="218" r="130"></circle>
+    <line class="refraction-modes-lab__sum" data-sum x1="450" y1="218" x2="450" y2="218"></line>
+    <polygon class="refraction-modes-lab__sum-head" data-sum-head points=""></polygon>
+    <line class="refraction-modes-lab__first" data-first x1="450" y1="218" x2="320" y2="218"></line>
+    <polygon class="refraction-modes-lab__first-head" data-first-head points=""></polygon>
+    <line class="refraction-modes-lab__second" data-second x1="320" y1="218" x2="190" y2="218"></line>
+    <polygon class="refraction-modes-lab__second-head" data-second-head points=""></polygon>
+    <circle class="refraction-modes-lab__origin" cx="450" cy="218" r="6"></circle>
+    <text class="refraction-modes-lab__first-label" data-first-label x="385" y="250" text-anchor="middle">1</text>
+    <text class="refraction-modes-lab__second-label" data-second-label x="255" y="250" text-anchor="middle">2</text>
+    <text class="refraction-modes-lab__sum-label" data-sum-label x="320" y="190" text-anchor="middle">A</text>
+    <text x="300" y="45" text-anchor="middle">amplitude A(e → x)</text>
     <line class="refraction-modes-lab__axis" x1="605" y1="345" x2="1110" y2="345"></line>
     <line class="refraction-modes-lab__axis" x1="605" y1="75" x2="605" y2="345"></line>
     <path class="refraction-modes-lab__curve" data-probability-curve></path>
     <circle class="refraction-modes-lab__marker" data-probability-marker r="9"></circle>
-    <text x="705" y="45">probability P(e → x)</text>
-    <text x="587" y="354">0</text>
-    <text x="575" y="87">1</text>
-    <text x="602" y="385">0</text>
-    <text x="838" y="385">π</text>
-    <text x="1066" y="385">2π</text>
-    <text x="850" y="422">phase difference</text>
+    <text x="857" y="45" text-anchor="middle">probability P = |A|²</text>
+    <text x="590" y="352" text-anchor="end">0</text>
+    <text x="590" y="82" text-anchor="end">1</text>
+    <text x="605" y="380" text-anchor="middle">0</text>
+    <text x="857" y="380" text-anchor="middle">π</text>
+    <text x="1110" y="380" text-anchor="middle">2π</text>
+    <text x="857" y="420" text-anchor="middle">phase difference</text>
   </svg>
   <p class="refraction-modes-lab__readout" aria-live="polite">
-    Transition probability: <span data-probability-value>0.750</span>.
-    Equal phases give no transition.
+    Wave contributions: \(-\sin\theta_m\cos\theta_m\) (1) and \(\sin\theta_m\cos\theta_m\,e^{i\Delta\varphi}\) (2);
+    <span class="refraction-modes-lab__nowrap">arrow length
+    <span data-weight-value>0.433</span>,</span>
+    <span class="refraction-modes-lab__nowrap">probability \(|A|^2=\)
+    <span data-probability-value>0.596</span>.</span>
   </p>
 </div>
-<script defer src="assets/widgets/refraction_labs.js"></script>
+<script defer src="../../../introduction/ru/slides/assets/06_matter_oscillations/refraction_labs.js"></script>
 ~~~

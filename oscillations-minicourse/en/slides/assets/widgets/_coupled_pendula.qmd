@@ -176,7 +176,7 @@
 <div class="coupled-pendula-lab" data-coupled-pendula-lab>
   <div class="coupled-pendula-stage">
     <svg class="coupled-pendula-svg" viewBox="0 0 820 488"
-         role="img" aria-label="Interactive model of two coupled pendula with different masses">
+         role="img" aria-label="Interactive model of two coupled pendulums of different masses">
       <line class="coupled-pendula-support" x1="75" y1="38" x2="565" y2="38"></line>
       <circle class="coupled-pendula-pivot" cx="220" cy="49" r="6"></circle>
       <circle class="coupled-pendula-pivot" cx="425" cy="49" r="6"></circle>
@@ -206,7 +206,7 @@
         sin²2θ = 1.000
       </text>
       <text class="coupled-pendula-text--small" x="650" y="248" text-anchor="middle">
-        physical motion = Re aᵢ/√mᵢ
+        actual motion = Re aᵢ/√mᵢ
       </text>
 
       <line class="coupled-pendula-axis" x1="66" y1="446" x2="774" y2="446"></line>
@@ -230,13 +230,13 @@
   </div>
 
   <div class="coupled-pendula-panel">
-    <div class="coupled-pendula-source" role="group" aria-label="Initially displaced pendulum">
+    <div class="coupled-pendula-source" role="group" aria-label="Starting pendulum">
       <button type="button" data-source="1" aria-pressed="true">Start: 1</button>
       <button type="button" data-source="2" aria-pressed="false">Start: 2</button>
     </div>
 
     <div class="coupled-pendula-control">
-      <label for="coupled-mass-ratio">mass ratio m₂/m₁</label>
+      <label for="coupled-mass-ratio">ratio m₂/m₁</label>
       <output data-mass-output>1.00</output>
       <input id="coupled-mass-ratio" data-mass type="range"
              min="-1" max="1" step="0.005" value="0">
@@ -293,7 +293,7 @@
     <p class="coupled-pendula-exact">P₁ + P₂ = 1 exactly, no averaging</p>
     <div class="coupled-pendula-actions">
       <button type="button" data-toggle>Pause</button>
-      <button type="button" data-reset>Restart</button>
+      <button type="button" data-reset>Reset</button>
     </div>
   </div>
 </div>

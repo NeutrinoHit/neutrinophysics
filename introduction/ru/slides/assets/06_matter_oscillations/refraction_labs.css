@@ -53,14 +53,17 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* On a slide MathJax puts its spans straight into the label: keep the formula
+/* On a slide MathJax puts its spans straight into the label (version 3: .mjx-chtml, version 2: .MathJax): keep the formula
    inline with the label text, and float only the value. */
 .reveal .refraction-layers-lab__controls label > .MathJax_Preview,
 .reveal .refraction-modes-lab__controls label > .MathJax_Preview,
 .reveal .refraction-layers-lab__controls label > .mjx-chtml,
+.reveal .refraction-layers-lab__controls label > .MathJax,
 .reveal .refraction-modes-lab__controls label > .mjx-chtml,
+.reveal .refraction-modes-lab__controls label > .MathJax,
 .reveal .refraction-boundary-lab__controls label > .MathJax_Preview,
-.reveal .refraction-boundary-lab__controls label > .mjx-chtml {
+.reveal .refraction-boundary-lab__controls label > .mjx-chtml,
+.reveal .refraction-boundary-lab__controls label > .MathJax {
   display: inline-block;
   float: none;
   color: inherit;

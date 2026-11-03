@@ -1,0 +1,36 @@
+~~~{=html}
+<div class="refraction-layers-lab" data-refraction-layers
+     role="group" aria-label="Phase of a light wave in a transparent layer">
+  <div class="refraction-layers-lab__controls">
+    <label>Refractive index, \(n\)
+      <span data-index-value>1.08</span>
+      <input type="range" data-index min="1" max="1.2" step="0.005" value="1.08">
+    </label>
+    <label>Layer thickness, \(L/\lambda_0\)
+      <span data-length-value>1.50</span>
+      <input type="range" data-length min="0.05" max="3" step="0.05" value="1.5">
+    </label>
+  </div>
+  <svg viewBox="0 0 1200 395" role="img"
+       aria-label="Wave transmitted through the layer compared with the wave in vacuum">
+    <rect class="refraction-layers-lab__medium" data-medium x="442.5" y="35" width="315" height="260"></rect>
+    <line class="refraction-layers-lab__axis" x1="70" y1="165" x2="1130" y2="165"></line>
+    <path class="refraction-layers-lab__vacuum" data-vacuum-wave></path>
+    <path class="refraction-layers-lab__wave" data-medium-wave></path>
+    <line class="refraction-layers-lab__boundary" data-entry x1="442.5" y1="35" x2="442.5" y2="295"></line>
+    <line class="refraction-layers-lab__boundary" data-exit x1="757.5" y1="35" x2="757.5" y2="295"></line>
+    <text x="177" y="335" text-anchor="middle">vacuum</text>
+    <text x="600" y="335" text-anchor="middle">medium</text>
+    <text x="1023" y="335" text-anchor="middle">vacuum</text>
+    <line class="refraction-layers-lab__key-vacuum" x1="330" y1="374" x2="380" y2="374"></line>
+    <text x="394" y="381">no layer</text>
+    <line class="refraction-layers-lab__key-medium" x1="650" y1="374" x2="700" y2="374"></line>
+    <text x="714" y="381">with layer</text>
+  </svg>
+  <p class="refraction-layers-lab__readout" aria-live="polite">
+    Extra phase at the exit:
+    <span data-phase-value>0.75</span> rad.
+    The frequency is the same on both sides of the layer.
+  </p>
+</div>
+~~~

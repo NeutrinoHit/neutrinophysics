@@ -205,7 +205,7 @@
      data-quantum-chameleon
      role="img"
      tabindex="0"
-     aria-label="Metaphor: a chameleon walks along a branch and changes color. In the experiment, flavor detection probabilities change. Click to restart.">
+     aria-label="Metaphor: a chameleon walks along a branch and changes color. In the experiment, the probabilities of flavor outcomes change. Click to restart.">
   <svg viewBox="0 0 1200 620" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
     <defs>
       <linearGradient id="qc-sky" x1="0" y1="0" x2="0" y2="1">
@@ -495,11 +495,11 @@
     </g>
   </svg>
   <span class="qc-metaphor-note" aria-hidden="true">
-    <strong>Metaphor:</strong> one particle, different detectable flavors.
-    <strong>In the experiment:</strong> flavor detection probabilities change.
+    <strong>Metaphor:</strong> one object — different manifestations.
+    <strong>In the experiment:</strong> the probabilities of flavor outcomes change.
   </span>
-  <span class="qc-replay-hint" aria-hidden="true"><span>↻</span> replay 30 s</span>
+  <span class="qc-replay-hint" aria-hidden="true"><span>↻</span> repeat 30 s</span>
 </div>
 
-<script src="assets/widgets/quantum_chameleon.js"></script>
+<script src="../../../introduction/ru/slides/assets/05_vacuum_oscillations/quantum_chameleon.js"></script>
 ```

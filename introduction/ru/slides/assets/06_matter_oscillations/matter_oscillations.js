@@ -2,6 +2,21 @@
   "use strict";
 
   const SVG_NS = "http://www.w3.org/2000/svg";
+  // Words of the widgets, one dictionary per language. The language is read from
+  // the page; anything not starting with "en" is Russian.
+  const T = {
+    ru: {
+      vacuum: "вакуум", matter: "вещество", envelope: "огибающая", resonance: "рез.",
+      animate: "▶ движение", stop: "■ стоп", probability: "вероятность",
+      runProfile: "▶ пройти профиль", stopProfile: "■ остановить"
+    },
+    en: {
+      vacuum: "vacuum", matter: "matter", envelope: "envelope", resonance: "res.",
+      animate: "▶ animate", stop: "■ stop", probability: "probability",
+      runProfile: "▶ run profile", stopProfile: "■ stop"
+    }
+  };
+  const W = /^en/i.test(document.documentElement.lang || "") ? T.en : T.ru;
   const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
   const deg = (radians) => radians * 180 / Math.PI;
   const rad = (degrees) => degrees * Math.PI / 180;
@@ -86,9 +101,9 @@
       html += `<path class="matter-line" d="${pathFrom(matter, xMap, yMap)}"/>`;
       html += `<line class="probe" x1="${xMap(m.x)}" y1="${top}" x2="${xMap(m.x)}" y2="${height - bottom}"/>`;
       html += `<circle class="probe-dot" cx="${xMap(m.x)}" cy="${yMap(m.P)}" r="5"/>`;
-      html += `<line class="vacuum-line" x1="385" y1="24" x2="418" y2="24"/><text class="legend-label" x="424" y="28">вакуум</text>`;
-      html += `<line class="matter-line" x1="385" y1="43" x2="418" y2="43"/><text class="legend-label" x="424" y="47">вещество</text>`;
-      html += `<line class="envelope-line" x1="385" y1="62" x2="418" y2="62"/><text class="legend-label" x="424" y="66">огибающая</text>`;
+      html += `<line class="vacuum-line" x1="385" y1="24" x2="418" y2="24"/><text class="legend-label" x="424" y="28">${W.vacuum}</text>`;
+      html += `<line class="matter-line" x1="385" y1="43" x2="418" y2="43"/><text class="legend-label" x="424" y="47">${W.matter}</text>`;
+      html += `<line class="envelope-line" x1="385" y1="62" x2="418" y2="62"/><text class="legend-label" x="424" y="66">${W.envelope}</text>`;
       probSvg.innerHTML = html;
     }
 
@@ -124,7 +139,7 @@
       html += `<rect class="electron-fill" x="${barX}" y="${barY + barH * (1 - eFraction)}" width="${barW}" height="${barH * eFraction}" rx="3"/>`;
       html += `<text x="${barX + 8}" y="${barY - 7}" text-anchor="middle">νe</text>`;
       html += `<text x="${barX + 8}" y="${barY + barH + 16}" text-anchor="middle">${Math.round(100 * eFraction)}%</text>`;
-      html += `<text x="${xMap(m.c2)}" y="${height - bottom - 7}" text-anchor="middle" fill="var(--matter-gold)">рез.</text>`;
+      html += `<text x="${xMap(m.c2)}" y="${height - bottom - 7}" text-anchor="middle" fill="var(--matter-gold)">${W.resonance}</text>`;
       levelsSvg.innerHTML = html;
     }
 
@@ -161,12 +176,12 @@
       if (animation) {
         cancelAnimationFrame(animation);
         animation = null;
-        playButton.textContent = "▶ движение";
+        playButton.textContent = W.animate;
         return;
       }
       const start = performance.now();
       const x0 = Number(xInput.value);
-      playButton.textContent = "■ стоп";
+      playButton.textContent = W.stop;
       const frame = (now) => {
         const elapsed = (now - start) / 1000;
         xInput.value = String((x0 + elapsed * 0.72) % 5);
@@ -175,7 +190,7 @@
           animation = requestAnimationFrame(frame);
         } else {
           animation = null;
-          playButton.textContent = "▶ движение";
+          playButton.textContent = W.animate;
         }
       };
       animation = requestAnimationFrame(frame);
@@ -308,7 +323,7 @@
       let html = baseAxes({
         width, height, left, right, top, bottom,
         xTicks: [0, 0.25, 0.5, 0.75, 1], yTicks: [0, 0.25, 0.5, 0.75, 1],
-        xMap, yMap, xLabel: "s = x / X", yLabel: "вероятность"
+        xMap, yMap, xLabel: "s = x / X", yLabel: W.probability
       });
       html += `<path d="${pathFrom(density, xMap, yMap)}" fill="none" stroke="rgba(200,214,228,.32)" stroke-width="7"/>`;
       html += `<path d="${pathFrom(p2ad, xMap, yMap)}" fill="none" stroke="var(--matter-blue)" stroke-width="1.4" stroke-dasharray="4 4" opacity=".65"/>`;
@@ -410,14 +425,14 @@
         cancelAnimationFrame(animation);
         animation = null;
         cursor = 1;
-        playButton.textContent = "▶ пройти профиль";
+        playButton.textContent = W.runProfile;
         update(false);
         return;
       }
       data = simulate();
       const start = performance.now();
       const duration = 6500;
-      playButton.textContent = "■ остановить";
+      playButton.textContent = W.stopProfile;
       const frame = (now) => {
         cursor = clamp((now - start) / duration, 0, 1);
         update(false);
@@ -425,7 +440,7 @@
           animation = requestAnimationFrame(frame);
         } else {
           animation = null;
-          playButton.textContent = "▶ пройти профиль";
+          playButton.textContent = W.runProfile;
         }
       };
       cursor = 0;

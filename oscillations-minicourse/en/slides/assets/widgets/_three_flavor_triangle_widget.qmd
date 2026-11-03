@@ -1,5 +1,5 @@
 ```{=html}
-<link rel="stylesheet" href="assets/widgets/three_flavor_triangle.css">
+<link rel="stylesheet" href="../../../introduction/ru/slides/assets/05_vacuum_oscillations/three_flavor_triangle.css">
 <div class="three-flavor-triangle" data-three-flavor-triangle>
   <div class="three-flavor-triangle__controls">
     <div class="three-flavor-triangle__control">
@@ -27,7 +27,7 @@
     <div class="three-flavor-triangle__control">
       <label><span>\(x=L/L_{\rm osc}^{21}\)</span><output data-x-output>0.30</output></label>
       <input type="range" min="0" max="3" step="0.005" value="0.30"
-             data-x-input aria-label="Path in units of the solar oscillation length">
+             data-x-input aria-label="Path length in units of the solar oscillation length">
     </div>
     <div class="three-flavor-triangle__control">
       <label><span>\(\theta_{12}\)</span><output data-theta12-output>33.76°</output></label>
@@ -51,11 +51,11 @@
     </div>
     <div class="three-flavor-triangle__readout">
       <span>\(L/E\)</span>
-      <strong data-ratio-output>9,900</strong>
+      <strong data-ratio-output>9900</strong>
       <span>\(\mathrm{km/GeV}\)</span>
     </div>
     <div class="three-flavor-triangle__transport">
-      <button type="button" data-play>▶ Play</button>
+      <button type="button" data-play>▶ Run</button>
       <button type="button" data-reset>↺ Reset</button>
     </div>
   </div>
@@ -95,5 +95,5 @@
     </div>
   </div>
 </div>
-<script defer src="assets/widgets/three_flavor_triangle.js"></script>
+<script defer src="../../../introduction/ru/slides/assets/05_vacuum_oscillations/three_flavor_triangle.js"></script>
 ```

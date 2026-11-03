@@ -267,9 +267,9 @@
     </div>
 
     <div class="two-flavor-lab__hint">
-      Here <i>x</i> = <i>L</i>/<i>L</i><sub>osc</sub>, so
+      Here <i>x</i> = <i>L</i>/<i>L</i><sub>osc</sub>, therefore
       <i>P</i><sub>α→β</sub> = <i>A</i> sin²(π<i>x</i>).
-      The angle sets the height; the distance sets the position along the oscillation.
+      The angle sets the height, the distance sets the position on the oscillation.
     </div>
   </div>
 

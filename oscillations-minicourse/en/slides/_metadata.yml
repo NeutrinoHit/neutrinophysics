@@ -21,7 +21,7 @@ format:
           <script data-external="1" src="assets/neutrinohit-video-seek.js"></script>
           <script data-external="1" src="assets/earth-explorer/earth_explorer.js"></script>
           <script data-external="1" src="assets/earth-explorer/earth_widgets.js"></script>
-          <script data-external="1" defer src="assets/widgets/matter_oscillations.js"></script>
+          <script data-external="1" defer src="../../../introduction/ru/slides/assets/06_matter_oscillations/matter_oscillations.js"></script>
     embed-resources: false
     width: 1600
     height: 900
