@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="dark">
-  <title>Light and neutrino: two eigenwaves</title>
+  <title>Light and neutrino: two eigenstates</title>
   <link rel="stylesheet" href="comparison.css"><link rel="stylesheet" href="math.css">
 </head>
 <body data-pair="solar">
 <main>
-  <header><div><h1>Two eigenwaves</h1><p>Light in a crystal and a neutrino in vacuum: one principle of propagation.</p></div>
+  <header><div><h1>Two eigenstates</h1><p>Light in a crystal and a neutrino in vacuum: one principle of propagation.</p></div>
   <button id="play" type="button" aria-pressed="true">Pause</button></header>
   <div class="comparison">
     <section class="system" id="light-view" aria-label="Light in a birefringent crystal">
       <div class="system-title"><h2>Light in a crystal</h2><span id="light-length">L = 1.00 λ₀</span></div>
       <div class="legend"><span class="one">Polarization 1</span><span class="two">Polarization 2</span><span>Sum E</span></div>
       <div class="scene" data-id="scene">
-        <canvas data-id="crystal" aria-label="3D crystal: two eigenpolarizations and the sum"></canvas>
+        <canvas data-id="crystal" aria-label="3D crystal: two polarization eigenstates and the sum"></canvas>
         <span class="scene-label" data-id="entry-label">Input</span><span class="scene-label" data-id="exit-label">Output</span>
         <span class="axis-label one" data-id="axis-one">axis 1</span><span class="axis-label two" data-id="axis-two">axis 2</span>
         <p data-id="error" hidden role="alert"></p>
@@ -29,7 +29,7 @@
       <div class="system-title"><h2>Neutrino in vacuum</h2><span id="neutrino-length">L = 82.7 km</span></div>
       <div class="legend"><span class="one">ν₁</span><span class="two">ν₂</span><span>Sum ψ</span></div>
       <div class="scene" data-id="scene">
-        <canvas data-id="crystal" aria-label="Neutrino amplitude geometry: two mass eigenwaves and the sum"></canvas>
+        <canvas data-id="crystal" aria-label="Neutrino amplitude geometry: two mass eigenstates and the sum"></canvas>
         <span class="scene-label" data-id="entry-label">Input: νₑ</span><span class="scene-label" data-id="exit-label">Measurement</span>
         <span class="axis-label one" data-id="axis-one">ν₁</span><span class="axis-label two" data-id="axis-two">ν₂</span>
         <p data-id="error" hidden role="alert"></p>

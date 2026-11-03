@@ -43,7 +43,7 @@
       </figcaption>
     </figure>
     <figure>
-      <svg data-plot="levels" viewBox="0 0 440 430" role="img" aria-label="Уровни в веществе и доля электронного нейтрино в верхней собственной волне"></svg>
+      <svg data-plot="levels" viewBox="0 0 440 430" role="img" aria-label="Уровни в веществе и доля электронного нейтрино в верхнем собственном состоянии"></svg>
       <figcaption class="lecture12-legend">
         <span><i class="key-matter"></i>уровни \(\pm\Delta_m/2\)</span>
         <span><i class="key-vacuum"></i>без смешивания</span>

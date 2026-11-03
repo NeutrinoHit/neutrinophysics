@@ -228,7 +228,7 @@ def eigen_axes():
         ax.text(R*v[0]+off[0],R*v[1]+off[1],lab,fontsize=24,color=VIO)
     ax.add_patch(Arc((0,0),.6,.6,theta1=-np.degrees(th),theta2=0,color=VIO,lw=1.6))
     ax.text(.34,-.1,'$\\theta$',fontsize=21,color=VIO,va='center')
-    # matter eigenwaves
+    # matter eigenstates
     v1=np.array([np.cos(tm),-np.sin(tm)]);v2=np.array([np.sin(tm),np.cos(tm)])
     for v,col,lab,off in [(v1,TOT,'$\\nu_{\\rm mat,1}$',(.07,-.1)),(v2,SEC,'$\\nu_{\\rm mat,2}$',(.04,.05))]:
         ax.plot([-.75*v[0],R*v[0]],[-.75*v[1],R*v[1]],color=col,lw=1.6,ls=(0,(6,4)),alpha=.8)

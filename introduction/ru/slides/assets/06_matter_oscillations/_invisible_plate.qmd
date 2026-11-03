@@ -89,9 +89,9 @@
       <text class="invisible-plate__note" data-inset-note x="195" y="498" text-anchor="middle"></text>
     </g>
 
-    <!-- phases of the two eigenwaves -->
+    <!-- phases of the two eigenstates -->
     <g data-dials>
-      <text x="600" y="258" text-anchor="middle">фазы двух собственных волн</text>
+      <text x="600" y="258" text-anchor="middle">фазы двух собственных состояний</text>
       <circle class="invisible-plate__dial" cx="530" cy="300" r="38"></circle>
       <circle class="invisible-plate__dial" cx="670" cy="300" r="38"></circle>
       <line class="invisible-plate__comp--1" data-pointer="1"></line>

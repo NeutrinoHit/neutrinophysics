@@ -1,6 +1,6 @@
 ~~~{=html}
 <div class="refraction-modes-lab" data-refraction-modes
-     role="group" aria-label="Two eigenwaves of the medium and the transition between flavors">
+     role="group" aria-label="Two eigenstates of the medium and the transition between flavors">
   <div class="refraction-modes-lab__controls">
     <label>Mixing angle in matter, \(\theta_m\)
       <span data-angle-value>30°</span>
@@ -12,7 +12,7 @@
     </label>
   </div>
   <svg viewBox="0 0 1200 435" role="img"
-       aria-label="Contributions of the two eigenwaves to the transition amplitude and the transition probability">
+       aria-label="Contributions of the two eigenstates to the transition amplitude and the transition probability">
     <line class="refraction-modes-lab__axis" x1="105" y1="218" x2="505" y2="218"></line>
     <line class="refraction-modes-lab__axis" x1="450" y1="68" x2="450" y2="368"></line>
     <text x="505" y="250" text-anchor="end">Re</text>

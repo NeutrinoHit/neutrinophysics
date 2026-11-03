@@ -30,7 +30,7 @@ const colors={one:'#59e6f2',two:'#ffd659',text:'#e6efff',dim:'#9eb3d1',faint:'#2
 const amplitude=bridgeResults(BEAT_LENGTH/2).optical.v,distance=neutrinoDistance(BRIDGE_LENGTH),period=neutrinoDistance(BEAT_LENGTH);
 const KIND=WORDS.kind;
 const TEXT={ru:{
- light:{title:'Свет в кристалле',context:'На входе $H$. Две собственные поляризации набирают разные фазы.',
+ light:{title:'Свет в кристалле',context:'На входе $H$. Два собственных состояния поляризации набирают разные фазы.',
   legend:['Поляризация 1','Поляризация 2','Сумма $E$'],kind:KIND[polarization(states.light).kind],
   note:'$H$ повёрнута на $2α$, а не на ось пластинки',arc:'2$α$',first:'$I_H$',second:'$I_V$',
   parameters:`$α$ = ${fmt(NU_THETA,1)}° · $L$ = ${fmt(BRIDGE_LENGTH,0)} $λ_0$`,
@@ -44,7 +44,7 @@ const TEXT={ru:{
   caption:'Оси теперь в пространстве состояний. Вещество не требуется для осцилляций.',
   axes:['$ν_e$','$ν_x$'],chartY:'$P_x$',amplitude:'sin$^2$2$θ$',ticks:[0,distance,period].map((d,i)=>i?fmt(d,1)+(i===2?WORDS.km:''):'0'),
   ellipse:'Состояние нейтрино на выходе в осях νe и νx',chart:'Вероятность Px в зависимости от пути',button:'Нейтрино → свет'}},en:{
- light:{title:'Light in a crystal',context:'The input is $H$. The two eigenpolarizations acquire different phases.',
+ light:{title:'Light in a crystal',context:'The input is $H$. The two polarization eigenstates acquire different phases.',
   legend:['Polarization 1','Polarization 2','Sum $E$'],kind:KIND[polarization(states.light).kind],
   note:'$H$ is rotated by $2α$, not along the plate axis',arc:'2$α$',first:'$I_H$',second:'$I_V$',
   parameters:`$α$ = ${fmt(NU_THETA,1)}° · $L$ = ${fmt(BRIDGE_LENGTH,0)} $λ_0$`,

@@ -47,7 +47,7 @@ execute:
 
 - And yet... Light in a transparent medium is hardly absorbed, but it is refracted. Perhaps the neutrino is also refracted in the Sun?
 
-- Yes! In this lecture we will see that the Sun and the vacuum are, for neutrinos, transparent crystals with two eigenwaves and **different** refractive indices.
+- Yes! In this lecture we will see that the Sun and the vacuum are, for neutrinos, transparent crystals with two eigenstates and **different** refractive indices.
 
   - At the center of the Sun, at $E=10$ MeV, the matter contributions differ by $\delta n_e-\delta n_x\approx-8\cdot10^{-19}$.
 
@@ -59,7 +59,7 @@ execute:
 . . .
 
 ::: {.nh-box tone="accent" size="md" weight="bold"}
-The Sun and the vacuum are, for neutrinos, transparent crystals with two eigenwaves and **different** refractive indices.
+The Sun and the vacuum are, for neutrinos, transparent crystals with two eigenstates and **different** refractive indices.
 
 :::
 
@@ -432,7 +432,7 @@ $\alpha=e,\mu,\tau$, $\quad f=e^-,p,n$.
 
 - Therefore the matter contributions $\delta n_e$ and $\delta n_x$ are different.
 
-- Matter changes both the refractive indices and the eigenwaves of the vacuum "crystal".
+- Matter changes both the refractive indices and the eigenstates of the vacuum "crystal".
 
 :::
 
@@ -519,12 +519,12 @@ $$
 $$
 
 ::: {.nh-box tone="accent" size="md"}
-This is a definition of the operator through its eigenwaves. Its matrix can be written in any basis.
+This is a definition of the operator through its eigenstates. Its matrix can be written in any basis.
 :::
 
 ## How a state propagates in vacuum {#vacuum-evolution}
 
-Each eigenwave acquires its own phase:
+Each eigenstate acquires its own phase:
 
 $$
 a_i(z)=a_i(0)e^{iEn_i z},
@@ -618,7 +618,7 @@ n_1\cos^2\theta+n_2\sin^2\theta
 $$
 
 ::: {.nh-box tone="accent" size="md"}
-Under the change of basis the matrix became non-diagonal. The eigenwaves $\nu_1,\nu_2$
+Under the change of basis the matrix became non-diagonal. The eigenstates $\nu_1,\nu_2$
 and the indices $n_1,n_2$ stayed the same.
 :::
 
@@ -683,15 +683,15 @@ $$
 
 ::: {.nh-box tone="accent" size="md"}
 The vacuum and the matter contribution have different eigenaxes.
-We find the eigenwaves of the full medium from their sum.
+We find the eigenstates of the full medium from their sum.
 :::
 
-## New axes — new waves {#matter-eigenwaves}
+## New axes — new eigenstates {#matter-eigenstates}
 
 :::: {.columns}
 
 ::: {.column width="58%"}
-The eigenwaves of the full medium satisfy the equation
+The eigenstates of the full medium satisfy the equation
 
 $$
 \hat n_{\mathrm{mat}}|\nu_{\mathrm{mat},i}\rangle
@@ -738,7 +738,7 @@ $$
 c_i(z)=e^{iEn_{\mathrm{mat},i}z}c_i(0).
 $$
 
-Adding the two eigenwaves, we obtain
+Adding the two eigenstates, we obtain
 
 $$
 \boxed{|\psi(z)\rangle
@@ -755,7 +755,7 @@ The probabilities are affected by the difference of the eigen-indices and by the
 ## The source prepares $\nu_e$, the detector looks for $\nu_x$ {#source-detector}
 
 - The mixing angle in matter $\theta_m$ determines the expansion of the flavors in
-  the eigenwaves:
+  the eigenstates:
 
 $$
 \begin{aligned}
@@ -802,13 +802,13 @@ $$
 
 - In vacuum the result is the same, with $\theta$ and $\Delta\varphi\simeq(\Delta m^2/2E)z$:
   matter changes the eigenaxes and the difference of the refractive indices.
-- This is the same interference of two eigenwaves as in a plate between
+- This is the same interference of two eigenstates as in a plate between
   crossed polarizers: $\theta_m\leftrightarrow\theta$,
   $E(n_{\mathrm{mat},1}-n_{\mathrm{mat},2})\leftrightarrow(n_1-n_2)k$.
-- For $\theta_m=0$ the state $\nu_e$ is itself an eigenwave, and there are no transitions.
+- For $\theta_m=0$ the state $\nu_e$ is itself an eigenstate, and there are no transitions.
 - The formula holds at constant density. For variable density
   $\hat n_{\mathrm{mat}}=\hat n_{\mathrm{mat}}(z)$; in the basis of its local
-  eigenwaves one has to account for the rotation of the axes along the path.
+  eigenstates one has to account for the rotation of the axes along the path.
 
 :::
 
@@ -822,17 +822,17 @@ we will compute in lecture 12, and we will consider slowly varying density in le
 | Neutrino | Light in a birefringent crystal |
 |:--|:--|
 | is born as $\nu_e$; the detector looks for $\nu_e$ or $\nu_x$ | polarizer H; analyzer H or V |
-| $\nu_1,\nu_2$ are the vacuum eigenwaves | polarizations along the crystal axes |
+| $\nu_1,\nu_2$ are the vacuum eigenstates | polarizations along the crystal axes |
 | mixing angle $\theta$ | angle between the crystal axis and the polarizer |
 | $E(n_1-n_2)\simeq\Delta m^2/(2E)$ | $(n_1-n_2)k$ |
 | matter: different contributions $\delta n_e,\delta n_x$ | deformation with an additional anisotropy along the H/V axes |
 | $\nu_{\mathrm{mat},1},\nu_{\mathrm{mat},2}$ and angle $\theta_m$ | new axes of the deformed crystal |
 
 ::: {.nh-box tone="accent" size="sm"}
-For neutrinos, empty space is already a crystal: $\hat n_{\mathrm{vac}}$ has eigenwaves
+For neutrinos, empty space is already a crystal: $\hat n_{\mathrm{vac}}$ has eigenstates
 $\nu_1,\nu_2$ with indices $n_i\simeq1-m_i^2/(2E^2)$.
 Matter adds $\delta\hat n$, which is diagonal in the flavor basis.
-The eigenwaves of the sum $\hat n_{\mathrm{mat}}$ determine the propagation in matter.
+The eigenstates of the sum $\hat n_{\mathrm{mat}}$ determine the propagation in matter.
 :::
 
 # Supplement

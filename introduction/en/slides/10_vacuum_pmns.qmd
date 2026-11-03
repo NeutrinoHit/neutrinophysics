@@ -53,7 +53,7 @@ These are three states distinguishable by the weak interaction.
 
 ### Mass
 
-In vacuum, three eigenwaves propagate:
+In vacuum, three eigenstates propagate:
 
 $$
 H_0|\nu_i\rangle=E_i|\nu_i\rangle,
