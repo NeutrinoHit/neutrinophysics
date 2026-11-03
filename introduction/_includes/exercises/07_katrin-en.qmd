@@ -1,0 +1,154 @@
+## Problem 7.1. Final states and scattering in the source
+
+After the molecular decay, the daughter system is left in the state $j$ with
+excitation energy $V_j$ and probability $P_j$.
+
+1. Write the observed spectrum as a sum of spectra with endpoints $E_0-V_j$.
+   Check that $\sum_jP_j=1$ conserves the total number of decays.
+2. Let the mean number of inelastic collisions of an electron in the full gas column
+   be $\tau=1.4$. Compute
+
+   $$
+   P_s=e^{-\tau}\frac{\tau^s}{s!}
+   $$ {#eq-ex07-001}
+
+   for $s=0,1,2$ and the probability of at least one collision.
+3. The decays are uniformly distributed along the source. If the optical depth $u$ remaining after
+   production is uniform on $[0,\tau]$, show that
+
+   $$
+   \langle P_0\rangle
+   =\frac{1}{\tau}\int_0^\tau e^{-u}\,du
+   =\frac{1-e^{-\tau}}{\tau}.
+   $$ {#eq-ex07-002}
+
+   Compute this number and explain its physical meaning.
+4. Let $g(\Delta E)$ be the energy-loss distribution in a single collision.
+   Show that the loss function has the form
+
+   $$
+   R(\Delta E)=\sum_{s=0}^{\infty}P_s\,g^{*s}(\Delta E),
+   \qquad g^{*0}(\Delta E)=\delta(\Delta E),
+   $$ {#eq-ex07-003}
+
+   where $g^{*s}$ denotes the $s$-fold convolution.
+
+## Problem 7.2. What KATRIN measures
+
+In the ideal approximation, treat the MAC-E filter as a step function:
+
+$$
+\mathcal T(E,qU)=\Theta(E-qU).
+$$ {#eq-ex07-004}
+
+Then the expected count rate at retarding energy $qU$ is
+
+$$
+R(qU)=A\int_{qU}^{E_0}\frac{d\Gamma}{dE}\,dE+b.
+$$ {#eq-ex07-005}
+
+1. Introduce $x=E_0-E$ and $w=E_0-qU$. For a massless neutrino and
+   $d\Gamma/dE=Cx^2$, obtain
+
+   $$
+   R(w)-b=\frac{AC}{3}w^3.
+   $$ {#eq-ex07-006}
+
+2. Show that in the ideal case
+
+   $$
+   -\frac{dR}{d(qU)}
+   =A\left.\frac{d\Gamma}{dE}\right|_{E=qU}.
+   $$ {#eq-ex07-007}
+
+   Explain why scanning the threshold recovers information about the shape of the
+   differential spectrum.
+3. Plot on a single graph $R(qU)$ for $m_\beta^2=0$ and
+   $m_\beta^2=1~\mathrm{eV}^2$ over the last $10~\mathrm{eV}$. Use
+   the numerical integration of the spectrum from Problem 04.1.
+4. Replace the step function with the known transmission function
+   $\mathcal T(E,qU)$ and write the general integral for $R(qU)$. Then include the
+   loss function $R_{\mathrm{loss}}(\Delta E)$ from Problem 07.1 as one more
+   convolution.
+5. Explain why a single point $qU$ does not allow one to simultaneously determine
+   $m_\beta^2$, $E_0$, the normalization $A$ and the background $b$, whereas a set of thresholds allows
+   them to be separated by their different dependence on $qU$.
+
+## Problem 7.3. Why a fit can give $m_\beta^2<0$
+
+This problem links the physics of the spectrum endpoint with the course on statistical analysis.
+Use a deliberately simple model: $E_0$, the normalization and the background are assumed
+known, and the only fit parameter is $m_\beta^2$.
+
+Divide the interval $1<x<10~\mathrm{eV}$, where $x=E_0-E$, into bins of width
+$\Delta x=0.5~\mathrm{eV}$. For the center $x_i$ set
+
+$$
+\mu_i(m_\beta^2)
+=A\Delta x\,
+\left(x_i^2-\frac{m_\beta^2}{2}\right)+b,
+\qquad
+A=3~\mathrm{eV}^{-3},\quad b=1.
+$$ {#eq-ex07-008}
+
+This is a linearized model of the spectrum endpoint, not the full KATRIN fit. The chosen
+ranges of $x$ and $m_\beta^2$ preserve $\mu_i>0$ at all scan points.
+
+1. Generate independent event counts
+   $n_i\sim\operatorname{Poisson}[\mu_i(0)]$.
+2. Scan $m_\beta^2$ from $-4$ to $4~\mathrm{eV}^2$ with a step no larger than
+   $0.02~\mathrm{eV}^2$. For each point compute the Poisson deviance
+
+   $$
+   D(m_\beta^2)=2\sum_i
+   \left[\mu_i-n_i+n_i\ln\frac{n_i}{\mu_i}\right],
+   $$ {#eq-ex07-009}
+
+   taking the $n_i\ln(n_i/\mu_i)$ term to be zero for $n_i=0$.
+3. Find the minimum of the grid scan. Repeat steps 1--2 at least
+   1000 times and construct the distribution of $\widehat m_\beta^2$. Find the mean,
+   the standard deviation and the fraction of results with
+   $\widehat m_\beta^2<0$.
+4. Repeat the analysis, artificially forbidding $m_\beta^2<0$. Compare the mean
+   value of the estimate in the two cases and explain the bias that arises at
+   the physical boundary.
+5. Now generate pseudo-data with an unaccounted resolution, replacing the true
+   expectation by
+
+   $$
+   \mu_i^{\mathrm{true}}
+   =A\Delta x\,(x_i^2+\sigma_E^2)+b,
+   \qquad \sigma_E=0.5~\mathrm{eV},
+   $$ {#eq-ex07-010}
+
+   but fit with the previous model without $\sigma_E$. Show numerically that the center of the
+   distribution shifts by approximately
+
+   $$
+   \Delta m_\beta^2\simeq-2\sigma_E^2.
+   $$ {#eq-ex07-011}
+
+6. Explain the result: why does a negative minimum of the likelihood function
+   not imply a tachyonic neutrino, and why does the experiment allow
+   $m_\beta^2$ to take negative values at the fitting stage?
+
+## Problem 7.4. From calibration to the spectrum
+
+1. The electron gun passes through the full gas column with optical depth $\tau=1.4$.
+   Find the fraction of electrons on the plateau without losses. Compare it with the fraction of
+   β electrons produced inside the same column and moving along the axis.
+   Why do the two fractions differ?
+2. For $E_{\mathrm{gun}}=18\,600~\mathrm{eV}$ and $e|U|=18\,585~\mathrm{eV}$,
+   find the excess energy $E_s$. Which electrons will pass the ideal
+   filter at loss $0$, $12.8$ and $20~\mathrm{eV}$? How does changing $U$
+   help to recover the loss function?
+3. For a divider with $M=1972$, find the voltage on the voltmeter at
+   $U=-18.6~\mathrm{kV}$. What absolute stability of the high voltage
+   corresponds to the relative requirement $3\cdot10^{-6}$?
+4. Suppose that, because of the source potential, the electron energies are additionally
+   distributed with zero mean and rms spread
+   $\sigma_E=0.2~\mathrm{eV}$. Use the estimate from Problem 7.3 for
+   the shift $m_\beta^2$. What measurement inside the gas can constrain
+   this spread?
+5. Explain why the energy selection of pulses in the silicon detector
+   does not remove all electrons produced after the analyzing barrier.

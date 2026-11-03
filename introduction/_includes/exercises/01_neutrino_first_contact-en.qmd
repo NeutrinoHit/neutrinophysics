@@ -1,0 +1,225 @@
+## Problem 1.1. How transparent is the Universe to neutrinos?
+
+Estimate the neutrino interaction length in a medium with the mean baryon
+density of the Universe for two energies:
+
+$$
+E_\nu=1~\mathrm{MeV},
+\qquad
+E_\nu=1~\mathrm{PeV}.
+$$ {#eq-ex01-001}
+
+Use
+
+$$
+\lambda_\nu=\frac{1}{n\sigma},
+\qquad
+n\simeq2.5\cdot10^{-7}~\mathrm{cm}^{-3},
+$$ {#eq-ex01-002}
+
+$$
+\sigma_{\nu e}(1~\mathrm{MeV})\sim10^{-44}~\mathrm{cm}^2,
+\qquad
+\sigma_{\nu N}(1~\mathrm{PeV})\sim10^{-33}~\mathrm{cm}^2,
+$$ {#eq-ex01-003}
+
+and the diameter of the observable Universe
+$D_{\mathrm{obs}}\simeq8.8\cdot10^{28}~\mathrm{cm}$.
+
+1. Compute $\lambda_\nu$ and the ratio $D_{\mathrm{obs}}/\lambda_\nu$
+   for both energies.
+2. Interpret $D_{\mathrm{obs}}/\lambda_\nu$ as an optical depth.
+   What is the probability of at least one interaction for
+   $D_{\mathrm{obs}}\ll\lambda_\nu$?
+3. Why does this estimate require the density of ordinary matter rather than the total
+   energy density of the Universe?
+4. Explain why an increase of the cross section by eleven orders of magnitude still does not
+   make a homogeneous Universe opaque to PeV neutrinos.
+
+## Problem 1.2. Solar neutrino flux
+
+The main chain of thermonuclear reactions in the Sun has the overall form
+
+$$
+4p\longrightarrow{}^4\mathrm{He}+2e^++2\nu_e+Q,
+\qquad
+Q=26.7~\mathrm{MeV}.
+$$ {#eq-ex01-004}
+
+Use
+
+$$
+L_\odot=3.83\cdot10^{26}~\mathrm{W},
+\qquad
+r_\oplus=1~\mathrm{AU},
+\qquad
+r_J=5.20~\mathrm{AU},
+$$ {#eq-ex01-005}
+
+$$
+1~\mathrm{AU}=1.496\cdot10^{11}~\mathrm{m},
+\qquad
+1~\mathrm{eV}=1.602\cdot10^{-19}~\mathrm{J}.
+$$ {#eq-ex01-006}
+
+1. Estimate the number of completed reaction chains per second.
+2. Find the neutrino production rate $\dot N_\nu$.
+3. Using $\Phi_\nu=\dot N_\nu/(4\pi r^2)$, compute the flux at the orbits
+   of the Earth and Jupiter.
+4. Compare the flux at the Earth with
+   $\Phi_\nu^{\mathrm{exp}}\simeq6.6\cdot10^{10}~
+   \mathrm{cm}^{-2}\mathrm{s}^{-1}$.
+5. In this estimate the whole energy $Q$ was identified with the luminosity of the Sun.
+   In which direction will the result change if the energy carried away by
+   neutrinos is taken into account?
+
+## Problem 1.3. How many light neutrinos exist?
+
+The invisible decay width of the $Z$ boson has been measured as
+
+$$
+\Gamma_{\mathrm{inv}}=499.0\pm1.5~\mathrm{MeV}.
+$$ {#eq-ex01-007}
+
+The Standard Model predicts for a single light neutrino
+
+$$
+\Gamma(Z\to\nu\bar\nu)=167.21\pm0.02~\mathrm{MeV}.
+$$ {#eq-ex01-008}
+
+1. Compute
+
+   $$
+   N_\nu=
+   \frac{\Gamma_{\mathrm{inv}}}
+        {\Gamma(Z\to\nu\bar\nu)}.
+   $$ {#eq-ex01-009}
+
+2. Estimate the uncertainty of $N_\nu$, assuming the two errors are independent.
+3. Is the result consistent with three neutrino flavors?
+4. Why does this measurement constrain the number only of those neutrinos for which the
+   decay $Z\to\nu\bar\nu$ is kinematically allowed?
+5. Can there exist an additional neutrino that is not coupled to the
+   $Z$ boson? What does the word "sterile" then mean?
+
+## Problem 1.4. Oscillations of atmospheric neutrinos
+
+In the two-flavor approximation
+
+$$
+P(\nu_\mu\to\nu_\tau)
+=
+\sin^2 2\theta\,
+\sin^2\!\left(
+1.267\,
+\frac{\Delta m^2[\mathrm{eV}^2]L[\mathrm{km}]}
+     {E_\nu[\mathrm{GeV}]}
+\right).
+$$ {#eq-ex01-010}
+
+Set
+
+$$
+E_\nu=1~\mathrm{GeV},
+\qquad
+\sin^2 2\theta=1,
+\qquad
+\Delta m^2=2.5\cdot10^{-3}~\mathrm{eV}^2.
+$$ {#eq-ex01-011}
+
+1. Find the distance to the first transition maximum.
+2. Compare the probabilities for a neutrino coming from above
+   ($L=20~\mathrm{km}$) and one that has passed through the Earth
+   ($L=12\,742~\mathrm{km}$).
+3. Plot $P(\nu_\mu\to\nu_\tau)$ as a function of
+   $x=L/D_\oplus$ for $0\leq x\leq1$.
+4. On the same plot, plot $P(\nu_\mu\to\nu_\mu)$ and check
+   unitarity.
+5. How will the first maximum shift if the energy is increased by a factor of ten?
+
+## Problem 1.5. Minimal masses for the two level orderings
+
+Use the measured mass-squared differences
+
+$$
+\Delta m_{21}^2=7.4\cdot10^{-5}~\mathrm{eV}^2,
+\qquad
+|\Delta m_{31}^2|=2.5\cdot10^{-3}~\mathrm{eV}^2.
+$$ {#eq-ex01-012}
+
+1. For the normal ordering, set $m_1=0$ and find $m_2$, $m_3$, and
+   $\sum_i m_i$.
+2. For the inverted ordering, set $m_3=0$ and find $m_1$, $m_2$, and
+   $\sum_i m_i$.
+3. Why do oscillations determine the mass-squared differences but do not fix
+   the mass of the lightest state itself?
+4. Repeat the calculation for $m_{\mathrm{lightest}}=0.05~\mathrm{eV}$.
+   How distinguishable are the two orderings in this case by the mass values themselves?
+5. Explain the meaning of the terms "hierarchical" and "quasi-degenerate" spectrum.
+
+---
+
+## Problems for discussion in the seminar
+
+### Seminar 01.1. How many neutrinos pass through a person?
+
+The solar neutrino flux at the Earth is
+$\Phi_\nu=6.6\cdot10^{10}~\mathrm{cm}^{-2}\mathrm{s}^{-1}$.
+Take the cross-sectional area of a person to be $0.70~\mathrm{m}^2$,
+the thickness of the body along the beam to be $0.30~\mathrm{m}$, the electron density of water to be
+$n_e=3.3\cdot10^{29}~\mathrm{m}^{-3}$, and the characteristic interaction cross section to be
+$\sigma=10^{-48}~\mathrm{m}^2$.
+
+1. How many solar neutrinos pass through a person per second?
+2. Estimate the interaction probability for a single neutrino as $n_e\sigma l$.
+3. How often does an interaction occur under these assumptions? Why
+   does the enormous neutrino flux not make them easy to detect?
+
+### Seminar 01.2. Charged or neutral current?
+
+For each reaction, determine whether it proceeds through the charged or the neutral
+weak current:
+
+$$
+\nu_e+n\to p+e^-,
+\qquad
+\bar\nu_e+p\to n+e^+,
+$$ {#eq-ex01-013}
+
+$$
+\nu_\mu+e^-\to\nu_\mu+e^-,
+\qquad
+\nu+N\to\nu+N.
+$$ {#eq-ex01-014}
+
+Which reactions directly indicate the flavor of the incoming neutrino, and which
+merely reveal the fact of its interaction? Check the conservation of
+electric charge in each reaction.
+
+### Seminar 01.3. Why do oscillations not measure the absolute mass?
+
+The interference phase of two mass states has the form
+
+$$
+\Delta\phi_{ij}=\frac{\Delta m_{ij}^2L}{2E}.
+$$ {#eq-ex01-015}
+
+1. Show that the oscillation probabilities do not change under the simultaneous replacement
+   $m_i^2\to m_i^2+C$ for all $i$.
+2. What information about the masses do oscillations nevertheless provide?
+3. Which combination of masses is measured from the shape of the endpoint of the $\beta$ spectrum?
+
+### Seminar 01.4. Which experiment answers which question?
+
+Match each observation to a physical question:
+
+- neutrino oscillations;
+- the endpoint of the $\beta$ spectrum;
+- the invisible width of the $Z$ boson;
+- the search for neutrinoless double $\beta$ decay;
+- neutrino scattering on matter.
+
+Questions: mass-squared differences and mixing; the absolute mass scale; the
+number of light active neutrinos; lepton number violation and the Majorana
+nature; the structure of the weak interaction. Explain why none of
+these experiments replaces all the others.

@@ -1,0 +1,15 @@
+---
+title: "Problems: Other Ways to Weigh the Neutrino"
+subtitle: "Lecture 08 · Introduction to Neutrino Physics"
+author: "Dmitry V. Naumov"
+lang: en
+format:
+  html:
+    toc: false
+---
+
+[← Back to the lecture](../slides/08_alternative_neutrino_mass.html) · [All course problems](index.html)
+
+# Problems
+
+{{< include ../../_includes/exercises/08_alternative_neutrino_mass-en.qmd >}}

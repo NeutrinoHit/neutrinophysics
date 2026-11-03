@@ -1,0 +1,330 @@
+## Problem 4.1. Spectrum of $\beta$ decay
+
+Consider an allowed $\beta$ decay with a single neutrino mass state.
+Neglect the nuclear recoil and radiative corrections. Take $F(Z,E)=1$.
+
+Let $E$ be the kinetic energy of the electron. Use
+
+$$
+\frac{d\Gamma}{dE}
+=
+C\,p_e(E+m_e)(E_0-E)
+\sqrt{(E_0-E)^2-m_\nu^2}\,
+\Theta(E_0-E-m_\nu),
+$$ {#eq-ex04-001}
+
+where
+
+$$
+p_e=\sqrt{E^2+2m_eE},
+\qquad
+m_e=511~\mathrm{keV},
+\qquad
+E_0=18.575~\mathrm{keV}.
+$$ {#eq-ex04-002}
+
+1. Write a function that computes the unnormalized spectrum $d\Gamma/dE$.
+2. For $m_\nu=0$ and $m_\nu=1~\mathrm{eV}$ make two panels: the entire
+   allowed range and the last $5~\mathrm{eV}$. Use the same
+   normalization for both masses.
+3. Determine the maximum kinetic energy of the electron as a function of
+   $m_\nu$ and mark both endpoints of the spectrum on the zoomed plot.
+4. For $m_\nu=0$ compute the fraction of all decays falling into the last
+   $1~\mathrm{eV}$ and $5~\mathrm{eV}$. Compare the numerical result with the estimate
+
+   $$
+   \frac{N(E>E_0-\Delta E)}{N_{\mathrm{all}}}
+   \sim\left(\frac{\Delta E}{E_0}\right)^3,
+   $$ {#eq-ex04-003}
+
+   obtained from the $d\Gamma/dE\propto(E_0-E)^2$ approximation.
+5. Convolve the spectrum with a Gaussian resolution function with
+   $\sigma_E=0.5~\mathrm{eV}$. Show that the reconstructed energy can
+   lie above the physical endpoint $E_0$, even though the true spectrum is zero there.
+
+## Problem 4.2. Effective mass and the Kurie plot
+
+An electron antineutrino is produced as a mixture of mass states. Near the endpoint
+of the spectrum, set $E_\nu=E_0-E$ and use
+
+$$
+\frac{d\Gamma}{dE}
+=C(E)\sum_i|U_{ei}|^2E_\nu
+\sqrt{E_\nu^2-m_i^2}\,\Theta(E_\nu-m_i).
+$$ {#eq-ex04-004}
+
+1. For $E_\nu\gg m_i$ expand the square root to first order in
+   $m_i^2/E_\nu^2$.
+2. Using $\sum_i|U_{ei}|^2=1$, show that the result has the form of a spectrum
+   with a single effective mass
+
+   $$
+   m_\beta^2=\sum_i|U_{ei}|^2m_i^2.
+   $$ {#eq-ex04-005}
+
+3. Explain why the probabilities $|U_{ei}|^2$ add up here, rather than the
+   amplitudes $U_{ei}$.
+4. For a single mass state, construct the Kurie function
+
+   $$
+   K(E)\equiv
+   \sqrt{\frac{1}{C(E)}\frac{d\Gamma}{dE}}
+   =\sqrt{E_\nu\sqrt{E_\nu^2-m_\nu^2}}.
+   $$ {#eq-ex04-006}
+
+   Compare $m_\nu=0$ and $m_\nu=1~\mathrm{eV}$ in the last $5~\mathrm{eV}$.
+5. Why are the individual kinks at $E_\nu=m_i$ not resolved if the mass differences are
+   much smaller than the energy resolution of the experiment?
+
+## Problem 4.3. Coulomb focusing and the Fermi function
+
+In the point-Coulomb-field approximation, the Fermi function can be written in terms of
+the Sommerfeld parameter
+
+$$
+F(\eta)=\frac{2\pi\eta}{1-e^{-2\pi\eta}},
+\qquad
+\eta=\pm Z_d\alpha\frac{\mathcal E_e}{p_e},
+$$ {#eq-ex04-007}
+
+where $\mathcal E_e=E+m_e$ is the total energy of the charged lepton, the sign "$+$" refers to
+$\beta^-$ decay, and the sign "$-$" to $\beta^+$ decay. Use
+$\alpha=1/137$ and $m_e=511~\mathrm{keV}$.
+
+1. Show that for $|\eta|\ll1$
+
+   $$
+   F(\eta)=1+\pi\eta+O(\eta^2).
+   $$ {#eq-ex04-008}
+
+   Explain the sign of the first correction for the electron and the positron.
+2. Obtain the asymptotics
+
+   $$
+   F(\eta)\simeq2\pi\eta \quad (\eta\gg1),
+   \qquad
+   F(\eta)\simeq2\pi|\eta|e^{-2\pi|\eta|}\quad(\eta\ll-1).
+   $$ {#eq-ex04-009}
+
+   Relate them, respectively, to Coulomb focusing and defocusing of the
+   wave in the nuclear region.
+3. For $Z_d=29$ compute $F(+Z_d,\mathcal E_e)$ and $F(-Z_d,\mathcal E_e)$ at
+   $E=10~\mathrm{keV}$, $100~\mathrm{keV}$, and $1~\mathrm{MeV}$. In which
+   energy range is the plane wave a particularly poor approximation?
+4. Prove the identity
+
+   $$
+   \frac{F(+|\eta|)}{F(-|\eta|)}=e^{2\pi|\eta|}
+   $$ {#eq-ex04-010}
+
+   and explain why it does not imply a difference between the weak matrix elements
+   for $\beta^-$ and $\beta^+$.
+5. In the nonrelativistic limit $E\to0$ show that for $\beta^-$ the product
+   $F\,p_e\mathcal E_e$ tends to a finite limit, although $F$ itself diverges as
+   $1/p_e$. What happens to the same product for $\beta^+$?
+6. Why does a dependence on $F(Z_d,\mathcal E_e;A)$ appear in the exact expression, although the
+   formula used contains no $A$? Name the physical scale through which the mass
+   number enters.
+
+## Problem 4.4. How the Fermi function changes the $\beta^-$ and $\beta^+$ spectra
+
+Consider an illustrative allowed transition with
+
+$$
+Z_d=29,\qquad A=64,\qquad E_0=2.0~\mathrm{MeV},\qquad m_\nu=0.
+$$ {#eq-ex04-011}
+
+Use the point-Coulomb approximation from Problem 04.3 and the spectra
+
+$$
+S_\mp(E)\equiv\frac{d\Gamma_\mp}{dE}
+\propto
+F(\pm Z_d,\mathcal E_e)\,p_e\mathcal E_e(E_0-E)^2,
+$$ {#eq-ex04-012}
+
+as well as the plane-wave result $S_{\mathrm{pw}}$, obtained for $F=1$.
+
+1. Plot $F(+Z_d,\mathcal E_e)$ and $F(-Z_d,\mathcal E_e)$ as functions of $E$ from
+   $0.1~\mathrm{keV}$ to $E_0$.
+2. Plot $S_{\mathrm{pw}}$, $S_-$, and $S_+$, normalizing each curve to
+   unit area. Explain why the Coulomb field enhances the low-energy
+   part of the $\beta^-$ spectrum and suppresses it for $\beta^+$.
+3. Separately plot the ratios $S_-/S_{\mathrm{pw}}$ and
+   $S_+/S_{\mathrm{pw}}$ without renormalization. Why is this exactly the Fermi
+   function?
+4. For each spectrum, construct the correctly corrected Kurie function
+
+   $$
+   K_\mp(E)=
+   \left[
+   \frac{S_\mp(E)}{F(\pm Z_d,\mathcal E_e)p_e\mathcal E_e}
+   \right]^{1/2}.
+   $$ {#eq-ex04-013}
+
+   Verify that both curves are proportional to $E_0-E$.
+   Then repeat the construction, mistakenly setting $F=1$ in the denominator.
+   What curvature does this error produce for $\beta^-$ and $\beta^+$?
+5. Why does the Fermi function change the probability distribution over energies but not
+   shift the kinematic boundary $E_{\max}=E_0-m_\nu$? Formulate the answer
+   in terms of the Coulomb wave function with an already specified asymptotic energy.
+
+## Problem 4.5. Film, energy losses, and a false neutrino mass
+
+An electron is produced at depth $z$ in a film and exits at an angle $\theta$ to the
+normal. In a simple model
+
+$$
+\ell=\frac{z}{\cos\theta},
+\qquad
+\Delta E=a\ell,
+\qquad
+E_{\mathrm{det}}=E-\Delta E,
+$$ {#eq-ex04-014}
+
+where $a$ is a constant stopping power. Assume that $z$ is uniformly
+distributed on $[0,d]$, and that the directions are isotropic within the accepted solid angle
+$0\leq\theta\leq\theta_{\max}$. Hence
+$u=\cos\theta$ is uniformly distributed on
+$[c,1]$, where $c=\cos\theta_{\max}$.
+
+1. Find $\langle\ell\rangle$ and $\operatorname{Var}(\ell)$. Show that
+
+   $$
+   \langle\ell\rangle
+   =\frac d2\frac{\ln(1/c)}{1-c},
+   $$ {#eq-ex04-015}
+
+   $$
+   \operatorname{Var}(\ell)
+   =d^2\left[
+   \frac{1}{3c}
+   -\frac14\left(\frac{\ln(1/c)}{1-c}\right)^2
+   \right].
+   $$ {#eq-ex04-016}
+
+   From this, find the mean and variance of the energy loss.
+2. Let the true spectrum near the endpoint for $m_\nu=0$ have the form
+   $S_0(E)\propto(E_0-E)^2$. Show that the measured spectrum is
+
+   $$
+   S_{\mathrm{obs}}(E_{\mathrm{det}})
+   =\int_0^\infty
+   L(\Delta E)S_0(E_{\mathrm{det}}+\Delta E)\,d\Delta E,
+   $$ {#eq-ex04-017}
+
+   where the integrand automatically vanishes for
+   $E_{\mathrm{det}}+\Delta E>E_0$.
+   Denote $\varepsilon=E_0-E_{\mathrm{det}}$. In the region where
+   $\varepsilon$ is larger than the characteristic losses, show that
+
+   $$
+   S_{\mathrm{obs}}(\varepsilon)
+   \propto
+   (\varepsilon-\overline{\Delta E})^2
+   +\sigma_{\Delta E}^2.
+   $$ {#eq-ex04-018}
+
+   Which parameter of the endpoint fit absorbs the mean loss
+   $\overline{\Delta E}$, and why is a correction to $E_0$ alone insufficient?
+3. For $\varepsilon\gg m_\nu$ the massive spectrum has the expansion
+
+   $$
+   \varepsilon\sqrt{\varepsilon^2-m_\nu^2}
+   \simeq \varepsilon^2-\frac{m_\nu^2}{2}.
+   $$ {#eq-ex04-019}
+
+   Let the true variance of the losses be $\sigma_{\mathrm{true}}^2$, while the
+   analysis used the value $\sigma_{\mathrm{mod}}^2$. After the endpoint
+   fit, show that
+
+   $$
+   m_{\nu,\mathrm{fit}}^2
+   \simeq
+   2\left(
+   \sigma_{\mathrm{mod}}^2-
+   \sigma_{\mathrm{true}}^2
+   \right).
+   $$ {#eq-ex04-020}
+
+   In which case does a false positive $m_\nu^2$ arise, and in which a
+   negative best-fit value of $m_\nu^2$?
+4. Let $ad=40~\mathrm{eV}$. The true acceptance corresponds to
+   $\theta_{\max}=60^\circ$, but the model uses $75^\circ$; the mean loss
+   is freely absorbed by the $E_0$ fit. Estimate the false
+   $m_{\nu,\mathrm{fit}}^2$ and $m_{\nu,\mathrm{fit}}$. Compare the scale with the
+   historical ITEP claim of a mass of about $30~\mathrm{eV}$.
+5. **Optional.** Carry out a numerical simulation without a moment expansion:
+   generate
+   $z$ and $\cos\theta$, convolve the massless spectrum with the resulting loss
+   distribution, and perform a fit with a model that has the wrong $\theta_{\max}$. Investigate how the
+   result depends on the width of the fitted window near the endpoint of the spectrum.
+
+---
+
+## Problems for discussion at the seminar
+
+### Seminar 04.1. Why is the $\beta$ spectrum continuous?
+
+Let the initial nucleus be at rest, and the decay energy $Q$ be fixed.
+
+1. What would the electron energy be in a hypothetical two-body decay
+   $A\to B+e^-$?
+2. Why can the electron have a continuous set of energies in the three-body decay
+   $A\to B+e^-+\bar\nu_e$?
+3. Where is the endpoint of the spectrum if the nuclear recoil is neglected but the
+   neutrino mass is retained?
+4. What will qualitatively change when the nuclear recoil is taken into account?
+
+### Seminar 04.2. The price of approaching the endpoint
+
+Denote $\varepsilon=E_0-E$. For a massless neutrino near the endpoint
+of the allowed spectrum,
+
+$$
+\frac{d\Gamma}{dE}\propto\varepsilon^2.
+$$ {#eq-ex04-021}
+
+1. Show that the number of events in the last interval of width $\Delta$ grows
+   as $\Delta^3$.
+2. By what factor does the statistics increase when the window is widened from $1$ to
+   $5~\mathrm{eV}$?
+3. Using
+   $\varepsilon\sqrt{\varepsilon^2-m_\nu^2}
+   \simeq\varepsilon^2-m_\nu^2/2$, estimate how the relative effect of the mass
+   depends on $\varepsilon$.
+4. Formulate the trade-off between statistics and sensitivity to the mass.
+
+### Seminar 04.3. What is visible on the Kurie plot?
+
+For an allowed transition, the function
+
+$$
+K(E)=
+\left[
+\frac{d\Gamma/dE}{F(Z,E)p_eE_e}
+\right]^{1/2}.
+$$ {#eq-ex04-022}
+
+is defined.
+
+1. Show that for $m_\nu=0$ the plot of $K(E)$ is a straight line
+   $K(E)=E_0-E$.
+2. How does a nonzero mass change the position of the endpoint and the shape of the last points?
+3. How does this effect differ from an overall shift of the energy scale?
+4. How can electron energy losses in the source mimic
+   a change in the shape of the spectrum near the endpoint?
+
+### Seminar 04.4. The Fermi function and causality
+
+An electron in the Coulomb field of the daughter nucleus is described not by a plane wave but by a
+scattering state with a given asymptotic energy $\mathcal E_e$. The Fermi
+function $F(Z,\mathcal E_e)$ compares the density of this wave function in the nuclear region with
+the density of a plane wave.
+
+1. Why, for $\beta^-$ decay, does the Coulomb attraction enhance the spectrum at
+   low energies, while for $\beta^+$ decay the repulsion suppresses it?
+2. Why is it incorrect to describe the effect as the emission of an electron with one energy
+   and its subsequent transformation into another?
+3. Explain why the neutrino energy and the asymptotic electron energy
+   are fixed by a single energy conservation law, so that no contradiction with causality
+   arises.

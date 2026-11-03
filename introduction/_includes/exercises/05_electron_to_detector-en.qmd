@@ -1,0 +1,282 @@
+## Problem 5.1. Time of flight along a helical trajectory
+
+An electron with kinetic energy $E$ is born at $z=0$ in a uniform field
+$\mathbf B=B\mathbf e_z$. The angle between the momentum and the direction of
+$+\mathbf B$ is $\alpha$. The detector is located in the plane $z=L$.
+
+1. Using the constancy of $p_\parallel$, obtain $z(t)$, the time to reach the
+   detector $t_L$, and the total trajectory length $\ell=vt_L$.
+2. Express the velocity relativistically:
+
+   $$
+   \gamma=1+\frac{E}{m_ec^2},
+   \qquad
+   v=c\sqrt{1-\gamma^{-2}}.
+   $$ {#eq-ex05-001}
+
+3. For $E=18.6~\mathrm{keV}$, $B=2.0~\mathrm{mT}$ and $L=5.0~\mathrm{m}$
+   compute, at $\alpha=15^\circ$, $45^\circ$ and $75^\circ$:
+
+   $$
+   t_L,\qquad
+   \ell,\qquad
+   T_c=\frac{2\pi\gamma m_e}{eB},
+   \qquad
+   N=\frac{t_L}{T_c}.
+   $$ {#eq-ex05-002}
+
+   Use $m_ec^2=511~\mathrm{keV}$,
+   $c=2.998\cdot10^8~\mathrm{m/s}$ and
+   $e/m_e=1.759\cdot10^{11}~\mathrm{C/kg}$.
+
+4. What happens to $t_L$, $\ell$ and $N$ as
+   $\alpha\to90^\circ$? Which electrons will reach the plane
+   $z=L>0$ at all?
+5. Which of the quantities found depend on $B$, and which do not? Explain
+   the result physically.
+
+## Problem 5.2. Electrostatic threshold and angular acceptance
+
+In the non-relativistic approximation, an electron with kinetic energy $E$ and
+angle $\alpha$ to the spectrometer axis has
+
+$$
+E_\parallel=E\cos^2\alpha,
+\qquad
+E_\perp=E\sin^2\alpha.
+$$ {#eq-ex05-003}
+
+A retarding potential $U$ is set up in front of the detector. The electron passes
+if $E_\parallel>e|U|$.
+
+1. For given $E$ and $U$, find the maximum transmission angle
+   $\alpha_{\max}$.
+2. Consider isotropic emission into the forward hemisphere. Show that the
+   fraction of transmitted directions is equal to
+
+   $$
+   f_\Omega=1-\cos\alpha_{\max}
+   =1-\sqrt{\frac{e|U|}{E}}.
+   $$ {#eq-ex05-004}
+
+3. Compute $\alpha_{\max}$ and $f_\Omega$ for
+   $E=18.6~\mathrm{keV}$ and $e|U|=18.0~\mathrm{keV}$.
+4. Why do electrons of the same total energy but with different $\alpha$
+   pass different electrostatic thresholds?
+5. Explain why a uniform magnetic field does not fix this problem
+   and why collimation is needed in front of the filter.
+
+## Problem 5.3. Guiding center and the sign of the charge
+
+Let
+
+$$
+\mathbf B=B\mathbf e_z,
+\qquad
+\Omega=\frac{qB}{m},
+$$ {#eq-ex05-005}
+
+and at the initial moment
+
+$$
+x_0=y_0=0,
+\qquad
+\mathbf v_0=(v_\perp,0,v_\parallel).
+$$ {#eq-ex05-006}
+
+1. From the equations
+
+   $$
+   \dot v_x=\Omega v_y,
+   \qquad
+   \dot v_y=-\Omega v_x
+   $$ {#eq-ex05-007}
+
+   show that
+
+   $$
+   X=x+\frac{v_y}{\Omega},
+   \qquad
+   Y=y-\frac{v_x}{\Omega}
+   $$ {#eq-ex05-008}
+
+   are constant.
+2. Find $(X,Y)$ and the orbit radius for an electron $q=-e$.
+3. Determine the direction of rotation when viewed along $+\mathbf B$.
+   Repeat the answer for a positive charge.
+4. How does the sign of $v_\parallel$ determine the motion of the guiding center along the
+   field? Does this answer depend on the sign of the charge?
+5. Is there a transverse drift of the guiding center in a uniform magnetic field without an electric
+   field?
+
+## Problem 5.4. From the phase ellipse to the variables $(\theta,J)$
+
+For transverse cyclotron motion the following are introduced:
+
+$$
+Q=x-X=-\frac{v_y}{\Omega},
+\qquad
+P=m\dot Q=mv_x.
+$$ {#eq-ex05-009}
+
+1. Show that
+
+   $$
+   H_\perp(Q,P)
+   =\frac{P^2}{2m}
+   +\frac{m\omega_c^2Q^2}{2}
+   =E_\perp,
+   \qquad
+   \omega_c=|\Omega|.
+   $$ {#eq-ex05-010}
+
+2. Find the semi-axes of the phase ellipse and compute
+
+   $$
+   J=\frac{1}{2\pi}\oint P\,dQ
+   =\frac{E_\perp}{\omega_c}.
+   $$ {#eq-ex05-011}
+
+3. Introduce
+
+   $$
+   \theta=
+   \operatorname{atan2}(m\omega_cQ,P)
+   $$ {#eq-ex05-012}
+
+   and obtain the inverse transformation
+
+   $$
+   Q=\sqrt{\frac{2J}{m\omega_c}}\sin\theta,
+   \qquad
+   P=\sqrt{2m\omega_cJ}\cos\theta.
+   $$ {#eq-ex05-013}
+
+4. By direct computation, verify the Poisson bracket
+   $\{\theta,J\}_{Q,P}=1$.
+5. Write $H_\perp$ in terms of $J$ and obtain from Hamilton's equations
+   $\dot J$ and $\dot\theta$. Why is the angle $\theta$ undefined at $J=0$?
+
+## Problem 5.5. Four physical meanings of the action
+
+For a non-relativistic cyclotron orbit use
+
+$$
+\rho_L=\frac{p_\perp}{eB},
+\qquad
+J=\frac{p_\perp^2}{2eB},
+\qquad
+L_{\mathrm{orb}}=\rho_Lp_\perp,
+$$ {#eq-ex05-014}
+
+$$
+\mu=\frac{p_\perp^2}{2m_eB},
+\qquad
+\Phi=\pi\rho_L^2B.
+$$ {#eq-ex05-015}
+
+1. Prove the chain of equalities
+
+   $$
+   \boxed{
+   J=\frac{L_{\mathrm{orb}}}{2}
+   =\frac{m_e}{e}\mu
+   =\frac{e}{2\pi}\Phi
+   }.
+   $$ {#eq-ex05-016}
+
+2. Check the dimensions of all four expressions for $J$.
+3. For
+
+   $$
+   E=1.00~\mathrm{keV},
+   \qquad
+   \alpha=60^\circ,
+   \qquad
+   B=0.100~\mathrm{T}
+   $$ {#eq-ex05-017}
+
+   in the non-relativistic approximation compute
+   $\rho_L$, $\omega_c$, $J$, $\mu$ and $\Phi$.
+   Use
+
+   $$
+   e=1.602\cdot10^{-19}~\mathrm{C},
+   \qquad
+   m_e=9.109\cdot10^{-31}~\mathrm{kg}.
+   $$ {#eq-ex05-018}
+
+4. Numerically verify the equalities from part 1.
+5. Find $J/\hbar$ for
+   $\hbar=1.055\cdot10^{-34}~\mathrm{J\,s}$. What does a large value of this
+   ratio tell us about the applicability of the classical description of the orbit?
+
+---
+
+## Problems for discussion in the seminar
+
+### Seminar 05.1. The first bend of the trajectory
+
+Let $\mathbf B=B\mathbf e_z$, and let the initial velocity of the particle be
+
+$$
+\mathbf v=(v_\perp,0,v_\parallel).
+$$ {#eq-ex05-019}
+
+1. Find the direction of the Lorentz force $q\mathbf v\times\mathbf B$ for
+   an electron and a positron.
+2. Which velocity component starts to change at the first moment?
+3. Show directly that the magnetic field does no work.
+4. Sketch the initial segment of the trajectory for both signs of the charge.
+
+### Seminar 05.2. Two electrons with the same energy
+
+Two electrons with the same energies enter the same uniform field
+at angles $\alpha_1=30^\circ$ and $\alpha_2=60^\circ$ to the field.
+
+1. Compare their cyclotron periods.
+2. Find the ratios of the Larmor radii $\rho_2/\rho_1$ and of the pitches of the helix
+   $h_2/h_1$.
+3. Find the ratio of the times in which the electrons cover the same
+   distance along the field.
+4. Which of these differences are visible in the animation, and which require time
+   measurement?
+
+### Seminar 05.3. Why does a uniform field not collimate?
+
+In a uniform constant magnetic field, $p_\parallel$ and
+$p_\perp$ are conserved.
+
+1. Show that the pitch angle
+   $\tan\alpha=p_\perp/p_\parallel$ remains constant.
+2. What does the field do to isotropically emitted electrons: does it keep them
+   near a field line, turn them along the field, or both?
+3. Why is a uniform field alone insufficient if a small transverse momentum is
+   required in front of the electrostatic filter?
+4. Which property of the field will have to be changed in the next problem of the course?
+
+### Seminar 05.4. The action for two periodic motions
+
+For a harmonic oscillator
+
+$$
+H=\frac{P^2}{2m}+\frac{m\omega^2Q^2}{2}=E
+$$ {#eq-ex05-020}
+
+and for a planar rotor
+
+$$
+H=\frac{L^2}{2I}
+$$ {#eq-ex05-021}
+
+compute the action $J=(2\pi)^{-1}\oint p\,dq$.
+
+1. Find the area of the oscillator ellipse in the $(Q,P)$ plane and show that
+   $J=E/\omega$.
+2. Show that for the rotor $J=L$.
+3. A cyclotron orbit is equivalent to an oscillator with
+   $E=E_\perp$ and $\omega=\omega_c$. Obtain
+   $J=E_\perp/\omega_c=p_\perp^2/(2|q|B)$.
+4. Why for a cyclotron orbit $J=|L_{\mathrm{mech}}|/2$, whereas for a
+   rotor $J=L$? What plays the role of the periodic
+   coordinate in these two problems?

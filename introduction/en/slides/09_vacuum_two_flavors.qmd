@@ -374,7 +374,7 @@ $$
 
 Here $P_i$ are the normalized squared moduli of the complex amplitudes of the local
 pendulums. For weak coupling they are approximately equal to the fractions of the averaged energy.
-The exact derivation is in [Problem 9.6](../../ru/exercises/09_vacuum_oscillations_exercises.qmd) (in Russian).
+The exact derivation is in [Problem 9.6](../exercises/09_vacuum_oscillations_exercises.qmd).
 
 # Two Flavors
 
@@ -395,6 +395,6 @@ $$
 In the [next lecture](10_vacuum_pmns.qmd) a third state will be added to the two
 mass states.
 
-[Problems for Lecture 09](../../ru/exercises/09_vacuum_oscillations_exercises.qmd) (in Russian) ·
+[Problems for Lecture 09](../exercises/09_vacuum_oscillations_exercises.qmd) ·
 [Two-flavor applet](../../ru/applets/two-flavor-oscillations.qmd) (in Russian) ·
 [Coupled pendulums applet](../../ru/applets/coupled-pendula.qmd) (in Russian).

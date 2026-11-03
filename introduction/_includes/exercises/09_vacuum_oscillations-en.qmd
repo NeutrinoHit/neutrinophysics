@@ -1,0 +1,336 @@
+## Problem 9.1. Global and relative phases
+
+Consider a normalized superposition of two energy eigenstates:
+
+$$
+|\psi(t)\rangle
+=c_1e^{-iE_1t}|E_1\rangle+c_2e^{-iE_2t}|E_2\rangle,
+\qquad
+|c_1|^2+|c_2|^2=1.
+$$ {#eq-ex09-001}
+
+1. Show that the replacement
+
+   $$
+   |\psi(t)\rangle\longrightarrow
+   e^{i\chi(t)}|\psi(t)\rangle
+   $$ {#eq-ex09-002}
+
+   does not change the expectation value of an arbitrary operator $\widehat A$.
+2. Find the density matrix $\rho(t)=|\psi(t)\rangle\langle\psi(t)|$
+   in the energy basis. Which of its elements depend on time?
+3. Explain why the probabilities of measuring $E_1$ and $E_2$ are constant.
+4. Introduce the state
+
+   $$
+   |a\rangle
+   =\cos\eta\,|E_1\rangle
+   +e^{i\varphi}\sin\eta\,|E_2\rangle.
+   $$ {#eq-ex09-003}
+
+   Compute $P(a,t)=|\langle a|\psi(t)\rangle|^2$ and explicitly isolate the
+   interference term that depends on $(E_2-E_1)t$.
+5. Under what conditions does this interference term vanish? Distinguish
+   between the absence of one of the components, degeneracy of the energies, and a special choice
+   of the measurement basis.
+
+State the main physical conclusion: why is the global phase unobservable, while the
+relative phase can change probabilities?
+
+## Problem 9.2. Energy of a flavor state
+
+Two flavor states are related to the mass states by a rotation
+
+$$
+|\nu_\alpha\rangle
+=c_\theta|\nu_1\rangle+s_\theta|\nu_2\rangle,
+\qquad
+|\nu_\beta\rangle
+=-s_\theta|\nu_1\rangle+c_\theta|\nu_2\rangle,
+$$ {#eq-ex09-004}
+
+where
+
+$$
+H_0|\nu_i\rangle=E_i|\nu_i\rangle,
+\qquad
+c_\theta=\cos\theta,
+\quad
+s_\theta=\sin\theta.
+$$ {#eq-ex09-005}
+
+For each of the two flavor states:
+
+1. find the probabilities of obtaining the results $E_1$ and $E_2$ in a measurement of
+   the energy;
+2. compute $\langle H_0\rangle$;
+3. compute $\langle H_0^2\rangle$;
+4. obtain the variance
+
+   $$
+   \operatorname{Var}(H_0)
+   =\langle H_0^2\rangle-\langle H_0\rangle^2;
+   $$ {#eq-ex09-006}
+
+5. show that
+
+   $$
+   \operatorname{Var}_\alpha(H_0)
+   =\operatorname{Var}_\beta(H_0)
+   =\frac14\sin^2 2\theta\,(E_2-E_1)^2.
+   $$ {#eq-ex09-007}
+
+Explain why a nonzero variance indicates the presence of several
+energy components, but does not mean that the energy itself oscillates in
+time. For what values of the parameters does the variance vanish?
+
+## Problem 9.3. Complete derivation of the two-flavor probability
+
+Let a neutrino of flavor $\alpha$ be produced at $t=0$:
+
+$$
+|\psi(0)\rangle=|\nu_\alpha\rangle.
+$$ {#eq-ex09-008}
+
+1. Expand the initial state in terms of $|\nu_1\rangle$ and $|\nu_2\rangle$ and
+   carry out its time evolution.
+2. Write down the inverse rotation from the mass basis to the flavor basis.
+3. Obtain the amplitudes
+
+   $$
+   \mathcal A_{\alpha\to\alpha}(t)
+   =c_\theta^2e^{-iE_1t}+s_\theta^2e^{-iE_2t},
+   $$ {#eq-ex09-009}
+
+   $$
+   \mathcal A_{\alpha\to\beta}(t)
+   =s_\theta c_\theta
+   \left(e^{-iE_2t}-e^{-iE_1t}\right).
+   $$ {#eq-ex09-010}
+
+4. Introduce
+
+   $$
+   \overline E=\frac{E_1+E_2}{2},
+   \qquad
+   \Delta E=E_2-E_1,
+   $$ {#eq-ex09-011}
+
+   isolate the global phase and obtain the appearance and survival probabilities.
+5. Check unitarity:
+
+   $$
+   P_{\alpha\to\alpha}(t)+P_{\alpha\to\beta}(t)=1.
+   $$ {#eq-ex09-012}
+
+6. Find the maximum transition probability and the oscillation period.
+7. Expand the transition probability at $|\Delta E|t\ll1$ and show that
+
+   $$
+   P_{\alpha\to\beta}(t)
+   \simeq
+   \sin^2 2\theta\,\frac{(\Delta E)^2t^2}{4}.
+   $$ {#eq-ex09-013}
+
+Why does the probability near $t=0$ grow quadratically, although the transition amplitude
+grows linearly?
+
+## Problem 9.4. From the plane-wave phase to the dependence on L/E
+
+For a mass component of a plane wave, use the phase
+
+$$
+e^{-i(E_it-p_iL)}.
+$$ {#eq-ex09-014}
+
+Denote $\varphi_i=E_it-p_iL$ and
+$\Delta\varphi=\varphi_2-\varphi_1$.
+
+1. Show that the relative phase of the two components is equal to
+
+   $$
+   \Delta\varphi(t,L)=\Delta E\,t-\Delta p\,L.
+   $$ {#eq-ex09-015}
+
+2. First set $p_1=p_2=p$. Multiplying the difference of the square roots by the
+   conjugate sum, prove the exact equality
+
+   $$
+   \Delta E
+   =\frac{\Delta m^2}{E_2+E_1},
+   \qquad
+   \Delta m^2=m_2^2-m_1^2.
+   $$ {#eq-ex09-016}
+
+3. In the ultrarelativistic limit $E_i\simeq p\simeq E$ and for $t\simeq L$
+   obtain
+
+   $$
+   \Delta\varphi\simeq\frac{\Delta m^2L}{2E}.
+   $$ {#eq-ex09-017}
+
+4. Repeat the derivation by setting $E_1=E_2=E$. Find $\Delta p$ and show
+   that the same result now arises from the term $-\Delta pL$.
+5. For equal energies, factor the global time phase out of the state. Show
+   that the probability at a fixed point does not depend on $t$, but does depend on $L$
+   when different detection points are compared. Which term in $\Delta\varphi$
+   is responsible for this dependence?
+6. Explain why the two plane-wave idealizations lead to the same
+   phase only at leading ultrarelativistic order.
+7. Using
+
+   $$
+   \hbar c=1.97327\cdot10^{-7}~\mathrm{eV\,m},
+   $$ {#eq-ex09-018}
+
+   independently obtain the coefficient $1.267$ in the formula
+
+   $$
+   P_{\alpha\to\beta}
+   =\sin^2 2\theta\,
+   \sin^2\!\left[
+   1.267\,
+   \frac{\Delta m^2[\mathrm{eV}^2]L[\mathrm{km}]}
+        {E[\mathrm{GeV}]}
+   \right].
+   $$ {#eq-ex09-019}
+
+8. Finally, for a general momentum $p\ll m_i$ obtain
+
+   $$
+   \Delta E
+   \simeq
+   \Delta m\left(1-\frac{p^2}{2m_1m_2}\right),
+   \qquad
+   \Delta m=m_2-m_1.
+   $$ {#eq-ex09-020}
+
+   Write down the leading nonrelativistic probability as a function of time. Why,
+   when passing to distance, does the velocity enter explicitly and the universal dependence
+   on $L/E$ alone disappear?
+
+## Problem 9.5. A mock-up of an oscillation experiment
+
+In a certain two-flavor experiment the maximum transition probability
+is equal to
+
+$$
+P_{\alpha\to\beta}^{\max}=0.64.
+$$ {#eq-ex09-021}
+
+The first maximum at energy $E=0.60~\mathrm{GeV}$ is observed at a distance
+$L=295~\mathrm{km}$.
+
+1. In the convention $0\leq\theta\leq45^\circ$ find the mixing angle.
+2. Using the practical probability formula, find $|\Delta m^2|$.
+3. Find the oscillation length $L_{\mathrm{osc}}$ at the given energy.
+4. At the same distance compute the appearance and survival probabilities for
+
+   $$
+   E=0.30~\mathrm{GeV},
+   \qquad
+   E=0.60~\mathrm{GeV},
+   \qquad
+   E=1.20~\mathrm{GeV}.
+   $$ {#eq-ex09-022}
+
+5. Plot $P_{\alpha\to\beta}(E)$ and $P_{\alpha\to\alpha}(E)$ in
+   the range $0.2\leq E\leq1.5~\mathrm{GeV}$.
+6. Can the sign of $\Delta m^2$ be determined from these measurements?
+7. Compare three reasons for a vanishing transition probability:
+
+   - $\sin2\theta=0$;
+   - $\Delta m^2=0$;
+   - $\Delta m^2L/(4E)=n\pi$.
+
+   Which of them forbid oscillations altogether, and which one creates only isolated
+   nodes of the probability?
+
+## Problem 9.6. Coupled pendulums of different masses
+
+Two pendulums of the same length $\ell$ and different masses $m_1$ and $m_2$ are connected
+by a weak spring of stiffness $k$. The deflection angles $\varphi_i$ are small, and
+$\omega_0^2=g/\ell$.
+
+1. Show that in the quadratic approximation
+
+   $$
+   T=\frac{\ell^2}{2}
+   \left(m_1\dot\varphi_1^2+m_2\dot\varphi_2^2\right),
+   $$ {#eq-ex09-023}
+
+   $$
+   V=\frac{\ell^2}{2}
+   \left[
+   \omega_0^2(m_1\varphi_1^2+m_2\varphi_2^2)
+   +k(\varphi_1-\varphi_2)^2
+   \right].
+   $$ {#eq-ex09-024}
+
+2. Obtain the matrix equation
+
+   $$
+   \mathsf M\ddot{\boldsymbol\varphi}
+   +\mathsf K\boldsymbol\varphi=0
+   $$ {#eq-ex09-025}
+
+   and write down $\mathsf M$ and $\mathsf K$.
+3. Introduce mass-normalized coordinates
+
+   $$
+   \boldsymbol x=\mathsf M^{1/2}\boldsymbol\varphi
+   $$ {#eq-ex09-026}
+
+   and obtain the real symmetric matrix $\Omega^2$ in the equation
+   $\ddot{\boldsymbol x}+\Omega^2\boldsymbol x=0$.
+4. Find the eigenfrequencies and the normalized eigenvectors. Show
+   that
+
+   $$
+   \omega_+^2=\omega_0^2,
+   \qquad
+   \omega_-^2
+   =\omega_0^2+k\left(\frac1{m_1}+\frac1{m_2}\right).
+   $$ {#eq-ex09-027}
+
+5. Introducing the mixing angle through the eigenvectors, prove
+
+   $$
+   \tan^2\theta=\frac{m_2}{m_1},
+   \qquad
+   \sin^2 2\theta
+   =\frac{4m_1m_2}{(m_1+m_2)^2}.
+   $$ {#eq-ex09-028}
+
+6. Let $\Omega$ be the positive square root of $\Omega^2$.
+   Introduce
+
+   $$
+   \boldsymbol a
+   =\boldsymbol x+i\Omega^{-1}\dot{\boldsymbol x}
+   $$ {#eq-ex09-029}
+
+   and prove the exact equation $i\dot{\boldsymbol a}=\Omega\boldsymbol a$,
+   as well as the conservation of the norm $\boldsymbol a^\dagger\boldsymbol a$.
+7. If at the initial moment only the first pendulum is excited, obtain
+
+   $$
+   P_{1\to2}(t)
+   =\sin^2 2\theta\,
+   \sin^2\frac{(\omega_--\omega_+)t}{2}.
+   $$ {#eq-ex09-030}
+
+8. For
+
+   $$
+   \frac{m_2}{m_1}=\frac14,
+   \qquad
+   \frac{k}{m_1\omega_0^2}=0.10
+   $$ {#eq-ex09-031}
+
+   find the maximum value of $P_{1\to2}$, $\omega_-/\omega_0$ and the time
+   of the first maximum.
+9. At what mass ratio is complete transfer possible?
+10. Explain why $P_i=|a_i|^2/\|\boldsymbol a\|^2$ is exactly the
+    fraction of the norm of the complex amplitude, but coincides with the fraction of the averaged
+    local energy only in the weak-coupling limit.

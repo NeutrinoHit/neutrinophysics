@@ -28,6 +28,7 @@ project:
     - "introduction/ru/slides/*.qmd"
     - "!introduction/ru/slides/planned/**"
     - "introduction/en/slides/*.qmd"
+    - "introduction/en/exercises/*.qmd"
     - "introduction/ru/exercises/*.qmd"
     - "!introduction/ru/exercises/planned/**"
     - "oscillations-minicourse/index.qmd"

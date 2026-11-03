@@ -1,0 +1,15 @@
+---
+title: "Problems: Neutrino Oscillations in Matter. Refractive Index"
+subtitle: "Lecture 11 · Introduction to Neutrino Physics"
+author: "Dmitry V. Naumov"
+lang: en
+format:
+  html:
+    toc: false
+---
+
+[← Back to the lecture](../slides/11_matter_refraction.html) · [All course problems](index.html)
+
+# Problems
+
+{{< include ../../_includes/exercises/11_matter_refraction-en.qmd >}}

@@ -706,7 +706,7 @@ data.
 Why different densities separate the parameters: $\tau$ shifts the height of the plateau and
 the weights of the steps, while $g_1$ sets their shape. By varying $\rho d$, we mix these
 contributions in different ways — and "how many collisions" is separated from "how a single collision
-changes the energy".
+loses energy".
 :::
 
 :::
@@ -1530,7 +1530,7 @@ $$
 
 ::: {.nh-text tone="muted" size="sm"}
 [Prospects of TRISTAN and KATRIN++, section 6](https://arxiv.org/abs/2601.00248).
-Other methods of direct mass measurement are the topic of lecture 08.
+Other ways of direct determination of the neutrino mass are the topic of lecture 08.
 :::
 
 :::::
@@ -1592,7 +1592,7 @@ is changed by the source, the fields, and the detection of the electrons.
 - [KATRIN integral spectrum](../../ru/applets/katrin-integral-spectrum.qmd) (in Russian):
   relation between the position of the threshold and the number of transmitted electrons.
 - [Applet source code](https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/slides/assets/04_direct_neutrino_mass/_katrin_integral_spectrum.qmd).
-- [Problems for Lecture 07](../../ru/exercises/07_katrin_exercises.qmd) (in Russian):
+- [Problems for Lecture 07](../exercises/07_katrin_exercises.qmd):
   averaging of losses, integral spectrum and estimate of $m_\beta^2$.
 
 :::::

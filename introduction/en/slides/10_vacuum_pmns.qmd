@@ -1172,6 +1172,6 @@ in the unitary model are shown. For a direct test, the closure is left free.
 The next lecture will begin with a question: how does matter change the phases of the neutrinos passing
 through it?
 
-[Problems for Lecture 10](../../ru/exercises/10_vacuum_pmns_exercises.qmd) (in Russian) ·
+[Problems for Lecture 10](../exercises/10_vacuum_pmns_exercises.qmd) ·
 [Flavor triangle](../../ru/applets/flavor-triangle.qmd) (in Russian) ·
 [Assemble the matrix](../../ru/applets/pmns-from-data.html) (in Russian).

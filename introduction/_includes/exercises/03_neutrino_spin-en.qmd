@@ -1,0 +1,211 @@
+## Problem 3.1. Nuclear recoil in the Goldhaber experiment
+
+In the Goldhaber experiment, electron capture leads to the reaction
+
+$$
+{}^{152m}\mathrm{Eu}+e^-
+\longrightarrow
+{}^{152}\mathrm{Sm}^*+\nu_e.
+$$ {#eq-ex03-001}
+
+Take
+
+$$
+E_\nu\simeq1~\mathrm{MeV},
+\qquad
+M_{B^*}\simeq152~u,
+\qquad
+uc^2=931.5~\mathrm{MeV}.
+$$ {#eq-ex03-002}
+
+1. Neglecting the momentum of the captured electron, show that
+   $p_{B^*}\simeq p_\nu\simeq E_\nu/c$.
+2. Calculate the recoil energy
+
+   $$
+   T_{B^*}\simeq\frac{E_\nu^2}{2M_{B^*}c^2}
+   $$ {#eq-ex03-003}
+
+   and the nuclear velocity $v_{B^*}=p_{B^*}/M_{B^*}$.
+3. If the nucleus loses the direction of recoil over a length
+   $\ell=1$–$5~\text{Å}$, estimate
+   $\tau_{\mathrm{stop}}\sim\ell/v_{B^*}$.
+4. Compare the result with the lifetime of the excited state
+   $\tau(B^*)\simeq0.07~\mathrm{ps}$.
+5. Why is it important for the measurement of helicity that the $\gamma$-quantum be
+   emitted before the memory of the recoil direction is lost?
+
+## Problem 3.2. Helicity and chirality of a massive neutrino
+
+A neutrino produced by a left-chiral weak current contains, at $m_\nu\ne0$, a
+small component of opposite helicity:
+
+$$
+P_{\mathrm{opp}}=\frac{1-\beta_\nu}{2},
+\qquad
+\beta_\nu=\frac{p_\nu}{E_\nu}.
+$$ {#eq-ex03-004}
+
+1. Using $E_\nu^2=p_\nu^2+m_\nu^2$, show that for
+   $E_\nu\gg m_\nu$
+
+   $$
+   P_{\mathrm{opp}}\simeq
+   \left(\frac{m_\nu}{2E_\nu}\right)^2.
+   $$ {#eq-ex03-005}
+
+2. For $E_\nu=1~\mathrm{MeV}$ and $m_\nu<0.45~\mathrm{eV}$ obtain
+   the upper bound $P_{\mathrm{opp}}$.
+3. Why do helicity and chirality practically coincide for an
+   ultrarelativistic neutrino, even though they are different concepts?
+4. Which of these characteristics can change sign upon a transition to another
+   inertial frame?
+5. How does the mass term of the Dirac equation couple the left and right chiral
+   components?
+
+## Problem 3.3. Spin projections in electron capture
+
+Consider the allowed electron capture
+
+$$
+A(J=0)+e^-
+\longrightarrow
+B^*(J=1)+\nu_e.
+$$ {#eq-ex03-006}
+
+Direct the axis $z$ along the neutrino momentum; neglect the orbital angular momentum of the final
+state.
+
+1. Write down the conservation law for the projection of the total angular momentum:
+
+   $$
+   m_e=m_{B^*}+m_\nu.
+   $$ {#eq-ex03-007}
+
+2. List the allowed values of
+   $m_e=\pm\tfrac12$, $m_\nu=\pm\tfrac12$ and
+   $m_{B^*}=-1,0,+1$.
+3. Construct a table of the allowed triples
+   $(m_e,m_{B^*},m_\nu)$.
+4. For which values of $m_{B^*}$ does the projection of the nuclear spin unambiguously fix
+   the neutrino helicity?
+5. Why does the relation lose its unambiguous meaning if the quantization axis is chosen not
+   along the neutrino momentum?
+
+## Problem 3.4. Doppler selection of $\gamma$-quanta
+
+An excited nucleus $B^*$ moves with velocity $v\ll c$ and emits, in its own
+rest frame, a photon of energy $E_\gamma$. The angle $\theta$ is measured between the
+direction of the photon and the velocity of the nucleus.
+
+1. From the transformation
+
+   $$
+   E_\gamma^{\mathrm{lab}}
+   =\gamma E_\gamma(1+\beta\cos\theta)
+   $$ {#eq-ex03-008}
+
+   obtain, to first order in $v/c$,
+
+   $$
+   E_\gamma^{\mathrm{lab}}
+   \simeq E_\gamma
+   \left(1+\frac vc\cos\theta\right).
+   $$ {#eq-ex03-009}
+
+2. Find $E_{\max}$, $E_{\min}$ and the width
+   $E_{\max}-E_{\min}$.
+3. Using the velocity from Problem 03.1, estimate the relative Doppler
+   shift.
+4. Why does resonant absorption select a narrow range of angles?
+5. Explain how energy selection turns into selection of the direction of the
+   $\gamma$-quantum relative to the nuclear recoil.
+
+## Problem 3.5. Can one overtake a neutrino?
+
+A massive neutrino moves along the axis $z$ with energy $E_\nu$ and momentum
+$p_\nu$. An observer moves in the same direction with velocity $u$.
+Under a longitudinal boost
+
+$$
+p_\nu'=\gamma_u
+\left(p_\nu-\frac{uE_\nu}{c^2}\right).
+$$ {#eq-ex03-010}
+
+1. Obtain the condition under which $p_\nu'$ changes sign.
+2. Show that for $E_\nu\gg m_\nu c^2$
+
+   $$
+   1-\beta_\nu\simeq
+   \frac{m_\nu^2c^4}{2E_\nu^2}.
+   $$ {#eq-ex03-011}
+
+3. For $E_\nu=1~\mathrm{MeV}$ and $m_\nu=0.10~\mathrm{eV}/c^2$ estimate
+   by how much the observer's velocity must differ from $c$.
+4. Estimate the minimum Lorentz factor of such an observer and compare it with
+   $\gamma_\nu=E_\nu/(m_\nu c^2)$.
+5. Why does the helicity change sign after the overtaking? Why is the same thought
+   experiment impossible for a strictly massless particle?
+
+---
+
+## Problems for discussion in the seminar
+
+### Seminar 03.1. How does helicity transform?
+
+The helicity of a particle is defined as
+
+$$
+h=\frac{\mathbf S\cdot\mathbf p}{|\mathbf p|}.
+$$ {#eq-ex03-012}
+
+Trace the transformation of $\mathbf S$, $\mathbf p$ and $h$ under
+
+1. an ordinary spatial rotation;
+2. spatial inversion $P$;
+3. time reversal $T$.
+
+Why is a preference for one sign of helicity a signature of parity
+violation?
+
+### Seminar 03.2. The logic of the Goldhaber experiment
+
+After electron capture, the excited recoil nucleus and the neutrino fly off in
+opposite directions. The nucleus then emits a $\gamma$-quantum, whose circular
+polarization stores information about the spin projection of the recoil nucleus.
+
+1. Draw the directions of the momenta of the neutrino, the recoil nucleus and the selected
+   $\gamma$-quantum.
+2. Explain the chain
+   "neutrino helicity $\to$ recoil-nucleus polarization $\to$ circular
+   polarization of the photon" using conservation of angular momentum.
+3. Why must the experiment select photons flying along a definite
+   direction of recoil? What would be lost if photons from all directions were registered?
+
+### Seminar 03.3. Resonance as an angular filter
+
+To first order in the nuclear velocity, the photon energy in the lab frame is
+
+$$
+E_{\mathrm{lab}}\simeq E_\gamma(1+\beta_R\cos\theta).
+$$ {#eq-ex03-013}
+
+The absorber has a resonance energy $E_{\mathrm{res}}$ and a width $\Gamma$.
+
+1. Find the direction
+   $\cos\theta_{\mathrm{res}}$ that falls into resonance.
+2. Show that the width of the selected angular interval in $\cos\theta$ is
+   of order $\Gamma/(\beta_RE_\gamma)$.
+3. Why does the energy resonance simultaneously become a filter
+   of the emission direction?
+
+### Seminar 03.4. Overtaking a massive particle
+
+Let a particle have energy $E=5mc^2$ and move along the axis $z$.
+
+1. Find its velocity $\beta$.
+2. What minimum Lorentz factor does an observer need in order to move faster than the
+   particle in the same direction?
+3. What happens to the direction of the momentum and to the helicity of the particle in the frame of
+   such an observer?
+4. At which step does the argument stop working for $m=0$?

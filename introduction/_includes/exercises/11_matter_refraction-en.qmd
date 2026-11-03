@@ -1,0 +1,115 @@
+## Problem 1. The first Fresnel zone
+
+The rings of the layer with boundaries $r_m=z+m\lambda/2$ are called Fresnel zones.
+Find the radius $b_1$ of the first zone for $z\gg\lambda$ and the number of scatterers in
+it for a layer of thickness $dz$ and concentration $\mathcal N$. Explain why the growth of the
+ring area compensates the factor $1/r$ of the spherical wave, and check
+that for $z\gg ka^2$ the scattering amplitude hardly changes over the first zone.
+
+## Problem 2. Phase and attenuation
+
+Let $f(0)=a+ib$, where $a,b>0$, and the medium is homogeneous over the length $D$.
+
+1. Find the additional phase of the transmitted wave.
+2. Find the intensity ratio $I(D)/I(0)$.
+3. Using the optical theorem, express the result in terms of the total cross section.
+
+## Problem 3. Two refractive indices
+
+The matrix refractive index has the form
+
+$$
+\mathbf n=n_0\mathbb I+
+\begin{pmatrix}\delta&\kappa\\\kappa&-\delta\end{pmatrix}.
+$$ {#eq-exr-refraction-two-index-matrix}
+
+1. Find the two eigen refractive indices.
+2. Find the rotation angle from the original basis to the normal waves.
+3. Show that for $\delta=0$ the original first state passes completely
+   into the second after a suitable path length, if $\kappa\ne0$.
+
+## Problem 4. When coherence is lost
+
+For each process, indicate whether it can be included in the real refractive index
+of the transmitted wave, or whether it requires a description of the loss of coherence:
+
+- elastic scattering strictly forward without a change of the atom's state;
+- excitation of the atom;
+- scattering through a finite angle;
+- elastic scattering on two indistinguishable centers;
+- absorption of a neutrino.
+
+For each answer, formulate the physical criterion of distinguishability of the alternatives.
+
+## Problem 5. A plate and the accumulated phase
+
+Consider a transparent layer with a real refractive index.
+Neglect reflection at the boundaries.
+
+1. At fixed frequency, obtain the ratios
+   $\lambda_{\mathrm{med}}/\lambda_0$ and $v_{\mathrm{ph}}/c$.
+2. Show that after exiting a layer of thickness $D$ the additional phase is equal to
+   $\Delta\varphi=2\pi(n-1)D/\lambda_0$, even though the wavelength is again equal to
+   $\lambda_0$.
+3. Calculate the phase for $n=1.08$ and $D=1.5\lambda_0$. What must the
+   thickness be, for the same $n$, to obtain a shift $\pi$?
+4. Divide the layer into $M$ parts and find the limit
+   $[1+i\Delta\varphi/M]^M$ as $M\to\infty$. Why does the small contribution
+   of each layer allow a large total phase?
+5. Check the calculation with the
+   [applet](https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/refraction-layers.html) (in Russian).
+   Find two pairs $n,D$ with the same phase at the exit. Are the
+   waves inside the plate the same?
+
+## Problem 6. Two normal waves
+
+Let, at constant density,
+
+$$
+\begin{aligned}
+|\nu_e\rangle&=c_m|\nu_{\mathrm{mat},1}\rangle+s_m|\nu_{\mathrm{mat},2}\rangle,\\
+|\nu_x\rangle&=-s_m|\nu_{\mathrm{mat},1}\rangle+c_m|\nu_{\mathrm{mat},2}\rangle,
+\end{aligned}
+\qquad
+c_m=\cos\theta_m,\quad s_m=\sin\theta_m.
+$$ {#eq-exr-refraction-mode-bases}
+
+Denote $\Phi=E(n_{\mathrm{mat},1}-n_{\mathrm{mat},2})z$.
+
+1. Write down the state at distance $z$ for the initial $\nu_e$. By projecting onto
+   $\nu_x$, obtain the amplitude and the probability
+   $P_{e\to x}=\sin^22\theta_m\sin^2(\Phi/2)$.
+2. Show that the common shift $n_{\mathrm{mat},i}\to n_{\mathrm{mat},i}+C$
+   changes only the overall phase. Decompose the increment
+   $\operatorname{diag}(\delta n_e,\delta n_x)$ into a common part and a part
+   that distinguishes the flavors.
+3. Calculate $P_{e\to x}$ for $\theta_m=30^\circ$ and $\Phi=\pi$. How does the
+   answer change for $\theta_m=0$, $\theta_m=45^\circ$, or equal refractive indices?
+4. Find the first maximum and the spatial period of the probability.
+   What does the angle change, and what does the difference of the refractive indices change?
+5. Check your answers with the
+   [applet](https://neutrinohit.github.io/neutrinophysics/introduction/ru/applets/refraction-two-modes.html) (in Russian).
+   Which parameters are specified independently? How can they be found for a layer of given
+   density from the weak interaction?
+
+## Problem 7. A half-wave plate and neutrinos
+
+The input is a pure state $\nu_e$, the mass axes $\nu_1,\nu_2$ are rotated by
+$-\theta$ relative to the flavor axes. The phase difference of the waves $\nu_1$ and $\nu_2$ is $\pi$.
+
+1. Find the output state in the basis $(\nu_e,\nu_x)$ and verify that it is
+   rotated by $2\theta$ relative to the input.
+2. Calculate $P_{e\to x}$ for $\theta=33{,}7^\circ$ and compare with the fractions of
+   light intensity $I_V$ and $I_H$ for the same plate.
+3. Does the output coincide with one of the crystal axes? For which $\theta$ will it
+   coincide with $\nu_x$?
+
+## Problem 8. The refractive index operator
+
+1. Starting from $\hat n_{\mathrm{vac}}=\sum_i n_i|\nu_i\rangle\langle\nu_i|$ and
+   the matrix $U$, obtain the matrix $[\hat n_{\mathrm{vac}}]_f$ in the flavor
+   basis.
+2. Show that its trace and determinant do not depend on $\theta$.
+3. Add $\delta\hat n=\mathrm{diag}(\delta n_e,\delta n_x)$ and find the angle
+   $\theta_m$ as a function of $\theta$, $n_2-n_1$, and $\delta n_e-\delta n_x$.
+   For what relation among these quantities is $\theta_m=45^\circ$?

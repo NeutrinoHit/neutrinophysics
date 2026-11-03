@@ -1,0 +1,100 @@
+## Problem 6.1. MAC-E spectrometer numbers
+
+Let the source have $B_{\mathrm{src}}=3.6~\mathrm{T}$, the maximum field be
+$B_{\max}=6.0~\mathrm{T}$, and in the analyzing plane
+$B_{\mathrm A}=0.35~\mathrm{mT}$.
+
+1. From the conservation of $p_\perp^2/B$ obtain the condition for passing the magnetic
+   mirror and the maximum initial angle
+
+   $$
+   \sin^2\vartheta_{\mathrm{acc}}=\frac{B_{\mathrm{src}}}{B_{\max}}.
+   $$ {#eq-ex06-001}
+
+   Calculate $\vartheta_{\mathrm{acc}}$.
+2. What fraction of isotropically emitted electrons in the forward hemisphere satisfies
+   the condition $\vartheta<\vartheta_{\mathrm{acc}}$?
+3. For an electron with $E=18.6~\mathrm{keV}$ estimate the maximum residual
+   transverse energy in the analyzing plane and the resolution
+
+   $$
+   \Delta E\simeq E\frac{B_{\mathrm A}}{B_{\max}}.
+   $$ {#eq-ex06-002}
+
+4. Explain in one sentence the role of magnetic adiabatic collimation and
+   of the electrostatic filter.
+
+## Problem 6.2. Two adiabaticity conditions
+
+An electron moves in a stationary inhomogeneous magnetic field. On the chosen
+section the following are known
+
+$$
+B=0.10~\mathrm{T},
+\qquad
+L_\perp=0.50~\mathrm{m},
+\qquad
+L_\parallel=2.0~\mathrm{m},
+$$ {#eq-ex06-adiabatic-field-data}
+
+and its kinetic energy and angle to the field are
+
+$$
+E=10~\mathrm{keV},
+\qquad
+\alpha=45^\circ.
+$$ {#eq-ex06-adiabatic-particle-data}
+
+1. Find $p_\perp$, $v_\parallel$, the Larmor radius $\rho_L$ and the pitch
+   $h=v_\parallel T_c$ with the relativistic correction to the cyclotron frequency.
+2. Calculate $\rho_L/L_\perp$ and $h/L_\parallel$. In which direction is the
+   inhomogeneity more dangerous for the adiabatic approximation?
+3. Explain why $dB/dt$ along the trajectory can be a nonzero quantity,
+   although $\partial B/\partial t=0$ throughout the whole setup.
+4. What changes in the argument about the energy if the current in the magnet starts to be varied over
+   a time comparable to $T_c$?
+
+## Problem 6.3. Loss cone in a dipole field
+
+Consider the dipole field line $L=4$ and a conventional boundary of the atmosphere at
+altitude $h_{\mathrm{atm}}=100~\mathrm{km}$. Use
+$R_\oplus=6371~\mathrm{km}$ and the formulas
+
+$$
+r(\lambda)=LR_\oplus\cos^2\lambda,
+\qquad
+\frac{B(L,\lambda)}{B_{\mathrm{eq}}(L)}
+=\frac{\sqrt{1+3\sin^2\lambda}}{\cos^6\lambda}.
+$$ {#eq-ex06-dipole-line-and-field}
+
+1. To what altitude above the equator does $L=4$ correspond?
+2. Find the magnetic latitude $\lambda_{\mathrm{atm}}$ at which the line
+   crosses the boundary of the atmosphere.
+3. Calculate the ratio
+   $B_{\mathrm{atm}}(L)/B_{\mathrm{eq}}(L)$ and the loss-cone angle
+
+   $$
+   \alpha_{\mathrm{loss}}
+   =\arcsin\sqrt{\frac{B_{\mathrm{eq}}(L)}
+   {B_{\mathrm{atm}}(L)}}.
+   $$ {#eq-ex06-loss-cone-angle}
+
+4. Compare particles with equatorial angles $5^\circ$, $20^\circ$ and
+   $60^\circ$. Which one will be reflected above the atmosphere, and which one will be lost?
+5. Draw the sphere of velocity directions and the two loss cones. Why is the loss
+   region not a ring or a flat sector?
+
+## Problem 6.4. Stationary mirror and Fermi acceleration
+
+A particle is elastically reflected from a flat magnetic inhomogeneity moving toward it
+with speed $u\ll v$. Consider the motion along the normal to the
+inhomogeneity and use the nonrelativistic addition of velocities.
+
+1. Go to the reference frame of the inhomogeneity, change the sign of the particle's velocity
+   upon reflection, and return to the laboratory frame.
+2. Show that for a head-on collision the change in velocity is
+   $\Delta v\simeq2u$.
+3. Estimate the relative change in energy for $u\ll v$.
+4. Why is the energy before and after reflection the same in a stationary magnetic mirror,
+   while in this problem it is not?
+5. What energy does the system lose when the particle is accelerated?

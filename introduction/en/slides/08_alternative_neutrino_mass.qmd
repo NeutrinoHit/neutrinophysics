@@ -41,20 +41,20 @@ execute:
 
 - In lecture 07 we measured several integrals of the $\beta$ spectrum
   by varying the retarding voltage.
-- Now we consider ways to measure the energy of each decay separately.
+- Now we consider ways to measure the energy of each decay individually.
 - There will be four ways:
   - hear the electron;
   - measure the heat;
   - reconstruct the missing momentum;
-  - compare the arrival times.
+  - compare arrival times.
 
 ## Method one: hear the electron {#cres-intro}
 
 ::: {style="width:78%;"}
 
 - An electron in a magnetic field rotates and, like any accelerated charge, radiates.
-- The frequency of this radio wave decreases as the energy grows. Catch the wave, measure
-  the frequency — and we obtain the energy.
+- The frequency of this radio wave decreases as the energy grows. We catch the wave, measure
+  the frequency, and obtain the energy.
 
 $$
 \boxed{
@@ -83,7 +83,7 @@ $$
 
 ::: {.column width="53%"}
 
-![](../../ru/slides/assets/08_alternative_neutrino_mass/frequency-energy-en.svg){width="100%" fig-alt="In a known magnetic field the cyclotron frequency decreases as the electron kinetic energy increases"}
+![](../../ru/slides/assets/08_alternative_neutrino_mass/frequency-energy-en.svg){width="100%" fig-alt="In a known magnetic field the cyclotron frequency decreases as the electron kinetic energy grows"}
 
 :::
 
@@ -116,8 +116,8 @@ $$
 
 - The electron moves with acceleration transverse to the magnetic field and emits
   an electromagnetic wave.
-- The periodic rotation produces a signal at the cyclotron frequency.
-  It can be received as long as the electron remains in the observed volume.
+- The periodic rotation creates a signal at the cyclotron frequency.
+  It can be received for as long as the electron remains in the observed volume.
 - For $B=1$ T and $E=18.6$ keV
 
 $$
@@ -151,8 +151,8 @@ P_{\mathrm{rad}}
 \,\gamma^2\beta^2\sin^2\alpha.
 $$
 
-- $\beta=v/c$, and $\alpha$ is the angle between the velocity and the field.
-  It is the transverse acceleration that radiates; for $\alpha=0$ there is no cyclotron radiation.
+- $\beta=v/c$, $\alpha$ is the angle between the velocity and the field.
+  The transverse acceleration radiates; for $\alpha=0$ there is no cyclotron radiation.
 - For $E=18.6$ keV, $B=1$ T, $\alpha=90^\circ$:
 
 $$
@@ -172,13 +172,13 @@ $$
 
 ::: {.column width="58%"}
 
-![](../../ru/slides/assets/08_alternative_neutrino_mass/power-ladder-en.svg){width="100%" fig-alt="Power scale: transmitters, received signals, the CRES signal and the receiver noise"}
+![](../../ru/slides/assets/08_alternative_neutrino_mass/power-ladder-en.svg){width="100%" fig-alt="Power scale: transmitters, received signals, the CRES signal, and receiver noise"}
 
 :::
 
 ::: {.column width="39%"}
 
-- A phone radiates $0.2$ W during transmission, a TV tower — hundreds of kilowatts.
+- A phone during transmission radiates $0.2$ W, a cell tower hundreds of kilowatts.
 - The antenna of the same phone receives about
   $10^{-10}$ W from the base station.
 - The GPS signal at this antenna is $1.4\cdot10^{-16}$ W, and it is reliably
@@ -196,7 +196,7 @@ compete with?
 
 ### Why it can be heard
 
-- There is only one rival — the thermal noise of the receiver itself. It gives a power
+- There is only one competitor: the thermal noise of the receiver itself. It gives a power
   $kT_{\mathrm{n}}$ per hertz of bandwidth.
 - The bandwidth is set by the recording duration: the longer we listen to the electron,
   the narrower the line in the spectrum,
@@ -215,7 +215,7 @@ P_{\mathrm{n}}=kT_{\mathrm{n}}\,\Delta f
 $$
 
 - A femtowatt against this is a margin of almost a factor of one hundred. Part of the power is lost
-  on the way to the amplifier, and the working signal-to-noise ratio comes out on the order of unity.
+  on the way to the amplifier, and the working signal-to-noise ratio comes out at a few units.
 
 ::: {.nh-box tone="success" size="md"}
 Listen for a long time and in a narrow band.
@@ -229,12 +229,12 @@ Listen for a long time and in a narrow band.
 
 ### The whole chain
 
-![](../../ru/slides/assets/08_alternative_neutrino_mass/cres-receiver-en.svg){height="330" fig-alt="The electron's radiation excites a mode, is amplified, shifted to an intermediate frequency and digitized"}
+![](../../ru/slides/assets/08_alternative_neutrino_mass/cres-receiver-en.svg){height="330" fig-alt="The electron's radiation excites a mode, is amplified, shifted to an intermediate frequency, and digitized"}
 
-- The electron gives up power to an electromagnetic mode, and the mode delivers it to the amplifier.
+- The electron gives up its power to an electromagnetic mode, and the mode delivers it to the amplifier.
 - The amplifier raises the level, the mixer lowers the frequency,
   and the ADC records the voltage as a function of time.
-- Each step preserves the frequency — the very quantity for the sake of which everything is done.
+- Each step preserves the frequency, the very quantity for the sake of which everything is done.
 
 ### Waveguide and resonator
 
@@ -242,7 +242,7 @@ Listen for a long time and in a narrow band.
 
 ::: {.column width="56%"}
 
-![](../../ru/slides/assets/08_alternative_neutrino_mass/waveguide-resonator-en.svg){width="100%" fig-alt="In a waveguide a half-wave fits across the tube; in a cavity the wave adds up with itself"}
+![](../../ru/slides/assets/08_alternative_neutrino_mass/waveguide-resonator-en.svg){width="100%" fig-alt="In a waveguide a half-wave fits across the tube; in a resonator the wave closes on itself"}
 
 - A **resonator** is a closed cavity. The wave is reflected from the walls and adds up
   with itself at selected frequencies.
@@ -269,11 +269,11 @@ $$
 
 ### Amplifier
 
-- The femtowatts must be raised to a level that will survive the cables and digitization.
+- The femtowatts must be raised to a level that will survive cables and digitization.
   The gain in Project 8 is from $70$ to $82$ dB, that is, a factor of $10^7$–$10^8$
   in power.
-- One has to pay for this: the amplifier adds its own noise.
-  It is expressed by a temperature $T_{\mathrm{n}}$; the noise power is
+- This has to be paid for: the amplifier adds its own noise.
+  It is expressed by the temperature $T_{\mathrm{n}}$, and the noise power is
   $kT_{\mathrm{n}}$ per hertz of bandwidth.
 - For a chain of stages with gains $G_i$
 
@@ -284,12 +284,12 @@ T_{\mathrm{sys}}=T_1+\frac{T_2}{G_1}+\frac{T_3}{G_1G_2}+\ldots
 $$
 
 - The noise of the first stage enters in full, while the others are divided by the gain
-  of the preceding ones. Therefore the first amplifier is cooled, and everything else is tolerated.
+  of the preceding ones. This is why the first amplifier is cooled and everything else is tolerated.
 - For Project 8, $T_{\mathrm{sys}}=132$ K.
 
 ### Mixer and digitization
 
-- There is no way to record $26$ GHz directly. The mixer multiplies the signal
+- There is nothing to record $26$ GHz directly. The mixer multiplies the signal
   by a reference oscillation of frequency $f_{\mathrm{ref}}$:
 
 $$
@@ -298,15 +298,15 @@ $$
 +\frac12\cos[2\pi(f_c+f_{\mathrm{ref}})t].
 $$
 
-- A filter keeps the difference. Mixing $26$ GHz with $24.5$ GHz, we obtain $1.5$ GHz;
+- A filter keeps the difference. Mixing $26$ GHz with $24.5$ GHz, we get $1.5$ GHz;
   all frequency changes are preserved in this shift without distortion.
-- The ADC records the voltage with a sampling rate above twice the bandwidth —
+- The ADC records the voltage at a sampling rate above twice the bandwidth,
   otherwise different frequencies become indistinguishable.
 - Fourier analysis of short pieces of the recording gives a spectrogram: the power
   as a function of time and frequency.
 
 ::: {.nh-text tone="muted" size="sm"}
-[Receiver electronics of Project 8](https://arxiv.org/abs/2503.08807).
+[Receiving electronics of Project 8](https://arxiv.org/abs/2503.08807).
 :::
 
 :::::
@@ -315,25 +315,25 @@ $$
 
 ::::: {.panel-tabset .nh-story-tabs}
 
-### How to read a track
+### How to read the track
 
 :::: {.columns}
 
 ::: {.column width="54%"}
 
-![](../../ru/slides/assets/08_alternative_neutrino_mass/cres-track-en.svg){width="100%" fig-alt="The radiation smoothly raises the frequency, while a collision with energy loss creates a jump in the frequency track"}
+![](../../ru/slides/assets/08_alternative_neutrino_mass/cres-track-en.svg){width="100%" fig-alt="The radiation smoothly raises the frequency, while a collision with energy loss produces a jump in the frequency track"}
 
 ::: {.nh-text tone="muted" size="sm"}
-- A schematic track at a constant average field.
+- A schematic track at constant average field.
 - The loss in a single collision is chosen to be $12.6$ eV;
-- the sidebands are shown schematically.
+- the side lines are shown schematically.
 :::
 
 :::
 
 ::: {.column width="43%"}
 
-- Time is along the horizontal axis, frequency along the vertical.
+- Time is on the horizontal axis, frequency on the vertical.
 - The start of the first detected line gives an estimate of the initial energy of the electron.
 - The smooth rise is due to the loss of energy to radiation:
 
@@ -343,7 +343,7 @@ $$
 \dot f_c=\frac{f_cP_{\mathrm{rad}}}{m_ec^2+E}>0.
 $$
 
-- A collision with a molecule can sharply decrease the energy:
+- A collision with a molecule can sharply reduce the energy:
   the frequency will jump up.
 - Neighboring lines may belong to the same electron.
 
@@ -358,8 +358,8 @@ $$
 - But there we neglected radiation.
   Now it is the observable signal and carries away the electron's energy.
 - The magnetic field does not supply this energy. The electron spends its own
-  kinetic energy; in the exact equation of motion a radiation-reaction
-  force appears.
+  kinetic energy; in the exact equation of motion a
+  radiation reaction force appears.
 - At a power of $1.2$ fW, over $100$ μs approximately the following is lost:
 
 $$
@@ -385,7 +385,7 @@ $E$ in the lecture.
 
 :::::
 
-## A magnetic mirror prolongs the observation
+## The magnetic mirror prolongs the observation
 
 ::::: {.panel-tabset .nh-story-tabs}
 
@@ -395,14 +395,14 @@ $E$ in the lecture.
 
 ::: {.column width="54%"}
 
-![](../../ru/slides/assets/08_alternative_neutrino_mass/shallow-trap-en.svg){width="100%" fig-alt="A small increase of the field toward the edges keeps the electron at an angle close to 90 degrees"}
+![](../../ru/slides/assets/08_alternative_neutrino_mass/shallow-trap-en.svg){width="100%" fig-alt="A slight increase of the field toward the edges keeps the electron at an angle close to 90 degrees"}
 
 :::
 
 ::: {.column width="43%"}
 
 - Without a trap the electron would quickly leave the sensitive region.
-- Two magnetic mirrors reflect it back — the effect of lecture 06 is used.
+- Two magnetic mirrors reflect it back, using the effect of lecture 06.
 - Between reflections the energy changes little over one longitudinal period,
   and the adiabatic invariant can be applied.
 - If the field at the edges is only slightly larger than $B_0$, electrons
@@ -428,7 +428,7 @@ $$
 $$
 
 - For an isotropic source $\cos\alpha_0$ is uniform on $[-1,1]$.
-  Therefore the geometric fraction of trapped electrons is approximately equal to
+  Therefore the geometric fraction of trapped electrons is approximately
   $\sqrt{\eta}$.
 - A deep trap accepts more angles, but the electron explores
   a larger range of fields.
@@ -437,8 +437,8 @@ $$
 
 ### The field that the electron feels
 
-- The trap field is constant in time. It is the electron that moves, and with it
-  the field changes at the point where it currently is.
+- The trap field is constant in time. The electron moves, and along with it
+  the field changes at the point where it is currently located.
 - In the parabolic approximation
 
 $$
@@ -456,14 +456,14 @@ B(t)=B_0\left[
 \right].
 $$
 
-- Over one longitudinal period the electron enters the region of strong field twice,
+- Over one longitudinal period the electron twice enters the region of strong field,
   so the rotation frequency oscillates at $2f_z$.
-- The mean frequency is shifted as well. Substituting a single $B_0$ into the formula for $E$
+- The average frequency also shifts. Substituting a single $B_0$ into the formula for $E$
   without a correction for the trajectory will give an error.
 
 :::::
 
-## Why does one electron give several lines? {#cres-sidebands-origin}
+## Why does a single electron produce several lines? {#cres-sidebands-origin}
 
 ::::: {.panel-tabset .nh-story-tabs}
 
@@ -479,19 +479,19 @@ $$
 The total phase of the received signal is the sum of the rotation phase and the wave delay,
 $\Phi_{\mathrm{rec}}(t)=\int_0^t2\pi f_c\,dt'+\Phi_{\mathrm{prop}}[z(t)]$:
 the first term oscillates at $2f_z$, the second at $f_z$.
-[CRES power spectrum and longitudinal motion](https://arxiv.org/abs/1901.02844).
+[CRES power spectrum and axial motion](https://arxiv.org/abs/1901.02844).
 :::
 
 :::
 
 ::: {.column width="47%"}
 
-- The electron oscillates between the mirrors with frequency $f_z$ and enters the strong field twice per period.
-  The cyclotron frequency oscillates along with it.
-- At the same time, the distance to the receiver changes: the wave arrives now slightly earlier,
-  now slightly later.
+- The electron oscillates between the mirrors with frequency $f_z$ and twice per period
+  enters the strong field. The cyclotron frequency oscillates along with it.
+- At the same time, the distance to the receiver changes: the wave arrives
+  sometimes slightly earlier, sometimes slightly later.
 - The receiver hears a sinusoid whose period slightly "breathes" with period $1/f_z$.
-- This breathing of the phase splits one line into a comb:
+- This breathing of the phase splits a single line into a comb:
 
 $$
 \boxed{f_n=f_c+nf_z}.
@@ -506,7 +506,7 @@ $$
 
 ### Modulation index
 
-- First, let us keep a single modulation frequency:
+- First, let us keep only one modulation frequency:
 
 $$
 V(t)=V_0\cos\Phi(t),
@@ -521,9 +521,9 @@ f_{\mathrm{inst}}=\frac{1}{2\pi}\frac{d\Phi}{dt}
 =f_c+h f_z\cos(2\pi f_zt).
 $$
 
-- Therefore $h=\Delta f/f_z$ is the **dimensionless modulation index**,
+- Hence $h=\Delta f/f_z$ is the **dimensionless modulation index**,
   and $\Delta f$ is the amplitude of the frequency variation.
-- For small $h$ the signal is almost harmonic.
+- For small $h$ the signal is nearly harmonic.
   For large $h$ the sidebands carry a noticeable fraction of the power.
 
 ### Power of the lines
@@ -541,7 +541,7 @@ e^{i\Phi(t)}
 =\sum_{n=-\infty}^{\infty}J_n(h)e^{2\pi i(f_c+nf_z)t}.
 $$
 
-- $J_n$ is a Bessel function. The sideband has frequency
+- $J_n$ is the Bessel function. The sideband has frequency
   $f_n=f_c+nf_z$ and relative power $J_n^2(h)$.
 - For a long observation
 
@@ -549,18 +549,18 @@ $$
 \sum_nJ_n^2(h)=1:
 $$
 
-  the power is redistributed among the lines and does not disappear anywhere.
+  the power is redistributed among the lines and does not vanish.
 
 ### Why this matters
 
 - The comb takes power away from the central line. The detection threshold
-  has to be calculated for the line that we actually see.
-- The spacing between the lines is equal to $f_z$. It depends on the angle and on
-  how deep the electron goes into the trap — that is, it tells us about the trajectory.
+  has to be computed for the line that we actually see.
+- The spacing between the lines equals $f_z$. It depends on the pitch angle and on
+  how deeply the electron penetrates into the trap, and thus tells us about the trajectory.
 - The trajectory determines the average field along the path, and without it the frequency cannot be converted
   into energy.
-- At $h\approx2.4$ the function $J_0$ vanishes: the central line goes out,
-  even though the electron has not gone anywhere.
+- At $h\approx2.4$ the function $J_0$ vanishes: the central line is extinguished,
+  although the electron has not gone anywhere.
 
 :::::
 
@@ -577,7 +577,7 @@ $$
 \delta E=(m_ec^2+E)\frac{\delta f_c}{f_c}.
 $$
 
-- A record of finite length cannot distinguish frequencies better than $1/T_{\mathrm{obs}}$:
+- A record of finite length cannot distinguish frequencies more precisely than $1/T_{\mathrm{obs}}$:
   over a short time two close sinusoids do not have time to drift apart in phase.
 - A track of length $100$ μs gives a line of width $8.9$ kHz. In energy this is
 
@@ -603,20 +603,20 @@ $$
 
 - Here $\operatorname{sinc}x=\sin x/x$.
   The power is proportional to $\operatorname{sinc}^2$.
-- The width of such a peak at half maximum is:
+- The full width at half maximum of such a peak is:
 
 $$
 \boxed{\Delta f_{\mathrm{FWHM}}\simeq\frac{0.886}{T_{\mathrm{obs}}}}.
 $$
 
 - The coefficient refers to a rectangular time window.
-  A different processing of the record changes the shape and width of the peak.
+  Other processing of the record changes the shape and width of the peak.
 
 ### Interactive {#cres-sidebands}
 
 {{< include ../../ru/slides/assets/04_direct_neutrino_mass/_cres_radiation_spectrum.en.qmd >}}
 
-- Vary the index $h$. Find the regime where the central line is weaker than the sidebands.
+- Vary the index $h$. Find the regime in which the central line is weaker than the sidebands.
 - The spacing between the lines is set by $f_z$; their envelope depends on $h$.
 - A decrease in the carrier power does not mean that the electron has disappeared.
 
@@ -627,7 +627,7 @@ $$
 
 :::::
 
-## What accuracy do the frequency and the field require?
+## What precision do the frequency and the field require?
 
 ::::: {.panel-tabset .nh-story-tabs}
 
@@ -647,11 +647,11 @@ $$
 |\delta f_c|\simeq5.1~\text{kHz}.
 $$
 
-- A line of this width is produced by a rectangular record lasting about $174$ μs.
+- A line of this width is given by a rectangular record of duration about $174$ μs.
 - The center of the line is found more precisely than its width: the gain grows with the
-  signal-to-noise ratio. The width sets the scale, and beyond that statistics takes over.
+  signal-to-noise ratio. The width sets the scale; beyond that, statistics takes over.
 
-### The field is also measured
+### The field must also be measured
 
 - If both the field and the frequency change,
 
@@ -662,15 +662,14 @@ $$
 }.
 $$
 
-- For a contribution to the error of no more than $0.10$ eV at $E=18.6$ keV, a relative
-  knowledge of the effective field of the order of
+- For a contribution to the error of no more than $0.10$ eV at $E=18.6$ keV, one needs
+  a relative knowledge of the effective field of order
 
 $$
 \frac{|\delta B|}{B}\lesssim1.9\cdot10^{-7}.
 $$
 
-  is required.
-- The unknown position of the electron in an inhomogeneous field becomes
+- The unknown position of the electron in the inhomogeneous field becomes
   an uncertainty in its energy.
 - For calibration, the krypton conversion lines, familiar from lecture 07, are used,
   and the track structure is compared with a model of the trap.
@@ -696,12 +695,12 @@ $$
 
 ### The cell
 
-![](../../ru/slides/assets/08_alternative_neutrino_mass/project8-paper-fig01.png){.slide-image-center .nostretch width="56%" fig-alt="Cross section of the cryogenic CRES cell: windows for the radio signal, trap coils, gas inlet, field-shifting solenoid, radio-wave absorber"}
+![](../../ru/slides/assets/08_alternative_neutrino_mass/project8-paper-fig01.png){.slide-image-center .nostretch width="56%" fig-alt="Cross section of a cryogenic CRES cell: windows for the radio signal, trap coils, gas inlet, field-shifting solenoid, radio-wave absorber"}
 
 - The electron is born in the decay right inside the waveguide and remains there,
   confined by the trap coils.
 - The radio wave travels along the pipe to the amplifiers, and at the far end it is absorbed
-  by a terminator, so that no echo returns.
+  by a terminator so that no echo returns.
 - The gas is supplied through a separate inlet, and the field-shifting solenoid changes the operating
   field without retuning the magnet itself.
 
@@ -715,7 +714,7 @@ $$
 
 ::: {.column width="55%"}
 
-![](../../ru/slides/assets/08_alternative_neutrino_mass/project8-apparatus-en.svg){width="100%" fig-alt="A cell with tritium inside a magnet, a cooled amplifier, a mixer with an ADC and a spectrogram"}
+![](../../ru/slides/assets/08_alternative_neutrino_mass/project8-apparatus-en.svg){width="100%" fig-alt="A tritium cell inside a magnet, a cooled amplifier, a mixer with an ADC, and a spectrogram"}
 
 :::
 
@@ -724,9 +723,9 @@ $$
 | Parameter | Value |
 |---|---|
 | Field | $0.959$ T |
-| Frequency at the spectrum endpoint | $\simeq26$ GHz |
+| Frequency at the endpoint of the spectrum | $\simeq26$ GHz |
 | Cell | circular waveguide $\varnothing\,10$ mm |
-| Volume | of the order of cm³ |
+| Volume | of order cm³ |
 | System noise | $132$ K |
 | Gain | $70$–$82$ dB |
 | Resolution on the Kr line | $1.66$ eV |
@@ -742,10 +741,10 @@ Phase II parameters. [Overview of the method and the apparatus](https://arxiv.or
 ### Spectrum of initial energies
 
 - For each detected electron the start of the track is reconstructed.
-- The initial frequencies are converted into energies and the spectrum is filled.
-  It is then compared with the model of β decay and the detector response.
-- Not every electron gives a visible track: the detection probability depends
-  on the power, the duration, the angle, and the receiver bandwidth.
+- The initial frequencies are converted into energies and used to fill the spectrum.
+  It is then compared with a model of β decay and of the response.
+- Not every electron produces a visible track: the detection probability depends
+  on the power, duration, angle, and the receiver bandwidth.
 - If the first segment is too weak or too short, the electron may be noticed
   only after it has lost energy. This distorts the reconstructed spectrum.
 - Calibrations and an efficiency model are needed here just as in KATRIN.
@@ -762,7 +761,7 @@ Phase II parameters. [Overview of the method and the apparatus](https://arxiv.or
 
 ::: {.column width="45%"}
 
-![](../../ru/slides/assets/08_alternative_neutrino_mass/project8-paper-fig05.png){.slide-image-center .nostretch width="100%" fig-alt="The measured tritium spectrum near the endpoint with Bayesian and frequentist fits, with mass and endpoint contours in the inset"}
+![](../../ru/slides/assets/08_alternative_neutrino_mass/project8-paper-fig05.png){.slide-image-center .nostretch width="100%" fig-alt="Measured tritium spectrum near the endpoint with Bayesian and frequentist fits; the inset shows contours in mass and endpoint"}
 
 ::: {.nh-text tone="muted" size="sm"}
 Figure 5 and the result: [Project 8, Phys. Rev. Lett. 131, 102502 (2023)](https://arxiv.org/abs/2212.05048).
@@ -774,7 +773,7 @@ Figure 5 and the result: [Project 8, Phys. Rev. Lett. 131, 102502 (2023)](https:
 
 - In 2023 Project 8 published the first tritium spectrum
   measured via cyclotron radiation.
-- The following limits were obtained
+- The following limits were obtained:
 
 $$
 m_\beta<155~\text{eV}\quad(90\%\ \text{Bayesian interval}),
@@ -787,8 +786,8 @@ $$
 - A resolution of $1.66\pm0.19$ eV FWHM was demonstrated on the line
   $^{83\mathrm m}\mathrm{Kr}$ at about $17.8$ keV
   in a specially chosen shallow trap.
-- Good resolution for an individual electron does not yet give a strong limit
-  on the mass: what matters is the number of tritium events and the whole response.
+- Good resolution for a single electron does not yet give a strong limit
+  on the mass: the number of tritium events and the full response matter.
 
 :::
 
@@ -796,34 +795,34 @@ $$
 
 ### This is still a demonstration
 
-- The source volume is one cubic centimeter. KATRIN has a source ten meters
-  long, hence the difference in the limits: $155$ eV versus $0.45$ eV.
-- Phase II was solving its own task: to demonstrate the resolution. With a single electron
+- The source volume is one cubic centimeter. The KATRIN source is ten
+  meters long, hence the difference in the limits: $155$ eV versus $0.45$ eV.
+- Phase II solved its own problem: to demonstrate the resolution. With a single electron,
   $1.66$ eV was obtained in a volume the size of a thimble.
-- Next, volume is needed. The weak signal is collected either with an antenna array, summing the
-  signals with delays according to the electron position, or with a cavity with a selected
+- Next, volume is needed. The weak signal is collected either with an antenna array, adding
+  the signals with delays according to the electron position, or with a resonator with a chosen
   mode.
-- Phase III is a cavity on the scale of m³. Phase IV is atomic tritium with a goal of
+- Phase III is a resonator on the m³ scale. Phase IV is atomic tritium with a goal of
   $40$ meV.
-- CRES will begin to measure the physics of the neutrino mass at the following stages.
+- CRES will begin to measure the physics of the neutrino mass in the subsequent phases.
 
 ::: {.nh-text tone="muted" size="sm"}
-[Project 8: CRES in cavities, 2026](https://arxiv.org/abs/2601.07848).
+[Project 8: CRES in resonators, 2026](https://arxiv.org/abs/2601.07848).
 :::
 
 ### Atomic source
 
-- In molecular tritium part of the energy remains in the rotation and vibrations of
-  the daughter molecule. Frequency readout by itself does not eliminate this.
+- In molecular tritium part of the energy remains in the rotation and vibration of the
+  daughter molecule. Frequency readout by itself does not eliminate this.
 - Atomic tritium removes the molecular degrees of freedom,
   but retains atomic excitations and recoil.
-- The atoms must be cooled, confined, and protected from recombination
+- The atoms must be cooled, trapped, and protected from recombination
   into molecules on the walls.
-- The discussed goal of Project 8 is a sensitivity of the order of $40$ meV.
+- The goal discussed for Project 8 is a sensitivity of order $40$ meV.
   This requires a large atomic source and a new readout.
 
 ::: {.nh-text tone="muted" size="sm"}
-[Project 8: the goal and atomic tritium](https://nuclearscience.lbl.gov/research/research-programs/neutrinos/neutrinos-research/katrin-project-8/).
+[Project 8: goal and atomic tritium](https://nuclearscience.lbl.gov/research/research-programs/neutrinos/neutrinos-research/katrin-project-8/).
 :::
 
 :::::
@@ -833,7 +832,7 @@ $$
 ::: {style="width:78%;"}
 
 - In CRES the electron energy is determined from the frequency of its cyclotron radiation.
-- In the calorimetric method the source is placed inside the absorber. With complete absorption, all the decay energy except that carried away by the neutrino remains in it. It is measured via the heating.
+- In the calorimetric method the source is placed inside an absorber. With complete absorption, the entire decay energy remains in it, except for what is carried away by the neutrino. It is measured from the heating.
 $$
 \boxed{
 \text{decay inside the absorber}
@@ -856,9 +855,9 @@ $$
 ::: {.column width="47%"}
 
 - The $^{163}\mathrm{Ho}$ atom sits inside the absorber and captures its own
-  electron. The neutrino escapes, and everything else stays right here.
+  electron. The neutrino escapes, and the rest stays right here.
 - The X-ray quanta and Auger electrons of the cascade are stopped in the material,
-  and within microseconds all of this becomes heat.
+  and within microseconds all of this turns into heat.
 
 :::
 
@@ -883,13 +882,13 @@ $$
 
 ::::: {.panel-tabset .nh-story-tabs}
 
-### What gets captured?
+### What is captured?
 
 :::: {.columns}
 
 ::: {.column width="45%"}
 
-![](../../ru/slides/assets/08_alternative_neutrino_mass/holmium-capture-en.svg){width="100%" fig-alt="Holmium decays inside the absorber: the neutrino escapes, while X-ray radiation and electrons heat the absorber"}
+![](../../ru/slides/assets/08_alternative_neutrino_mass/holmium-capture-en.svg){width="100%" fig-alt="Holmium decays inside the absorber: the neutrino escapes, while X-rays and electrons heat the absorber"}
 
 :::
 
@@ -921,27 +920,27 @@ $$
 
 - An electron from an outer shell can fill the vacancy.
 - The released energy is emitted as an X-ray quantum
-  or transferred to another electron, which is ejected from the atom.
+  or transferred to another electron, which leaves the atom.
   The latter process produces an **Auger electron**.
-- A cascade of shell rearrangements follows.
-  Inside the absorber all these particles transfer their energy to the material.
-- The calorimeter sums up the cascade. For the same final atomic
+- A cascade of shell rearrangements arises.
+  Inside the absorber all of these particles transfer their energy to the material.
+- The calorimeter sums the cascade. For the same final atomic
   state, it does not matter how the energy was shared between photons and electrons.
 
 ::: {.nh-box tone="accent" size="md"}
-The calorimeter measures the total remaining energy, even if it has been spread
+The calorimeter measures the total remaining energy, even if it was spread
 among several particles.
 :::
 
-### Conditions for complete absorption
+### Conditions for full absorption
 
 - Photons and electrons must be absorbed inside the sensitive volume.
   The escape of a photon would reduce the measured energy and create a tail in the response.
 - The energy must have time to pass into the measurable thermal degrees of freedom.
   Long-lived excitations can change the pulse shape.
-- The position of the implanted atoms, the thickness of the absorber, and the calibration are checked
-  experimentally.
-- When these conditions are met, the losses from electron escape
+- The positions of the implanted atoms, the absorber thickness and the calibration are
+  checked experimentally.
+- When these conditions are met, the losses due to electron escape
   from a separate source, familiar from lecture 07, disappear.
 
 :::::
@@ -954,8 +953,8 @@ among several particles.
 
 - The electron can be captured from different shells.
   After the capture, different excitation energies of the dysprosium atom remain.
-- For a perfectly well-defined final state, the two-body kinematics
-  would give a single neutrino energy and a single $E_c$.
+- For a perfectly defined final state, the two-body kinematics
+  would give one neutrino energy and one $E_c$.
 - But excited atomic states have a finite lifetime
   and a natural width.
 - Several channels give several lines with tails.
@@ -963,19 +962,19 @@ among several particles.
 
 ### Spectrum
 
-![](../../ru/slides/assets/08_alternative_neutrino_mass/holmium-spectrum-en.svg){height="480" fig-alt="Illustrative two-line electron-capture spectrum: atomic peaks far from Q and suppression of the spectrum by the mass near the endpoint energy"}
+![](../../ru/slides/assets/08_alternative_neutrino_mass/holmium-spectrum-en.svg){height="480" fig-alt="Textbook two-line electron-capture spectrum: atomic peaks far from Q and suppression of the spectrum by the mass near the endpoint energy"}
 
 - The atomic peaks account for most of the statistics.
-  Sensitivity to a small mass lies near the endpoint $E_c\simeq Q$.
+  The sensitivity to a small mass lies near the endpoint $E_c\simeq Q$.
 
 ::: {.nh-text tone="muted" size="sm"}
-A didactic two-line spectrum. The mass $10$ eV is chosen for illustration;
+A teaching two-line spectrum. The mass $10$ eV is chosen for illustration;
 these are not ECHo or HOLMES data.
 :::
 
 ### Phase space
 
-- In the approximation of unresolved light masses, we introduce $x=Q-E_c$.
+- In the approximation of unresolved light masses we introduce $x=Q-E_c$.
   For $x\ge m_\beta$:
 
 $$
@@ -985,7 +984,7 @@ $$
 }.
 $$
 
-- $C$ is the normalization, $\mathcal A(E_c)$ is the atomic spectral function.
+- $C$ is a normalization, $\mathcal A(E_c)$ is the atomic spectral function.
 - The simplest model of independent lines:
 
 $$
@@ -995,29 +994,29 @@ $$
 {(E_c-E_j)^2+\Gamma_j^2/4}.
 $$
 
-- $E_j$, $\Gamma_j$, $a_j$ are the energy, width, and weight of a channel.
+- $E_j$, $\Gamma_j$, $a_j$ are the energy, width and weight of a channel.
   The mass correction multiplies the entire atomic function.
 
 ### Atomic calculation
 
 - The single-vacancy model gives a useful picture, but is insufficient
   for a precise analysis of the end of the spectrum.
-- After the change of the nuclear charge, other electrons can additionally
-  become excited or go into the continuum.
+- After the change of the nuclear charge, the other electrons can additionally
+  be excited or go into the continuum.
 - Therefore $\mathcal A(E_c)$ requires a many-electron calculation
   and a check against the measured lines.
-- In the effective single-mass model the endpoint equals $E_c^{\max}=Q-m_\beta$.
+- In the effective one-mass model the edge is $E_c^{\max}=Q-m_\beta$.
   The exact three-mass description contains thresholds $Q-m_i$ with weights $|V_{ei}|^2$.
 - A small $Q$ is useful.
-- The atomic peaks are needed to calibrate the detector and to check the spectrum model. To measure a small neutrino mass, sufficient statistics right at the endpoint of the spectrum are necessary.
+- The atomic peaks are needed to calibrate the detector and to test the spectrum model. To measure a small neutrino mass, sufficient statistics right at the endpoint of the spectrum are necessary.
 
 ::: {.nh-text tone="muted" size="sm"}
-[Atomic spectrum and analysis of ECHo-1k](https://arxiv.org/abs/2509.03423).
+[Atomic spectrum and the ECHo-1k analysis](https://arxiv.org/abs/2509.03423).
 :::
 
 :::::
 
-## How can the heating from a single decay be measured?
+## How to measure the heating from a single decay?
 
 ::::: {.panel-tabset .nh-story-tabs}
 
@@ -1027,7 +1026,7 @@ $$
 
 ::: {.column width="54%"}
 
-![](../../ru/slides/assets/08_alternative_neutrino_mass/microcalorimeter-en.svg){width="100%" fig-alt="An absorber with heat capacity C is connected to a thermometer and a cold thermal bath by thermal link G"}
+![](../../ru/slides/assets/08_alternative_neutrino_mass/microcalorimeter-en.svg){width="100%" fig-alt="An absorber with heat capacity C is connected to a thermometer and a cold thermal bath through a thermal link G"}
 
 :::
 
@@ -1035,13 +1034,13 @@ $$
 
 - The absorber is cooled to a temperature of the order of tens of millikelvin.
   Its heat capacity $C$ becomes small.
-- A rapid energy release raises the temperature:
+- A rapid release of energy raises the temperature:
 
 $$
 \boxed{\Delta T\simeq\frac{E_c}{C}}.
 $$
 
-- For example, for $C=10^{-12}$ J/K an energy $2.86$ keV gives
+- For example, for $C=10^{-12}$ J/K the energy $2.86$ keV gives
 
 $$
 \Delta T\simeq0.46~\text{mK}.
@@ -1055,8 +1054,8 @@ $$
 
 ### Return to the initial temperature
 
-- After the decay the energy gradually flows out into the thermal bath through the thermal link $G$.
-- In the linear model, once the energy release has already ended,
+- After the decay, the energy gradually flows into the thermal bath through the thermal link $G$.
+- In the linear model, once the energy release is over,
 
 $$
 C\frac{d\Delta T}{dt}=-G\Delta T.
@@ -1073,8 +1072,8 @@ $$
 $$
 
 - A small $C$ increases the amplitude, while a large $G$ speeds up the return.
-- The sensitivity is limited by thermometer noise and thermal fluctuations.
-  Speed and energy resolution have to be chosen together.
+- The sensitivity is limited by the thermometer noise and thermal fluctuations.
+  The speed and the energy resolution have to be chosen together.
 
 :::::
 
@@ -1087,7 +1086,7 @@ $$
 - ECHo uses metallic magnetic calorimeters.
   The sensor contains paramagnetic erbium ions in a metallic matrix.
 - In a weak field the magnetic moments are partially ordered.
-  Heating enhances thermal disordering and reduces the magnetization.
+  Heating enhances the thermal disordering and decreases the magnetization.
 - The simplest picture is the Curie law $M\propto B/T$.
   A real sensor is calibrated at its operating temperature and field.
 - The change of magnetic flux is read out by a SQUID — a superconducting quantum
@@ -1118,9 +1117,9 @@ $$
 \Delta I<0.
 $$
 
-- As a result the Joule heating $P_J=V_{\mathrm{cm}}^2/R$ decreases.
-  This negative feedback helps the sensor cool down.
-- The actual pulse is determined by both the thermal and the electrical dynamics.
+- As a result, the Joule heating $P_J=V_{\mathrm{bias}}^2/R$ decreases.
+  This negative feedback helps the sensor to cool down.
+- The real pulse is determined by both the thermal and the electrical dynamics.
 
 ::: {.nh-text tone="muted" size="sm"}
 [HOLMES thermometers with implanted holmium](https://arxiv.org/abs/2506.13665).
@@ -1128,12 +1127,12 @@ $$
 
 ### Sensor characteristics
 
-![](../../ru/slides/assets/08_alternative_neutrino_mass/thermometers-en.svg){height="470" fig-alt="The magnetization of a paramagnetic sensor decreases on heating, the TES resistance rises sharply in the superconducting transition region"}
+![](../../ru/slides/assets/08_alternative_neutrino_mass/thermometers-en.svg){height="470" fig-alt="The magnetization of a paramagnetic sensor decreases on heating; the TES resistance rises sharply in the superconducting transition region"}
 
 - The thermal signal is the same. What differs are the physical quantities
-  used to measure the temperature.
+  with which the temperature is measured.
 - The curves are schematic; for the magnetic sensor the weak-field
-  Curie law is shown, for the TES a transition model.
+  Curie law is shown, for the TES a model of the transition.
 
 :::::
 
@@ -1143,36 +1142,36 @@ $$
 
 ### Pulse pile-up
 
-![](../../ru/slides/assets/08_alternative_neutrino_mass/pulse-overlap-en.svg){height="470" fig-alt="Thermal pulses far apart in time are distinguishable, while close ones add up into a single elevated signal"}
+![](../../ru/slides/assets/08_alternative_neutrino_mass/pulse-overlap-en.svg){height="470" fig-alt="Thermal pulses far apart in time are distinguishable, while close ones add up into a single enhanced signal"}
 
 - If two events occur too close in time,
-  the electronics can reconstruct a single event with energy $E_1+E_2$.
-- Low-energy decays then fall into the region of the endpoint of the spectrum.
+  the electronics can reconstruct one event with energy $E_1+E_2$.
+- Low-energy decays then land in the region of the end of the spectrum.
   The summed spectrum acquires events even above $Q$.
 
 ### Probability
 
-- Let the activity of one pixel be $a$ decays per second,
+- Let the activity of a single pixel be $a$ decays per second,
   and let intervals shorter than $\tau_r$ be unresolved.
 - The probability of the next decay within this interval:
 
 $$
 \boxed{
-f_{\mathrm{ov}}=1-e^{-a\tau_r}
+f_{\mathrm{pu}}=1-e^{-a\tau_r}
 \simeq a\tau_r,\qquad a\tau_r\ll1
 }.
 $$
 
-- For $a=10~\text{s}^{-1}$ and $\tau_r=1$ μs we obtain $f_{\mathrm{ov}}\sim10^{-5}$.
-- This is a small fraction of all events, but the useful events near the endpoint
-  are even fewer.
-- For independent decays the energy distribution of the pile-up events
+- For $a=10~\text{s}^{-1}$ and $\tau_r=1$ μs we obtain $f_{\mathrm{pu}}\sim10^{-5}$.
+- This is a small fraction of all events, but there are even fewer useful events
+  at the end of the spectrum.
+- For independent decays the energy distribution of pile-up events
   is proportional to the convolution $S*S$, where $S(E_c)$ is the single-event spectrum.
 
 ### Why many pixels?
 
-- For $N$ identical pixels and a total activity
-  $A_{\mathrm{tot}}=Na$ the number of single decays grows as $A_{\mathrm{tot}}$.
+- For $N$ identical pixels and total activity
+  $A_{\mathrm{tot}}=Na$, the number of single decays grows as $A_{\mathrm{tot}}$.
 - The rate of close pairs in the whole array is approximately
 
 $$
@@ -1182,14 +1181,14 @@ R_{\mathrm{pu}}\simeq Na^2\tau_r
 }.
 $$
 
-- At a fixed total activity, distributing it over a larger number
+- For a fixed total activity, spreading it over a larger number
   of pixels reduces pile-up.
 - Many channels must be read out and calibrated simultaneously.
-  The channels can be distinguished by the individual frequencies of resonators
+  The channels can be distinguished by the individual frequencies of the resonators
   in a common readout line.
 
 ::: {.nh-text tone="muted" size="sm"}
-[Multichannel readout of HOLMES](https://arxiv.org/abs/1910.05217).
+[HOLMES multichannel readout](https://arxiv.org/abs/1910.05217).
 :::
 
 :::::
@@ -1204,13 +1203,13 @@ $$
 
 - Magnetic microcalorimeters.
 - About $2\cdot10^8$ events.
-- From the spectrum the result $Q=2862(4)$ eV was obtained.
+- From the spectrum, $Q=2862(4)$ eV was obtained.
 
 $$
 \boxed{m_\beta<15~\text{eV}}
 $$
 
-at $90\%$ Bayesian credibility level.
+at the $90\%$ Bayesian credibility level.
 
 [ECHo publication](https://arxiv.org/abs/2509.03423).
 
@@ -1222,13 +1221,13 @@ at $90\%$ Bayesian credibility level.
 
 - Superconducting TES thermometers.
 - About $7\cdot10^7$ events.
-- Average resolution about $6$ eV FWHM.
+- Average resolution of about $6$ eV FWHM.
 
 $$
 \boxed{m_\beta<27~\text{eV}}
 $$
 
-at $90\%$ Bayesian credibility level.
+at the $90\%$ Bayesian credibility level.
 
 [HOLMES publication](https://arxiv.org/abs/2503.19920).
 
@@ -1238,10 +1237,10 @@ at $90\%$ Bayesian credibility level.
 
 ::: {.nh-box tone="accent" size="md"}
 The next improvement requires more events at the endpoint, fast readout,
-and an accurately known atomic spectrum.
+and a precisely known atomic spectrum.
 :::
 
-## Why is not every low-energy decay convenient?
+## Why isn't every low-energy decay convenient?
 
 ::::: {.panel-tabset .nh-story-tabs}
 
@@ -1258,7 +1257,7 @@ $$
 
 - A large absorber has a large heat capacity,
   so the temperature rise from a single event decreases.
-- Additional difficulties are thermal relaxation and the change in the shape
+- Additional difficulties are thermal relaxation and a change in the shape
   of the β spectrum due to the interaction of the electron with the crystalline medium.
 
 ### What to compare
@@ -1268,12 +1267,12 @@ $$
   near the endpoint, the complexity of the spectrum theory, and the properties of the detector.
 - For holmium, the main statistics lie in the atomic lines.
   For tritium, they lie in the continuous β spectrum.
-- Therefore, a comparison based only on $Q$ or only on resolution
+- Therefore, a comparison based only on $Q$ or only on the resolution
   does not determine which experiment will measure the smaller mass.
 
 :::::
 
-## Method three: compute the missing {#kinematics-intro}
+## Method three: calculate what is missing {#kinematics-intro}
 
 ::: {style="width:78%;"}
 
@@ -1288,8 +1287,8 @@ m_\nu^2=P_\nu^2
 }
 $$
 
-- Further on in the formulas, $c=1$.
-- The mass comes out as a difference of large quantities. This is the source of the whole difficulty.
+- Below, in the formulas, $c=1$.
+- The mass comes out as a difference of large quantities. This is the source of all the difficulty.
 
 :::
 
@@ -1309,7 +1308,7 @@ $$
 
 ::: {.column width="50%"}
 
-- In the decay $\pi^+\to\mu^++\nu_\mu$ the pion at rest gives the muon and the neutrino
+- In the decay $\pi^+\to\mu^++\nu_\mu$, a pion at rest gives the muon and the neutrino
   momenta of equal magnitude. It suffices to measure $p_\mu$:
 
 $$
@@ -1337,7 +1336,7 @@ The notation $m_{\nu_\mu}$ is traditional for this channel; the flavor state
 has no definite mass of its own.
 :::
 
-### Bound in tau decay
+### The bound from tau decay
 
 :::: {.columns}
 
@@ -1353,18 +1352,18 @@ has no definite mass of its own.
 
 ::: {.column width="45%"}
 
-- In $\tau^-\to X^-+\nu_\tau$ the four-momenta of the detected
-  hadrons are summed, giving the mass $m_X$ and the energy $E_X$ of the visible system.
+- In $\tau^-\to X^-+\nu_\tau$, the four-momenta of the detected
+  hadrons are added, giving the mass $m_X$ and the energy $E_X$ of the visible system.
 - The neutrino mass cuts off the edge of the accessible region:
 
 $$
 m_X\le m_\tau-m_\nu.
 $$
 
-- The tau is moving, so the energy boundary is smeared into a band between
+- The tau is moving, so the boundary in energy is smeared into a band between
   $\cos\theta^*=\pm1$. The mass is sought from how the events lie near the edge of the band.
 - ALEPH: $m_{\nu_\tau}<18.2$ MeV ($95\%$).
-- In the figure, $\gamma_\tau=10$ and the mass $100$ MeV are chosen so that the effect is visible.
+- In the figure, $\gamma_\tau=10$ and the mass $100$ MeV, so that the effect is visible.
 
 :::
 
@@ -1381,9 +1380,9 @@ $$
 - To be sensitive to $m_\nu=1$ eV, the momentum of $29.79$ MeV must be known
   with a relative precision of $5\cdot10^{-16}$.
 - Compare with tritium, where the limit is $0.45$ eV: the pion channel is weaker
-  by a factor of $4\cdot10^5$, the tau channel by a factor of $4\cdot10^7$.
-- The whole difference lies in the energy scale: tritium works with tens of keV,
-  while here one has to subtract hundreds of MeV.
+  by a factor of $4\cdot10^5$, and the tau channel by a factor of $4\cdot10^7$.
+- The entire difference lies in the energy scale: tritium works with tens of keV,
+  whereas here hundreds of MeV have to be subtracted.
 
 :::::
 
@@ -1393,7 +1392,7 @@ $$
 
 ### Velocity and mass
 
-- For the mass state $i$
+- For a mass state $i$
 
 $$
 v_i=c\sqrt{1-\frac{m_i^2c^4}{E_\nu^2}}
@@ -1409,7 +1408,7 @@ $$
 }.
 $$
 
-- A long baseline amplifies the delay; a large energy reduces it.
+- A long baseline amplifies the delay; a high energy reduces it.
 
 ### Estimate
 
@@ -1430,7 +1429,7 @@ $$
 \left(\frac{10~\text{MeV}}{E_\nu}\right)^2.
 $$
 
-- Over tens of thousands of years of flight, a mass of the order of an eV gives a delay of the order of
+- Over tens of thousands of years of flight, a mass of order eV gives a delay of order
   milliseconds.
 - The energy dependence $1/E_\nu^2$ helps to search for this effect
   in a supernova signal.
@@ -1448,21 +1447,21 @@ t_{\mathrm{arr}}
 =t_{\mathrm{prod}}+\frac{L}{c}+\Delta t_i.
 $$
 
-- The moment of the burst is unknown to us, and a shift of all times is absorbed by it at once
-  without a trace. Only the dependence of the delay on energy works.
+- The moment of the burst is unknown to us, and a shift of all times is absorbed by it
+  without a trace. Only the energy dependence of the delay works.
 - Moreover, a supernova emits neutrinos over several seconds,
-  while the sought delay is milliseconds.
+  whereas the delay we are looking for is milliseconds.
 - Therefore one needs either a model time profile of the source or a sufficiently
-  sharp feature of the signal.
-- A single quantity $m_\beta^2$ is not enough here: the flux contains the mass
-  states individually.
+  sharp feature in the signal.
+- A single quantity $m_\beta^2$ is not enough here: the flux contains
+  the mass states separately.
 
 ### Reconstructing the mass
 
 {{< include ../../ru/slides/assets/08_alternative_neutrino_mass/_sn_mass_likelihood.en.qmd >}}
 
-- In the coordinates $(1/E^2,\ t)$ the delay lies on a straight line, and its slope
-  equals $m^2$.
+- In the coordinates $(1/E^2,\ t)$, the delay lies on a straight line, and its slope
+  is $m^2$.
 - The slider for the spread of the emission time shows how quickly the signal is drowned out.
 - On the right is the profile $-2\ln L(m^2)$; its minimum is the mass estimate,
   and the width at the level $+1$ gives the error.
@@ -1514,7 +1513,7 @@ $$
   but leave the lightest mass unknown.
 - Even if the lightest mass is small, $m_\beta$ does not vanish.
 - The line $40$ meV in the plot marks the target of a future experiment.
-  No constraints at this level have been obtained yet.
+  There are as yet no constraints at this level.
 
 :::
 
@@ -1541,7 +1540,7 @@ m_\beta\simeq
 \simeq9~\text{meV}.
 $$
 
-- For inverted ordering and $m_3\simeq0$ almost the whole electron weight is concentrated
+- For inverted ordering and $m_3\simeq0$, almost the entire electron weight lies
   in two states with masses of about $50$ meV; therefore
   $m_\beta\simeq50$ meV.
 
@@ -1558,21 +1557,21 @@ $$
 | Cosmology | $\Sigma=m_1+m_2+m_3$ | evolution of the Universe and the set of observations |
 
 - In the β spectrum, the different unobservable mass states are added
-  by probabilities.
+  with their probabilities.
 - In the Majorana amplitude, interference is possible.
-  In cosmology, the influence of neutrinos on the evolution of matter is measured.
-- Therefore these quantities cannot be compared as three measurements of one number.
+  In cosmology, one measures the influence of neutrinos on the evolution of matter.
+- Therefore these quantities cannot be compared as three measurements of the same number.
 
 :::::
 
-## From absolute mass to oscillations
+## From the absolute mass to oscillations
 
 ::: {style="width:80%;"}
 
-- All four methods run into the same thing: the mass enters through the dispersion relation
-  $E^2=p^2+m^2$, and its trace is the harder to notice the higher the energy. Therefore the decay
+- All four methods come down to one thing: the mass enters through the dispersion relation
+  $E^2=p^2+m^2$, and its trace is the less noticeable, the higher the energy. Therefore the decay
   with the smallest energy release wins.
-- In the next lectures, the observable will be the mass-squared difference. It enters
+- In the following lectures, the observable will be the mass-squared difference. It enters
   the phase that the mass states acquire during propagation,
   and it is measured millions of times more precisely.
 
@@ -1609,7 +1608,7 @@ Weighing a neutrino is hard. Comparing two neutrinos with each other is far easi
 - [Assamagan et al.: muon momentum and neutrino mass](https://doi.org/10.1103/PhysRevD.53.6065), 1996.
 - [ALEPH: bounds in three- and five-prong τ decays](https://cds.cern.ch/record/337738), 1998.
 - [NuFIT 6.0: oscillation parameters](https://arxiv.org/abs/2410.05380).
-- [Problems for lecture 08](../../ru/exercises/08_alternative_neutrino_mass_exercises.qmd) (in Russian).
+- [Problems for lecture 08](../exercises/08_alternative_neutrino_mass_exercises.qmd).
 
 ### Animations and applets
 

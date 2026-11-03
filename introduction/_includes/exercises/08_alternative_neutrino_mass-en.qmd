@@ -1,0 +1,315 @@
+## Problem 8.1. From phase modulation to the CRES spectrum
+
+Consider the model of the received signal
+
+$$
+V(t)=V_0\cos\!\left[2\pi f_ct+h\sin(2\pi f_zt)\right].
+$$ {#eq-ex08-001}
+
+1. Compute the instantaneous frequency
+
+   $$
+   f_{\mathrm{inst}}(t)=\frac{1}{2\pi}\frac{d\Phi}{dt}
+   $$ {#eq-ex08-002}
+
+   and show that the amplitude of its deviation is $\Delta f=h f_z$.
+2. Using the Jacobi–Anger identity
+
+   $$
+   e^{ih\sin\theta}=\sum_{n=-\infty}^{\infty}J_n(h)e^{in\theta},
+   $$ {#eq-ex08-003}
+
+   obtain the frequencies $f_n=f_c+n f_z$ and the relative powers $J_n^2(h)$.
+3. In the limit $h\ll1$ use
+
+   $$
+   J_0(h)\simeq1-\frac{h^2}{4},
+   \qquad
+   J_{\pm1}(h)\simeq\pm\frac h2
+   $$ {#eq-ex08-004}
+
+   and find the fraction of power in the carrier and in the first sidebands.
+4. Using `scipy.special.jv` construct the line weights for
+   $h=0.2$, $1.2$ and $3.0$. Check
+   $\sum_nJ_n^2(h)=1$ numerically.
+
+## Problem 8.2. A real trap and a finite CRES track
+
+Suppose that near the center of the magnetic trap
+
+$$
+B(z)=B_0\left(1+\frac{z^2}{L^2}\right),
+\qquad
+z(t)=z_{\max}\cos(2\pi f_zt),
+$$ {#eq-ex08-005}
+
+and that the energy loss over one longitudinal period can be neglected.
+
+1. Substitute $z(t)$ into $B(z)$ and show that the magnetic modulation of the frequency
+   occurs at twice the longitudinal frequency $2f_z$.
+2. Find the mean cyclotron frequency and the amplitude of its modulation
+   $\Delta f_B$ in terms of $f_{c0}$ and $z_{\max}/L$.
+3. Integrate the instantaneous frequency and show that the index of the magnetic
+   phase modulation is equal to
+
+   $$
+   h_B=\frac{\Delta f_B}{2f_z}.
+   $$ {#eq-ex08-006}
+
+4. Explain why the signal propagation phase, proportional to $z(t)$,
+   also creates sidebands with spacing $f_z$.
+5. Compute the Fourier transform of a harmonic observed only on the interval
+   $0<t<T_{\mathrm{obs}}$, and obtain the shape
+   $T_{\mathrm{obs}}^2\operatorname{sinc}^2[\pi(f-f_n)T_{\mathrm{obs}}]$.
+6. For what $T_{\mathrm{obs}}$ does the full width at half maximum of the Fourier peak
+   correspond to $\Delta E=0.10~\mathrm{eV}$, that is,
+   $\Delta f_c=5.1~\mathrm{kHz}$ near the endpoint of the tritium spectrum?
+   Use a rectangular time window. Explain why the center of the line
+   can be determined more precisely than its width, and how the
+   signal-to-noise ratio enters this precision.
+
+## Problem 8.3. The calorimetric spectrum of ${}^{163}\mathrm{Ho}$
+
+In a calorimetric experiment the entire atomic excitation energy
+$E_c$ is measured, and the neutrino carries away
+
+$$
+E_\nu=Q-E_c.
+$$ {#eq-ex08-007}
+
+Use the model
+
+$$
+\frac{d\Gamma}{dE_c}
+=C\,(Q-E_c)\sqrt{(Q-E_c)^2-m_\nu^2}\,
+\Theta(Q-E_c-m_\nu)
+\sum_j w_jL_j(E_c),
+$$ {#eq-ex08-008}
+
+where the atomic line has the shape
+
+$$
+L_j(E_c)=\frac{\Gamma_j/(2\pi)}
+{(E_c-E_j)^2+\Gamma_j^2/4}.
+$$ {#eq-ex08-009}
+
+1. Show that $\int_{-\infty}^{\infty}L_j(E_c)\,dE_c=1$.
+2. Find the maximum calorimetric energy and explain why the neutrino
+   mass is again measured from the shape of the spectrum near the endpoint.
+3. Construct a toy spectrum for two lines with $(E_j,\Gamma_j,w_j)$ of your choice
+   at $m_\nu=0$ and $m_\nu=1~\mathrm{eV}$.
+4. Let the activity of a single pixel be $a$, and let two pulses be unresolved
+   if the interval between them is smaller than $\tau_r$. For $a\tau_r\ll1$ show that the
+   fraction of unresolved pile-up events is of order
+
+   $$
+   f_{\mathrm{pu}}\simeq a\tau_r,
+   $$ {#eq-ex08-010}
+
+   and that their energy spectrum is proportional to the convolution
+   $(d\Gamma/dE_c)*(d\Gamma/dE_c)$.
+5. Estimate $f_{\mathrm{pu}}$ for $a=10~\mathrm{s}^{-1}$ and
+   $\tau_r=1~\mathrm{\mu s}$. Why does increasing the activity improve the statistics
+   but at the same time strengthen this background?
+6. In one paragraph, compare the systematics of the KATRIN spectrometer and of the calorimeter:
+   where the source is located, which energy is measured, and why the calorimeter
+   eliminates the losses on the electron's exit from the source but acquires the problem of
+   unresolved pile-up.
+
+## Problem 8.4. The radio chain: cutoff, cavity, cascade
+
+Femtowatt-level power must be brought to the ADC without losing anything in frequency.
+The formulas of the chain are given in the lecture without derivation; derive them yourself.
+
+1. The field in a waveguide vanishes at the metal walls. From the condition
+   that at least a half-wavelength must fit across a tube of diameter $d$, obtain
+   an estimate of the cutoff frequency
+
+   $$
+   f_{\mathrm{cr}}\simeq\frac{c}{2d}
+   $$ {#eq-ex08-011}
+
+   and compute it for $d=10$ mm. The exact solution for a circular tube of radius $a$
+   gives $f_{\mathrm{cr}}=1{,}841\,c/2\pi a$. Compare with the estimate and explain
+   the sign of the discrepancy.
+2. The quality factor $Q=f/\Delta f$ is equal to $2\pi$ times the ratio of the energy stored
+   in the cavity to the losses per period. Show that the field decays
+   over a time $\tau_Q=Q/2\pi f$, and compute $\tau_Q$ and the bandwidth $\Delta f$
+   for $Q=10^4$ at $26$ GHz. Compare $\tau_Q$ with the track duration $100$ μs.
+3. An amplifier with gain $G$ and noise temperature $T$ adds noise
+   power $kT\Delta f$. Refer the noise of two successive stages
+   to the input of the first and obtain
+
+   $$
+   T_{\mathrm{sys}}=T_1+\frac{T_2}{G_1},
+   $$ {#eq-ex08-012}
+
+   then generalize to $n$ stages.
+4. Let the first stage be cooled ($T_1=20$ K, $G_1=20$ dB), and the second operate
+   at room temperature ($T_2=300$ K, $G_2=20$ dB). Find
+   $T_{\mathrm{sys}}$. Swap the stages and find it again.
+   By what factor does the noise power in the band change?
+5. A mixer multiplies $\cos(2\pi f_ct)$ and $\cos(2\pi f_{\mathrm{ref}}t)$.
+   Write down the result and state which of the two frequencies the filter keeps.
+   For what $f_{\mathrm{ref}}$ do the signals $26{,}0$ and $26{,}1$ GHz end up
+   at the same intermediate frequency?
+6. The ADC records a band $B$ around the intermediate frequency. Formulate the
+   Nyquist condition and estimate the sampling frequency for $B=100$ MHz. Where will the
+   line $1{,}52$ GHz end up if it is digitized at a frequency of $1$ GHz?
+
+## Problem 8.5. A femtowatt: power, noise, and observation time
+
+1. From the Larmor formula for an accelerated charge obtain the power of the cyclotron
+   radiation
+
+   $$
+   P_{\mathrm{rad}}
+   =\frac{e^4B^2}{6\pi\varepsilon_0m_e^2c}\,\gamma^2\beta^2\sin^2\alpha
+   $$ {#eq-ex08-013}
+
+   and compute it for $E=18{,}6$ keV, $B=1$ T, $\alpha=90^\circ$.
+2. How much energy does the electron lose in $T_{\mathrm{obs}}=100$ μs? Express
+   the answer in eV and compare with the target precision $0{,}1$ eV.
+3. The receiver noise gives a power $kT_{\mathrm{n}}$ per hertz of bandwidth, and the bandwidth of a single
+   Fourier line is $\Delta f=0{,}886/T_{\mathrm{obs}}$. Find the noise
+   power in the line for $T_{\mathrm{n}}=132$ K and $T_{\mathrm{obs}}=100$ μs
+   and the signal-to-noise ratio in the ideal case where all the radiated power
+   reaches the amplifier.
+4. Show that for a fixed signal power the signal-to-noise ratio
+   in a single line grows in proportion to $T_{\mathrm{obs}}$. What prevents
+   lengthening the recording indefinitely? Take into account item 2 and the inelastic collisions
+   with gas molecules from Lecture 07.
+5. A smartphone antenna receives about $10^{-10}$ W from a base station,
+   and about $1{,}4\cdot10^{-16}$ W from a GPS satellite. Place on one
+   logarithmic scale these quantities, the power of the phone's transmitter
+   ($0{,}2$ W), the CRES signal, and the noise from item 3. Which of the comparisons
+   determines the detectability of the signal?
+
+## Problem 8.6. Missing momentum: the pion and the tau
+
+1. For the decay of a pion at rest $\pi^+\to\mu^++\nu_\mu$ obtain
+
+   $$
+   m_\nu^2=m_\pi^2+m_\mu^2-2m_\pi\sqrt{p_\mu^2+m_\mu^2}.
+   $$ {#eq-ex08-014}
+
+2. Set $m_\nu=0$ and find $p_\mu=(m_\pi^2-m_\mu^2)/2m_\pi$ numerically
+   for $m_\pi=139{,}57$ MeV and $m_\mu=105{,}66$ MeV.
+3. Differentiate @eq-ex08-014 and obtain
+
+   $$
+   \delta m_\nu^2=-2m_\pi\frac{p_\mu}{E_\mu}\,\delta p_\mu.
+   $$ {#eq-ex08-015}
+
+   What relative precision of the measurement of $p_\mu$ is needed to be sensitive to
+   $m_\nu=1$ eV? Compare with the limit achieved, $170$ keV.
+4. For the decay $\tau^-\to X^-+\nu_\tau$ in the τ rest frame obtain
+
+   $$
+   E_X^*=\frac{m_\tau^2+m_X^2-m_\nu^2}{2m_\tau},
+   \qquad
+   m_X\le m_\tau-m_\nu.
+   $$ {#eq-ex08-016}
+
+5. In the lab the τ moves with $\gamma_\tau$, $\beta_\tau$. Show that for a
+   given $m_X$ the energy of the visible system fills the band
+   $E_X=\gamma_\tau\left(E_X^*\pm\beta_\tau p_X^*\right)$, where
+   $p_X^*=\sqrt{(E_X^*)^2-m_X^2}$. Why is the mass sought from the two-dimensional boundary
+   in the $(m_X,E_X)$ plane?
+6. By what factor are the limits $m_{\nu_\mu}<170$ keV and $m_{\nu_\tau}<18{,}2$ MeV
+   weaker than the tritium limit $m_\beta<0{,}45$ eV? Explain the loss in one sentence
+   about the scale of the energy release.
+
+# Seminar
+
+## S8.1. How long to listen to the electron
+
+A long recording narrows the line, but during that time the electron manages to lose
+energy to radiation. Let us find the compromise.
+
+1. Convert the linewidth into an energy error,
+   $\delta E_{\mathrm{lin}}=(m_ec^2+E)\,\Delta f/f_c$ at
+   $\Delta f=0{,}886/T_{\mathrm{obs}}$, and fill in the table for
+   $T_{\mathrm{obs}}=30$, $100$, $300$ and $1000$ μs.
+2. For the same times find the total energy loss to radiation
+   $\Delta E_{\mathrm{rad}}=P_{\mathrm{rad}}T_{\mathrm{obs}}$.
+3. Suppose the track model reconstructs this loss with a precision of $10\%$, so that the
+   residual systematic is $0{,}1\,\Delta E_{\mathrm{rad}}$. Add
+   it to $\delta E_{\mathrm{lin}}$ in quadrature and find the optimal
+   $T_{\mathrm{obs}}$.
+4. Discuss what else terminates the track: inelastic scattering on the gas and the escape
+   of the electron from the trap. How do these processes change the optimum you found?
+
+## S8.2. The trap: statistics versus resolution
+
+Let the field at the edges of the trap be $B_{\max}=B_0(1+\eta)$, $\eta\ll1$.
+
+1. From the reflection condition obtain
+   $|\cos\alpha_0|<\sqrt{\eta/(1+\eta)}\simeq\sqrt\eta$.
+2. For an isotropic source $\cos\alpha_0$ is uniformly distributed
+   on $[-1,1]$. Show that the fraction of trapped electrons is $\sqrt\eta$,
+   and compute it for $\eta=10^{-1}$, $10^{-2}$, $10^{-3}$.
+3. A trapped electron passes through fields from $B_0$ to $B_{\max}$. Show that without
+   a trajectory correction this smears the reconstructed energy by
+   $\delta E\simeq(m_ec^2+E)\,\eta$, and compute $\delta E$ for the same $\eta$.
+4. Choose $\eta$ such that the fraction of trapped electrons is at least $1\%$,
+   and the smearing is at most $0{,}1$ eV. Does it work out? What conclusion follows
+   about the need to reconstruct the trajectory from the sidebands?
+
+## S8.3. Neutrino mass from arrival times
+
+A continuation of the applet "Mass from arrival times" and a bridge to the course
+on statistical analysis.
+
+1. From $\Delta t=L\,m^2c^4/2cE_\nu^2$ obtain the working form
+
+   $$
+   \Delta t\simeq5{,}15~\text{ms}
+   \left(\frac{L}{10~\text{kpc}}\right)
+   \left(\frac{m}{1~\text{eV}}\right)^2
+   \left(\frac{10~\text{MeV}}{E_\nu}\right)^2.
+   $$ {#eq-ex08-017}
+
+2. Let $N$ neutrinos be produced at the moment $t_0$ with a Gaussian spread
+   $\sigma_t$, and let pairs $(E_i,t_i)$ be measured. Write down $-2\ln L(m^2,t_0)$,
+   eliminate $t_0$ analytically, and show that what remains is the sum of squared
+   deviations from a straight line in the variable $x_i=(10~\text{MeV}/E_i)^2$.
+3. Obtain the estimate of the slope and its variance:
+
+   $$
+   \hat m^2=\frac{S_{xt}}{5{,}15\,S_{xx}},
+   \qquad
+   \sigma(\hat m^2)=\frac{\sigma_t}{5{,}15\sqrt{S_{xx}}},
+   $$ {#eq-ex08-018}
+
+   where $S_{xx}=\sum_i(x_i-\bar x)^2$, $S_{xt}=\sum_i(x_i-\bar x)(t_i-\bar t)$.
+   Explain why $\hat m^2$ can turn out to be negative.
+4. Take $N=15$ energies uniformly covering $6$–$35$ MeV and
+   $\sigma_t=2$ ms. Compute $\sigma(\hat m^2)$. How many events are needed
+   for $\sigma(\hat m^2)=0{,}1$ eV²? Compare with the two dozen events
+   from SN 1987A.
+5. Check your formulas with the applet: for zero true mass estimate
+   how often the estimate comes out negative.
+
+## T8.4. Holmium: Pixels vs. Pile-up
+
+1. For a Poisson stream with activity $a$, show that the fraction of events
+   with an unresolved neighbor within the resolving time $\tau_r$ is equal to
+   $1-e^{-a\tau_r}\simeq a\tau_r$.
+2. Let the total activity $A$ be distributed over $N$ identical pixels.
+   Obtain the rate of unresolved pairs
+
+   $$
+   R_{\mathrm{par}}\simeq\frac{A^2\tau_r}{N}
+   $$ {#eq-ex08-019}
+
+   and explain why, at fixed $A$, splitting into pixels helps.
+3. Calculate $R_{\mathrm{par}}$ for $A=10^6~\text{s}^{-1}$, $\tau_r=1$ μs
+   at $N=10^3$ and $N=10^5$.
+4. Estimate the fraction of events in the last $10$ eV of the holmium spectrum, assuming
+   the phase space $\propto(Q-E_c)^2$ at $Q=2{,}86$ keV. Compare the useful
+   count rate with $R_{\mathrm{par}}$ from item 3 and say whether
+   splitting into pixels alone is sufficient.
+5. From $\Delta T=E_c/C$ find the heating at $E_c=2{,}86$ keV and
+   $C=10^{-12}$ J/K. How does the choice of $C$ and the thermal coupling $G$ conflict
+   with the requirement of small $\tau_r$?

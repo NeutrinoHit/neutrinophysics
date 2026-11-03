@@ -42,6 +42,7 @@ toc: false
       <div class="lecture-row-body">
         <div class="lecture-links">
           <a href="slides/01_neutrino_first_contact.html">Open lecture</a>
+          <a href="exercises/01_neutrino_first_contact_exercises.html">Problems</a>
         </div>
       </div>
     </details>
@@ -54,6 +55,7 @@ toc: false
       <div class="lecture-row-body">
         <div class="lecture-links">
           <a href="slides/02_parity_violation.html">Open lecture</a>
+          <a href="exercises/02_parity_violation_exercises.html">Problems</a>
         </div>
       </div>
     </details>
@@ -66,6 +68,7 @@ toc: false
       <div class="lecture-row-body">
         <div class="lecture-links">
           <a href="slides/03_neutrino_spin.html">Open lecture</a>
+          <a href="exercises/03_neutrino_spin_exercises.html">Problems</a>
         </div>
       </div>
     </details>
@@ -78,6 +81,7 @@ toc: false
       <div class="lecture-row-body">
         <div class="lecture-links">
           <a href="slides/04_neutrino_mass_kinematics.html">Open lecture</a>
+          <a href="exercises/04_neutrino_mass_kinematics_exercises.html">Problems</a>
         </div>
       </div>
     </details>
@@ -90,6 +94,7 @@ toc: false
       <div class="lecture-row-body">
         <div class="lecture-links">
           <a href="slides/05_electron_to_detector.html">Open lecture</a>
+          <a href="exercises/05_electron_to_detector_exercises.html">Problems</a>
         </div>
       </div>
     </details>
@@ -102,6 +107,7 @@ toc: false
       <div class="lecture-row-body">
         <div class="lecture-links">
           <a href="slides/06_mac_e_spectrometer.html">Open lecture</a>
+          <a href="exercises/06_mac_e_spectrometer_exercises.html">Problems</a>
         </div>
       </div>
     </details>
@@ -114,6 +120,7 @@ toc: false
       <div class="lecture-row-body">
         <div class="lecture-links">
           <a href="slides/07_katrin.html">Open lecture</a>
+          <a href="exercises/07_katrin_exercises.html">Problems</a>
         </div>
       </div>
     </details>
@@ -126,6 +133,7 @@ toc: false
       <div class="lecture-row-body">
         <div class="lecture-links">
           <a href="slides/08_alternative_neutrino_mass.html">Open lecture</a>
+          <a href="exercises/08_alternative_neutrino_mass_exercises.html">Problems</a>
         </div>
       </div>
     </details>
@@ -138,6 +146,7 @@ toc: false
       <div class="lecture-row-body">
         <div class="lecture-links">
           <a href="slides/09_vacuum_two_flavors.html">Open lecture</a>
+          <a href="exercises/09_vacuum_oscillations_exercises.html">Problems</a>
         </div>
       </div>
     </details>
@@ -150,6 +159,7 @@ toc: false
       <div class="lecture-row-body">
         <div class="lecture-links">
           <a href="slides/10_vacuum_pmns.html">Open lecture</a>
+          <a href="exercises/10_vacuum_pmns_exercises.html">Problems</a>
         </div>
       </div>
     </details>
@@ -162,6 +172,7 @@ toc: false
       <div class="lecture-row-body">
         <div class="lecture-links">
           <a href="slides/11_matter_refraction.html">Open lecture</a>
+          <a href="exercises/11_matter_refraction_exercises.html">Problems</a>
         </div>
       </div>
     </details>

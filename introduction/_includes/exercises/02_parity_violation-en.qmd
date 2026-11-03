@@ -1,0 +1,197 @@
+## Problem 2.1. The $\tau$–$\theta$ puzzle
+
+Two charged particles with the same mass and lifetime were observed
+in the decays
+
+$$
+\theta^+\to\pi^++\pi^0,
+\qquad
+\tau^+\to\pi^++\pi^++\pi^-.
+$$ {#eq-ex02-001}
+
+Both particles have spin zero, and the intrinsic parity of the pion is negative:
+$P_\pi=-1$. Assume that the final pions are predominantly in
+a state with zero relative orbital angular momentum.
+
+1. Find the parity of the two-pion final state.
+2. Find the parity of the three-pion final state.
+3. Why, if spatial parity were conserved, would these decays have to be
+   assigned to two different particles?
+4. Why, on the other hand, did the coincidence of masses and lifetimes point to a single
+   particle?
+5. State how the Lee–Yang hypothesis resolved the paradox.
+
+## Problem 2.2. What does the Wu experiment measure directly?
+
+Let the angular distribution of electrons in the $\beta$ decay of a polarized
+nucleus have the form
+
+$$
+W(\theta)=1+a\cos\theta,
+$$ {#eq-ex02-002}
+
+where $\theta$ is the angle between the electron momentum and the direction of the nuclear
+polarization.
+
+1. Indicate which of the quantities $\mathbf p_e$ and $\mathbf J$ is a polar
+   vector and which is an axial vector.
+2. Show that under spatial inversion
+   $\mathbf p_e\to-\mathbf p_e$, $\mathbf J\to\mathbf J$ and
+   $\cos\theta\to-\cos\theta$.
+3. Why does a nonzero coefficient $a$ imply parity violation?
+4. By integrating over the two hemispheres, show that
+
+   $$
+   N_+\propto1+\frac a2,
+   \qquad
+   N_-\propto1-\frac a2.
+   $$ {#eq-ex02-003}
+
+5. Express $a$ in terms of the measured hemispherical asymmetry
+
+   $$
+   \mathcal A=\frac{N_+-N_-}{N_++N_-}.
+   $$ {#eq-ex02-004}
+
+## Problem 2.3. Can nuclei be polarized with an ordinary magnet?
+
+Consider a nucleus with spin $1/2$ and magnetic moment
+$\mu=4\mu_N$ in a field $B=10~\mathrm{T}$. Use
+
+$$
+\mu_N=3.15\cdot10^{-8}~\mathrm{eV/T},
+\qquad
+k_B=8.617\cdot10^{-5}~\mathrm{eV/K}.
+$$ {#eq-ex02-005}
+
+The energies of the two orientations are $E_\pm=\mp\mu B$, and the equilibrium polarization is
+
+$$
+\mathcal P=
+\frac{N_+-N_-}{N_++N_-}
+=\tanh\!\left(\frac{\mu B}{k_BT}\right).
+$$ {#eq-ex02-006}
+
+1. Derive this formula from the Boltzmann populations.
+2. Compute the Zeeman energy $\mu B$.
+3. Find $\mathcal P$ for $T=1~\mathrm{K}$,
+   $10~\mathrm{mK}$ and $1~\mathrm{mK}$.
+4. At what temperature is $\mathcal P=0.90$ reached?
+5. Why does a large magnet by itself not provide strong nuclear
+   polarization?
+
+## Problem 2.4. Adiabatic demagnetization
+
+For $N$ non-interacting magnetic moments with spin $1/2$ in a field $B$,
+introduce
+
+$$
+x=\frac{\mu B}{k_BT}.
+$$ {#eq-ex02-007}
+
+1. Show that the partition function is
+
+   $$
+   Z_N=(2\cosh x)^N.
+   $$ {#eq-ex02-008}
+
+2. From $F=-k_BT\ln Z_N$ obtain the entropy
+
+   $$
+   S=Nk_B\left[\ln(2\cosh x)-x\tanh x\right].
+   $$ {#eq-ex02-009}
+
+3. Explain why the ratio $B/T$ is conserved at $S=\mathrm{const}$.
+4. The system starts at
+
+   $$
+   T_i=1.2~\mathrm{K},
+   \qquad
+   B_i=2.0~\mathrm{T}
+   $$ {#eq-ex02-010}
+
+   and is adiabatically demagnetized to
+   $B_f=2.0\cdot10^{-2}~\mathrm{T}$. Find $T_f$.
+5. What real effects prevent the temperature from dropping without limit as
+   $B_f\to0$?
+
+## Problem 2.5. How can we explain to aliens which side is left?
+
+Suppose first that all fundamental interactions conserve
+spatial parity.
+
+1. Why are the coordinate systems $(x,y,z)$ and $(-x,y,z)$ physically
+   equivalent in such a world?
+2. Why can a drawing, a written instruction, or a radio signal not by themselves
+   convey the absolute difference between left and right?
+3. Describe a setup with polarized nuclei and $\beta$ detectors
+   that two civilizations could assemble in the same way.
+4. How would both civilizations, from the sign of the $\beta$-decay asymmetry, choose the same
+   orientation of space?
+5. What additional agreement must be communicated so that the procedure does not
+   confuse matter with antimatter?
+
+---
+
+## Problems for discussion at the seminar
+
+### Seminar 02.1. What changes under reflection?
+
+Fill in the table of transformations under spatial inversion
+$\mathbf r\to-\mathbf r$ for the quantities
+
+$$
+\mathbf r,\quad \mathbf p,\quad \mathbf E,\quad
+\mathbf J,\quad \mathbf B.
+$$ {#eq-ex02-011}
+
+Which of them are polar and which are axial vectors? Determine the
+parity of the quantities $\mathbf p\cdot\mathbf J$, $\mathbf E\cdot\mathbf p$ and
+$\mathbf J\cdot\mathbf B$. Which of them can serve as an observable signature
+of parity violation?
+
+### Seminar 02.2. Asymmetry from event counts
+
+The angular distribution of electrons from polarized nuclei has the form
+
+$$
+W(\theta)\propto 1+A_\beta P\beta\cos\theta.
+$$ {#eq-ex02-012}
+
+Two identical detectors covering opposite hemispheres registered
+$N_+=11\,200$ and $N_-=8\,800$ events. The nuclear polarization is $P=0.80$,
+and the electron velocity is $\beta=0.75$.
+
+1. By integrating over the hemispheres, show that
+   $(N_+-N_-)/(N_++N_-)=A_\beta P\beta/2$.
+2. Find $A_\beta$.
+3. How will the result change if the nuclear polarization is reversed?
+
+### Seminar 02.3. How can a physical asymmetry be separated from an instrumental one?
+
+Suppose that the asymmetries measured for the two polarization directions are
+
+$$
+A^\uparrow=A_{\mathrm{inst}}+A_{\mathrm{phys}},
+\qquad
+A^\downarrow=A_{\mathrm{inst}}-A_{\mathrm{phys}}.
+$$ {#eq-ex02-013}
+
+1. Express $A_{\mathrm{phys}}$ and $A_{\mathrm{inst}}$ in terms of the two measured quantities.
+2. Find them for $A^\uparrow=0.13$ and $A^\downarrow=-0.09$.
+3. Why is reversing the polarization a more reliable check than comparing
+   two detectors for only one field direction?
+
+### Seminar 02.4. Does a magnetic field violate parity?
+
+The orientation of the nuclei is produced by the interaction
+
+$$
+U=-\boldsymbol\mu\cdot\mathbf B.
+$$ {#eq-ex02-014}
+
+Show that $\boldsymbol\mu$ and $\mathbf B$ are axial vectors,
+and that the energy $U$ does not change under spatial inversion. Why is the very
+preparation of a polarized target with a magnetic field not a violation of
+parity, whereas the correlation $\mathbf J\cdot\mathbf p_e$ in the decay can
+reveal it?

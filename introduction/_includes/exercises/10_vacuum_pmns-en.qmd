@@ -1,0 +1,279 @@
+**Seminar**
+
+## Problem 10.1. Build the matrix from three hints
+
+Work in the first approximation: $U_{e3}=0$, the atmospheric mixing angle
+is close to $45^\circ$, and the matrix may be chosen real.
+
+1. For high-energy solar neutrinos take
+   $P_{ee}\simeq1/3$. For an adiabatic exit from the Sun this gives
+   $|U_{e2}|^2\simeq1/3$. Using the normalization of the electron row,
+   fill in $|U_{e1}|^2$ and $|U_{e3}|^2$.
+2. Atmospheric disappearance is described in the leading approximation by the depth
+   $4|U_{\mu3}|^2(1-|U_{\mu3}|^2)\simeq1$. Find $|U_{\mu3}|^2$.
+   Fill in $|U_{\tau3}|^2$ from the normalization of the third column.
+3. Choose the same signs for $U_{\mu3}$ and $U_{\tau3}$. What does the
+   orthogonality of the second and third columns say about the relation between
+   $U_{\mu2}$ and $U_{\tau2}$? Normalize the second column and fill in
+   $|U_{\mu2}|^2$, $|U_{\tau2}|^2$.
+4. Use the normalizations of the two remaining rows. Show that
+
+   $$
+   |U_0|^2=
+   \begin{pmatrix}
+   2/3&1/3&0\\
+   1/6&1/3&1/2\\
+   1/6&1/3&1/2
+   \end{pmatrix}.
+   $$ {#eq-ex10-manual-matrix}
+
+5. Choose the signs of the elements so that the resulting real matrix
+   $U_0$ satisfies $U_0^{\mathsf T}U_0=I$. Write out all three ones
+   and all six zeros in the product.
+6. Which entry does the reactor result $|U_{e3}|^2\simeq0.0225$ change
+   first? Explain which conclusions of the approximate matrix remain
+   qualitatively correct. Can this construction be used to independently check
+   unitarity, if it was used at every step?
+
+## Problem 10.2. How to read the PMNS matrix
+
+Use the standard factorization
+
+$$
+U=R_{23}U_{13}(\delta)R_{12}.
+$$ {#eq-ex10-001}
+
+1. Multiply the matrices and obtain the first row and the third column of $U$.
+2. Prove the relations
+
+   $$
+   |U_{e3}|=\sin\theta_{13},
+   \qquad
+   \frac{|U_{e2}|}{|U_{e1}|}=\tan\theta_{12},
+   \qquad
+   \frac{|U_{\mu3}|}{|U_{\tau3}|}=\tan\theta_{23}.
+   $$ {#eq-ex10-002}
+
+3. For the NuFIT 6.1 best-fit point with normal ordering use
+
+   $$
+   \sin^2\theta_{12}=0.3088,
+   \quad
+   \sin^2\theta_{23}=0.470,
+   \quad
+   \sin^2\theta_{13}=0.02248
+   $$ {#eq-ex10-003}
+
+   and compute
+   $|U_{e1}|$, $|U_{e2}|$, $|U_{e3}|$, $|U_{\mu3}|$ and $|U_{\tau3}|$.
+4. Explain why the phase $\delta$ becomes unobservable at
+   $s_{13}=0$.
+5. An arbitrary unitary matrix $3\times3$ contains three angles and six
+   phases. Count how many phases can be removed by rephasing the fields in
+   the Dirac case.
+6. For the Majorana case set
+
+   $$
+   \widetilde U
+   =U\operatorname{diag}
+   \left(1,e^{i\alpha_{21}/2},e^{i\alpha_{31}/2}\right).
+   $$ {#eq-ex10-004}
+
+   Show that the additional phases cancel in the product
+   $\widetilde U_{\beta i}\widetilde U_{\alpha i}^*$ and therefore do not enter the
+   oscillation probabilities.
+
+**Homework**
+
+## Problem 10.3. General three-flavor probability
+
+For three active neutrinos
+
+$$
+|\nu_\alpha\rangle
+=\sum_{i=1}^3U_{\alpha i}^*|\nu_i\rangle.
+$$ {#eq-ex10-005}
+
+1. Carry out the evolution of the mass components and obtain the ultrarelativistic
+   amplitude
+
+   $$
+   \mathcal A_{\alpha\to\beta}(L,E)
+   =\sum_iU_{\beta i}U_{\alpha i}^*
+   \exp\!\left(-i\frac{m_i^2L}{2E}\right).
+   $$ {#eq-ex10-006}
+
+2. Square the amplitude and obtain a double sum over $i,j$.
+3. Combine the terms $(i,j)$ and $(j,i)$, introduce
+
+   $$
+   X_{\alpha\beta}^{ij}
+   =U_{\alpha i}^*U_{\beta i}
+    U_{\alpha j}U_{\beta j}^*,
+   \qquad
+   \Delta_{ij}=\frac{\Delta m_{ij}^2L}{4E},
+   $$ {#eq-ex10-007}
+
+   and derive the general probability formula in terms of
+   $\operatorname{Re}X^{ij}$ and $\operatorname{Im}X^{ij}$.
+4. Obtain the formula for the survival probability $P_{\alpha\to\alpha}$.
+5. Using the unitarity $U$, prove
+
+   $$
+   \sum_\beta P_{\alpha\to\beta}=1
+   $$ {#eq-ex10-008}
+
+   and show that for $L=0$
+   $P_{\alpha\to\beta}=\delta_{\alpha\beta}$.
+6. Show how the general formula reduces to the two-flavor one if one
+   mass component does not participate.
+7. Prove
+
+   $$
+   \Delta m_{31}^2=\Delta m_{32}^2+\Delta m_{21}^2
+   $$ {#eq-ex10-009}
+
+   and explain why only two oscillation frequencies are independent.
+8. Perform the replacement $m_i^2\to m_i^2+C$. Show that the amplitude acquires
+   only an overall phase factor, while the probability does not change.
+9. Which experiments, unlike oscillations, are sensitive to the absolute
+   scale of neutrino masses?
+
+## Problem 10.4. CP violation and the Jarlskog invariant
+
+1. Show that for antineutrinos the oscillation amplitude is obtained
+   by the replacement $U\to U^*$.
+2. Using the general three-flavor probability, obtain
+
+   $$
+   A_{\alpha\beta}^{\mathrm{CP}}
+   =P(\nu_\alpha\to\nu_\beta)
+   -P(\bar\nu_\alpha\to\bar\nu_\beta)
+   =4\sum_{i>j}\operatorname{Im}X_{\alpha\beta}^{ij}
+   \sin2\Delta_{ij}.
+   $$ {#eq-ex10-010}
+
+3. Prove that $A_{\alpha\alpha}^{\mathrm{CP}}=0$ in vacuum.
+4. For the quartet
+
+   $$
+   J_{\mathrm{CP}}
+   =\operatorname{Im}
+   \left(U_{e2}^*U_{\mu2}U_{e1}U_{\mu1}^*\right)
+   $$ {#eq-ex10-011}
+
+   check the invariance under rephasing of the rows and columns of the mixing
+   matrix.
+5. From the standard PMNS parametrization obtain
+
+   $$
+   J_{\mathrm{CP}}
+   =\frac18
+   \sin2\theta_{12}\sin2\theta_{23}\sin2\theta_{13}
+   \cos\theta_{13}\sin\delta_{\mathrm{CP}}.
+   $$ {#eq-ex10-012}
+
+6. Using $\Delta_{31}=\Delta_{32}+\Delta_{21}$ and trigonometric
+   identities, derive
+
+   $$
+   A_{e\mu}^{\mathrm{CP}}
+   =16J_{\mathrm{CP}}
+   \sin\Delta_{21}\sin\Delta_{32}\sin\Delta_{31}.
+   $$ {#eq-ex10-013}
+
+7. List all the conditions under which the vacuum CP asymmetry vanishes.
+   Why is there no fundamental CP violation in the two-flavor vacuum
+   model?
+8. For the NuFIT 6.1 best-fit point with normal ordering use
+
+   $$
+   \theta_{12}=33.76^\circ,
+   \quad
+   \theta_{23}=43.29^\circ,
+   \quad
+   \theta_{13}=8.62^\circ,
+   \quad
+   \delta_{\mathrm{CP}}=212^\circ
+   $$ {#eq-ex10-014}
+
+   and compute $J_{\mathrm{CP}}$.
+9. Estimate $A_{e\mu}^{\mathrm{CP}}$ at the first atmospheric maximum,
+   defined by the condition $\Delta_{31}=\pi/2$. Use
+
+   $$
+   \Delta m_{21}^2=7.537\cdot10^{-5}~\mathrm{eV}^2,
+   \qquad
+   \Delta m_{31}^2=2.511\cdot10^{-3}~\mathrm{eV}^2.
+   $$ {#eq-ex10-015}
+
+   Why is the asymmetry additionally suppressed by the smallness of the solar phase?
+
+## Problem 10.5. Numerical lab of three flavors
+
+Write a program in Python, Julia, or Mathematica that computes vacuum
+oscillations of three active neutrinos. For Python you can use the
+[template](https://neutrinohit.github.io/neutrinophysics/introduction/ru/exercises/assets/09_vacuum_oscillations/three_flavor_starter.en.py).
+
+Use the NuFIT 6.1 best-fit point with normal ordering:
+
+$$
+\begin{aligned}
+\sin^2\theta_{12}&=0.3088,&
+\sin^2\theta_{23}&=0.470,&
+\sin^2\theta_{13}&=0.02248,\\
+\Delta m_{21}^2&=7.537\cdot10^{-5}~\mathrm{eV}^2,&
+\Delta m_{31}^2&=2.511\cdot10^{-3}~\mathrm{eV}^2,&
+\delta_{\mathrm{CP}}&=212^\circ.
+\end{aligned}
+$$ {#eq-ex10-016}
+
+1. Construct the PMNS matrix in the standard parametrization and numerically check
+   $U^\dagger U=I$.
+2. Implement the amplitude $\mathcal A_{\alpha\to\beta}$. If the rows
+   denote the final flavor $\beta$ and the columns the initial flavor $\alpha$,
+   then in matrix form
+
+   $$
+   \mathcal A
+   =U\operatorname{diag}(e^{-i\phi_i})U^\dagger,
+   \qquad
+   \phi_i=2(1.267)\frac{m_i^2[\mathrm{eV}^2]L[\mathrm{km}]}
+                              {E[\mathrm{GeV}]}.
+   $$ {#eq-ex10-017}
+
+   One can set $m_1^2=0$, since the overall mass is not observable.
+3. Compute the probability matrix $P_{\beta\alpha}=|\mathcal A_{\beta\alpha}|^2$.
+4. Automatically check
+
+   $$
+   P_{\beta\alpha}(0)=\delta_{\beta\alpha},
+   \qquad
+   \sum_\beta P_{\beta\alpha}=1
+   $$ {#eq-ex10-018}
+
+   with a numerical accuracy no worse than $10^{-12}$.
+5. For the initial $\nu_\mu$ plot $P_{\mu\to e}$,
+   $P_{\mu\to\mu}$ and $P_{\mu\to\tau}$ as functions of $L/E$ in the range
+   $0\leq L/E\leq2000~\mathrm{km/GeV}$.
+6. Repeat the calculation for antineutrinos, replacing $U\to U^*$, and plot
+   $P_{\mu\to e}-\overline P_{\mu\to e}$.
+7. Repeat the comparison at $\delta_{\mathrm{CP}}=0$ and explain the result.
+8. Add the same number $C$ to all $m_i^2$ and numerically check
+   that the probabilities do not change.
+9. By scanning over $L/E$, find the point of the maximal vacuum
+   difference $P_{\mu\to e}-\overline P_{\mu\to e}$ in absolute value in the indicated range.
+10. Represent the triple of probabilities
+
+    $$
+    (P_{\alpha\to e},P_{\alpha\to\mu},P_{\alpha\to\tau})
+    $$ {#eq-ex10-019}
+
+    as a trajectory inside the probability triangle. Why can the trajectory not
+    leave the triangle?
+11. In item 1 the matrix is unitary by construction. What independent
+    experimental normalizations and channels would be needed to check
+    unitarity without fixing it in the parametrization in advance?
+
+In a real long-baseline experiment the comparison of neutrinos and antineutrinos
+is also modified by matter. In this problem only the vacuum part needs to be computed.

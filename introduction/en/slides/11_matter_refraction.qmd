@@ -372,7 +372,7 @@ $$
 \frac{I(z)}{I(0)}=e^{-2kn_Iz}.
 $$
 
-The real part $f(0)$ determines the phase, the imaginary part — the attenuation
+The real part of $f(0)$ determines the phase, the imaginary part — the attenuation
 of the coherent beam. The optical theorem relates it to the total cross section:
 
 $$
