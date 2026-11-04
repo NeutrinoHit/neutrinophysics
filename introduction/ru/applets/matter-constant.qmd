@@ -29,6 +29,6 @@ $R=\sqrt{(\cos2\theta-A)^2+\sin^22\theta}$.
 $\nu_e$ в верхнем собственном состоянии, $\sin^2\theta_m$. Пунктир — уровни без
 смешивания. Отрицательные $A$ соответствуют антинейтрино.
 
-[Объяснение в лекции 12](../slides/12_matter_constant_density.html#/matter-constant-lab-slide) ·
+[Объяснение в лекции 13](../slides/13_matter_adiabatic_msw.html#/matter-constant-lab-slide) ·
 [Исходный код](https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/slides/assets/06_matter_oscillations/lecture12.js).
 :::

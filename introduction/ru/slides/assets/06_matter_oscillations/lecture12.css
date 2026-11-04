@@ -12,6 +12,11 @@
   margin: 0.4em 0;
 }
 
+/* Выносные формулы не мельче текста: общая тема уменьшает их до 0.82em. */
+.reveal .l12-board .math.display {
+  font-size: 1em;
+}
+
 .reveal .l12-board p {
   margin: 0.3em 0;
 }

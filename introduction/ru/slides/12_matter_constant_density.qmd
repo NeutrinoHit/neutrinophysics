@@ -16,9 +16,7 @@ format:
     include-after-body:
       - text: |
           <script src="assets/06_matter_oscillations/l12_tex.js"></script>
-          <script src="assets/06_matter_oscillations/lecture12.js"></script>
           <script src="assets/06_matter_oscillations/lecture12_figures.js"></script>
-          <script src="assets/06_matter_oscillations/matter_layers.js"></script>
           <script data-external="1" data-context-home="https://neutrinohit.github.io/ru/courses/neutrino-introduction.html" data-context-home-label="Страница курса" src="../../../shared/reveal/neutrinohit-reveal-footer.js"></script>
       - ../../../analytics/cloudflare-web-analytics.html
     embed-resources: false
@@ -456,7 +454,6 @@ $V_{\mu\tau}\approx5\cdot10^{-5}\,V_{\rm CC}$ при $N_n\approx N_p$. Здес�
 
 (iii) По той же причине из $H$ можно вычёркивать любое слагаемое $\propto\mathbb I$. Это сдвиг нуля энергии.
 
-Стерильному нейтрино $Z$ не действует, и там $V_{\rm NC}$ уже не общий.
 
 ::::::
 
@@ -594,55 +591,48 @@ $\bar A=-A$.
 :::::: {.panel-tabset .nh-story-tabs .l12-board}
 
 ### Результат
-Нейтрино с энергией $E$ — волна $e^{ikx}$. Что мы с ней делаем?
+Нейтрино с заданной энергией $E$.
 
-- Общий множитель $e^{iEx}$ одинаков у $\nu_e$ и $\nu_x$ и на вероятности не влияет. Отбрасываем его.
-- Для оставшейся части $\psi_f(x)$ пишем уравнение Шрёдингера по $x$ (штрих у $H_f'$ значит, что общая фаза убрана).
-- Собственная волна этого уравнения $\psi\propto e^{-i\lambda x}$, где $\lambda$ — собственное число $H_f'$. Вместе с $e^{iEx}$ получается $e^{i(E-\lambda)x}$, то есть $k=E-\lambda$.
+(i) Общая фаза с энергией выбрасывается: задача стационарна, энергия сохраняется.
 
-Величина $\lambda$ — добавка к энергии: чем она больше, тем меньше $k$ и длиннее волна.
+(ii) Уравнение Шрёдингера по координате $x$ во флэйворном и массовом базисах:
 
-$$
-i\frac{d\psi_f}{dx}=H_f'\,\psi_f,
-\qquad
-\psi_f=\binom{a_e}{a_x}.
-$$
+     $$
+     i\frac{d\psi_f}{dx}=
+     \underbrace{\frac12
+     \begin{pmatrix}
+     V-\Delta\cos2\theta&\Delta\sin2\theta\\
+     \Delta\sin2\theta&\Delta\cos2\theta-V
+     \end{pmatrix}}_{\textstyle H_f'}\psi_f,
+     \qquad
+     \Delta=\frac{\Delta m^2}{2E}.
+     $$
 
-Вакуум смешивает флэйворы, вещество их различает. Вместе они дают
+     $$
+     i\frac{d\psi_m}{dx}=
+     \underbrace{\frac12\begin{pmatrix}-\Delta&0\\0&\Delta\end{pmatrix}
+     +\frac V2\begin{pmatrix}\cos2\theta&\sin2\theta\\\sin2\theta&-\cos2\theta\end{pmatrix}}_{\textstyle H_m'}\psi_m.
+     $$
 
-$$
-H_f'=\frac12
-\begin{pmatrix}
-V-\Delta\cos2\theta&\Delta\sin2\theta\\
-\Delta\sin2\theta&\Delta\cos2\theta-V
-\end{pmatrix}.
-$$
+Вещество связывает $\nu_1$ и $\nu_2$: они перестают быть собственными волнами.
 
 ### 1. Вакуум
 
-Начнём с вакуума. Откуда берётся $\Delta$?
-
-(i) Массовое состояние $\nu_i$ с энергией $E\gg m_i$ имеет волновое число
+(i) Массовое состояние $\nu_i$ с энергией $E\gg m_i$ — волна $e^{-iEt}e^{ik_ix}$, где
 
     $$
     k_i=\sqrt{E^2-m_i^2}\simeq E-\frac{m_i^2}{2E}.
     $$
 
-(ii) Волна
+(ii) Задача стационарна, поэтому $e^{-iEt}$ общий для всех состояний, и время выбрасываем. Остаётся $e^{ik_ix}$, то есть $i\,d\psi_i/dx=-k_i\psi_i$:
 
      $$
-     e^{ik_ix}=e^{iEx}\,e^{-i(m_i^2/2E)x}.
+     i\frac{d}{dx}\binom{\psi_1}{\psi_2}
+     =\begin{pmatrix}-E+\dfrac{m_1^2}{2E}&0\\0&-E+\dfrac{m_2^2}{2E}\end{pmatrix}
+     \binom{\psi_1}{\psi_2}.
      $$
 
-     Множитель $e^{iEx}$ отбрасываем, и остаётся
-
-     $$
-     i\psi_i'=\lambda_i\psi_i,
-     \qquad
-     \lambda_i=\frac{m_i^2}{2E}.
-     $$
-
-(iii) Среднее $(m_1^2+m_2^2)/4E$ тоже общая фаза. Вычитаем его:
+(iii) Слагаемые $-E$ и $\dfrac{m_1^2+m_2^2}{4E}$ стоят на диагонали у обоих состояний и на осцилляции не влияют. Выбрасываем их:
 
       $$
       H_m=\frac12\begin{pmatrix}-\Delta&0\\0&\Delta\end{pmatrix},
@@ -652,96 +642,44 @@ $$
 
 ### 2. Флэйворный базис
 
-Теперь перейдём к состояниям, которые рождаются и регистрируются.
-
-(i) Флэйворный и массовый базисы связаны поворотом, $\psi_f=U(\theta)\,\psi_m$:
+(i) Флэйворный и массовый базисы связаны поворотом, $\psi_f=U\psi_m$:
 
     $$
-    U(\theta)=\begin{pmatrix}\cos\theta&\sin\theta\\-\sin\theta&\cos\theta\end{pmatrix}.
+    U=\begin{pmatrix}\cos\theta&\sin\theta\\-\sin\theta&\cos\theta\end{pmatrix}.
     $$
 
-(ii) Тогда $i\,\psi_f'=U H_m U^T\psi_f$, то есть $H_f=UH_mU^T$. Для $\operatorname{diag}(d_1,d_2)$ и $c=\cos\theta$, $s=\sin\theta$:
+(ii) Подставляем в уравнение $i\,\psi_m'=H_m\psi_m$ и умножаем на $U$:
 
      $$
-     U\begin{pmatrix}d_1&0\\0&d_2\end{pmatrix}U^T
-     =\begin{pmatrix}c^2d_1+s^2d_2&sc\,(d_2-d_1)\\sc\,(d_2-d_1)&s^2d_1+c^2d_2\end{pmatrix}.
+     i\frac{d\psi_f}{dx}
+     =\underbrace{U H_m U^T}_{H_f}\,\psi_f.
      $$
 
-(iii) С $d_{1,2}=\mp\Delta/2$, $c^2-s^2=\cos2\theta$, $2sc=\sin2\theta$:
+(iii) Считаем произведение ($c=\cos\theta$, $s=\sin\theta$, $c^2-s^2=\cos2\theta$, $2sc=\sin2\theta$):
 
       $$
-      H_f=\frac\Delta2\begin{pmatrix}-\cos2\theta&\sin2\theta\\\sin2\theta&\cos2\theta\end{pmatrix}.
+      H_f=\frac\Delta2\begin{pmatrix}s^2-c^2&2sc\\2sc&c^2-s^2\end{pmatrix}
+      =\frac\Delta2\begin{pmatrix}-\cos2\theta&\sin2\theta\\\sin2\theta&\cos2\theta\end{pmatrix}.
       $$
 
 ### 3. Вещество
 
-(i) Потенциал действует только на $\nu_e$. Разложим его на единичную матрицу и бесследовую часть:
+(i) Потенциал действует только на $\nu_e$. Добавляем его во флэйворный базис и вычитаем общую диагональную фазу:
 
     $$
     \begin{pmatrix}V&0\\0&0\end{pmatrix}
-    =\frac V2\,\mathbb I+\frac V2\begin{pmatrix}1&0\\0&-1\end{pmatrix}.
+    =\frac V2\,\mathbb I+\frac V2\begin{pmatrix}1&0\\0&-1\end{pmatrix}
+    \quad\Longrightarrow\quad
+    H_f'=\underbrace{H_f}_{\text{вакуум}}
+    +\underbrace{\frac V2\begin{pmatrix}1&0\\0&-1\end{pmatrix}}_{\text{вещество}}.
     $$
 
-(ii) Слагаемое $\tfrac V2\mathbb I$ — общая фаза, убираем его.
-
-(iii) Складываем с $H_f$ и получаем $H_f'$ с первой вкладки.
-
-Вещество добавляет только разность энергий $\nu_e$ и $\nu_x$.
-
-::::::
-
-## Тот же гамильтониан в массовом базисе
-
-:::::: {.panel-tabset .nh-story-tabs .l12-board}
-
-### Результат
-
-Перейдём к вакуумным массовым состояниям:
-
-$$
-H_m'=U^T(\theta)\,H_f'\,U(\theta).
-$$
-
-$$
-H_m'=
-\underbrace{\frac12\begin{pmatrix}-\Delta&0\\0&\Delta\end{pmatrix}}
-_{\textstyle\text{свободные волны}}
-+
-\underbrace{\frac V2
-\begin{pmatrix}\cos2\theta&\sin2\theta\\\sin2\theta&-\cos2\theta\end{pmatrix}}
-_{\textstyle\text{вещество связывает }\nu_1,\,\nu_2}
-$$
-
-- В вакууме $\nu_1$ и $\nu_2$ распространяются независимо.
-- В веществе внедиагональный элемент $\tfrac12V\sin2\theta$ связывает их.
-  Поэтому $\nu_1$ и $\nu_2$ перестают быть собственными волнами.
-
-Собственные волны вещества приходится искать заново. Обозначим их
-$\nu_{1m}$ и $\nu_{2m}$.
-
-### Расчёт
-
-(i) Вакуумная часть возвращается к диагонали:
-
-    $$
-    U^T\bigl(U\,\tfrac12\operatorname{diag}(-\Delta,\Delta)\,U^T\bigr)U=\tfrac12\operatorname{diag}(-\Delta,\Delta).
-    $$
-
-(ii) Для потенциала нужна обратная формула поворота, $d_1=\tfrac V2$, $d_2=-\tfrac V2$:
+(ii) В массовом базисе $H_m'=U^TH_f'U$. Вакуумная часть снова диагональна, а потенциал поворачивается:
 
      $$
-     U^T\begin{pmatrix}d_1&0\\0&d_2\end{pmatrix}U
-     =\begin{pmatrix}c^2d_1+s^2d_2&sc\,(d_1-d_2)\\sc\,(d_1-d_2)&s^2d_1+c^2d_2\end{pmatrix}.
+     U^T\,\frac V2\begin{pmatrix}1&0\\0&-1\end{pmatrix}U
+     =\frac V2\begin{pmatrix}\cos2\theta&\sin2\theta\\\sin2\theta&-\cos2\theta\end{pmatrix}.
      $$
-
-(iii) Подставляем $d_1-d_2=V$, $c^2-s^2=\cos2\theta$, $2sc=\sin2\theta$:
-
-      $$
-      U^T\,\frac V2\begin{pmatrix}1&0\\0&-1\end{pmatrix}U
-      =\frac V2\begin{pmatrix}\cos2\theta&\sin2\theta\\\sin2\theta&-\cos2\theta\end{pmatrix}.
-      $$
-
-Диагональ сдвигает уровни $\nu_1$ и $\nu_2$ на $\pm\tfrac V2\cos2\theta$, внедиагональный элемент $\tfrac V2\sin2\theta$ их смешивает.
 
 ::::::
 
@@ -756,7 +694,7 @@ $\nu_{1m}$ и $\nu_{2m}$.
 
 $$
 \boxed{\Delta_m=
-\sqrt{(\Delta\cos2\theta-V)^2+(\Delta\sin2\theta)^2}=\Delta R},
+\sqrt{(\Delta\cos2\theta-V)^2+(\Delta\sin2\theta)^2}=\Delta\cdot R},
 \qquad
 R\equiv\sqrt{(\cos2\theta-A)^2+\sin^22\theta}.
 $$
@@ -774,31 +712,31 @@ $A=\cos2\theta$.
 
 ### 1. Определитель
 
-(i) Обозначим $p=V-\Delta\cos2\theta$ и $q=\Delta\sin2\theta$. Тогда
+(i) Обозначим
 
     $$
-    H_f'=\frac12\begin{pmatrix}p&q\\q&-p\end{pmatrix},
+    p=V-\Delta\cos2\theta,
+    \quad
+    q=\Delta\sin2\theta:
+    \qquad
+    H_f'=\frac12\begin{pmatrix}p&q\\q&-p\end{pmatrix}.
     $$
 
-    и
-
-    $$
-    \det(H_f'-\lambda\mathbb I)=\lambda^2-\frac{p^2+q^2}{4}=0.
-    $$
-
-(ii) Отсюда
+(ii) Определитель
 
      $$
-     \lambda_\pm=\pm\tfrac12\sqrt{p^2+q^2}=\pm\Delta_m/2.
+     \det(H_f'-\lambda\mathbb I)=\lambda^2-\frac{p^2+q^2}{4}=0
+     \quad\Longrightarrow\quad
+     \lambda_\pm=\pm\frac12\sqrt{p^2+q^2}=\pm\frac{\Delta_m}{2}.
      $$
 
 (iii) Выносим $\Delta$ из корня и вводим $A=V/\Delta$:
 
       $$
-      \Delta_m=\Delta\sqrt{(A-\cos2\theta)^2+\sin^22\theta}=\Delta R.
+      \Delta_m=\Delta\sqrt{(A-\cos2\theta)^2+\sin^22\theta}=\Delta\cdot R.
       $$
 
-(iv) Волновое число собственной волны $k=E-\lambda$, поэтому
+(iv) Волновое число собственной волны $k=\text{const}-\lambda$ (константа — выброшенные общие слагаемые), поэтому
 
      $$
      |k_{2m}-k_{1m}|=|\lambda_+-\lambda_-|=\Delta_m.
@@ -820,7 +758,7 @@ $A=\cos2\theta$.
      R_{\min}=\sin2\theta,\qquad\Delta_{m,\min}=\Delta\sin2\theta.
      $$
 
-Мы вернёмся к этой точке: она называется резонансом.
+Эта точка называется резонансом, ей посвящена лекция 13.
 
 ::::::
 
@@ -862,7 +800,7 @@ $$
 
 ### 1. Сравнение матриц
 
-(i) По формуле поворота с $d_{1,2}=\mp\Delta_m/2$:
+(i) Как для $H_f$ на слайде «Уравнение распространения», только с $\theta_m$ и $\Delta_m$:
 
     $$
     U(\theta_m)\,\tfrac12\operatorname{diag}(-\Delta_m,\Delta_m)\,U^T(\theta_m)
@@ -923,52 +861,73 @@ $$
 - Собственные волны вещества $\nu_{1m},\nu_{2m}$ распространяются в
   однородной среде. С флэйворным базисом их связывает угол $\theta_m$.
 
-Из $\psi_f=U(\theta)\psi_m=U(\theta_m)\psi_{\rm mat}$ следует
-$\psi_m=U(\alpha)\psi_{\rm mat}$, $\alpha\equiv\theta_m-\theta$:
+Базисы связаны поворотами:
+
+$$
+\psi_f=U(\theta)\,\psi_m=U(\theta_m)\,\psi_{\rm mat}
+\quad\Longrightarrow\quad
+\psi_m=U(\alpha)\,\psi_{\rm mat},
+\qquad
+\alpha\equiv\theta_m-\theta,
+$$
 
 $$
 |\nu_{2m}\rangle=\sin\alpha\,|\nu_1\rangle+\cos\alpha\,|\nu_2\rangle.
 $$
 
-При $V\to0$ получаем $\theta_m\to\theta$ и $\nu_{im}\to\nu_i$. При
-$A\gg1$ получаем $\theta_m\to\pi/2$ и $\nu_{2m}\to\nu_e$. Оба предела
-понадобятся в лекции 13 для нейтрино, выходящих из Солнца.
+Два предела понадобятся в лекции 13 для нейтрино, выходящих из Солнца:
+
+$$
+V\to0:\quad \theta_m\to\theta,\quad \nu_{im}\to\nu_i;
+\qquad\qquad
+A\gg1:\quad \theta_m\to\frac\pi2,\quad \nu_{2m}\to\nu_e.
+$$
 
 ### 1. Вывод
 
-(i) Один и тот же вектор записан в двух базисах:
+(i) Один и тот же вектор записан в двух базисах. Умножаем слева на обратную матрицу:
 
     $$
-    U(\theta)\psi_m=U(\theta_m)\psi_{\rm mat}.
+    U(\theta)\,\psi_m=U(\theta_m)\,\psi_{\rm mat},
+    \qquad
+    U^{-1}(\theta)=U(-\theta).
     $$
 
-    Умножаем на $U^{-1}(\theta)=U(-\theta)$:
-
-    $$
-    \psi_m=U(-\theta)\,U(\theta_m)\,\psi_{\rm mat}.
-    $$
-
-(ii) Повороты складываются, $U(a)U(b)=U(a+b)$. Это формулы сложения углов, например
+(ii) Повороты складываются по формулам сложения углов:
 
      $$
+     U(a)\,U(b)=U(a+b),
+     \qquad
      \cos a\cos b-\sin a\sin b=\cos(a+b).
      $$
 
 (iii) Поэтому
 
       $$
-      \psi_m=U(\alpha)\,\psi_{\rm mat},
+      \psi_m=U(-\theta)\,U(\theta_m)\,\psi_{\rm mat}=U(\alpha)\,\psi_{\rm mat},
       \qquad
       \alpha=\theta_m-\theta.
       $$
 
-      Обратная матрица $U(-\alpha)$ даёт $\nu_{2m}$ через $\nu_1,\nu_2$: строка $(\sin\alpha,\ \cos\alpha)$.
+(iv) Обратная матрица $U(-\alpha)$ выражает $\nu_{2m}$ через $\nu_1,\nu_2$ своей второй строкой:
+
+     $$
+     U(-\alpha)=\begin{pmatrix}\cos\alpha&-\sin\alpha\\\sin\alpha&\cos\alpha\end{pmatrix}.
+     $$
 
 ### 2. Пределы
 
-(i) $V\to0$: $A\to0$, $R\to1$, $\theta_m\to\theta$, $\alpha\to0$ и $\nu_{2m}\to\nu_2$.
+(i) Вакуум:
 
-(ii) $A\gg1$: $R\simeq A$, $\cos2\theta_m\to-1$, $\theta_m\to\pi/2$ и $\alpha\to\pi/2-\theta$:
+    $$
+    V\to0:\qquad A\to0,\quad R\to1,\quad \theta_m\to\theta,\quad \alpha\to0,\quad \nu_{2m}\to\nu_2.
+    $$
+
+(ii) Плотная среда:
+
+     $$
+     A\gg1:\qquad R\simeq A,\quad \cos2\theta_m\to-1,\quad \theta_m\to\frac\pi2,\quad \alpha\to\frac\pi2-\theta,
+     $$
 
      $$
      \nu_{2m}\to\cos\theta\,\nu_1+\sin\theta\,\nu_2=\nu_e.
@@ -996,7 +955,7 @@ $A\gg1$ получаем $\theta_m\to\pi/2$ и $\nu_{2m}\to\nu_e$. Оба пре
 (ii) Расщепление масс:
 
      $$
-     \Delta m_m^2=\Delta m^2\,R.
+     \Delta m_m^2=\Delta m^2\cdot R.
      $$
 
      Оно не меньше $\Delta m^2\sin2\theta$: уровни не пересекаются.
@@ -1180,7 +1139,7 @@ $L_{\rm vac}/\sin2\theta$ наибольший.
     R^2=(\cos2\theta-A)^2+\sin^22\theta.
     $$
 
-(ii) Фаза: $\Delta_m=\Delta R$ и $\Delta=\Delta m^2/2E$, поэтому
+(ii) Фаза: $\Delta_m=\Delta\cdot R$ и $\Delta=\Delta m^2/2E$, поэтому
 
      $$
      \frac{\Delta_mL}{2}=\frac{\Delta m^2}{4E}\,L\,R.
@@ -1199,7 +1158,7 @@ $L_{\rm vac}/\sin2\theta$ наибольший.
 (i) $\sin^2\phi$ повторяется при сдвиге $\phi$ на $\pi$. Для $\phi=\Delta_mL/2$ это $L_m=2\pi/\Delta_m$:
 
     $$
-    L_m=\frac{2\pi}{\Delta R}=\frac{L_{\rm vac}}{R},
+    L_m=\frac{2\pi}{\Delta\cdot R}=\frac{L_{\rm vac}}{R},
     \qquad
     L_{\rm vac}=\frac{2\pi}{\Delta}=\frac{4\pi E}{\Delta m^2}.
     $$
@@ -1328,456 +1287,6 @@ $S(0)=\mathbb I$, $S^\dagger S=\mathbb I$, $\det S=1$, при $V\to0$
 
 ::::::
 
-# Резонанс
-
-## Кто нашёл резонанс? {#msw-history}
-
-~~~{=html}
-<div class="l12-people">
-  <article class="l12-person">
-    <div class="portrait"><span class="monogram">ЛВ</span><img src="assets/06_matter_oscillations/people/wolfenstein.jpg" alt="Линкольн Вольфенштейн" loading="lazy" onerror="this.remove()"></div>
-    <h3>Линкольн Вольфенштейн</h3>
-    <div class="years">1923–2015 · Carnegie Mellon, США</div>
-    <ul>
-      <li>В 1978 году заметил: электроны вещества меняют фазу электронного нейтрино, и осцилляции в веществе устроены иначе, чем в вакууме.</li>
-      <li>Автор известной параметризации матрицы CKM.</li>
-      <li>52 года на одном факультете, до 2000 года. Премия Сакураи 1992.</li>
-    </ul>
-  </article>
-  <article class="l12-person">
-    <div class="portrait"><span class="monogram">СМ</span><img src="assets/06_matter_oscillations/people/mikheyev.jpg" alt="Станислав Михеев" loading="lazy" onerror="this.remove()"></div>
-    <h3>Станислав Михеев</h3>
-    <div class="years">1940–2011 · ИЯИ РАН</div>
-    <ul>
-      <li>МГУ (1965), затем ФИАН, с 1970 года Институт ядерных исследований.</li>
-      <li>Много лет работал на Баксанском подземном сцинтилляционном телескопе.</li>
-      <li>В 1985 году вместе со Смирновым нашёл резонансное усиление осцилляций в веществе.</li>
-    </ul>
-  </article>
-  <article class="l12-person">
-    <div class="portrait"><span class="monogram">АС</span><img src="assets/06_matter_oscillations/people/smirnov.jpg" alt="Алексей Смирнов" loading="lazy" onerror="this.remove()"></div>
-    <h3>Алексей Смирнов</h3>
-    <div class="years">род. 1951 · ИЯИ, Триест, Гейдельберг</div>
-    <ul>
-      <li>МГУ (1974), с 1977 года ИЯИ, с 1992 года ICTP в Триесте, с 2015 года Институт Макса Планка в Гейдельберге.</li>
-      <li>Описал прохождение нейтрино через среду с меняющейся плотностью. Это тема лекции 13.</li>
-      <li>Премия Сакураи 2008 вместе с Михеевым.</li>
-    </ul>
-  </article>
-</div>
-~~~
-
-::: {.nh-text tone="muted" size="sm"}
-Эффект назван MSW по первым буквам фамилий: Михеев, Смирнов, Вольфенштейн.
-Премию Понтекорво (ОИЯИ) за работы по эффекту получили все трое. Работа
-Вольфенштейна: [Phys. Rev. D **17**, 2369 (1978)](https://doi.org/10.1103/PhysRevD.17.2369).
-Работа Михеева и Смирнова: Ядерная физика **42**, 1441 (1985).
-:::
-
-## MSW-резонанс
-
-:::::: {.panel-tabset .nh-story-tabs .l12-board}
-
-### Результат
-
-Диагональные элементы $H_f'$ обращаются в нуль при
-
-$$
-\boxed{A_{\rm res}=\cos2\theta},
-\qquad
-\theta_m=45^\circ,
-\qquad
-\sin^22\theta_m=1,
-\qquad
-\boxed{N_{e,\rm res}=\frac{\Delta m^2\cos2\theta}{2\sqrt2\,G_FE}}.
-$$
-
-Для солнечных параметров NuFIT 6.1
-
-$$
-\sin^2\theta_{12}=0.3088,
-\qquad
-\Delta m^2_{21}=7.537\times10^{-5}\ \mathrm{эВ^2}
-$$
-
-резонанс приходится на
-
-$$
-\rho Y_e\approx19\ \mathrm{г/см^3}\cdot\frac{10\ \text{МэВ}}{E}.
-$$
-
-В центре Солнца $\rho Y_e\approx100\ \mathrm{г/см^3}$, поэтому резонанс внутри Солнца есть
-при $E\gtrsim1.9$ МэВ.
-
-Плотность положительна, и резонанс возможен только при
-
-$$
-\boxed{V\,\Delta m^2\cos2\theta>0}.
-$$
-
-Так вещество позволяет измерить знак $\Delta m^2$. Подробности — во вкладке «3. Знак».
-
-### 1. Условие
-
-Где смешивание максимально?
-
-(i) Диагональный элемент $\tfrac12(V-\Delta\cos2\theta)=0$ при
-
-    $$
-    A_{\rm res}=\frac V\Delta=\cos2\theta.
-    $$
-
-(ii) В резонансе остаётся только внедиагональный элемент:
-
-     $$
-     H_f'=\tfrac12\Delta\sin2\theta\,\sigma_x.
-     $$
-
-     Собственные векторы $(1,\pm1)/\sqrt2$, значит $\theta_m=45^\circ$.
-
-(iii) Подставляем $A=2EV/\Delta m^2$ и $V=\sqrt2\,G_FN_e$:
-
-      $$
-      N_{e,\rm res}=\frac{\Delta m^2\cos2\theta}{2\sqrt2\,G_FE}.
-      $$
-
-### 2. Числа для Солнца
-
-(i) $\cos2\theta_{12}=1-2\cdot0.3088=0.382$, и
-
-    $$
-    \Delta m^2_{21}\cos2\theta_{12}=2.88\times10^{-5}\ \mathrm{эВ^2}.
-    $$
-
-(ii) Из $2EV=\Delta m^2\cos2\theta$ при $E=10$ МэВ:
-
-     $$
-     \rho Y_e=\frac{2.88\times10^{-5}\ \mathrm{эВ^2}}
-     {2\cdot10^{7}\ \text{эВ}\cdot7.63\times10^{-14}\ \text{эВ}}
-     \approx19\ \mathrm{г/см^3}.
-     $$
-
-(iii) Плотность резонанса обратно пропорциональна $E$. В центре Солнца $\rho Y_e\approx100$, поэтому резонанс есть при $E\gtrsim1.9$ МэВ.
-
-### 3. Знак
-
-(i) Для нейтрино $V>0$, потому что $N_e>0$. Условие $A=2EV/\Delta m^2=\cos2\theta$ требует одинаковых знаков у $\Delta m^2$ и $\cos2\theta$:
-
-    $$
-    V\,\Delta m^2\cos2\theta>0.
-    $$
-
-(ii) У антинейтрино $\bar V=-V$, и условие меняет знак.
-
-(iii) В солнечном секторе $\Delta m^2_{21}>0$ и $\cos2\theta_{12}>0$. Резонанс есть у нейтрино и нет у антинейтрино. При обратном порядке масс, $\Delta m^2_{31}<0$, резонанс переходит к антинейтрино.
-
-Так вещество позволяет измерить знак $\Delta m^2$.
-
-::::::
-
-::: {.nh-text tone="muted" size="sm"}
-В однородном слое резонанс делает максимальной амплитуду. Для полного
-перехода нужна ещё фаза $\Delta_mL/2=\pi/2$. Переход в плавно меняющейся
-плотности устроен иначе (лекция 13).
-:::
-
-## Режимы постоянной плотности {.lecture12-regimes}
-
-:::::: {.panel-tabset .nh-story-tabs .l12-board}
-
-### Результат
-
-| Режим | $A$ | $\theta_m$ | $\sin^22\theta_m$ | $L_m/L_{\rm vac}$ |
-|---|:---:|:---:|:---:|:---:|
-| вакуум | $0$ | $\theta$ | $\sin^22\theta$ | $1$ |
-| резонанс | $\cos2\theta$ | $45^\circ$ | $1$ | $1/\sin2\theta$ |
-| высокая плотность | $A\gg1$ | $\to90^\circ$ | $\approx\sin^22\theta/A^2$ | $\approx1/A$ |
-| антинейтрино, $\Delta m^2>0$ | $A<0$ | $<\theta$ | $<\sin^22\theta$ | $<1$ |
-
-Далеко за резонансом $\nu_e$ почти совпадает с собственной волной
-$\nu_{2m}$. Высокая плотность подавляет переход, хотя потенциал велик.
-
-### Графики
-
-~~~{=html}
-<div class="l12-fig l12-regimes-grid" data-l12-fig="regimes">
-  <div class="l12-fig-controls">
-    <label>\(\theta\) <input data-control="theta" type="range" min="2" max="44" step="0.1" value="20"><output data-out="theta">20.0</output>°</label>
-    <span>синяя кривая: вещество, пунктир: вакуум, красная черта: амплитуда. Период — расстояние между максимумами в вакуумных длинах</span>
-  </div>
-  <figure data-regime="vacuum">
-    <div class="cell-title"><span>\(A=0\)</span><span>вакуум</span></div>
-    <svg viewBox="0 0 700 245" role="img" aria-label="Вакуум"></svg>
-    <div class="cell-note">амплитуда <b data-v="amp"></b> · период <b data-v="period"></b></div>
-  </figure>
-  <figure data-regime="resonance">
-    <div class="cell-title"><span>\(A=\cos2\theta\)</span><span>резонанс</span></div>
-    <svg viewBox="0 0 700 245" role="img" aria-label="Резонанс"></svg>
-    <div class="cell-note">амплитуда <b data-v="amp"></b> · период <b data-v="period"></b></div>
-  </figure>
-  <figure data-regime="dense">
-    <div class="cell-title"><span>\(A=4\)</span><span>плотная среда</span></div>
-    <svg viewBox="0 0 700 245" role="img" aria-label="Плотная среда"></svg>
-    <div class="cell-note">амплитуда <b data-v="amp"></b> · период <b data-v="period"></b></div>
-  </figure>
-  <figure data-regime="antinu">
-    <div class="cell-title"><span>\(A=-1.5\)</span><span>антинейтрино</span></div>
-    <svg viewBox="0 0 700 245" role="img" aria-label="Антинейтрино"></svg>
-    <div class="cell-note">амплитуда <b data-v="amp"></b> · период <b data-v="period"></b></div>
-  </figure>
-</div>
-~~~
-
-### 1. Высокая плотность
-
-(i) При $A\gg1$ раскроем $R^2=A^2-2A\cos2\theta+1$:
-
-    $$
-    R=A\sqrt{1-\frac{2\cos2\theta}{A}+\frac1{A^2}}\simeq A.
-    $$
-
-(ii) Отсюда $\cos2\theta_m=(\cos2\theta-A)/R\to-1$ и $\theta_m\to90^\circ$:
-
-     $$
-     \sin^22\theta_m\simeq\frac{\sin^22\theta}{A^2},
-     \qquad
-     \frac{L_m}{L_{\rm vac}}=\frac1R\simeq\frac1A.
-     $$
-
-### 2. Антинейтрино
-
-(i) $A<0$ при $\Delta m^2>0$ и $\cos2\theta>0$. Тогда
-
-    $$
-    R^2=(\cos2\theta+|A|)^2+\sin^22\theta=1+2|A|\cos2\theta+A^2>1.
-    $$
-
-(ii) Поэтому $\sin^22\theta_m<\sin^22\theta$ и $L_m/L_{\rm vac}<1$.
-
-(iii) Так как $\cos2\theta_m>0$, угол $2\theta_m<\pi/2$, и меньший $\sin2\theta_m$ значит $\theta_m<\theta$.
-
-Резонанса нет, вещество только подавляет смешивание.
-
-::::::
-
-## Избегаемое пересечение уровней
-
-:::::: {.panel-tabset .nh-story-tabs .l12-board}
-
-### Результат
-
-Без смешивания, $\sin2\theta=0$, уровни $\nu_e$ и $\nu_x$
-
-$$
-\lambda_{e,x}=\pm\frac\Delta2\,(A-\cos2\theta)
-$$
-
-пересекались бы при $A=\cos2\theta$. Смешивание оставляет между
-уровнями $\pm\Delta_m/2$ зазор не меньше
-
-$$
-\boxed{\Delta_{m,\min}=\Delta\sin2\theta}.
-$$
-
-Верхний уровень $\nu_{2m}$ при $A\ll\cos2\theta$ состоит в основном из
-$\nu_x$, а при $A\gg\cos2\theta$ почти совпадает с $\nu_e$. Состав меняется
-в полосе $|A-\cos2\theta|\lesssim\sin2\theta$ около резонанса.
-
-В лекции 13 плотность будет меняться вдоль пути. Нейтрино, рождённое в
-центре Солнца на верхнем уровне, сможет пройти эту полосу, оставаясь на
-нём.
-
-### 1. Зазор
-
-(i) Диагональные элементы $H_f'$ — энергии $\nu_e$ и $\nu_x$ без смешивания:
-
-    $$
-    \lambda_{e,x}=\pm\frac\Delta2\,(A-\cos2\theta).
-    $$
-
-Они пересекаются при $A=\cos2\theta$.
-
-(ii) Внедиагональный элемент $\tfrac12\Delta\sin2\theta$ раздвигает уровни:
-
-     $$
-     \lambda_+-\lambda_-=\Delta\sqrt{(A-\cos2\theta)^2+\sin^22\theta}\ \ge\ \Delta\sin2\theta.
-     $$
-
-Минимум достигается ровно в точке пересечения.
-
-### 2. Состав
-
-(i) Обратный поворот к флэйворным состояниям
-
-    $$
-    \nu_e=\cos\theta_m\,\nu_{1m}+\sin\theta_m\,\nu_{2m},
-    \qquad
-    \nu_x=-\sin\theta_m\,\nu_{1m}+\cos\theta_m\,\nu_{2m}
-    $$
-
-    даёт
-
-    $$
-    \nu_{2m}=\sin\theta_m\,\nu_e+\cos\theta_m\,\nu_x.
-    $$
-
-(ii) При $A\ll\cos2\theta$ угол $\theta_m$ мал, и $\nu_{2m}\approx\nu_x$.
-
-(iii) При $A\gg\cos2\theta$ угол $\theta_m\to\pi/2$, и $\nu_{2m}\approx\nu_e$.
-
-(iv) Состав меняется в полосе $|A-\cos2\theta|\sim\sin2\theta$. Чем меньше $\theta$, тем уже полоса и меньше зазор.
-
-::::::
-
-## Лаборатория одного слоя {#matter-constant-lab-slide .matter-lab-slide}
-
-{{< include assets/06_matter_oscillations/matter_constant_lab.qmd >}}
-
-::: {.nh-text tone="muted" size="sm"}
-«Вакуум»: синяя кривая совпадает с пунктирной. «Резонанс»: огибающая
-поднимается до единицы, а период растёт в $1/\sin2\theta$ раз.
-$A\gg1$ и «антинейтрино»: переход подавлен, период короче вакуумного.
-[Открыть апплет отдельно](../applets/matter-constant.html).
-:::
-
-# Несколько слоёв
-
-## Кусочно-постоянный профиль
-
-:::::: {.panel-tabset .nh-story-tabs .l12-board}
-
-### Результат
-
-Для последовательности однородных слоёв пропагаторы перемножаются:
-
-$$
-S_{\rm total}=S_N\cdots S_2S_1,
-\qquad
-S_k=U(\theta_{m,k})
-\begin{pmatrix}e^{+i\phi_k}&0\\0&e^{-i\phi_k}\end{pmatrix}
-U^T(\theta_{m,k}).
-$$
-
-Порядок слоёв важен: при $A_1\ne A_2$ гамильтонианы слоёв не коммутируют.
-Так считают прохождение нейтрино через мантию и ядро Земли.
-
-Пусть каждый слой длится полпериода своей осцилляции, $\phi_k=\pi/2$.
-Тогда $S_k=-i\,\mathbf n_k\boldsymbol\sigma$, и пара слоёв даёт поворот
-
-$$
-S_2S_1=-(\mathbf n_2\boldsymbol\sigma)(\mathbf n_1\boldsymbol\sigma)
-=-U(\beta),
-\qquad
-\beta=2(\theta_{m2}-\theta_{m1}).
-$$
-
-После $N$ пар слоёв
-
-$$
-\boxed{P_{e\to x}=\sin^2\bigl[2N(\theta_{m2}-\theta_{m1})\bigr]}.
-$$
-
-### 1. Слой
-
-(i) Слой $k$:
-
-    $$
-    S_k=e^{-iH_kL_k}=U\operatorname{diag}(e^{+i\phi_k},e^{-i\phi_k})\,U^T.
-    $$
-
-(ii) При $\phi_k=\pi/2$ диагональная матрица равна $\operatorname{diag}(i,-i)=i\sigma_z$. По формуле поворота с $d_1=1$, $d_2=-1$:
-
-     $$
-     U\sigma_zU^T=\begin{pmatrix}\cos2\theta_m&-\sin2\theta_m\\-\sin2\theta_m&-\cos2\theta_m\end{pmatrix}
-     =-\,\mathbf n\boldsymbol\sigma.
-     $$
-
-(iii) Поэтому
-
-      $$
-      S_k=-i\,\mathbf n_k\boldsymbol\sigma.
-      $$
-
-### 2. Пара слоёв
-
-(i) Произведение пары слоёв:
-
-    $$
-    S_2S_1=-(\mathbf n_2\boldsymbol\sigma)(\mathbf n_1\boldsymbol\sigma).
-    $$
-
-    Произведение двух матриц Паули:
-
-    $$
-    (\mathbf a\boldsymbol\sigma)(\mathbf b\boldsymbol\sigma)=\mathbf a\mathbf b+i\,(\mathbf a\times\mathbf b)\boldsymbol\sigma.
-    $$
-
-(ii) Векторы
-
-     $$
-     \mathbf n_k=(\sin2\theta_{mk},\ 0,\ -\cos2\theta_{mk})
-     $$
-
-     лежат в плоскости $xz$, векторное произведение направлено по $y$. С $\beta=2(\theta_{m2}-\theta_{m1})$:
-
-     $$
-     \mathbf n_2\mathbf n_1=\cos\beta,\qquad(\mathbf n_2\times\mathbf n_1)_y=\sin\beta.
-     $$
-
-(iii) Тогда
-
-      $$
-      (\mathbf n_2\boldsymbol\sigma)(\mathbf n_1\boldsymbol\sigma)=\cos\beta+i\sin\beta\,\sigma_y=U(\beta),
-      $$
-
-      и
-
-      $$
-      S_2S_1=-\begin{pmatrix}\cos\beta&\sin\beta\\-\sin\beta&\cos\beta\end{pmatrix}.
-      $$
-
-### 3. N пар
-
-(i) Повороты складываются, $U(\beta)^N=U(N\beta)$, и
-
-    $$
-    S_{\rm total}=(S_2S_1)^N=(-1)^N\,U(N\beta).
-    $$
-
-(ii) Начальное $\nu_e$ — вектор $(1,0)^T$, амплитуда $\nu_x$ — элемент $(2,1)$, равный $\mp\sin N\beta$:
-
-     $$
-     P_{e\to x}=\sin^2\bigl[2N(\theta_{m2}-\theta_{m1})\bigr].
-     $$
-
-Разность углов накапливается от пары к паре. Это параметрическое усиление.
-
-::::::
-
-## Построй свою материю {#matter-layers-lab-slide .matter-lab-slide}
-
-{{< include assets/06_matter_oscillations/_matter_layers_lab.qmd >}}
-
-::: {.nh-text tone="muted" size="sm"}
-Тяните верх слоя вверх и вниз, границы вправо и влево. Профиль «параметрическое
-усиление» повторяет фильм на следующем слайде.
-[Открыть апплет отдельно](../applets/matter-layers.html).
-:::
-
-## Параметрическое усиление {#parametric-layers}
-
-{{< nh-video msw-parametric variant="film-layers" class="slide-video media-width-full" style="--media-width: 96%; --media-max-height: 700px;" data-autoplay=true autoplay=true loop=true muted=true playsinline=true controls=true preload="metadata" aria-label="Чередование двух слоёв вещества переводит электронное нейтрино в мюонное" >}}
-
-::: {.nh-text tone="muted" size="sm"}
-$\theta=8^\circ$, $A_1=1.6$, $A_2=4.0$, обе среды выше резонанса. По отдельности
-они дают $P_{e\to x}\le0.16$ и $P_{e\to x}\le0.01$, среда средней плотности
-$P_{e\to x}\le0.06$. Полупериодные слои отражают состояние относительно своих
-осей $\nu_{2m}$, и за пять пар слоёв $\nu_e$ полностью переходит в $\nu_x$.
-Параметрическое усиление в Земле: E.\ Kh.\ Akhmedov,
-[Nucl. Phys. B **538**, 25 (1999)](https://doi.org/10.1016/S0550-3213%2898%2900723-8);
-S.\ T.\ Petcov, [Phys. Lett. B **434**, 321 (1998)](https://doi.org/10.1016/S0370-2693%2898%2900742-4).
-:::
-
 # Итоги
 
 ## Что получено
@@ -1793,12 +1302,9 @@ $$
   электронах. Нейтральный ток даёт общую фазу.
 - Режим задаёт $A=2EV/\Delta m^2$. Вещество меняет амплитуду
   $\sin^22\theta_m$ и длину осцилляций $L_m=L_{\rm vac}/R$.
-- При $A=\cos2\theta$ смешивание максимально. Резонанс есть, если
-  $V\Delta m^2\cos2\theta>0$.
-- Слой постоянной плотности решается точно, слоистая среда описывается
-  произведением матриц слоёв.
+- Слой постоянной плотности решается точно.
 
-В [лекции 13](13_matter_adiabatic_msw.html) плотность будет меняться
-плавно, и вместе с ней будут поворачиваться собственные волны вещества.
+В [лекции 13](13_matter_adiabatic_msw.html) — резонанс, слоистая среда и
+плотность, которая меняется вдоль пути.
 
 [Апплет «Осцилляции в слое»](../applets/matter-constant.html)

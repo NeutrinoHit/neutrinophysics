@@ -78,8 +78,8 @@ toc: false
       <div class="lecture-row-body"><p>Гамильтониан в веществе, три базиса и точное решение для однородного слоя.</p><div class="lecture-links"><a href="ru/slides/12_matter_constant_density.html">Открыть лекцию</a><a href="ru/applets/matter-constant.html">Апплет</a></div></div>
     </details>
     <details class="lecture-row">
-      <summary><span class="lecture-index">13</span><span>Осцилляции в веществе. Адиабатический MSW-эффект</span></summary>
-      <div class="lecture-row-body"><p>Мгновенный базис, критерий адиабатичности и солнечный MSW-переход.</p><div class="lecture-links"><a href="ru/slides/13_matter_adiabatic_msw.html">Открыть лекцию</a><a href="ru/applets/matter-adiabatic.html">Апплет</a></div></div>
+      <summary><span class="lecture-index">13</span><span>Осцилляции в веществе. Резонанс и адиабатический MSW-эффект</span></summary>
+      <div class="lecture-row-body"><p>MSW-резонанс, слоистая среда и параметрическое усиление, мгновенный базис, критерий адиабатичности и солнечный MSW-переход.</p><div class="lecture-links"><a href="ru/slides/13_matter_adiabatic_msw.html">Открыть лекцию</a><a href="ru/applets/matter-adiabatic.html">Апплет</a></div></div>
     </details>
     <details class="lecture-row">
       <summary><span class="lecture-index">14</span><span>Осцилляции в веществе. Интерференция и маятники</span></summary>

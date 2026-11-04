@@ -1,5 +1,5 @@
 ---
-title: "Осцилляции в веществе. Адиабатический MSW-эффект"
+title: "Осцилляции в веществе. Резонанс и адиабатический MSW-эффект"
 subtitle: "Введение в физику нейтрино"
 lecture-id: "13"
 lecture-number: 13
@@ -12,9 +12,14 @@ format:
     logo: ../../../shared/reveal/dvnlogo.png
     css:
       - assets/06_matter_oscillations/matter_oscillations.css
+      - assets/06_matter_oscillations/lecture12.css
       - assets/06_matter_oscillations/lecture13.css
     include-after-body:
       - text: |
+          <script src="assets/06_matter_oscillations/l12_tex.js"></script>
+          <script src="assets/06_matter_oscillations/lecture12.js"></script>
+          <script src="assets/06_matter_oscillations/lecture12_figures.js"></script>
+          <script src="assets/06_matter_oscillations/matter_layers.js"></script>
           <script src="assets/06_matter_oscillations/matter_oscillations.js"></script>
           <script src="assets/06_matter_oscillations/lecture13.js"></script>
           <script data-external="1" data-context-home="https://neutrinohit.github.io/ru/courses/neutrino-introduction.html" data-context-home-label="Страница курса" src="../../../shared/reveal/neutrinohit-reveal-footer.js"></script>
@@ -41,6 +46,458 @@ execute:
   message: false
 ---
 
+# Резонанс
+
+## Кто нашёл резонанс? {#msw-history}
+
+~~~{=html}
+<div class="l12-people">
+  <article class="l12-person">
+    <div class="portrait"><span class="monogram">ЛВ</span><img src="assets/06_matter_oscillations/people/wolfenstein.jpg" alt="Линкольн Вольфенштейн" loading="lazy" onerror="this.remove()"></div>
+    <h3>Линкольн Вольфенштейн</h3>
+    <div class="years">1923–2015 · Carnegie Mellon, США</div>
+    <ul>
+      <li>В 1978 году заметил: электроны вещества меняют фазу электронного нейтрино, и осцилляции в веществе устроены иначе, чем в вакууме.</li>
+      <li>Автор известной параметризации матрицы CKM.</li>
+      <li>52 года на одном факультете, до 2000 года. Премия Сакураи 1992.</li>
+    </ul>
+  </article>
+  <article class="l12-person">
+    <div class="portrait"><span class="monogram">СМ</span><img src="assets/06_matter_oscillations/people/mikheyev.jpg" alt="Станислав Михеев" loading="lazy" onerror="this.remove()"></div>
+    <h3>Станислав Михеев</h3>
+    <div class="years">1940–2011 · ИЯИ РАН</div>
+    <ul>
+      <li>МГУ (1965), затем ФИАН, с 1970 года Институт ядерных исследований.</li>
+      <li>Много лет работал на Баксанском подземном сцинтилляционном телескопе.</li>
+      <li>В 1985 году вместе со Смирновым нашёл резонансное усиление осцилляций в веществе.</li>
+    </ul>
+  </article>
+  <article class="l12-person">
+    <div class="portrait"><span class="monogram">АС</span><img src="assets/06_matter_oscillations/people/smirnov.jpg" alt="Алексей Смирнов" loading="lazy" onerror="this.remove()"></div>
+    <h3>Алексей Смирнов</h3>
+    <div class="years">род. 1951 · ИЯИ, Триест, Гейдельберг</div>
+    <ul>
+      <li>МГУ (1974), с 1977 года ИЯИ, с 1992 года ICTP в Триесте, с 2015 года Институт Макса Планка в Гейдельберге.</li>
+      <li>Описал прохождение нейтрино через среду с меняющейся плотностью. К этому мы придём в этой лекции.</li>
+      <li>Премия Сакураи 2008 вместе с Михеевым.</li>
+    </ul>
+  </article>
+</div>
+~~~
+
+::: {.nh-text tone="muted" size="sm"}
+Эффект назван MSW по первым буквам фамилий: Михеев, Смирнов, Вольфенштейн.
+Премию Понтекорво (ОИЯИ) за работы по эффекту получили все трое. Работа
+Вольфенштейна: [Phys. Rev. D **17**, 2369 (1978)](https://doi.org/10.1103/PhysRevD.17.2369).
+Работа Михеева и Смирнова: Ядерная физика **42**, 1441 (1985).
+:::
+
+## MSW-резонанс
+
+:::::: {.panel-tabset .nh-story-tabs .l12-board}
+
+### Результат
+
+Диагональные элементы $H_f'$ обращаются в нуль при
+
+$$
+\boxed{A_{\rm res}=\cos2\theta},
+\qquad
+\theta_m=45^\circ,
+\qquad
+\sin^22\theta_m=1,
+\qquad
+\boxed{N_{e,\rm res}=\frac{\Delta m^2\cos2\theta}{2\sqrt2\,G_FE}}.
+$$
+
+Для солнечных параметров NuFIT 6.1
+
+$$
+\sin^2\theta_{12}=0.3088,
+\qquad
+\Delta m^2_{21}=7.537\times10^{-5}\ \mathrm{эВ^2}
+$$
+
+резонанс приходится на
+
+$$
+\rho Y_e\approx19\ \mathrm{г/см^3}\cdot\frac{10\ \text{МэВ}}{E}.
+$$
+
+В центре Солнца $\rho Y_e\approx100\ \mathrm{г/см^3}$, поэтому резонанс внутри Солнца есть
+при $E\gtrsim1.9$ МэВ.
+
+Плотность положительна, и резонанс возможен только при
+
+$$
+\boxed{V\,\Delta m^2\cos2\theta>0}.
+$$
+
+Так вещество позволяет измерить знак $\Delta m^2$. Подробности — во вкладке «3. Знак».
+
+### 1. Условие
+
+Где смешивание максимально?
+
+(i) Диагональный элемент $\tfrac12(V-\Delta\cos2\theta)=0$ при
+
+    $$
+    A_{\rm res}=\frac V\Delta=\cos2\theta.
+    $$
+
+(ii) В резонансе остаётся только внедиагональный элемент:
+
+     $$
+     H_f'=\tfrac12\Delta\sin2\theta\,\sigma_x.
+     $$
+
+     Собственные векторы $(1,\pm1)/\sqrt2$, значит $\theta_m=45^\circ$.
+
+(iii) Подставляем $A=2EV/\Delta m^2$ и $V=\sqrt2\,G_FN_e$:
+
+      $$
+      N_{e,\rm res}=\frac{\Delta m^2\cos2\theta}{2\sqrt2\,G_FE}.
+      $$
+
+### 2. Числа для Солнца
+
+(i) $\cos2\theta_{12}=1-2\cdot0.3088=0.382$, и
+
+    $$
+    \Delta m^2_{21}\cos2\theta_{12}=2.88\times10^{-5}\ \mathrm{эВ^2}.
+    $$
+
+(ii) Из $2EV=\Delta m^2\cos2\theta$ при $E=10$ МэВ:
+
+     $$
+     \rho Y_e=\frac{2.88\times10^{-5}\ \mathrm{эВ^2}}
+     {2\cdot10^{7}\ \text{эВ}\cdot7.63\times10^{-14}\ \text{эВ}}
+     \approx19\ \mathrm{г/см^3}.
+     $$
+
+(iii) Плотность резонанса обратно пропорциональна $E$. В центре Солнца $\rho Y_e\approx100$, поэтому резонанс есть при $E\gtrsim1.9$ МэВ.
+
+### 3. Знак
+
+(i) Для нейтрино $V>0$, потому что $N_e>0$. Условие $A=2EV/\Delta m^2=\cos2\theta$ требует одинаковых знаков у $\Delta m^2$ и $\cos2\theta$:
+
+    $$
+    V\,\Delta m^2\cos2\theta>0.
+    $$
+
+(ii) У антинейтрино $\bar V=-V$, и условие меняет знак.
+
+(iii) В солнечном секторе $\Delta m^2_{21}>0$ и $\cos2\theta_{12}>0$. Резонанс есть у нейтрино и нет у антинейтрино. При обратном порядке масс, $\Delta m^2_{31}<0$, резонанс переходит к антинейтрино.
+
+Так вещество позволяет измерить знак $\Delta m^2$.
+
+::::::
+
+::: {.nh-text tone="muted" size="sm"}
+В однородном слое резонанс делает максимальной амплитуду. Для полного
+перехода нужна ещё фаза $\Delta_mL/2=\pi/2$. Переход в плавно меняющейся
+плотности устроен иначе: к нему мы придём в этой лекции.
+:::
+
+## Режимы постоянной плотности {.lecture12-regimes}
+
+:::::: {.panel-tabset .nh-story-tabs .l12-board}
+
+### Результат
+
+| Режим | $A$ | $\theta_m$ | $\sin^22\theta_m$ | $L_m/L_{\rm vac}$ |
+|---|:---:|:---:|:---:|:---:|
+| вакуум | $0$ | $\theta$ | $\sin^22\theta$ | $1$ |
+| резонанс | $\cos2\theta$ | $45^\circ$ | $1$ | $1/\sin2\theta$ |
+| высокая плотность | $A\gg1$ | $\to90^\circ$ | $\approx\sin^22\theta/A^2$ | $\approx1/A$ |
+| антинейтрино, $\Delta m^2>0$ | $A<0$ | $<\theta$ | $<\sin^22\theta$ | $<1$ |
+
+Далеко за резонансом $\nu_e$ почти совпадает с собственной волной
+$\nu_{2m}$. Высокая плотность подавляет переход, хотя потенциал велик.
+
+### Графики
+
+~~~{=html}
+<div class="l12-fig l12-regimes-grid" data-l12-fig="regimes">
+  <div class="l12-fig-controls">
+    <label>\(\theta\) <input data-control="theta" type="range" min="2" max="44" step="0.1" value="20"><output data-out="theta">20.0</output>°</label>
+    <span>синяя кривая: вещество, пунктир: вакуум, красная черта: амплитуда. Период — расстояние между максимумами в вакуумных длинах</span>
+  </div>
+  <figure data-regime="vacuum">
+    <div class="cell-title"><span>\(A=0\)</span><span>вакуум</span></div>
+    <svg viewBox="0 0 700 245" role="img" aria-label="Вакуум"></svg>
+    <div class="cell-note">амплитуда <b data-v="amp"></b> · период <b data-v="period"></b></div>
+  </figure>
+  <figure data-regime="resonance">
+    <div class="cell-title"><span>\(A=\cos2\theta\)</span><span>резонанс</span></div>
+    <svg viewBox="0 0 700 245" role="img" aria-label="Резонанс"></svg>
+    <div class="cell-note">амплитуда <b data-v="amp"></b> · период <b data-v="period"></b></div>
+  </figure>
+  <figure data-regime="dense">
+    <div class="cell-title"><span>\(A=4\)</span><span>плотная среда</span></div>
+    <svg viewBox="0 0 700 245" role="img" aria-label="Плотная среда"></svg>
+    <div class="cell-note">амплитуда <b data-v="amp"></b> · период <b data-v="period"></b></div>
+  </figure>
+  <figure data-regime="antinu">
+    <div class="cell-title"><span>\(A=-1.5\)</span><span>антинейтрино</span></div>
+    <svg viewBox="0 0 700 245" role="img" aria-label="Антинейтрино"></svg>
+    <div class="cell-note">амплитуда <b data-v="amp"></b> · период <b data-v="period"></b></div>
+  </figure>
+</div>
+~~~
+
+### 1. Высокая плотность
+
+(i) При $A\gg1$ раскроем $R^2=A^2-2A\cos2\theta+1$:
+
+    $$
+    R=A\sqrt{1-\frac{2\cos2\theta}{A}+\frac1{A^2}}\simeq A.
+    $$
+
+(ii) Отсюда $\cos2\theta_m=(\cos2\theta-A)/R\to-1$ и $\theta_m\to90^\circ$:
+
+     $$
+     \sin^22\theta_m\simeq\frac{\sin^22\theta}{A^2},
+     \qquad
+     \frac{L_m}{L_{\rm vac}}=\frac1R\simeq\frac1A.
+     $$
+
+### 2. Антинейтрино
+
+(i) $A<0$ при $\Delta m^2>0$ и $\cos2\theta>0$. Тогда
+
+    $$
+    R^2=(\cos2\theta+|A|)^2+\sin^22\theta=1+2|A|\cos2\theta+A^2>1.
+    $$
+
+(ii) Поэтому $\sin^22\theta_m<\sin^22\theta$ и $L_m/L_{\rm vac}<1$.
+
+(iii) Так как $\cos2\theta_m>0$, угол $2\theta_m<\pi/2$, и меньший $\sin2\theta_m$ значит $\theta_m<\theta$.
+
+Резонанса нет, вещество только подавляет смешивание.
+
+::::::
+
+## Избегаемое пересечение уровней
+
+:::::: {.panel-tabset .nh-story-tabs .l12-board}
+
+### Результат
+
+Без смешивания, $\sin2\theta=0$, уровни $\nu_e$ и $\nu_x$
+
+$$
+\lambda_{e,x}=\pm\frac\Delta2\,(A-\cos2\theta)
+$$
+
+пересекались бы при $A=\cos2\theta$. Смешивание оставляет между
+уровнями $\pm\Delta_m/2$ зазор не меньше
+
+$$
+\boxed{\Delta_{m,\min}=\Delta\sin2\theta}.
+$$
+
+Верхний уровень $\nu_{2m}$ при $A\ll\cos2\theta$ состоит в основном из
+$\nu_x$, а при $A\gg\cos2\theta$ почти совпадает с $\nu_e$. Состав меняется
+в полосе $|A-\cos2\theta|\lesssim\sin2\theta$ около резонанса.
+
+Дальше плотность будет меняться вдоль пути. Нейтрино, рождённое в
+центре Солнца на верхнем уровне, сможет пройти эту полосу, оставаясь на
+нём.
+
+### 1. Зазор
+
+(i) Диагональные элементы $H_f'$ — энергии $\nu_e$ и $\nu_x$ без смешивания:
+
+    $$
+    \lambda_{e,x}=\pm\frac\Delta2\,(A-\cos2\theta).
+    $$
+
+Они пересекаются при $A=\cos2\theta$.
+
+(ii) Внедиагональный элемент $\tfrac12\Delta\sin2\theta$ раздвигает уровни:
+
+     $$
+     \lambda_+-\lambda_-=\Delta\sqrt{(A-\cos2\theta)^2+\sin^22\theta}\ \ge\ \Delta\sin2\theta.
+     $$
+
+Минимум достигается ровно в точке пересечения.
+
+### 2. Состав
+
+(i) Обратный поворот к флэйворным состояниям
+
+    $$
+    \nu_e=\cos\theta_m\,\nu_{1m}+\sin\theta_m\,\nu_{2m},
+    \qquad
+    \nu_x=-\sin\theta_m\,\nu_{1m}+\cos\theta_m\,\nu_{2m}
+    $$
+
+    даёт
+
+    $$
+    \nu_{2m}=\sin\theta_m\,\nu_e+\cos\theta_m\,\nu_x.
+    $$
+
+(ii) При $A\ll\cos2\theta$ угол $\theta_m$ мал, и $\nu_{2m}\approx\nu_x$.
+
+(iii) При $A\gg\cos2\theta$ угол $\theta_m\to\pi/2$, и $\nu_{2m}\approx\nu_e$.
+
+(iv) Состав меняется в полосе $|A-\cos2\theta|\sim\sin2\theta$. Чем меньше $\theta$, тем уже полоса и меньше зазор.
+
+::::::
+
+## Лаборатория одного слоя {#matter-constant-lab-slide .matter-lab-slide}
+
+{{< include assets/06_matter_oscillations/matter_constant_lab.qmd >}}
+
+::: {.nh-text tone="muted" size="sm"}
+«Вакуум»: синяя кривая совпадает с пунктирной. «Резонанс»: огибающая
+поднимается до единицы, а период растёт в $1/\sin2\theta$ раз.
+$A\gg1$ и «антинейтрино»: переход подавлен, период короче вакуумного.
+[Открыть апплет отдельно](../applets/matter-constant.html).
+:::
+
+# Несколько слоёв
+
+## Кусочно-постоянный профиль
+
+:::::: {.panel-tabset .nh-story-tabs .l12-board}
+
+### Результат
+
+Для последовательности однородных слоёв пропагаторы перемножаются:
+
+$$
+S_{\rm total}=S_N\cdots S_2S_1,
+\qquad
+S_k=U(\theta_{m,k})
+\begin{pmatrix}e^{+i\phi_k}&0\\0&e^{-i\phi_k}\end{pmatrix}
+U^T(\theta_{m,k}),
+\qquad
+\phi_k=\frac{\Delta_{m,k}L_k}{2}.
+$$
+
+Порядок слоёв важен: при $A_1\ne A_2$ гамильтонианы слоёв не коммутируют.
+Так считают прохождение нейтрино через мантию и ядро Земли.
+
+Пусть каждый слой длится полпериода своей осцилляции, $\phi_k=\pi/2$.
+Тогда $S_k=-i\,\mathbf n_k\boldsymbol\sigma$, и пара слоёв даёт поворот
+
+$$
+S_2S_1=-(\mathbf n_2\boldsymbol\sigma)(\mathbf n_1\boldsymbol\sigma)
+=-U(\beta),
+\qquad
+\beta=2(\theta_{m2}-\theta_{m1}).
+$$
+
+После $N$ пар слоёв
+
+$$
+\boxed{P_{e\to x}=\sin^2\bigl[2N(\theta_{m2}-\theta_{m1})\bigr]}.
+$$
+
+### 1. Слой
+
+(i) Слой $k$:
+
+    $$
+    S_k=e^{-iH_kL_k}=U\operatorname{diag}(e^{+i\phi_k},e^{-i\phi_k})\,U^T.
+    $$
+
+(ii) При $\phi_k=\pi/2$ диагональная матрица равна $\operatorname{diag}(i,-i)=i\sigma_z$. Перемножаем матрицы:
+
+     $$
+     U\sigma_zU^T=\begin{pmatrix}\cos2\theta_m&-\sin2\theta_m\\-\sin2\theta_m&-\cos2\theta_m\end{pmatrix}
+     =-\,\mathbf n\boldsymbol\sigma.
+     $$
+
+(iii) Поэтому
+
+      $$
+      S_k=-i\,\mathbf n_k\boldsymbol\sigma.
+      $$
+
+### 2. Пара слоёв
+
+(i) Произведение пары слоёв:
+
+    $$
+    S_2S_1=-(\mathbf n_2\boldsymbol\sigma)(\mathbf n_1\boldsymbol\sigma).
+    $$
+
+    Произведение двух матриц Паули:
+
+    $$
+    (\mathbf a\boldsymbol\sigma)(\mathbf b\boldsymbol\sigma)=\mathbf a\mathbf b+i\,(\mathbf a\times\mathbf b)\boldsymbol\sigma.
+    $$
+
+(ii) Векторы
+
+     $$
+     \mathbf n_k=(\sin2\theta_{mk},\ 0,\ -\cos2\theta_{mk})
+     $$
+
+     лежат в плоскости $xz$, векторное произведение направлено по $y$. С $\beta=2(\theta_{m2}-\theta_{m1})$:
+
+     $$
+     \mathbf n_2\mathbf n_1=\cos\beta,\qquad(\mathbf n_2\times\mathbf n_1)_y=\sin\beta.
+     $$
+
+(iii) Тогда
+
+      $$
+      (\mathbf n_2\boldsymbol\sigma)(\mathbf n_1\boldsymbol\sigma)=\cos\beta+i\sin\beta\,\sigma_y=U(\beta),
+      $$
+
+      и
+
+      $$
+      S_2S_1=-\begin{pmatrix}\cos\beta&\sin\beta\\-\sin\beta&\cos\beta\end{pmatrix}.
+      $$
+
+### 3. N пар
+
+(i) Повороты складываются, $U(\beta)^N=U(N\beta)$, и
+
+    $$
+    S_{\rm total}=(S_2S_1)^N=(-1)^N\,U(N\beta).
+    $$
+
+(ii) Начальное $\nu_e$ — вектор $(1,0)^T$, амплитуда $\nu_x$ — элемент $(2,1)$, равный $\mp\sin N\beta$:
+
+     $$
+     P_{e\to x}=\sin^2\bigl[2N(\theta_{m2}-\theta_{m1})\bigr].
+     $$
+
+Разность углов накапливается от пары к паре. Это параметрическое усиление.
+
+::::::
+
+## Построй свою материю {#matter-layers-lab-slide .matter-lab-slide}
+
+{{< include assets/06_matter_oscillations/_matter_layers_lab.qmd >}}
+
+::: {.nh-text tone="muted" size="sm"}
+Тяните верх слоя вверх и вниз, границы вправо и влево. Профиль «параметрическое
+усиление» повторяет фильм на следующем слайде.
+[Открыть апплет отдельно](../applets/matter-layers.html).
+:::
+
+## Параметрическое усиление {#parametric-layers}
+
+{{< nh-video msw-parametric variant="film-layers" class="slide-video media-width-full" style="--media-width: 96%; --media-max-height: 700px;" data-autoplay=true autoplay=true loop=true muted=true playsinline=true controls=true preload="metadata" aria-label="Чередование двух слоёв вещества переводит электронное нейтрино в мюонное" >}}
+
+::: {.nh-text tone="muted" size="sm"}
+$\theta=8^\circ$, $A_1=1.6$, $A_2=4.0$, обе среды выше резонанса. По отдельности
+они дают $P_{e\to x}\le0.16$ и $P_{e\to x}\le0.01$, среда средней плотности
+$P_{e\to x}\le0.06$. Полупериодные слои отражают состояние относительно своих
+осей $\nu_{2m}$, и за пять пар слоёв $\nu_e$ полностью переходит в $\nu_x$.
+Параметрическое усиление в Земле: E.\ Kh.\ Akhmedov,
+[Nucl. Phys. B **538**, 25 (1999)](https://doi.org/10.1016/S0550-3213%2898%2900723-8);
+S.\ T.\ Petcov, [Phys. Lett. B **434**, 321 (1998)](https://doi.org/10.1016/S0370-2693%2898%2900742-4).
+:::
+
 # Мгновенный базис
 
 ## Плотность меняется вдоль пути
@@ -54,7 +511,7 @@ A(x)=\frac{2E\,V(x)}{\Delta m^2},
 \qquad
 \tan2\theta_m(x)=\frac{\sin2\theta}{\cos2\theta-A(x)},
 \qquad
-\Delta_m(x)=\Delta R(x),
+\Delta_m(x)=\Delta\cdot R(x),
 $$
 
 где $\Delta=\Delta m^2/2E$ и $R=\sqrt{(\cos2\theta-A)^2+\sin^22\theta}$.
@@ -165,7 +622,7 @@ $$
 $$
 \boxed{
 \eta(x)\equiv\frac{|\theta_m'|}{\Delta_m}
-=\frac{\sin2\theta\,|A'|}{2\Delta R^3}}
+=\frac{\sin2\theta\,|A'|}{2\Delta\cdot R^3}}
 $$
 
 быстро растёт при малом $R$. Опаснее всего резонанс $A=\cos2\theta$, где
@@ -365,6 +822,10 @@ $$
 
 ## Итоги
 
+- При $A=\cos2\theta$ смешивание в веществе максимально. Резонанс есть, если
+  $V\Delta m^2\cos2\theta>0$.
+- Слоистая среда описывается произведением матриц слоёв. Чередование
+  слоёв может дать параметрическое усиление.
 - Уравнение в мгновенном базисе связывает моды только через $\theta_m'$.
 - При $|\theta_m'|\ll\Delta_m$, или $\gamma\gg1$ на резонансе, занятая мода
   сохраняется, а её состав поворачивается вместе с $\theta_m(x)$.
