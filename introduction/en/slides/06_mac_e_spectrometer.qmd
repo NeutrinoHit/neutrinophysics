@@ -200,7 +200,7 @@ $$
 
 ### Animation
 
-{{< nh-video mac-e-filter variant="film-katrin-electric" class="slide-video" style="--media-max-height: 600px;" controls=true preload="metadata" playsinline=true >}}
+{{< nh-video mac-e-filter variant="film-katrin-electric-en" class="slide-video" style="--media-max-height: 600px;" controls=true preload="metadata" playsinline=true poster="../../ru/slides/assets/04_direct_neutrino_mass/katrin_mac_e_electric_en.jpg" >}}
 
 ::::
 
@@ -959,7 +959,7 @@ MAC makes $E_{\perp,\mathrm A}$ small; the E-filter compares almost the entire e
 
 ### Animation
 
-{{< nh-video mac-e-filter variant="film-katrin-electric" class="slide-video" style="--media-max-height: 560px;" controls=true preload="metadata" playsinline=true >}}
+{{< nh-video mac-e-filter variant="film-katrin-electric-en" class="slide-video" style="--media-max-height: 560px;" controls=true preload="metadata" playsinline=true poster="../../ru/slides/assets/04_direct_neutrino_mass/katrin_mac_e_electric_en.jpg" >}}
 
 <p class="media-caption">
   In the KATRIN magnetic field, upon entering the main spectrometer $p_\perp$ decreases, and after the analyzing plane it grows again. The electric field is switched off here in order to show only the MAC.

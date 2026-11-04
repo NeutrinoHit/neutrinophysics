@@ -2,10 +2,10 @@
 <iframe class="nh-crystal-frame" data-src="../../ru/slides/assets/06_matter_oscillations/crystal/bridge.en.html?embed=1" title="A short transition from optics to neutrinos" loading="lazy" allow="fullscreen"></iframe>
 
 ::: {.nh-text tone="muted" size="sm"}
-Polarizations → mass states $\nu_{\mathrm{vac},i}\equiv\nu_i$; intensity fractions → probabilities. [Open separately](../../ru/slides/assets/06_matter_oscillations/crystal/bridge.en.html){target="_blank"} · [Animation]({{< nh-url optics-to-neutrino variant="film-ru" >}}){target="_blank"}.
+Polarizations → mass states $\nu_{\mathrm{vac},i}\equiv\nu_i$; intensity fractions → probabilities. [Open separately](../../ru/slides/assets/06_matter_oscillations/crystal/bridge.en.html){target="_blank"} · [Animation]({{< nh-url optics-to-neutrino variant="film-en" >}}){target="_blank"}.
 :::
 :::
 
 ::: {.content-visible when-format="pdf"}
-![](../../ru/slides/assets/06_matter_oscillations/crystal/optics_to_neutrino_v2_ru.jpg){fig-alt="From light polarizations to neutrino mass states: an animation frame with a dictionary and the output state"}
+![](../../ru/slides/assets/06_matter_oscillations/crystal/optics_to_neutrino_v2_en.jpg){fig-alt="From light polarizations to neutrino mass states: an animation frame with a dictionary and the output state"}
 :::

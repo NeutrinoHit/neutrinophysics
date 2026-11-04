@@ -373,7 +373,7 @@ $$
 
 ### Animation
 
-{{< nh-video project8-cres variant="film-cres-event" class="slide-video" style="--media-max-height:560px;" controls=true muted=true loop=true playsinline=true preload="metadata" poster="../../ru/slides/assets/04_direct_neutrino_mass/project8_cres.jpg" >}}
+{{< nh-video project8-cres variant="film-en" class="slide-video" style="--media-max-height:560px;" controls=true muted=true loop=true playsinline=true preload="metadata" poster="../../ru/slides/assets/04_direct_neutrino_mass/project8_cres_en.jpg" >}}
 
 - The electron is held in the trap; the radiation produces a rising track.
   A collision changes its frequency.

@@ -75,22 +75,38 @@
   {
    "id": "mac-e-filter",
    "variant": "film-katrin-electric",
+   "version": 2,
+   "url": "/media-neutrino/mac-e-filter/film-katrin-electric-v2.mp4",
+   "sha256": "841fe0bf4cd9b103cd7f4fdc008613e01e3bbd19dfe1f5cb0c6912981f168f23",
+   "bytes": 8903938,
+   "status": "published"
+  },
+  {
+   "id": "mac-e-filter",
+   "variant": "film-katrin-electric-en",
    "version": 1,
-   "url": "/media-neutrino/mac-e-filter/film-katrin-electric-v1.mp4",
-   "sha256": "89cd0e093f8ec1e8d0a3e5858d8cdd2ed9e48844b87cee38e0943c47c9398a0f",
-   "bytes": 422784,
-   "status": "published",
-   "fallback": "introduction/ru/slides/assets/04_direct_neutrino_mass/katrin_mac_e_electric.mp4"
+   "url": "/media-neutrino/mac-e-filter/film-katrin-electric-en-v1.mp4",
+   "sha256": "708dffe2ead18997e5b0301280441de0bb480d5916444ee036ccd7ad03d023d5",
+   "bytes": 8859013,
+   "status": "published"
   },
   {
    "id": "mac-e-filter",
    "variant": "film-uniform-field",
+   "version": 2,
+   "url": "/media-neutrino/mac-e-filter/film-uniform-field-v2.mp4",
+   "sha256": "d6ec9f66f2396e92d6244f51410c6324e4c5942441014e8375c6b7553f7bd760",
+   "bytes": 3700552,
+   "status": "published"
+  },
+  {
+   "id": "mac-e-filter",
+   "variant": "film-uniform-field-en",
    "version": 1,
-   "url": "/media-neutrino/mac-e-filter/film-uniform-field-v1.mp4",
-   "sha256": "f68d1691dada8f206912f3c7057c08062f7c78579b1c63d8c2c6688c018e6fed",
-   "bytes": 3700631,
-   "status": "published",
-   "fallback": "introduction/ru/slides/assets/04_direct_neutrino_mass/uniform_b_ensemble.mp4"
+   "url": "/media-neutrino/mac-e-filter/film-uniform-field-en-v1.mp4",
+   "sha256": "87729374b4fc1f3613593df22f83e8114e8e3d0a7b76d044fa6b868b49798cfd",
+   "bytes": 3627361,
+   "status": "published"
   },
   {
    "id": "mass-hierarchy",
@@ -224,13 +240,21 @@
   },
   {
    "id": "neutrino-crystal",
-   "variant": "film-ru",
+   "variant": "film-en",
    "version": 1,
-   "url": "/media-neutrinophysics/neutrino-crystal/film-ru-v1.mp4",
-   "sha256": "e6b1225aaedf9687c7813bbfd687924b7925482edd340e49a6b29bcb7976c6b9",
-   "bytes": 10025714,
-   "status": "published",
-   "fallback": "introduction/ru/slides/assets/06_matter_oscillations/crystal/neutrino_crystal_ru.mp4"
+   "url": "/media-neutrinophysics/neutrino-crystal/film-en-v1.mp4",
+   "sha256": "513445577c388a5aa4bb524514c9a29580ec5592502bc1cb3543eb091afdd032",
+   "bytes": 12844025,
+   "status": "published"
+  },
+  {
+   "id": "neutrino-crystal",
+   "variant": "film-ru",
+   "version": 2,
+   "url": "/media-neutrinophysics/neutrino-crystal/film-ru-v2.mp4",
+   "sha256": "ac6c378934f701782501b7d41fb053dc5c39cb387a3f863c594407d11804ae97",
+   "bytes": 12956551,
+   "status": "published"
   },
   {
    "id": "neutrino-oscillation-phases",
@@ -254,11 +278,20 @@
   },
   {
    "id": "optics-to-neutrino",
+   "variant": "film-en",
+   "version": 1,
+   "url": "/media-neutrinophysics/optics-to-neutrino/film-en-v1.mp4",
+   "sha256": "0bd2b3d97f759f83ff0868c7acfd59160199d1e0032db7264a8a5228b2b66974",
+   "bytes": 11275646,
+   "status": "published"
+  },
+  {
+   "id": "optics-to-neutrino",
    "variant": "film-ru",
-   "version": 2,
-   "url": "/media-neutrinophysics/optics-to-neutrino/film-ru-v2.mp4",
-   "sha256": "23faa263b463b6b25438e9ae4b5b9549c5346f94b04c993496c189dec8b98612",
-   "bytes": 8624056,
+   "version": 3,
+   "url": "/media-neutrinophysics/optics-to-neutrino/film-ru-v3.mp4",
+   "sha256": "b4cbea134ea589a6ec1d911d5bc6a4382f0d32ddc6fdd3f92dae6fb5296e44bc",
+   "bytes": 11357702,
    "status": "published"
   },
   {
@@ -270,6 +303,15 @@
    "bytes": 706546,
    "status": "published",
    "fallback": "introduction/ru/slides/assets/04_direct_neutrino_mass/project8_cres.mp4"
+  },
+  {
+   "id": "project8-cres",
+   "variant": "film-en",
+   "version": 1,
+   "url": "/media-neutrino/project8-cres/film-en-v1.mp4",
+   "sha256": "07e6b97fc5d11fc3315b28c0580b6cc5e00b8496b18ae32fe6033c44faf823ca",
+   "bytes": 702171,
+   "status": "published"
   },
   {
    "id": "spin",

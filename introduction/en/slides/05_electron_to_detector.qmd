@@ -103,7 +103,7 @@ $$
 
 # Where we are heading
 
-{{< nh-video mac-e-filter variant="film-katrin-electric" class="slide-video" style="--media-max-height: 760px;" controls=true preload="metadata" playsinline=true >}}
+{{< nh-video mac-e-filter variant="film-katrin-electric-en" class="slide-video" style="--media-max-height: 760px;" controls=true preload="metadata" playsinline=true poster="../../ru/slides/assets/04_direct_neutrino_mass/katrin_mac_e_electric_en.jpg" >}}
 
 <p class="media-caption">
   MAC-E: electrons above the threshold pass, electrons below the threshold are reflected.
@@ -428,7 +428,7 @@ $$
 
 ### Animation
 
-{{< nh-video mac-e-filter variant="film-uniform-field" class="slide-video" style="--media-max-height: 620px;" controls=true preload="metadata" playsinline=true poster="../../ru/slides/assets/04_direct_neutrino_mass/uniform_b_ensemble.jpg" >}}
+{{< nh-video mac-e-filter variant="film-uniform-field-en" class="slide-video" style="--media-max-height: 620px;" controls=true preload="metadata" playsinline=true poster="../../ru/slides/assets/04_direct_neutrino_mass/uniform_b_ensemble_en.jpg" >}}
 
 <p class="media-caption">
   Three electrons are shown at the same moment of time. Their speeds are equal
