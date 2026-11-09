@@ -317,10 +317,92 @@
   margin-top: 0.3rem;
 }
 
-/* Конструктор слоёв */
+/* Конструктор слоёв: редактор во всю ширину, под ним вероятность и сфера состояний */
 .reveal .layers-lab .layers-plots {
-  grid-template-columns: 1fr;
-  grid-template-rows: 5fr 6fr;
+  grid-template-columns: 1.75fr 1fr;
+  grid-template-rows: 5fr 7fr;
+}
+
+.layers-lab .layers-editor {
+  grid-column: 1 / -1;
+}
+
+/* Сфера состояний */
+.layers-lab svg .sphere-outline {
+  fill: rgba(84, 168, 255, 0.035);
+  stroke: rgba(190, 214, 236, 0.38);
+  stroke-width: 1.2;
+}
+
+.layers-lab svg .great-circle {
+  fill: none;
+  stroke: rgba(190, 214, 236, 0.42);
+  stroke-width: 1.2;
+}
+
+.layers-lab svg .great-circle.equator {
+  stroke: rgba(190, 214, 236, 0.22);
+}
+
+.layers-lab svg .great-circle.back {
+  stroke: rgba(190, 214, 236, 0.16);
+  stroke-dasharray: 4 4;
+}
+
+.layers-lab svg .great-circle.equator.back {
+  stroke: rgba(190, 214, 236, 0.1);
+}
+
+.layers-lab svg .layer-axis {
+  stroke: rgba(255, 200, 87, 0.38);
+  stroke-width: 1.2;
+  stroke-dasharray: 5 4;
+}
+
+.layers-lab svg .layer-axis.current {
+  stroke: var(--matter-gold);
+  stroke-width: 2.4;
+  stroke-dasharray: none;
+}
+
+.layers-lab svg .axis-tag {
+  fill: var(--matter-gold);
+  font-size: 13px;
+}
+
+.layers-lab svg .pole {
+  fill: rgba(233, 241, 251, 0.75);
+}
+
+.layers-lab svg .trail {
+  fill: none;
+  stroke: var(--matter-blue);
+  stroke-width: 2.2;
+  stroke-linejoin: round;
+}
+
+.layers-lab svg .trail.back {
+  stroke: rgba(84, 168, 255, 0.4);
+  stroke-dasharray: 3 4;
+}
+
+.layers-lab svg .state-arrow {
+  stroke: var(--matter-cyan);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+}
+
+.layers-lab svg .state-head {
+  fill: var(--matter-cyan);
+}
+
+.layers-lab svg .origin-dot {
+  fill: rgba(233, 241, 251, 0.8);
+}
+
+.layers-lab svg .sphere-note {
+  fill: var(--matter-ink);
+  font-size: 14px;
 }
 
 .reveal .layers-lab .layers-readouts {
@@ -824,9 +906,9 @@
   font-size: 20px;
 }
 
-/* Конструктор слоёв вне слайда (апплет): графики друг под другом */
+/* Конструктор слоёв вне слайда (апплет): редактор сверху, вероятность и сфера под ним */
 .layers-lab .layers-plots {
-  grid-template-columns: 1fr;
+  grid-template-columns: 1.75fr 1fr;
   grid-template-rows: auto auto;
 }
 
@@ -862,4 +944,20 @@
   .applet-stage .layers-lab .layers-readouts {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .applet-stage .layers-lab .layers-plots {
+    grid-template-columns: 1fr;
+  }
+
+  .applet-stage .layers-lab .layers-editor {
+    grid-column: auto;
+  }
+}
+
+.layers-lab svg .axis-tag {
+  fill: rgba(255, 200, 87, 0.6);
+}
+
+.layers-lab svg .axis-tag.current {
+  fill: var(--matter-gold);
 }

@@ -1,0 +1,14 @@
+---
+title: "Задачи: вещество постоянной плотности"
+subtitle: "Введение в физику нейтрино"
+author: "Дмитрий В. Наумов"
+format:
+  html:
+    toc: false
+---
+
+[← Вернуться к лекции](../slides/12_matter_constant_density.html) · [Все задачи курса](index.html)
+
+# Задачи
+
+{{< include ../../_includes/exercises/12_matter_constant_density-ru.qmd >}}

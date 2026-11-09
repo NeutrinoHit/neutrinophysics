@@ -179,16 +179,6 @@
    "fallback": "solar-neutrino-masterclass/data/masterclass2/masterclass2_data.zip"
   },
   {
-   "id": "msw-parametric",
-   "variant": "film-layers",
-   "version": 1,
-   "url": "/media-neutrino/msw-parametric/film-layers-v1.mp4",
-   "sha256": "fd6abb8dffc664f118d15f47a52f6f4f11f2b3def7190ab6d802fdb4fd1631da",
-   "bytes": 1994591,
-   "status": "published",
-   "fallback": "introduction/ru/slides/assets/06_matter_oscillations/msw_parametric_layers.mp4"
-  },
-  {
    "id": "msw-pendulums",
    "variant": "film-beats",
    "version": 1,
@@ -217,16 +207,6 @@
    "bytes": 1877910,
    "status": "published",
    "fallback": "introduction/ru/slides/assets/06_matter_oscillations/l14_pendulums_passage.mp4"
-  },
-  {
-   "id": "msw-rotating-basis",
-   "variant": "film-ru",
-   "version": 1,
-   "url": "/media-neutrino/msw-rotating-basis/film-ru-v1.mp4",
-   "sha256": "7e1efd1894753d2e62b80c8b1806c0f2f597046be78d5a110c4af3fd1ce0d890",
-   "bytes": 1445757,
-   "status": "published",
-   "fallback": "introduction/ru/slides/assets/06_matter_oscillations/msw_rotating_basis_ru.mp4"
   },
   {
    "id": "msw-three-levels",

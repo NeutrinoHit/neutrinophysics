@@ -18,6 +18,15 @@
   border-bottom: 1px solid rgba(180, 208, 235, 0.5);
 }
 
+/* The history tab of the MSW-resonance slide */
+.reveal .history-tight {
+  font-size: 0.86em;
+}
+
+.reveal .history-tight li {
+  margin-bottom: 0.25em;
+}
+
 /* ---------------------------------------------------------------- the lab */
 
 /* The progress bar is a grid row of its own instead of an absolute strip. */
@@ -32,6 +41,132 @@
 #matter-adiabatic-lab .adiabatic-progress {
   position: static;
   grid-column: 2;
+}
+
+#matter-adiabatic-lab .matter-lab-readouts {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* The flavour plane on the left spans both rows; the two curves are stacked on the right. */
+#matter-adiabatic-lab .matter-lab-plots {
+  grid-template-columns: 0.8fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+#matter-adiabatic-lab .plane-figure {
+  grid-row: 1 / 3;
+}
+
+/* ------------------------------------------------------------ the flavour plane */
+
+#matter-adiabatic-lab svg .plane-circle {
+  fill: rgba(84, 168, 255, 0.03);
+  stroke: rgba(190, 214, 236, 0.3);
+  stroke-width: 1.2;
+}
+
+#matter-adiabatic-lab svg .flavour-axis {
+  stroke: rgba(190, 214, 236, 0.45);
+  stroke-width: 1.2;
+}
+
+#matter-adiabatic-lab svg .vacuum-axis {
+  stroke: var(--matter-blue);
+  stroke-width: 1.5;
+  stroke-dasharray: 7 5;
+  opacity: 0.7;
+}
+
+#matter-adiabatic-lab svg .matter-axis {
+  stroke-width: 1.3;
+  opacity: 0.55;
+}
+
+#matter-adiabatic-lab svg .matter-axis--2 {
+  stroke: var(--matter-gold);
+}
+
+#matter-adiabatic-lab svg .matter-axis--1 {
+  stroke: var(--matter-purple);
+}
+
+#matter-adiabatic-lab svg .mode-arrow {
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+#matter-adiabatic-lab svg .mode-arrow.mode--2,
+#matter-adiabatic-lab svg .mode-head.mode--2 {
+  stroke: var(--matter-gold);
+  fill: var(--matter-gold);
+}
+
+#matter-adiabatic-lab svg .mode-arrow.mode--1,
+#matter-adiabatic-lab svg .mode-head.mode--1 {
+  stroke: var(--matter-purple);
+  fill: var(--matter-purple);
+}
+
+#matter-adiabatic-lab svg .mode-head {
+  stroke: none;
+}
+
+#matter-adiabatic-lab svg .theta-arc {
+  fill: none;
+  stroke: var(--matter-gold);
+  stroke-width: 1.6;
+}
+
+#matter-adiabatic-lab svg .electron-line {
+  stroke: var(--matter-red);
+  stroke-width: 2.2;
+  opacity: 0.8;
+}
+
+#matter-adiabatic-lab svg .electron-dot {
+  fill: var(--matter-red);
+  stroke: #fff;
+  stroke-width: 1;
+}
+
+#matter-adiabatic-lab svg .origin-dot {
+  fill: rgba(233, 241, 251, 0.8);
+}
+
+#matter-adiabatic-lab svg .axis-tag {
+  font-size: 15px;
+  font-style: italic;
+}
+
+#matter-adiabatic-lab svg .axis-tag .sub {
+  font-size: 70%;
+  font-style: normal;
+}
+
+#matter-adiabatic-lab svg .flavour-tag {
+  fill: var(--matter-ink);
+}
+
+#matter-adiabatic-lab svg .vacuum-tag {
+  fill: var(--matter-blue);
+}
+
+#matter-adiabatic-lab svg .matter-tag--2,
+#matter-adiabatic-lab svg .theta-tag {
+  fill: var(--matter-gold);
+}
+
+#matter-adiabatic-lab svg .matter-tag--1 {
+  fill: var(--matter-purple);
+}
+
+#matter-adiabatic-lab svg .plane-note {
+  font-size: 14px;
+  fill: var(--matter-ink);
+}
+
+#matter-adiabatic-lab svg .plane-note .sub {
+  font-size: 70%;
 }
 
 /* Formulas inside labels, readouts and captions */
@@ -53,7 +188,7 @@
 /* Legends live in the captions; the legends drawn inside the plots overlap the curves. */
 #matter-adiabatic-lab svg[data-plot="profile"] line:not([class]),
 #matter-adiabatic-lab svg[data-plot="profile"] .legend-label,
-#matter-adiabatic-lab svg[data-plot="branches"] text[x="70"] {
+#matter-adiabatic-lab svg[data-plot="branches"] .branch-legend {
   display: none;
 }
 
@@ -166,6 +301,10 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
+  #matter-adiabatic-lab svg .axis-tag {
+    font-size: 19px;
+  }
+
   #matter-adiabatic-lab .matter-lab-readouts > div {
     min-height: 3rem;
   }
@@ -177,6 +316,11 @@
 
   #matter-adiabatic-lab .matter-lab-plots {
     grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  #matter-adiabatic-lab .plane-figure {
+    grid-row: auto;
   }
 
   #matter-adiabatic-lab svg {
@@ -187,4 +331,345 @@
   #matter-adiabatic-lab svg text {
     font-size: 19px;
   }
+}
+
+/* ------------------------------------------------ block «Несколько слоёв» */
+
+/* Margin note: a reminder from an earlier lecture beside the main text. */
+.reveal .l13-margin {
+  float: right;
+  width: 36%;
+  margin: 0.1em 0 0.6em 1.2em;
+  padding: 0.35em 0.7em 0.45em;
+  border-left: 4px solid var(--matter-gold, #ffc857);
+  border-radius: 0 0.4em 0.4em 0;
+  background: rgba(255, 200, 87, 0.07);
+  font-size: 0.86em;
+}
+
+.reveal .l13-margin p {
+  margin: 0.25em 0;
+}
+
+.reveal .l13-margin .math.display {
+  font-size: 0.95em;
+}
+
+.reveal .l13-margin .MJXc-display {
+  margin: 0.25em 0;
+}
+
+.reveal .l13-margin-title {
+  color: var(--matter-gold, #ffc857);
+  font-weight: 650;
+}
+
+/* A figure floated right of a list of steps. */
+.reveal .l13-side-figure {
+  float: right;
+  width: 40%;
+  margin: 0 0 0.4em 1em;
+}
+
+.l12-tex.is-purple {
+  color: var(--matter-purple, #b79cff);
+}
+
+/* Figures */
+.l13-fig {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0.2em 0 0.3em;
+  color: var(--matter-ink, #e9f1fb);
+  font-size: 18px;
+}
+
+.l13-fig figure {
+  margin: 0;
+  padding: 0.25rem;
+  border: 1px solid rgba(180, 208, 235, 0.17);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.l13-fig svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.l13-fig svg text {
+  fill: var(--matter-muted, #9fb0c3);
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.l13-fig svg .axis {
+  stroke: rgba(190, 214, 236, 0.5);
+  stroke-width: 1.2;
+}
+
+.l13-fig svg .grid {
+  stroke: rgba(190, 214, 236, 0.12);
+  stroke-width: 1;
+}
+
+.l13-fig svg .resonance-line {
+  stroke: var(--matter-gold, #ffc857);
+  stroke-width: 1.6;
+  stroke-dasharray: 3 5;
+}
+
+.l13-fig svg .state-dot {
+  fill: var(--matter-gold, #ffc857);
+  stroke: #fff;
+  stroke-width: 1.4;
+}
+
+.l13-fig .l12-tex {
+  font-size: 22px;
+}
+
+.l13-fig figcaption {
+  margin: 0.2em 0 0.1em;
+  color: var(--matter-muted, #9fb0c3);
+  text-align: center;
+  font-size: 22px;
+}
+
+/* generic step profile */
+.l13-fig svg .step-bar {
+  fill: rgba(84, 168, 255, 0.14);
+}
+
+.l13-fig svg .step-top {
+  stroke: var(--matter-blue, #54a8ff);
+  stroke-width: 3;
+}
+
+.l13-fig svg .flow-line {
+  stroke: var(--matter-red, #ff715b);
+  stroke-width: 2.5;
+}
+
+.l13-fig svg .flow-head {
+  fill: var(--matter-red, #ff715b);
+}
+
+/* parametric profile */
+.l13-fig svg .castle-bar.layer-1 {
+  fill: rgba(94, 230, 210, 0.16);
+}
+
+.l13-fig svg .castle-bar.layer-2 {
+  fill: rgba(183, 156, 255, 0.22);
+}
+
+.l13-fig svg .castle-top {
+  stroke-width: 3;
+}
+
+.l13-fig svg .castle-top.layer-1 {
+  stroke: var(--matter-cyan, #5ee6d2);
+}
+
+.l13-fig svg .castle-top.layer-2 {
+  stroke: var(--matter-purple, #b79cff);
+}
+
+.l13-fig svg .layer-edge {
+  stroke: rgba(190, 214, 236, 0.16);
+  stroke-width: 1;
+}
+
+.l13-fig svg .castle-line {
+  fill: none;
+  stroke: var(--matter-gold, #ffc857);
+  stroke-width: 3.5;
+}
+
+.l13-fig svg .only-1,
+.l13-fig svg .only-2,
+.l13-fig svg .mean-line {
+  fill: none;
+  stroke-width: 2.2;
+}
+
+.l13-fig svg .only-1 {
+  stroke: var(--matter-cyan, #5ee6d2);
+  stroke-dasharray: 8 6;
+}
+
+.l13-fig svg .only-2 {
+  stroke: var(--matter-purple, #b79cff);
+  stroke-dasharray: 8 6;
+}
+
+.l13-fig svg .mean-line {
+  stroke: rgba(200, 214, 228, 0.75);
+  stroke-dasharray: 2 5;
+}
+
+/* one mirror */
+.l13-fig svg .minor-axis {
+  stroke: rgba(200, 214, 228, 0.45);
+  stroke-width: 1.4;
+  stroke-dasharray: 3 5;
+}
+
+.l13-fig svg .right-angle {
+  fill: none;
+  stroke: rgba(200, 214, 228, 0.7);
+  stroke-width: 1.4;
+}
+
+/* Bloch sphere */
+.l13-fig svg .sphere {
+  fill: rgba(84, 168, 255, 0.04);
+  stroke: rgba(190, 214, 236, 0.42);
+  stroke-width: 1.4;
+}
+
+.l13-fig svg .great {
+  fill: none;
+  stroke: rgba(190, 214, 236, 0.24);
+  stroke-width: 1.2;
+}
+
+.l13-fig svg .great.flavour-circle {
+  stroke: rgba(190, 214, 236, 0.5);
+}
+
+.l13-fig svg .great.back,
+.l13-fig svg .cone.back,
+.l13-fig svg .half-turn.back {
+  stroke-dasharray: 4 5;
+  opacity: 0.55;
+}
+
+.l13-fig svg .layer-axis {
+  stroke: var(--matter-cyan, #5ee6d2);
+  stroke-width: 2.2;
+}
+
+.l13-fig svg .cone {
+  fill: none;
+  stroke: rgba(200, 214, 228, 0.55);
+  stroke-width: 1.4;
+}
+
+.l13-fig svg .half-turn {
+  fill: none;
+  stroke: var(--matter-gold, #ffc857);
+  stroke-width: 3;
+}
+
+.l13-fig svg .pole {
+  fill: rgba(233, 241, 251, 0.85);
+}
+
+/* two mirrors */
+.l13-fig svg .mirror {
+  stroke-width: 2;
+  stroke-dasharray: 9 6;
+}
+
+.l13-fig svg .mirror-1 {
+  stroke: var(--matter-cyan, #5ee6d2);
+}
+
+.l13-fig svg .mirror-2 {
+  stroke: var(--matter-purple, #b79cff);
+}
+
+.l13-fig svg .hop {
+  fill: none;
+  stroke: rgba(200, 214, 228, 0.5);
+  stroke-width: 1.4;
+  stroke-dasharray: 3 4;
+}
+
+.l13-fig svg .alpha-arc {
+  fill: none;
+  stroke: rgba(200, 214, 228, 0.7);
+  stroke-width: 1.6;
+}
+
+.l13-fig svg .beta-arc {
+  fill: none;
+  stroke: var(--matter-gold, #ffc857);
+  stroke-width: 2.4;
+}
+
+.l13-fig svg .vec-start,
+.l13-fig svg .vec-mid,
+.l13-fig svg .vec-end {
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.l13-fig svg .vec-start {
+  stroke: var(--matter-red, #ff715b);
+}
+
+.l13-fig svg .vec-start-head {
+  fill: var(--matter-red, #ff715b);
+}
+
+.l13-fig svg .vec-mid {
+  stroke: rgba(200, 214, 228, 0.7);
+}
+
+.l13-fig svg .vec-mid-head {
+  fill: rgba(200, 214, 228, 0.7);
+}
+
+.l13-fig svg .vec-end {
+  stroke: var(--matter-gold, #ffc857);
+}
+
+.l13-fig svg .vec-end-head {
+  fill: var(--matter-gold, #ffc857);
+}
+
+.l13-fig svg .origin {
+  fill: rgba(233, 241, 251, 0.85);
+}
+
+/* keys of the parametric figure */
+.l13-keys > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  margin: 0 0.6em;
+  white-space: nowrap;
+}
+
+/* A figure as wide as the text column left of a margin note. */
+.reveal .l13-fig--text-width {
+  width: 60%;
+}
+
+/* Reveal makes lists inline blocks, which do not flow around a float. */
+.reveal .l13-margin ~ ul,
+.reveal .l13-margin ~ ol,
+.reveal .l13-side-figure ~ ol,
+.reveal .l13-side-figure ~ ul {
+  display: block;
+}
+
+.reveal .l13-fig--text-width .l12-tex {
+  font-size: 32px;
+}
+
+/* The layers lab in lecture 13 leaves room for a two-line caption. */
+.reveal #matter-layers-lab-slide .lecture12-lab {
+  height: 41rem;
+}
+
+/* The theme shrinks figure captions; the keys of the figures stay readable. */
+.reveal .l13-fig figure > figcaption {
+  font-size: 24px;
+  line-height: 1.3;
 }

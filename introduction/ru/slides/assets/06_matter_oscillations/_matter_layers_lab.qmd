@@ -11,6 +11,10 @@
       <input data-control="total" type="range" min="0.5" max="12" step="0.01" value="3">
     </label>
     <label class="lab-check"><input data-control="anti" type="checkbox"><span class="lab-name">антинейтрино, \(A\to-A\)</span></label>
+    <label><span class="lab-name">Положение \(x/L\)</span>
+      <span><output data-out="pos">1.00</output></span>
+      <input data-control="pos" type="range" min="0" max="1" step="0.002" value="1">
+    </label>
     <div class="layer-buttons" role="group" aria-label="Число слоёв">
       <button type="button" data-action="remove">− слой</button>
       <button type="button" data-action="add">+ слой</button>
@@ -26,27 +30,35 @@
       <button type="button" data-preset="earth">мантия, ядро, мантия</button>
       <button type="button" data-preset="sun">плавный спад</button>
       <button type="button" data-preset="random">случайный профиль</button>
+      <button type="button" data-action="play">▶ пройти профиль</button>
     </div>
   </div>
   <div class="matter-lab-readouts layers-readouts" aria-live="polite">
-    <div class="prob"><span>\(P_{e\to x}(L)\)</span><b data-val="final">—</b></div>
+    <div class="prob"><span>\(P_{e\to x}(x)\)</span><b data-val="final">—</b></div>
     <div><span>\(P_{\max}\) вдоль пути</span><b data-val="max">—</b></div>
     <div><span>слоёв \(N\)</span><b data-val="n">—</b></div>
     <div><span>\(L/L_{\rm vac}\)</span><b data-val="L">—</b></div>
   </div>
   <div class="matter-lab-plots layers-plots">
-    <figure>
+    <figure class="layers-editor">
       <svg data-plot="editor" viewBox="0 0 1140 280" role="img" aria-label="Профиль потенциала: перетащите верх столбца или границу слоёв"></svg>
       <figcaption class="lecture12-legend">
         <span>перетащите верх слоя: потенциал \(A\)</span>
         <span>перетащите границу: длины слоёв</span>
       </figcaption>
     </figure>
-    <figure>
-      <svg data-plot="probability" viewBox="0 0 1140 350" role="img" aria-label="Вероятность перехода вдоль пути"></svg>
+    <figure class="layers-probability">
+      <svg data-plot="probability" viewBox="0 0 740 350" role="img" aria-label="Вероятность перехода вдоль пути"></svg>
       <figcaption class="lecture12-legend">
         <span><i class="key-matter"></i>в этой среде</span>
         <span><i class="key-vacuum"></i>вакуум</span>
+      </figcaption>
+    </figure>
+    <figure class="layers-sphere">
+      <svg data-plot="sphere" viewBox="0 0 360 350" role="img" aria-label="Сфера состояний: в слое вектор состояния поворачивается вокруг оси слоя"></svg>
+      <figcaption class="lecture12-legend">
+        <span>в слое \(k\) вектор Блоха \(\mathbf r\) вращается вокруг оси \(\mathbf n_k\)</span>
+        <span>\(P_{e\to x}=(1-r_z)/2\)</span>
       </figcaption>
     </figure>
   </div>

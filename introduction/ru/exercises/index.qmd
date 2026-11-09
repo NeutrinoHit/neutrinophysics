@@ -49,3 +49,15 @@ format:
 ---
 
 {{< include ../../_includes/exercises/10_vacuum_pmns-ru.qmd >}}
+
+---
+
+{{< include ../../_includes/exercises/11_matter_refraction-ru.qmd >}}
+
+---
+
+{{< include ../../_includes/exercises/12_matter_constant_density-ru.qmd >}}
+
+---
+
+{{< include ../../_includes/exercises/13_matter_adiabatic_msw-ru.qmd >}}

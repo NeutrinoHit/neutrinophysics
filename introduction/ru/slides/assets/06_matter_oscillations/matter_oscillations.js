@@ -82,7 +82,7 @@
     }
 
     function renderProbability(m) {
-      const width = 610, height = 270, left = 46, right = 15, top = 14, bottom = 39;
+      const width = 610, height = 270, left = 46, right = 15, top = 36, bottom = 39;
       const xMap = (v) => left + (width - left - right) * v / 5;
       const yMap = (v) => height - bottom - (height - top - bottom) * v;
       const matter = [], vacuum = [];
@@ -101,9 +101,9 @@
       html += `<path class="matter-line" d="${pathFrom(matter, xMap, yMap)}"/>`;
       html += `<line class="probe" x1="${xMap(m.x)}" y1="${top}" x2="${xMap(m.x)}" y2="${height - bottom}"/>`;
       html += `<circle class="probe-dot" cx="${xMap(m.x)}" cy="${yMap(m.P)}" r="5"/>`;
-      html += `<line class="vacuum-line" x1="385" y1="24" x2="418" y2="24"/><text class="legend-label" x="424" y="28">${W.vacuum}</text>`;
-      html += `<line class="matter-line" x1="385" y1="43" x2="418" y2="43"/><text class="legend-label" x="424" y="47">${W.matter}</text>`;
-      html += `<line class="envelope-line" x1="385" y1="62" x2="418" y2="62"/><text class="legend-label" x="424" y="66">${W.envelope}</text>`;
+      html += `<line class="vacuum-line" x1="${left + 14}" y1="14" x2="${left + 47}" y2="14"/><text class="legend-label" x="${left + 53}" y="18">${W.vacuum}</text>`;
+      html += `<line class="matter-line" x1="${left + 154}" y1="14" x2="${left + 187}" y2="14"/><text class="legend-label" x="${left + 193}" y="18">${W.matter}</text>`;
+      html += `<line class="envelope-line" x1="${left + 294}" y1="14" x2="${left + 327}" y2="14"/><text class="legend-label" x="${left + 333}" y="18">${W.envelope}</text>`;
       probSvg.innerHTML = html;
     }
 
@@ -250,6 +250,7 @@
     const thetaInput = root.querySelector('[data-control="theta"]');
     const profileSvg = root.querySelector('[data-plot="profile"]');
     const branchesSvg = root.querySelector('[data-plot="branches"]');
+    const planeSvg = root.querySelector('[data-plot="plane"]');
     const progress = root.querySelector("[data-progress]");
     let data = null;
     let animation = null;
@@ -280,6 +281,17 @@
       const rows = [];
       let maxEta = 0;
       let minGap = Infinity;
+      // γ = 1/(2η_res) at the resonance A = cos2θ; the profile falls monotonically, so bisection finds the crossing.
+      let gamma = NaN;
+      if (A0 > start.c2) {
+        let lo = 0, hi = 1;
+        for (let k = 0; k < 40; k += 1) {
+          const mid = (lo + hi) / 2;
+          if (profileA(mid, A0) > start.c2) lo = mid; else hi = mid;
+        }
+        const slope = Math.abs(profileDerivative((lo + hi) / 2, A0) / T);
+        gamma = start.s2 ** 2 / slope;
+      }
 
       for (let i = 0; i < n; i += 1) {
         const s = i / (n - 1);
@@ -308,11 +320,11 @@
           psi = layerStep(psi, theta, Amid, dx);
         }
       }
-      return { A0, T, theta, thetaDeg, rows, maxEta, minGap };
+      return { A0, T, theta, thetaDeg, rows, maxEta, minGap, gamma };
     }
 
     function renderProfile(d, at = 1) {
-      const width = 610, height = 285, left = 47, right = 15, top = 15, bottom = 39;
+      const width = 610, height = 285, left = 47, right = 15, top = 38, bottom = 39;
       const xMap = (v) => left + (width - left - right) * v;
       const yMap = (v) => height - bottom - (height - top - bottom) * v;
       const pe = d.rows.map((r) => [r.s, r.Pe]);
@@ -340,14 +352,14 @@
         ["Pe", "var(--matter-red)"], ["P2", "var(--matter-blue)"], ["P2m", "var(--matter-gold)"], ["A/A0", "rgba(200,214,228,.55)"]
       ];
       legend.forEach((item, i) => {
-        const x = 335 + (i % 2) * 105, y = 25 + Math.floor(i / 2) * 19;
+        const x = left + 14 + i * 110, y = 14;
         html += `<line x1="${x}" y1="${y}" x2="${x + 26}" y2="${y}" stroke="${item[1]}" stroke-width="3"/><text class="legend-label" x="${x + 31}" y="${y + 4}">${item[0]}</text>`;
       });
       profileSvg.innerHTML = html;
     }
 
     function renderBranches(d, at = 1) {
-      const width = 440, height = 285, left = 46, right = 18, top = 15, bottom = 39;
+      const width = 610, height = 285, left = 46, right = 18, top = 38, bottom = 39;
       const maxR = Math.max(...d.rows.map((r) => r.R / 2));
       const ylim = Math.max(1, maxR * 1.12);
       const xMap = (v) => left + (width - left - right) * v;
@@ -371,9 +383,68 @@
       html += `<line class="probe" x1="${xMap(row.s)}" y1="${top}" x2="${xMap(row.s)}" y2="${height - bottom}"/>`;
       html += `<circle class="state-dot" cx="${xMap(row.s)}" cy="${yMap(row.upper)}" r="${4 + 4 * row.P2m}" opacity="${0.25 + 0.75 * row.P2m}"/>`;
       html += `<circle cx="${xMap(row.s)}" cy="${yMap(row.lower)}" r="${3 + 5 * row.P1m}" fill="var(--matter-purple)" stroke="#fff" stroke-width="1" opacity="${0.18 + 0.82 * row.P1m}"/>`;
-      html += `<text x="70" y="27">● upper: P2m</text><text x="70" y="46" fill="var(--matter-purple)">● lower: P1m</text>`;
+      html += `<text class="branch-legend" x="${left + 14}" y="18" style="fill:var(--matter-gold)">● upper: P2m</text><text class="branch-legend" x="${left + 154}" y="18" style="fill:var(--matter-purple)">● lower: P1m</text>`;
       branchesSvg.innerHTML = html;
     }
+
+    // The flavour plane (νe, νx): the vacuum axes ν1, ν2 are fixed, the matter axes ν1m, ν2m turn with θm(x),
+    // the arrows along them have the lengths of the mode amplitudes |b1|, |b2|.
+    const sub = (base, idx) => `${base}<tspan class="sub" dy="0.32em">${idx}</tspan>`;
+    function renderPlane(d, at = 1) {
+      const cx = 212, cy = 218, r = 158;
+      const index = clamp(Math.round(at * (d.rows.length - 1)), 0, d.rows.length - 1);
+      const row = d.rows[index];
+      const th = d.theta, tm = row.thetaM;
+      const px = (e, k = 1) => (cx + r * k * e).toFixed(1);
+      const py = (x, k = 1) => (cy - r * k * x).toFixed(1);
+      const axis = (e, x, cls, k = 1.1) => `<line class="${cls}" x1="${px(-e, k)}" y1="${py(-x, k)}" x2="${px(e, k)}" y2="${py(x, k)}"/>`;
+      const text = (e, x, k, body, cls = "", anchor = "middle") =>
+        `<text class="${cls}" x="${px(e, k)}" y="${(cy - r * k * x + 5).toFixed(1)}" text-anchor="${anchor}">${body}</text>`;
+      const arrow = (e, x, len, cls) => {
+        if (len < 0.02) return "";
+        const tipX = cx + r * len * e, tipY = cy - r * len * x;
+        const back = Math.min(11, r * len), half = 5.5;
+        const bx = tipX - back * e, by = tipY + back * x;
+        return `<line class="mode-arrow ${cls}" x1="${cx}" y1="${cy}" x2="${(tipX - back * 0.6 * e).toFixed(1)}" y2="${(tipY + back * 0.6 * x).toFixed(1)}"/>` +
+          `<polygon class="mode-head ${cls}" points="${tipX.toFixed(1)},${tipY.toFixed(1)} ${(bx - half * x).toFixed(1)},${(by - half * e).toFixed(1)} ${(bx + half * x).toFixed(1)},${(by + half * e).toFixed(1)}"/>`;
+      };
+      let html = `<circle class="plane-circle" cx="${cx}" cy="${cy}" r="${r}"/>`;
+      html += axis(1, 0, "flavour-axis") + axis(0, 1, "flavour-axis");
+      html += `<text class="axis-tag flavour-tag" x="${px(1.1)}" y="${cy + 5}" dx="6" text-anchor="start">${sub("ν", "e")}</text>`;
+      html += `<text class="axis-tag flavour-tag" x="${cx}" y="${py(1.1)}" dy="-8" text-anchor="middle">${sub("ν", "x")}</text>`;
+      // vacuum axes: ν2 = (sinθ, cosθ), ν1 = (cosθ, −sinθ) in the (νe, νx) coordinates
+      html += axis(Math.sin(th), Math.cos(th), "vacuum-axis") + axis(Math.cos(th), -Math.sin(th), "vacuum-axis");
+      // the vacuum labels sit at the far ends of their axes: at the exit θm = θ and the matter axes coincide with them
+      html += text(-Math.sin(th), -Math.cos(th), 1.2, sub("ν", "2"), "axis-tag vacuum-tag");
+      html += text(-Math.cos(th), Math.sin(th), 1.2, sub("ν", "1"), "axis-tag vacuum-tag");
+      // matter axes and the angle θm from the νx axis
+      html += axis(Math.sin(tm), Math.cos(tm), "matter-axis matter-axis--2") + axis(Math.cos(tm), -Math.sin(tm), "matter-axis matter-axis--1");
+      const ra = 0.42 * r;
+      html += `<path class="theta-arc" d="M${cx},${(cy - ra).toFixed(1)} A${ra},${ra} 0 0 1 ${(cx + ra * Math.sin(tm)).toFixed(1)},${(cy - ra * Math.cos(tm)).toFixed(1)}"/>`;
+      const mid = tm / 2;
+      html += text(Math.sin(mid), Math.cos(mid), 0.55, `θ${'<tspan class="sub" dy="0.32em">m</tspan>'}`, "axis-tag theta-tag");
+      html += text(Math.sin(tm), Math.cos(tm), 1.2, sub("ν", "2m"), "axis-tag matter-tag--2");
+      html += text(Math.cos(tm), -Math.sin(tm), 1.2, sub("ν", "1m"), "axis-tag matter-tag--1");
+      // the νe content and the mode amplitudes
+      const ae = Math.sqrt(row.Pe);
+      html += `<line class="electron-line" x1="${cx}" y1="${cy}" x2="${px(ae)}" y2="${cy}"/>`;
+      html += `<circle class="electron-dot" cx="${px(ae)}" cy="${cy}" r="4.5"/>`;
+      html += arrow(Math.cos(tm), -Math.sin(tm), Math.sqrt(row.P1m), "mode--1");
+      html += arrow(Math.sin(tm), Math.cos(tm), Math.sqrt(row.P2m), "mode--2");
+      html += `<circle class="origin-dot" cx="${cx}" cy="${cy}" r="3"/>`;
+      // the numbers of the point
+      const lines = [
+        `${it("A")} = ${fmt(row.A, 2)}`,
+        `θ${'<tspan class="sub" dy="0.32em">m</tspan>'}<tspan dy="-0.32em"> = ${fmt(deg(tm), 1)}°</tspan>`,
+        `${it("P")}${'<tspan class="sub" dy="0.32em">2m</tspan>'}<tspan dy="-0.32em"> = ${fmt(row.P2m, 3)}</tspan>`
+      ];
+      lines.forEach((body, i) => {
+        html += `<text class="plane-note" x="10" y="${20 + 19 * i}">${body}</text>`;
+      });
+      html += `<text class="plane-note plane-note--s" x="${cx * 2 - 8}" y="20" text-anchor="end">${it("s")} = ${fmt(row.s, 2)}</text>`;
+      planeSvg.innerHTML = html;
+    }
+    const it = (s) => `<tspan font-style="italic">${s}</tspan>`;
 
     function update(recompute = true) {
       if (recompute || !data) data = simulate();
@@ -382,12 +453,14 @@
       setOutput(root, "T", fmt(data.T, data.T % 1 ? 1 : 0));
       setOutput(root, "theta", fmt(data.thetaDeg, 1));
       setValue(root, "eta", fmt(data.maxEta, data.maxEta < 0.01 ? 4 : 3));
+      setValue(root, "gamma", Number.isFinite(data.gamma) ? fmt(data.gamma, data.gamma >= 100 ? 0 : data.gamma >= 10 ? 1 : 2) : "—");
       setValue(root, "gap", fmt(data.minGap, 3));
       setValue(root, "P2m", fmt(last.P2m, 4));
       setValue(root, "P2", fmt(last.P2, 4));
       setValue(root, "Pe", fmt(last.Pe, 4));
       renderProfile(data, cursor);
       renderBranches(data, cursor);
+      if (planeSvg) renderPlane(data, cursor);
       progress.style.transform = `scaleX(${cursor})`;
     }
 

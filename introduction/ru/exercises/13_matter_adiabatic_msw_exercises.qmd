@@ -1,0 +1,14 @@
+---
+title: "Задачи: резонанс и адиабатический MSW-эффект"
+subtitle: "Введение в физику нейтрино"
+author: "Дмитрий В. Наумов"
+format:
+  html:
+    toc: false
+---
+
+[← Вернуться к лекции](../slides/13_matter_adiabatic_msw.html) · [Все задачи курса](index.html)
+
+# Задачи
+
+{{< include ../../_includes/exercises/13_matter_adiabatic_msw-ru.qmd >}}

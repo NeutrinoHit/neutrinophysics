@@ -67,7 +67,7 @@ $\hbar=c=1$. Два флэйвора: $\nu_e$ и $\nu_x$, где $x=\mu$ или 
 
 ### Результат
 
-При $E\ll m_W$ обмен $W$-бозоном между $\nu_e$ и электроном сводится к
+При $q^2\ll m^2_W$ обмен $W$-бозоном между $\nu_e$ и электроном сводится к
 четырёхфермионному взаимодействию. После перестановки Фирца
 
 $$
@@ -958,7 +958,7 @@ $$
      \Delta m_m^2=\Delta m^2\cdot R.
      $$
 
-     Оно не меньше $\Delta m^2\sin2\theta$: уровни не пересекаются.
+     Оно минимально при $A=\cos2\theta$: там $R=\sin2\theta$, и $\Delta m_m^2=\Delta m^2\sin2\theta$.
 
 (iii) У антинейтрино $A<0$. Угол $\theta_m$ меньше $\theta$, резонанса нет.
 
@@ -1173,117 +1173,113 @@ $L_{\rm vac}/\sin2\theta$ наибольший.
 
 ::::::
 
-## Пропагатор слоя
+## Оператор эволюции слоя {#layer-evolution-operator}
 
 :::::: {.panel-tabset .nh-story-tabs .l12-board}
 
 ### Результат
 
-Бесследовый гамильтониан пропорционален матрицам Паули:
+Состояния в двух точках связывает оператор эволюции:
 
 $$
-H_f'=\frac{\Delta_m}{2}\,\mathbf n\boldsymbol\sigma,
+\boxed{\psi(x_2)=S(x_2,x_1)\,\psi(x_1)},
 \qquad
-\mathbf n=(\sin2\theta_m,\ 0,\ -\cos2\theta_m),
+S(x_2,x_1)=e^{-iH(x_2-x_1)},
 \qquad
-(\mathbf n\boldsymbol\sigma)^2=\mathbb I.
+\phi_m=\frac{\Delta_m(x_2-x_1)}{2}.
 $$
 
-Ряд экспоненты разделяется на чётные и нечётные степени:
+В трёх базисах:
 
 $$
-\boxed{
-S(L)=e^{-iH_f'L}=\cos\phi_m\,\mathbb I-i\sin\phi_m\,\mathbf n\boldsymbol\sigma
-=\begin{pmatrix}
+S_{\rm mat}=\begin{pmatrix}e^{+i\phi_m}&0\\0&e^{-i\phi_m}\end{pmatrix},
+\qquad
+S_f=U(\theta_m)\,S_{\rm mat}\,U^T(\theta_m),
+\qquad
+S_m=U^T(\theta)\,S_f\,U(\theta),
+$$
+
+$$
+S_f=\begin{pmatrix}
 \cos\phi_m+i\cos2\theta_m\sin\phi_m
 &-i\sin2\theta_m\sin\phi_m\\
 -i\sin2\theta_m\sin\phi_m
 &\cos\phi_m-i\cos2\theta_m\sin\phi_m
-\end{pmatrix}}.
+\end{pmatrix}.
 $$
 
-Для любого входного состояния $\psi_f(L)=S(L)\,\psi_f(0)$. Проверки:
-$S(0)=\mathbb I$, $S^\dagger S=\mathbb I$, $\det S=1$, при $V\to0$
-получается вакуумный пропагатор.
+$S_m$ — та же матрица с $\theta_m\to\theta_m-\theta$. Элементы $S$ — амплитуды переходов,
+например $(S_f)_{xe}$ — амплитуда $\nu_e\to\nu_x$.
 
-### 1. Через Паули
+### 1. Базис вещества
 
-(i) Запишем $H_f'$ через матрицы Паули
+(i) В базисе вещества гамильтониан диагонален, и каждая амплитуда набирает свою фазу:
 
     $$
-    \sigma_x=\begin{pmatrix}0&1\\1&0\end{pmatrix},
+    b(x_2)=\begin{pmatrix}e^{+i\phi_m}&0\\0&e^{-i\phi_m}\end{pmatrix}b(x_1)\equiv S_{\rm mat}\,b(x_1).
+    $$
+
+(ii) Плотность постоянна, поэтому $S$ зависит только от длины $x_2-x_1$.
+
+### 2. Другие базисы
+
+(i) Другие базисы получаются из $b$ поворотом:
+
+    $$
+    \psi_f=U(\theta_m)\,b,
     \qquad
-    \sigma_z=\begin{pmatrix}1&0\\0&-1\end{pmatrix}:
+    \psi_m=U^T(\theta)\,\psi_f=U(\theta_m-\theta)\,b.
     $$
 
-    $$
-    H_f'=\frac{\Delta_m}{2}\bigl(\sin2\theta_m\,\sigma_x-\cos2\theta_m\,\sigma_z\bigr)
-    =\frac{\Delta_m}{2}\,\mathbf n\boldsymbol\sigma.
-    $$
-
-(ii) Вектор $\mathbf n$ единичный:
-
-     $$
-     |\mathbf n|^2=\sin^22\theta_m+\cos^22\theta_m=1.
-     $$
-
-     Из
-
-     $$
-     \sigma_i\sigma_j=\delta_{ij}\mathbb I+i\varepsilon_{ijk}\sigma_k
-     $$
-
-     получаем
-
-     $$
-     (\mathbf n\boldsymbol\sigma)^2=\mathbb I.
-     $$
-
-### 2. Ряд
-
-(i) Положим $\phi_m=\Delta_mL/2$, тогда
+    Поэтому
 
     $$
-    H_f'L=\phi_m\,\mathbf n\boldsymbol\sigma.
+    S_f=U(\theta_m)\,S_{\rm mat}\,U^T(\theta_m),
+    \qquad
+    S_m=U(\theta_m-\theta)\,S_{\rm mat}\,U^T(\theta_m-\theta).
     $$
 
-    Чётные степени $\mathbf n\boldsymbol\sigma$ равны $\mathbb I$, нечётные — $\mathbf n\boldsymbol\sigma$:
-
-    $$
-    e^{-i\phi_m\mathbf n\boldsymbol\sigma}
-    =\sum_k\frac{(-1)^k\phi_m^{2k}}{(2k)!}\,\mathbb I
-    -i\sum_k\frac{(-1)^k\phi_m^{2k+1}}{(2k+1)!}\,\mathbf n\boldsymbol\sigma.
-    $$
-
-(ii) Ряды — это $\cos\phi_m$ и $\sin\phi_m$, поэтому
+(ii) Диагональную матрицу запишем через $\sigma_z$:
 
      $$
-     S=\cos\phi_m\,\mathbb I-i\sin\phi_m\,\mathbf n\boldsymbol\sigma.
+     S_{\rm mat}=\cos\phi_m\,\mathbb I+i\sin\phi_m\,\sigma_z.
      $$
 
-(iii) Подставляем $\mathbf n\boldsymbol\sigma$. Например, элемент $(1,1)$:
+     Поворот на угол $\chi$ меняет только $\sigma_z$:
+
+     $$
+     U(\chi)\,\sigma_z\,U^T(\chi)=\cos2\chi\,\sigma_z-\sin2\chi\,\sigma_x\equiv-\mathbf n\boldsymbol\sigma,
+     \qquad
+     \mathbf n=(\sin2\chi,\ 0,\ -\cos2\chi).
+     $$
+
+(iii) Поэтому
 
       $$
-      \cos\phi_m+i\cos2\theta_m\sin\phi_m.
+      S=\cos\phi_m\,\mathbb I-i\sin\phi_m\,\mathbf n\boldsymbol\sigma,
+      \qquad
+      \chi=\theta_m\ \text{для}\ S_f,
+      \qquad
+      \chi=\theta_m-\theta\ \text{для}\ S_m.
       $$
 
 ### 3. Проверки
 
-(i) $S(0)=\mathbb I$: при $\phi_m=0$ косинус равен $1$, синус равен $0$.
+(i) $S(x_1,x_1)=\mathbb I$: при $\phi_m=0$ косинус равен $1$, синус равен $0$.
 
-(ii) Определитель:
+(ii) $S^\dagger S=\mathbb I$ и $\det S=1$: это верно для $S_{\rm mat}$, а повороты этого не меняют.
+
+(iii) Слои: $S(x_3,x_1)=S(x_3,x_2)\,S(x_2,x_1)$. Этим мы воспользуемся в лекции 13.
+
+(iv) Вероятность $e\to x$:
 
      $$
-     \det S=\cos^2\phi_m+\cos^22\theta_m\sin^2\phi_m+\sin^22\theta_m\sin^2\phi_m=1.
+     |(S_f)_{xe}|^2=\sin^22\theta_m\sin^2\phi_m.
      $$
 
-(iii) Вероятность $e\to x$ — квадрат $S_{21}$:
+     Это формула слайда «Решение для начального $\nu_e$».
 
-      $$
-      |S_{21}|^2=\sin^22\theta_m\sin^2\phi_m.
-      $$
-
-      Это формула предыдущего слайда.
+(v) $V\to0$: $\theta_m\to\theta$, и $S_m=S_{\rm mat}$ — вакуумные фазы масс.
 
 ::::::
 
@@ -1308,3 +1304,35 @@ $$
 плотность, которая меняется вдоль пути.
 
 [Апплет «Осцилляции в слое»](../applets/matter-constant.html)
+
+<!-- exercises:begin (generated by scripts/sync_exercise_slides.py) -->
+
+## Задачи к лекции {#lecture-exercises}
+
+::: {.nh-text size="md"}
+:::: {.columns}
+::: {.column width="50%"}
+
+- **12.1.** Общая фаза
+- **12.2.** Проверки оператора эволюции
+- **12.3.** Потенциал в числах и длина рефракции
+- **12.4.** Когда нейтральный ток перестаёт быть общей фазой
+- **12.5.** Гамильтониан как вектор
+
+:::
+::: {.column width="50%"}
+
+- **12.6.** Различает ли вещество $\theta$ и $90^\circ-\theta$?
+- **12.7.** Почему вещество не видно в тонком слое
+- **12.8.** Нейтрино и антинейтрино в одном слое
+- **12.9.** Массовое состояние входит в слой
+
+:::
+::::
+:::
+
+::: {.nh-box tone="question"}
+[Все задачи к лекции 12 →](../exercises/12_matter_constant_density_exercises.qmd) · [Все задачи курса](../exercises/index.qmd)
+:::
+
+<!-- exercises:end -->

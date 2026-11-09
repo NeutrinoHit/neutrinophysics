@@ -105,7 +105,7 @@
       const R = Math.hypot(c2 - A, s2);
       return { s2, c2, R, thetaM: 0.5 * Math.atan2(s2, c2 - A), amp: (s2 / R) ** 2 };
     },
-    // Пропагатор слоя exp(-i π x M), M = [[A-c2, s2],[s2, c2-A]], M² = R². Возвращает 2×2 комплексную матрицу.
+    // Оператор эволюции слоя exp(-i π x M), M = [[A-c2, s2],[s2, c2-A]], M² = R². Возвращает 2×2 комплексную матрицу.
     layer(theta, A, x) {
       const { s2, c2, R } = model.mix(theta, A);
       const ph = Math.PI * R * x;

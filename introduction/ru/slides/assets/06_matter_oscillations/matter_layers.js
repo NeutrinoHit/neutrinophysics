@@ -1,4 +1,5 @@
-// «Построй свою материю»: профиль плотности из слоёв постоянной плотности и вероятность P(e→x) вдоль пути.
+// «Построй свою материю»: профиль плотности из слоёв постоянной плотности, вероятность P(e→x) вдоль пути
+// и сфера состояний, на которой в слое k вектор состояния вращается вокруг оси n_k = (sin2θ_mk, 0, −cos2θ_mk).
 // Слой k: S_k = exp(-iπ x_k M_k), M = [[A-cos2θ, sin2θ],[sin2θ, cos2θ-A]], x = L/L_vac (см. l12_tex.js).
 (() => {
   "use strict";
@@ -11,6 +12,7 @@
   const N_MAX = 12;
   const W_MIN = 0.03;
   const SOLAR = 33.8;
+  const AXES_MAX = 6;
 
   // комплексное умножение матрицы 2×2 (пары [re, im]) на вектор
   const cmul = (a, b) => [a[0] * b[0] - a[1] * b[1], a[0] * b[1] + a[1] * b[0]];
@@ -18,6 +20,38 @@
   function apply(S, psi) {
     return [cadd(cmul(S[0][0], psi[0]), cmul(S[0][1], psi[1])), cadd(cmul(S[1][0], psi[0]), cmul(S[1][1], psi[1]))];
   }
+  // Вектор Блоха r = ψ†σψ: r_z = |ψ_e|² − |ψ_x|², r_x + i r_y = 2 ψ_e* ψ_x; P(e→x) = (1 − r_z)/2.
+  function bloch(psi) {
+    const [a, b] = psi[0], [c, d] = psi[1];
+    return [2 * (a * c + b * d), 2 * (a * d - b * c), a * a + b * b - c * c - d * d];
+  }
+
+  // Ортографическая проекция сферы: плоскость (ν_e, ν_x) чуть повёрнута, чтобы был виден выход вектора из неё.
+  const VIEW = { az: rad(28), el: rad(18), cx: 180, cy: 182, R: 138 };
+  function project(n) {
+    const x1 = n[0] * Math.cos(VIEW.az) + n[1] * Math.sin(VIEW.az);
+    const y1 = -n[0] * Math.sin(VIEW.az) + n[1] * Math.cos(VIEW.az);
+    return { X: x1, Y: n[2] * Math.cos(VIEW.el) - y1 * Math.sin(VIEW.el), D: y1 * Math.cos(VIEW.el) + n[2] * Math.sin(VIEW.el) };
+  }
+  const sx = (q, k = 1) => (VIEW.cx + VIEW.R * k * q.X).toFixed(1);
+  const sy = (q, k = 1) => (VIEW.cy - VIEW.R * k * q.Y).toFixed(1);
+  // Ломаная по точкам сферы: передняя часть сплошная, задняя пунктиром.
+  function splitPaths(pts) {
+    let front = "", back = "", onFront = null;
+    pts.forEach((q, i) => {
+      const f = i === 0 ? q.D >= 0 : (pts[i - 1].D + q.D) >= 0;
+      const cmd = (f === onFront && i > 0) ? "L" : "M";
+      if (cmd === "M" && i > 0) {
+        const prev = pts[i - 1];
+        if (f) front += `M${sx(prev)},${sy(prev)} L${sx(q)},${sy(q)}`;
+        else back += `M${sx(prev)},${sy(prev)} L${sx(q)},${sy(q)}`;
+      } else if (f) front += `${cmd}${sx(q)},${sy(q)} `;
+      else back += `${cmd}${sx(q)},${sy(q)} `;
+      onFront = f;
+    });
+    return { front, back };
+  }
+  const circle = (fn, m = 96) => Array.from({ length: m + 1 }, (_, i) => project(fn(2 * Math.PI * i / m)));
 
   function init(root) {
     if (root.dataset.ready === "1") return;
@@ -26,10 +60,14 @@
     const thetaInput = $('[data-control="theta"]');
     const totalInput = $('[data-control="total"]');
     const antiInput = $('[data-control="anti"]');
+    const posInput = $('[data-control="pos"]');
+    const playButton = $('[data-action="play"]');
     const edSvg = $('[data-plot="editor"]');
     const prSvg = $('[data-plot="probability"]');
+    const spSvg = $('[data-plot="sphere"]');
     const ed = plot(edSvg);
     const pr = plot(prSvg);
+    const sp = spSvg ? plot(spSvg) : null;
 
     const labels = {
       edY: label(ed.lab, { tex: "A=V/\\Delta", w: 100, h: 28, rotate: -90 }),
@@ -38,21 +76,30 @@
       prY: label(pr.lab, { tex: "P_{e\\to x}", w: 90, h: 28, rotate: -90 }),
       prX: label(pr.lab, { tex: "L/L_{\\rm vac}", w: 110, h: 28 })
     };
+    if (sp) {
+      const top = project([0, 0, 1]), bottom = project([0, 0, -1]);
+      labels.spE = label(sp.lab, { tex: "\\nu_e", w: 40, h: 26, cls: "is-red", x: Number(sx(top)), y: Number(sy(top)) - 16 });
+      labels.spX = label(sp.lab, { tex: "\\nu_x", w: 40, h: 26, x: Number(sx(bottom)), y: Number(sy(bottom)) + 16 });
+    }
 
     let layers = [{ A: 1.0, w: 3 }];
     let theta = rad(Number(thetaInput.value));
+    let last = null;
+    let animation = null;
 
     const total = () => layers.reduce((s, l) => s + l.w, 0);
     const sign = () => (antiInput.checked ? -1 : 1);
+    const pos = () => (posInput ? clamp(Number(posInput.value), 0, 1) : 1);
 
     function setTheta(deg) {
       thetaInput.value = String(deg);
       theta = rad(deg);
     }
 
+    // Состояние вдоль пути: вероятность, вектор Блоха и номер слоя в каждой точке.
     function curve() {
       const T = total();
-      const matter = [], vacuum = [];
+      const matter = [], vacuum = [], states = [];
       const s2 = Math.sin(2 * theta);
       let psi = [[1, 0], [0, 0]];
       let start = 0;
@@ -63,6 +110,7 @@
           const dx = l.w * i / n;
           const ps = apply(model.layer(theta, A, dx), psi);
           matter.push([start + dx, ps[1][0] ** 2 + ps[1][1] ** 2]);
+          states.push({ x: start + dx, r: bloch(ps), k });
         }
         psi = apply(model.layer(theta, A, l.w), psi);
         start += l.w;
@@ -71,7 +119,7 @@
         const x = T * i / 500;
         vacuum.push([x, s2 ** 2 * Math.sin(Math.PI * x) ** 2]);
       }
-      return { matter, vacuum, final: psi[1][0] ** 2 + psi[1][1] ** 2 };
+      return { T, matter, vacuum, states, final: psi[1][0] ** 2 + psi[1][1] ** 2 };
     }
 
     function ticksFor(T) {
@@ -90,7 +138,7 @@
       if (next === narrow) return false;
       narrow = next;
       edSvg.setAttribute("viewBox", next ? "0 0 720 300" : "0 0 1140 280");
-      prSvg.setAttribute("viewBox", next ? "0 0 720 340" : "0 0 1140 350");
+      prSvg.setAttribute("viewBox", next ? "0 0 720 340" : "0 0 740 350");
       return true;
     }
 
@@ -121,6 +169,7 @@
         html += `<path class="edge-grip" d="M${x - 7},${p.y(0) + 1} L${x + 7},${p.y(0) + 1} L${x},${p.y(0) + 13} Z"/>`;
         html += `<rect class="hit" data-kind="edge" data-i="${i}" x="${x - 9}" y="${p.top}" width="18" height="${p.y(0) - p.top + 16}"/>`;
       });
+      html += `<line class="probe" data-cursor x1="${p.x(T)}" y1="${p.top}" x2="${p.x(T)}" y2="${p.y(0)}"/>`;
       p.dyn.innerHTML = html;
       labels.edY.move(14, (p.top + p.h - p.bottom) / 2);
       labels.edX.move((p.left + p.w - p.right) / 2, p.h - 12);
@@ -128,6 +177,7 @@
 
       // Вероятность
       const c = curve();
+      last = c;
       p = pr;
       p.set({ left: 66, right: 18, top: 16, bottom: 52, xmin: 0, xmax: T, ymin: 0, ymax: 1 });
       html = p.frame(ticksFor(T), [0, 0.5, 1]);
@@ -138,19 +188,98 @@
       });
       html += `<path class="vacuum-line" d="${p.path(c.vacuum)}"/>`;
       html += `<path class="matter-line" d="${p.path(c.matter)}"/>`;
-      html += `<circle class="state-dot" cx="${p.x(T)}" cy="${p.y(c.final)}" r="6"/>`;
+      html += `<line class="probe" data-cursor x1="${p.x(T)}" y1="${p.top}" x2="${p.x(T)}" y2="${p.h - p.bottom}"/>`;
+      html += `<circle class="state-dot" data-cursor-dot cx="${p.x(T)}" cy="${p.y(c.final)}" r="6"/>`;
       p.dyn.innerHTML = html;
       labels.prY.move(14, (p.top + p.h - p.bottom) / 2);
       labels.prX.move((p.left + p.w - p.right) / 2, p.h - 12);
 
       const pmax = c.matter.reduce((m, q) => Math.max(m, q[1]), 0);
-      $('[data-val="final"]').textContent = fmt(c.final, 3);
       $('[data-val="max"]').textContent = fmt(pmax, 3);
       $('[data-val="n"]').textContent = String(layers.length);
       $('[data-val="L"]').textContent = fmt(T, 2);
       $('[data-out="theta"]').textContent = fmt(theta * 180 / Math.PI, 1);
       $('[data-out="total"]').textContent = fmt(T, 2);
       totalInput.value = String(clamp(T, Number(totalInput.min), Number(totalInput.max)));
+      renderCursor();
+    }
+
+    // Положение вдоль пути: отметки на графиках, число P и сфера состояний.
+    function renderCursor() {
+      if (!last) return;
+      const f = pos();
+      const x = f * last.T;
+      let index = last.states.findIndex((s) => s.x >= x - 1e-9);
+      if (index < 0) index = last.states.length - 1;
+      const state = last.states[index];
+      const P = last.matter[index][1];
+      const line = ed.dyn.querySelector("[data-cursor]");
+      if (line) {
+        line.setAttribute("x1", ed.x(x));
+        line.setAttribute("x2", ed.x(x));
+      }
+      const probe = pr.dyn.querySelector("[data-cursor]");
+      if (probe) {
+        probe.setAttribute("x1", pr.x(x));
+        probe.setAttribute("x2", pr.x(x));
+      }
+      const dot = pr.dyn.querySelector("[data-cursor-dot]");
+      if (dot) {
+        dot.setAttribute("cx", pr.x(x));
+        dot.setAttribute("cy", pr.y(P));
+      }
+      $('[data-val="final"]').textContent = fmt(P, 3);
+      const out = $('[data-out="pos"]');
+      if (out) out.textContent = fmt(f, 2);
+      if (sp) renderSphere(index, state, P);
+    }
+
+    function renderSphere(index, state, P) {
+      const R = VIEW.R, cx = VIEW.cx, cy = VIEW.cy;
+      let html = `<circle class="sphere-outline" cx="${cx}" cy="${cy}" r="${R}"/>`;
+      const eq = splitPaths(circle((t) => [Math.cos(t), Math.sin(t), 0]));
+      html += `<path class="great-circle equator back" d="${eq.back}"/><path class="great-circle equator" d="${eq.front}"/>`;
+      const fl = splitPaths(circle((t) => [Math.sin(t), 0, Math.cos(t)]));
+      html += `<path class="great-circle back" d="${fl.back}"/><path class="great-circle" d="${fl.front}"/>`;
+      // Оси слоёв: все различные A, если их немного, иначе только ось текущего слоя
+      const current = sign() * layers[state.k].A;
+      const values = [];
+      layers.forEach((l) => {
+        const A = sign() * l.A;
+        if (!values.some((v) => Math.abs(v - A) < 1e-9)) values.push(A);
+      });
+      const shown = values.length <= AXES_MAX ? values : [current];
+      shown.forEach((A, i) => {
+        const tm = model.mix(theta, A).thetaM;
+        const n = [Math.sin(2 * tm), 0, -Math.cos(2 * tm)];
+        const a = project(n), b = project(n.map((v) => -v));
+        const isCurrent = Math.abs(A - current) < 1e-9;
+        const cls = isCurrent ? "layer-axis current" : "layer-axis";
+        html += `<line class="${cls}" x1="${sx(b)}" y1="${sy(b)}" x2="${sx(a)}" y2="${sy(a)}"/>`;
+        // легенда осей в правом верхнем углу: оси сходятся у полюсов, и подписи на концах налезали бы друг на друга
+        const y = 18 + 17 * i;
+        html += `<line class="${cls}" x1="${VIEW.cx * 2 - 96}" y1="${y - 4}" x2="${VIEW.cx * 2 - 76}" y2="${y - 4}"/>`;
+        html += `<text class="axis-tag${isCurrent ? " current" : ""}" x="${VIEW.cx * 2 - 8}" y="${y}" text-anchor="end"><tspan font-style="italic">A</tspan> = ${fmt(A, 2)}</text>`;
+      });
+      // Полюсы: ν_e вверху, ν_x внизу
+      [[0, 0, 1], [0, 0, -1]].forEach((n) => {
+        const q = project(n);
+        html += `<circle class="pole" cx="${sx(q)}" cy="${sy(q)}" r="3"/>`;
+      });
+      // След вектора и сам вектор
+      const trail = splitPaths(last.states.slice(0, index + 1).map((s) => project(s.r)));
+      html += `<path class="trail back" d="${trail.back}"/><path class="trail" d="${trail.front}"/>`;
+      const tip = project(state.r);
+      const tx = Number(sx(tip)), ty = Number(sy(tip));
+      const dx = tx - cx, dy = ty - cy, len = Math.hypot(dx, dy) || 1;
+      const ux = dx / len, uy = dy / len;
+      const back = Math.min(12, len), half = 5.5;
+      html += `<line class="state-arrow" x1="${cx}" y1="${cy}" x2="${(tx - 0.6 * back * ux).toFixed(1)}" y2="${(ty - 0.6 * back * uy).toFixed(1)}"/>`;
+      html += `<polygon class="state-head" points="${tx},${ty} ${(tx - back * ux - half * uy).toFixed(1)},${(ty - back * uy + half * ux).toFixed(1)} ${(tx - back * ux + half * uy).toFixed(1)},${(ty - back * uy - half * ux).toFixed(1)}"/>`;
+      html += `<circle class="origin-dot" cx="${cx}" cy="${cy}" r="2.6"/>`;
+      html += `<text class="sphere-note" x="8" y="18">слой ${state.k + 1} из ${layers.length}</text>`;
+      html += `<text class="sphere-note" x="8" y="37"><tspan font-style="italic">P</tspan> = ${fmt(P, 3)}</text>`;
+      sp.dyn.innerHTML = html;
     }
 
     // Перетаскивание: верх столбца задаёт A, граница между слоями переносит длину из слоя в слой.
@@ -199,6 +328,7 @@
       layers.forEach((l) => { l.w *= k; });
       render();
     });
+    if (posInput) posInput.addEventListener("input", () => { stop(); renderCursor(); });
     $('[data-action="add"]').addEventListener("click", () => {
       if (layers.length >= N_MAX) return;
       let k = 0;
@@ -209,10 +339,39 @@
     });
     $('[data-action="remove"]').addEventListener("click", () => {
       if (layers.length < 2) return;
-      const last = layers.pop();
-      layers[layers.length - 1].w += last.w;
+      const removed = layers.pop();
+      layers[layers.length - 1].w += removed.w;
       render();
     });
+
+    // Проход по профилю: ползунок положения идёт от 0 до L, примерно секунда на слой.
+    const PLAY = "▶ пройти профиль", STOP = "■ остановить";
+    function stop() {
+      if (!animation) return;
+      cancelAnimationFrame(animation);
+      animation = null;
+      if (playButton) playButton.textContent = PLAY;
+    }
+    if (playButton && posInput) {
+      playButton.addEventListener("click", () => {
+        if (animation) {
+          stop();
+          return;
+        }
+        const duration = 1000 * clamp(0.9 * layers.length, 4, 12);
+        const start = performance.now();
+        playButton.textContent = STOP;
+        const frame = (now) => {
+          const f = clamp((now - start) / duration, 0, 1);
+          posInput.value = String(f);
+          renderCursor();
+          if (f < 1) animation = requestAnimationFrame(frame);
+          else stop();
+        };
+        posInput.value = "0";
+        animation = requestAnimationFrame(frame);
+      });
+    }
 
     const presets = {
       single() {
@@ -251,7 +410,9 @@
     };
     root.querySelectorAll("[data-preset]").forEach((b) => {
       b.addEventListener("click", () => {
+        stop();
         presets[b.dataset.preset]();
+        if (posInput) posInput.value = "1";
         render();
       });
     });

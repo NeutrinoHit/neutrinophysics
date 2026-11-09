@@ -19,6 +19,7 @@ format:
           <script src="assets/06_matter_oscillations/l12_tex.js"></script>
           <script src="assets/06_matter_oscillations/lecture12.js"></script>
           <script src="assets/06_matter_oscillations/lecture12_figures.js"></script>
+          <script src="assets/06_matter_oscillations/lecture13_figures.js"></script>
           <script src="assets/06_matter_oscillations/matter_layers.js"></script>
           <script src="assets/06_matter_oscillations/matter_oscillations.js"></script>
           <script src="assets/06_matter_oscillations/lecture13.js"></script>
@@ -39,6 +40,7 @@ format:
 resources:
   - assets/06_matter_oscillations/matter_oscillations.js
   - assets/06_matter_oscillations/lecture13.js
+  - assets/06_matter_oscillations/lecture13_figures.js
 
 execute:
   echo: false
@@ -48,49 +50,41 @@ execute:
 
 # Резонанс
 
-## Кто нашёл резонанс? {#msw-history}
+## Напоминание: слой постоянной плотности {#matter-recap}
 
-~~~{=html}
-<div class="l12-people">
-  <article class="l12-person">
-    <div class="portrait"><span class="monogram">ЛВ</span><img src="assets/06_matter_oscillations/people/wolfenstein.jpg" alt="Линкольн Вольфенштейн" loading="lazy" onerror="this.remove()"></div>
-    <h3>Линкольн Вольфенштейн</h3>
-    <div class="years">1923–2015 · Carnegie Mellon, США</div>
-    <ul>
-      <li>В 1978 году заметил: электроны вещества меняют фазу электронного нейтрино, и осцилляции в веществе устроены иначе, чем в вакууме.</li>
-      <li>Автор известной параметризации матрицы CKM.</li>
-      <li>52 года на одном факультете, до 2000 года. Премия Сакураи 1992.</li>
-    </ul>
-  </article>
-  <article class="l12-person">
-    <div class="portrait"><span class="monogram">СМ</span><img src="assets/06_matter_oscillations/people/mikheyev.jpg" alt="Станислав Михеев" loading="lazy" onerror="this.remove()"></div>
-    <h3>Станислав Михеев</h3>
-    <div class="years">1940–2011 · ИЯИ РАН</div>
-    <ul>
-      <li>МГУ (1965), затем ФИАН, с 1970 года Институт ядерных исследований.</li>
-      <li>Много лет работал на Баксанском подземном сцинтилляционном телескопе.</li>
-      <li>В 1985 году вместе со Смирновым нашёл резонансное усиление осцилляций в веществе.</li>
-    </ul>
-  </article>
-  <article class="l12-person">
-    <div class="portrait"><span class="monogram">АС</span><img src="assets/06_matter_oscillations/people/smirnov.jpg" alt="Алексей Смирнов" loading="lazy" onerror="this.remove()"></div>
-    <h3>Алексей Смирнов</h3>
-    <div class="years">род. 1951 · ИЯИ, Триест, Гейдельберг</div>
-    <ul>
-      <li>МГУ (1974), с 1977 года ИЯИ, с 1992 года ICTP в Триесте, с 2015 года Институт Макса Планка в Гейдельберге.</li>
-      <li>Описал прохождение нейтрино через среду с меняющейся плотностью. К этому мы придём в этой лекции.</li>
-      <li>Премия Сакураи 2008 вместе с Михеевым.</li>
-    </ul>
-  </article>
-</div>
-~~~
+В лекции 12 для $\nu_e$, вошедшего в однородный слой с $A=2EV/\Delta m^2$, получено
 
-::: {.nh-text tone="muted" size="sm"}
-Эффект назван MSW по первым буквам фамилий: Михеев, Смирнов, Вольфенштейн.
-Премию Понтекорво (ОИЯИ) за работы по эффекту получили все трое. Работа
-Вольфенштейна: [Phys. Rev. D **17**, 2369 (1978)](https://doi.org/10.1103/PhysRevD.17.2369).
-Работа Михеева и Смирнова: Ядерная физика **42**, 1441 (1985).
+$$
+\boxed{P_{e\to x}=\sin^22\theta_m\,\sin^2\!\left[\frac{\Delta m^2L}{4E}\,R\right]},
+\qquad
+\boxed{\sin^22\theta_m=\frac{\sin^22\theta}{R^2}},
+\qquad
+R=\sqrt{(\cos2\theta-A)^2+\sin^22\theta}.
+$$
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Высота максимумов** $\sin^22\theta_m$: доля $\nu_x$, до которой дорастает
+переход. В вакууме $\sin^22\theta$, в плотном веществе ($A\gg1$) стремится к нулю.
+
 :::
+::: {.column width="50%"}
+
+**Период** $L_m=L_{\rm vac}/R$: расщепление мод $\Delta_m=\Delta\cdot R$ задаёт,
+как быстро набегает фаза.
+
+:::
+::::
+
+Знаменатель $R^2$ минимален, а высота максимумов равна единице, когда
+
+$$
+\cos2\theta-A=0 .
+$$
+
+Это и есть резонанс: при любом вакуумном угле переход может стать полным.
+Посмотрим на это условие внимательнее.
 
 ## MSW-резонанс
 
@@ -198,6 +192,69 @@ $$
 перехода нужна ещё фаза $\Delta_mL/2=\pi/2$. Переход в плавно меняющейся
 плотности устроен иначе: к нему мы придём в этой лекции.
 :::
+
+## MSW-резонанс {#msw-history}
+
+:::::: {.panel-tabset .nh-story-tabs}
+
+### Кто открыл
+
+~~~{=html}
+<div class="l12-people">
+  <article class="l12-person">
+    <div class="portrait"><span class="monogram">ЛВ</span><img src="assets/06_matter_oscillations/people/wolfenstein.jpg" alt="Линкольн Вольфенштейн" loading="lazy" onerror="this.remove()"></div>
+    <h3>Линкольн Вольфенштейн</h3>
+    <div class="years">1923–2015 · Carnegie Mellon, США</div>
+    <ul>
+      <li>1978: когерентное рассеяние вперёд меняет фазу \(\nu_e\). Вывел уравнение эволюции, угол \(\theta_m\) и длину осцилляций в веществе.</li>
+      <li>Заметил усиление перехода при \(L_{\rm vac}\approx l_0\), но не обсуждал его и полюс в \(\tan2\theta_m\) оставил без внимания. О Солнце: «заметных осцилляций внутри Солнца нет».</li>
+      <li>Автор параметризации матрицы CKM. Премия Сакураи 1992.</li>
+    </ul>
+  </article>
+  <article class="l12-person">
+    <div class="portrait"><span class="monogram">СМ</span><img src="assets/06_matter_oscillations/people/mikheyev.jpg" alt="Станислав Михеев" loading="lazy" onerror="this.remove()"></div>
+    <h3>Станислав Михеев</h3>
+    <div class="years">1940–2011 · ИЯИ РАН</div>
+    <ul>
+      <li>Экспериментатор Баксанского телескопа: анализ атмосферных нейтрино, первые поиски осцилляций.</li>
+      <li>В 1984 году спросил Смирнова, верна ли статья Вольфенштейна и нужно ли учитывать вещество для атмосферных нейтрино.</li>
+      <li>Вместе со Смирновым нашёл резонанс: при \(A=\cos2\theta\) глубина осцилляций максимальна, ширина пика \(\sin2\theta\).</li>
+    </ul>
+  </article>
+  <article class="l12-person">
+    <div class="portrait"><span class="monogram">АС</span><img src="assets/06_matter_oscillations/people/smirnov.jpg" alt="Алексей Смирнов" loading="lazy" onerror="this.remove()"></div>
+    <h3>Алексей Смирнов</h3>
+    <div class="years">род. 1951 · ИЯИ, Триест, Гейдельберг</div>
+    <ul>
+      <li>Построил кривую \(\sin^22\theta_m(A)\) и увидел резонансную форму: «результат был поразительным».</li>
+      <li>С Михеевым: резонансное усиление в постоянной плотности и адиабатическое превращение в меняющейся. К нему мы придём в этой лекции.</li>
+      <li>ИЯИ, ICTP, Институт Макса Планка. Премия Сакураи 2008 вместе с Михеевым.</li>
+    </ul>
+  </article>
+</div>
+~~~
+
+### История
+
+::: {.history-tight}
+- **1978.** Л. Вольфенштейн, [Phys. Rev. D **17**, 2369](https://doi.org/10.1103/PhysRevD.17.2369):
+  когерентное рассеяние вперёд, уравнение эволюции, угол $\theta_m$ и длина осцилляций в веществе.
+  Усиление при $L_{\rm vac}\approx l_0$ попало в таблицу без обсуждения; о Солнце: «заметных осцилляций нет».
+- **1980.** V. Barger, K. Whisnant, S. Pakvasa, R. J. N. Phillips,
+  [Phys. Rev. D **22**, 2718](https://doi.org/10.1103/PhysRevD.22.2718): условие максимального
+  смешивания $A=\cos2\theta$, разный ответ для $\nu$ и $\bar\nu$. Слова «резонанс» в статье нет.
+- **1984.** С. Михеев спрашивает А. Смирнова, верна ли статья Вольфенштейна и важно ли вещество для
+  атмосферных нейтрино Баксана. Смирнов строит $\sin^22\theta_m(A)$ и видит резонансный пик шириной $\sin2\theta$.
+- **1985.** Михеев и Смирнов: резонансное усиление в постоянной плотности и адиабатическое превращение
+  в меняющейся. Phys. Lett. B отклоняет статью; она выходит в ЯФ **42**, 1441 и в
+  [Nuovo Cim. C **9**, 17 (1986)](https://doi.org/10.1007/BF02508049); теория превращения: ЖЭТФ **91**, 7 (1986).
+- **1986.** Морионд: А. Мессиа называет механизм «эффектом MSW», Х. Бете описывает его как пересечение
+  уровней, В. Хакстон и С. Парк считают перескок по Ландау–Зинеру.
+- Источник: воспоминания А. Ю. Смирнова, [arXiv:1901.11473](https://arxiv.org/abs/1901.11473).
+  Премию Понтекорво (ОИЯИ) за работы по эффекту получили все трое.
+:::
+
+::::::
 
 ## Режимы постоянной плотности {.lecture12-regimes}
 
@@ -360,117 +417,307 @@ $A\gg1$ и «антинейтрино»: переход подавлен, пер
 
 # Несколько слоёв
 
-## Кусочно-постоянный профиль
+## Кусочно-постоянный профиль {#piecewise-profile}
+
+:::::: {.panel-tabset .nh-story-tabs .l12-board}
+
+### Общий ответ
+
+::: {.l13-margin}
+[Из лекции 12](12_matter_constant_density.qmd#/layer-evolution-operator){.l13-margin-title}
+
+$$
+H_k=\frac{\Delta_{m,k}}{2}\,\mathbf n_k\boldsymbol\sigma,
+$$
+
+$$
+\mathbf n_k=(\sin2\theta_{m,k},\,0,\,-\cos2\theta_{m,k}),
+$$
+
+$$
+S_k=\cos\phi_k-i\sin\phi_k\,\mathbf n_k\boldsymbol\sigma,
+$$
+
+$\phi_k=\Delta_{m,k}L_k/2$, $\boldsymbol\sigma$ — матрицы Паули.
+:::
+
+- Внутри слоя $k$ плотность постоянна, и работает решение лекции 12.
+- На границе состояние непрерывно, поэтому операторы слоёв перемножаются:
+
+$$
+\boxed{S_{\rm total}=S_N\cdots S_2S_1}.
+$$
+
+- Первым действует первый слой, поэтому он стоит справа.
+
+~~~{=html}
+<div class="l13-fig l13-fig--text-width" data-l13-fig="steps"><figure><svg viewBox="0 0 1000 250" role="img" aria-label="Ступенчатый профиль плотности: слои с операторами эволюции от S_1 до S_N"></svg></figure></div>
+~~~
+
+### Порядок важен
+
+- При $A_1\ne A_2$ гамильтонианы слоёв не коммутируют:
+
+$$
+[H_1,H_2]\ne0
+\quad\Rightarrow\quad
+S_2S_1\ne S_1S_2 .
+$$
+
+- Поэтому слои нельзя заменить средней плотностью $\bar A$: усреднение теряет
+  фазы, набранные в каждом слое.
+- Пример из природы: нейтрино, пересекающее Землю через ядро, проходит
+  мантию, ядро и снова мантию.
+
+### Вопрос
+
+- Пусть ни один слой не близок к резонансу $A=\cos2\theta$.
+- Тогда в каждом слое переход мал: $P_{e\to x}\le\sin^22\theta_m\ll1$.
+- Может ли последовательность таких слоёв перевести $\nu_e$ в $\nu_x$ полностью?
+- Может, если подобрать длины слоёв. Это **параметрический резонанс**.
+
+::::::
+
+## Параметрическое усиление: задача {#parametric-setup}
+
+:::::: {.panel-tabset .nh-story-tabs .l12-board}
+
+### Постановка
+
+- $\theta=8^\circ$, резонанс при $A=\cos2\theta=0.96$. Чередуются две среды выше резонанса: $A_1=1.6$ и $A_2=4.0$.
+- Каждый слой длится половину своей длины осцилляций: $L_k=L_{m,k}/2$.
+
+~~~{=html}
+<div class="l13-fig" data-l13-fig="castle">
+  <figure>
+    <svg data-plot="profile" viewBox="0 0 1000 140" role="img" aria-label="Профиль: пять пар слоёв с потенциалами 1.6 и 4.0, оба выше резонанса"></svg>
+    <svg data-plot="probability" viewBox="0 0 1000 200" role="img" aria-label="Вероятность перехода вдоль пути для чередования слоёв, для каждой среды отдельно и для средней плотности"></svg>
+    <figcaption class="l13-keys"><span><span class="l13-key" style="--key: var(--matter-gold)"></span>чередование</span><span><span class="l13-key l13-key--dash" style="--key: var(--matter-cyan)"></span>только \(A_1\): \(P\le0.16\)</span><span><span class="l13-key l13-key--dash" style="--key: var(--matter-purple)"></span>только \(A_2\): \(P\le0.01\)</span><span><span class="l13-key l13-key--dash" style="--key: rgba(200,214,228,.75)"></span>средняя \(\bar A=2.05\): \(P\le0.06\)</span></figcaption>
+  </figure>
+</div>
+~~~
+
+### Почему полпериода
+
+- В однородном слое $P_{e\to x}=\sin^22\theta_m\,\sin^2\phi$, $\phi=\Delta_mL/2$.
+- При $\phi=\pi/2$, то есть $L=L_m/2$, вероятность в слое достигает максимума.
+- Слой длины $L_{m,k}/2$ обрывается ровно на этом максимуме. Следующий слой
+  начинает с самого выгодного для себя состояния.
+- Это частная настройка, а не общее решение для слоёв. Общее условие
+  параметрического резонанса (Ахмедов):
+
+$$
+\sin\phi_1\cos\phi_2\cos2\theta_{m1}+\cos\phi_1\sin\phi_2\cos2\theta_{m2}=0 .
+$$
+
+- Полупериодные слои, $\phi_1=\phi_2=\pi/2$, — его простейшее решение.
+  При других длинах повторение пар тоже раскачивает переход, но не до единицы.
+
+### На что похоже
+
+- **Качели.** Ребёнок приседает и выпрямляется дважды за период и раскачивает
+  качели без толчков извне. Малые изменения параметра накапливаются, если идут
+  в такт колебаниям: это параметрический резонанс в механике.
+- **Стопка полуволновых пластинок.** Полуволновая пластинка отражает
+  поляризацию относительно своей оси. $N$ пластинок с осями, чередующимися на
+  $\pm\rho$, поворачивают поляризацию на $90^\circ$ при $\rho=\pi/4N$: складной
+  фильтр Шольца (1953). Сравните с [пластинкой между поляризаторами](11_matter_refraction.qmd#/plate-experiment) в лекции 11.
+- **Спин в магнитном поле.** Состояние нейтрино прецессирует вокруг оси
+  $\mathbf n_k$, как спин вокруг поля. Если переключать ось в такт прецессии,
+  малые повороты складываются в переворот.
+
+### Где в природе
+
+- **Земля.** Нейтрино с надирным углом меньше $33^\circ$ проходят мантию
+  ($\rho\approx4.5$ г/см³), ядро ($\rho\approx11.5$ г/см³) и снова мантию:
+  полтора периода ступенчатого профиля.
+- **Атмосферные нейтрино через ядро.** Для перехода $\nu_\mu\to\nu_e$ через
+  $\theta_{13}$ при $E\approx3$–$6$ ГэВ условия выполняются почти точно. По этому
+  усилению ищут порядок масс, см. [лекцию 15](15_matter_three_flavors.qmd#/earth-gev).
+- **Солнечные нейтрино ночью**, пересекающие ядро Земли.
+- **В лаборатории** условия не создать: нужна слишком длинная база или слишком
+  плотное вещество.
+
+### История
+
+::: {.history-tight}
+- **1986.** В. К. Ермилова, В. А. Царёв, В. А. Чечин, Краткие сообщения по физике
+  ФИАН **5**, 26: раскачка осцилляций нейтрино в Земле.
+- **1987–1988.** Е. Х. Ахмедов, ЯФ **47**, 475: название «параметрический
+  резонанс» и точное решение для периодического ступенчатого профиля.
+- **1989.** П. Крастев, А. Смирнов, Phys. Lett. B **226**, 341: параметрические
+  эффекты в осцилляциях.
+- **1998.** Ц. Лю, А. Смирнов, Nucl. Phys. B **524**, 505: в Земле условия почти
+  выполнены для атмосферных нейтрино. С. Петков, [Phys. Lett. B **434**, 321](https://doi.org/10.1016/S0370-2693%2898%2900742-4):
+  то же для солнечных нейтрино через ядро.
+- **1999.** Е. Х. Ахмедов, [Nucl. Phys. B **538**, 25](https://doi.org/10.1016/S0550-3213%2898%2900723-8):
+  точное решение для Земли, атмосферные и солнечные нейтрино.
+- Обзор истории: Е. Х. Ахмедов, [hep-ph/9903302](https://arxiv.org/abs/hep-ph/9903302).
+:::
+
+::::::
+
+## Параметрическое усиление: решение {#parametric-solution}
 
 :::::: {.panel-tabset .nh-story-tabs .l12-board}
 
 ### Результат
 
-Для последовательности однородных слоёв пропагаторы перемножаются:
+::: {.l13-margin}
+[Из лекции 12](12_matter_constant_density.qmd#/layer-evolution-operator){.l13-margin-title}
 
 $$
-S_{\rm total}=S_N\cdots S_2S_1,
-\qquad
-S_k=U(\theta_{m,k})
-\begin{pmatrix}e^{+i\phi_k}&0\\0&e^{-i\phi_k}\end{pmatrix}
-U^T(\theta_{m,k}),
-\qquad
-\phi_k=\frac{\Delta_{m,k}L_k}{2}.
+S_k=\cos\phi_k-i\sin\phi_k\,\mathbf n_k\boldsymbol\sigma,
 $$
 
-Порядок слоёв важен: при $A_1\ne A_2$ гамильтонианы слоёв не коммутируют.
-Так считают прохождение нейтрино через мантию и ядро Земли.
-
-Пусть каждый слой длится полпериода своей осцилляции, $\phi_k=\pi/2$.
-Тогда $S_k=-i\,\mathbf n_k\boldsymbol\sigma$, и пара слоёв даёт поворот
-
 $$
-S_2S_1=-(\mathbf n_2\boldsymbol\sigma)(\mathbf n_1\boldsymbol\sigma)
-=-U(\beta),
-\qquad
-\beta=2(\theta_{m2}-\theta_{m1}).
+\mathbf n_k=(\sin2\theta_{m,k},\,0,\,-\cos2\theta_{m,k}).
 $$
 
-После $N$ пар слоёв
+Это $e^{-iH_kL_k}$ при $H_k=\tfrac12\Delta_{m,k}\,\mathbf n_k\boldsymbol\sigma$ и $(\mathbf n_k\boldsymbol\sigma)^2=1$.
+:::
+
+- Полупериодный слой, $\phi_k=\pi/2$:
+
+$$
+S_k=-i\,\mathbf n_k\boldsymbol\sigma .
+$$
+
+- Пара слоёв:
+
+$$
+S_2S_1=-U(\beta),\qquad \beta=2(\theta_{m2}-\theta_{m1}).
+$$
+
+- После $N$ пар:
 
 $$
 \boxed{P_{e\to x}=\sin^2\bigl[2N(\theta_{m2}-\theta_{m1})\bigr]}.
 $$
 
-### 1. Слой
+- В примере $\theta_{m1}=78.3^\circ$, $\theta_{m2}=87.4^\circ$, $\beta=18.2^\circ$;
+  при $N=5$ угол $N\beta=91^\circ$ и $P=1.00$.
 
-(i) Слой $k$:
+### 1. Слой — зеркало
 
-    $$
-    S_k=e^{-iH_kL_k}=U\operatorname{diag}(e^{+i\phi_k},e^{-i\phi_k})\,U^T.
-    $$
+~~~{=html}
+<div class="l13-fig l13-side-figure" data-l13-fig="mirror"><figure><svg viewBox="0 0 420 360" role="img" aria-label="Полупериодный слой отражает вектор состояния относительно оси nu_2m: компонента вдоль nu_1m меняет знак"></svg><figcaption>компонента вдоль \(\nu_{1m}\) меняет знак</figcaption></figure></div>
+~~~
 
-(ii) При $\phi_k=\pi/2$ диагональная матрица равна $\operatorname{diag}(i,-i)=i\sigma_z$. Перемножаем матрицы:
-
-     $$
-     U\sigma_zU^T=\begin{pmatrix}\cos2\theta_m&-\sin2\theta_m\\-\sin2\theta_m&-\cos2\theta_m\end{pmatrix}
-     =-\,\mathbf n\boldsymbol\sigma.
-     $$
-
-(iii) Поэтому
-
-      $$
-      S_k=-i\,\mathbf n_k\boldsymbol\sigma.
-      $$
-
-### 2. Пара слоёв
-
-(i) Произведение пары слоёв:
+(i) Вектор $\mathbf n_k$ — ось гамильтониана слоя в пространстве матриц Паули:
 
     $$
-    S_2S_1=-(\mathbf n_2\boldsymbol\sigma)(\mathbf n_1\boldsymbol\sigma).
+    \mathbf n_k\boldsymbol\sigma=
+    \begin{pmatrix}-\cos2\theta_{m,k}&\sin2\theta_{m,k}\\ \sin2\theta_{m,k}&\cos2\theta_{m,k}\end{pmatrix}.
     $$
 
-    Произведение двух матриц Паули:
+(ii) При $\phi_k=\pi/2$ из $S_k=\cos\phi_k-i\sin\phi_k\,\mathbf n_k\boldsymbol\sigma$ остаётся
+
+     $$
+     S_k=-i\,\mathbf n_k\boldsymbol\sigma .
+     $$
+
+(iii) Собственные векторы $\mathbf n_k\boldsymbol\sigma$: $\nu_{2m}$ с числом $+1$ и $\nu_{1m}$ с числом $-1$.
+
+(iv) Значит, полупериодный слой зеркально отражает вектор $(\psi_e,\psi_x)$
+     относительно оси $\nu_{2m}$ этого слоя: компонента $\nu_{1m}$ меняет знак.
+     Множитель $-i$ лишь общая фаза.
+
+### 2. Пара — поворот
+
+~~~{=html}
+<div class="l13-fig l13-side-figure" data-l13-fig="mirrors"><figure><svg viewBox="0 0 420 360" role="img" aria-label="Два отражения относительно осей, разошедшихся на угол альфа, дают поворот на два альфа"></svg><figcaption>углы условные</figcaption></figure></div>
+~~~
+
+(i) Пара слоёв — два отражения подряд:
 
     $$
-    (\mathbf a\boldsymbol\sigma)(\mathbf b\boldsymbol\sigma)=\mathbf a\mathbf b+i\,(\mathbf a\times\mathbf b)\boldsymbol\sigma.
+    S_2S_1=(-i)^2(\mathbf n_2\boldsymbol\sigma)(\mathbf n_1\boldsymbol\sigma)
+    =-(\mathbf n_2\boldsymbol\sigma)(\mathbf n_1\boldsymbol\sigma).
     $$
 
-(ii) Векторы
+(ii) Два отражения относительно прямых с углом $\alpha$ между ними дают поворот на $2\alpha$.
 
-     $$
-     \mathbf n_k=(\sin2\theta_{mk},\ 0,\ -\cos2\theta_{mk})
-     $$
-
-     лежат в плоскости $xz$, векторное произведение направлено по $y$. С $\beta=2(\theta_{m2}-\theta_{m1})$:
-
-     $$
-     \mathbf n_2\mathbf n_1=\cos\beta,\qquad(\mathbf n_2\times\mathbf n_1)_y=\sin\beta.
-     $$
-
-(iii) Тогда
+(iii) Оси $\nu_{2m}$ двух слоёв расходятся на $\alpha=\theta_{m2}-\theta_{m1}$, поэтому пара поворачивает состояние на
 
       $$
-      (\mathbf n_2\boldsymbol\sigma)(\mathbf n_1\boldsymbol\sigma)=\cos\beta+i\sin\beta\,\sigma_y=U(\beta),
+      \beta=2(\theta_{m2}-\theta_{m1}).
       $$
 
-      и
+### 3. Алгебра
+
+(i) Произведение двух матриц Паули:
+
+    $$
+    (\mathbf a\boldsymbol\sigma)(\mathbf b\boldsymbol\sigma)=\mathbf a\mathbf b+i\,(\mathbf a\times\mathbf b)\boldsymbol\sigma .
+    $$
+
+(ii) Оба $\mathbf n_k$ лежат в плоскости $xz$, а угол между ними $2(\theta_{m2}-\theta_{m1})=\beta$,
+     вдвое больше угла между осями $\nu_{2m}$:
+
+     $$
+     \mathbf n_2\mathbf n_1=\cos\beta,
+     \qquad
+     \mathbf n_2\times\mathbf n_1=(0,\ \sin\beta,\ 0).
+     $$
+
+(iii) С $i\sigma_y=\begin{pmatrix}0&1\\-1&0\end{pmatrix}$:
 
       $$
-      S_2S_1=-\begin{pmatrix}\cos\beta&\sin\beta\\-\sin\beta&\cos\beta\end{pmatrix}.
+      (\mathbf n_2\boldsymbol\sigma)(\mathbf n_1\boldsymbol\sigma)=\cos\beta+i\sin\beta\,\sigma_y
+      =\begin{pmatrix}\cos\beta&\sin\beta\\-\sin\beta&\cos\beta\end{pmatrix}=U(\beta).
       $$
 
-### 3. N пар
+### 4. N пар
 
-(i) Повороты складываются, $U(\beta)^N=U(N\beta)$, и
+(i) Повороты на один и тот же угол складываются:
 
     $$
     S_{\rm total}=(S_2S_1)^N=(-1)^N\,U(N\beta).
     $$
 
-(ii) Начальное $\nu_e$ — вектор $(1,0)^T$, амплитуда $\nu_x$ — элемент $(2,1)$, равный $\mp\sin N\beta$:
+(ii) Начальное $\nu_e=(1,0)^T$ переходит в $(-1)^N(\cos N\beta,\ -\sin N\beta)^T$:
 
      $$
-     P_{e\to x}=\sin^2\bigl[2N(\theta_{m2}-\theta_{m1})\bigr].
+     P_{e\to x}=\sin^2N\beta=\sin^2\bigl[2N(\theta_{m2}-\theta_{m1})\bigr].
      $$
 
-Разность углов накапливается от пары к паре. Это параметрическое усиление.
+(iii) Каждая пара добавляет угол $\beta$. Полный переход при $N\beta=90^\circ$.
+
+### Чему удивиться
+
+- Ни один слой не в резонансе, смешивание в каждом мало, а переход полный.
+- Средняя плотность даёт $P\le0.06$, чередование даёт $P=1$: важна не
+  плотность, а фазы.
+- MSW-резонанс усиливает **амплитуду** осцилляций, параметрический подстраивает
+  **фазу**: каждая полуволна вероятности ложится на предыдущую.
+- Порядок внутри пары на ответ не влияет: $S_1S_2=-U(-\beta)$ даёт ту же
+  вероятность. Важны длины слоёв.
+- Та же математика описывает стопку полуволновых пластинок в оптике.
+
+### Сфера Блоха
+
+~~~{=html}
+<div class="l13-fig l13-side-figure" data-l13-fig="bloch"><figure><svg viewBox="0 0 420 380" role="img" aria-label="Сфера Блоха: полупериодный слой поворачивает вектор r на пол-оборота вокруг оси n_k"></svg><figcaption>полупериодный слой: пол-оборота вокруг \(\mathbf n_k\)</figcaption></figure></div>
+~~~
+
+- Состояние $\psi=(\psi_e,\psi_x)$ без общей фазы — точка на единичной
+  сфере. Её радиус-вектор — вектор Блоха:
+
+$$
+\mathbf r=\psi^\dagger\boldsymbol\sigma\psi,\qquad
+r_z=|\psi_e|^2-|\psi_x|^2 .
+$$
+
+- Северный полюс — $\nu_e$, южный — $\nu_x$:
+  $P_{e\to x}=\tfrac12(1-r_z)$.
+- Слой $S_k$ поворачивает $\mathbf r$ вокруг оси $\mathbf n_k$ на угол
+  $2\phi_k$. Полупериодный слой — пол-оборота.
+- Углы на сфере вдвое больше, чем в плоскости $(\nu_e,\nu_x)$: от
+  направления на $\nu_x$ ось $\mathbf n_k$ отклонена на $2\theta_{m,k}$,
+  зеркало $\nu_{2m}$ — на $\theta_{m,k}$.
+- Это не спин: $\mathbf r$ живёт в пространстве ароматов. От спина взята
+  только алгебра матриц Паули.
 
 ::::::
 
@@ -478,24 +725,9 @@ $$
 
 {{< include assets/06_matter_oscillations/_matter_layers_lab.qmd >}}
 
-::: {.nh-text tone="muted" size="sm"}
-Тяните верх слоя вверх и вниз, границы вправо и влево. Профиль «параметрическое
-усиление» повторяет фильм на следующем слайде.
-[Открыть апплет отдельно](../applets/matter-layers.html).
-:::
-
-## Параметрическое усиление {#parametric-layers}
-
-{{< nh-video msw-parametric variant="film-layers" class="slide-video media-width-full" style="--media-width: 96%; --media-max-height: 700px;" data-autoplay=true autoplay=true loop=true muted=true playsinline=true controls=true preload="metadata" aria-label="Чередование двух слоёв вещества переводит электронное нейтрино в мюонное" >}}
-
-::: {.nh-text tone="muted" size="sm"}
-$\theta=8^\circ$, $A_1=1.6$, $A_2=4.0$, обе среды выше резонанса. По отдельности
-они дают $P_{e\to x}\le0.16$ и $P_{e\to x}\le0.01$, среда средней плотности
-$P_{e\to x}\le0.06$. Полупериодные слои отражают состояние относительно своих
-осей $\nu_{2m}$, и за пять пар слоёв $\nu_e$ полностью переходит в $\nu_x$.
-Параметрическое усиление в Земле: E.\ Kh.\ Akhmedov,
-[Nucl. Phys. B **538**, 25 (1999)](https://doi.org/10.1016/S0550-3213%2898%2900723-8);
-S.\ T.\ Petcov, [Phys. Lett. B **434**, 321 (1998)](https://doi.org/10.1016/S0370-2693%2898%2900742-4).
+::: {.nh-text tone="muted"}
+- «Пройти профиль»: каждый слой даёт пол-оборота вектора Блоха $\mathbf r$ вокруг оси $\mathbf n_k$. Сдвиньте одну границу, и рост остановится.
+- «Мантия, ядро, мантия»: полтора периода, как у нейтрино через ядро Земли. [Апплет отдельно](../applets/matter-layers.html).
 :::
 
 # Мгновенный базис
@@ -658,7 +890,8 @@ F=1-\tan^2\theta .
 $$
 
 При $\gamma=0.5$ и $\sin^2\theta_{12}=0.3088$ Ландау–Зинер даёт $P_c=0.46$, формула
-Петкова $0.53$. В фильме ниже профиль начинается при $A_0=6$, и $P_c=0.55$.
+Петкова $0.53$. В лаборатории ниже профиль гладкий, а не экспоненциальный:
+перескок виден по $P_{2m}<1$ на выходе и по стрелке вдоль $\nu_{1m}$.
 
 В Солнце $N_e\propto e^{-r/r_0}$, $r_0\simeq R_\odot/10.5$. При $E=10$ МэВ и
 $\Delta m^2_{21}=7.537\times10^{-5}\ {\rm эВ^2}$
@@ -732,9 +965,15 @@ $$
 $\theta_m^0\simeq75^\circ$. Примесь $\nu_{1m}$ с весом $\cos^2\theta_m^0\simeq0.06$
 даёт $P_{ee}=\sin^2\theta+\cos2\theta\cos^2\theta_m^0\simeq0.33$.
 
-## Поворот мгновенного базиса
+## Поворот мгновенного базиса {.matter-lab-slide}
 
-{{< nh-video msw-rotating-basis variant="film-ru" class="slide-video media-width-full" style="--media-width: 96%; --media-max-height: 640px;" data-autoplay=true autoplay=true loop=true muted=true playsinline=true controls=true preload="metadata" aria-label="Мгновенный базис поворачивается при выходе из Солнца, состояние следует за модой ν2m; при быстром профиле появляется перескок" >}}
+{{< include assets/06_matter_oscillations/matter_adiabatic_lab.qmd >}}
+
+::: {.nh-text tone="muted" size="sm"}
+- «адиабатично» ($\gamma\gg1$): стрелка остаётся на оси $\nu_{2m}$, а сама ось поворачивается от $\nu_e$ к $\nu_2$; $P_{2m}\simeq1$ на всём пути, $P_2$ растёт до 1.
+- «быстро» ($\gamma\lesssim1$, $\eta_{\max}\sim1$): базис поворачивается быстрее, чем успевает состояние; появляется стрелка вдоль $\nu_{1m}$, и $P_{2m}$ на выходе меньше единицы.
+- «малый $\theta$»: зазор $\Delta_{m,\min}=\Delta\sin2\theta$ сужается, и для следования нужен более длинный профиль.
+:::
 
 ## Вероятность выживания $\nu_e$
 
@@ -806,26 +1045,15 @@ $$
 Если плотность меняется со временем, $\partial H/\partial t\ne0$, и энергию
 нейтрино может менять внешний источник. Сохраняется энергия всей системы.
 
-# Интерактив
-
-## Медленный и быстрый профиль {.matter-lab-slide}
-
-{{< include assets/06_matter_oscillations/matter_adiabatic_lab.qmd >}}
-
-::: {.nh-text tone="muted" size="sm"}
-- «адиабатично»: $P_{2m}\simeq1$ на всём пути, а $P_2$ растёт до 1. Переходов нет, поворачивается сама мода.
-- «быстро»: при $\eta_{\max}\sim1$ состояние частично перескакивает на нижнюю ветвь, и $P_{2m}$ на выходе меньше единицы.
-- «малый $\theta$»: зазор $\Delta_{m,\min}=\Delta\sin2\theta$ сужается, и для следования нужен более длинный профиль.
-:::
-
 # Итоги
 
 ## Итоги
 
 - При $A=\cos2\theta$ смешивание в веществе максимально. Резонанс есть, если
   $V\Delta m^2\cos2\theta>0$.
-- Слоистая среда описывается произведением матриц слоёв. Чередование
-  слоёв может дать параметрическое усиление.
+- Слоистая среда описывается произведением операторов слоёв. Полупериодные
+  слои двух плотностей дают параметрический резонанс,
+  $P_{e\to x}=\sin^2[2N(\theta_{m2}-\theta_{m1})]$, без единого резонансного слоя.
 - Уравнение в мгновенном базисе связывает моды только через $\theta_m'$.
 - При $|\theta_m'|\ll\Delta_m$, или $\gamma\gg1$ на резонансе, занятая мода
   сохраняется, а её состав поворачивается вместе с $\theta_m(x)$.
@@ -842,3 +1070,36 @@ $$
 
 [Назад: постоянная плотность](12_matter_constant_density.qmd) ·
 [Далее: интерференция и маятники](14_matter_interference_pendulums.qmd)
+
+<!-- exercises:begin (generated by scripts/sync_exercise_slides.py) -->
+
+## Задачи к лекции {#lecture-exercises}
+
+::: {.nh-text size="md"}
+:::: {.columns}
+::: {.column width="50%"}
+
+- **13.1.** Плотность солнечного резонанса
+- **13.2.** Резонанс — не полная конверсия
+- **13.3.** Два слоя
+- **13.4.** Вращение базиса
+- **13.5.** Экспоненциальный профиль
+
+:::
+::: {.column width="50%"}
+
+- **13.6.** Два солнечных предела
+- **13.7.** Сходимость послойного решения
+- **13.8.** Пространственный и временной профиль
+- **13.9.** Условие параметрического резонанса
+- **13.10.** Резонансная кривая и избегаемое пересечение
+
+:::
+::::
+:::
+
+::: {.nh-box tone="question"}
+[Все задачи к лекции 13 →](../exercises/13_matter_adiabatic_msw_exercises.qmd) · [Все задачи курса](../exercises/index.qmd)
+:::
+
+<!-- exercises:end -->

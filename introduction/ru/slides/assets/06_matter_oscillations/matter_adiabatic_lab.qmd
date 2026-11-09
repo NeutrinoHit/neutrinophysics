@@ -22,6 +22,7 @@
   </div>
   <div class="matter-lab-readouts">
     <div><span>\(\eta_{\max}\)</span><b data-val="eta">—</b></div>
+    <div><span>\(\gamma\) на резонансе</span><b data-val="gamma">—</b></div>
     <div><span>\(\min\Delta_m/\Delta\)</span><b data-val="gap">—</b></div>
     <div><span>\(P_{2m}\) на выходе</span><b data-val="P2m">—</b></div>
     <div><span>\(P_{2}\) на выходе</span><b data-val="P2">—</b></div>
@@ -29,6 +30,12 @@
   </div>
   <div class="adiabatic-progress"><i data-progress></i></div>
   <div class="matter-lab-plots">
+    <figure class="plane-figure">
+      <svg data-plot="plane" viewBox="0 0 420 420" role="img" aria-label="Плоскость флэйворов: вакуумные и мгновенные оси, амплитуды мод"></svg>
+      <figcaption>стрелки вдоль <span class="l13-dot" style="--key: var(--matter-purple)"></span>\(\nu_{1m}\), <span class="l13-dot" style="--key: var(--matter-gold)"></span>\(\nu_{2m}\): амплитуды \(|b_1|,|b_2|\);
+        <span class="l13-key l13-key--dash" style="--key: var(--matter-blue)"></span>вакуумные \(\nu_1,\nu_2\);
+        <span class="l13-dot" style="--key: var(--matter-red)"></span>\(|\psi_e|\)</figcaption>
+    </figure>
     <figure>
       <svg data-plot="profile" viewBox="0 0 610 285" role="img" aria-label="Профиль плотности и вероятности в трёх базисах"></svg>
       <figcaption><span class="l13-key" style="--key: var(--matter-red)"></span>\(P_e\)
@@ -38,7 +45,7 @@
         <span class="l13-key l13-key--wide" style="--key: rgba(200,214,228,.45)"></span>\(A/A_0\)</figcaption>
     </figure>
     <figure>
-      <svg data-plot="branches" viewBox="0 0 440 285" role="img" aria-label="Заселённость мгновенных ветвей"></svg>
+      <svg data-plot="branches" viewBox="0 0 610 285" role="img" aria-label="Заселённость мгновенных ветвей"></svg>
       <figcaption>уровни \(\pm\Delta_m/2\):
         <span class="l13-dot" style="--key: var(--matter-gold)"></span>\(P_{2m}\)
         <span class="l13-dot" style="--key: var(--matter-purple)"></span>\(P_{1m}\)</figcaption>
