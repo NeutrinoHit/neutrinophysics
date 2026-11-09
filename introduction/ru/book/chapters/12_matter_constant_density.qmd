@@ -352,6 +352,19 @@ P_{e\to x}=
 \right]}.
 $$ {#eq-matter-constant-probability-a}
 
+Период осцилляций в веществе равен
+
+$$
+\boxed{
+L_m=\frac{2\pi}{\Delta_m}=\frac{L_{\mathrm{vac}}}{R}},
+\qquad
+L_{\mathrm{vac}}=\frac{4\pi E}{\Delta m^2}.
+$$ {#eq-matter-oscillation-length}
+
+Высоту огибающей и период задаёт одно и то же число $R$. Когда оно
+минимально, огибающая поднимается до единицы: это резонанс, с которого
+начинается глава [-@sec-matter-adiabatic-msw].
+
 ### Пропагатор слоя
 
 Для произвольного входного состояния удобнее знать всю матрицу эволюции.
@@ -377,99 +390,9 @@ S_f(L)=
 \end{pmatrix}}.
 $$ {#eq-matter-layer-propagator}
 
-Матрица унитарна и имеет определитель один после удаления общей фазы. Для
-нескольких слоёв
-
-$$
-S_{\mathrm{total}}=S_N S_{N-1}\cdots S_2S_1.
-$$ {#eq-matter-multilayer-propagator}
-
-Порядок множителей существен: гамильтонианы слоёв разной плотности обычно не
-коммутируют.
-
-## Резонанс и избегаемое пересечение
-
-Смешивание в веществе максимально, когда диагональная разность в уравнении
-[-@eq-matter-flavor-hamiltonian] обращается в ноль:
-
-$$
-\boxed{
-V_{\mathrm{res}}=\Delta\cos2\theta,
-\qquad
-A_{\mathrm{res}}=\cos2\theta}.
-$$ {#eq-matter-resonance-condition}
-
-Тогда $\theta_m=45^\circ$, но расщепление не исчезает:
-
-$$
-\boxed{\Delta_{m,\min}=\Delta\sin2\theta}.
-$$ {#eq-matter-minimum-gap}
-
-Если бы смешивания не было, уровни пересеклись бы. Ненулевой внедиагональный
-элемент оставляет минимальный зазор — избегаемое пересечение.
-
-Резонансная электронная плотность равна
-
-$$
-\boxed{
-N_{e,\mathrm{res}}=
-\frac{\Delta m^2\cos2\theta}{2\sqrt2\,G_FE}}.
-$$ {#eq-matter-resonance-density}
-
-Физическая плотность положительна, поэтому резонанс существует лишь при
-
-$$
-V\,\Delta m^2\cos2\theta>0.
-$$ {#eq-matter-resonance-sign}
-
-Для солнечной пары $\Delta m^2_{21}>0$ и $\theta_{12}<45^\circ$ резонанс
-возникает у нейтрино, но не у антинейтрино в обычном веществе.
-
-Резонанс делает огибающую вероятности единичной. Он не гарантирует полной
-конверсии в однородном слое: нужна также фаза
-
-$$
-\frac{\Delta_mL}{2}=\frac{\pi}{2},\frac{3\pi}{2},\ldots
-$$ {#eq-matter-full-conversion-phase}
-
-Период осцилляций в веществе равен
-
-$$
-\boxed{
-L_m=\frac{2\pi}{\Delta_m}=\frac{L_{\mathrm{vac}}}{R}},
-\qquad
-L_{\mathrm{vac}}=\frac{4\pi E}{\Delta m^2}.
-$$ {#eq-matter-oscillation-length}
-
-На резонансе при малом вакуумном угле амплитуда велика, но период длинен:
-$L_m=L_{\mathrm{vac}}/\sin2\theta$.
-
-::: {#interactive-matter-constant .interactive title="Осцилляции при постоянной плотности" embed="../../applets/matter-constant.html" poster="../assets/chapters/06_matter_oscillations/msw_constant_matter.png" url="https://neutrinohit.github.io/qr/neutrino-physics/0054/" qr="../assets/chapters/06_matter_oscillations/qr/matter_constant.png" repo="https://github.com/NeutrinoHit/neutrinophysics/blob/main/introduction/ru/applets/matter-constant.qmd" repo-label="код апплета"}
-Сравните вакуум, резонанс и область высокой плотности. Вещество меняет две
-разные величины: высоту огибающей $\sin^22\theta_m$ и длину осцилляций
-$L_m$. Далеко за резонансом электронный флэйвор становится почти собственной
-модой, поэтому переход подавляется.
-:::
-
-### Периодическая плотность
-
-Два слоя могут по отдельности давать малую вероятность перехода, но их
-последовательность — большую. Причина не в средней плотности, а в порядке
-некоммутирующих матриц:
-
-$$
-[H(V_1),H(V_2)]\ne0.
-$$ {#eq-matter-layer-noncommutativity}
-
-При подходящих фазах повторы $S_2S_1$ накапливают амплитуду. Это называется
-параметрическим усилением.
-
-::: {#anim-matter-parametric .animation title="Параметрическое усиление в чередующихся слоях" src="nh:msw-parametric/film-layers" poster="../assets/chapters/06_matter_oscillations/msw_parametric_layers.png" url="https://neutrinohit.github.io/qr/neutrino-physics/0018/" qr="../assets/chapters/06_matter_oscillations/qr/msw_parametric.png"}
-Усреднение плотности теряет относительные фазы слоёв. Две среды выше резонанса
-($\theta=8^\circ$, $A_1=1{,}6$, $A_2=4{,}0$) по отдельности дают
-$P_{e\to x}\le0{,}16$ и $P_{e\to x}\le0{,}01$, а их чередование полупериодными
-слоями за пять пар полностью переводит $\nu_e$ в $\nu_x$.
-:::
+Матрица унитарна и имеет определитель один после удаления общей фазы.
+Произведения таких матриц для нескольких слоёв разобраны в
+разделе [-@sec-msw-layers].
 
 ## Итоги главы
 
@@ -478,10 +401,10 @@ $P_{e\to x}\le0{,}16$ и $P_{e\to x}\le0{,}01$, а их чередование �
 - Общий нейтральный ток активных флэйворов меняет только общую фазу.
 - В однородном веществе собственные волны задаются углом $\theta_m$ и
   расщеплением $\Delta_m$.
-- Резонанс означает максимальное смешивание, но полная конверсия в одном слое
-  требует ещё и подходящей фазы.
-- Произвольный профиль можно приближать произведением точных пропагаторов
-  тонких слоёв.
+- Высоту огибающей $\sin^22\theta_m=\sin^22\theta/R^2$ и период
+  $L_m=L_{\mathrm{vac}}/R$ задаёт одно число $R$.
+- Слой действует на любое входное состояние унитарной матрицей $S_f(L)$;
+  из таких матриц в следующей главе собираются профили из многих слоёв.
 
 ## Задачи
 
@@ -493,13 +416,9 @@ $P_{e\to x}\le0{,}16$ и $P_{e\to x}\le0{,}01$, а их чередование �
 1. L. Wolfenstein. Neutrino oscillations in matter. *Physical Review D*
    **17**, 2369–2374 (1978).
    [doi:10.1103/PhysRevD.17.2369](https://doi.org/10.1103/PhysRevD.17.2369).
-2. S. P. Mikheyev, A. Yu. Smirnov. Resonant amplification of neutrino
-   oscillations in matter and solar-neutrino spectroscopy. *Il Nuovo Cimento
-   C* **9**, 17–26 (1986).
-   [doi:10.1007/BF02508049](https://doi.org/10.1007/BF02508049).
-3. C. Giunti, C. W. Kim. *Fundamentals of Neutrino Physics and
+2. C. Giunti, C. W. Kim. *Fundamentals of Neutrino Physics and
    Astrophysics*. Oxford University Press, 2007.
-4. M. Blennow, A. Yu. Smirnov. Neutrino propagation in matter. *Advances in
+3. M. Blennow, A. Yu. Smirnov. Neutrino propagation in matter. *Advances in
    High Energy Physics* **2013**, 972485 (2013).
    [doi:10.1155/2013/972485](https://doi.org/10.1155/2013/972485).
 :::

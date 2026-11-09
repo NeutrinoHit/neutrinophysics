@@ -120,15 +120,6 @@
    "status": "published"
   },
   {
-   "id": "msw-parametric",
-   "variant": "film-layers",
-   "version": 1,
-   "url": "/media-neutrino/msw-parametric/film-layers-v1.mp4",
-   "sha256": "fd6abb8dffc664f118d15f47a52f6f4f11f2b3def7190ab6d802fdb4fd1631da",
-   "bytes": 1994591,
-   "status": "published"
-  },
-  {
    "id": "nasa-fermi-acceleration",
    "variant": "film",
    "version": 1,

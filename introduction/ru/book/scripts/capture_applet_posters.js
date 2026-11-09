@@ -74,6 +74,14 @@ const POSTERS = [
     }
   },
   {
+    applet: "matter-layers",
+    poster: "06_matter_oscillations/matter_layers.jpg",
+    width: 1600,
+    fontSize: 34,
+    selector: ".applet-stage",
+    wait: 1.5
+  },
+  {
     applet: "radiation-belts",
     poster: "06_mac_e_spectrometer/radiation_belts.jpg",
     width: 1400,
