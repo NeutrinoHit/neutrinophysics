@@ -211,6 +211,180 @@ $$ {#eq-ex05-015}
    $\hbar=1.055\cdot10^{-34}~\mathrm{J\,s}$. What does a large value of this
    ratio tell us about the applicability of the classical description of the orbit?
 
+## Problem 5.6. Relativistic transverse energy
+
+The formula $E_\parallel=E\cos^2\alpha$ from Problem 5.2 is non-relativistic. Let us
+check how accurate it is for an electron near the endpoint of the tritium spectrum, where
+the neutrino mass is sought at the electronvolt level.
+
+An electron with kinetic energy $E$ is emitted at an angle $\alpha$ to the $z$ axis
+and moves in an electrostatic potential $\Phi(z)$ that depends only on
+$z$. At the starting point $\Phi=0$; at the top of the barrier the potential energy of the
+electron equals $e|U|$.
+
+1. Show that $p_\perp$ is conserved and that the total energy satisfies
+
+   $$
+   \sqrt{p^2c^2+m_e^2c^4}+q\Phi(z)=\mathrm{const}.
+   $$ {#eq-ex05-022}
+
+2. The electron passes the barrier if $p_\parallel^2>0$ at its top. Show
+   that the exact transmission condition has the form
+
+   $$
+   E-e|U|>E_\perp,
+   \qquad
+   E_\perp\equiv\sqrt{p_\perp^2c^2+m_e^2c^4}-m_ec^2,
+   \qquad
+   p_\perp c=\sin\alpha\sqrt{E^2+2Em_ec^2}.
+   $$ {#eq-ex05-023}
+
+3. Expand $E_\perp$ to second order in $E/(m_ec^2)$ and obtain
+
+   $$
+   E_\perp\simeq E\sin^2\alpha
+   \left[1+\frac{E}{2m_ec^2}\cos^2\alpha\right].
+   $$ {#eq-ex05-024}
+
+   Why does the correction vanish at $\alpha=0$ and at $\alpha=90^\circ$?
+4. For $E=18.6~\mathrm{keV}$ and $m_ec^2=511~\mathrm{keV}$ compute the exact
+   $E_\perp$ and the non-relativistic $E\sin^2\alpha$ at $\alpha=10^\circ$,
+   $30^\circ$ and $60^\circ$. Express the difference in electronvolts.
+5. Recompute exactly $\alpha_{\max}$ and $f_\Omega$ from Problem 5.2 for
+   $e|U|=18.0~\mathrm{keV}$. Is the difference in the angular acceptance noticeable?
+
+State the main physical conclusion: what accuracy can be expected from the
+non-relativistic split $E=E_\parallel+E_\perp$, and why does the analysis of the
+endpoint of the spectrum require relativistic kinematics?
+
+## Problem 5.7. Period from area: a box and a bouncing ball
+
+For one periodic degree of freedom
+
+$$
+J(E)=\frac{1}{2\pi}\oint p\,dq,
+\qquad
+T=2\pi\frac{dJ}{dE}.
+$$ {#eq-ex05-025}
+
+Let us test this relation on two systems whose phase orbits are not
+ellipses.
+
+1. A particle of mass $m$ moves between elastic walls at $q=0$ and $q=a$.
+   Draw the phase orbit at energy $E$, find $J(E)$ and obtain the period
+   from it. Compare with $2a/v$.
+2. A ball of mass $m$ bounces elastically above a floor:
+
+   $$
+   H=\frac{p^2}{2m}+mgq,
+   \qquad
+   q\ge0.
+   $$ {#eq-ex05-026}
+
+   Draw the phase orbit and show that
+
+   $$
+   J(E)=\frac{2\sqrt2}{3\pi}\,\frac{E^{3/2}}{g\sqrt m}.
+   $$ {#eq-ex05-027}
+
+   Obtain from $J(E)$ the period $T=2v_0/g$, where $v_0$ is the speed at the floor.
+   Check the answer with elementary kinematics.
+3. For the box, the oscillator and the ball $J\propto E^k$. Find $k$ in each case
+   and show that $T\propto E^{k-1}$. Why does the period of the oscillator not depend
+   on the energy, and why is this an exception?
+4. A tennis ball of mass $m=58~\mathrm{g}$ bounces to a height
+   $h=1.0~\mathrm{m}$. Find $J$ and $J/\hbar$ for $g=9.81~\mathrm{m/s^2}$ and
+   $\hbar=1.055\cdot10^{-34}~\mathrm{J\,s}$.
+5. For a neutron ($m_n=1.675\cdot10^{-27}~\mathrm{kg}$) find the bounce height
+   at which $J=\hbar$. What does this result mean for the
+   classical description of the motion of ultracold neutrons above a mirror?
+
+State the main physical conclusion: what does the area of a phase orbit know about
+the period of the motion, even when the orbit is not an ellipse?
+
+## Problem 5.8. Which changes of variables are canonical?
+
+For one degree of freedom a change $(q,p)\to(Q,P)$ is canonical if
+
+$$
+\{Q,P\}_{q,p}
+=\frac{\partial Q}{\partial q}\frac{\partial P}{\partial p}
+-\frac{\partial Q}{\partial p}\frac{\partial P}{\partial q}
+=1.
+$$ {#eq-ex05-028}
+
+The same expression equals the Jacobian of the change: $dQ\,dP=\{Q,P\}_{q,p}\,dq\,dp$.
+
+1. Check whether the following changes are canonical:
+
+   (a) $Q=aq$, $P=p/a$, $a>0$;
+   (b) $Q=p$, $P=-q$;
+   (c) $Q=q$, $P=p+kq^2$;
+   (d) $Q=q^2$, $P=p$;
+   (e) $Q=q^2$, $P=p/(2q)$, $q>0$.
+2. Draw the image of the square $1\le q\le2$, $0\le p\le1$ for each change and
+   find its area.
+3. For a free particle $H=p^2/(2m)$ write $H(Q,P)$ in cases (d) and (e).
+   Show that in case (d) $\dot Q\ne\partial H/\partial P$, while in case
+   (e) both Hamilton's equations hold.
+4. For the oscillator $H=p^2/(2m)+m\omega^2q^2/2$ choose $a$ in change (a)
+   so that the phase orbit becomes a circle. Find its radius and
+   show that the area equals $2\pi E/\omega$ for any $a$.
+5. Change (b) rotates the phase plane by $90^\circ$. Apply it
+   to the oscillator in the variables of part 4. How has the Hamiltonian changed? What
+   does this say about the distinction between "coordinate" and "momentum"?
+
+State the main physical conclusion: why is the action $J$ a property of
+the orbit itself rather than of the chosen variables?
+
+## Problem 5.9. The pendulum: from oscillation to rotation
+
+The Hamiltonian of the simple pendulum is
+
+$$
+H(\varphi,p_\varphi)
+=\frac{p_\varphi^2}{2I}-I\omega_0^2\cos\varphi,
+\qquad
+I=ml^2,
+\qquad
+\omega_0^2=\frac{g}{l}.
+$$ {#eq-ex05-029}
+
+Use units $I=\omega_0=1$; then $E\ge-1$.
+
+1. Draw the phase portrait and mark the three regimes: oscillation $-1<E<1$,
+   the separatrix $E=1$ and rotation $E>1$. Find the turning point $\varphi_0(E)$
+   for oscillation.
+2. Show that for oscillation
+
+   $$
+   J(E)=\frac{2}{\pi}\int_0^{\varphi_0}\sqrt{2(E+\cos\varphi)}\,d\varphi,
+   \qquad
+   \cos\varphi_0=-E,
+   $$ {#eq-ex05-030}
+
+   and that at small amplitude $J\simeq(E+1)/\omega_0$, as for an oscillator.
+3. Numerically (Python) compute $J$ and $T=2\pi\,dJ/dE$ for the amplitudes
+   $\varphi_0=10^\circ$, $90^\circ$, $150^\circ$ and $179^\circ$. Compare
+   the result with the exact formula
+
+   $$
+   T=\frac{4}{\omega_0}K\!\left(\sin\frac{\varphi_0}{2}\right),
+   $$ {#eq-ex05-031}
+
+   where $K(k)$ is the complete elliptic integral of the first kind. In
+   `scipy.special.ellipk(m)` the argument is $m=k^2$.
+4. Show that on the separatrix $J=8/\pi$, while the period diverges. How is this
+   seen on the plot of $J(E)$?
+5. For rotation $J(E)=(2\pi)^{-1}\int_0^{2\pi}p_\varphi\,d\varphi$. Show
+   that for $E\gg1$ one gets $J\to\sqrt{2E}$, that is, the angular momentum of the
+   rotor. Find $J$ for $E\to1^+$ and compare it with $J$ of oscillation on the
+   separatrix. Where does the factor $2$ come from?
+
+State the main physical conclusion: what do the actions of the
+oscillator, the pendulum and the rotor have in common, and what changes on crossing the
+separatrix?
+
 ---
 
 ## Problems for discussion in the seminar

@@ -72,6 +72,9 @@ $$ {#eq-ex01-006}
 5. In this estimate the whole energy $Q$ was identified with the luminosity of the Sun.
    In which direction will the result change if the energy carried away by
    neutrinos is taken into account?
+6. In the main branch of the pp chain each of the two neutrinos carries away
+   about $0.27~\mathrm{MeV}$ on average. What fraction of $Q$ is this, and why
+   can this correction be neglected in an order-of-magnitude estimate of the flux?
 
 ## Problem 1.3. How many light neutrinos exist?
 
@@ -136,6 +139,8 @@ $$ {#eq-ex01-011}
 4. On the same plot, plot $P(\nu_\mu\to\nu_\mu)$ and check
    unitarity.
 5. How will the first maximum shift if the energy is increased by a factor of ten?
+6. How many full periods of the probability fit into the Earth's diameter
+   $D_\oplus=12\,742~\mathrm{km}$ at $E_\nu=1~\mathrm{GeV}$?
 
 ## Problem 1.5. Minimal masses for the two level orderings
 
@@ -156,6 +161,227 @@ $$ {#eq-ex01-012}
 4. Repeat the calculation for $m_{\mathrm{lightest}}=0.05~\mathrm{eV}$.
    How distinguishable are the two orderings in this case by the mass values themselves?
 5. Explain the meaning of the terms "hierarchical" and "quasi-degenerate" spectrum.
+
+## Problem 1.6. Dirac or Majorana neutrino?
+
+The cross sections for neutrino and antineutrino scattering on nucleons differ
+noticeably. At energies of tens of GeV, for the charged current,
+
+$$
+\frac{\sigma_{\nu N}}{E_\nu}\simeq0.68\cdot10^{-38}~
+\frac{\mathrm{cm}^2}{\mathrm{GeV}},
+\qquad
+\frac{\sigma_{\bar\nu N}}{E_\nu}\simeq0.34\cdot10^{-38}~
+\frac{\mathrm{cm}^2}{\mathrm{GeV}}.
+$$ {#eq-ex01-016}
+
+The weak charged current contains only the left-handed chiral components of
+the fields. A state of a particle of mass $m$ with energy $E\gg m$ and definite
+helicity contains a component of the "wrong" chirality with probability
+
+$$
+w\simeq\left(\frac{m}{2E}\right)^2.
+$$ {#eq-ex01-017}
+
+1. Does the difference between the cross sections imply that the neutrino is a
+   Dirac particle?
+2. The decay $\pi^+\to\mu^++\nu_\mu$ produces a neutrino with negative
+   helicity, the decay $\pi^-\to\mu^-+\bar\nu_\mu$ one with positive helicity.
+   Describe both beams in the language of a Majorana neutrino, for which
+   $\nu=\bar\nu$. What then distinguishes a "neutrino" from an "antineutrino"?
+3. Explain why the left-handed chiral current distinguishes these two states
+   even when $\nu=\bar\nu$. Why is the difference in cross sections a
+   consequence of helicity rather than of a difference between particle and
+   antiparticle?
+4. Estimate $w$ for $m=0.1~\mathrm{eV}$ at $E=1~\mathrm{MeV}$ and
+   $E=1~\mathrm{GeV}$.
+5. Which small parameter suppresses the difference between the predictions for
+   a Dirac and a Majorana neutrino in ordinary scattering experiments? Why does
+   a test of the Majorana nature require a process whose amplitude is
+   proportional to the neutrino mass, for example neutrinoless double
+   $\beta$ decay?
+
+State the main physical conclusion: what does the difference between the
+$\nu$ and $\bar\nu$ cross sections actually measure?
+
+## Problem 1.7. Where do the cross sections $10^{-44}$ and $10^{-33}~\mathrm{cm}^2$ come from?
+
+The lecture used the estimates
+$\sigma_{\nu e}(1~\mathrm{MeV})\sim10^{-44}~\mathrm{cm}^2$ and
+$\sigma_{\nu N}(1~\mathrm{PeV})\sim10^{-33}~\mathrm{cm}^2$. Obtain their order
+of magnitude from the Fermi constant. For a point-like four-fermion interaction
+at $s\ll M_W^2$
+
+$$
+\sigma\simeq\frac{G_F^2s}{\pi},
+\qquad
+s\simeq2mE_\nu,
+$$ {#eq-ex01-018}
+
+where $m$ is the mass of the target at rest. Use
+
+$$
+G_F=1.166\cdot10^{-5}~\mathrm{GeV}^{-2},
+\qquad
+(\hbar c)^2=0.3894\cdot10^{-27}~\mathrm{GeV}^2\,\mathrm{cm}^2,
+$$ {#eq-ex01-019}
+
+$$
+m_e=0.511~\mathrm{MeV},
+\qquad
+m_N=0.939~\mathrm{GeV},
+\qquad
+M_W=80.4~\mathrm{GeV}.
+$$ {#eq-ex01-020}
+
+1. Check that for $\hbar=c=1$ the quantity $G_F^2s$ has the dimension of an
+   area. Why is the factor $(\hbar c)^2$ needed when converting to centimeters?
+2. Compute $\sigma$ for neutrino scattering on an electron at
+   $E_\nu=1~\mathrm{MeV}$ and compare it with $10^{-44}~\mathrm{cm}^2$.
+3. Compute the point-like estimate for a nucleon at $E_\nu=1~\mathrm{GeV}$ and
+   compare it with the measured
+   $\sigma_{\nu N}/E_\nu\simeq0.68\cdot10^{-38}~\mathrm{cm}^2/\mathrm{GeV}$.
+   Why is the point-like estimate too large? Take into account that the
+   neutrino scatters on a quark, which carries only a fraction of the nucleon
+   momentum.
+4. Extend the linear growth $\sigma_{\nu N}\propto E_\nu$ to
+   $1~\mathrm{PeV}$. Compare $s$ at this energy with $M_W^2$. Why does the
+   growth of the cross section slow down, and why is the actual value close to
+   $10^{-33}~\mathrm{cm}^2$?
+5. For $\sigma=10^{-33}~\mathrm{cm}^2$ and
+   $n_N=3.3\cdot10^{24}~\mathrm{cm}^{-3}$, find the interaction length and the
+   probability of crossing the Earth along a diameter
+   $D_\oplus=12\,742~\mathrm{km}$ without interacting, assuming a uniform
+   density.
+6. At what energy, in the linear approximation, does the interaction length
+   become equal to $D_\oplus$?
+
+State the main physical conclusion: which two factors make neutrino cross
+sections small, and what limits their growth?
+
+## Problem 1.8. How neutral is the neutrino?
+
+The electric charge of the neutrino is constrained in two independent ways.
+The first relies on charge conservation in neutron $\beta$ decay
+
+$$
+n\to p+e^-+\bar\nu_e
+$$ {#eq-ex01-021}
+
+and on experiments on the neutrality of matter:
+$|q_n|\lesssim10^{-21}e$ and $|q_p+q_e|\lesssim10^{-21}e$. The second relies
+on neutrino scattering on electrons. For an electron recoil energy
+$T\ll E_\nu$ the charge and weak-interaction contributions are
+
+$$
+\left(\frac{d\sigma}{dT}\right)_q
+\simeq\frac{2\pi\alpha^2}{m_eT^2}\left(\frac{q_\nu}{e}\right)^2,
+\qquad
+\left(\frac{d\sigma}{dT}\right)_{\mathrm{weak}}
+\sim\frac{G_F^2m_e}{\pi},
+$$ {#eq-ex01-022}
+
+where $\alpha=1/137$, $m_e=0.511~\mathrm{MeV}$,
+$G_F=1.166\cdot10^{-5}~\mathrm{GeV}^{-2}$.
+
+1. From charge conservation, derive
+   $|q_{\bar\nu}|\le|q_n|+|q_p+q_e|$ and a numerical estimate. What assumption
+   about the charges of $\nu$ and $\bar\nu$ is needed to carry it over to the
+   neutrino?
+2. Check that both expressions have the same dimension
+   ($\mathrm{GeV}^{-3}$ for $\hbar=c=1$).
+3. Find the value of $|q_\nu|$ at which the charge contribution equals the weak
+   one, for $T=1~\mathrm{keV}$ and $T=10~\mathrm{keV}$.
+4. How does the sensitivity of an experiment to $q_\nu$ depend on the
+   threshold $T$? Why are low-threshold experiments advantageous?
+5. Which threshold corresponds to the bound $|q_\nu|\lesssim10^{-12}e$ quoted
+   in the lecture?
+
+State the main physical conclusion: why is the indirect bound from the
+neutrality of matter many orders of magnitude stronger than the direct one, and
+on which assumption does it rest?
+
+## Problem 1.9. Why are there twice as many atmospheric $\nu_\mu$ as $\nu_e$?
+
+Atmospheric neutrinos are produced in the chains
+
+$$
+\pi^+\to\mu^++\nu_\mu,
+\quad
+\mu^+\to e^++\nu_e+\bar\nu_\mu,
+\qquad
+\pi^-\to\mu^-+\bar\nu_\mu,
+\quad
+\mu^-\to e^-+\bar\nu_e+\nu_\mu.
+$$ {#eq-ex01-023}
+
+Pions are produced and decay at an altitude of about $h\simeq15~\mathrm{km}$.
+For the muon $m_\mu=105.66~\mathrm{MeV}$ and $c\tau_\mu=658.6~\mathrm{m}$; for
+$E_\mu\gg m_\mu$ the decay length is
+
+$$
+L_\mu\simeq\frac{E_\mu}{m_\mu}\,c\tau_\mu.
+$$ {#eq-ex01-024}
+
+To estimate the oscillations, use the two-flavor probability
+$P(\nu_\mu\to\nu_\tau)=\sin^22\theta\,
+\sin^2(1.267\,\Delta m^2[\mathrm{eV}^2]L[\mathrm{km}]/E_\nu[\mathrm{GeV}])$
+with $\sin^22\theta=1$ and $\Delta m^2=2.5\cdot10^{-3}~\mathrm{eV}^2$.
+
+1. Count the numbers of $\nu_\mu+\bar\nu_\mu$ and $\nu_e+\bar\nu_e$ per
+   complete chain and obtain the ratio
+   $R=(\nu_\mu+\bar\nu_\mu)/(\nu_e+\bar\nu_e)$.
+2. At what energy $E_\mu$ does the decay length of a vertical muon equal $h$?
+   How does $R$ change at higher energies, and why?
+3. Find the probability of $\nu_\mu\to\nu_\tau$ at $E_\nu=1~\mathrm{GeV}$ for
+   neutrinos coming from above ($L=20~\mathrm{km}$). Why, for neutrinos that
+   have crossed the Earth ($L\gtrsim5000~\mathrm{km}$), should one take the
+   average $\langle\sin^2\rangle=1/2$ given a finite energy resolution?
+4. Find $R$ for neutrinos from above and from below, assuming that the $\nu_e$
+   flux does not change. Taking roughly half of the events to come from above
+   without oscillations and half from below, estimate the averaged $R$ and the
+   double ratio $R_{\mathrm{meas}}/R_{\mathrm{exp}}$.
+5. The absolute flux of atmospheric neutrinos is predicted to about 20 %, while
+   the ratio $R$ is predicted to a few percent. Why, therefore, does one measure
+   the ratio and its dependence on direction rather than the total flux?
+
+State the main physical conclusion: which observation distinguishes
+oscillations from an error in the flux calculation?
+
+## Problem 1.10. Why does CP violation need three flavors?
+
+The transition probability in vacuum is
+
+$$
+P(\nu_\alpha\to\nu_\beta)=
+\Bigl|\sum_i U_{\alpha i}^*U_{\beta i}\,
+e^{-im_i^2L/2E}\Bigr|^2,
+$$ {#eq-ex01-025}
+
+and for antineutrinos $U$ is replaced by $U^*$ in this formula.
+
+1. Show that for a real matrix $U$
+   $P(\nu_\alpha\to\nu_\beta)=P(\bar\nu_\alpha\to\bar\nu_\beta)$.
+2. How many real parameters does an $n\times n$ unitary matrix contain? How
+   many of them can be regarded as rotation angles (as for an orthogonal
+   matrix), and how many as phases?
+3. The phases of the fields of $n$ charged leptons and $n$ Dirac neutrinos can
+   be redefined: $U\to D_\ell UD_\nu$, where $D_\ell$ and $D_\nu$ are diagonal
+   phase matrices. Explain why only $2n-1$ phases are removed in this way, and
+   show that $(n-1)(n-2)/2$ physical phases remain. How many are there for
+   $n=2$ and $n=3$?
+4. In the standard PMNS parametrization the phase enters only in the
+   combination $s_{13}e^{\pm i\delta_{\mathrm{CP}}}$. Why is the phase
+   $\delta_{\mathrm{CP}}$ unobservable for $\theta_{13}=0$? What do the values
+   $\delta_{\mathrm{CP}}=0$ and $\pi$ give?
+5. For Majorana neutrinos the phases of the fields $\nu_i$ cannot be redefined,
+   and two more phases remain in $U$:
+   $U\to U\,\mathrm{diag}(1,e^{i\alpha},e^{i\beta})$. Show that they drop out
+   of the oscillation probability.
+
+State the main physical conclusion: which conditions on the number of flavors
+and on the mixing angles are necessary for CP violation in oscillations, and
+why do oscillations not distinguish Dirac from Majorana neutrinos?
 
 ---
 

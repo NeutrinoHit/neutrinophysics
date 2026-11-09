@@ -31,7 +31,7 @@ $$ {#eq-ex03-002}
    $\ell=1$–$5~\text{Å}$, estimate
    $\tau_{\mathrm{stop}}\sim\ell/v_{B^*}$.
 4. Compare the result with the lifetime of the excited state
-   $\tau(B^*)\simeq0.07~\mathrm{ps}$.
+   $\tau(B^*)\simeq0.03~\mathrm{ps}$.
 5. Why is it important for the measurement of helicity that the $\gamma$-quantum be
    emitted before the memory of the recoil direction is lost?
 
@@ -88,7 +88,7 @@ state.
 3. Construct a table of the allowed triples
    $(m_e,m_{B^*},m_\nu)$.
 4. For which values of $m_{B^*}$ does the projection of the nuclear spin unambiguously fix
-   the neutrino helicity?
+   the neutrino helicity? Why is the state $m_{B^*}=0$ unsuitable as a label?
 5. Why does the relation lose its unambiguous meaning if the quantization axis is chosen not
    along the neutrino momentum?
 
@@ -117,8 +117,20 @@ direction of the photon and the velocity of the nucleus.
    $E_{\max}-E_{\min}$.
 3. Using the velocity from Problem 03.1, estimate the relative Doppler
    shift.
-4. Why does resonant absorption select a narrow range of angles?
-5. Explain how energy selection turns into selection of the direction of the
+4. In both emission and absorption of a photon a free nucleus of mass $M$
+   receives the recoil energy
+
+   $$
+   E_R\simeq\frac{E_\gamma^2}{2Mc^2},
+   $$ {#eq-ex03-014}
+
+   so the emission and absorption lines are separated by an interval $2E_R$.
+   Let the nucleus move with the recoil velocity after electron capture,
+   $v\simeq E_\nu/(Mc)$, with $E_\nu\simeq E_\gamma$. Show that a photon
+   emitted along the recoil gains an extra energy $\simeq2E_R$, that is,
+   exactly the amount missing for resonance.
+5. Why does resonant absorption select a narrow range of angles?
+6. Explain how energy selection turns into selection of the direction of the
    $\gamma$-quantum relative to the nuclear recoil.
 
 ## Problem 3.5. Can one overtake a neutrino?
@@ -132,7 +144,9 @@ p_\nu'=\gamma_u
 \left(p_\nu-\frac{uE_\nu}{c^2}\right).
 $$ {#eq-ex03-010}
 
-1. Obtain the condition under which $p_\nu'$ changes sign.
+1. Obtain the condition under which $p_\nu'$ changes sign. Check the same
+   result with the velocity-addition law
+   $v_\nu'=(v_\nu-u)/(1-uv_\nu/c^2)$.
 2. Show that for $E_\nu\gg m_\nu c^2$
 
    $$
@@ -146,6 +160,287 @@ $$ {#eq-ex03-010}
    $\gamma_\nu=E_\nu/(m_\nu c^2)$.
 5. Why does the helicity change sign after the overtaking? Why is the same thought
    experiment impossible for a strictly massless particle?
+6. Show directly that the spatial inversion
+   $\mathbf p\to-\mathbf p$, $\mathbf S\to\mathbf S$ also changes the sign
+   of $h$. How does this differ from overtaking: which of the two
+   transformations describes the same neutrino seen by another observer, and
+   which turns it into a different state?
+
+## Problem 3.6. From event counts to helicity
+
+After the resonant selection the $\gamma$-quanta pass through magnetized iron.
+In equal times, for the two field directions, the counts are
+
+$$
+N_+=0.988\times10^6,
+\qquad
+N_-=1.012\times10^6.
+$$ {#eq-ex03-015}
+
+The count asymmetry
+
+$$
+\mathcal A=\frac{N_+-N_-}{N_++N_-}
+$$ {#eq-ex03-016}
+
+is related to the circular polarization of the photons by
+
+$$
+\mathcal A\simeq k\,h_\gamma,
+\qquad
+k=f_{\mathrm{res}}P_ea_\gamma,
+$$ {#eq-ex03-017}
+
+where $f_{\mathrm{res}}$ is the fraction of resonantly selected photons, $P_e$
+is the polarization of the electrons in the iron, and $a_\gamma$ is the
+analyzing power of the setup. The sign of $k$ is fixed by which field direction
+is called "$+$"; the calibration gives $k=0.012\pm0.003$.
+
+1. Compute $\mathcal A$.
+2. Treat each detected photon as an independent trial that falls into the
+   count $N_+$ with probability $p=N_+/(N_++N_-)$. Show that
+
+   $$
+   \sigma_{\mathcal A}\simeq
+   \sqrt{\frac{1-\mathcal A^2}{N_++N_-}},
+   $$ {#eq-ex03-018}
+
+   and compute $\sigma_{\mathcal A}$.
+3. Find $h_\gamma$ and its statistical uncertainty. Why, in the geometry
+   selected by the resonance, is this the neutrino helicity?
+4. Estimate the systematic uncertainty of $h_\gamma$ caused by the uncertainty
+   of $k$. Which of the two uncertainties dominates? Compare the scale with the
+   published result of Goldhaber, Grodzins and Sunyar
+   $h(\nu_e)=-1.0\pm0.3$.
+5. Which slow changes of the setup are suppressed by frequent reversal of the
+   field (drift of the source activity, of the detector efficiency)? Which
+   effects change sign together with the field and therefore require a
+   separate check (for example, the action of the stray magnetic field on the
+   photomultiplier)?
+
+State the main physical conclusion: what does such an experiment determine
+reliably, the sign of the helicity or its magnitude, and why is this enough to
+conclude that the weak current is left-handed?
+
+## Problem 3.7. Why does a free nucleus not absorb its own photon?
+
+The excited level of ${}^{152}\mathrm{Sm}^*$ lies
+$\Delta E=0.96~\mathrm{MeV}$ above the ground state. Take
+
+$$
+Mc^2\simeq1.42\times10^5~\mathrm{MeV},
+\qquad
+\tau\simeq0.03~\mathrm{ps},
+\qquad
+\hbar=6.58\times10^{-16}~\mathrm{eV\cdot s},
+\qquad
+k_B=8.62\times10^{-5}~\mathrm{eV/K}.
+$$ {#eq-ex03-019}
+
+1. From energy and momentum conservation, show that for a nucleus at rest
+
+   $$
+   E_\gamma^{\mathrm{em}}\simeq\Delta E-\frac{(\Delta E)^2}{2Mc^2},
+   \qquad
+   E_\gamma^{\mathrm{abs}}\simeq\Delta E+\frac{(\Delta E)^2}{2Mc^2}.
+   $$ {#eq-ex03-020}
+
+   Find the gap $\delta=E_\gamma^{\mathrm{abs}}-E_\gamma^{\mathrm{em}}$ in
+   electronvolts.
+2. Find the natural width of the level $\Gamma=\hbar/\tau$. By what factor is
+   the gap larger than the width?
+3. Thermal motion of the nucleus with velocity $v_x$ along the photon direction
+   shifts the photon energy by $\Delta E\,v_x/c$. Show that the Doppler width of
+   the line is
+
+   $$
+   \sigma_D\simeq\Delta E\sqrt{\frac{k_BT}{Mc^2}},
+   $$ {#eq-ex03-021}
+
+   and compute it at $T=300~\mathrm K$. Compare $\sigma_D$ with $\Gamma$ and
+   with $\delta$. At what temperature would $\sigma_D$ equal half of the gap?
+   Can the gap be closed by heating?
+4. After electron capture the nucleus moves with velocity
+   $v\simeq E_\nu/(Mc)$, where $E_\nu\simeq\Delta E$. A photon emitted at an
+   angle $\theta$ to the recoil has the energy
+   $E_\gamma^{\mathrm{em}}(1+v\cos\theta/c)$. Assuming that resonance occurs as
+   long as the energy differs from $E_\gamma^{\mathrm{abs}}$ by no more than
+   $\sigma_D$, estimate the allowed $1-\cos\theta$ and the opening angle of the
+   cone. What fraction of all emission directions does this cone represent?
+5. Which width, $\Gamma$ or $\sigma_D$, determines the angular resolution of
+   the resonant filter? Why is the fraction of resonantly scattered photons in
+   the experiment small?
+
+State the main physical conclusion: why is a gap of a few electronvolts closed
+only by the directed motion of the nucleus after the neutrino is emitted, and
+why does exactly this make the resonance a direction filter?
+
+## Problem 3.8. Helicity and chirality in the chiral basis
+
+Set $\hbar=c=1$. In the chiral basis
+
+$$
+\gamma^0=
+\begin{pmatrix}0&I\\I&0\end{pmatrix},
+\qquad
+\gamma^i=
+\begin{pmatrix}0&\sigma_i\\-\sigma_i&0\end{pmatrix},
+\qquad
+\gamma^5=
+\begin{pmatrix}-I&0\\0&I\end{pmatrix}.
+$$ {#eq-ex03-022}
+
+Consider a spinor with momentum $\mathbf p$, $p=|\mathbf p|$, and helicity
+$h=\pm1$:
+
+$$
+u_h(\mathbf p)=
+\begin{pmatrix}
+\sqrt{E-hp}\;\xi_h\\[3pt]
+\sqrt{E+hp}\;\xi_h
+\end{pmatrix},
+\qquad
+(\boldsymbol\sigma\cdot\widehat{\mathbf p})\,\xi_h=h\,\xi_h,
+\qquad
+\xi_h^\dagger\xi_h=1.
+$$ {#eq-ex03-023}
+
+1. Show that
+
+   $$
+   \gamma^\mu p_\mu=
+   \begin{pmatrix}
+   0&E-\boldsymbol\sigma\cdot\mathbf p\\
+   E+\boldsymbol\sigma\cdot\mathbf p&0
+   \end{pmatrix},
+   $$ {#eq-ex03-024}
+
+   and, using $\sqrt{E-p}\,\sqrt{E+p}=m$, check that $u_h$ satisfies the
+   equation $(\gamma^\mu p_\mu-m)u_h=0$.
+2. Write down the projectors $P_{L,R}=(1\mp\gamma^5)/2$. Which components of
+   the spinor do they select? Check that $u_h^\dagger u_h=2E$.
+3. Obtain the fractions of the chiral components
+
+   $$
+   f_{L,R}(h)=\frac{\|P_{L,R}u_h\|^2}{\|u_h\|^2}
+   =\frac{1\mp h\beta}{2},
+   \qquad
+   \beta=\frac pE.
+   $$ {#eq-ex03-025}
+
+4. Show that the amplitude of the left-handed component in the state $h=+1$ is
+   $\sqrt{E-p}=m/\sqrt{E+p}$, that is, proportional to the mass. The muon
+   neutrino from the decay of a pion at rest has $E\simeq29.8~\mathrm{MeV}$.
+   Estimate $f_L(+1)$ for $m=0.05~\mathrm{eV}$.
+5. Take the limit $m\to0$: which chirality do $u_-$ and $u_+$ have? Why do the
+   fractions $f_{L,R}(h)$ not depend on the choice of basis for the Dirac
+   matrices?
+
+State the main physical conclusion: why do helicity and chirality coincide for
+a massless particle, while for a massive one a state of definite helicity
+contains both chiralities?
+
+## Problem 3.9. Relic neutrinos: helicity is conserved, chirality is not
+
+Relic neutrinos stopped interacting with the plasma of the early Universe at a
+temperature of about $1~\mathrm{MeV}$, when their typical momentum was of order
+$3~\mathrm{MeV}$. Today their temperature and mean momentum are
+
+$$
+T_\nu\simeq1.95~\mathrm K,
+\qquad
+\langle p\rangle\simeq3.15\,k_BT_\nu,
+\qquad
+k_B=8.62\times10^{-5}~\mathrm{eV/K}.
+$$ {#eq-ex03-026}
+
+Take the mass $m=0.05~\mathrm{eV}$ and set $\hbar=c=1$.
+
+1. The free Dirac Hamiltonian is
+   $H=\boldsymbol\alpha\cdot\mathbf p+\beta m$, where
+   $\alpha_i=\gamma^0\gamma^i$, $\beta=\gamma^0$. Using the fact that
+   $\gamma^5$ anticommutes with all $\gamma^\mu$, show that
+
+   $$
+   [H,\gamma^5]=2m\,\beta\gamma^5,
+   $$ {#eq-ex03-027}
+
+   whereas the helicity operator $\boldsymbol\Sigma\cdot\widehat{\mathbf p}$
+   commutes with $H$. Which of the two quantities is conserved in the free
+   motion of a massive particle?
+2. Estimate the probability of the "wrong" helicity $h=+1$ at decoupling,
+   $P\simeq(m/2E)^2$ for $E\simeq3~\mathrm{MeV}$.
+3. As the Universe expands, the momentum of a free neutrino decreases in
+   inverse proportion to the scale factor, while its direction does not
+   change. Why is the helicity conserved in this process? Find today's
+   $\langle p\rangle$, $\beta=p/E$ and the velocity in km/s.
+4. For a state with $h=-1$ the fractions of the chiral components are
+   $f_{L,R}=(1\pm\beta)/2$. Compute them today. Compare them with the
+   fractions at decoupling.
+5. The Solar System moves relative to the cosmic microwave background with a
+   velocity of about $370~\mathrm{km/s}$; assume that the relic neutrinos are
+   on average at rest in the same frame. Does the Earth overtake a typical
+   relic neutrino? For which momenta (in units of $k_BT_\nu$) is the sign of
+   the helicity of a neutrino moving along the Earth's motion in the Earth
+   frame opposite to its sign in the frame of the relic gas?
+
+State the main physical conclusion: what does the word "left-handed" mean for a
+nonrelativistic relic neutrino, helicity or chirality, and which of these
+characteristics does the weak interaction see when the neutrino is detected?
+
+## Problem 3.10. Pion decay: the muon inherits the neutrino helicity
+
+A pion of spin $0$ at rest decays through the channels
+
+$$
+\pi^+\to\mu^++\nu_\mu,
+\qquad
+\pi^+\to e^++\nu_e.
+$$ {#eq-ex03-028}
+
+Take $m_\pi=139.57~\mathrm{MeV}$, $m_\mu=105.66~\mathrm{MeV}$,
+$m_e=0.511~\mathrm{MeV}$; neglect the neutrino mass and set $c=1$.
+
+1. For both channels, find the momentum $p_\ell$, the total energy $E_\ell$,
+   the kinetic energy and the velocity $\beta_\ell$ of the charged lepton.
+2. The charged lepton and the neutrino fly apart in opposite directions, and
+   the orbital angular momentum along the decay axis is zero. Show that
+   $h(\ell^+)=h(\nu)$. What is the helicity of the $\mu^+$ if
+   $h(\nu_\mu)=-1$? Why are muons from the decay of pions at rest fully
+   polarized?
+3. The left-chiral charged current produces an antilepton in a right-chiral
+   state; for $m_\ell=0$ this is the state with $h=+1$. Why would the decay
+   into a massless lepton be forbidden? For a massive lepton the fraction of
+   the right-chiral component in the state $h=-1$ is $(1-\beta_\ell)/2$.
+   Show that
+
+   $$
+   1-\beta_\ell=\frac{m_\ell^2}{m_\pi E_\ell},
+   $$ {#eq-ex03-029}
+
+   and compute this fraction for the muon and for the positron.
+4. A full calculation with the left-handed current gives
+
+   $$
+   \Gamma(\pi^+\to\ell^+\nu_\ell)\propto
+   m_\ell^2\left(m_\pi^2-m_\ell^2\right)^2.
+   $$ {#eq-ex03-030}
+
+   Show that
+   $m_\ell^2(m_\pi^2-m_\ell^2)^2=4m_\pi^3\,p_\ell^2\,(E_\ell-p_\ell)$, and
+   identify the helicity-suppression factor in this expression. Compute
+   $R=\Gamma(\pi\to e\nu)/\Gamma(\pi\to\mu\nu)$ and compare it with the
+   measured value $R\simeq1.23\times10^{-4}$ (the small difference comes from
+   radiative corrections). Which channel would look preferable if only the
+   momentum of the outgoing lepton were taken into account?
+5. The direction of the positron in the decay $\mu^+\to e^++\nu_e+\bar\nu_\mu$
+   is correlated with the muon spin. Explain how this chain makes it possible
+   to test the helicity of the $\nu_\mu$, even though the neutrino itself is
+   not detected.
+
+State the main physical conclusion: why is the decay into the light positron
+suppressed by almost a factor of $10^4$, and what does this say about the
+chiral structure of the charged weak current?
 
 ---
 

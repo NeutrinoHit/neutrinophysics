@@ -259,6 +259,193 @@ $[c,1]$, where $c=\cos\theta_{\max}$.
    distribution, and perform a fit with a model that has the wrong $\theta_{\max}$. Investigate how the
    result depends on the width of the fitted window near the endpoint of the spectrum.
 
+## Problem 4.6. Kink from a heavy mass state
+
+Suppose that the electron antineutrino contains, in addition to the light states
+(whose masses can be taken as zero on the scale of this problem), a heavy state with mass
+$m_4=5~\mathrm{keV}$ and admixture $|U_{e4}|^2=0.01$. For tritium
+$E_0=18.575~\mathrm{keV}$; denote $\varepsilon=E_0-E$. The spectrum has the form
+
+$$
+\frac{d\Gamma}{dE}
+=C(E)\,\varepsilon
+\left[
+\bigl(1-|U_{e4}|^2\bigr)\varepsilon
++|U_{e4}|^2\sqrt{\varepsilon^2-m_4^2}\,\Theta(\varepsilon-m_4)
+\right].
+$$ {#eq-ex04-023}
+
+1. Why do the contributions of the mass states enter with weights $|U_{ei}|^2$
+   rather than through a sum of amplitudes? Show that the ratio to the spectrum
+   without the heavy state,
+
+   $$
+   \mathcal R(\varepsilon)
+   =1-|U_{e4}|^2
+   +|U_{e4}|^2\sqrt{1-\frac{m_4^2}{\varepsilon^2}}\;\Theta(\varepsilon-m_4),
+   $$ {#eq-ex04-024}
+
+   does not depend on $C(E)$ and hence not on the Fermi function.
+2. Find $\mathcal R$ for $\varepsilon<m_4$ and at $E=0$, and its asymptotics for
+   $\varepsilon\gg m_4$. At what electron energy $E$ is the singularity
+   located?
+3. Set $\varepsilon=m_4+\delta$, $\delta\ll m_4$, and show that
+
+   $$
+   \mathcal R-\bigl(1-|U_{e4}|^2\bigr)
+   \simeq|U_{e4}|^2\sqrt{\frac{2\delta}{m_4}}.
+   $$ {#eq-ex04-025}
+
+   Why is this a kink with an infinite derivative rather than a jump?
+4. Plot $\mathcal R(E)$ over the whole spectrum and mark the point
+   $E=E_0-m_4$. For the massless spectrum with $F=1$ and $m_e=511~\mathrm{keV}$,
+   compute numerically the fraction of decays with $\varepsilon>m_4$ and the ratio of
+   the total decay rates with and without the heavy state.
+5. In a real fit the normalization of the spectrum is free. Why is the constant
+   factor $1-|U_{e4}|^2$ by itself unobservable? Which feature of the shape carries
+   the information on $m_4$ and $|U_{e4}|^2$? Why is a heavy state searched for
+   deep inside the spectrum, where the statistics is huge, while the masses of the
+   light states are searched for only at the very endpoint?
+
+State the main physical conclusion: each mass state gives its own
+threshold $E_0-m_i$, and the visibility of the threshold is set by the weight
+$|U_{ei}|^2$ and by the statistics in the neighborhood of the kink.
+
+## Problem 4.7. What can $m_\beta$ be?
+
+Oscillations measure only differences of squared masses. Use the rounded
+values
+
+$$
+\sin^2\theta_{12}=0.31,
+\quad
+\sin^2\theta_{13}=0.022,
+\quad
+\Delta m^2_{21}=7.5\times10^{-5}~\mathrm{eV}^2,
+\quad
+|\Delta m^2_{31}|\simeq2.5\times10^{-3}~\mathrm{eV}^2
+$$ {#eq-ex04-026}
+
+and
+
+$$
+|U_{e1}|^2=c_{12}^2c_{13}^2,
+\qquad
+|U_{e2}|^2=s_{12}^2c_{13}^2,
+\qquad
+|U_{e3}|^2=s_{13}^2.
+$$ {#eq-ex04-027}
+
+1. Compute $|U_{ei}|^2$ and check their sum.
+2. In the normal ordering the lightest state is $m_1$, and
+   $m_2^2=m_1^2+\Delta m^2_{21}$, $m_3^2=m_1^2+\Delta m^2_{31}$. Show
+   that
+
+   $$
+   m_\beta^2=m_1^2+|U_{e2}|^2\Delta m^2_{21}+|U_{e3}|^2\Delta m^2_{31}.
+   $$ {#eq-ex04-028}
+
+   Derive the analogous formula for the inverted ordering, where the lightest
+   state is $m_3$, $m_1^2=m_3^2+|\Delta m^2_{31}|$,
+   $m_2^2=m_1^2+\Delta m^2_{21}$.
+3. Find the smallest possible $m_\beta$ for each ordering.
+4. Plot $m_\beta$ as a function of the mass of the lightest state from
+   $10^{-4}$ to $1~\mathrm{eV}$ on a logarithmic scale for both
+   orderings. Above what lightest mass do the two curves differ by less
+   than $10\%$? What lightest mass corresponds to $m_\beta=0.45~\mathrm{eV}$?
+5. For $m_\beta=0.45~\mathrm{eV}$ estimate $m_3-m_1$ and $m_2-m_1$ and compare them
+   with the energy resolution $\sigma_E=0.5~\mathrm{eV}$. Why is the spectrum
+   described by a single effective mass in this regime?
+
+State the main physical conclusion: what information on the mass spectrum
+does the kinematic limit on $m_\beta$ provide, and what would a reliable measurement
+$m_\beta<0.04~\mathrm{eV}$ mean?
+
+## Problem 4.8. Nuclear recoil and the endpoint of the tritium spectrum
+
+In the decay ${}^3\mathrm H\to{}^3\mathrm{He}^++e^-+\bar\nu_e$ take
+$E_0=18.575~\mathrm{keV}$, $m_e=511~\mathrm{keV}$,
+
+$$
+M({}^3\mathrm{He})c^2\simeq2.81~\mathrm{GeV},
+\qquad
+M({}^3\mathrm{HeT}^+)c^2\simeq5.62~\mathrm{GeV},
+\qquad
+k_B=8.62\times10^{-5}~\mathrm{eV/K}.
+$$ {#eq-ex04-029}
+
+Set $c=1$.
+
+1. The recoil momentum equals $|\mathbf p_e+\mathbf p_\nu|\le p_e+p_\nu$.
+   Show that the largest recoil energy is reached at the endpoint of the spectrum,
+   where $p_\nu\to0$:
+
+   $$
+   E_{\mathrm{rec}}^{\max}\simeq\frac{E_0(E_0+2m_e)}{2M}.
+   $$ {#eq-ex04-030}
+
+   Compute it for a free ${}^3\mathrm{He}$ atom and compare it with the
+   scale $m_\nu\sim0.45~\mathrm{eV}$.
+2. In the last $10~\mathrm{eV}$ of the spectrum $p_\nu\lesssim10~\mathrm{eV}$.
+   Estimate the spread of the recoil energy due to the angle between $\mathbf p_e$ and
+   $\mathbf p_\nu$, and its change when $E$ is shifted by $10~\mathrm{eV}$.
+   Why does the recoil near the endpoint only shift the endpoint and get absorbed
+   by the free parameter $E_0$?
+3. In a molecule the recoil momentum is received instantaneously by the helium nucleus. Show that
+   the center-of-mass motion of ${}^3\mathrm{HeT}^+$ carries away the energy $p^2/(2M_{\mathrm{mol}})$,
+   while the remainder $p^2/(2M_{\mathrm{He}})-p^2/(2M_{\mathrm{mol}})$ goes into the
+   internal motion of the molecule. Estimate this remainder at the endpoint of the spectrum. Why
+   does the decay of a molecule inevitably leave the daughter ion in a rotationally and
+   vibrationally excited state?
+4. The parent $\mathrm T_2$ molecules (mass about $6.03~u$,
+   $uc^2=931.5~\mathrm{MeV}$) are in thermal motion at $T=30~\mathrm K$.
+   The electron energy in the laboratory is shifted by approximately $p_ev_x$. Show
+   that the Doppler broadening equals $\sigma\simeq p_e\sqrt{k_BT/M}$, and
+   compute it. Using the result of Problem 4.5 for an unaccounted Gaussian
+   variance, estimate the shift of $m^2_{\nu,\mathrm{fit}}$ if this broadening
+   is not included in the model.
+
+State the main physical conclusion: which recoil effects only shift
+the endpoint, and which change the shape of the spectrum and must therefore enter the
+model?
+
+## Problem 4.9. How many decays are needed to see the mass?
+
+For tritium $T_{1/2}=12.32$ years, the molar mass is $3.016~\text{g/mol}$,
+$E_0=18\,575~\mathrm{eV}$. Assume ideal resolution, zero background and a known
+$E_0$.
+
+1. Compute the specific activity of tritium in becquerels per gram.
+2. Use the estimate of the fraction of decays in the last interval
+   $f(\Delta E)\simeq(\Delta E/E_0)^3$ (an exact calculation with the slowly varying factor
+   $C(E)$ gives about twice as much; this does not matter for the estimate). Let the
+   spectrometer collect electrons from an effective activity
+   $A_{\mathrm{eff}}=10^{11}~\text{Bq}$. What mass of tritium does this
+   correspond to? Find the count rate in the last $1$ and $2~\mathrm{eV}$.
+3. Show that the number of events in the window $0<\varepsilon<\Delta$ for mass
+   $m_\nu$ relates to the massless one as
+
+   $$
+   \frac{N(\Delta;m_\nu)}{N(\Delta;0)}
+   =\left(1-\frac{m_\nu^2}{\Delta^2}\right)^{3/2}
+   \simeq1-\frac32\frac{m_\nu^2}{\Delta^2}.
+   $$ {#eq-ex04-031}
+
+4. Require that the deficit of events exceed three standard deviations of the
+   Poisson count. Show that $N\gtrsim(2\Delta^2/m_\nu^2)^2$
+   events in the window are needed. Find $N$ and the measurement time for $m_\nu=0.45~\mathrm{eV}$
+   and $\Delta=2~\mathrm{eV}$. By what factor must the statistics be increased
+   to improve the sensitivity to $m_\nu$ by a factor of $10$?
+5. Show that in this model the measurement time grows as $\Delta/m_\nu^4$,
+   that is, a narrow window is more favorable. Why can a real experiment not narrow
+   the window to fractions of an electronvolt, and why is the time obtained a strongly
+   optimistic estimate? Name at least three reasons.
+
+State the main physical conclusion: why does the sensitivity to the mass
+improve only as the fourth root of the statistics, and why is the main
+resource of the experiment not only the activity of the source but also control of the shape of
+the spectrum near the endpoint?
+
 ---
 
 ## Problems for discussion at the seminar

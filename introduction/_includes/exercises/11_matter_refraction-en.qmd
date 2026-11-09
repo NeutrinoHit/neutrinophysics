@@ -1,4 +1,4 @@
-## Problem 1. The first Fresnel zone
+## Problem 11.1. The first Fresnel zone
 
 The rings of the layer with boundaries $r_m=z+m\lambda/2$ are called Fresnel zones.
 Find the radius $b_1$ of the first zone for $z\gg\lambda$ and the number of scatterers in
@@ -6,7 +6,7 @@ it for a layer of thickness $dz$ and concentration $\mathcal N$. Explain why the
 ring area compensates the factor $1/r$ of the spherical wave, and check
 that for $z\gg ka^2$ the scattering amplitude hardly changes over the first zone.
 
-## Problem 2. Phase and attenuation
+## Problem 11.2. Phase and attenuation
 
 Let $f(0)=a+ib$, where $a,b>0$, and the medium is homogeneous over the length $D$.
 
@@ -14,7 +14,7 @@ Let $f(0)=a+ib$, where $a,b>0$, and the medium is homogeneous over the length $D
 2. Find the intensity ratio $I(D)/I(0)$.
 3. Using the optical theorem, express the result in terms of the total cross section.
 
-## Problem 3. Two refractive indices
+## Problem 11.3. Two refractive indices
 
 The matrix refractive index has the form
 
@@ -24,11 +24,11 @@ $$
 $$ {#eq-exr-refraction-two-index-matrix}
 
 1. Find the two eigen refractive indices.
-2. Find the rotation angle from the original basis to the normal waves.
+2. Find the rotation angle from the original basis to the eigenstates.
 3. Show that for $\delta=0$ the original first state passes completely
    into the second after a suitable path length, if $\kappa\ne0$.
 
-## Problem 4. When coherence is lost
+## Problem 11.4. When coherence is lost
 
 For each process, indicate whether it can be included in the real refractive index
 of the transmitted wave, or whether it requires a description of the loss of coherence:
@@ -41,7 +41,7 @@ of the transmitted wave, or whether it requires a description of the loss of coh
 
 For each answer, formulate the physical criterion of distinguishability of the alternatives.
 
-## Problem 5. A plate and the accumulated phase
+## Problem 11.5. A plate and the accumulated phase
 
 Consider a transparent layer with a real refractive index.
 Neglect reflection at the boundaries.
@@ -61,7 +61,7 @@ Neglect reflection at the boundaries.
    Find two pairs $n,D$ with the same phase at the exit. Are the
    waves inside the plate the same?
 
-## Problem 6. Two normal waves
+## Problem 11.6. Two eigenstates
 
 Let, at constant density,
 
@@ -92,19 +92,19 @@ Denote $\Phi=E(n_{\mathrm{mat},1}-n_{\mathrm{mat},2})z$.
    Which parameters are specified independently? How can they be found for a layer of given
    density from the weak interaction?
 
-## Problem 7. A half-wave plate and neutrinos
+## Problem 11.7. A half-wave plate and neutrinos
 
 The input is a pure state $\nu_e$, the mass axes $\nu_1,\nu_2$ are rotated by
 $-\theta$ relative to the flavor axes. The phase difference of the waves $\nu_1$ and $\nu_2$ is $\pi$.
 
 1. Find the output state in the basis $(\nu_e,\nu_x)$ and verify that it is
    rotated by $2\theta$ relative to the input.
-2. Calculate $P_{e\to x}$ for $\theta=33{,}7^\circ$ and compare with the fractions of
+2. Calculate $P_{e\to x}$ for $\theta=33.7^\circ$ and compare with the fractions of
    light intensity $I_V$ and $I_H$ for the same plate.
 3. Does the output coincide with one of the crystal axes? For which $\theta$ will it
    coincide with $\nu_x$?
 
-## Problem 8. The refractive index operator
+## Problem 11.8. The refractive index operator
 
 1. Starting from $\hat n_{\mathrm{vac}}=\sum_i n_i|\nu_i\rangle\langle\nu_i|$ and
    the matrix $U$, obtain the matrix $[\hat n_{\mathrm{vac}}]_f$ in the flavor
@@ -113,3 +113,91 @@ $-\theta$ relative to the flavor axes. The phase difference of the waves $\nu_1$
 3. Add $\delta\hat n=\mathrm{diag}(\delta n_e,\delta n_x)$ and find the angle
    $\theta_m$ as a function of $\theta$, $n_2-n_1$, and $\delta n_e-\delta n_x$.
    For what relation among these quantities is $\theta_m=45^\circ$?
+
+## Problem 11.9. Vacuum and the Sun: two crystals of the same scale
+
+A neutrino with energy $E=10$ MeV, two flavors, $\Delta m^2=m_2^2-m_1^2=
+7.5\times10^{-5}$ eV$^2$, $\theta=33.7^\circ$. Constants:
+$\hbar c=1.973\times10^{-7}$ eV$\cdot$m, $G_F=1.166\times10^{-5}$ GeV$^{-2}$,
+solar radius $R_\odot=6.96\times10^{8}$ m. At the center of the Sun the
+electron density is $\mathcal N_e=6.08\times10^{25}$ cm$^{-3}$, and the
+charged current gives the difference of the additions (with $\hbar=c=1$;
+take the formula as given)
+
+$$
+\delta n_e-\delta n_x=-\frac{\sqrt2\,G_F\mathcal N_e}{E}.
+$$ {#eq-ex11-001}
+
+1. Find the neutrino wavelength $\lambda=2\pi\hbar c/E$. How many
+   wavelengths fit between the center of the Sun and its surface?
+2. The vacuum crystal. From $n_i\simeq1-m_i^2/(2E^2)$ find $n_1-n_2$.
+   Which of the two indices is larger? Over what length $L_{\mathrm{vac}}$
+   does the phase difference $E(n_1-n_2)z$ reach $2\pi$, and how many
+   wavelengths does it contain?
+3. Compare with optics: for calcite $n_o-n_e=0.172$ at $\lambda_0=589$ nm.
+   Find the thickness of a calcite half-wave plate and the length of a
+   neutrino "half-wave plate" in vacuum. Express both in wavelengths.
+4. Matter. Compute $V=\sqrt2\,G_F\mathcal N_e$ in eV (convert the density
+   to natural units with the factor $(\hbar c)^3$) and
+   $\delta n_e-\delta n_x$. Find the ratio
+   $$
+   A=\frac{\delta n_x-\delta n_e}{n_1-n_2}.
+   $$ {#eq-ex11-002}
+5. If the central density persisted up to the surface, what phase
+   difference $E|\delta n_e-\delta n_x|R_\odot$ would the neutrino
+   accumulate? In the real Sun the density falls toward the edge, and about
+   $4\times10^{3}$ rad accumulates. What path length at the central density
+   does this correspond to?
+6. At constant central density the eigenstates of the sum are determined by
+   $$
+   \tan2\theta_m=\frac{\sin2\theta}{\cos2\theta-A},
+   \qquad
+   \frac{n_{\mathrm{mat},1}-n_{\mathrm{mat},2}}{n_1-n_2}
+   =\sqrt{(\cos2\theta-A)^2+\sin^22\theta}.
+   $$ {#eq-ex11-003}
+   Find $\theta_m$ (in which quadrant does $2\theta_m$ lie?), the amplitude
+   $\sin^22\theta_m$ and the period $L_{\mathrm{mat}}$. Compare with vacuum.
+   What fraction of $\nu_e$ belongs to $\nu_{\mathrm{mat},2}$?
+
+State the main physical conclusion: why does a difference of indices of
+order $10^{-19}$ not mean a small effect, and why can neither vacuum nor
+matter be neglected at the center of the Sun?
+
+## Problem 11.10. A refractive index below one
+
+An electron in an atom is an oscillator with natural frequency $\omega_0$
+and damping $\gamma$. In Gaussian units, $r_e=e^2/(mc^2)=2.818\times10^{-13}$ cm,
+
+$$
+f(0)=r_e\,\frac{\omega^2}{\omega_0^2-\omega^2-i\gamma\omega},
+\qquad
+n-1=\frac{2\pi\mathcal N f(0)}{k^2},
+$$ {#eq-ex11-004}
+
+where $\mathcal N$ is the electron density. Consider silicon:
+$\rho=2.33$ g/cm$^3$, molar mass $M=28.09$ g/mol, $Z=14$, the X-ray line
+$\lambda=0.154$ nm ($\hbar\omega\approx8.05$ keV, all $\omega_0$ of the atom
+are much smaller than $\omega$).
+
+1. Neglecting $\gamma$, find the sign of $n-1$ for $\omega<\omega_0$ and for
+   $\omega>\omega_0$. Show that for $\omega<\omega_0$ the index grows with
+   frequency. Which light does a prism deflect more strongly, red or blue?
+2. Show that for $\omega\gg\omega_0$
+   $$
+   n=1-\delta,\qquad \delta=\frac{\mathcal N r_e\lambda^2}{2\pi},
+   $$ {#eq-ex11-005}
+   and $\omega_0$ drops out of the answer. Find $\mathcal N$ and $\delta$
+   for silicon.
+3. A "paradox": for $n<1$ the phase velocity $c/n$ exceeds $c$. Write
+   $\delta=\omega_p^2/(2\omega^2)$, where $\omega_p^2=4\pi\mathcal Ne^2/m$,
+   and from $k=n\omega/c$ find the group velocity $v_g=d\omega/dk$. Show that
+   $v_g<c$ and $v_{\mathrm{ph}}v_g\simeq c^2$. Compute $\hbar\omega_p$.
+4. An X-ray beam falls from vacuum onto a smooth silicon surface at a
+   grazing angle $\alpha$ to it. Using Snell's law, show that for
+   $\alpha<\alpha_c$, $\cos\alpha_c=n$, there is no refracted beam and total
+   external reflection occurs. Find $\alpha_c\approx\sqrt{2\delta}$ in mrad
+   and in degrees. Why are the mirrors of X-ray telescopes set almost
+   parallel to the beam?
+
+State the main conclusion: what sets the sign of $n-1$, and why does a
+neutrino refractive index below one not contradict causality?

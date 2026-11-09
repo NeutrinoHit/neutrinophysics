@@ -98,3 +98,290 @@ inhomogeneity and use the nonrelativistic addition of velocities.
 4. Why is the energy before and after reflection the same in a stationary magnetic mirror,
    while in this problem it is not?
 5. What energy does the system lose when the particle is accelerated?
+
+## Problem 6.5. Slow or fast: a numerical test of the invariant
+
+Transverse cyclotron motion in a slowly varying field is an oscillator
+with a variable frequency. Let us check numerically when the action is conserved.
+Set $m=1$ and consider
+
+$$
+\ddot Q=-\omega^2(t)\,Q,
+\qquad
+J=\frac{1}{\omega}\left(\frac{\dot Q^2}{2}+\frac{\omega^2Q^2}{2}\right).
+$$ {#eq-ex06-003}
+
+The frequency decreases from $\omega_0=1$ to $\omega_1=1/4$, as when the
+field decreases by a factor of four, over a time $\tau$ (in units of $1/\omega_0$).
+
+1. Sudden change, $\tau\to0$: $Q$ and $P=\dot Q$ have no time to
+   change. For the initial state
+   $Q=\sqrt{2J_0/\omega_0}\sin\theta_0$,
+   $P=\sqrt{2\omega_0J_0}\cos\theta_0$ show that
+
+   $$
+   \frac{J_1}{J_0}
+   =\frac{\omega_0}{\omega_1}\cos^2\theta_0
+   +\frac{\omega_1}{\omega_0}\sin^2\theta_0.
+   $$ {#eq-ex06-004}
+
+   Find the smallest, the largest and the phase-averaged values.
+2. Numerically (Python) integrate the equation for the linear profile
+   $\omega(t)=\omega_0+(\omega_1-\omega_0)t/\tau$, $0\le t\le\tau$, for
+   $\tau=1$, $10$ and $100$. For $64$ uniformly distributed initial phases
+   find the smallest and the largest $J_1/J_0$.
+3. Repeat the calculation for the smooth profile
+
+   $$
+   \omega(t)=\omega_0+(\omega_1-\omega_0)\,
+   \frac{1+\tanh(t/\tau)}{2},
+   \qquad
+   -8\tau\le t\le8\tau,
+   $$ {#eq-ex06-005}
+
+   for $\tau=1$, $3$ and $10$. Why does the smooth profile conserve $J$ much
+   better than the linear one? Where is slowness violated in the linear profile?
+4. For the linear profile compute the parameter $|\dot\omega|/\omega^2$ at the end
+   of the frequency change. Is it consistent with the spread of $J_1/J_0$ you found?
+5. What is the energy $E_1=\omega_1J_1$ in the adiabatic limit? What does this
+   mean for the transverse energy of an electron if the field along its path
+   decreases by a factor of four? Where does the energy difference go in a
+   stationary magnetic field?
+
+State the main physical conclusion: what exactly must be small for
+$J$ to be conserved, and why is the conservation of $J$ independent of the phase only in the
+adiabatic limit?
+
+## Problem 6.6. Magnetic bottle: oscillations between mirrors
+
+Near the minimum on the trap axis the field is
+
+$$
+B(s)=B_0\left(1+\frac{s^2}{\ell^2}\right).
+$$ {#eq-ex06-006}
+
+A non-relativistic electron with energy $E$ passes the point $s=0$ at an angle
+$\alpha_0$ to the field.
+
+1. Using the guiding-center Hamiltonian
+   $\mathcal H_{\mathrm{gc}}=p_\parallel^2/(2m)+\mu B(s)$, show that the
+   guiding center performs harmonic oscillations along the field with
+   frequency
+
+   $$
+   \Omega_b=\frac{v_{\perp0}}{\ell},
+   $$ {#eq-ex06-007}
+
+   and amplitude $s_m=\ell\cot\alpha_0$. Check that at the point $s_m$ the field
+   equals $B_0/\sin^2\alpha_0$.
+2. Why is the oscillation frequency determined by $v_{\perp0}$ rather than by the total
+   speed? Does the position of the mirror point depend on the electron energy?
+3. For $E=1.0~\mathrm{keV}$, $B_0=0.10~\mathrm{T}$, $\ell=0.50~\mathrm{m}$ and
+   $\alpha_0=30^\circ$, $60^\circ$ compute $\rho_L$, $T_c$,
+   $T_b=2\pi/\Omega_b$ and $s_m$. Is the condition $T_c\ll T_b$ satisfied?
+4. A real trap is finite: at its ends the field reaches $B_{\max}=RB_0$.
+   Show that a particle from the center escapes through an end if
+   $\sin^2\alpha_0<1/R$, and that for an isotropic distribution the fraction of escaping
+   particles is
+
+   $$
+   f_{\mathrm{loss}}=1-\sqrt{1-\frac1R}.
+   $$ {#eq-ex06-008}
+
+   Compute $f_{\mathrm{loss}}$ for $R=2$ and $R=10$.
+5. In a tokamak the field is $B\propto1/R_{\mathrm{maj}}$, where $R_{\mathrm{maj}}$ is the
+   distance to the axis of the torus. On a magnetic surface of minor radius $r$
+   around a circle of radius $R_0$ the ratio of the largest and smallest fields
+   equals $(1+\varepsilon)/(1-\varepsilon)$, $\varepsilon=r/R_0$. Show
+   that for an isotropic distribution on the outer side of the torus the fraction of trapped
+   particles is
+
+   $$
+   f_{\mathrm{trap}}=\sqrt{\frac{2\varepsilon}{1+\varepsilon}}.
+   $$ {#eq-ex06-009}
+
+   Compute it for $\varepsilon=0.1$ and $0.3$. Why are there so many trapped
+   particles although the mirror ratio is close to unity?
+
+State the main physical conclusion: what determines whether a
+magnetic mirror confines a particle, and what does not?
+
+## Problem 6.7. Transmission function of an ideal MAC-E filter
+
+Monoenergetic electrons with kinetic energy $E=18.6~\mathrm{keV}$
+are emitted isotropically in the source. Use the non-relativistic relation
+$E_\perp=E\sin^2\alpha$, the conservation of $p_\perp^2/B$, and
+
+$$
+B_{\mathrm{src}}=3.6~\mathrm{T},
+\qquad
+B_{\max}=6.0~\mathrm{T},
+\qquad
+B_{\mathrm A}=0.30~\mathrm{mT}.
+$$ {#eq-ex06-010}
+
+1. Show that in the analyzing plane
+   $E_{\perp,\mathrm A}=E\sin^2\alpha_{\mathrm{src}}\,B_{\mathrm A}/B_{\mathrm{src}}$
+   and that the electron passes the barrier if
+   $\sin^2\alpha_{\mathrm{src}}<\sin^2\alpha_T$, where
+
+   $$
+   \sin^2\alpha_T
+   =\frac{E-e|U|}{E}\,\frac{B_{\mathrm{src}}}{B_{\mathrm A}}.
+   $$ {#eq-ex06-011}
+
+2. Because of the magnetic mirror only angles
+   $\alpha_{\mathrm{src}}<\alpha_{\mathrm{acc}}$ are accepted. Obtain the transmitted fraction of the
+   accepted electrons
+
+   $$
+   T(E,U)=\frac{1-\cos\alpha_T}{1-\cos\alpha_{\mathrm{acc}}},
+   \qquad
+   e|U|\le E\le e|U|+\Delta E,
+   $$ {#eq-ex06-012}
+
+   with $T=0$ below and $T=1$ above this interval. Show that
+   $\Delta E=E\,B_{\mathrm A}/B_{\max}$ and that $T$ is continuous at both
+   ends of the interval.
+3. Introduce $u=(E-e|U|)/\Delta E$ and write $T(u)$ in terms of the ratio
+   $B_{\mathrm{src}}/B_{\max}$. Compute $T$ at $u=0.25$, $0.5$, $0.75$ and
+   the slopes $dT/du$ for $u\to0$ and $u\to1$. Plot it. Is the transmission
+   edge linear?
+4. If the integral spectrum is almost linear over the width $\Delta E$, the smooth edge
+   acts as a step shifted by
+
+   $$
+   \delta=\Delta E\int_0^1\bigl[1-T(u)\bigr]\,du.
+   $$ {#eq-ex06-013}
+
+   Prove this and compute $\delta/\Delta E$.
+5. Include the relativistic correction: $\Delta E$ is multiplied by $(\gamma+1)/2$.
+   Assuming the shape of $T(u)$ unchanged, find $\Delta E$ and $\delta$ in
+   electronvolts.
+
+State the main physical conclusion: why does an edge about
+$1~\mathrm{eV}$ wide not prevent a search for a neutrino mass below $1~\mathrm{eV}$, provided the
+shape of the edge is known?
+
+## Problem 6.8. Why the main spectrometer is the size of a house
+
+The electrons accepted by KATRIN fill a magnetic tube with flux
+$\Phi_{\mathrm{tube}}=191~\mathrm{T\,cm^2}$. Use
+$E=18.6~\mathrm{keV}$, $\gamma=1.036$, $B_{\mathrm{src}}=3.6~\mathrm{T}$,
+$B_{\max}=6.0~\mathrm{T}$, $B_{\mathrm A}=0.30~\mathrm{mT}$. The main
+vessel has a length of $23.3~\mathrm{m}$ and an inner diameter of $9.8~\mathrm{m}$.
+
+1. From flux conservation find the diameter of the tube in the source, at the field
+   maximum and in the analyzing plane.
+2. Show that the largest Larmor radius in the analyzing plane
+   is
+
+   $$
+   \rho_{L,\mathrm A}^{\max}=\frac{p}{e\sqrt{B_{\mathrm A}B_{\max}}},
+   $$ {#eq-ex06-014}
+
+   and compute it. What sets the diameter of the vessel: the size of an individual orbit or
+   the cross section of the tube?
+3. Compute the pitch $h=v_\parallel T_c$ for an electron moving almost along the
+   field without retardation ($v_\parallel\simeq v$) at $B=6.0~\mathrm{T}$,
+   $0.10~\mathrm{T}$, $1.0~\mathrm{mT}$ and $0.30~\mathrm{mT}$. Where is
+   adiabaticity at risk?
+4. Require $h/L_\parallel\le\varepsilon$ along the whole path. Show that this
+   condition has the form
+
+   $$
+   \left|\frac{d}{ds}\frac{1}{B}\right|
+   \le\frac{\varepsilon e}{2\pi\gamma m_ev},
+   $$ {#eq-ex06-015}
+
+   and that the distance from the field maximum to the analyzing plane is at least
+   $s_{\min}\simeq h(B_{\mathrm A})/\varepsilon$. Estimate $s_{\min}$ in
+   order of magnitude for $\varepsilon\sim1$ and compare it with half the length of the
+   vessel.
+5. Near the analyzing plane the electron is retarded by the potential. Find
+   the pitch at $B_{\mathrm A}$ for a longitudinal energy of $0.1$ and
+   $1.0~\mathrm{eV}$ (here $\gamma\simeq1$). How does the retardation relax the
+   estimate of part 4?
+
+State the main physical conclusion: what two prices does the
+spectrometer pay for a small ratio $B_{\mathrm A}/B_{\max}$?
+
+## Problem 6.9. Where is the electron's fate decided?
+
+Near the analyzing plane on the spectrometer axis use the model
+
+$$
+e|U(s)|=e|U_0|\left[1-\frac{(s-\delta)^2}{a^2}\right],
+\qquad
+B(s)=B_{\mathrm A}\left(1+\frac{s^2}{b^2}\right),
+$$ {#eq-ex06-016}
+
+where $e|U_0|=18.6~\mathrm{keV}$, $a=5.0~\mathrm{m}$, $b=3.0~\mathrm{m}$, and
+$\delta$ is the offset of the potential maximum relative to the field minimum. In the
+source the potential is zero and the kinetic energy of the electron is $E$.
+For the accepted electrons $\mu B_{\mathrm A}\le\Delta E=0.95~\mathrm{eV}$.
+
+1. From the conservation of $\mathcal E=p_\parallel^2/(2m)+\mu B+q\Phi$ and of $\mu$
+   obtain, in non-relativistic form,
+
+   $$
+   E_\parallel(s)=E-e|U(s)|-\mu B(s).
+   $$ {#eq-ex06-017}
+
+   Explain why the electron passes the filter only if
+   $\min_sE_\parallel(s)>0$.
+2. Let $\delta=0$. Show that the minimum of $E_\parallel$ is at $s=0$
+   if $e|U_0|/a^2>\mu B_{\mathrm A}/b^2$, and estimate the ratio of the two
+   coefficients. What is the transmission threshold?
+3. Let $\delta\ne0$. Find the position of the minimum $s^*$ and show that to
+   leading order
+
+   $$
+   \min_sE_\parallel
+   \simeq E-e|U_0|-\mu B_{\mathrm A}\left(1+\frac{\delta^2}{b^2}\right).
+   $$ {#eq-ex06-018}
+
+4. Find the width of the threshold for $\delta=0.5$, $1.0$ and $2.0~\mathrm{m}$. For
+   which electrons does the offset not matter?
+5. A "paradox": for $\delta=1.0~\mathrm{m}$ an electron with energy slightly above
+   $e|U_0|+\mu B_{\mathrm A}$ has a longitudinal energy of about
+   $0.7~\mathrm{keV}$ at the point $s=0$, but can still be reflected. Find this energy
+   and explain where the analyzing plane physically is.
+
+State the main physical conclusion: why must the maximum of the retarding
+potential coincide with the minimum of the magnetic field?
+
+## Problem 6.10. Whom does the Earth's magnetic field confine?
+
+In the plane of the magnetic equator the dipole field is
+
+$$
+B_{\mathrm{eq}}(r)=B_{\mathrm{eq},\oplus}\left(\frac{R_\oplus}{r}\right)^3,
+\qquad
+B_{\mathrm{eq},\oplus}=3.1\cdot10^{-5}~\mathrm{T},
+\qquad
+R_\oplus=6371~\mathrm{km}.
+$$ {#eq-ex06-019}
+
+Use $m_ec^2=0.511~\mathrm{MeV}$, $m_pc^2=938.3~\mathrm{MeV}$ and
+the relativistic Larmor radius $\rho_L=p_\perp/(|q|B)$; for the estimate
+set $p_\perp\simeq p$.
+
+1. Show that at the equator the scale of the inhomogeneity across the field is
+   $L_\perp=r/3$.
+2. Compute $\rho_L$ on the lines $L=1.5$ and $L=4$ for a $1~\mathrm{MeV}$ electron,
+   a $1~\mathrm{MeV}$ proton and a $100~\mathrm{MeV}$ proton.
+3. Find $\rho_L/L_\perp$ and show that at fixed momentum this
+   ratio grows as $L^4$. For which particles and lines is the adiabatic
+   approximation reliable?
+4. For a $100~\mathrm{MeV}$ proton on the line $L=4$ compare the cyclotron
+   period with the transit time $LR_\oplus/v$. Can one speak of the
+   conservation of $\mu$?
+5. Protons with energies up to hundreds of megaelectronvolts are observed in the inner belt,
+   while the outer belt consists mainly of electrons.
+   What does your estimate say about where energetic protons can be
+   stably confined at all?
+
+State the main physical conclusion: why is the same magnetic field
+a good trap for electrons and a poor one for energetic
+protons at large $L$?

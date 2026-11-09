@@ -277,3 +277,241 @@ $$ {#eq-ex10-016}
 
 In a real long-baseline experiment the comparison of neutrinos and antineutrinos
 is also modified by matter. In this problem only the vacuum part needs to be computed.
+
+## Problem 10.6. What the moduli of the matrix know about the phase $\delta_{\mathrm{CP}}$
+
+In the standard parametrization the elements of the first column are
+
+$$
+U_{e1}=c_{12}c_{13},
+\qquad
+U_{\mu1}=-s_{12}c_{23}-c_{12}s_{23}s_{13}e^{i\delta},
+\qquad
+U_{\tau1}=s_{12}s_{23}-c_{12}c_{23}s_{13}e^{i\delta}.
+$$ {#eq-ex10-020}
+
+1. Show that
+
+   $$
+   |U_{\mu1}|^2
+   =s_{12}^2c_{23}^2+c_{12}^2s_{23}^2s_{13}^2
+   +2s_{12}c_{12}s_{23}c_{23}s_{13}\cos\delta,
+   $$ {#eq-ex10-021}
+
+   and obtain the analogous expression for $|U_{\tau1}|^2$.
+2. Show that $|U_{\mu1}|^2+|U_{\tau1}|^2$ does not depend on $\delta$.
+   Which unitarity condition does this express?
+3. For the NuFIT 6.1 best-fit point with normal ordering
+
+   $$
+   \sin^2\theta_{12}=0.3088,
+   \quad
+   \sin^2\theta_{23}=0.470,
+   \quad
+   \sin^2\theta_{13}=0.02248,
+   \quad
+   \delta=212^\circ
+   $$ {#eq-ex10-022}
+
+   compute $|U_{\mu1}|^2$ and $|U_{\tau1}|^2$.
+4. With the same angles, find the range of $|U_{\mu1}|$ as $\delta$ runs
+   from $0$ to $360^\circ$. The global analysis gives the $3\sigma$
+   interval from $0.259$ to $0.498$ for $|U_{\mu1}|$ and from $0.810$ to
+   $0.834$ for $|U_{e1}|$. Why are the entries of the $\mu$ and $\tau$ rows
+   known much worse than those of the electron row?
+5. Prove that the phases $\delta$ and $360^\circ-\delta$ give the same
+   matrix of moduli $|U_{\alpha i}|$. What is $J_{\mathrm{CP}}$ at
+   $\delta=212^\circ$ and at $\delta=148^\circ$?
+6. Show that the nine moduli determine $|J_{\mathrm{CP}}|$ but not its
+   sign.
+
+State the main conclusion: what part of the information on
+$\delta_{\mathrm{CP}}$ can measurements sensitive only to $|U_{\alpha i}|$,
+such as survival channels, provide, and which measurements are needed for
+the sign of $\sin\delta_{\mathrm{CP}}$?
+
+## Problem 10.7. Two scales: when three flavors reduce to two
+
+Use the NuFIT 6.1 best-fit point with normal ordering:
+
+$$
+\begin{aligned}
+\sin^2\theta_{12}&=0.3088,&
+\sin^2\theta_{23}&=0.470,&
+\sin^2\theta_{13}&=0.02248,\\
+\Delta m_{21}^2&=7.537\cdot10^{-5}~\mathrm{eV}^2,&
+\Delta m_{31}^2&=2.511\cdot10^{-3}~\mathrm{eV}^2,
+\end{aligned}
+$$ {#eq-ex10-023}
+
+together with
+
+$$
+P_{\alpha\to\alpha}
+=1-4\sum_{i>j}|U_{\alpha i}|^2|U_{\alpha j}|^2\sin^2\Delta_{ij},
+\qquad
+\Delta_{ij}=1.267\,
+\frac{\Delta m^2_{ij}[\mathrm{eV}^2]L[\mathrm{km}]}{E[\mathrm{GeV}]}.
+$$ {#eq-ex10-024}
+
+1. Find the ratio $\Delta m_{21}^2/\Delta m_{31}^2$. Setting
+   $\Delta_{21}=0$, show that
+
+   $$
+   P_{\alpha\to\alpha}
+   \simeq1-4|U_{\alpha3}|^2\left(1-|U_{\alpha3}|^2\right)
+   \sin^2\Delta_{31}.
+   $$ {#eq-ex10-025}
+
+2. For the electron flavor obtain
+   $P_{ee}\simeq1-\sin^2 2\theta_{13}\sin^2\Delta_{31}$. For a reactor
+   detector with $L=1.6~\mathrm{km}$ and $E=4~\mathrm{MeV}$ compute
+   $\Delta_{21}$, $\Delta_{31}$, and the approximate and exact
+   probabilities. Where is the first atmospheric disappearance maximum
+   located?
+3. In the same limit obtain the appearance probability
+
+   $$
+   P_{\alpha\to\beta}
+   \simeq4|U_{\alpha3}|^2|U_{\beta3}|^2\sin^2\Delta_{31},
+   \qquad
+   \alpha\ne\beta,
+   $$ {#eq-ex10-026}
+
+   using the orthogonality of the rows $\alpha$ and $\beta$ for the sum of
+   the two terms with the same phase.
+4. For a $\nu_\mu$ beam with $L=295~\mathrm{km}$ and $E=0.6~\mathrm{GeV}$
+   find $|U_{\mu3}|^2=s_{23}^2c_{13}^2$, the disappearance depth
+   $4|U_{\mu3}|^2(1-|U_{\mu3}|^2)$, $P_{\mu\mu}$ and
+   $P_{\mu e}\simeq\sin^2 2\theta_{13}\,s_{23}^2\sin^2\Delta_{31}$. Which of
+   the two probabilities is sensitive to the octant of $\theta_{23}$?
+   Compare $P_{\mu e}$ with the exact vacuum value at
+   $\delta_{\mathrm{CP}}=212^\circ$ (for example, from the program of
+   Problem 10.5) and explain the discrepancy.
+5. For a reactor detector at $L=180~\mathrm{km}$ with $E=4~\mathrm{MeV}$
+   find $\Delta_{31}$. Average the fast terms and show that
+
+   $$
+   P_{ee}\simeq c_{13}^4
+   \left(1-\sin^2 2\theta_{12}\sin^2\Delta_{21}\right)+s_{13}^4.
+   $$ {#eq-ex10-027}
+
+   Compute this probability.
+6. Which two small parameters control the accuracy of the two-flavor
+   approximations? Which parameters of the matrix does each of the three
+   experiments considered here measure?
+
+State the main conclusion: why did two-flavor formulas describe individual
+experiments so well, even though there are three flavors?
+
+## Problem 10.8. Mass ordering in the reactor antineutrino spectrum
+
+The sign $\Delta m_{21}^2>0$ is known; the position of the third mass state
+is not. Compare two options with the same angles:
+
+$$
+\begin{aligned}
+\text{NO:}&\quad\Delta m_{31}^2=+2.511\cdot10^{-3}~\mathrm{eV}^2,
+&\Delta m_{32}^2&=\Delta m_{31}^2-\Delta m_{21}^2,\\
+\text{IO:}&\quad\Delta m_{32}^2=-2.511\cdot10^{-3}~\mathrm{eV}^2,
+&\Delta m_{31}^2&=\Delta m_{32}^2+\Delta m_{21}^2,
+\end{aligned}
+$$ {#eq-ex10-028}
+
+where $\Delta m_{21}^2=7.537\cdot10^{-5}~\mathrm{eV}^2$,
+$\sin^2\theta_{12}=0.3088$, $\sin^2\theta_{13}=0.02248$. In this model
+comparison the magnitudes of the two large splittings simply swap places.
+
+1. Using $|U_{e1}|=c_{12}c_{13}$, $|U_{e2}|=s_{12}c_{13}$,
+   $|U_{e3}|=s_{13}$, obtain
+
+   $$
+   P_{ee}
+   =1-c_{13}^4\sin^2 2\theta_{12}\sin^2\Delta_{21}
+   -\sin^2 2\theta_{13}
+   \left(c_{12}^2\sin^2\Delta_{31}+s_{12}^2\sin^2\Delta_{32}\right).
+   $$ {#eq-ex10-029}
+
+2. Show that $P_{ee}$ in vacuum does not change when the signs of all
+   $\Delta m_{ij}^2$ are flipped simultaneously. How, then, can the mass
+   ordering enter the probability?
+3. Define $\Delta_a=1.267\cdot2.511\cdot10^{-3}\,L/E$ and
+   $\Delta_b=\Delta_a-\Delta_{21}$ (in practical units). Prove that
+
+   $$
+   P_{ee}^{\mathrm{NO}}-P_{ee}^{\mathrm{IO}}
+   =-\sin^2 2\theta_{13}\cos2\theta_{12}\,
+   \sin(\Delta_a+\Delta_b)\sin\Delta_{21}.
+   $$ {#eq-ex10-030}
+
+   Find the largest possible value of
+   $|P_{ee}^{\mathrm{NO}}-P_{ee}^{\mathrm{IO}}|$.
+4. For $L=52.5~\mathrm{km}$ (the JUNO baseline) plot $P_{ee}(E)$ for NO
+   and IO in the range $2\leq E\leq8~\mathrm{MeV}$, together with their
+   difference. At what energy is the difference largest? Relate the answer
+   to the first solar maximum $\Delta_{21}=\pi/2$.
+5. What would happen for $\theta_{12}=45^\circ$? For $\theta_{13}=0$?
+6. Estimate the period of the fast oscillations in energy near
+   $E=4~\mathrm{MeV}$, $\delta E\simeq\pi E/\Delta_{31}$. What requirement on
+   the energy resolution of the detector follows from it? What remains of
+   the mass-ordering effect if the fast terms are averaged out?
+
+State the main physical conclusion: how does the mass ordering show up in
+vacuum if the probability is sensitive only to the magnitudes of the
+splittings?
+
+## Problem 10.9. The unitarity triangle and the number of phases
+
+The orthogonality of the $e$ and $\mu$ rows is written as
+
+$$
+z_1+z_2+z_3=0,
+\qquad
+z_i=U_{ei}U_{\mu i}^*.
+$$ {#eq-ex10-031}
+
+1. For the NuFIT 6.1 best-fit point with normal ordering
+
+   $$
+   \sin^2\theta_{12}=0.3088,
+   \quad
+   \sin^2\theta_{23}=0.470,
+   \quad
+   \sin^2\theta_{13}=0.02248,
+   \quad
+   \delta_{\mathrm{CP}}=212^\circ
+   $$ {#eq-ex10-032}
+
+   construct the matrix $U=R_{23}U_{13}(\delta)R_{12}$ and compute the three
+   complex numbers $z_i$. Check the closure and draw the triangle in the
+   complex plane.
+2. Find the side lengths $|z_i|=|U_{ei}||U_{\mu i}|$. Which side is the
+   shortest, and why?
+3. Compute the area $S=\frac12|\operatorname{Im}(z_1^*z_2)|$ and compare it
+   with $|J_{\mathrm{CP}}|/2$, where
+
+   $$
+   J_{\mathrm{CP}}
+   =\frac18\sin2\theta_{12}\sin2\theta_{23}\sin2\theta_{13}
+   \cos\theta_{13}\sin\delta_{\mathrm{CP}}.
+   $$ {#eq-ex10-033}
+
+4. Under the rephasing
+   $U_{\alpha i}\to e^{i(\phi_\alpha-\psi_i)}U_{\alpha i}$ find how the
+   $z_i$ change. Which properties of the triangle are physical, and which
+   depend on the convention?
+5. Repeat the calculation for $\delta_{\mathrm{CP}}=0$, $180^\circ$ and
+   $270^\circ$. When does the triangle degenerate into a segment? What is
+   the largest area for the given angles?
+6. A unitary $N\times N$ matrix has $N^2$ real parameters. Show that
+   $N(N-1)/2$ of them are angles and $N(N+1)/2$ are phases. Rephasing the
+   fields removes $2N-1$ phases for Dirac particles and $N$ phases for
+   Majorana particles. Fill in a table of the number of physical phases for
+   $N=2,3,4$.
+7. Suppose the sides $|z_i|$ have been measured independently, without
+   assuming unitarity. What result would be a direct sign of a violation of
+   unitarity of the three-neutrino matrix?
+
+State the main conclusion: what does the area of the unitarity triangle mean,
+and why does a triangle built from the parametrization not test unitarity
+itself?

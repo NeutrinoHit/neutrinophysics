@@ -114,6 +114,9 @@ $$ {#eq-ex02-007}
    $B_f=2.0\cdot10^{-2}~\mathrm{T}$. Find $T_f$.
 5. What real effects prevent the temperature from dropping without limit as
    $B_f\to0$?
+6. Find the limiting forms of the entropy for $x\ll1$ and $x\gg1$. Describe
+   the level populations in both limits and explain why $S$ tends to
+   $Nk_B\ln2$ and to zero, respectively.
 
 ## Problem 2.5. How can we explain to aliens which side is left?
 
@@ -130,6 +133,213 @@ spatial parity.
    orientation of space?
 5. What additional agreement must be communicated so that the procedure does not
    confuse matter with antimatter?
+
+## Problem 2.6. Why is it easy to polarize electrons but hard to polarize nuclei?
+
+The Bohr magneton and the nuclear magneton are
+
+$$
+\mu_B=\frac{e\hbar}{2m_e}=5.79\cdot10^{-5}~\mathrm{eV/T},
+\qquad
+\mu_N=\frac{e\hbar}{2m_p}=3.15\cdot10^{-8}~\mathrm{eV/T},
+\qquad
+k_B=8.617\cdot10^{-5}~\mathrm{eV/K}.
+$$ {#eq-ex02-015}
+
+For a spin-$1/2$ moment the equilibrium polarization is
+$\mathcal P=\tanh x$, where $x=\mu B/(k_BT)$.
+
+1. Find $\mu_BB$, $\mu_NB$ and their ratio for $B=1~\mathrm{T}$.
+   The ratio of which quantities is it equal to?
+2. Compare both energies with $k_BT$ at $T=1~\mathrm{K}$: find $x_e$ and
+   $x_N$.
+3. Find the polarization of the electron and nuclear moments at
+   $B=1~\mathrm{T}$ and $T=1~\mathrm{K}$, taking $\mu=\mu_B$ and $\mu=\mu_N$.
+4. To what temperature must the nuclei be cooled to obtain, in the same field,
+   the same $x$ as for electrons at $1~\mathrm{K}$?
+5. The polarized electron shell of an atom creates at the nucleus a hyperfine
+   field far exceeding a laboratory field. What effective field is needed to
+   obtain $x_N=1$ at $T=10~\mathrm{mK}$ for $\mu=\mu_N$?
+
+State the main physical conclusion: how does the proton-to-electron mass ratio
+turn into a requirement on the temperature of the Wu experiment, and why do the
+electron spins of the salt serve as the refrigerator while it is the
+polarization of the nuclei that is measured?
+
+## Problem 2.7. Why did the Laporte rule make people confident in parity conservation?
+
+The states of the hydrogen atom have the form
+$\psi_{nlm}=R_{nl}(r)Y_{lm}(\vartheta,\varphi)$. Under the reflection
+$\mathbf r\to-\mathbf r$
+
+$$
+\vartheta\to\pi-\vartheta,
+\qquad
+\varphi\to\varphi+\pi,
+\qquad
+Y_{lm}\to(-1)^lY_{lm}.
+$$ {#eq-ex02-016}
+
+The measured lifetimes of the levels are
+
+$$
+\tau(2p)=1.60~\mathrm{ns},
+\qquad
+\tau(2s)=0.122~\mathrm{s}.
+$$ {#eq-ex02-017}
+
+1. Show that the parity of the state $\psi_{nlm}$ is $(-1)^l$. Find the
+   parities of $1s$, $2s$, $2p$, $3d$.
+2. The dipole moment operator $\mathbf d=-e\mathbf r$ is odd. Assuming
+   $[H,P]=0$ and $P|i\rangle=\eta_i|i\rangle$, $P|f\rangle=\eta_f|f\rangle$,
+   show that
+   $\langle f|\mathbf d|i\rangle=-\eta_f\eta_i\langle f|\mathbf d|i\rangle$.
+   State the Laporte rule.
+3. Which of the transitions $2p\to1s$, $2s\to1s$, $3d\to2p$, $3d\to1s$,
+   $3s\to2p$ are allowed for electric dipole radiation?
+4. For $2s_{1/2}\to1s_{1/2}$ angular momentum conservation does not forbid the
+   emission of a single photon of spin $1$. Why is this transition nevertheless
+   suppressed, so that the $2s$ level lives much longer? Find
+   $\tau(2s)/\tau(2p)$.
+5. Suppose that a parity-violating interaction admixes the $2p$ state to $2s$
+   with a small amplitude $\varepsilon$. Then the one-photon decay rate is
+   $\varepsilon^2/\tau(2p)$. For what $\varepsilon$ would it equal the decay
+   rate $1/\tau(2s)$?
+
+State the main physical conclusion: what do parity selection rules in atoms
+test, and why do they say nothing about the weak interaction?
+
+## Problem 2.8. Why do ${}^{60}\mathrm{Co}$ electrons fly opposite to the nuclear spin?
+
+The main transition
+
+$$
+{}^{60}\mathrm{Co}(5^+)\to{}^{60}\mathrm{Ni}^*(4^+)+e^-+\bar\nu_e,
+\qquad
+T_{\max}=0.318~\mathrm{MeV},
+\qquad
+m_e=0.511~\mathrm{MeV},
+$$ {#eq-ex02-018}
+
+is allowed: the leptons carry away zero orbital angular momentum. In Fermi
+transitions the lepton spins form a singlet ($\Delta J=0$), in Gamow–Teller
+transitions a triplet ($\Delta J=0,\pm1$, except $0\to0$); the nuclear parity
+does not change. The electron from weak decay is longitudinally polarized
+opposite to its momentum, and the antineutrino along its momentum:
+
+$$
+\langle\boldsymbol\sigma_e\rangle=-\frac{v}{c}\,\hat{\mathbf p}_e,
+\qquad
+\langle\boldsymbol\sigma_{\bar\nu}\rangle=+\hat{\mathbf p}_{\bar\nu}.
+$$ {#eq-ex02-019}
+
+1. Check that the transition is allowed and pure Gamow–Teller.
+2. Let the nucleus be fully polarized: $M=+5$ along the $z$ axis. Which values
+   of $M$ are possible for ${}^{60}\mathrm{Ni}^*(4^+)$? Show that the leptons
+   must carry away $J_z=+1$, that is, both spins point along the nuclear spin.
+3. The electron is emitted at an angle $\theta$ to the $z$ axis. Using the
+   electron polarization, show that the probability of finding its spin along
+   $+z$ is $\tfrac12\left(1-\tfrac vc\cos\theta\right)$. Obtain
+   $W(\theta)\propto1-\tfrac vc\cos\theta$ and the asymmetry coefficient $A=-1$.
+4. In which direction does the antineutrino preferentially fly?
+5. Find $v/c$ for electrons with $T=T_{\max}$ and $T=0.1~\mathrm{MeV}$.
+6. For a nuclear polarization $\mathcal P\simeq0.65$, a velocity
+   $v/c\simeq0.6$ and a backscattering correction $f_{\mathrm{bs}}\simeq2/3$,
+   find the expected asymmetry $A\mathcal P(v/c)f_{\mathrm{bs}}$ and compare it
+   with the value $-0.25$ measured in the Wu experiment.
+
+State the main physical conclusion: which property of weak-decay electrons
+determines the sign of the asymmetry in the Wu experiment?
+
+## Problem 2.9. The $\pi\to\mu\to e$ chain: two parity violations at once
+
+A pion at rest decays as $\pi^+\to\mu^++\nu_\mu$; the muon stops and decays:
+$\mu^+\to e^++\nu_e+\bar\nu_\mu$. Use
+
+$$
+m_\pi=139.57~\mathrm{MeV},
+\qquad
+m_\mu=105.66~\mathrm{MeV},
+\qquad
+\tau_\mu=2.197~\mathrm{\mu s},
+\qquad
+\frac{\gamma_\mu}{2\pi}=135.5~\mathrm{MHz/T},
+$$ {#eq-ex02-020}
+
+where $\gamma_\mu$ is the gyromagnetic ratio of the muon. The
+energy-integrated distribution of positrons from muons with polarization
+$\mathcal P_\mu$ is
+
+$$
+\frac{dN}{d\cos\theta}\propto1+\frac{\mathcal P_\mu}{3}\cos\theta,
+$$ {#eq-ex02-021}
+
+where $\theta$ is the angle between the positron momentum and the muon spin.
+
+1. Find the momentum, kinetic energy and velocity of the muon in the pion rest
+   frame.
+2. The pion spin is zero, and $\mu^+$ and $\nu_\mu$ fly in opposite
+   directions. Show that their helicities are equal. What helicity does the
+   $\mu^+$ have if the $\nu_\mu$ is left-handed?
+3. Why does the longitudinal polarization of the muon by itself already mean
+   parity violation in pion decay?
+4. Find the ratio of the numbers of positrons emitted along and opposite to the
+   muon spin for $\mathcal P_\mu=1$.
+5. In the experiment of Garwin, Lederman and Weinrich the muons were stopped in
+   graphite and their spin was rotated by a magnetic field. Find the precession
+   frequency for $B=5.0~\mathrm{mT}$ and the angle through which the spin
+   turns during the time $\tau_\mu$. Write down the time dependence $N(t)$ of
+   the counting rate of a fixed positron counter.
+
+State the main physical conclusion: which two independent P-odd effects does
+this chain contain, and why did its result confirm the Wu experiment?
+
+## Problem 2.10. What does "maximal" parity violation mean?
+
+Use
+
+$$
+(\gamma^5)^2=1,
+\qquad
+\gamma^5\gamma^\mu=-\gamma^\mu\gamma^5,
+\qquad
+P_{L,R}=\frac{1\mp\gamma^5}{2},
+\qquad
+P:\ \psi(t,\mathbf r)\to\gamma^0\psi(t,-\mathbf r).
+$$ {#eq-ex02-022}
+
+Consider the general coupling of a fermion to a vector boson
+
+$$
+\bar\psi\gamma^\mu\left(g_V-g_A\gamma^5\right)\psi.
+$$ {#eq-ex02-023}
+
+1. Show that $P_L^2=P_L$, $P_R^2=P_R$, $P_LP_R=0$, $P_L+P_R=1$.
+2. Show that $P_L\gamma^0=\gamma^0P_R$. Why does reflection turn the
+   left-handed component of the field into the right-handed one?
+3. Write the coupling as $\gamma^\mu(g_LP_L+g_RP_R)$ and express $g_L$ and
+   $g_R$ in terms of $g_V$ and $g_A$.
+4. For ultrarelativistic fermions the left- and right-handed components
+   interact with strengths $g_L^2$ and $g_R^2$. Show that the asymmetry is
+
+   $$
+   \mathcal A_{LR}=\frac{g_L^2-g_R^2}{g_L^2+g_R^2}
+   =\frac{2g_Vg_A}{g_V^2+g_A^2},
+   \qquad
+   |\mathcal A_{LR}|\le1.
+   $$ {#eq-ex02-024}
+
+   Why does a purely vector or purely axial coupling conserve parity, while
+   P-odd effects arise from the interference of $V$ and $A$?
+5. Find $g_V$, $g_A$ and $\mathcal A_{LR}$ for the charged current
+   $\bar\psi\gamma^\mu P_L\psi$.
+6. For the coupling of the electron to the $Z$ boson
+   $g_V=-\tfrac12+2\sin^2\theta_W$, $g_A=-\tfrac12$, $\sin^2\theta_W=0.231$.
+   Find $\mathcal A_{LR}$.
+
+State the main physical conclusion: in what sense is parity violation in the
+charged current maximal, and why does this statement not carry over
+automatically to the neutral current?
 
 ---
 

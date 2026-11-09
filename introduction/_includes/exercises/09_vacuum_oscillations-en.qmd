@@ -334,3 +334,176 @@ $\omega_0^2=g/\ell$.
 10. Explain why $P_i=|a_i|^2/\|\boldsymbol a\|^2$ is exactly the
     fraction of the norm of the complex amplitude, but coincides with the fraction of the averaged
     local energy only in the weak-coupling limit.
+
+## Problem 9.7. Oscillation scales: from a reactor to the Sun
+
+In practical units the two-flavor transition probability reads
+
+$$
+P_{\alpha\to\beta}
+=\sin^2 2\theta\,
+\sin^2\!\left[
+1.267\,
+\frac{\Delta m^2[\mathrm{eV}^2]L[\mathrm{km}]}
+     {E[\mathrm{GeV}]}
+\right].
+$$ {#eq-ex09-032}
+
+Use two scales of the mass splitting, the atmospheric and the solar one:
+
+$$
+\Delta m^2_{\mathrm{atm}}=2.5\cdot10^{-3}~\mathrm{eV}^2,
+\qquad
+\Delta m^2_{\mathrm{sol}}=7.5\cdot10^{-5}~\mathrm{eV}^2.
+$$ {#eq-ex09-033}
+
+1. Show that the oscillation length in practical units is
+
+   $$
+   L_{\mathrm{osc}}[\mathrm{km}]
+   \simeq2.48\,
+   \frac{E[\mathrm{GeV}]}{|\Delta m^2|[\mathrm{eV}^2]},
+   $$ {#eq-ex09-034}
+
+   and that the same coefficient is obtained for $L$ in meters and $E$ in MeV.
+2. Find the distance to the first transition maximum, $L_{\mathrm{osc}}/2$,
+   for both scales and three sources: reactor antineutrinos with
+   $E=4~\mathrm{MeV}$, an accelerator beam with $E=0.6~\mathrm{GeV}$ and
+   atmospheric neutrinos with $E=1~\mathrm{GeV}$. Collect the results in a
+   table.
+3. Atmospheric neutrinos with $E\simeq1~\mathrm{GeV}$ reach the detector from
+   above, after traveling about $15~\mathrm{km}$, and from below, after
+   crossing the Earth over up to $12\,700~\mathrm{km}$. Estimate the phase
+   $1.267\,\Delta m^2_{\mathrm{atm}}L/E$ for both directions. Why does a
+   comparison of the fluxes from above and from below test oscillations while
+   hardly relying on a calculation of the absolute flux?
+4. The near detector of a reactor experiment is located at
+   $L=0.3~\mathrm{km}$. Estimate the disappearance probability for it at
+   $\sin^2 2\theta=0.088$ and $\Delta m^2_{\mathrm{atm}}$. Compare the exact
+   answer with the small-phase approximation. What is such a detector for?
+5. For solar neutrinos with $E=1~\mathrm{MeV}$ and $\Delta m^2_{\mathrm{sol}}$,
+   find $L_{\mathrm{osc}}$. How many periods fit into the Sun–Earth distance
+   $L=1.496\cdot10^{8}~\mathrm{km}$? Over a year this distance changes by about
+   $5\cdot10^{6}~\mathrm{km}$ because of the eccentricity of the orbit. Can
+   the annual variation of the oscillation phase be observed?
+
+State the main conclusion: why do experiments with energies from MeV to GeV
+measure the same splittings, and what condition on $L/E$ makes an experiment
+sensitive to a given $\Delta m^2$?
+
+## Problem 9.8. Averaging of oscillations and the 1/2 bound
+
+A detector registers neutrinos of different energies, so it measures not
+$P_{\alpha\to\beta}(L,E)$ at a single point but its average over the
+distribution of the phase $\phi=\Delta m^2L/(2E)$.
+
+1. Show that the two-flavor probability can be written as
+
+   $$
+   P_{\alpha\to\beta}
+   =\frac12\sin^2 2\theta\,(1-\cos\phi).
+   $$ {#eq-ex09-035}
+
+2. Let the phase be uniformly distributed over an interval much larger than
+   $2\pi$. Find $\langle P_{\alpha\to\beta}\rangle$ and
+   $\langle P_{\alpha\to\alpha}\rangle$. Show that
+   $\langle P_{\alpha\to\alpha}\rangle\geq1/2$ for any $\theta$.
+3. Let the phase be Gaussian distributed with mean $\phi_0$ and width
+   $\sigma_\phi$. Prove that
+
+   $$
+   \langle\cos\phi\rangle=e^{-\sigma_\phi^2/2}\cos\phi_0
+   $$ {#eq-ex09-036}
+
+   and write down $\langle P_{\alpha\to\beta}\rangle$. The factor
+   $e^{-\sigma_\phi^2/2}$ is called the oscillation contrast.
+4. At fixed $L$ the spread of the phase comes from the spread of the energy.
+   Show that for $\sigma_E/E\ll1$
+
+   $$
+   \sigma_\phi\simeq\phi_0\,\frac{\sigma_E}{E}.
+   $$ {#eq-ex09-037}
+
+   For $\sigma_E/E=0.05$ find the contrast at the first maximum
+   $\phi_0=\pi$. At what $\phi_0$ does the contrast drop to $1/2$? How many
+   oscillation periods is this?
+5. Compare with an incoherent mixture: the source emits $|\nu_1\rangle$ with
+   probability $\cos^2\theta$ and $|\nu_2\rangle$ with probability
+   $\sin^2\theta$. Find the probability of detecting the flavor $\alpha$ and
+   show that it coincides with the fully averaged
+   $\langle P_{\alpha\to\alpha}\rangle$.
+6. For solar electron neutrinos the measured values are $P_{ee}\approx0.55$ at
+   energies below $1~\mathrm{MeV}$ and $P_{ee}\approx1/3$ at energies of a few
+   MeV. The solar mixing angle is $\sin^2\theta=0.31$. Compute the fully
+   averaged two-flavor vacuum survival probability. Which of the two
+   measurements does it explain? Is there an angle $\theta$ for which it equals
+   $1/3$?
+
+State the main physical conclusion: what information does a detector lose in
+the fully averaged regime, and why does $P_{ee}\approx1/3$ require a mechanism
+beyond vacuum oscillations?
+
+## Problem 9.9. When the mass components stop interfering
+
+The formula for $P_{\alpha\to\beta}(L,E)$ was derived for plane waves. A real
+neutrino is produced localized: it is a wave packet of size $\sigma_x$. Mass
+components of the same energy $E$ move with different group velocities. Use
+$\hbar=c=1$ and
+
+$$
+\hbar c=1.97327\cdot10^{-7}~\mathrm{eV\,m}.
+$$ {#eq-ex09-038}
+
+1. Show that in the ultrarelativistic limit
+
+   $$
+   v_i\simeq1-\frac{m_i^2}{2E^2},
+   \qquad
+   |v_1-v_2|\simeq\frac{|\Delta m^2|}{2E^2}.
+   $$ {#eq-ex09-039}
+
+2. The packets of the mass components stop overlapping when their relative
+   displacement becomes comparable to $\sigma_x$. Obtain the coherence length
+
+   $$
+   L_{\mathrm{coh}}\simeq\frac{2E^2\sigma_x}{|\Delta m^2|}
+   $$ {#eq-ex09-040}
+
+   and show that
+
+   $$
+   \frac{L_{\mathrm{coh}}}{L_{\mathrm{osc}}}
+   \simeq\frac{\sigma_x}{\lambda},
+   \qquad
+   \lambda=\frac{2\pi}{E}.
+   $$ {#eq-ex09-041}
+
+   What is the meaning of this ratio?
+3. A reactor experiment observes oscillations with full contrast at
+   $E=4~\mathrm{MeV}$, $|\Delta m^2|=2.5\cdot10^{-3}~\mathrm{eV}^2$ and
+   $L=1.6~\mathrm{km}$. What lower bound on $\sigma_x$ follows from this?
+   Compare it with the wavelength $\lambda$ in meters.
+4. For solar neutrinos with $E=1~\mathrm{MeV}$,
+   $|\Delta m^2|=7.5\cdot10^{-5}~\mathrm{eV}^2$ and
+   $L=1.496\cdot10^{11}~\mathrm{m}$, find how large $\sigma_x$ must be for
+   the packets still to overlap at the Earth. Does the observed survival
+   probability change if they have separated? Compare the probability for an
+   incoherent mixture of mass states with the fully averaged oscillation
+   probability.
+5. Coherence is also needed at production. A source localized within a region
+   $\sigma_x$ has a momentum spread $\sigma_p\sim1/(2\sigma_x)$. At equal
+   energy the momenta of the mass components differ by
+   $|\Delta p|\simeq|\Delta m^2|/(2E)$. Show that the condition
+   $\sigma_p\gg|\Delta p|$ (the source cannot determine which mass state was
+   emitted) is equivalent to
+
+   $$
+   \sigma_x\ll\frac{E}{|\Delta m^2|}=\frac{L_{\mathrm{osc}}}{4\pi}.
+   $$ {#eq-ex09-042}
+
+6. Combine the two conditions into a window for $\sigma_x$ and estimate its
+   bounds in meters for the reactor example of item 3.
+
+State the main conclusion: what implicit assumptions about the size of the
+wave packet does the plane-wave formula contain, and why does it work so well
+in terrestrial experiments?

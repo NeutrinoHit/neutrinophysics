@@ -152,3 +152,269 @@ ranges of $x$ and $m_\beta^2$ preserve $\mu_i>0$ at all scan points.
    this spread?
 5. Explain why the energy selection of pulses in the silicon detector
    does not remove all electrons produced after the analyzing barrier.
+
+## Problem 7.5. What one needs to know about the source
+
+The windowless source is a tube $10~\mathrm{m}$ long and $90~\mathrm{mm}$ in
+diameter with a molecular column density $\rho d=4\cdot10^{17}~\mathrm{cm}^{-2}$.
+The fraction of tritium atoms among all hydrogen atoms in the gas is
+$\varepsilon_T=0.98$, and the half-life of tritium is $T_{1/2}=12.32$ years. An
+electron near the endpoint of the spectrum has kinetic energy
+$E=18.6~\mathrm{keV}$, $m_ec^2=511~\mathrm{keV}$,
+$1~\mathrm{u}=931.5~\mathrm{MeV}$.
+
+1. Find the number of tritium atoms in the gas column above the cross-section
+   of the tube and the activity of the source. Compare with the characteristic
+   activity of $\sim10^{11}$ decays per second. Why does an instability of
+   $\rho d$ change not only the normalization of the spectrum but also its
+   shape?
+2. At the very endpoint of the spectrum the neutrino carries away almost no
+   momentum. Show that the daughter molecule of mass $M$ receives the recoil
+   energy
+
+   $$
+   E_{\mathrm{recoil}}\simeq\frac{p_e^2}{2M},
+   \qquad
+   p_e^2c^2=E\,(E+2m_ec^2).
+   $$ {#eq-ex07-012}
+
+   Compute $E_{\mathrm{recoil}}$ for $\mathrm T_2$, $\mathrm{DT}$ and
+   $\mathrm{HT}$ ($M\simeq6.03$, $5.03$ and $4.02~\mathrm{u}$). By how much do
+   the endpoints of the decay spectra of $\mathrm T_2$ and $\mathrm{HT}$
+   differ?
+3. The decaying molecule moves with a thermal velocity. The projection
+   $u_\parallel$ of its velocity on the direction of the emitted electron is
+   Gaussian distributed with variance $k_BT/M$. Show that in the laboratory
+   frame the electron energy is shifted by $\delta E\simeq p_eu_\parallel$, and
+   obtain
+
+   $$
+   \sigma_E=p_ec\,\sqrt{\frac{k_BT}{Mc^2}}.
+   $$ {#eq-ex07-013}
+
+   Compute $\sigma_E$ for $\mathrm T_2$ at $T=30~\mathrm{K}$ and
+   $T=80~\mathrm{K}$.
+4. Use the estimate $\Delta m_\beta^2\simeq-2\sigma_E^2$ from Problem 7.3.
+   What shift would the Doppler broadening at $80~\mathrm{K}$ produce if it
+   were left out of the model? Why does a known broadening that is included in
+   the model not produce such a shift?
+5. The gas composition is measured from the Raman lines of molecular
+   vibrations. In the harmonic approximation the vibrational frequency is
+   proportional to $\mu^{-1/2}$, where $\mu$ is the reduced mass of the
+   nuclei. For $\mathrm T_2$ the line lies at $2464~\mathrm{cm}^{-1}$. Predict
+   the positions of the $\mathrm{DT}$ and $\mathrm{HT}$ lines
+   ($\mu\simeq1.51$, $1.21$ and $0.755~\mathrm{u}$ for $\mathrm T_2$,
+   $\mathrm{DT}$, $\mathrm{HT}$) and compare with the measured values
+   $\simeq2743$ and $\simeq3435~\mathrm{cm}^{-1}$. In which direction do the
+   estimate and the measurement differ, and why is the discrepancy larger for
+   the lighter molecule? Find the wavelength of the $\mathrm T_2$ Stokes line
+   for a laser with $\lambda=532~\mathrm{nm}$.
+
+State the main conclusion: which properties of the source change only the
+number of counts, and which change the shape of the spectrum near the endpoint
+and therefore enter $m_\beta^2$ directly?
+
+## Problem 7.6. The krypton line as an energy standard
+
+In the $^{83\mathrm m}\mathrm{Kr}$ nucleus the transition energy
+$\Delta E_{\mathrm{nucl}}=32.152~\mathrm{keV}$ is transferred to an electron of
+the atomic shell. The binding energies are $14.326~\mathrm{keV}$ for the
+$K$ shell and $1.678~\mathrm{keV}$ for the $L_3$ subshell. The atomic mass is
+$M\simeq82.91~\mathrm{u}$, and the natural width of the $K$-32 line is
+$\Gamma=2.7~\mathrm{eV}$.
+
+1. Find the energies of the $K$-32 and $L_3$-32 conversion electrons
+   neglecting recoil. Then estimate the recoil energy of the atom
+   $E_{\mathrm{recoil}}=p_e^2/2M$ for both lines. Compare it with the
+   requirement $|\delta E|\lesssim56~\mathrm{meV}$ on the energy scale.
+2. The edges of the two lines are observed at voltmeter readings $u_K$ and
+   $u_L$ behind a divider with ratio $M_{\mathrm{div}}$. Show that
+
+   $$
+   M_{\mathrm{div}}
+   =\frac{E_{L_3}-E_K}{e\,\bigl(|u_L|-|u_K|\bigr)},
+   $$ {#eq-ex07-014}
+
+   and that both the nuclear transition energy and the shift due to the
+   potentials, common to the two lines, cancel in the difference. How
+   precisely must the energy difference be known to obtain $M_{\mathrm{div}}$
+   with a relative precision of $5\cdot10^{-6}$? Can the difference of the
+   recoil energies then be neglected?
+3. The line has a Lorentzian shape
+
+   $$
+   L(E)=\frac{\Gamma/(2\pi)}{(E-E_K)^2+\Gamma^2/4}.
+   $$ {#eq-ex07-015}
+
+   For an ideal step filter, show that the fraction of transmitted electrons
+   is
+
+   $$
+   \frac{R(qU)}{R_{\max}}
+   =\frac12-\frac1\pi\arctan\frac{2(qU-E_K)}{\Gamma}.
+   $$ {#eq-ex07-016}
+
+   Find the width of the edge between the $90\%$ and $10\%$ levels.
+4. Numerical experiment. Draw $N$ energies from the Lorentzian with
+   $\Gamma=2.7~\mathrm{eV}$ for $N=10^2$, $10^3$, $10^4$, $10^5$ and estimate
+   the center of the line in two ways: by the arithmetic mean and by the
+   median. Repeat the sampling at least $300$ times and compare the spread of
+   the estimates. Why does the mean not improve as $N$ grows? Using the
+   asymptotic formula $\sigma_{\mathrm{med}}\simeq\pi\Gamma/(4\sqrt N)$, find
+   how many electrons are needed to determine the center to within
+   $50~\mathrm{meV}$.
+5. The monitor spectrometer sees that the line of a stable source has shifted
+   by $30~\mathrm{meV}$. What relative drift of the $18.6~\mathrm{kV}$ high
+   voltage does this correspond to? Does it meet the requirement
+   $3\cdot10^{-6}$?
+
+State the main conclusion: why does a line $2.7~\mathrm{eV}$ wide calibrate the
+scale at the level of tens of millielectronvolts?
+
+## Problem 7.7. Where measuring pays off most
+
+Take a simplified model of the integral spectrum near the endpoint: a sharp
+filter, a single final state, all parameters except $m_\beta^2$ known, and
+$w=E_0-qU$:
+
+$$
+R(w)=\kappa\left(w^3-\frac32m_\beta^2w\right)+b,
+\qquad
+\kappa=10^{-3}~\mathrm{s}^{-1}\mathrm{eV}^{-3},
+\quad
+b=0.2~\mathrm{s}^{-1}.
+$$ {#eq-ex07-017}
+
+The values of $\kappa$ and $b$ are illustrative; they only set the scale.
+
+1. Show that the relative change of the signal due to the mass is
+   $-3m_\beta^2/(2w^2)$. Compute it for $m_\beta^2=0.2~\mathrm{eV}^2$ at
+   $w=2$, $7$ and $20~\mathrm{eV}$. Why is the point right at the endpoint,
+   where the effect is largest, not necessarily the most favorable one?
+2. At the point $w$ one measures for a time $t$ and obtains
+   $n\sim\operatorname{Poisson}(tR)$. Show that the error of the estimate of
+   $m_\beta^2$ from a single point at $m_\beta^2\simeq0$ is
+
+   $$
+   \sigma^2(m_\beta^2)=\frac{1}{t\,I(w)},
+   \qquad
+   I(w)=\frac{1}{R}\left(\frac{\partial R}{\partial m_\beta^2}\right)^2
+   =\frac{9\kappa^2w^2}{4(\kappa w^3+b)}.
+   $$ {#eq-ex07-018}
+
+3. Find the value $w_{\mathrm{opt}}$ at which $I(w)$ is maximal, and show
+   that at this point the signal is twice the background:
+   $\kappa w_{\mathrm{opt}}^3=2b$. Compute $w_{\mathrm{opt}}$.
+4. Let the whole time $T=259$ days be spent at $w_{\mathrm{opt}}$. Find
+   $\sigma(m_\beta^2)$ and compare with the statistical error
+   $0.108~\mathrm{eV}^2$ of the first five KATRIN campaigns. Name two reasons
+   why the toy estimate is too optimistic.
+5. Show that at the optimal point
+
+   $$
+   \sigma(m_\beta^2)\propto\kappa^{-2/3}\,b^{1/6}\,T^{-1/2}.
+   $$ {#eq-ex07-019}
+
+   By what factor does the error decrease if the background is halved? If the
+   signal is doubled?
+6. The shifted analyzing region reduced the background roughly by half but
+   widened the transmission edge from $0.95$ to $2.7~\mathrm{eV}$. Why does a
+   known edge width, unlike the unaccounted broadening of Problem 7.3, not
+   shift $m_\beta^2$, yet still reduce the sensitivity? Why is the choice
+   between the two configurations made on the basis of the total error rather
+   than of either of these numbers alone?
+
+State the main conclusion: why does a real scan distribute the time over many
+points below and above the endpoint instead of spending it at a single optimal
+point?
+
+## Problem 7.8. Calibration in the likelihood function
+
+Suppose that near the minimum the spectral data are sensitive only to a
+combination of the squared mass and the optical depth: a shift of $\tau$ by
+$\delta\tau$ can be compensated by a shift of $m^2\equiv m_\beta^2$ by
+$-k\,\delta\tau$. Then
+
+$$
+D_\beta(m^2,\tau)=
+\frac{\bigl[m^2+k(\tau-\tau_0)-\mu\bigr]^2}{\sigma_s^2},
+$$ {#eq-ex07-020}
+
+while the electron gun gave $\tau_{\mathrm{cal}}\pm\sigma_\tau$.
+
+1. Show that $D_\beta$ has no unique minimum in the $(m^2,\tau)$ plane. What
+   does the region of small $D_\beta$ look like, and what does it mean
+   physically?
+2. Add the calibration term $(\tau-\tau_{\mathrm{cal}})^2/\sigma_\tau^2$ and
+   minimize over $\tau$ at fixed $m^2$. Show that
+
+   $$
+   -2\ln L_{\mathrm{prof}}(m^2)
+   =\frac{\bigl[m^2+k(\tau_{\mathrm{cal}}-\tau_0)-\mu\bigr]^2}
+   {\sigma_s^2+k^2\sigma_\tau^2}.
+   $$ {#eq-ex07-021}
+
+   What is the error of $m^2$? Consider the limits $\sigma_\tau\to0$ and
+   $\sigma_\tau\to\infty$.
+3. What happens if one simply fixes $\tau=\tau_{\mathrm{cal}}$? Why does such
+   an analysis underestimate the mass error?
+4. The contributions to $\sigma(m_\beta^2)$ in the first five KATRIN
+   campaigns, in $\mathrm{eV}^2$, are: statistics $0.108$; optical depth
+   $0.052$; energy-loss distribution $0.034$; background dependent on the step
+   duration $0.027$; changes of the source potential $0.022$;
+   non-Poissonian background fluctuations $0.015$. Add the systematic
+   contributions in quadrature, then add the statistics. Compare with the
+   result $m_\beta^2=-0.14^{+0.13}_{-0.15}~\mathrm{eV}^2$. What fraction of the
+   total variance comes from statistics? Why is such a sum only an estimate?
+5. Assume that for a zero true mass the $90\%$ sensitivity corresponds to
+   $m_\beta^2\simeq1.64\,\sigma(m_\beta^2)$. Estimate the sensitivity for the
+   total error from item 4. What total error is needed for a sensitivity of
+   $0.30~\mathrm{eV}$? Compare it with the statistical error scaled from
+   $259$ to $1000$ days by the $1/\sqrt t$ law. What, besides the data-taking
+   time, has to improve?
+
+State the main conclusion: why is the calibration included in the joint fit as
+an additional term rather than simply substituting the measured value?
+
+## Problem 7.9. A kink from a heavy neutrino
+
+Suppose that, in addition to the light states, there is a mass state $m_4$ of
+order keV with admixture $|V_{e4}|^2\ll1$. With the notation $x=E_0-E$ and the
+spectrum of Problem 04.1,
+
+$$
+S(E)=\bigl(1-|V_{e4}|^2\bigr)S_0(E)+|V_{e4}|^2S_{m_4}(E),
+\qquad
+S_m(E)=C\,p_e(E+m_e)\,x\sqrt{x^2-m^2}\,\Theta(x-m).
+$$ {#eq-ex07-022}
+
+1. Show that the relative distortion of the spectrum is
+
+   $$
+   r(E)\equiv\frac{S}{S_0}-1=
+   \begin{cases}
+   -|V_{e4}|^2, & x<m_4,\\[1mm]
+   |V_{e4}|^2\left(\sqrt{1-m_4^2/x^2}-1\right), & x>m_4.
+   \end{cases}
+   $$ {#eq-ex07-023}
+
+   Why does the region $E>E_0-m_4$ say nothing about the heavy state if the
+   normalization of the spectrum is a free parameter?
+2. Show that near the threshold $S_{m_4}\propto\sqrt{x-m_4}$, and explain why
+   a kink appears in the spectrum. Compute $r/|V_{e4}|^2$ for $x/m_4=1.01$,
+   $1.1$, $1.5$ and $2$.
+3. Find numerically the fraction of all decays with $E<E_0-m_4$ for $m_4=2$,
+   $5$ and $10~\mathrm{keV}$ (take the Fermi function equal to one). Where in
+   the spectrum should one look for the kink at $m_4=10~\mathrm{keV}$, and are
+   there many electrons there?
+4. The distortion is of order $|V_{e4}|^2$. Estimate how many electrons $N$
+   are needed to see it at the level of three standard deviations for
+   $|V_{e4}|^2=10^{-6}$. How long does it take to collect them at a count rate
+   of $10^8~\mathrm{s}^{-1}$? Why is statistics not the main difficulty?
+5. Why is the integral mode, in which the points are collected by sequential
+   scanning of the voltage, inconvenient for this search, and what does a
+   detector that measures the energy of each electron give?
+
+Compare the two searches: for $m_\beta$ the effect is noticeable but there are
+few events near the endpoint; for $m_4$ there are many events but the effect is
+small. What limits each of them?
