@@ -1,4 +1,4 @@
-## Problem 4.1. Spectrum of $\beta$ decay
+## Exercise 4.1. Spectrum of $\beta$ decay
 
 Consider an allowed $\beta$ decay with a single neutrino mass state.
 Neglect the nuclear recoil and radiative corrections. Take $F(Z,E)=1$.
@@ -42,7 +42,7 @@ $$ {#eq-ex04-002}
    $\sigma_E=0.5~\mathrm{eV}$. Show that the reconstructed energy can
    lie above the physical endpoint $E_0$, even though the true spectrum is zero there.
 
-## Problem 4.2. Effective mass and the Kurie plot
+## Exercise 4.2. Effective mass and the Kurie plot
 
 An electron antineutrino is produced as a mixture of mass states. Near the endpoint
 of the spectrum, set $E_\nu=E_0-E$ and use
@@ -76,7 +76,7 @@ $$ {#eq-ex04-004}
 5. Why are the individual kinks at $E_\nu=m_i$ not resolved if the mass differences are
    much smaller than the energy resolution of the experiment?
 
-## Problem 4.3. Coulomb focusing and the Fermi function
+## Exercise 4.3. Coulomb focusing and the Fermi function
 
 In the point-Coulomb-field approximation, the Fermi function can be written in terms of
 the Sommerfeld parameter
@@ -126,7 +126,7 @@ $\alpha=1/137$ and $m_e=511~\mathrm{keV}$.
    formula used contains no $A$? Name the physical scale through which the mass
    number enters.
 
-## Problem 4.4. How the Fermi function changes the $\beta^-$ and $\beta^+$ spectra
+## Exercise 4.4. How the Fermi function changes the $\beta^-$ and $\beta^+$ spectra
 
 Consider an illustrative allowed transition with
 
@@ -134,7 +134,7 @@ $$
 Z_d=29,\qquad A=64,\qquad E_0=2.0~\mathrm{MeV},\qquad m_\nu=0.
 $$ {#eq-ex04-011}
 
-Use the point-Coulomb approximation from Problem 04.3 and the spectra
+Use the point-Coulomb approximation from Exercise 04.3 and the spectra
 
 $$
 S_\mp(E)\equiv\frac{d\Gamma_\mp}{dE}
@@ -168,7 +168,7 @@ as well as the plane-wave result $S_{\mathrm{pw}}$, obtained for $F=1$.
    shift the kinematic boundary $E_{\max}=E_0-m_\nu$? Formulate the answer
    in terms of the Coulomb wave function with an already specified asymptotic energy.
 
-## Problem 4.5. Film, energy losses, and a false neutrino mass
+## Exercise 4.5. Film, energy losses, and a false neutrino mass
 
 An electron is produced at depth $z$ in a film and exits at an angle $\theta$ to the
 normal. In a simple model
@@ -259,7 +259,7 @@ $[c,1]$, where $c=\cos\theta_{\max}$.
    distribution, and perform a fit with a model that has the wrong $\theta_{\max}$. Investigate how the
    result depends on the width of the fitted window near the endpoint of the spectrum.
 
-## Problem 4.6. Kink from a heavy mass state
+## Exercise 4.6. Kink from a heavy mass state
 
 Suppose that the electron antineutrino contains, in addition to the light states
 (whose masses can be taken as zero on the scale of this problem), a heavy state with mass
@@ -311,7 +311,7 @@ State the main physical conclusion: each mass state gives its own
 threshold $E_0-m_i$, and the visibility of the threshold is set by the weight
 $|U_{ei}|^2$ and by the statistics in the neighborhood of the kink.
 
-## Problem 4.7. What can $m_\beta$ be?
+## Exercise 4.7. What can $m_\beta$ be?
 
 Oscillations measure only differences of squared masses. Use the rounded
 values
@@ -361,7 +361,7 @@ State the main physical conclusion: what information on the mass spectrum
 does the kinematic limit on $m_\beta$ provide, and what would a reliable measurement
 $m_\beta<0.04~\mathrm{eV}$ mean?
 
-## Problem 4.8. Nuclear recoil and the endpoint of the tritium spectrum
+## Exercise 4.8. Nuclear recoil and the endpoint of the tritium spectrum
 
 In the decay ${}^3\mathrm H\to{}^3\mathrm{He}^++e^-+\bar\nu_e$ take
 $E_0=18.575~\mathrm{keV}$, $m_e=511~\mathrm{keV}$,
@@ -401,7 +401,7 @@ Set $c=1$.
    $uc^2=931.5~\mathrm{MeV}$) are in thermal motion at $T=30~\mathrm K$.
    The electron energy in the laboratory is shifted by approximately $p_ev_x$. Show
    that the Doppler broadening equals $\sigma\simeq p_e\sqrt{k_BT/M}$, and
-   compute it. Using the result of Problem 4.5 for an unaccounted Gaussian
+   compute it. Using the result of Exercise 4.5 for an unaccounted Gaussian
    variance, estimate the shift of $m^2_{\nu,\mathrm{fit}}$ if this broadening
    is not included in the model.
 
@@ -409,7 +409,7 @@ State the main physical conclusion: which recoil effects only shift
 the endpoint, and which change the shape of the spectrum and must therefore enter the
 model?
 
-## Problem 4.9. How many decays are needed to see the mass?
+## Exercise 4.9. How many decays are needed to see the mass?
 
 For tritium $T_{1/2}=12.32$ years, the molar mass is $3.016~\text{g/mol}$,
 $E_0=18\,575~\mathrm{eV}$. Assume ideal resolution, zero background and a known
@@ -448,7 +448,7 @@ the spectrum near the endpoint?
 
 ---
 
-## Problems for discussion at the seminar
+## Exercises for discussion at the seminar
 
 ### Seminar 04.1. Why is the $\beta$ spectrum continuous?
 

@@ -1,4 +1,4 @@
-## Problem 1.1. How transparent is the Universe to neutrinos?
+## Exercise 1.1. How transparent is the Universe to neutrinos?
 
 Estimate the neutrino interaction length in a medium with the mean baryon
 density of the Universe for two energies:
@@ -36,7 +36,7 @@ $D_{\mathrm{obs}}\simeq8.8\cdot10^{28}~\mathrm{cm}$.
 4. Explain why an increase of the cross section by eleven orders of magnitude still does not
    make a homogeneous Universe opaque to PeV neutrinos.
 
-## Problem 1.2. Solar neutrino flux
+## Exercise 1.2. Solar neutrino flux
 
 The main chain of thermonuclear reactions in the Sun has the overall form
 
@@ -76,7 +76,7 @@ $$ {#eq-ex01-006}
    about $0.27~\mathrm{MeV}$ on average. What fraction of $Q$ is this, and why
    can this correction be neglected in an order-of-magnitude estimate of the flux?
 
-## Problem 1.3. How many light neutrinos exist?
+## Exercise 1.3. How many light neutrinos exist?
 
 The invisible decay width of the $Z$ boson has been measured as
 
@@ -105,7 +105,7 @@ $$ {#eq-ex01-008}
 5. Can there exist an additional neutrino that is not coupled to the
    $Z$ boson? What does the word "sterile" then mean?
 
-## Problem 1.4. Oscillations of atmospheric neutrinos
+## Exercise 1.4. Oscillations of atmospheric neutrinos
 
 In the two-flavor approximation
 
@@ -142,7 +142,7 @@ $$ {#eq-ex01-011}
 6. How many full periods of the probability fit into the Earth's diameter
    $D_\oplus=12\,742~\mathrm{km}$ at $E_\nu=1~\mathrm{GeV}$?
 
-## Problem 1.5. Minimal masses for the two level orderings
+## Exercise 1.5. Minimal masses for the two level orderings
 
 Use the measured mass-squared differences
 
@@ -162,7 +162,7 @@ $$ {#eq-ex01-012}
    How distinguishable are the two orderings in this case by the mass values themselves?
 5. Explain the meaning of the terms "hierarchical" and "quasi-degenerate" spectrum.
 
-## Problem 1.6. Dirac or Majorana neutrino?
+## Exercise 1.6. Dirac or Majorana neutrino?
 
 The cross sections for neutrino and antineutrino scattering on nucleons differ
 noticeably. At energies of tens of GeV, for the charged current,
@@ -204,7 +204,7 @@ $$ {#eq-ex01-017}
 State the main physical conclusion: what does the difference between the
 $\nu$ and $\bar\nu$ cross sections actually measure?
 
-## Problem 1.7. Where do the cross sections $10^{-44}$ and $10^{-33}~\mathrm{cm}^2$ come from?
+## Exercise 1.7. Where do the cross sections $10^{-44}$ and $10^{-33}~\mathrm{cm}^2$ come from?
 
 The lecture used the estimates
 $\sigma_{\nu e}(1~\mathrm{MeV})\sim10^{-44}~\mathrm{cm}^2$ and
@@ -259,7 +259,7 @@ $$ {#eq-ex01-020}
 State the main physical conclusion: which two factors make neutrino cross
 sections small, and what limits their growth?
 
-## Problem 1.8. How neutral is the neutrino?
+## Exercise 1.8. How neutral is the neutrino?
 
 The electric charge of the neutrino is constrained in two independent ways.
 The first relies on charge conservation in neutron $\beta$ decay
@@ -301,7 +301,7 @@ State the main physical conclusion: why is the indirect bound from the
 neutrality of matter many orders of magnitude stronger than the direct one, and
 on which assumption does it rest?
 
-## Problem 1.9. Why are there twice as many atmospheric $\nu_\mu$ as $\nu_e$?
+## Exercise 1.9. Why are there twice as many atmospheric $\nu_\mu$ as $\nu_e$?
 
 Atmospheric neutrinos are produced in the chains
 
@@ -348,7 +348,7 @@ with $\sin^22\theta=1$ and $\Delta m^2=2.5\cdot10^{-3}~\mathrm{eV}^2$.
 State the main physical conclusion: which observation distinguishes
 oscillations from an error in the flux calculation?
 
-## Problem 1.10. Why does CP violation need three flavors?
+## Exercise 1.10. Why does CP violation need three flavors?
 
 The transition probability in vacuum is
 
@@ -385,7 +385,7 @@ why do oscillations not distinguish Dirac from Majorana neutrinos?
 
 ---
 
-## Problems for discussion in the seminar
+## Exercises for discussion in the seminar
 
 ### Seminar 01.1. How many neutrinos pass through a person?
 

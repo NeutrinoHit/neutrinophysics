@@ -1,5 +1,5 @@
 ---
-title: "Problems: Weak Interaction. Parity Violation"
+title: "Exercises: Weak Interaction. Parity Violation"
 subtitle: "Lecture 02 · Introduction to Neutrino Physics"
 author: "Dmitry V. Naumov"
 lang: en
@@ -8,8 +8,8 @@ format:
     toc: false
 ---
 
-[← Back to the lecture](../slides/02_parity_violation.html) · [All course problems](index.html)
+[← Back to the lecture](../slides/02_parity_violation.html) · [All course exercises](index.html)
 
-# Problems
+# Exercises
 
 {{< include ../../_includes/exercises/02_parity_violation-en.qmd >}}

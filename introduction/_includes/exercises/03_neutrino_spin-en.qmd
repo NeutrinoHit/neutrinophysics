@@ -1,4 +1,4 @@
-## Problem 3.1. Nuclear recoil in the Goldhaber experiment
+## Exercise 3.1. Nuclear recoil in the Goldhaber experiment
 
 In the Goldhaber experiment, electron capture leads to the reaction
 
@@ -35,7 +35,7 @@ $$ {#eq-ex03-002}
 5. Why is it important for the measurement of helicity that the $\gamma$-quantum be
    emitted before the memory of the recoil direction is lost?
 
-## Problem 3.2. Helicity and chirality of a massive neutrino
+## Exercise 3.2. Helicity and chirality of a massive neutrino
 
 A neutrino produced by a left-chiral weak current contains, at $m_\nu\ne0$, a
 small component of opposite helicity:
@@ -63,7 +63,7 @@ $$ {#eq-ex03-004}
 5. How does the mass term of the Dirac equation couple the left and right chiral
    components?
 
-## Problem 3.3. Spin projections in electron capture
+## Exercise 3.3. Spin projections in electron capture
 
 Consider the allowed electron capture
 
@@ -92,7 +92,7 @@ state.
 5. Why does the relation lose its unambiguous meaning if the quantization axis is chosen not
    along the neutrino momentum?
 
-## Problem 3.4. Doppler selection of $\gamma$-quanta
+## Exercise 3.4. Doppler selection of $\gamma$-quanta
 
 An excited nucleus $B^*$ moves with velocity $v\ll c$ and emits, in its own
 rest frame, a photon of energy $E_\gamma$. The angle $\theta$ is measured between the
@@ -115,7 +115,7 @@ direction of the photon and the velocity of the nucleus.
 
 2. Find $E_{\max}$, $E_{\min}$ and the width
    $E_{\max}-E_{\min}$.
-3. Using the velocity from Problem 03.1, estimate the relative Doppler
+3. Using the velocity from Exercise 03.1, estimate the relative Doppler
    shift.
 4. In both emission and absorption of a photon a free nucleus of mass $M$
    receives the recoil energy
@@ -133,7 +133,7 @@ direction of the photon and the velocity of the nucleus.
 6. Explain how energy selection turns into selection of the direction of the
    $\gamma$-quantum relative to the nuclear recoil.
 
-## Problem 3.5. Can one overtake a neutrino?
+## Exercise 3.5. Can one overtake a neutrino?
 
 A massive neutrino moves along the axis $z$ with energy $E_\nu$ and momentum
 $p_\nu$. An observer moves in the same direction with velocity $u$.
@@ -166,7 +166,7 @@ $$ {#eq-ex03-010}
    transformations describes the same neutrino seen by another observer, and
    which turns it into a different state?
 
-## Problem 3.6. From event counts to helicity
+## Exercise 3.6. From event counts to helicity
 
 After the resonant selection the $\gamma$-quanta pass through magnetized iron.
 In equal times, for the two field directions, the counts are
@@ -222,7 +222,7 @@ State the main physical conclusion: what does such an experiment determine
 reliably, the sign of the helicity or its magnitude, and why is this enough to
 conclude that the weak current is left-handed?
 
-## Problem 3.7. Why does a free nucleus not absorb its own photon?
+## Exercise 3.7. Why does a free nucleus not absorb its own photon?
 
 The excited level of ${}^{152}\mathrm{Sm}^*$ lies
 $\Delta E=0.96~\mathrm{MeV}$ above the ground state. Take
@@ -275,7 +275,7 @@ State the main physical conclusion: why is a gap of a few electronvolts closed
 only by the directed motion of the nucleus after the neutrino is emitted, and
 why does exactly this make the resonance a direction filter?
 
-## Problem 3.8. Helicity and chirality in the chiral basis
+## Exercise 3.8. Helicity and chirality in the chiral basis
 
 Set $\hbar=c=1$. In the chiral basis
 
@@ -340,7 +340,7 @@ State the main physical conclusion: why do helicity and chirality coincide for
 a massless particle, while for a massive one a state of definite helicity
 contains both chiralities?
 
-## Problem 3.9. Relic neutrinos: helicity is conserved, chirality is not
+## Exercise 3.9. Relic neutrinos: helicity is conserved, chirality is not
 
 Relic neutrinos stopped interacting with the plasma of the early Universe at a
 temperature of about $1~\mathrm{MeV}$, when their typical momentum was of order
@@ -388,7 +388,7 @@ State the main physical conclusion: what does the word "left-handed" mean for a
 nonrelativistic relic neutrino, helicity or chirality, and which of these
 characteristics does the weak interaction see when the neutrino is detected?
 
-## Problem 3.10. Pion decay: the muon inherits the neutrino helicity
+## Exercise 3.10. Pion decay: the muon inherits the neutrino helicity
 
 A pion of spin $0$ at rest decays through the channels
 
@@ -444,7 +444,7 @@ chiral structure of the charged weak current?
 
 ---
 
-## Problems for discussion in the seminar
+## Exercises for discussion in the seminar
 
 ### Seminar 03.1. How does helicity transform?
 

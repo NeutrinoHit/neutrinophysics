@@ -1,17 +1,17 @@
 ---
-title: "Course Problems"
+title: "Course Exercises"
 subtitle: "Introduction to Neutrino Physics"
 author: "Dmitry V. Naumov"
 lang: en
 format:
   html:
     toc: true
-    toc-title: "Problems"
+    toc-title: "Exercises"
 ---
 
 [← Back to the course](../index.html)
 
-# Problems
+# Exercises
 
 {{< include ../../_includes/exercises/01_neutrino_first_contact-en.qmd >}}
 

@@ -1,4 +1,4 @@
-## Problem 7.1. Final states and scattering in the source
+## Exercise 7.1. Final states and scattering in the source
 
 After the molecular decay, the daughter system is left in the state $j$ with
 excitation energy $V_j$ and probability $P_j$.
@@ -33,7 +33,7 @@ excitation energy $V_j$ and probability $P_j$.
 
    where $g^{*s}$ denotes the $s$-fold convolution.
 
-## Problem 7.2. What KATRIN measures
+## Exercise 7.2. What KATRIN measures
 
 In the ideal approximation, treat the MAC-E filter as a step function:
 
@@ -65,18 +65,18 @@ $$ {#eq-ex07-005}
    differential spectrum.
 3. Plot on a single graph $R(qU)$ for $m_\beta^2=0$ and
    $m_\beta^2=1~\mathrm{eV}^2$ over the last $10~\mathrm{eV}$. Use
-   the numerical integration of the spectrum from Problem 04.1.
+   the numerical integration of the spectrum from Exercise 04.1.
 4. Replace the step function with the known transmission function
    $\mathcal T(E,qU)$ and write the general integral for $R(qU)$. Then include the
-   loss function $R_{\mathrm{loss}}(\Delta E)$ from Problem 07.1 as one more
+   loss function $R_{\mathrm{loss}}(\Delta E)$ from Exercise 07.1 as one more
    convolution.
 5. Explain why a single point $qU$ does not allow one to simultaneously determine
    $m_\beta^2$, $E_0$, the normalization $A$ and the background $b$, whereas a set of thresholds allows
    them to be separated by their different dependence on $qU$.
 
-## Problem 7.3. Why a fit can give $m_\beta^2<0$
+## Exercise 7.3. Why a fit can give $m_\beta^2<0$
 
-This problem links the physics of the spectrum endpoint with the course on statistical analysis.
+This exercise links the physics of the spectrum endpoint with the course on statistical analysis.
 Use a deliberately simple model: $E_0$, the normalization and the background are assumed
 known, and the only fit parameter is $m_\beta^2$.
 
@@ -132,7 +132,7 @@ ranges of $x$ and $m_\beta^2$ preserve $\mu_i>0$ at all scan points.
    not imply a tachyonic neutrino, and why does the experiment allow
    $m_\beta^2$ to take negative values at the fitting stage?
 
-## Problem 7.4. From calibration to the spectrum
+## Exercise 7.4. From calibration to the spectrum
 
 1. The electron gun passes through the full gas column with optical depth $\tau=1.4$.
    Find the fraction of electrons on the plateau without losses. Compare it with the fraction of
@@ -147,13 +147,13 @@ ranges of $x$ and $m_\beta^2$ preserve $\mu_i>0$ at all scan points.
    corresponds to the relative requirement $3\cdot10^{-6}$?
 4. Suppose that, because of the source potential, the electron energies are additionally
    distributed with zero mean and rms spread
-   $\sigma_E=0.2~\mathrm{eV}$. Use the estimate from Problem 7.3 for
+   $\sigma_E=0.2~\mathrm{eV}$. Use the estimate from Exercise 7.3 for
    the shift $m_\beta^2$. What measurement inside the gas can constrain
    this spread?
 5. Explain why the energy selection of pulses in the silicon detector
    does not remove all electrons produced after the analyzing barrier.
 
-## Problem 7.5. What one needs to know about the source
+## Exercise 7.5. What one needs to know about the source
 
 The windowless source is a tube $10~\mathrm{m}$ long and $90~\mathrm{mm}$ in
 diameter with a molecular column density $\rho d=4\cdot10^{17}~\mathrm{cm}^{-2}$.
@@ -194,7 +194,7 @@ $1~\mathrm{u}=931.5~\mathrm{MeV}$.
 
    Compute $\sigma_E$ for $\mathrm T_2$ at $T=30~\mathrm{K}$ and
    $T=80~\mathrm{K}$.
-4. Use the estimate $\Delta m_\beta^2\simeq-2\sigma_E^2$ from Problem 7.3.
+4. Use the estimate $\Delta m_\beta^2\simeq-2\sigma_E^2$ from Exercise 7.3.
    What shift would the Doppler broadening at $80~\mathrm{K}$ produce if it
    were left out of the model? Why does a known broadening that is included in
    the model not produce such a shift?
@@ -214,7 +214,7 @@ State the main conclusion: which properties of the source change only the
 number of counts, and which change the shape of the spectrum near the endpoint
 and therefore enter $m_\beta^2$ directly?
 
-## Problem 7.6. The krypton line as an energy standard
+## Exercise 7.6. The krypton line as an energy standard
 
 In the $^{83\mathrm m}\mathrm{Kr}$ nucleus the transition energy
 $\Delta E_{\mathrm{nucl}}=32.152~\mathrm{keV}$ is transferred to an electron of
@@ -271,7 +271,7 @@ $\Gamma=2.7~\mathrm{eV}$.
 State the main conclusion: why does a line $2.7~\mathrm{eV}$ wide calibrate the
 scale at the level of tens of millielectronvolts?
 
-## Problem 7.7. Where measuring pays off most
+## Exercise 7.7. Where measuring pays off most
 
 Take a simplified model of the integral spectrum near the endpoint: a sharp
 filter, a single final state, all parameters except $m_\beta^2$ known, and
@@ -319,7 +319,7 @@ The values of $\kappa$ and $b$ are illustrative; they only set the scale.
    signal is doubled?
 6. The shifted analyzing region reduced the background roughly by half but
    widened the transmission edge from $0.95$ to $2.7~\mathrm{eV}$. Why does a
-   known edge width, unlike the unaccounted broadening of Problem 7.3, not
+   known edge width, unlike the unaccounted broadening of Exercise 7.3, not
    shift $m_\beta^2$, yet still reduce the sensitivity? Why is the choice
    between the two configurations made on the basis of the total error rather
    than of either of these numbers alone?
@@ -328,7 +328,7 @@ State the main conclusion: why does a real scan distribute the time over many
 points below and above the endpoint instead of spending it at a single optimal
 point?
 
-## Problem 7.8. Calibration in the likelihood function
+## Exercise 7.8. Calibration in the likelihood function
 
 Suppose that near the minimum the spectral data are sensitive only to a
 combination of the squared mass and the optical depth: a shift of $\tau$ by
@@ -376,11 +376,11 @@ while the electron gun gave $\tau_{\mathrm{cal}}\pm\sigma_\tau$.
 State the main conclusion: why is the calibration included in the joint fit as
 an additional term rather than simply substituting the measured value?
 
-## Problem 7.9. A kink from a heavy neutrino
+## Exercise 7.9. A kink from a heavy neutrino
 
 Suppose that, in addition to the light states, there is a mass state $m_4$ of
 order keV with admixture $|V_{e4}|^2\ll1$. With the notation $x=E_0-E$ and the
-spectrum of Problem 04.1,
+spectrum of Exercise 04.1,
 
 $$
 S(E)=\bigl(1-|V_{e4}|^2\bigr)S_0(E)+|V_{e4}|^2S_{m_4}(E),

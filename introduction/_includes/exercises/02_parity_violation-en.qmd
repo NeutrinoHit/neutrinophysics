@@ -1,4 +1,4 @@
-## Problem 2.1. The $\tau$–$\theta$ puzzle
+## Exercise 2.1. The $\tau$–$\theta$ puzzle
 
 Two charged particles with the same mass and lifetime were observed
 in the decays
@@ -21,7 +21,7 @@ a state with zero relative orbital angular momentum.
    particle?
 5. State how the Lee–Yang hypothesis resolved the paradox.
 
-## Problem 2.2. What does the Wu experiment measure directly?
+## Exercise 2.2. What does the Wu experiment measure directly?
 
 Let the angular distribution of electrons in the $\beta$ decay of a polarized
 nucleus have the form
@@ -53,7 +53,7 @@ polarization.
    \mathcal A=\frac{N_+-N_-}{N_++N_-}.
    $$ {#eq-ex02-004}
 
-## Problem 2.3. Can nuclei be polarized with an ordinary magnet?
+## Exercise 2.3. Can nuclei be polarized with an ordinary magnet?
 
 Consider a nucleus with spin $1/2$ and magnetic moment
 $\mu=4\mu_N$ in a field $B=10~\mathrm{T}$. Use
@@ -80,7 +80,7 @@ $$ {#eq-ex02-006}
 5. Why does a large magnet by itself not provide strong nuclear
    polarization?
 
-## Problem 2.4. Adiabatic demagnetization
+## Exercise 2.4. Adiabatic demagnetization
 
 For $N$ non-interacting magnetic moments with spin $1/2$ in a field $B$,
 introduce
@@ -118,7 +118,7 @@ $$ {#eq-ex02-007}
    the level populations in both limits and explain why $S$ tends to
    $Nk_B\ln2$ and to zero, respectively.
 
-## Problem 2.5. How can we explain to aliens which side is left?
+## Exercise 2.5. How can we explain to aliens which side is left?
 
 Suppose first that all fundamental interactions conserve
 spatial parity.
@@ -134,7 +134,7 @@ spatial parity.
 5. What additional agreement must be communicated so that the procedure does not
    confuse matter with antimatter?
 
-## Problem 2.6. Why is it easy to polarize electrons but hard to polarize nuclei?
+## Exercise 2.6. Why is it easy to polarize electrons but hard to polarize nuclei?
 
 The Bohr magneton and the nuclear magneton are
 
@@ -166,7 +166,7 @@ turn into a requirement on the temperature of the Wu experiment, and why do the
 electron spins of the salt serve as the refrigerator while it is the
 polarization of the nuclei that is measured?
 
-## Problem 2.7. Why did the Laporte rule make people confident in parity conservation?
+## Exercise 2.7. Why did the Laporte rule make people confident in parity conservation?
 
 The states of the hydrogen atom have the form
 $\psi_{nlm}=R_{nl}(r)Y_{lm}(\vartheta,\varphi)$. Under the reflection
@@ -209,7 +209,7 @@ $$ {#eq-ex02-017}
 State the main physical conclusion: what do parity selection rules in atoms
 test, and why do they say nothing about the weak interaction?
 
-## Problem 2.8. Why do ${}^{60}\mathrm{Co}$ electrons fly opposite to the nuclear spin?
+## Exercise 2.8. Why do ${}^{60}\mathrm{Co}$ electrons fly opposite to the nuclear spin?
 
 The main transition
 
@@ -251,7 +251,7 @@ $$ {#eq-ex02-019}
 State the main physical conclusion: which property of weak-decay electrons
 determines the sign of the asymmetry in the Wu experiment?
 
-## Problem 2.9. The $\pi\to\mu\to e$ chain: two parity violations at once
+## Exercise 2.9. The $\pi\to\mu\to e$ chain: two parity violations at once
 
 A pion at rest decays as $\pi^+\to\mu^++\nu_\mu$; the muon stops and decays:
 $\mu^+\to e^++\nu_e+\bar\nu_\mu$. Use
@@ -294,7 +294,7 @@ where $\theta$ is the angle between the positron momentum and the muon spin.
 State the main physical conclusion: which two independent P-odd effects does
 this chain contain, and why did its result confirm the Wu experiment?
 
-## Problem 2.10. What does "maximal" parity violation mean?
+## Exercise 2.10. What does "maximal" parity violation mean?
 
 Use
 
@@ -343,7 +343,7 @@ automatically to the neutral current?
 
 ---
 
-## Problems for discussion at the seminar
+## Exercises for discussion at the seminar
 
 ### Seminar 02.1. What changes under reflection?
 

@@ -1,4 +1,4 @@
-## Problem 9.1. Global and relative phases
+## Exercise 9.1. Global and relative phases
 
 Consider a normalized superposition of two energy eigenstates:
 
@@ -37,7 +37,7 @@ $$ {#eq-ex09-001}
 State the main physical conclusion: why is the global phase unobservable, while the
 relative phase can change probabilities?
 
-## Problem 9.2. Energy of a flavor state
+## Exercise 9.2. Energy of a flavor state
 
 Two flavor states are related to the mass states by a rotation
 
@@ -84,7 +84,7 @@ Explain why a nonzero variance indicates the presence of several
 energy components, but does not mean that the energy itself oscillates in
 time. For what values of the parameters does the variance vanish?
 
-## Problem 9.3. Complete derivation of the two-flavor probability
+## Exercise 9.3. Complete derivation of the two-flavor probability
 
 Let a neutrino of flavor $\alpha$ be produced at $t=0$:
 
@@ -135,7 +135,7 @@ $$ {#eq-ex09-008}
 Why does the probability near $t=0$ grow quadratically, although the transition amplitude
 grows linearly?
 
-## Problem 9.4. From the plane-wave phase to the dependence on L/E
+## Exercise 9.4. From the plane-wave phase to the dependence on L/E
 
 For a mass component of a plane wave, use the phase
 
@@ -209,7 +209,7 @@ $\Delta\varphi=\varphi_2-\varphi_1$.
    when passing to distance, does the velocity enter explicitly and the universal dependence
    on $L/E$ alone disappear?
 
-## Problem 9.5. A mock-up of an oscillation experiment
+## Exercise 9.5. A mock-up of an oscillation experiment
 
 In a certain two-flavor experiment the maximum transition probability
 is equal to
@@ -246,7 +246,7 @@ $L=295~\mathrm{km}$.
    Which of them forbid oscillations altogether, and which one creates only isolated
    nodes of the probability?
 
-## Problem 9.6. Coupled pendulums of different masses
+## Exercise 9.6. Coupled pendulums of different masses
 
 Two pendulums of the same length $\ell$ and different masses $m_1$ and $m_2$ are connected
 by a weak spring of stiffness $k$. The deflection angles $\varphi_i$ are small, and
@@ -335,7 +335,7 @@ $\omega_0^2=g/\ell$.
     fraction of the norm of the complex amplitude, but coincides with the fraction of the averaged
     local energy only in the weak-coupling limit.
 
-## Problem 9.7. Oscillation scales: from a reactor to the Sun
+## Exercise 9.7. Oscillation scales: from a reactor to the Sun
 
 In practical units the two-flavor transition probability reads
 
@@ -391,7 +391,7 @@ State the main conclusion: why do experiments with energies from MeV to GeV
 measure the same splittings, and what condition on $L/E$ makes an experiment
 sensitive to a given $\Delta m^2$?
 
-## Problem 9.8. Averaging of oscillations and the 1/2 bound
+## Exercise 9.8. Averaging of oscillations and the 1/2 bound
 
 A detector registers neutrinos of different energies, so it measures not
 $P_{\alpha\to\beta}(L,E)$ at a single point but its average over the
@@ -443,7 +443,7 @@ State the main physical conclusion: what information does a detector lose in
 the fully averaged regime, and why does $P_{ee}\approx1/3$ require a mechanism
 beyond vacuum oscillations?
 
-## Problem 9.9. When the mass components stop interfering
+## Exercise 9.9. When the mass components stop interfering
 
 The formula for $P_{\alpha\to\beta}(L,E)$ was derived for plane waves. A real
 neutrino is produced localized: it is a wave packet of size $\sigma_x$. Mass

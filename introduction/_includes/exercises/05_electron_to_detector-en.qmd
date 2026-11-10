@@ -1,4 +1,4 @@
-## Problem 5.1. Time of flight along a helical trajectory
+## Exercise 5.1. Time of flight along a helical trajectory
 
 An electron with kinetic energy $E$ is born at $z=0$ in a uniform field
 $\mathbf B=B\mathbf e_z$. The angle between the momentum and the direction of
@@ -35,7 +35,7 @@ $+\mathbf B$ is $\alpha$. The detector is located in the plane $z=L$.
 5. Which of the quantities found depend on $B$, and which do not? Explain
    the result physically.
 
-## Problem 5.2. Electrostatic threshold and angular acceptance
+## Exercise 5.2. Electrostatic threshold and angular acceptance
 
 In the non-relativistic approximation, an electron with kinetic energy $E$ and
 angle $\alpha$ to the spectrometer axis has
@@ -66,7 +66,7 @@ if $E_\parallel>e|U|$.
 5. Explain why a uniform magnetic field does not fix this problem
    and why collimation is needed in front of the filter.
 
-## Problem 5.3. Guiding center and the sign of the charge
+## Exercise 5.3. Guiding center and the sign of the charge
 
 Let
 
@@ -109,7 +109,7 @@ $$ {#eq-ex05-006}
 5. Is there a transverse drift of the guiding center in a uniform magnetic field without an electric
    field?
 
-## Problem 5.4. From the phase ellipse to the variables $(\theta,J)$
+## Exercise 5.4. From the phase ellipse to the variables $(\theta,J)$
 
 For transverse cyclotron motion the following are introduced:
 
@@ -157,7 +157,7 @@ $$ {#eq-ex05-009}
 5. Write $H_\perp$ in terms of $J$ and obtain from Hamilton's equations
    $\dot J$ and $\dot\theta$. Why is the angle $\theta$ undefined at $J=0$?
 
-## Problem 5.5. Four physical meanings of the action
+## Exercise 5.5. Four physical meanings of the action
 
 For a non-relativistic cyclotron orbit use
 
@@ -211,9 +211,9 @@ $$ {#eq-ex05-015}
    $\hbar=1.055\cdot10^{-34}~\mathrm{J\,s}$. What does a large value of this
    ratio tell us about the applicability of the classical description of the orbit?
 
-## Problem 5.6. Relativistic transverse energy
+## Exercise 5.6. Relativistic transverse energy
 
-The formula $E_\parallel=E\cos^2\alpha$ from Problem 5.2 is non-relativistic. Let us
+The formula $E_\parallel=E\cos^2\alpha$ from Exercise 5.2 is non-relativistic. Let us
 check how accurate it is for an electron near the endpoint of the tritium spectrum, where
 the neutrino mass is sought at the electronvolt level.
 
@@ -250,14 +250,14 @@ electron equals $e|U|$.
 4. For $E=18.6~\mathrm{keV}$ and $m_ec^2=511~\mathrm{keV}$ compute the exact
    $E_\perp$ and the non-relativistic $E\sin^2\alpha$ at $\alpha=10^\circ$,
    $30^\circ$ and $60^\circ$. Express the difference in electronvolts.
-5. Recompute exactly $\alpha_{\max}$ and $f_\Omega$ from Problem 5.2 for
+5. Recompute exactly $\alpha_{\max}$ and $f_\Omega$ from Exercise 5.2 for
    $e|U|=18.0~\mathrm{keV}$. Is the difference in the angular acceptance noticeable?
 
 State the main physical conclusion: what accuracy can be expected from the
 non-relativistic split $E=E_\parallel+E_\perp$, and why does the analysis of the
 endpoint of the spectrum require relativistic kinematics?
 
-## Problem 5.7. Period from area: a box and a bouncing ball
+## Exercise 5.7. Period from area: a box and a bouncing ball
 
 For one periodic degree of freedom
 
@@ -302,7 +302,7 @@ ellipses.
 State the main physical conclusion: what does the area of a phase orbit know about
 the period of the motion, even when the orbit is not an ellipse?
 
-## Problem 5.8. Which changes of variables are canonical?
+## Exercise 5.8. Which changes of variables are canonical?
 
 For one degree of freedom a change $(q,p)\to(Q,P)$ is canonical if
 
@@ -337,7 +337,7 @@ The same expression equals the Jacobian of the change: $dQ\,dP=\{Q,P\}_{q,p}\,dq
 State the main physical conclusion: why is the action $J$ a property of
 the orbit itself rather than of the chosen variables?
 
-## Problem 5.9. The pendulum: from oscillation to rotation
+## Exercise 5.9. The pendulum: from oscillation to rotation
 
 The Hamiltonian of the simple pendulum is
 
@@ -387,7 +387,7 @@ separatrix?
 
 ---
 
-## Problems for discussion in the seminar
+## Exercises for discussion in the seminar
 
 ### Seminar 05.1. The first bend of the trajectory
 
@@ -427,7 +427,7 @@ $p_\perp$ are conserved.
    near a field line, turn them along the field, or both?
 3. Why is a uniform field alone insufficient if a small transverse momentum is
    required in front of the electrostatic filter?
-4. Which property of the field will have to be changed in the next problem of the course?
+4. Which property of the field will have to be changed in the next exercise of the course?
 
 ### Seminar 05.4. The action for two periodic motions
 
@@ -453,4 +453,4 @@ compute the action $J=(2\pi)^{-1}\oint p\,dq$.
    $J=E_\perp/\omega_c=p_\perp^2/(2|q|B)$.
 4. Why for a cyclotron orbit $J=|L_{\mathrm{mech}}|/2$, whereas for a
    rotor $J=L$? What plays the role of the periodic
-   coordinate in these two problems?
+   coordinate in these two exercises?

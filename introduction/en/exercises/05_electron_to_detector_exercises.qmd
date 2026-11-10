@@ -1,5 +1,5 @@
 ---
-title: "Problems: Guiding the Electron to the Detector"
+title: "Exercises: Guiding the Electron to the Detector"
 subtitle: "Lecture 05 · Introduction to Neutrino Physics"
 author: "Dmitry V. Naumov"
 lang: en
@@ -8,8 +8,8 @@ format:
     toc: false
 ---
 
-[← Back to the lecture](../slides/05_electron_to_detector.html) · [All course problems](index.html)
+[← Back to the lecture](../slides/05_electron_to_detector.html) · [All course exercises](index.html)
 
-# Problems
+# Exercises
 
 {{< include ../../_includes/exercises/05_electron_to_detector-en.qmd >}}

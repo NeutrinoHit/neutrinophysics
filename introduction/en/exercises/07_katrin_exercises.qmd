@@ -1,5 +1,5 @@
 ---
-title: "Problems: The KATRIN Experiment"
+title: "Exercises: The KATRIN Experiment"
 subtitle: "Lecture 07 · Introduction to Neutrino Physics"
 author: "Dmitry V. Naumov"
 lang: en
@@ -8,8 +8,8 @@ format:
     toc: false
 ---
 
-[← Back to the lecture](../slides/07_katrin.html) · [All course problems](index.html)
+[← Back to the lecture](../slides/07_katrin.html) · [All course exercises](index.html)
 
-# Problems
+# Exercises
 
 {{< include ../../_includes/exercises/07_katrin-en.qmd >}}

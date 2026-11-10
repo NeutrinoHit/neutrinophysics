@@ -1,4 +1,4 @@
-## Problem 8.1. From phase modulation to the CRES spectrum
+## Exercise 8.1. From phase modulation to the CRES spectrum
 
 Consider the model of the received signal
 
@@ -33,7 +33,7 @@ $$ {#eq-ex08-001}
    $h=0.2$, $1.2$ and $3.0$. Check
    $\sum_nJ_n^2(h)=1$ numerically.
 
-## Problem 8.2. A real trap and a finite CRES track
+## Exercise 8.2. A real trap and a finite CRES track
 
 Suppose that near the center of the magnetic trap
 
@@ -68,7 +68,7 @@ and that the energy loss over one longitudinal period can be neglected.
    can be determined more precisely than its width, and how the
    signal-to-noise ratio enters this precision.
 
-## Problem 8.3. The calorimetric spectrum of ${}^{163}\mathrm{Ho}$
+## Exercise 8.3. The calorimetric spectrum of ${}^{163}\mathrm{Ho}$
 
 In a calorimetric experiment the entire atomic excitation energy
 $E_c$ is measured, and the neutrino carries away
@@ -116,7 +116,7 @@ $$ {#eq-ex08-009}
    eliminates the losses on the electron's exit from the source but acquires the problem of
    unresolved pile-up.
 
-## Problem 8.4. The radio chain: cutoff, cavity, cascade
+## Exercise 8.4. The radio chain: cutoff, cavity, cascade
 
 Femtowatt-level power must be brought to the ADC without losing anything in frequency.
 The formulas of the chain are given in the lecture without derivation; derive them yourself.
@@ -157,7 +157,7 @@ The formulas of the chain are given in the lecture without derivation; derive th
    Nyquist condition and estimate the sampling frequency for $B=100$ MHz. Where will the
    line $1.52$ GHz end up if it is digitized at a frequency of $1$ GHz?
 
-## Problem 8.5. A femtowatt: power, noise, and observation time
+## Exercise 8.5. A femtowatt: power, noise, and observation time
 
 1. From the Larmor formula for an accelerated charge obtain the power of the cyclotron
    radiation
@@ -185,7 +185,7 @@ The formulas of the chain are given in the lecture without derivation; derive th
    ($0.2$ W), the CRES signal, and the noise from item 3. Which of the comparisons
    determines the detectability of the signal?
 
-## Problem 8.6. Missing momentum: the pion and the tau
+## Exercise 8.6. Missing momentum: the pion and the tau
 
 1. For the decay of a pion at rest $\pi^+\to\mu^++\nu_\mu$ obtain
 
@@ -220,7 +220,7 @@ The formulas of the chain are given in the lecture without derivation; derive th
    weaker than the tritium limit $m_\beta<0.45$ eV? Explain the loss in one sentence
    about the scale of the energy release.
 
-## Problem 8.7. Field, frequency and track jumps
+## Exercise 8.7. Field, frequency and track jumps
 
 A CRES cell sits in a field $B=0.959~\mathrm{T}$; $m_ec^2=511.0~\mathrm{keV}$,
 the electron energy near the endpoint of the tritium spectrum is
@@ -270,7 +270,7 @@ State the main conclusion: why is CRES limited not by its resolution but by the
 volume of the source, and why do the next stages need a volume of the order of
 a cubic meter?
 
-## Problem 8.8. The microcalorimeter: heating, noise and the choice of isotope
+## Exercise 8.8. The microcalorimeter: heating, noise and the choice of isotope
 
 An absorber with heat capacity $C=10^{-12}~\mathrm{J/K}$ operates at
 $T=20~\mathrm{mK}$; the energy release of the $^{163}\mathrm{Ho}$ decay is
@@ -315,7 +315,7 @@ $^{163}\mathrm{Ho}$ and $4.3\cdot10^{10}$ years for $^{187}\mathrm{Re}$.
 State the main conclusion: why is a small $Q$ useful only together with a
 short half-life and a small heat capacity?
 
-## Problem 8.9. What did supernova 1987A tell us about the mass?
+## Exercise 8.9. What did supernova 1987A tell us about the mass?
 
 A neutrino of mass $m$ and energy $E_\nu$ is delayed by
 
@@ -358,7 +358,7 @@ $35~\mathrm{MeV}$; take the neutrino energies equal to these values.
 State the main conclusion: why does the time-of-flight method not need a model
 of the β spectrum, but does need a model of the source?
 
-## Problem 8.10. Three ways to weigh: $m_\beta$, $m_{\beta\beta}$ and $\Sigma$
+## Exercise 8.10. Three ways to weigh: $m_\beta$, $m_{\beta\beta}$ and $\Sigma$
 
 Use rounded parameters: $|V_{e2}|^2=0.30$, $|V_{e3}|^2=0.022$,
 $|V_{e1}|^2=1-|V_{e2}|^2-|V_{e3}|^2$,

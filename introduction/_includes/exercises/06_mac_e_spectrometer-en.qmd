@@ -1,4 +1,4 @@
-## Problem 6.1. MAC-E spectrometer numbers
+## Exercise 6.1. MAC-E spectrometer numbers
 
 Let the source have $B_{\mathrm{src}}=3.6~\mathrm{T}$, the maximum field be
 $B_{\max}=6.0~\mathrm{T}$, and in the analyzing plane
@@ -24,7 +24,7 @@ $B_{\mathrm A}=0.35~\mathrm{mT}$.
 4. Explain in one sentence the role of magnetic adiabatic collimation and
    of the electrostatic filter.
 
-## Problem 6.2. Two adiabaticity conditions
+## Exercise 6.2. Two adiabaticity conditions
 
 An electron moves in a stationary inhomogeneous magnetic field. On the chosen
 section the following are known
@@ -54,7 +54,7 @@ $$ {#eq-ex06-adiabatic-particle-data}
 4. What changes in the argument about the energy if the current in the magnet starts to be varied over
    a time comparable to $T_c$?
 
-## Problem 6.3. Loss cone in a dipole field
+## Exercise 6.3. Loss cone in a dipole field
 
 Consider the dipole field line $L=4$ and a conventional boundary of the atmosphere at
 altitude $h_{\mathrm{atm}}=100~\mathrm{km}$. Use
@@ -84,7 +84,7 @@ $$ {#eq-ex06-dipole-line-and-field}
 5. Draw the sphere of velocity directions and the two loss cones. Why is the loss
    region not a ring or a flat sector?
 
-## Problem 6.4. Stationary mirror and Fermi acceleration
+## Exercise 6.4. Stationary mirror and Fermi acceleration
 
 A particle is elastically reflected from a flat magnetic inhomogeneity moving toward it
 with speed $u\ll v$. Consider the motion along the normal to the
@@ -96,10 +96,10 @@ inhomogeneity and use the nonrelativistic addition of velocities.
    $\Delta v\simeq2u$.
 3. Estimate the relative change in energy for $u\ll v$.
 4. Why is the energy before and after reflection the same in a stationary magnetic mirror,
-   while in this problem it is not?
+   while in this exercise it is not?
 5. What energy does the system lose when the particle is accelerated?
 
-## Problem 6.5. Slow or fast: a numerical test of the invariant
+## Exercise 6.5. Slow or fast: a numerical test of the invariant
 
 Transverse cyclotron motion in a slowly varying field is an oscillator
 with a variable frequency. Let us check numerically when the action is conserved.
@@ -152,7 +152,7 @@ State the main physical conclusion: what exactly must be small for
 $J$ to be conserved, and why is the conservation of $J$ independent of the phase only in the
 adiabatic limit?
 
-## Problem 6.6. Magnetic bottle: oscillations between mirrors
+## Exercise 6.6. Magnetic bottle: oscillations between mirrors
 
 Near the minimum on the trap axis the field is
 
@@ -206,7 +206,7 @@ $\alpha_0$ to the field.
 State the main physical conclusion: what determines whether a
 magnetic mirror confines a particle, and what does not?
 
-## Problem 6.7. Transmission function of an ideal MAC-E filter
+## Exercise 6.7. Transmission function of an ideal MAC-E filter
 
 Monoenergetic electrons with kinetic energy $E=18.6~\mathrm{keV}$
 are emitted isotropically in the source. Use the non-relativistic relation
@@ -263,7 +263,7 @@ State the main physical conclusion: why does an edge about
 $1~\mathrm{eV}$ wide not prevent a search for a neutrino mass below $1~\mathrm{eV}$, provided the
 shape of the edge is known?
 
-## Problem 6.8. Why the main spectrometer is the size of a house
+## Exercise 6.8. Why the main spectrometer is the size of a house
 
 The electrons accepted by KATRIN fill a magnetic tube with flux
 $\Phi_{\mathrm{tube}}=191~\mathrm{T\,cm^2}$. Use
@@ -306,7 +306,7 @@ vessel has a length of $23.3~\mathrm{m}$ and an inner diameter of $9.8~\mathrm{m
 State the main physical conclusion: what two prices does the
 spectrometer pay for a small ratio $B_{\mathrm A}/B_{\max}$?
 
-## Problem 6.9. Where is the electron's fate decided?
+## Exercise 6.9. Where is the electron's fate decided?
 
 Near the analyzing plane on the spectrometer axis use the model
 
@@ -351,7 +351,7 @@ For the accepted electrons $\mu B_{\mathrm A}\le\Delta E=0.95~\mathrm{eV}$.
 State the main physical conclusion: why must the maximum of the retarding
 potential coincide with the minimum of the magnetic field?
 
-## Problem 6.10. Whom does the Earth's magnetic field confine?
+## Exercise 6.10. Whom does the Earth's magnetic field confine?
 
 In the plane of the magnetic equator the dipole field is
 

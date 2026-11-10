@@ -25,9 +25,9 @@ TEXT = {
     "ru": dict(heading="Задачи к лекции", pattern=r"^## Задача (\d+\.\d+)\.\s+(.*)$",
                link="Все задачи к лекции {n} →", all="Все задачи курса",
                seminar="и задачи для разбора на семинаре"),
-    "en": dict(heading="Problems for this lecture", pattern=r"^## Problem (\d+\.\d+)\.\s+(.*)$",
-               link="All problems for lecture {n} →", all="All course problems",
-               seminar="and problems for the seminar"),
+    "en": dict(heading="Exercises for this lecture", pattern=r"^## Exercise (\d+\.\d+)\.\s+(.*)$",
+               link="All exercises for lecture {n} →", all="All course exercises",
+               seminar="and exercises for the seminar"),
 }
 
 

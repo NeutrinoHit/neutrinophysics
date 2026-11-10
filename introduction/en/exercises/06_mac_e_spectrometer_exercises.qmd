@@ -1,5 +1,5 @@
 ---
-title: "Problems: MAC-E Spectrometer"
+title: "Exercises: MAC-E Spectrometer"
 subtitle: "Lecture 06 · Introduction to Neutrino Physics"
 author: "Dmitry V. Naumov"
 lang: en
@@ -8,8 +8,8 @@ format:
     toc: false
 ---
 
-[← Back to the lecture](../slides/06_mac_e_spectrometer.html) · [All course problems](index.html)
+[← Back to the lecture](../slides/06_mac_e_spectrometer.html) · [All course exercises](index.html)
 
-# Problems
+# Exercises
 
 {{< include ../../_includes/exercises/06_mac_e_spectrometer-en.qmd >}}

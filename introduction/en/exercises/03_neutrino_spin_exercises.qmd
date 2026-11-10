@@ -1,5 +1,5 @@
 ---
-title: "Problems: Neutrino Spin. Helicity and Polarization"
+title: "Exercises: Neutrino Spin. Helicity and Polarization"
 subtitle: "Lecture 03 · Introduction to Neutrino Physics"
 author: "Dmitry V. Naumov"
 lang: en
@@ -8,8 +8,8 @@ format:
     toc: false
 ---
 
-[← Back to the lecture](../slides/03_neutrino_spin.html) · [All course problems](index.html)
+[← Back to the lecture](../slides/03_neutrino_spin.html) · [All course exercises](index.html)
 
-# Problems
+# Exercises
 
 {{< include ../../_includes/exercises/03_neutrino_spin-en.qmd >}}

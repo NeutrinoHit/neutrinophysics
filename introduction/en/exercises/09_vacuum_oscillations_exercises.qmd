@@ -1,5 +1,5 @@
 ---
-title: "Problems: Neutrino Oscillations in Vacuum. Two Flavors"
+title: "Exercises: Neutrino Oscillations in Vacuum. Two Flavors"
 subtitle: "Lecture 09 · Introduction to Neutrino Physics"
 author: "Dmitry V. Naumov"
 lang: en
@@ -8,8 +8,8 @@ format:
     toc: false
 ---
 
-[← Back to the lecture](../slides/09_vacuum_two_flavors.html) · [All course problems](index.html)
+[← Back to the lecture](../slides/09_vacuum_two_flavors.html) · [All course exercises](index.html)
 
-# Problems
+# Exercises
 
 {{< include ../../_includes/exercises/09_vacuum_oscillations-en.qmd >}}

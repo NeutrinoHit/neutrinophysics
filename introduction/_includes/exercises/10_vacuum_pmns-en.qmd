@@ -1,6 +1,6 @@
 **Seminar**
 
-## Problem 10.1. Build the matrix from three hints
+## Exercise 10.1. Build the matrix from three hints
 
 Work in the first approximation: $U_{e3}=0$, the atmospheric mixing angle
 is close to $45^\circ$, and the matrix may be chosen real.
@@ -35,7 +35,7 @@ is close to $45^\circ$, and the matrix may be chosen real.
    qualitatively correct. Can this construction be used to independently check
    unitarity, if it was used at every step?
 
-## Problem 10.2. How to read the PMNS matrix
+## Exercise 10.2. How to read the PMNS matrix
 
 Use the standard factorization
 
@@ -85,7 +85,7 @@ $$ {#eq-ex10-001}
 
 **Homework**
 
-## Problem 10.3. General three-flavor probability
+## Exercise 10.3. General three-flavor probability
 
 For three active neutrinos
 
@@ -139,7 +139,7 @@ $$ {#eq-ex10-005}
 9. Which experiments, unlike oscillations, are sensitive to the absolute
    scale of neutrino masses?
 
-## Problem 10.4. CP violation and the Jarlskog invariant
+## Exercise 10.4. CP violation and the Jarlskog invariant
 
 1. Show that for antineutrinos the oscillation amplitude is obtained
    by the replacement $U\to U^*$.
@@ -209,7 +209,7 @@ $$ {#eq-ex10-005}
 
    Why is the asymmetry additionally suppressed by the smallness of the solar phase?
 
-## Problem 10.5. Numerical lab of three flavors
+## Exercise 10.5. Numerical lab of three flavors
 
 Write a program in Python, Julia, or Mathematica that computes vacuum
 oscillations of three active neutrinos. For Python you can use the
@@ -276,9 +276,9 @@ $$ {#eq-ex10-016}
     unitarity without fixing it in the parametrization in advance?
 
 In a real long-baseline experiment the comparison of neutrinos and antineutrinos
-is also modified by matter. In this problem only the vacuum part needs to be computed.
+is also modified by matter. In this exercise only the vacuum part needs to be computed.
 
-## Problem 10.6. What the moduli of the matrix know about the phase $\delta_{\mathrm{CP}}$
+## Exercise 10.6. What the moduli of the matrix know about the phase $\delta_{\mathrm{CP}}$
 
 In the standard parametrization the elements of the first column are
 
@@ -330,7 +330,7 @@ $\delta_{\mathrm{CP}}$ can measurements sensitive only to $|U_{\alpha i}|$,
 such as survival channels, provide, and which measurements are needed for
 the sign of $\sin\delta_{\mathrm{CP}}$?
 
-## Problem 10.7. Two scales: when three flavors reduce to two
+## Exercise 10.7. Two scales: when three flavors reduce to two
 
 Use the NuFIT 6.1 best-fit point with normal ordering:
 
@@ -387,7 +387,7 @@ $$ {#eq-ex10-024}
    the two probabilities is sensitive to the octant of $\theta_{23}$?
    Compare $P_{\mu e}$ with the exact vacuum value at
    $\delta_{\mathrm{CP}}=212^\circ$ (for example, from the program of
-   Problem 10.5) and explain the discrepancy.
+   Exercise 10.5) and explain the discrepancy.
 5. For a reactor detector at $L=180~\mathrm{km}$ with $E=4~\mathrm{MeV}$
    find $\Delta_{31}$. Average the fast terms and show that
 
@@ -404,7 +404,7 @@ $$ {#eq-ex10-024}
 State the main conclusion: why did two-flavor formulas describe individual
 experiments so well, even though there are three flavors?
 
-## Problem 10.8. Mass ordering in the reactor antineutrino spectrum
+## Exercise 10.8. Mass ordering in the reactor antineutrino spectrum
 
 The sign $\Delta m_{21}^2>0$ is known; the position of the third mass state
 is not. Compare two options with the same angles:
@@ -460,7 +460,7 @@ State the main physical conclusion: how does the mass ordering show up in
 vacuum if the probability is sensitive only to the magnitudes of the
 splittings?
 
-## Problem 10.9. The unitarity triangle and the number of phases
+## Exercise 10.9. The unitarity triangle and the number of phases
 
 The orthogonality of the $e$ and $\mu$ rows is written as
 
