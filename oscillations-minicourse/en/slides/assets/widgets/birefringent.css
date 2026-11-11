@@ -1,0 +1,54 @@
+.reveal .bf-widget { color: #dde6ee; font-size: 20px; }
+.reveal .bf-stage { position: relative; }
+.reveal .bf-widget svg { width: 100%; height: auto; display: block; }
+.reveal .bf-scene { background: rgba(10, 16, 24, 0.85); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 12px; }
+.reveal .bf-labels { position: absolute; inset: 0; pointer-events: none; }
+.reveal .bf-label { position: absolute; transform: translate(-50%, -50%); white-space: nowrap; font-size: 19px; color: #c9d3dd; }
+.reveal .bf-l-gold { color: #ffd166; font-size: 22px; }
+.reveal .bf-l-blue { color: #73c7ff; font-size: 18px; }
+.reveal .bf-l-orange { color: #ff8a5c; font-size: 18px; }
+.reveal .bf-scene .bf-axis { stroke: #344250; stroke-width: 1.2; }
+.reveal .bf-scene .bf-unpol { stroke: #8a96a3; stroke-width: 2; }
+.reveal .bf-scene .bf-filter { fill: rgba(150, 170, 190, 0.14); stroke: #8a96a3; stroke-width: 1.4; }
+.reveal .bf-scene .bf-screen { fill: none; stroke: #4a5a6a; stroke-width: 1.2; stroke-dasharray: 5 5; }
+.reveal .bf-scene .bf-pass { stroke: #eef3f7; stroke-width: 3; }
+.reveal .bf-scene .bf-crystal-face { fill: rgba(205, 225, 240, 0.16); stroke: rgba(225, 240, 250, 0.75); stroke-width: 1.4; }
+.reveal .bf-scene .bf-crystal-side { fill: rgba(205, 225, 240, 0.10); stroke: rgba(225, 240, 250, 0.45); stroke-width: 1.1; }
+.reveal .bf-scene .bf-fast { stroke: #73c7ff; stroke-width: 2.6; }
+.reveal .bf-scene .bf-slow { stroke: #ff8a5c; stroke-width: 2.6; }
+.reveal .bf-scene .bf-href { stroke: #eef3f7; stroke-width: 1.2; stroke-dasharray: 4 4; }
+.reveal .bf-scene .bf-arc { fill: none; stroke: #ffd166; stroke-width: 2.4; }
+.reveal .bf-scene .bf-wave { fill: none; stroke: #ffd166; stroke-width: 2.4; }
+.reveal .bf-scene .bf-spoke { fill: none; stroke: rgba(255, 209, 102, 0.35); stroke-width: 1; }
+.reveal .bf-scene .bf-ellipse { fill: rgba(126, 226, 174, 0.10); stroke: #7ee2ae; stroke-width: 2.6; }
+.reveal .bf-scene .bf-evec { stroke: #7ee2ae; stroke-width: 3; }
+.reveal .bf-scene .bf-edot { fill: #7ee2ae; }
+.reveal .bf-scene .bf-det { fill: #111a24; stroke: #8a96a3; stroke-width: 1.4; }
+.reveal .bf-scene .bf-det-fill { fill: #ff8a5c; }
+.reveal .bf-lab { display: grid; grid-template-columns: 1fr 360px; gap: 16px; align-items: start; }
+.reveal .bf-panel { background: rgba(10, 16, 24, 0.85); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 12px; padding: 10px 14px; }
+.reveal .bf-plot { margin-top: 8px; }
+.reveal .bf-plot text { fill: #c9d3dd; font-size: 15px; font-family: inherit; }
+.reveal .bf-plot .bf-frame { fill: none; stroke: #4a5a6a; }
+.reveal .bf-plot .bf-grid { stroke: #344250; stroke-width: 1; }
+.reveal .bf-plot .bf-mark { stroke: #8a96a3; stroke-width: 1; stroke-dasharray: 3 4; }
+.reveal .bf-plot .bf-mark-t { fill: #a9b6c2; }
+.reveal .bf-plot .bf-iv { fill: none; stroke: #ff8a5c; stroke-width: 2.6; }
+.reveal .bf-plot .bf-ih { fill: none; stroke: #73c7ff; stroke-width: 1.6; stroke-dasharray: 6 4; }
+.reveal .bf-plot .bf-now { stroke: #ffd166; stroke-width: 1.6; stroke-dasharray: 6 5; }
+.reveal .bf-plot .bf-iv-dot { fill: #ff8a5c; }
+.reveal .bf-legend { position: absolute; right: 26px; top: 2px; font-size: 17px; }
+.reveal .bf-legend .iv { color: #ff8a5c; margin-right: 18px; }
+.reveal .bf-legend .ih { color: #73c7ff; }
+.reveal .bf-controls label { display: flex; justify-content: space-between; margin: 2px 0; }
+.reveal .bf-controls label b { color: #ffd166; font-weight: 600; }
+.reveal .bf-controls input[type=range] { width: 100%; margin: 2px 0 6px; }
+.reveal .bf-controls .bf-seg { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 0 0 8px; }
+.reveal .bf-controls button { font: inherit; font-size: 16px; padding: 3px 4px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #111a24; color: #dde6ee; cursor: pointer; }
+.reveal .bf-head { color: #8a96a3; font-size: 14px; text-transform: uppercase; letter-spacing: 0.06em; margin: 2px 0 2px; }
+.reveal .bf-read { display: grid; grid-template-columns: 1fr auto; row-gap: 3px; column-gap: 10px; font-size: 18px; align-items: center; }
+.reveal .bf-read b { font-weight: 600; text-align: right; color: #c9d3dd; }
+.reveal .bf-read .iv { color: #ff8a5c; }
+.reveal .bf-read .ih { color: #73c7ff; }
+.reveal .bf-read .el { color: #7ee2ae; }

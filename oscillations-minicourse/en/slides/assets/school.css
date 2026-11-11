@@ -27,3 +27,9 @@
 .reveal .school-table td, .reveal .school-table th { padding: 0.22em 0.6em; }
 .reveal .lecture-map { font-size: 0.86em; }
 .reveal .lecture-map li { margin: 0.25em 0; }
+
+/* The Earth setup picture in the top right corner of the geo- and atmospheric-neutrino examples */
+.reveal .earth-setup { position: absolute; top: 0; right: 0; margin: 0; z-index: 2; pointer-events: none; }
+.reveal .earth-setup p { margin: 0; }
+.reveal .earth-setup img { height: 360px; width: auto; max-width: none; max-height: none; margin: 0; }
+.reveal .earth-setup-text { max-width: 1120px; }

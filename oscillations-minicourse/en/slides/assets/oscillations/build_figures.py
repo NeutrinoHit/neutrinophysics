@@ -256,7 +256,7 @@ def fig_oscillogram():
         ax.axhline(core, color=FG, lw=1.0, ls=(0, (5, 4)), alpha=0.8)
         ax.set_xscale("log"); ax.set_xticks([1, 2, 5, 10, 20]); ax.set_xticklabels(["1", "2", "5", "10", "20"])
         ax.set_xlabel("neutrino energy  $E$  [GeV]"); ax.set_title(title, fontsize=FONT)
-    axs[0].set_ylabel(r"$\cos\theta_z$   (−1: through the centre)")
+    axs[0].set_ylabel(r"$\cos\theta_z$   (−1: through the center)")
     axs[0].text(1.05, core + 0.02, "core", color=FG, fontsize=FONT - 3, va="bottom")
     axs[0].text(1.05, core - 0.02, "", color=FG)
     cax = fig.add_axes([0.925, 0.14, 0.012, 0.76])
@@ -311,34 +311,52 @@ def fig_prem():
     ax.plot(r, rho, color=FG, lw=2.6, label=r"density $\rho$ (PREM)")
     ax.plot(r, rho * osc.electron_fraction(r), color=GOLD, lw=2.2, ls=(0, (5, 3)), label=r"$Y_e\,\rho$: what neutrinos feel")
     ax.set_xlim(0, osc.R_EARTH); ax.set_ylim(0, 14.5)
-    ax.set_xlabel("distance from the centre  $r$  [km]"); ax.set_ylabel(r"[g/cm$^3$]")
+    ax.set_xlabel("distance from the center  $r$  [km]"); ax.set_ylabel(r"[g/cm$^3$]")
     ax.legend(loc="lower left", fontsize=FONT - 2); clean(ax)
     fig.subplots_adjust(left=0.07, right=0.98, top=0.96, bottom=0.14)
     save(fig, "prem")
 
 
 def fig_solar_pee():
-    """Adiabatic two-flavor solar nu_e survival against energy, production at the 8B-region electron density."""
+    """Solar nu_e survival against energy: three-flavor adiabatic MSW (production at the 8B-region electron density)
+    and the Borexino Phase-II measurements.
+
+    Curve: P_ee = cos^4(th13) (1 + cos2th12m cos2th12)/2 + sin^4(th13), cos2th12m = (cos2th12 - b)/sqrt((cos2th12 - b)^2
+    + sin^2 2th12), b = 2 sqrt2 G_F cos^2(th13) n_e E / dm21 (Borexino Collab., Prog. Part. Nucl. Phys. 2021,
+    arXiv:2105.13858, Eqs. for P_ee^MSW and beta; the sin^4 term as in their vacuum formula).
+    Points: P_ee(pp, 0.267 MeV) = 0.57 +- 0.09, (7Be, 0.862) = 0.53 +- 0.05, (pep, 1.44) = 0.43 +- 0.11,
+    (8B HER, 8.1) = 0.37 +- 0.08; HZ-SSM fluxes; same review, Sec. "Electron neutrino survival probability",
+    from Borexino, Nature 562, 505 (2018).
+    """
     plt = style()
+    big = FONT + 6
     E = np.geomspace(0.1, 20, 600)                    # MeV
-    s2 = P_NO.s12sq
-    fig, ax = plt.subplots(figsize=(13.0, 5.6))
-    for ne, col, lab in ((SOLAR_NE_B8, BLUE, r"born where $^8$B neutrinos are made"), (SOLAR_NE_CENTRE, GOLD, "born at the centre")):
-        V = osc.V_PER_YE_RHO * ne / osc.N_A
-        A = 2 * E * 1e6 * V / P_NO.dm21
-        c2m = (1 - 2 * s2 - A) / np.sqrt((1 - 2 * s2 - A) ** 2 + 4 * s2 * (1 - s2))
-        P = 0.5 * (1 + (1 - 2 * s2) * c2m)
-        ax.plot(E, P, color=col, lw=2.6 if col == BLUE else 1.6, ls="-" if col == BLUE else (0, (5, 4)), label=lab)
-    lo, hi = 1 - 2 * s2 * (1 - s2), s2
-    for y, t in ((lo, r"$1-\frac{1}{2}\sin^2 2\theta_{12}$: vacuum averaging"), (hi, r"$\sin^2\theta_{12}$: adiabatic MSW")):
-        ax.axhline(y, color=GREY, lw=1, ls=(0, (1, 3)))
-        ax.text(0.105, y + 0.012, t, color=GREY, fontsize=FONT - 3)
-    ax.set_xscale("log"); ax.set_xlim(0.1, 20); ax.set_ylim(0, 0.75)
+    s2, s3 = P_NO.s12sq, P_NO.s13sq
+    c2t, s22t = 1 - 2 * s2, 4 * s2 * (1 - s2)
+    fig, ax = plt.subplots(figsize=(13.0, 5.8))
+    V = osc.V_PER_YE_RHO * SOLAR_NE_B8 / osc.N_A
+    b = 2 * E * 1e6 * V * (1 - s3) / P_NO.dm21
+    c2m = (c2t - b) / np.sqrt((c2t - b) ** 2 + s22t)
+    P = (1 - s3) ** 2 * 0.5 * (1 + c2m * c2t) + s3 ** 2
+    ax.plot(E, P, color=BLUE, lw=3.0, label="three flavors, adiabatic MSW")
+    lo, hi = (1 - s3) ** 2 * (1 - 0.5 * s22t) + s3 ** 2, (1 - s3) ** 2 * s2 + s3 ** 2
+    for y, t in ((lo, rf"vacuum average {lo:.2f}"), (hi, rf"$\nu_2$ leaves the Sun: {hi:.2f}")):
+        ax.axhline(y, color=GREY, lw=1.2, ls=(0, (1, 3)))
+        ax.text(0.105, y + 0.015, t, color=GREY, fontsize=big - 2)
+    data = ((0.267, 0.57, 0.09, "pp", ORANGE), (0.862, 0.53, 0.05, r"$^7$Be", GOLD), (1.44, 0.43, 0.11, "pep", GREEN),
+            (8.1, 0.37, 0.08, r"$^8$B", VIOLET))
+    for e, v, err, name, col in data:
+        ax.errorbar([e], [v], yerr=[err], fmt="o", ms=11, color=col, ecolor=col, elinewidth=2.6, capsize=6, zorder=5)
+        ax.text(e * 1.1, v + err + 0.02, name, color=col, fontsize=big, ha="left", va="bottom")
+    ax.set_xscale("log"); ax.set_xlim(0.1, 20); ax.set_ylim(0, 0.8)
     ax.set_xticks([0.1, 0.3, 1, 3, 10, 20]); ax.set_xticklabels(["0.1", "0.3", "1", "3", "10", "20"])
-    ax.set_xlabel("neutrino energy  $E$  [MeV]"); ax.set_ylabel(r"survival  $P(\nu_e\to\nu_e)$")
-    ax.legend(loc="lower left", fontsize=FONT - 3); clean(ax)
-    fig.subplots_adjust(left=0.08, right=0.98, top=0.96, bottom=0.14)
+    ax.tick_params(labelsize=big - 2)
+    ax.set_xlabel("neutrino energy  $E$  [MeV]", fontsize=big); ax.set_ylabel(r"$P(\nu_e\to\nu_e)$", fontsize=big)
+    ax.plot([], [], "o", color=FG, label="Borexino")
+    ax.legend(loc="lower left", fontsize=big - 3, frameon=False); clean(ax)
+    fig.subplots_adjust(left=0.09, right=0.98, top=0.96, bottom=0.17)
     save(fig, "solar-pee")
+    print(f"plateaus {lo:.3f} {hi:.3f}; P(8.1 MeV) = {np.interp(8.1, E, P):.3f}")
 
 
 # Earth heat budget (TW); sources in SOURCES-check.md and SOURCES-check-2.md.
@@ -377,9 +395,111 @@ def fig_heat_budget():
 SOLAR_NE_CENTRE = 10 ** 2.0125 * osc.N_A
 SOLAR_NE_B8 = 5.5e25
 
+def fig_shear_splitting():
+    """Schematic of shear-wave splitting: a linearly polarized S wave enters an anisotropic layer, splits into a fast
+    and a slow wave along the two axes and leaves with an elliptical particle motion (illustrative, no data)."""
+    plt = style()
+    from matplotlib.patches import FancyArrowPatch
+    fig, axs = plt.subplots(1, 3, figsize=(15.0, 4.9), gridspec_kw={"width_ratios": [1.0, 1.55, 1.0]})
+    phi = np.radians(30.0)                              # fast axis, from the incoming polarization (x axis)
+    fast, slow = np.array([np.cos(phi), np.sin(phi)]), np.array([-np.sin(phi), np.cos(phi)])
+
+    def arrow(ax, v, col, lw=3.0, scale=1.0):
+        ax.add_patch(FancyArrowPatch((0, 0), tuple(scale * v), arrowstyle="-|>", mutation_scale=22, color=col, lw=lw))
+
+    ax = axs[0]
+    for v, col, lab in ((fast, BLUE, "fast axis"), (slow, VIOLET, "slow axis")):
+        ax.plot([-1.15 * v[0], 1.15 * v[0]], [-1.15 * v[1], 1.15 * v[1]], color=col, lw=1.6, ls=(0, (5, 4)))
+        ax.text(1.22 * v[0], 1.22 * v[1], lab, color=col, ha="center", va="center", fontsize=FONT - 1)
+    arrow(ax, np.array([1.0, 0.0]), GOLD, scale=0.95)
+    ax.text(0.45, -0.17, "incoming S\npolarization", color=GOLD, ha="center", va="top", fontsize=FONT - 2)
+    ax.text(0.0, -1.55, "1. the layer has two axes", color=FG, ha="center", fontsize=FONT)
+
+    # a snapshot along the path: both waves left the layer entrance together; the fast one is now ahead
+    x = np.linspace(-2.2, 4.2, 700)
+    period, dt = 1.6, 0.4                               # the slow wave lags by a quarter period
+    wavelet = lambda s: np.exp(-(s / 0.9) ** 2) * np.cos(2 * np.pi * s / period)
+    ax = axs[1]
+    ax.plot(x, 1.1 + np.cos(phi) * wavelet(x - 1.4), color=BLUE, lw=2.4)
+    ax.plot(x, -1.1 + np.sin(phi) * wavelet(x - 1.4 + dt), color=VIOLET, lw=2.4)
+    ax.annotate("", xy=(1.4, 0.05), xytext=(1.4 - dt, 0.05), arrowprops=dict(arrowstyle="<->", color=FG, lw=1.4))
+    ax.text(1.4 - dt / 2, 0.17, "lag", color=FG, ha="center", fontsize=FONT - 1)
+    for xv in (1.4 - dt, 1.4):
+        ax.axvline(xv, color=GREY, lw=0.8, ls=(0, (2, 3)))
+    ax.annotate("", xy=(4.1, -2.2), xytext=(2.6, -2.2), arrowprops=dict(arrowstyle="-|>", color=GREY, lw=1.4))
+    ax.text(2.5, -2.2, "propagation", color=GREY, ha="right", va="center", fontsize=FONT - 3)
+    ax.text(-2.1, 1.75, "fast wave: ahead", color=BLUE, fontsize=FONT - 1)
+    ax.text(-2.1, -0.45, "slow wave: lags behind", color=VIOLET, fontsize=FONT - 1)
+    ax.text(1.0, -2.75, "2. a snapshot along the path: the slow wave lags", color=FG, ha="center", fontsize=FONT)
+    ax.set_xlim(-2.2, 4.2); ax.set_ylim(-2.95, 2.3)
+
+    ax = axs[2]
+    w = np.linspace(0, 2 * np.pi, 400)                 # one period of the carrier: the hodogram
+    ax.plot([-1, 1], [0, 0], color=GREY, lw=0.8); ax.plot([0, 0], [-1, 1], color=GREY, lw=0.8)
+    for lag, col, lw in ((0.0, GREY, 1.6), (2 * np.pi * dt / period, GOLD, 2.6)):
+        a_fast, a_slow = np.cos(phi) * np.cos(w), -np.sin(phi) * np.cos(w - lag)   # x = cos(phi) fast - sin(phi) slow
+        ax.plot(a_fast * fast[0] + a_slow * slow[0], a_fast * fast[1] + a_slow * slow[1], color=col, lw=lw)
+    ax.text(-1.25, -0.95, "before the layer", color=GREY, fontsize=FONT - 4)
+    ax.text(-1.25, -1.15, "after the layer", color=GOLD, fontsize=FONT - 4)
+    ax.text(1.02, 0.06, "incoming", color=GREY, fontsize=FONT - 4, ha="right", va="bottom")
+    ax.text(0.04, 0.98, "perpendicular", color=GREY, fontsize=FONT - 4, va="top")
+    ax.text(0.0, -1.55, "3. particle motion:\nlinear → elliptical", color=FG, ha="center", va="top", fontsize=FONT)
+
+    for ax in (axs[0], axs[2]):
+        ax.set_xlim(-1.3, 1.3); ax.set_ylim(-1.3, 1.3); ax.set_aspect("equal")
+    for ax in axs:
+        ax.axis("off")
+    axs[0].set_ylim(-1.75, 1.35); axs[2].set_ylim(-2.1, 1.1)
+    fig.subplots_adjust(left=0.01, right=0.99, top=0.97, bottom=0.10, wspace=0.12)
+    save(fig, "shear-splitting")
+
+
+def fig_sun_twist():
+    """The Sun as a slowly twisted crystal: the matter axes nu_1m, nu_2m in the (nu_e, nu_x) plane turn from the
+    centre to the surface (10 MeV, BS05 exponential profile); the state stays on nu_2m and leaves as nu_2."""
+    plt = style()
+    s2 = P_NO.s12sq
+    c2, sn2 = 1 - 2 * s2, 2 * np.sqrt(s2 * (1 - s2))
+    E_MeV, r0 = 10.0, 1 / 10.54                          # BS05 n_e falls as exp(-r/r0), r in solar radii
+    A0 = 2 * E_MeV * 1e6 * osc.V_PER_YE_RHO * SOLAR_NE_CENTRE / osc.N_A / P_NO.dm21
+    theta_m = lambda r: 0.5 * np.arctan2(sn2, c2 - A0 * np.exp(-r / r0))
+    fig, (top, bot) = plt.subplots(2, 1, figsize=(15.0, 7.4), gridspec_kw={"height_ratios": [1.35, 1.0]})
+    rs = [0.0, 0.1, 0.17, 0.25, 0.4, 1.0]
+    labels = ["center", "", "resonance", "", "", "surface"]
+    for i, (r, lab) in enumerate(zip(rs, labels)):
+        tm = theta_m(r)
+        cx = i * 2.6
+        top.plot([cx - 1.0, cx + 1.0], [0, 0], color=GREY, lw=0.8)
+        top.plot([cx, cx], [-1.0, 1.0], color=GREY, lw=0.8)
+        v2 = np.array([np.sin(tm), np.cos(tm)])         # nu_2m in (nu_e, nu_x) coordinates
+        v1 = np.array([np.cos(tm), -np.sin(tm)])
+        top.plot([cx - v1[0], cx + v1[0]], [-v1[1], v1[1]], color=VIOLET, lw=1.6, ls=(0, (5, 4)))
+        top.annotate("", xy=(cx + 0.95 * v2[0], 0.95 * v2[1]), xytext=(cx, 0),
+                     arrowprops=dict(arrowstyle="-|>", color=GOLD, lw=3.0, mutation_scale=20))
+        top.text(cx + 1.02, -0.12, r"$\nu_e$", color=GREY, fontsize=FONT, va="top")
+        top.text(cx + 0.06, 1.02, r"$\nu_x$", color=GREY, fontsize=FONT)
+        top.text(cx, -1.32, f"$r={r:g}\\,R_\\odot$" + (f"\n{lab}" if lab else ""), color=FG, ha="center", va="top",
+                 fontsize=FONT)
+    top.text(-1.1, 1.3, r"gold arrow: the state, along $\nu_{2m}$;  dashed: $\nu_{1m}$", color=FG, fontsize=FONT)
+    top.set_xlim(-1.3, 2.6 * 5 + 1.3); top.set_ylim(-1.9, 1.45); top.set_aspect("equal"); top.axis("off")
+
+    r = np.linspace(0, 1, 600)
+    bot.plot(r, np.degrees(theta_m(r)), color=GOLD, lw=2.6)
+    bot.axhline(45, color=GREY, lw=0.9, ls=(0, (2, 3)))
+    bot.axhline(np.degrees(np.arcsin(np.sqrt(s2))), color=VIOLET, lw=0.9, ls=(0, (2, 3)))
+    bot.text(0.995, 46.5, r"$45^\circ$: resonance", color=GREY, ha="right", fontsize=FONT - 3)
+    bot.text(0.995, np.degrees(np.arcsin(np.sqrt(s2))) + 1.5, r"$\theta_{12}$: vacuum", color=VIOLET, ha="right", fontsize=FONT - 3)
+    bot.set_xlim(0, 1); bot.set_ylim(25, 90)
+    bot.set_xlabel(r"distance from the center  $r/R_\odot$"); bot.set_ylabel(r"$\theta_m$  [deg]")
+    clean(bot)
+    fig.subplots_adjust(left=0.07, right=0.98, top=0.97, bottom=0.11, hspace=0.25)
+    save(fig, "sun-twist")
+
+
 FIGURES = {"solar-pee": fig_solar_pee, "heat-budget": fig_heat_budget, "beats": fig_beats, "le-map": fig_le_map, "averaging": fig_averaging, "reactor-clocks": fig_reactor_clocks,
            "matter-mixing": fig_matter_mixing, "earth-paths": fig_earth_paths, "oscillogram": fig_oscillogram,
-           "core-ye": fig_core_ye, "prem": fig_prem}
+           "core-ye": fig_core_ye, "prem": fig_prem,
+           "shear-splitting": fig_shear_splitting, "sun-twist": fig_sun_twist}
 
 if __name__ == "__main__":
     for n in (sys.argv[1:] or FIGURES):

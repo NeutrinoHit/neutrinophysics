@@ -1,0 +1,7 @@
+```{=html}
+<link rel="stylesheet" href="assets/widgets/birefringent.css">
+<div class="bf-widget" data-theta="30" data-lr="0.35" role="group" aria-label="Light polarized along H enters a birefringent crystal of thickness L whose fast and slow axes make the angle theta with H; it leaves elliptically polarized and meets an analyzer V; a detector measures the transmitted intensity">
+  <div class="bf-stage"><svg class="bf-scene" viewBox="0 0 1000 300" role="img" aria-label="The set-up, animated"></svg><div class="bf-labels"></div></div>
+</div>
+<script defer src="assets/widgets/birefringent.js"></script>
+```

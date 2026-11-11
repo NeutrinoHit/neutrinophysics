@@ -1,0 +1,47 @@
+.reveal .crystal-matrix { font-size: 24px; color: #dde6ee; }
+.reveal .crystal-matrix .cm-controls { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; margin: 0 0 10px; }
+.reveal .crystal-matrix .cm-slider { display: inline-flex; align-items: center; gap: 12px; }
+.reveal .crystal-matrix .cm-slider b { color: #ffd166; min-width: 4em; }
+.reveal .crystal-matrix .cm-slider input { width: 280px; }
+.reveal .crystal-matrix .cm-seg { display: inline-flex; gap: 8px; }
+.reveal .crystal-matrix button { font: inherit; font-size: 18px; padding: 4px 12px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #111a24; color: #dde6ee; cursor: pointer; }
+.reveal .crystal-matrix button.on { background: #73c7ff; color: #04121f; border-color: #73c7ff; }
+.reveal .crystal-matrix button.cm-diag { background: #ffd166; color: #04121f; border-color: #ffd166; font-weight: 600; padding: 6px 18px; }
+.reveal .crystal-matrix .cm-body { display: grid; grid-template-columns: 1fr 440px; gap: 18px; background: rgba(10, 16, 24, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 12px; padding: 14px 20px; }
+.reveal .crystal-matrix .cm-eq, .reveal .crystal-matrix .cm-diagrow { display: flex; align-items: center; gap: 14px; }
+.reveal .crystal-matrix .cm-diagrow { margin-top: 18px; visibility: hidden; }
+.reveal .crystal-matrix.is-diag .cm-diagrow { visibility: visible; }
+.reveal .crystal-matrix .cm-op { font-size: 48px; color: #eef3f7; padding-top: 34px; }
+.reveal .crystal-matrix .cm-op.cm-a { font-size: 30px; padding-top: 40px; }
+.reveal .crystal-matrix .cm-title { text-align: center; font-size: 22px; margin-bottom: 4px; }
+.reveal .crystal-matrix .cm-mat.v .cm-title { color: #c9d3dd; }
+.reveal .crystal-matrix .cm-mat.m .cm-title { color: #73c7ff; }
+.reveal .crystal-matrix .cm-mat.c .cm-title { color: #ffd166; }
+.reveal .crystal-matrix .cm-mat.d .cm-title { color: #7ee2ae; }
+.reveal .crystal-matrix table { border-collapse: separate; border-spacing: 6px; margin: 0; font-size: 30px; }
+.reveal .crystal-matrix th { font-weight: 400; color: #a9b6c2; padding: 0 6px; border: none; text-align: center; font-size: 24px; }
+.reveal .crystal-matrix td.cm-cell { width: 100px; height: 66px; text-align: center; vertical-align: middle; border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15); color: #eef3f7; font-variant-numeric: tabular-nums; padding: 0; }
+.reveal .crystal-matrix .cm-mat.d td.cm-cell { border-color: rgba(126, 226, 174, 0.6); }
+.reveal .crystal-matrix .cm-note { font-size: 24px; line-height: 1.6; margin-left: 10px; }
+.reveal .crystal-matrix .cm-hl, .reveal .crystal-matrix .cm-hl b { color: #7ee2ae; }
+.reveal .crystal-matrix .cm-right { position: relative; }
+.reveal .crystal-matrix .cm-right svg { width: 100%; height: auto; display: block; }
+.reveal .crystal-matrix .cm-labels { position: absolute; inset: 0; pointer-events: none; }
+.reveal .crystal-matrix .cm-l { position: absolute; transform: translate(-50%, -50%); font-size: 26px; white-space: nowrap; }
+.reveal .crystal-matrix .cm-l-n1, .reveal .crystal-matrix .cm-l-n2 { color: #c9d3dd; }
+.reveal .crystal-matrix .cm-l-m1, .reveal .crystal-matrix .cm-l-m2 { color: #ffd166; }
+.reveal .crystal-matrix .cm-l-e { color: #73c7ff; }
+.reveal .crystal-matrix .cm-l-mu { color: #ff8a5c; }
+.reveal .crystal-matrix .cm-l-th { color: #eef3f7; }
+.reveal .crystal-matrix .cm-l-thm { color: #7ee2ae; }
+.reveal .crystal-matrix svg .cm-ring { fill: none; stroke: #344250; stroke-width: 1.5; }
+.reveal .crystal-matrix svg .cm-ax { stroke: #c9d3dd; stroke-width: 2.2; }
+.reveal .crystal-matrix svg .cm-ax.dim { stroke: #6b7885; stroke-width: 1.6; stroke-dasharray: 6 6; }
+.reveal .crystal-matrix svg .cm-mx { stroke: #ffd166; stroke-width: 3.2; }
+.reveal .crystal-matrix svg .cm-fe { stroke: #73c7ff; stroke-width: 4; }
+.reveal .crystal-matrix svg .cm-fm { stroke: #ff8a5c; stroke-width: 4; }
+.reveal .crystal-matrix svg .cm-arc { fill: none; stroke: #eef3f7; stroke-width: 2.5; }
+.reveal .crystal-matrix svg .cm-arc-m { fill: none; stroke: #7ee2ae; stroke-width: 2.8; }

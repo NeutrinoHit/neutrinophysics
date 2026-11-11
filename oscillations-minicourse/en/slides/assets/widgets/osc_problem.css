@@ -1,0 +1,40 @@
+.reveal .osc-problem { font-size: 27px; color: #dde6ee; }
+.reveal .osc-problem .op-controls { display: flex; flex-wrap: wrap; gap: 12px 22px; align-items: center; margin: 0 0 6px; }
+.reveal .osc-problem button { font: inherit; font-size: 25px; padding: 4px 16px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #111a24; color: #dde6ee; cursor: pointer; }
+.reveal .osc-problem button.on { background: #73c7ff; color: #04121f; border-color: #73c7ff; }
+.reveal .osc-problem .op-slider { display: inline-flex; align-items: center; gap: 10px; }
+.reveal .osc-problem .op-slider b { color: #ffd166; min-width: 2.6em; }
+.reveal .osc-problem .op-slider input { width: 300px; }
+.reveal .osc-problem .op-check { display: inline-flex; align-items: center; gap: 6px; color: #a9b6c2; }
+.reveal .osc-problem .op-status { font-size: 36px; min-height: 1.5em; margin: 2px 0 8px; color: #eef3f7; }
+.reveal .osc-problem .op-status b { color: #ffd166; }
+.reveal .osc-problem svg { width: 100%; height: auto; display: block; background: rgba(10, 16, 24, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 12px; touch-action: none; }
+.reveal .osc-problem svg text { fill: #c9d3dd; font-family: inherit; }
+.reveal .osc-problem .op-sub { font-size: 0.7em; }
+.reveal .osc-problem .op-sup { font-size: 0.7em; }
+.reveal .osc-problem .op-src { fill: #16324a; stroke: #73c7ff; stroke-width: 2; }
+.reveal .osc-problem .op-det { fill: #3a2618; stroke: #ff8a5c; stroke-width: 2; cursor: ew-resize; }
+.reveal .osc-problem .op-box-t { font-size: 28px; fill: #eef3f7; pointer-events: none; }
+.reveal .osc-problem .op-note { font-size: 28px; }
+.reveal .osc-problem .op-beam { stroke: #344250; stroke-width: 2; stroke-dasharray: 6 6; }
+.reveal .osc-problem .op-run { stroke: #eef3f7; stroke-width: 3; stroke-dasharray: 14 12; }
+.reveal .osc-problem .op-dim { stroke: #8a96a3; stroke-width: 1.6; }
+.reveal .osc-problem .op-L { font-size: 30px; fill: #ffd166; font-style: italic; }
+.reveal .osc-problem .op-track { fill: #1c2632; }
+.reveal .osc-problem .op-bar-e { fill: #73c7ff; }
+.reveal .osc-problem .op-bar-m { fill: #ff8a5c; }
+.reveal .osc-problem .op-le-s { fill: #73c7ff; font-size: 32px; font-weight: 600; }
+.reveal .osc-problem .op-lm-s { fill: #ff8a5c; font-size: 32px; font-weight: 600; }
+.reveal .osc-problem .op-le-t { fill: #73c7ff; font-size: 42px; font-weight: 600; }
+.reveal .osc-problem .op-lm-t { fill: #ff8a5c; font-size: 42px; font-weight: 600; }
+.reveal .osc-problem .op-num { fill: #eef3f7; font-size: 42px; font-variant-numeric: tabular-nums; }
+.reveal .osc-problem .op-axis { stroke: #8a96a3; stroke-width: 1.6; }
+.reveal .osc-problem .op-grid { stroke: #273340; stroke-width: 1; }
+.reveal .osc-problem .op-tick { font-size: 27px; }
+.reveal .osc-problem .op-axis-t { font-size: 29px; }
+.reveal .osc-problem .op-curve { fill: none; stroke: #ffd166; stroke-width: 3; }
+.reveal .osc-problem .op-pt { fill: #ff8a5c; }
+.reveal .osc-problem .op-err { stroke: #ff8a5c; stroke-width: 2; }
+.reveal .osc-problem .op-mark { stroke: #ff8a5c; stroke-width: 1.6; stroke-dasharray: 5 5; }

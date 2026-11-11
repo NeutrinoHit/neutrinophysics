@@ -34,7 +34,7 @@
       <figcaption>one wave, three decompositions</figcaption>
     </figure>
     <figure>
-      <svg data-plot="branches" viewBox="0 0 440 285" role="img" aria-label="Following the instantaneous branch"></svg>
+      <svg data-plot="branches" viewBox="0 0 610 285" role="img" aria-label="Following the instantaneous branch"></svg>
       <figcaption>exact state at the avoided crossing</figcaption>
     </figure>
   </div>

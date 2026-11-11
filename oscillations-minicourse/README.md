@@ -1,29 +1,33 @@
 # Neutrino Oscillations: from Vacuum to the Earth's Core
 
-English mini-course, three lectures (about 2 h 45 min), for students of particle physics and
-geophysics. Emphasis on understanding and on the size of effects, not on parameter tables or fits.
-No exercises: interactives and animations instead.
+English school lecture (45 minutes) for students of particle physics and geophysics. Emphasis on
+understanding and on the size of effects, not on parameter tables or fits. No exercises: interactives
+and animations instead; derivations in an appendix.
 
 - `index.qmd` — course home.
-- `en/slides/01_vacuum.qmd` — **A quantum clock in vacuum**: ghost particles, how detectors read flavor
-  (Cherenkov film), the solar and atmospheric puzzles, quantum chameleon, flavor vs mass states, the
-  two-phase film, beats, the phase Δm²L/2E, the formula, two-flavor lab, coupled pendulums, numbers,
-  oscillation lengths, L–E map, averaging, three flavors, triangle and three-flavor probability applets,
-  reactor "two clocks", what is known.
-- `en/slides/02_matter_sun.qmd` — **Matter and the Sun**: refraction (thin-layer applet), V = √2 G_F n_e,
-  two waves in matter (applet), mixing in matter and resonance, constant-density lab, adiabatic following
-  and Landau–Zener, adiabatic lab, the Sun (P_ee plateaus and transition), day–night, the long-baseline lab
-  (mass ordering, δCP, matter on/off) and its numbers.
-- `en/slides/03_earth.qmd` — **The Earth seen by neutrinos**: PREM and Y_e, three probes; absorption
-  (Earth-shield film, transmission map, IceCube mass of the Earth); oscillations (paths, animated
-  flavor along a chord, oscillogram, path explorer, oscillogram lab for a modified Earth, composition
-  signal, what it takes); geoneutrinos (visible decays, heat per kg, measurements, heat budget, JUNO);
-  a one-slide summary of the course.
+- `en/slides/neutrino_oscillations.qmd` — **Neutrino Oscillations in Vacuum and Matter**, the lecture of
+  the 2026 Fall School on Interdisciplinary Neutrino Science (Zhuhai, 12 November 2026, slot "Status of
+  neutrino oscillations", before S. Petcov's tomography lectures). Opening: the problem as an experiment (`_osc_problem.qmd`: a source, a movable detector, e⁻ and μ⁻ counted event by event; only e⁻ at L = 0)
+  and Neutrino = Quantum Chameleon. νe, νμ, ντ have no mass (no flavor fields with a mass); two waves (the
+  detector moved by a slider); the formula with the derivation in tabs and natural units in a margin note; the geoneutrino example (`_scales_lab.qmd`, 1.8–3.3 MeV,
+  geoneutrino spectrum, the cut Earth `earth-cut-geo.png`); the atmospheric-neutrino example (`_atm_lab.qmd`,
+  0.5–100 GeV and the zenith angle, no averaging, vacuum; `earth-cut-atm.png`); the chapter "Vacuum = Birefringent Crystal" with the calcite photo
+  (`calcite-double-refraction.jpg`, APN MJM, Wikimedia Commons, CC BY-SA 3.0); light in a birefringent plate (`_birefringent_setup.qmd` and `_birefringent_lab.qmd`: set-up and lab tabs); the
+  vacuum as a crystal with three axes; matter is tiny (Δn against calcite); the charged-current diagram in the flavor
+  and mass bases (`cc-flavor.svg`, `cc-mass.svg`, `assets/oscillations/cc_diagrams.py`): matter is an off-diagonal
+  index matrix; the ratio A (the details of n from forward scattering in three tabs); matter turns the axes (tabs: phases, the index matrix with live numbers, propagation, the neutrino crystal
+  `_nu_crystal.qmd`, the probability in matter with its limits, the picture); solar neutrinos: why ν2 leaves the Sun (`_solar_twist.qmd`) and the data
+  (`solar-pee.svg`: three-flavor adiabatic MSW and the Borexino points of Nature 562, 505 (2018), values from arXiv:2105.13858);
+  lepton mixing: unitarity, the mixing matrix from solar and atmospheric data
+  (`_pmns_from_data.qmd`), status (NuFIT 6.1, JUNO); summary; the textbook (English cover `qft-book-cover-en.jpg` from TheBook, QR `qft-book-qr.png` to neutrinohit.github.io/en/materials.html#qft-book, made by neutrinohit-map/scripts/generate_qrcode.py). Appendix: matter eigenvalues and angle (the derivation), adiabatic lab, decoherence (qualitative), coupled pendulums, three-flavor probabilities.
+- `en/slides/01_vacuum.qmd`, `02_matter_sun.qmd`, `03_earth.qmd` — the earlier three-lecture version
+  (about 2 h 45 min). Kept as the source of the single lecture; not rendered or published (the render list
+  in `_quarto.yml` names only `neutrino_oscillations.qmd`).
 
 The physics content follows the Russian course lectures 09–15 (`introduction/ru/slides/`); the Earth
 absorption figures are copies from `talks/neutrino-telescopes-2026/media/propagation/`; the films are
 English renders from the animation project (`earth_shield`, `cherenkov_radiation`,
-`neutrino_oscillations_phases`, mass-ordering balance).
+`neutrino_oscillations_phases`, mass-ordering balance, `neutrino_crystal`).
 
 ## Build
 
@@ -41,9 +45,10 @@ The targets are registered in
 | `assets/oscillations/osc.py` | three-flavor oscillations in vacuum and layered matter; PREM (optional continental crust instead of the 3 km ocean); Y_e from atomic weights |
 | `assets/oscillations/test_osc.py` | constants, vacuum vs layers, unitarity, two-flavor matter formula, PREM mass, path convergence, crust option (`python -m pytest`) |
 | `assets/oscillations/build_figures.py` | all figures in `media/figures/` (`python build_figures.py [name ...]`) |
+| `assets/oscillations/earth_cutaway.py` | the cut Earth `media/figures/earth-cut-{geo,atm}.png` from the NASA Blue Marble map (not stored here): `python earth_cutaway.py <map.jpg> [geo atm]` |
 | `assets/earth-explorer/earth_explorer.js` | browser engine (`window.EarthOsc`) and the Earth path explorer; `make_python_reference.py` + `check_against_python.mjs` compare it with `osc.py` (agreement 2e-13) |
 | `assets/earth-explorer/earth_widgets.js` | baseline lab, flavor-along-the-path animation, oscillogram lab (same engine) |
-| `assets/widgets/` | English copies of the course widgets; provenance in its README |
+| `assets/widgets/` | English widgets: generated wrappers of the shared course widgets, and the hand-written `_scales_lab.qmd`; provenance in its README |
 | `media/figures/telescopes/` | Earth absorption figures copied from the telescope lecture |
 | `media/video/` | films and posters |
 

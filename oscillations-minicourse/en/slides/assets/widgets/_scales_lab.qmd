@@ -1,0 +1,223 @@
+```{=html}
+<style>
+.scales-lab { display: grid; grid-template-columns: 1fr 340px; gap: 18px; align-items: start; font-size: 20px; color: #dde6ee; }
+.scales-lab .sl-side { margin-top: 125px; }
+.scales-lab .sl-panel { background: rgba(10, 16, 24, 0.85); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 12px; padding: 12px 16px; }
+.scales-lab label { display: flex; justify-content: space-between; margin: 4px 0 2px; }
+.scales-lab label b { color: #ffd166; font-weight: 600; }
+.scales-lab input[type=range] { width: 100%; margin: 4px 0 10px; }
+.scales-lab .sl-group { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 4px 0 12px; }
+.scales-lab button { font: inherit; font-size: 16px; padding: 5px 4px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.25);
+  background: #111a24; color: #dde6ee; cursor: pointer; }
+.scales-lab button.on { background: #73c7ff; color: #04121f; border-color: #73c7ff; }
+.scales-lab .sl-read { display: grid; grid-template-columns: 1fr auto; row-gap: 6px; font-size: 18px; margin-top: 10px; }
+.scales-lab .sl-read b { color: #73c7ff; font-weight: 600; text-align: right; }
+.scales-lab .sl-read .sl-avg-t { color: #ffd166; }
+.scales-lab .sl-read .sl-earth-t { color: #7ee2ae; }
+.scales-lab .sl-head { color: #8a96a3; font-size: 15px; text-transform: uppercase; letter-spacing: 0.06em; margin: 2px 0 4px; }
+.scales-lab .sl-note { color: #8a96a3; font-size: 16px; line-height: 1.3; margin-top: 12px; }
+.scales-lab .sl-note .b { color: #73c7ff; }
+.scales-lab .sl-note .g { color: #7ee2ae; }
+.scales-lab .sl-note .w { color: #eef3f7; }
+.scales-lab svg { width: 100%; height: auto; display: block; }
+.scales-lab svg text { fill: #c9d3dd; font-size: 15px; font-family: inherit; }
+.scales-lab svg .sl-grid { stroke: #344250; stroke-width: 1; }
+.scales-lab svg .sl-frame { fill: none; stroke: #4a5a6a; stroke-width: 1; }
+.scales-lab svg .sl-curve { fill: none; stroke: #73c7ff; stroke-width: 1.4; stroke-opacity: 0.85; }
+.scales-lab svg .sl-cum { fill: none; stroke: #7ee2ae; stroke-width: 3.4; }
+.scales-lab svg .sl-cum-dot { fill: #7ee2ae; }
+.scales-lab svg .sl-avg { stroke: #ffd166; stroke-width: 2; stroke-dasharray: 7 5; }
+.scales-lab svg .sl-crust { fill: rgba(126, 226, 174, 0.30); stroke: #7ee2ae; stroke-width: 1.2; }
+.scales-lab svg .sl-mantle { fill: rgba(255, 138, 92, 0.30); stroke: #ff8a5c; stroke-width: 1.2; }
+.scales-lab svg .sl-arr { fill: none; stroke: #eef3f7; stroke-width: 2.6; }
+.scales-lab svg .sl-osc { stroke: #73c7ff; stroke-width: 1.4; stroke-dasharray: 3 4; }
+.scales-lab svg .sl-inset { fill: rgba(4, 8, 14, 0.92); stroke: rgba(255, 255, 255, 0.25); }
+.scales-lab svg .sl-u { fill: #ffd166; }
+.scales-lab svg .sl-th { fill: #c3a6ff; }
+</style>
+<div id="scales-lab" class="scales-lab" role="group" aria-label="Electron antineutrino survival probability for one source at distance L and for all sources of the Earth closer than L, and the geoneutrino signal from sources closer than L">
+  <div class="sl-panel"><svg data-plot viewBox="0 0 1000 460" role="img" aria-label="Survival probability against distance for one source and for all sources of the Earth closer than that distance; the geoneutrino signal from sources closer than a given distance, emitted and detected"></svg></div>
+  <div class="sl-panel sl-side">
+    <div class="sl-head">neutrino energy</div>
+    <div class="sl-group"><button data-s="one" class="on">one E</button><button data-s="geo">geo&nbsp;ν̄ spectrum</button></div>
+    <label>E <b data-out="E">3.0 MeV</b></label>
+    <input data-in="E" type="range" min="1.8" max="3.3" step="0.01" value="3.0">
+    <div class="sl-read">
+      <span>L<sub>osc</sub>, slow clock Δm²<sub>21</sub></span><b data-out="Ls"></b>
+      <span>L<sub>osc</sub>, fast clock Δm²<sub>31</sub></span><b data-out="Lf"></b>
+      <span>signal from closer than L<sub>osc</sub></span><b data-out="near"></b>
+      <span>half of the signal from beyond</span><b data-out="half"></b>
+      <span>crust : mantle</span><b data-out="cm"></b>
+      <span>without oscillations</span><b data-out="s0"></b>
+      <span class="sl-earth-t">detected as ν̄e</span><b class="sl-earth-t" data-out="s1"></b>
+      <span class="sl-earth-t">the whole Earth</span><b class="sl-earth-t" data-out="earth"></b>
+    </div>
+  </div>
+</div>
+<script src="assets/widgets/geo_ibd_spectrum.js"></script>
+<script>
+(function () {
+  const root = document.getElementById("scales-lab");
+  if (!root || root.dataset.ready) return;
+  root.dataset.ready = "1";
+  // NuFIT 6.1 best fit, normal ordering; phase Δ = K Δm²[eV²] L[km] / E[GeV], K = 1/(4ħc) = 1.26693
+  const s12 = 0.3088, s13 = 0.02248, dm21 = 7.537e-5, dm31 = 2.511e-3, K = 1.26693;
+  const c12 = 1 - s12, c13 = 1 - s13, S12 = 4 * s12 * c12, S13 = 4 * s13 * c13;
+  const AVG = c13 * c13 * (1 - S12 / 2) + s13 * s13;          // Σ|U_ei|⁴
+  const GEO = window.GEO_IBD_SPECTRUM;
+  // The Earth [km]: continental crust 35 km around the detector, mantle down to the core-mantle boundary, no U and Th
+  // in the core. Crust: 2.7 g/cm³, U 1.3 ppm, Th 5.6 ppm (bulk continental crust, Rudnick & Gao 2003). Mantle: U 12 ppb,
+  // Th 48 ppb (bulk silicate Earth of McDonough & Sun 1995 minus the crust), mass 4.0e24 kg.
+  const R = 6371, H_CRUST = 35, R_CMB = 3480;
+  const V_MANTLE = 4 / 3 * Math.PI * (((R - H_CRUST) * 1e5) ** 3 - (R_CMB * 1e5) ** 3);   // cm³
+  const CRUST = { rho: 2.7, U: 1.3e-6, Th: 5.6e-6 }, MANTLE = { rho: 4.0e27 / V_MANTLE, U: 12e-9, Th: 48e-9 };
+  // ν̄ per g per s: 6 ν̄ per U-238 chain, 4 per Th-232 chain (7.46e7 and 1.62e7 per kg per s); signal in TNU per
+  // 10⁶ ν̄ cm⁻² s⁻¹ of ν̄e flux: 12.8 for U, 4.04 for Th (Fiorentini, Lissia, Mantovani 2007)
+  const signalDensity = (m) => m.rho * (12.8 * 7.46e4 * m.U + 4.04 * 1.62e4 * m.Th) * 1e-6;   // TNU per cm of dΦ/n
+  const state = { E: 0.003, mode: "one" };
+  const svg = root.querySelector("[data-plot]");
+  // two panels on one distance axis: P on top, the signal from sources closer than L below
+  const W = 1000, left = 70, right = 20, pTop = 30, pBot = 222, wTop = 244, wBot = 396, xLab = 418;
+  const Lmin = 0.1, Lmax = 20000;
+  const xMap = (L) => left + (W - left - right) * Math.log10(L / Lmin) / Math.log10(Lmax / Lmin);
+  const yMap = (p) => pBot - (pBot - pTop) * p;
+  const yW = (f) => wBot - (wBot - wTop) * f;
+  // sin²Δ averaged over a Gaussian relative spread σ of the phase: (1 − cos2Δ·e^{−2Δ²σ²})/2
+  const sin2 = (x, sig) => 0.5 * (1 - Math.cos(2 * x) * Math.exp(-2 * x * x * sig * sig));
+  function pee(L, E, sig) {
+    const d21 = K * dm21 * L / E, d31 = K * dm31 * L / E, d32 = d31 - d21;
+    return 1 - c13 * c13 * S12 * sin2(d21, sig) - S13 * (c12 * sin2(d31, sig) + s12 * sin2(d32, sig));
+  }
+  // energies and weights; the 25 keV bins of the geo spectrum count as flat (relative spread δE/E√12)
+  function energies() {
+    if (state.mode === "geo") {
+      const ws = GEO.E.map((_, i) => GEO.U[i] + GEO.Th[i]), sum = ws.reduce((a, b) => a + b, 0);
+      return { es: GEO.E.map((e) => e / 1000), ws: ws.map((w) => w / sum), sig: GEO.E.map((e) => 0.025 / (e * Math.sqrt(12))) };
+    }
+    return { es: [state.E], ws: [1], sig: [0] };
+  }
+  // x2: an extra relative spread squared (the width of a cell of the distance grid)
+  const pAvgE = (L, en, x2 = 0) => en.es.reduce((p, e, k) => p + en.ws[k] * pee(L, e, Math.sqrt(en.sig[k] ** 2 + x2)), 0);
+  // dΦ/dx = (n/2)[cos β(a) − cos β(b)] for a shell a < r < b, cos β(r) = (R² + x² − r²)/(2Rx), clipped to [−1, 1]
+  const clamp = (x) => Math.max(-1, Math.min(1, x));
+  const shellWeight = (L, a, b) => 0.5 * Math.max(0, clamp((R * R + L * L - a * a) / (2 * R * L)) - clamp((R * R + L * L - b * b) / (2 * R * L)));
+  const NL = 3000, grid = Array.from({ length: NL + 1 }, (_, i) => Lmin * (2 * R / Lmin) ** (i / NL));
+  // signal without oscillations [TNU] from each cell of the grid
+  const cells = (a, b, m) => grid.map((L, i) => (i ? signalDensity(m) * shellWeight(L, a, b) * (L - grid[i - 1]) * 1e5 : 0));
+  const sC = cells(R - H_CRUST, R, CRUST), sM = cells(R_CMB, R - H_CRUST, MANTLE);
+  const S0C = sC.reduce((a, b) => a + b, 0), S0M = sM.reduce((a, b) => a + b, 0), S0 = S0C + S0M;
+  const CELL2 = Math.log(2 * R / Lmin) ** 2 / NL / NL / 12;   // a grid cell as a flat spread in L
+  const cumC = [], cumM = [];
+  sC.reduce((s, x, i) => (cumC[i] = s + x), 0); sM.reduce((s, x, i) => (cumM[i] = s + x), 0);
+  const shareWithin = (L) => { let i = 0; while (i < NL && grid[i + 1] <= L) i += 1; return (cumC[i] + cumM[i]) / S0; };
+  const median = grid[cumC.findIndex((c, i) => c + cumM[i] >= 0.5 * S0)];
+  const fmtL = (L) => (L >= 1000 ? `${Math.round(L).toLocaleString("en-US")} km` : L >= 10 ? `${L.toFixed(0)} km` : `${L.toFixed(1)} km`);
+  const fmtE = (E) => `${(E * 1000).toFixed(2)} MeV`;
+  const pct = (x) => `${Math.round(100 * x)} %`;
+  // emitted signal from sources closer than L, in % of the whole emitted signal: crust and mantle stacked
+  const emitted = (() => {
+    let dC = `M${xMap(grid[1]).toFixed(1)},${wBot}`, dM = dC;
+    for (let i = 1; i <= NL; i += 3) {
+      dC += `L${xMap(grid[i]).toFixed(1)},${yW(cumC[i] / S0).toFixed(1)}`;
+      dM += `L${xMap(grid[i]).toFixed(1)},${yW((cumC[i] + cumM[i]) / S0).toFixed(1)}`;
+    }
+    dC += `L${xMap(grid[NL])},${yW(S0C / S0)}L${xMap(grid[NL])},${wBot}Z`; dM += `L${xMap(grid[NL])},${yW(1)}L${xMap(grid[NL])},${wBot}Z`;
+    let h = `<rect class="sl-frame" x="${left}" y="${wTop}" width="${W - left - right}" height="${wBot - wTop}"/>`;
+    [0, 25, 50, 75, 100].forEach((v) => {
+      h += `<line class="sl-grid" x1="${left}" y1="${yW(v / 100)}" x2="${W - right}" y2="${yW(v / 100)}"/>`;
+      h += `<text x="${left - 10}" y="${yW(v / 100) + 5}" text-anchor="end">${v}</text>`;
+    });
+    h += `<path class="sl-mantle" d="${dM}"/><path class="sl-crust" d="${dC}"/>`;
+    h += `<text x="${left + 10}" y="${wTop + 20}">signal from sources closer than L, emitted by the <tspan style="fill:#7ee2ae">crust</tspan> and the <tspan style="fill:#ff8a5c">mantle</tspan></text>`;
+    h += `<text x="${left + 10}" y="${wTop + 40}" style="fill:#eef3f7">white: detected as ν̄e</text>`;
+    const xe = xMap(grid[NL]) - 8;
+    h += `<text x="${xe}" y="${yW(S0C / S0) + 18}" text-anchor="end" style="fill:#7ee2ae">crust ${pct(S0C / S0)}</text>`;
+    h += `<text x="${xe}" y="${yW(1) + 18}" text-anchor="end" style="fill:#ff8a5c">mantle ${pct(S0M / S0)}</text>`;
+    h += `<text transform="translate(18 ${(wTop + wBot) / 2}) rotate(-90)" text-anchor="middle">% of the signal</text>`;
+    return h;
+  })();
+  function inset() {
+    const x0 = left + 14, w = 290, h = 100, y0 = pBot - h - 8, pl = 34, pb = 26;
+    const n = GEO.E.length, bw = (w - pl - 10) / n;
+    const peak = Math.max(...GEO.E.map((_, i) => GEO.U[i] + GEO.Th[i]));
+    let html = `<rect class="sl-inset" x="${x0}" y="${y0}" width="${w}" height="${h}" rx="8"/>`;
+    GEO.E.forEach((_, i) => {
+      const hu = (h - pb - 26) * GEO.U[i] / peak, ht = (h - pb - 26) * GEO.Th[i] / peak;
+      const x = x0 + pl + i * bw, yb = y0 + h - pb;
+      html += `<rect class="sl-th" x="${x.toFixed(1)}" y="${(yb - ht).toFixed(1)}" width="${(bw - 0.6).toFixed(1)}" height="${ht.toFixed(1)}"/>`;
+      html += `<rect class="sl-u" x="${x.toFixed(1)}" y="${(yb - ht - hu).toFixed(1)}" width="${(bw - 0.6).toFixed(1)}" height="${hu.toFixed(1)}"/>`;
+    });
+    [1.8, 2.5, 3.3].forEach((e) => {
+      const x = x0 + pl + (e - 1.8) / 1.5 * (w - pl - 10);
+      html += `<text x="${x.toFixed(1)}" y="${y0 + h - 8}" text-anchor="middle">${e}</text>`;
+    });
+    html += `<text x="${x0 + 12}" y="${y0 + 20}">IBD events: <tspan style="fill:#ffd166">U</tspan> + <tspan style="fill:#c3a6ff">Th</tspan>, E [MeV]</text>`;
+    return html;
+  }
+  function render() {
+    const en = energies();
+    const Eref = state.mode === "geo" ? 0.003 : state.E;
+    const Losc = Math.PI * Eref / (K * dm21);
+    let html = `<rect class="sl-frame" x="${left}" y="${pTop}" width="${W - left - right}" height="${pBot - pTop}"/>`;
+    [0, 0.5, 1].forEach((p) => {
+      html += `<line class="sl-grid" x1="${left}" y1="${yMap(p)}" x2="${W - right}" y2="${yMap(p)}"/>`;
+      html += `<text x="${left - 10}" y="${yMap(p) + 5}" text-anchor="end">${p}</text>`;
+    });
+    [0.1, 1, 10, 100, 1000, 10000].forEach((L) => {
+      [[pTop, pBot], [wTop, wBot]].forEach(([a, b]) => { html += `<line class="sl-grid" x1="${xMap(L)}" y1="${a}" x2="${xMap(L)}" y2="${b}"/>`; });
+      html += `<text x="${xMap(L)}" y="${xLab}" text-anchor="middle">${L >= 1000 ? L.toLocaleString("en-US") : L}</text>`;
+    });
+    html += `<text x="${(left + W - right) / 2}" y="${xLab + 30}" text-anchor="middle">distance L [km]</text>`;
+    html += `<text transform="translate(18 ${(pTop + pBot) / 2}) rotate(-90)" text-anchor="middle">P(ν̄e → ν̄e)</text>`;
+    html += emitted;
+    // one source at distance L
+    let d = "";
+    const N = 4000;
+    for (let i = 0; i <= N; i += 1) {
+      const L = Lmin * (Lmax / Lmin) ** (i / N);
+      d += `${i ? "L" : "M"}${xMap(L).toFixed(1)},${yMap(pAvgE(L, en)).toFixed(1)}`;
+    }
+    // all sources closer than L: S(L) = ∫₀ᴸ s(x) P(x) dx; green = S(L)/S₀(L), white = S(L)/S₀(whole Earth)
+    let s1 = 0, s0 = 0, dc = "", da = "";
+    for (let i = 1; i <= NL; i += 1) {
+      const si = sC[i] + sM[i];
+      if (!si) continue;
+      s1 += si * pAvgE(grid[i], en, CELL2); s0 += si;
+      if (i % 3 === 0 || i === NL) {
+        dc += `${dc ? "L" : "M"}${xMap(grid[i]).toFixed(1)},${yMap(s1 / s0).toFixed(1)}`;
+        da += `${da ? "L" : "M"}${xMap(grid[i]).toFixed(1)},${yW(s1 / S0).toFixed(1)}`;
+      }
+    }
+    html += `<path class="sl-arr" d="${da}"/>`;
+    html += `<text x="${xMap(grid[NL]) - 8}" y="${yW(s1 / S0) + 22}" text-anchor="end" style="fill:#eef3f7">detected ${pct(s1 / S0)}</text>`;
+    if (Losc < Lmax) {
+      const xo = xMap(Losc), anchor = xo > 860 ? "end" : xo < 140 ? "start" : "middle";
+      html += `<line class="sl-osc" x1="${xo}" y1="${pTop}" x2="${xo}" y2="${wBot}"/>`;
+      html += `<text x="${xo}" y="${pTop - 9}" text-anchor="${anchor}" style="fill:#73c7ff">L<tspan dy="5" font-size="12">osc</tspan><tspan dy="-5"> = ${fmtL(Losc)}</tspan></text>`;
+    }
+    html += `<line class="sl-avg" x1="${left}" y1="${yMap(AVG)}" x2="${W - right}" y2="${yMap(AVG)}"/>`;
+    html += `<text x="${left + 8}" y="${yMap(AVG) - 8}" style="fill:#ffd166">average far away ${AVG.toFixed(3)}</text>`;
+    html += `<path class="sl-curve" d="${d}"/>`;
+    html += `<path class="sl-cum" d="${dc}"/><circle class="sl-cum-dot" cx="${xMap(grid[NL])}" cy="${yMap(s1 / s0)}" r="7"/>`;
+    if (state.mode === "geo") html += inset();
+    svg.innerHTML = html;
+    const out = (k, v) => { root.querySelector(`[data-out="${k}"]`).textContent = v; };
+    out("E", state.mode === "geo" ? "1.8–3.3 MeV" : fmtE(state.E));
+    out("Ls", fmtL(Losc));
+    out("Lf", fmtL(Math.PI * Eref / (K * dm31)));
+    out("near", pct(shareWithin(Losc)));
+    out("half", fmtL(Math.round(median / 10) * 10));
+    out("cm", `${Math.round(100 * S0C / S0)} : ${Math.round(100 * S0M / S0)}`);
+    out("s0", `${S0.toFixed(0)} TNU`);
+    out("s1", `${s1.toFixed(0)} TNU`);
+    out("earth", (s1 / S0).toFixed(3));
+    root.querySelectorAll("[data-s]").forEach((b) => b.classList.toggle("on", b.dataset.s === state.mode));
+  }
+  const slider = root.querySelector('[data-in="E"]');
+  // geoneutrino energies only: from the IBD threshold 1.8 MeV to the end of the spectrum 3.3 MeV
+  slider.addEventListener("input", () => { state.E = Number(slider.value) / 1000; state.mode = "one"; render(); });
+  root.querySelectorAll("[data-s]").forEach((b) => b.addEventListener("click", () => { state.mode = b.dataset.s; render(); }));
+  render();
+})();
+</script>
+```

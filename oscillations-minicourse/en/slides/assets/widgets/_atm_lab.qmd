@@ -1,0 +1,189 @@
+```{=html}
+<style>
+.atm-lab { display: grid; grid-template-columns: 1fr 340px; gap: 18px; align-items: start; font-size: 20px; color: #dde6ee; }
+.atm-lab .al-side { margin-top: 150px; }
+.atm-lab .al-panel { background: rgba(10, 16, 24, 0.85); border: 1px solid rgba(255, 255, 255, 0.18); border-radius: 12px; padding: 12px 16px; }
+.atm-lab label { display: flex; justify-content: space-between; margin: 4px 0 2px; }
+.atm-lab label b { color: #ffd166; font-weight: 600; }
+.atm-lab input[type=range] { width: 100%; margin: 4px 0 10px; }
+.atm-lab .al-read { display: grid; grid-template-columns: 1fr auto; row-gap: 6px; font-size: 18px; margin-top: 6px; }
+.atm-lab .al-read b { font-weight: 600; text-align: right; color: #c9d3dd; }
+.atm-lab .al-head { color: #8a96a3; font-size: 15px; text-transform: uppercase; letter-spacing: 0.06em; margin: 2px 0 4px; }
+.atm-lab .al-note { color: #8a96a3; font-size: 16px; line-height: 1.3; margin-top: 12px; }
+.atm-lab .c-mm { color: #73c7ff; }
+.atm-lab .c-mt { color: #ff8a5c; }
+.atm-lab .c-me { color: #7ee2ae; }
+.atm-lab svg { width: 100%; height: auto; display: block; }
+.atm-lab svg text { fill: #c9d3dd; font-size: 15px; font-family: inherit; }
+.atm-lab svg .al-grid { stroke: #344250; stroke-width: 1; }
+.atm-lab svg .al-frame { fill: none; stroke: #4a5a6a; stroke-width: 1; }
+.atm-lab svg .al-mm { fill: none; stroke: #73c7ff; stroke-width: 2.4; }
+.atm-lab svg .al-mt { fill: none; stroke: #ff8a5c; stroke-width: 1.6; stroke-opacity: 0.9; }
+.atm-lab svg .al-me { fill: none; stroke: #7ee2ae; stroke-width: 1.6; stroke-opacity: 0.9; }
+.atm-lab svg .al-det { stroke: #ffd166; stroke-width: 2; stroke-dasharray: 6 5; }
+.atm-lab svg .al-hor { stroke: #8a96a3; stroke-width: 1.4; stroke-dasharray: 3 4; }
+.atm-lab svg .al-osc { stroke: #73c7ff; stroke-width: 1.4; stroke-dasharray: 3 4; }
+.atm-lab svg .al-sub { font-size: 0.72em; }
+/* the cut Earth over the slide (top right): the path for the chosen zenith angle is drawn here */
+.earth-live { position: relative; height: 360px; }
+.earth-live img { height: 100%; width: auto; display: block; margin: 0; max-width: none; max-height: none; }
+.earth-live svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.earth-live text { font-family: "Source Sans 3", "Source Sans Pro", sans-serif; font-size: 42px; fill: #eef3f7; }
+</style>
+<script src="assets/widgets/earth_cut_atm.js"></script>
+<div id="atm-lab" class="atm-lab" role="group" aria-label="Three-flavor oscillation probabilities of an atmospheric muon neutrino against the distance from its birth in the atmosphere, for one energy and one zenith angle">
+  <div class="al-panel"><svg data-plot viewBox="0 0 1000 460" role="img" aria-label="Probabilities for a muon neutrino to be detected as a muon, tau or electron neutrino against the distance L; the top axis gives the zenith angle"></svg></div>
+  <div class="al-panel al-side">
+    <div class="al-head">neutrino energy</div>
+    <label>E <b data-out="E"></b></label>
+    <input data-in="E" type="range" min="-0.301" max="2" step="0.005" value="0.699">
+    <div class="al-head">direction</div>
+    <label><span>zenith angle θ<sub>z</sub></span> <b data-out="th"></b></label>
+    <input data-in="th" type="range" min="0" max="180" step="0.5" value="155">
+    <div class="al-read">
+      <span>distance L</span><b data-out="L"></b>
+      <span>L<sub>osc</sub>, fast clock Δm²<sub>31</sub></span><b data-out="Lf"></b>
+      <span>L<sub>osc</sub>, slow clock Δm²<sub>21</sub></span><b data-out="Ls"></b>
+      <span class="c-mm">ν<sub>μ</sub> → ν<sub>μ</sub></span><b class="c-mm" data-out="mm"></b>
+      <span class="c-mt">ν<sub>μ</sub> → ν<sub>τ</sub></span><b class="c-mt" data-out="mt"></b>
+      <span class="c-me">ν<sub>μ</sub> → ν<sub>e</sub></span><b class="c-me" data-out="me"></b>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  const root = document.getElementById("atm-lab");
+  if (!root || root.dataset.ready) return;
+  root.dataset.ready = "1";
+  // NuFIT 6.1 best fit (IC24 + SK-atm), normal ordering; Δm²L/4E = K Δm²[eV²] L[km] / E[GeV], K = 1/(4ħc) = 1.26693
+  const s12 = 0.3088, s13 = 0.02248, s23 = 0.470, delta = 212 * Math.PI / 180, dm21 = 7.537e-5, dm31 = 2.511e-3, K = 1.26693;
+  // PMNS, PDG convention U = R23 U13(δ) R12; complex numbers as [re, im]
+  const S12 = Math.sqrt(s12), S13 = Math.sqrt(s13), S23 = Math.sqrt(s23);
+  const C12 = Math.sqrt(1 - s12), C13 = Math.sqrt(1 - s13), C23 = Math.sqrt(1 - s23);
+  const ep = [Math.cos(delta), Math.sin(delta)];             // e^{+iδ}
+  const U = [
+    [[C12 * C13, 0], [S12 * C13, 0], [S13 * ep[0], -S13 * ep[1]]],
+    [[-S12 * C23 - C12 * S23 * S13 * ep[0], -C12 * S23 * S13 * ep[1]], [C12 * C23 - S12 * S23 * S13 * ep[0], -S12 * S23 * S13 * ep[1]], [S23 * C13, 0]],
+    [[S12 * S23 - C12 * C23 * S13 * ep[0], -C12 * C23 * S13 * ep[1]], [-C12 * S23 - S12 * C23 * S13 * ep[0], -S12 * C23 * S13 * ep[1]], [C23 * C13, 0]]
+  ];
+  const M2 = [0, dm21, dm31];
+  // P(νμ → νβ) = |Σ_i U_βi U*_μi e^{−i m_i² L / 2E}|², m_i² L / 2E = 2K m_i² L / E
+  function prob(beta, L, E) {
+    let re = 0, im = 0;
+    for (let i = 0; i < 3; i += 1) {
+      const a = U[beta][i], b = U[1][i];
+      const pr = a[0] * b[0] + a[1] * b[1], pi = a[1] * b[0] - a[0] * b[1];   // U_βi U*_μi
+      const ph = -2 * K * M2[i] * L / E, c = Math.cos(ph), s = Math.sin(ph);
+      re += pr * c - pi * s; im += pr * s + pi * c;
+    }
+    return re * re + im * im;
+  }
+  // distance from the birth point at height h to a detector on the surface: L = √((R+h)² − R² sin²θ) − R cos θ
+  const R = 6371, H = 15;                                     // km; h ≈ 15 km: Gaisser & Stanev 1998
+  const pathL = (th) => Math.sqrt((R + H) ** 2 - (R * Math.sin(th)) ** 2) - R * Math.cos(th);
+  const state = { E: 5, th: 155 * Math.PI / 180 };
+  const svg = root.querySelector("[data-plot]");
+  const W = 1000, left = 70, right = 20, pTop = 60, pBot = 396, xLab = 418;
+  const Lmin = 10, Lmax = 13000;
+  const xMap = (L) => left + (W - left - right) * Math.log10(L / Lmin) / Math.log10(Lmax / Lmin);
+  const yMap = (p) => pBot - (pBot - pTop) * p;
+  const fmtL = (L) => (L >= 1000 ? `${Math.round(L).toLocaleString("en-US")} km` : `${L.toFixed(0)} km`);
+  const fmtE = (E) => (E < 10 ? `${E.toFixed(1)} GeV` : `${E.toFixed(0)} GeV`);
+  const sub = (s) => `<tspan class="al-sub" dy="0.3em">${s}</tspan>`;
+  function render() {
+    const E = state.E, Ld = pathL(state.th);
+    let h = `<rect class="al-frame" x="${left}" y="${pTop}" width="${W - left - right}" height="${pBot - pTop}"/>`;
+    [0, 0.25, 0.5, 0.75, 1].forEach((p) => {
+      h += `<line class="al-grid" x1="${left}" y1="${yMap(p)}" x2="${W - right}" y2="${yMap(p)}"/>`;
+      h += `<text x="${left - 10}" y="${yMap(p) + 5}" text-anchor="end">${p}</text>`;
+    });
+    [10, 100, 1000, 10000].forEach((L) => {
+      h += `<line class="al-grid" x1="${xMap(L)}" y1="${pTop}" x2="${xMap(L)}" y2="${pBot}"/>`;
+      h += `<text x="${xMap(L)}" y="${xLab}" text-anchor="middle">${L >= 1000 ? L.toLocaleString("en-US") : L}</text>`;
+    });
+    h += `<text x="${(left + W - right) / 2}" y="${xLab + 30}" text-anchor="middle">distance L [km]</text>`;
+    h += `<text transform="translate(18 ${(pTop + pBot) / 2}) rotate(-90)" text-anchor="middle">probability</text>`;
+    // the zenith angle on the top axis; the horizon divides down-going from up-going
+    [0, 60, 80, 90, 100, 120, 180].forEach((d) => {
+      const x = xMap(pathL(d * Math.PI / 180));
+      h += `<line class="al-grid" x1="${x}" y1="${pTop - 6}" x2="${x}" y2="${pTop}"/>`;
+      h += `<text x="${x}" y="${pTop - 12}" text-anchor="middle">${d}°</text>`;
+    });
+    h += `<text x="${left}" y="${pTop - 36}">zenith angle θ${sub("z")}</text>`;
+    const xh = xMap(pathL(Math.PI / 2));
+    h += `<line class="al-hor" x1="${xh}" y1="${pTop}" x2="${xh}" y2="${pBot}"/>`;
+    h += `<text x="${xh - 8}" y="${pBot - 10}" text-anchor="end">down-going</text><text x="${xh + 8}" y="${pBot - 10}">up-going, through the Earth</text>`;
+    const Lf = Math.PI * E / (K * dm31);
+    if (Lf > Lmin && Lf < Lmax) {
+      h += `<line class="al-osc" x1="${xMap(Lf)}" y1="${pTop}" x2="${xMap(Lf)}" y2="${pBot}"/>`;
+    }
+    // the three channels from the shortest (vertical, down) to the longest path (vertical, up)
+    const Lfirst = pathL(0), N = 3000;
+    const paths = ["", "", ""];
+    for (let i = 0; i <= N; i += 1) {
+      const L = Lfirst * ((pathL(Math.PI)) / Lfirst) ** (i / N);
+      [1, 2, 0].forEach((b, k) => { paths[k] += `${i ? "L" : "M"}${xMap(L).toFixed(1)},${yMap(prob(b, L, E)).toFixed(1)}`; });
+    }
+    h += `<path class="al-me" d="${paths[2]}"/><path class="al-mt" d="${paths[1]}"/><path class="al-mm" d="${paths[0]}"/>`;
+    // the chosen direction
+    const xd = xMap(Ld);
+    h += `<line class="al-det" x1="${xd}" y1="${pTop}" x2="${xd}" y2="${pBot}"/>`;
+    [[1, "#73c7ff"], [2, "#ff8a5c"], [0, "#7ee2ae"]].forEach(([b, c]) => {
+      h += `<circle cx="${xd}" cy="${yMap(prob(b, Ld, E))}" r="6.5" fill="${c}" stroke="#04121f" stroke-width="1.5"/>`;
+    });
+    svg.innerHTML = h;
+    drawEarth(Ld, state.th);
+    const out = (k, v) => { root.querySelector(`[data-out="${k}"]`).textContent = v; };
+    out("E", fmtE(E));
+    out("th", `${(state.th * 180 / Math.PI).toFixed(0)}°`);
+    out("L", fmtL(Ld));
+    out("Lf", fmtL(Lf));
+    out("Ls", fmtL(Math.PI * E / (K * dm21)));
+    out("mm", prob(1, Ld, E).toFixed(2));
+    out("mt", prob(2, Ld, E).toFixed(2));
+    out("me", prob(0, Ld, E).toFixed(2));
+  }
+  // the path on the cut Earth: in-plane point (x, y) in Earth radii, the detector at (0, 1), y up at the detector
+  const earth = document.getElementById("atm-earth"), EC = window.EARTH_CUT_ATM;
+  function drawEarth(L, th) {
+    if (!earth || !EC) return;
+    earth.setAttribute("viewBox", `0 0 ${EC.width} ${EC.height}`);
+    const px = (x, y) => [EC.cx + EC.k * (x * EC.ex[0] + y * EC.ey[0]), EC.cy - EC.k * (x * EC.ex[1] + y * EC.ey[1])];
+    const pt = (x, y) => px(x, y).map((v) => v.toFixed(1)).join(",");
+    const u = [Math.sin(th), Math.cos(th)], Lr = L / R;      // towards where the neutrino comes from
+    const P = [Lr * u[0], 1 + Lr * u[1]];
+    let h = `<defs><marker id="atm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#73c7ff"/></marker></defs>`;
+    let [mx, my] = px(-0.30, -0.80);
+    h += `<text x="${mx}" y="${my}" text-anchor="middle">mantle</text>`;
+    [mx, my] = px(0, -0.05);
+    h += `<text x="${mx}" y="${my + 12}" text-anchor="middle" style="fill:#3a2a10">core</text>`;
+    // zenith and the angle
+    h += `<polyline points="${pt(0, 1)} ${pt(0, 1.27)}" stroke="#eef3f7" stroke-width="3" stroke-dasharray="7 5" fill="none"/>`;
+    [mx, my] = px(0, 1.29);
+    h += `<text x="${mx}" y="${my}" text-anchor="middle" style="fill:#a9b6c2; font-size:36px">zenith</text>`;
+    let arc = "";
+    for (let i = 0; i <= 40; i += 1) { const a = th * i / 40; arc += pt(0.12 * Math.sin(a), 1 + 0.12 * Math.cos(a)) + " "; }
+    h += `<polyline points="${arc}" stroke="#ffd166" stroke-width="3.5" fill="none"/>`;
+    [mx, my] = px(0.2 * Math.sin(th / 2 + 0.25), 1 + 0.2 * Math.cos(th / 2 + 0.25));
+    h += `<text x="${mx}" y="${my + 12}" text-anchor="middle" style="fill:#ffd166; font-style:italic">θ<tspan dy="10" font-size="30">z</tspan></text>`;
+    // the path: true length; from above it is short, so its direction is shown dashed as well
+    if (Lr < 0.3) h += `<polyline points="${pt(0.3 * u[0], 1 + 0.3 * u[1])} ${pt(P[0], P[1])}" stroke="#73c7ff" stroke-width="3" stroke-dasharray="6 6" fill="none"/>`;
+    h += `<polyline points="${pt(P[0], P[1])} ${pt(0, 1)}" stroke="#73c7ff" stroke-width="5" fill="none" marker-end="url(#atm-arrow)"/>`;
+    h += `<circle cx="${px(P[0], P[1])[0]}" cy="${px(P[0], P[1])[1]}" r="9" fill="#73c7ff" stroke="#04121f" stroke-width="2"/>`;
+    const mid = Lr < 0.3 ? 0.15 : 0.55 * Lr;
+    [mx, my] = px(mid * u[0], 1 + mid * u[1]);
+    h += `<text x="${mx + 18}" y="${my}" style="fill:#73c7ff; font-style:italic; font-size:54px">L</text>`;
+    // the detector
+    [mx, my] = px(0, 1);
+    h += `<rect x="${mx - 9}" y="${my - 9}" width="18" height="18" fill="#eef3f7" stroke="#04121f" stroke-width="2"/>`;
+    h += `<text x="${mx - 22}" y="${my - 14}" text-anchor="end">detector</text>`;
+    earth.innerHTML = h;
+  }
+  const sE = root.querySelector('[data-in="E"]'), sT = root.querySelector('[data-in="th"]');
+  sE.addEventListener("input", () => { state.E = 10 ** Number(sE.value); render(); });
+  sT.addEventListener("input", () => { state.th = Number(sT.value) * Math.PI / 180; render(); });
+  state.E = 10 ** Number(sE.value);
+  render();
+})();
+</script>
+```

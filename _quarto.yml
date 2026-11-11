@@ -33,7 +33,7 @@ project:
     - "introduction/ru/exercises/*.qmd"
     - "!introduction/ru/exercises/planned/**"
     - "oscillations-minicourse/index.qmd"
-    - "oscillations-minicourse/en/slides/*.qmd"
+    - "oscillations-minicourse/en/slides/neutrino_oscillations.qmd"
     - "solar-neutrino-masterclass/index.qmd"
     - "solar-neutrino-masterclass/slides/00_solar_neutrino_physics.qmd"
     - "solar-neutrino-masterclass/slides/00_solar_neutrino_physics_appendix.qmd"

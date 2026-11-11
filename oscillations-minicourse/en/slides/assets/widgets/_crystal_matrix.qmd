@@ -1,0 +1,5 @@
+```{=html}
+<link rel="stylesheet" href="assets/widgets/crystal_matrix.css">
+<div class="crystal-matrix"></div>
+<script defer src="assets/widgets/crystal_matrix.js"></script>
+```

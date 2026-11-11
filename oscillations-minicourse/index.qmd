@@ -16,69 +16,40 @@ toc: false
   <a class="course-back-link" href="https://neutrinohit.github.io/en/education.html#oscillations-minicourse">NeutrinoHit map card</a>
 
   <section class="course-intro">
-    <p class="course-kicker">Mini-course · English · three lectures</p>
+    <p class="course-kicker">School lecture · English · 45 minutes</p>
     <h1>Neutrino Oscillations: from Vacuum to the Earth's Core</h1>
     <p>
-      Three lectures (about 2 h 45 min) for students of particle physics and
-      geophysics. The emphasis is on understanding and on the size of the
-      effects: why a neutrino changes flavor, why matter changes the clock,
-      and how neutrinos can weigh the Earth, probe the electrons of its core
-      and measure its radioactive heat. Interactive applets and animations
+      One lecture for students and young scientists of particle physics and
+      the Earth sciences, given at the 2026 Fall School on Interdisciplinary
+      Neutrino Science in Zhuhai. It starts from an experiment: a neutrino born
+      with a positron turns, far from the source, into a muon. Two waves with
+      different masses, their beat and its average explain it. Then the vacuum
+      and matter as birefringent crystals for neutrinos, solar neutrinos, and
+      the lepton mixing matrix from data. Derivations are in tabs; applets
       accompany every step.
     </p>
     <p class="course-author">Dmitry V. Naumov, JINR Dubna · <a href="https://neutrinohit.github.io/">neutrinohit.github.io</a></p>
   </section>
 
-  <section class="course-accordion" aria-label="Lectures of the mini-course">
+  <section class="course-accordion" aria-label="Lecture and applets">
     <details class="course-row" open>
       <summary>
-        <span class="course-row-kind">Lecture I</span>
-        <span>A Quantum Clock in Vacuum</span>
+        <span class="course-row-kind">Lecture</span>
+        <span>Neutrino Oscillations in Vacuum and Matter</span>
       </summary>
       <div class="course-row-body">
         <p>
-          Ghost particles and the missing solar and atmospheric neutrinos;
-          flavor and mass states; beats of two waves; the oscillation formula
-          and its two knobs; oscillation lengths and the L/E map; three
-          flavors and two clocks.
+          The problem as an experiment; the quantum chameleon; no flavor field
+          has a mass; two waves in and out of phase; the oscillation formula;
+          geoneutrinos and atmospheric neutrinos through the Earth. The
+          birefringent crystal; the vacuum as a crystal with three axes; the
+          refractive index of matter from forward scattering; the ratio A;
+          matter turns the axes, the neutrino crystal and the probability in
+          matter. Why ν₂ leaves the Sun, with the Borexino data; unitarity and
+          the mixing matrix from data; the status of the parameters.
         </p>
         <div class="course-links">
-          <a href="en/slides/01_vacuum.html">Open lecture</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="course-row">
-      <summary>
-        <span class="course-row-kind">Lecture II</span>
-        <span>Matter and the Sun</span>
-      </summary>
-      <div class="course-row-body">
-        <p>
-          Refraction of neutrinos and the potential of electrons; the MSW
-          resonance; slowly changing density; the Sun as a flavor converter;
-          the day–night effect; how matter on long baselines reveals the
-          neutrino mass ordering.
-        </p>
-        <div class="course-links">
-          <a href="en/slides/02_matter_sun.html">Open lecture</a>
-        </div>
-      </div>
-    </details>
-
-    <details class="course-row">
-      <summary>
-        <span class="course-row-kind">Lecture III</span>
-        <span>The Earth Seen by Neutrinos</span>
-      </summary>
-      <div class="course-row-body">
-        <p>
-          What seismology knows and what it cannot tell; electrons per nucleon;
-          absorption tomography and the mass of the Earth; oscillation
-          tomography of the core; geoneutrinos and the Earth's heat budget.
-        </p>
-        <div class="course-links">
-          <a href="en/slides/03_earth.html">Open lecture</a>
+          <a href="en/slides/neutrino_oscillations.html">Open lecture</a>
         </div>
       </div>
     </details>
@@ -86,16 +57,17 @@ toc: false
     <details class="course-row">
       <summary>
         <span class="course-row-kind">Applets</span>
-        <span>Interactive material inside the lectures</span>
+        <span>Interactive material inside the lecture</span>
       </summary>
       <div class="course-row-body">
         <p>
-          Two-flavor laboratory, coupled pendulums, three-flavor triangle and
-          probabilities (Lecture I); refraction layers, constant-density and
-          adiabatic matter laboratories, long-baseline laboratory (Lecture II);
-          a neutrino crossing the Earth, the Earth path explorer and the
-          oscillogram laboratory (Lecture III). All calculations run in the
-          browser.
+          Events counted at a movable detector; survival probability over
+          distances from 0.1 to 20 000 km with the geoneutrino spectrum;
+          atmospheric neutrinos against the zenith angle; light in a
+          birefringent plate; the index matrix and its diagonalization; the
+          neutrino crystal; a νe flying out of the Sun; the mixing matrix step
+          by step. In the appendix: the adiabatic laboratory, coupled pendulums,
+          three-flavor probabilities. All calculations run in the browser.
         </p>
       </div>
     </details>

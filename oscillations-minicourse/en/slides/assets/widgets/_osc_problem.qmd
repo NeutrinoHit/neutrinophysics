@@ -1,0 +1,5 @@
+```{=html}
+<link rel="stylesheet" href="assets/widgets/osc_problem.css">
+<div class="osc-problem"></div>
+<script defer src="assets/widgets/osc_problem.js"></script>
+```

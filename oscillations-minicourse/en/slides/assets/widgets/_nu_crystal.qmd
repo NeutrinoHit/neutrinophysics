@@ -1,0 +1,39 @@
+```{=html}
+<link rel="stylesheet" href="assets/widgets/birefringent.css">
+<style>
+.reveal .nu-crystal .bf-scene .nu-ax { stroke: #ffd166; stroke-width: 3; }
+.reveal .nu-crystal .bf-scene .nu-vac { stroke: #a9b6c2; stroke-width: 1.8; stroke-dasharray: 6 5; }
+.reveal .nu-crystal .bf-scene .bf-crystal-face.nu-matter { fill: rgba(255, 209, 102, 0.12); }
+.reveal .nu-crystal .nu-l-vac { color: #a9b6c2; font-size: 19px; }
+.reveal .nu-crystal .nu-l-ax { color: #ffd166; font-size: 19px; }
+.reveal .nu-crystal .bf-plot-note { position: absolute; right: 26px; bottom: 4px; font-size: 17px; color: #c9d3dd; }
+.reveal .nu-crystal .bf-legend .iv { color: #ff8a5c; }
+.reveal .nu-crystal .bf-legend .ih { color: #73c7ff; }
+</style>
+<div class="bf-widget bf-lab nu-crystal" role="group" aria-label="The neutrino crystal: a source of electron neutrinos, a layer of vacuum or matter of length L with its axes, the flavor state at its end and a detector of muon neutrinos">
+  <div>
+    <div class="bf-stage"><svg class="bf-scene" viewBox="0 0 1000 300" role="img" aria-label="The flavor of the neutrino along the layer, animated"></svg><div class="bf-labels"></div></div>
+    <div class="bf-stage bf-panel"><svg class="bf-plot" viewBox="0 0 1000 175" role="img" aria-label="Probability to find a muon neutrino against L over the vacuum oscillation length, in vacuum and in the chosen matter"></svg>
+      <div class="bf-legend"><span class="iv">\(P(\nu_e\to\nu_\mu)\), this medium</span> <span class="ih">vacuum</span></div>
+      <div class="bf-plot-note">\(L/L_{\rm osc}\), \(L_{\rm osc}=4\pi E/\Delta m^2\)</div></div>
+  </div>
+  <div class="bf-panel bf-controls">
+    <div class="bf-head">matter</div>
+    <label><span>\(A=2EV/\Delta m^2\)</span> <b data-out="A"></b></label>
+    <input data-in="A" type="range" min="-0.5" max="3" step="0.005" value="0">
+    <div class="bf-seg"><button type="button" data-a="0">vacuum</button><button type="button" data-a="0.3824">resonance</button><button type="button" data-a="2.084">solar center</button></div>
+    <div class="bf-head">length</div>
+    <label><span>\(L/L_{\rm osc}\)</span> <b data-out="L"></b></label>
+    <input data-in="L" type="range" min="0" max="2" step="0.005" value="0.5">
+    <div class="bf-read">
+      <span>angle of \(\nu_e\) to \(\nu_{1m}\): \(\theta_m\)</span><b data-out="thm"></b>
+      <span>depth \(\sin^2 2\theta_m\)</span><b data-out="s2m"></b>
+      <span>\(L^m_{\rm osc}/L_{\rm osc}=1/R\)</span><b data-out="lm"></b>
+      <span class="iv">\(P(\nu_e\to\nu_\mu)\)</span><b class="iv" data-out="pmu"></b>
+      <span class="ih">\(P(\nu_e\to\nu_e)\)</span><b class="ih" data-out="pee"></b>
+    </div>
+    <div style="margin-top:12px; font-size:21px;">\(P=\sin^2 2\theta_m\,\sin^2\dfrac{\Delta m^2_m L}{4E}\)</div>
+  </div>
+</div>
+<script defer src="assets/widgets/nu_crystal.js"></script>
+```

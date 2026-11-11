@@ -1,0 +1,29 @@
+```{=html}
+<link rel="stylesheet" href="assets/widgets/birefringent.css">
+<div class="bf-widget bf-lab" data-theta="45" data-lr="0.25" role="group" aria-label="Birefringent plate laboratory: thickness and angle of the axes, the polarization behind the plate and the intensities behind the analyzer">
+  <div>
+    <div class="bf-stage"><svg class="bf-scene" viewBox="0 0 1000 300" role="img" aria-label="The set-up for the chosen thickness and angle, animated"></svg><div class="bf-labels"></div></div>
+    <div class="bf-stage bf-panel bf-plot-box"><svg class="bf-plot" viewBox="0 0 1000 190" role="img" aria-label="Intensities behind the analyzer V and behind an analyzer H against the thickness"></svg>
+      <div class="bf-legend"><span class="iv">\(I_V/I_0\)</span><span class="ih">\(I_H/I_0\)</span></div></div>
+  </div>
+  <div class="bf-panel bf-controls">
+    <div class="bf-head">crystal: calcite, \(\lambda=589\) nm</div>
+    <label><span>thickness \(L\)</span> <b data-out="L"></b></label>
+    <input data-in="L" type="range" min="0" max="8.55" step="0.01" value="0.86">
+    <div class="bf-seg"><button type="button" data-plate="0.25">λ/4 plate</button><button type="button" data-plate="0.5">λ/2 plate</button><button type="button" data-plate="1">λ plate</button></div>
+    <label><span>axes angle \(\theta\)</span> <b data-out="theta"></b></label>
+    <input data-in="theta" type="range" min="0" max="90" step="0.5" value="45">
+    <div class="bf-seg"><button type="button" data-theta="45">45°</button><button type="button" data-theta="33.8">34°</button><button type="button" data-theta="0">0°</button></div>
+    <div class="bf-read">
+      <span>\(n_o,\ n_e\)</span><b>1.658, 1.486</b>
+      <span>\(L/\lambda\)</span><b data-out="Llam"></b>
+      <span>\(\Delta\varphi=2\pi\,(n_o-n_e)\,L/\lambda\)</span><b data-out="dphi"></b>
+      <span class="el">output polarization</span><b class="el" data-out="kind"></b>
+      <span class="el">axis ratio \(b/a\)</span><b class="el" data-out="ba"></b>
+      <span class="ih">\(I_H/I_0\)</span><b class="ih" data-out="ih"></b>
+      <span class="iv">\(I_V/I_0=\sin^2 2\theta\,\sin^2\frac{\Delta\varphi}{2}\)</span><b class="iv" data-out="iv"></b>
+    </div>
+  </div>
+</div>
+<script defer src="assets/widgets/birefringent.js"></script>
+```

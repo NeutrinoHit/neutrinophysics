@@ -23,12 +23,22 @@ WRAPPERS = {
                                         [V + "three_flavor_probabilities.css"], [V + "three_flavor_probabilities.js"]),
     "_three_flavor_triangle_widget.qmd": (V + "_three_flavor_triangle_widget.en.qmd",
                                           [V + "three_flavor_triangle.css"], [V + "three_flavor_triangle.js"]),
+    "_pmns_from_data.qmd": (V + "_pmns_from_data.en.qmd", [V + "pmns_from_data.css"], [V + "pmns_from_data.js"]),
     "_refraction_layers.qmd": (M + "_refraction_layers.en.qmd", [M + "refraction_labs.css"], [M + "refraction_labs.js"]),
     "_refraction_two_modes.qmd": (M + "_refraction_two_modes.en.qmd", [M + "refraction_labs.css"], [M + "refraction_labs.js"]),
 }
 
+# wrapper -> [(old, new)]: lines of a shared fragment that point to another lecture of the Russian course
+EDITS = {
+    "_pmns_from_data.qmd": [("Why the Sun singles out the second mass\n        column will be explained in the lecture on the MSW effect.",
+                             "The Sun turns a \\(\\nu_e\\) into \\(\\nu_2\\):\n        the adiabatic MSW effect (appendix, \"Follow the twist\").")],
+}
+
 for name, (fragment, styles, scripts) in WRAPPERS.items():
     body = (SHARED / fragment).read_text(encoding="utf-8").replace(LECTURE_UP, UP)
+    for old, new in EDITS.get(name, []):
+        assert old in body, (name, old)
+        body = body.replace(old, new)
     head = "".join(f'<link rel="stylesheet" href="{UP}{s}">\n' for s in styles)
     tail = "".join(f'<script defer src="{UP}{s}"></script>\n' for s in scripts)
     if body.startswith(("```{=html}\n", "~~~{=html}\n")):
