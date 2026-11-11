@@ -13,7 +13,7 @@ toc: false
 
 <div class="course-index course-subpage">
   <a class="course-back-link" href="../index.html">← All neutrino physics materials</a>
-  <a class="course-back-link" href="https://neutrinohit.github.io/en/education.html#oscillations-minicourse">NeutrinoHit map card</a>
+  <a class="course-back-link" href="https://neutrinohit.github.io/en/talks.html#lecture-oscillations-zhuhai-2026">NeutrinoHit lectures and talks</a>
 
   <section class="course-intro">
     <p class="course-kicker">School lecture · English · 45 minutes</p>

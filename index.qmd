@@ -47,17 +47,20 @@ toc: false
 
     <details class="course-row">
       <summary>
-        <span class="course-row-kind">Mini-course</span>
+        <span class="course-row-kind">School lecture</span>
         <span>Neutrino Oscillations: from Vacuum to the Earth's Core</span>
       </summary>
       <div class="course-row-body">
         <p>
-          Three English lectures for students of particle physics and
-          geophysics: vacuum oscillations, matter and the Sun, and neutrino
-          probes of the Earth's interior, with applets and animations.
+          One English lecture (45 minutes) for students of particle physics
+          and the Earth sciences, 2026 Fall School on Interdisciplinary
+          Neutrino Science, Zhuhai: oscillations in vacuum, the vacuum and
+          matter as birefringent crystals, solar neutrinos, the mixing matrix
+          from data; applets at every step.
         </p>
         <div class="course-links">
-          <a href="oscillations-minicourse/index.html">Open mini-course</a>
+          <a href="oscillations-minicourse/en/slides/neutrino_oscillations.html">Open lecture</a>
+          <a href="oscillations-minicourse/index.html">Lecture page</a>
         </div>
       </div>
     </details>

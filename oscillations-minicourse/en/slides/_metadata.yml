@@ -18,7 +18,7 @@ format:
     include-after-body:
       - ../../../analytics/cloudflare-web-analytics.html
       - text: |
-          <script data-external="1" data-context-home="https://neutrinohit.github.io/en/courses/oscillations-minicourse.html" data-context-home-label="Course page" src="../../../shared/reveal/neutrinohit-reveal-footer.js"></script>
+          <script data-external="1" data-context-home="https://neutrinohit.github.io/en/talks.html#lecture-oscillations-zhuhai-2026" data-context-home-label="Lectures and talks" src="../../../shared/reveal/neutrinohit-reveal-footer.js"></script>
           <script data-external="1" src="assets/neutrinohit-video-seek.js"></script>
           <script data-external="1" src="assets/earth-explorer/earth_explorer.js"></script>
           <script data-external="1" src="assets/earth-explorer/earth_widgets.js"></script>
