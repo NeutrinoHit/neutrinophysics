@@ -5,6 +5,7 @@ format:
   revealjs:
     theme: [black, ../../../shared/styles/neutrinohit-reveal.scss]
     css:
+      - ../../../shared/reveal/neutrinohit-reveal-quiz.css
       - assets/school.css
       - assets/earth-explorer/earth_explorer.css
       - assets/earth-explorer/earth_widgets.css

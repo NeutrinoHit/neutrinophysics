@@ -18,6 +18,50 @@ Two flavors, $\sin^2\theta=\sin^2\theta_{12}=0.3088$ (NuFIT 6.1); $L_{\rm osc}=4
 
 {{< include assets/widgets/_quantum_chameleon.qmd >}}
 
+## What is the mass of the electron neutrino? {#quiz-mass}
+
+:::: {.quiz-slide}
+::: {.quiz-options}
+
+::: {.quiz-option}
+**A.** Zero, as in the Standard Model
+:::
+
+::: {.quiz-option}
+**B.** It depends on its mood: it is a chameleon
+:::
+
+::: {.quiz-option}
+**C.** It has no mass of its own: it is a mix of $\nu_1$, $\nu_2$, $\nu_3$
+:::
+
+:::
+::::
+
+## What is the mass of the electron neutrino? {#quiz-mass-answer}
+
+:::: {.quiz-slide}
+::: {.quiz-options}
+
+::: {.quiz-option .wrong}
+**A.** Zero, as in the Standard Model
+:::
+
+::: {.quiz-option .wrong}
+**B.** It depends on its mood: it is a chameleon
+:::
+
+::: {.quiz-option .correct}
+**C.** It has no mass of its own: it is a mix of $\nu_1$, $\nu_2$, $\nu_3$
+:::
+
+:::
+
+::: {.quiz-note}
+Each of $\nu_1$, $\nu_2$, $\nu_3$ has its own mass. $\nu_e$ is their mix, so it has none of its own.
+:::
+::::
+
 ## Surprise: $\nu_e$, $\nu_\mu$, $\nu_\tau$ have no mass {#no-mass}
 
 :::: {.columns}
@@ -321,6 +365,50 @@ Three neutrinos, three axes: even empty space is a crystal for them.
 $\Delta n=\Delta m^2_{21}/2E^2$ and $V/E$ with $V=\sqrt2\,G_Fn_e$, $n_e/N_A=102.9\ \mathrm{cm^{-3}}$ at the solar center (BS05(OP)); a full turn: $E\,\Delta n\,L=2\pi$.
 :::
 
+## A $\nu_e$ crosses the Sun. Its phase velocity is… {#quiz-faster}
+
+:::: {.quiz-slide}
+::: {.quiz-options}
+
+::: {.quiz-option}
+**A.** Above $c$
+:::
+
+::: {.quiz-option}
+**B.** Below $c$, as for light in glass
+:::
+
+::: {.quiz-option}
+**C.** Whatever the solar weather allows today
+:::
+
+:::
+::::
+
+## A $\nu_e$ crosses the Sun. Its phase velocity is… {#quiz-faster-answer}
+
+:::: {.quiz-slide}
+::: {.quiz-options}
+
+::: {.quiz-option .correct}
+**A.** Above $c$
+:::
+
+::: {.quiz-option .wrong}
+**B.** Below $c$, as for light in glass
+:::
+
+::: {.quiz-option .wrong}
+**C.** Whatever the solar weather allows today
+:::
+
+:::
+
+::: {.quiz-note}
+$n_{\nu_e}-1=-V/E<0$: the phase runs faster than light. The group velocity, which carries the signal, stays below $c$. Einstein is safe.
+:::
+::::
+
 ## Only $\nu_e$ feels the electrons {#potential}
 
 ::::: {.panel-tabset .nh-story-tabs}
@@ -554,6 +642,50 @@ The vacuum formula with $\theta\to\theta_m$ and $\Delta m^2\to\Delta m^2_m$.
 :::::
 
 # The Sun
+
+## What leaves the Sun when a 10 MeV $\nu_e$ is born at its center? {#quiz-sun-exit}
+
+:::: {.quiz-slide}
+::: {.quiz-options}
+
+::: {.quiz-option}
+**A.** A $\nu_e$, of course
+:::
+
+::: {.quiz-option}
+**B.** Almost only $\nu_2$
+:::
+
+::: {.quiz-option}
+**C.** Nothing: the Sun keeps it as a souvenir
+:::
+
+:::
+::::
+
+## What leaves the Sun when a 10 MeV $\nu_e$ is born at its center? {#quiz-sun-exit-answer}
+
+:::: {.quiz-slide}
+::: {.quiz-options}
+
+::: {.quiz-option .wrong}
+**A.** A $\nu_e$, of course
+:::
+
+::: {.quiz-option .correct}
+**B.** Almost only $\nu_2$
+:::
+
+::: {.quiz-option .wrong}
+**C.** Nothing: the Sun keeps it as a souvenir
+:::
+
+:::
+
+::: {.quiz-note}
+About 94 % $\nu_2$, a mass state: it no longer oscillates on the way to the Earth. Two flavors, adiabatic; see the next slide.
+:::
+::::
 
 ## Solar Neutrinos {#solar-data}
 

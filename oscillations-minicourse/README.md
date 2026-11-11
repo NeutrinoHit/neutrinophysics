@@ -8,7 +8,7 @@ and animations instead; derivations in an appendix.
 - `en/slides/neutrino_oscillations.qmd` — **Neutrino Oscillations in Vacuum and Matter**, the lecture of
   the 2026 Fall School on Interdisciplinary Neutrino Science (Zhuhai, 12 November 2026, slot "Status of
   neutrino oscillations", before S. Petcov's tomography lectures). Opening: the problem as an experiment (`_osc_problem.qmd`: a source, a movable detector, e⁻ and μ⁻ counted event by event; only e⁻ at L = 0)
-  and Neutrino = Quantum Chameleon. νe, νμ, ντ have no mass (no flavor fields with a mass); two waves (the
+  and Neutrino = Quantum Chameleon. Three quizzes, each with one joke answer (shared quiz classes, `shared/reveal/neutrinohit-reveal-quiz.css`): the mass of νe, the phase velocity in the Sun, what leaves the Sun. νe, νμ, ντ have no mass (no flavor fields with a mass); two waves (the
   detector moved by a slider); the formula with the derivation in tabs and natural units in a margin note; the geoneutrino example (`_scales_lab.qmd`, 1.8–3.3 MeV,
   geoneutrino spectrum, the cut Earth `earth-cut-geo.png`); the atmospheric-neutrino example (`_atm_lab.qmd`,
   0.5–100 GeV and the zenith angle, no averaging, vacuum; `earth-cut-atm.png`); the chapter "Vacuum = Birefringent Crystal" with the calcite photo
